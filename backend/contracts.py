@@ -273,3 +273,104 @@ class CustomerJourney(Contract):
     estimate_update_eligible: bool
     update_reason: str
     delivery_note: str = "Preview only. No SMS, email or phone service is connected; no alert has been sent."
+
+
+class GeographicAsset(Contract):
+    alias: str
+    label: str
+    kind: Literal["customer", "transformer", "fuse", "circuit_terminal"]
+    position: MapPoint | None
+    geometry_status: Literal["verified_generalized", "unavailable"]
+    source_layer: Literal["Customer_Clip", "Transformer_Clip", "Fuse_Bank_Clip"] | None
+    provenance: Literal["verified_customer_record", "verified_typed_upstream_id", "abstract_circuit_terminal"]
+
+    @model_validator(mode="after")
+    def geometry_consistent(self):
+        if (self.position is None) != (self.geometry_status == "unavailable"):
+            raise ValueError("Unavailable geometry must have a null position")
+        if self.kind == "circuit_terminal" and (self.position is not None or self.source_layer is not None):
+            raise ValueError("Abstract circuit terminal has no supplied geometry")
+        return self
+
+
+class PrimaryLineContext(Contract):
+    alias: Literal["primary-context-a"] = "primary-context-a"
+    source_layer: Literal["Primary_ExportFeatures"] = "Primary_ExportFeatures"
+    provenance: Literal["verified_circuit_code_alias_station"] = "verified_circuit_code_alias_station"
+    topology_verified: Literal[False] = False
+    status: Literal["available", "unavailable"]
+    paths: tuple[tuple[MapPoint, ...], ...]
+    source_segment_count: Count
+    omitted_collapsed_parts: Count
+    note: str
+
+    @model_validator(mode="after")
+    def valid_paths(self):
+        if (self.status == "available") != bool(self.paths):
+            raise ValueError("Available line context must contain paths")
+        if any(len(path) < 2 or len({(p.longitude, p.latitude) for p in path}) < 2 for path in self.paths):
+            raise ValueError("A line requires at least two distinct source-derived points")
+        return self
+
+
+class GeographicMap(Contract):
+    schema_version: Literal["map-v1"] = "map-v1"
+    location_alias: str
+    data_snapshot: str
+    region_label: Literal["Virginia challenge data"] = "Virginia challenge data"
+    crs: Literal["EPSG:4326"] = "EPSG:4326"
+    precision_degrees: Literal[0.01] = 0.01
+    assets: tuple[GeographicAsset, ...]
+    primary_lines: PrimaryLineContext
+    disclosures: tuple[str, ...]
+
+
+ExplanationIntent = Literal["risk", "restoration", "change", "preparation", "availability", "topology", "alerts", "unsupported"]
+ExplanationSource = Literal["modeled", "simulated", "verified", "mixed"]
+
+
+class ExplanationClause(Contract):
+    id: str
+    text: str
+    source_type: ExplanationSource
+
+
+class ExplanationContext(Contract):
+    """Provider allowlist: no coordinates, source rows, contact fields or raw IDs."""
+    version: Literal["explanation-v1"] = "explanation-v1"
+    result_id: str
+    scenario_revision: int
+    location_label: str
+    dataset_note: str
+    risk_band: Literal["LOW", "MODERATE", "HIGH", "SEVERE"] | None
+    risk_confidence: Literal["LOW"]
+    outage_probability: None = None
+    restoration_status: str
+    restoration_bounds: Bounds | None
+    access: Access
+    topology: tuple[str, ...]
+    alert_eligible: bool | None
+    alert_delivery: Literal["preview_only"] = "preview_only"
+    assumptions: tuple[str, ...]
+    limitations: tuple[str, ...]
+    clauses: tuple[ExplanationClause, ...]
+
+
+class ModelSelection(Contract):
+    """No free prose, numbers or new facts can cross this model boundary."""
+    result_id: str
+    intent: ExplanationIntent
+    supporting_refs: Annotated[tuple[str, ...], Field(min_length=1, max_length=3)]
+
+
+class ExplanationResponse(Contract):
+    result_id: str
+    scenario_revision: int
+    intent: ExplanationIntent
+    answer: str
+    supporting_factors: tuple[ExplanationClause, ...]
+    uncertainty_note: str
+    dataset_note: str
+    source_type: ExplanationSource
+    mode: Literal["ai_assisted", "standard", "unsupported"]
+    fallback_reason: Literal["not_configured", "timeout", "provider_unavailable", "invalid_response", "unsupported_question"] | None

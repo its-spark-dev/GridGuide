@@ -21,6 +21,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/explain": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Explanation */
+        post: operations["explanation_api_explain_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/health": {
         parameters: {
             query?: never;
@@ -47,6 +64,23 @@ export interface paths {
         };
         /** Locations */
         get: operations["locations_api_locations_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/map": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Geographic Map */
+        get: operations["geographic_map_api_map_get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -295,6 +329,76 @@ export interface components {
             simulated_inputs: components["schemas"]["Scenario"];
             source_facts: components["schemas"]["SourceFacts"];
         };
+        /** ExplanationClause */
+        ExplanationClause: {
+            /** Id */
+            id: string;
+            /**
+             * Source Type
+             * @enum {string}
+             */
+            source_type: "modeled" | "simulated" | "verified" | "mixed";
+            /** Text */
+            text: string;
+        };
+        /** ExplanationRequest */
+        ExplanationRequest: {
+            /**
+             * Access
+             * @default clear
+             * @enum {string}
+             */
+            access: "clear" | "restricted" | "blocked";
+            /**
+             * Location Alias
+             * @default demo-a
+             */
+            location_alias: string;
+            previous?: components["schemas"]["PreviousSelection"] | null;
+            /** Previous Result Id */
+            previous_result_id?: string | null;
+            /** Question */
+            question: string;
+            /** Result Id */
+            result_id: string;
+            /**
+             * Scenario Revision
+             * @default 1
+             */
+            scenario_revision: number;
+        };
+        /** ExplanationResponse */
+        ExplanationResponse: {
+            /** Answer */
+            answer: string;
+            /** Dataset Note */
+            dataset_note: string;
+            /** Fallback Reason */
+            fallback_reason: ("not_configured" | "timeout" | "provider_unavailable" | "invalid_response" | "unsupported_question") | null;
+            /**
+             * Intent
+             * @enum {string}
+             */
+            intent: "risk" | "restoration" | "change" | "preparation" | "availability" | "topology" | "alerts" | "unsupported";
+            /**
+             * Mode
+             * @enum {string}
+             */
+            mode: "ai_assisted" | "standard" | "unsupported";
+            /** Result Id */
+            result_id: string;
+            /** Scenario Revision */
+            scenario_revision: number;
+            /**
+             * Source Type
+             * @enum {string}
+             */
+            source_type: "modeled" | "simulated" | "verified" | "mixed";
+            /** Supporting Factors */
+            supporting_factors: components["schemas"]["ExplanationClause"][];
+            /** Uncertainty Note */
+            uncertainty_note: string;
+        };
         /** Factor */
         Factor: {
             /** Contribution Points */
@@ -317,6 +421,67 @@ export interface components {
             unit?: string | null;
             /** Value */
             value: string | number | boolean | null;
+        };
+        /** GeographicAsset */
+        GeographicAsset: {
+            /** Alias */
+            alias: string;
+            /**
+             * Geometry Status
+             * @enum {string}
+             */
+            geometry_status: "verified_generalized" | "unavailable";
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "customer" | "transformer" | "fuse" | "circuit_terminal";
+            /** Label */
+            label: string;
+            position: components["schemas"]["MapPoint"] | null;
+            /**
+             * Provenance
+             * @enum {string}
+             */
+            provenance: "verified_customer_record" | "verified_typed_upstream_id" | "abstract_circuit_terminal";
+            /** Source Layer */
+            source_layer: ("Customer_Clip" | "Transformer_Clip" | "Fuse_Bank_Clip") | null;
+        };
+        /** GeographicMap */
+        GeographicMap: {
+            /** Assets */
+            assets: components["schemas"]["GeographicAsset"][];
+            /**
+             * Crs
+             * @default EPSG:4326
+             * @constant
+             */
+            crs: "EPSG:4326";
+            /** Data Snapshot */
+            data_snapshot: string;
+            /** Disclosures */
+            disclosures: string[];
+            /** Location Alias */
+            location_alias: string;
+            /**
+             * Precision Degrees
+             * @default 0.01
+             * @constant
+             */
+            precision_degrees: 0.01;
+            primary_lines: components["schemas"]["PrimaryLineContext"];
+            /**
+             * Region Label
+             * @default Virginia challenge data
+             * @constant
+             */
+            region_label: "Virginia challenge data";
+            /**
+             * Schema Version
+             * @default map-v1
+             * @constant
+             */
+            schema_version: "map-v1";
         };
         /** HTTPValidationError */
         HTTPValidationError: {
@@ -459,6 +624,46 @@ export interface components {
             access: "clear" | "restricted" | "blocked";
             /** Scenario Revision */
             scenario_revision: number;
+        };
+        /** PrimaryLineContext */
+        PrimaryLineContext: {
+            /**
+             * Alias
+             * @default primary-context-a
+             * @constant
+             */
+            alias: "primary-context-a";
+            /** Note */
+            note: string;
+            /** Omitted Collapsed Parts */
+            omitted_collapsed_parts: number;
+            /** Paths */
+            paths: components["schemas"]["MapPoint"][][];
+            /**
+             * Provenance
+             * @default verified_circuit_code_alias_station
+             * @constant
+             */
+            provenance: "verified_circuit_code_alias_station";
+            /**
+             * Source Layer
+             * @default Primary_ExportFeatures
+             * @constant
+             */
+            source_layer: "Primary_ExportFeatures";
+            /** Source Segment Count */
+            source_segment_count: number;
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "available" | "unavailable";
+            /**
+             * Topology Verified
+             * @default false
+             * @constant
+             */
+            topology_verified: false;
         };
         /** PublicAsset */
         PublicAsset: {
@@ -719,6 +924,39 @@ export interface operations {
             };
         };
     };
+    explanation_api_explain_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ExplanationRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ExplanationResponse"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
     health_api_health_get: {
         parameters: {
             query?: never;
@@ -755,6 +993,37 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["Location-Output"][];
+                };
+            };
+        };
+    };
+    geographic_map_api_map_get: {
+        parameters: {
+            query?: {
+                location_alias?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GeographicMap"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

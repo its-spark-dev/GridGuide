@@ -6,7 +6,10 @@ export type Location = Evaluation['location'];
 export type AnalysisRequest = components['schemas']['AnalysisRequest'];
 export type Access = AnalysisRequest['access'];
 
-async function request<T>(path: string, signal: AbortSignal, body?: AnalysisRequest): Promise<T> {
+export type Explanation = components['schemas']['ExplanationResponse'];
+export type ExplanationRequest = components['schemas']['ExplanationRequest'];
+
+async function request<T>(path: string, signal: AbortSignal, body?: AnalysisRequest | ExplanationRequest): Promise<T> {
   const response = await fetch(path, {
     method: body ? 'POST' : 'GET',
     headers: body ? { 'Content-Type': 'application/json' } : undefined,
@@ -20,3 +23,7 @@ async function request<T>(path: string, signal: AbortSignal, body?: AnalysisRequ
 
 export const getLocations = (signal: AbortSignal) => request<Location[]>('/api/locations', signal);
 export const getAnalysis = (body: AnalysisRequest, signal: AbortSignal) => request<Analysis>('/api/evaluate', signal, body);
+
+export type MapData = components['schemas']['GeographicMap'];
+export const getMap = (alias: string, signal: AbortSignal) => request<MapData>(`/api/map?location_alias=${encodeURIComponent(alias)}`, signal);
+export const getExplanation = (body: ExplanationRequest, signal: AbortSignal) => request<Explanation>('/api/explain', signal, body);

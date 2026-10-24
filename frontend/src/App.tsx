@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { getAnalysis, getLocations } from './api';
 import { CustomerJourney } from './CustomerJourney';
+import { GeographicContext } from './GeographicContext';
+import { AskGridGuide } from './AskGridGuide';
 import type { Access, Analysis, Evaluation, Location } from './api';
 
 const options: { value: NonNullable<Access>; title: string; detail: string }[] = [
@@ -107,7 +109,7 @@ export function App() {
     <div className="utility-bar"><span>Customer outage information</span><span>Demo environment</span></div>
     <header className="site-header"><div className="header-inner">
       <a className="brand" href="/" aria-label="GridGuide home"><span className="brand-mark"><GridMark /></span>GridGuide</a>
-      <nav className="customer-nav" aria-label="Customer navigation"><a href="#main" aria-current="page">Outage status</a><a href="#topology-title">Grid context</a><a href="#customer-updates">Alerts & preparation</a></nav>
+      <nav className="customer-nav" aria-label="Customer navigation"><a href="#main" aria-current="page">Outage status</a><a href="#geography-title">Grid context</a><a href="#customer-updates">Alerts & preparation</a></nav>
     </div></header>
     <div className="breadcrumb"><span>GridGuide</span><span aria-hidden="true">/</span><span>Outage status</span></div>
 
@@ -162,6 +164,8 @@ export function App() {
         {causes.length > 0 && <ul className="cause-list">{causes.map(factor => <li key={factor.id}><span>{factor.label}</span><strong>{factor.value == null ? 'Unknown' : String(factor.value)}{factor.unit ? ` ${factor.unit.replaceAll('_', ' ')}` : ''}</strong></li>)}</ul>}
       </section>
 
+      {current && analysis && <AskGridGuide key={current.result_id} analysis={analysis} previous={previousResult} />}
+      {location && <GeographicContext locationAlias={location.alias} />}
       {location && <Topology location={location} />}
       {result && <details className="panel assumptions"><summary>What this scenario assumes <span>Scope, sources & limitations</span></summary>
         <div className="assumptions-body"><div><h3>Declared repair scope</h3><ul>{result.restoration.labor_contributions.map(work => <li key={work.task_id}>{work.quantity} × {work.recipe.replaceAll('-', ' ')}<small>Workbook: {work.source_refs.join('; ')}</small></li>)}</ul><p className="muted">Storm concern level {result.simulated_inputs.storm_level}; {result.simulated_inputs.crew_count} available reference crew. Damage and access are simulated inputs.</p></div>

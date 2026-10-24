@@ -1,6 +1,6 @@
 # Model and interface specification
 
-Status: risk/restoration/access checkpoint implemented and tested in `backend/`; guidance, alerts and AI sections remain proposed. Numerical rules and golden values were reproduced without changes. Every coefficient labeled “team assumption” must be visible in the future assumptions panel and is already included in the structured result. Source facts are documented in [DATA_AUDIT.md](DATA_AUDIT.md); synthetic inputs are not observations.
+Status: risk/restoration/access checkpoint, customer guidance/preview alerts and constrained AI explanations are implemented and tested. Numerical rules and golden values remain unchanged. The older full-product sketches below are still proposals where identified; [AI_EXPLANATIONS.md](AI_EXPLANATIONS.md) records the exact implemented provider boundary and validation. Every coefficient labeled “team assumption” is visible in the assumptions panel and included in the structured result. Source facts are documented in [DATA_AUDIT.md](DATA_AUDIT.md); synthetic inputs are not observations.
 
 ## 1. Risk band: `scenario-risk-v1`
 
@@ -171,6 +171,8 @@ The engine boundary uses Pydantic models. The browser slice now exposes these th
 For a scenario comparison, pass two validated result IDs plus a server-computed change list. Never let the LLM recompute deltas. A response must match the latest `scenario_revision`; discard late answers after a newer scenario selection.
 
 ## 6. AI output and grounded rendering
+
+**Implemented:** `/api/explain` accepts validated selections plus current/previous result IDs and a curated question. The server recomputes and binds the scenario, then builds `ExplanationContext`. The actual `ModelSelection` contract is `{result_id, intent, supporting_refs}`; the model selects only approved clauses for that intent. The server supplies the mandatory answer and caveats. Extra fields, unsupported references, stale IDs or malformed output are rejected. BLOCKED answers cannot select old finite-range comparison clauses. A vendor-neutral provider interface has an optional OpenAI adapter; no key is required. UI states distinguish AI-assisted from standard explanations. The example below remains the original design sketch, not the executable schema. See [AI_EXPLANATIONS.md](AI_EXPLANATIONS.md) for tests, timeout/fallback and privacy details. Numerical formulas above are unchanged.
 
 P0 AI role: interpret the question and select relevant explanation/guidance clauses from the validated result. Request a constrained object such as:
 

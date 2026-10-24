@@ -4,7 +4,7 @@ GridGuide is a planned map-centered customer experience for the AEP HackOHI/O 20
 
 Proposed architecture: React/TypeScript and Leaflet, one Python/FastAPI service, preprocessed local data, deterministic risk/restoration rules, and a constrained AI explanation layer with a standard offline fallback. No trained probability model or live utility integration is supported by the current data.
 
-**Browser slice: GREEN for the demonstrated local flow; model credibility remains YELLOW.** The React dashboard now calls FastAPI and the unchanged validated engine for customer → topology → risk → restoration → access change → causal explanation. Labor-unit interpretation and predictive calibration remain unresolved; output remains a conditional simulation. AI, preparation and alerts remain future work.
+**Browser slice: GREEN for the demonstrated local flow; model credibility remains YELLOW.** The React dashboard calls FastAPI and the unchanged validated engine for customer → topology → risk → restoration → access change → causal explanation → preparation and alert previews. A Leaflet map shows verified, privacy-generalized AEP geography. “Ask GridGuide” adds constrained AI-assisted reference selection with deterministic fallback. Labor-unit interpretation and predictive calibration remain unresolved; output remains a conditional simulation. Live AI-provider access has not yet been smoke-tested.
 
 ## Run the browser dashboard
 
@@ -31,9 +31,11 @@ Open **http://127.0.0.1:5173/**. The frontend proxies `/api` to port 8000. Both 
 
 Select **Clear → Restricted → Blocked → Clear**. The browser displays API-provided ranges, stable HIGH risk and the engine's calculated explanation. Blocked access has null bounds and a pending-clearance message. During requests or failures, the previous restoration range is hidden. Aborted and superseded responses cannot replace a newer selection. Controls support keyboard navigation, and the layout adapts to mobile screens.
 
-Grid context is a source-derived **dependency diagram**, explicitly labeled as schematic. Leaflet is deferred to the next slice; no geographic relationships or terminal coordinates are invented. Expand “What this scenario assumes” for declared repair scope, workbook references, unit conversion, upper allowance and limitations. No external map, font, weather or AI service is required at runtime.
+Grid context now pairs a **Leaflet geographic map** with the authoritative **dependency schematic**. The golden customer/transformer area, fuse area and 165 generalized primary-line parts come from verified AEP GIS. The Circuit Breaker terminal has no supplied geometry and stays schematic-only. Locations and lines use the existing 0.01° privacy grid; they are unsuitable for routing or distance measurement. The source geography is Virginia, despite the AEP Ohio-derived UI style. Optional attributed OpenStreetMap tiles can be disabled; tile or map failure preserves the analytical journey and schematic. See [map audit, privacy and verification](docs/GEOGRAPHIC_MAP.md).
 
-API: `GET /api/locations` returns safe location/path data; `POST /api/evaluate` accepts `location_alias`, `access`, `scenario_revision` and optional `previous: {access, scenario_revision}`. It returns `{result, comparison}` using the existing `Evaluation` and `Comparison` contracts. Previous revisions are recomputed on the server from the same immutable context, not accepted as client-calculated results. `GET /api/health` reports readiness; `/docs` provides the local API reference.
+Expand “What this scenario assumes” for declared repair scope, workbook references, unit conversion, upper allowance and limitations. No external map, font, weather or AI service is required for numerical results.
+
+API: `GET /api/locations` returns safe location/path data; `GET /api/map?location_alias=demo-a` returns the separately prepared geographic contract. `POST /api/evaluate` accepts `location_alias`, `access`, `scenario_revision` and optional `previous: {access, scenario_revision}`. It returns `{result, comparison, customer_journey}`. Previous revisions are recomputed on the server from the same immutable context, not accepted as client-calculated results. `GET /api/health` reports readiness; `/docs` provides the local API reference.
 
 Checks and generated frontend types:
 
@@ -43,7 +45,7 @@ npm --prefix frontend run types:generate
 npm --prefix frontend run build
 ```
 
-All **48 backend tests** pass (36 original + 12 API tests). TypeScript and the production build pass. Chrome verification covered the complete live-API flow, returned explanation text, keyboard controls, mobile layout, rapid changes, initial-load failure, request failure and retry. Generated TypeScript types come from FastAPI's OpenAPI schema; numerical formulas remain solely in the engine. See [browser verification record](docs/EXECUTION_PLAN.md#browser-slice-verification--october-24).
+All **89 backend tests** pass (66 existing + 23 explanation/provider tests). TypeScript and the production build pass. Chrome verification covered the complete live-API flow, preparation and previews, verified map, keyboard/mobile behavior, stale responses and failure/retry handling, plus no-key and mocked-provider explanations. Generated TypeScript types come from FastAPI's OpenAPI schema; numerical formulas remain solely in the engine. See [map verification](docs/GEOGRAPHIC_MAP.md#verification-and-rehearsal) and [AI verification](docs/AI_EXPLANATIONS.md#browser-experience-and-verification).
 
 ## Run the checkpoint
 
@@ -91,6 +93,8 @@ Validation: **36 tests passed**, including independent workbook recomputation, r
 
 - [Challenge requirements](docs/CHALLENGE_REQUIREMENTS.md)
 - [Data audit and feasibility findings](docs/DATA_AUDIT.md)
+- [Verified geographic map, privacy and fallbacks](docs/GEOGRAPHIC_MAP.md)
+- [Constrained AI explanations and optional provider setup](docs/AI_EXPLANATIONS.md)
 - [Exact GIS field inventory](docs/DATA_SCHEMA.md)
 - [Architecture and fallbacks](docs/ARCHITECTURE.md)
 - [Model rules, golden scenario and JSON contracts](docs/MODEL_SPEC.md)
@@ -109,8 +113,14 @@ The read-only [inspection utility](scripts/audit_data.py) requires Python 3.10+ 
 python scripts/audit_data.py --output /tmp/gridguide-audit.json
 ```
 
-See DATA_AUDIT for setup context and limitations. The audit has its own `shapely` dependency; the checkpoint does not require it. Next: clarify the workbook's labor basis with AEP and connect a thin API/customer view to the validated engine contract.
+See DATA_AUDIT for setup context and limitations. The audit has its own `shapely` dependency; the checkpoint does not require it. The API/customer view is implemented. Clarifying the workbook's labor basis with AEP remains an unresolved modeling task.
 
 ### Preparation and communication previews
 
 The browser now consumes teammate preparation, alert eligibility and lifecycle messages through the API. CLEAR → RESTRICTED selects an estimate-update preview; BLOCKED preserves unavailable bounds. No messages are sent and no customer needs are inferred. See [integration ownership, assumptions and rehearsal](docs/CUSTOMER_INTEGRATION.md).
+
+### Ask GridGuide
+
+Choose a suggested question beneath “Why the outlook changed.” `/api/explain` uses only the current server-validated scenario. The optional model selects approved explanation references; the server supplies all facts, numbers and caveats. Unsupported questions, malformed responses, timeouts and unavailable credentials never create new estimates. BLOCKED stays unavailable pending access clearance.
+
+No key is required. AI is disabled by default; the local “Standard explanation” path works offline. To enable the optional adapter, set server-side `GRIDGUIDE_AI_PROVIDER=openai` and securely supply `OPENAI_API_KEY`; optionally set `GRIDGUIDE_AI_MODEL`. Never use a frontend environment variable for credentials. See [provider configuration and limitations](docs/AI_EXPLANATIONS.md#optional-provider-setup). The UI is intentionally a small question panel, not general chat.

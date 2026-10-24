@@ -8,10 +8,13 @@ from fastapi.responses import JSONResponse
 from pydantic import Field, model_validator
 
 from .config import GOLDEN_ALIAS, RISK_VERSION, RESTORATION_VERSION, SNAPSHOT
-from .contracts import Access, Comparison, Contract, CustomerJourney, Evaluation, Location
+from .contracts import Access, Comparison, Contract, CustomerJourney, Evaluation, ExplanationResponse, GeographicMap, Location
+from .ai_provider import configured_provider
 from .customer import customer_journey
 from .data import CheckpointError, PreparedContext, prepare_context
 from .engine import compare_access, default_scenario, evaluate
+from .geography import prepare_map
+from .explanations import build_context, explain
 
 Revision = Annotated[int, Field(strict=True, ge=1)]
 
@@ -40,13 +43,41 @@ class AnalysisResponse(Contract):
     customer_journey: CustomerJourney
 
 
-def create_app(context_loader: Callable[[], PreparedContext] = prepare_context) -> FastAPI:
+class ExplanationRequest(AnalysisRequest):
+    result_id: Annotated[str, Field(min_length=1, max_length=128)]
+    previous_result_id: Annotated[str, Field(min_length=1, max_length=128)] | None = None
+    question: Annotated[str, Field(min_length=1, max_length=240)]
+
+
+def analyze_selection(context: PreparedContext, body: AnalysisRequest) -> AnalysisResponse:
+    result = evaluate(context, default_scenario(context, location_alias=body.location_alias,
+        access=body.access, scenario_revision=body.scenario_revision))
+    comparison = None
+    previous = None
+    if body.previous:
+        previous = evaluate(context, default_scenario(context, location_alias=body.location_alias,
+            access=body.previous.access, scenario_revision=body.previous.scenario_revision))
+        comparison = compare_access(previous, result)
+    return AnalysisResponse(result=result, comparison=comparison, customer_journey=customer_journey(result, previous, comparison))
+
+
+def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,
+               provider_loader: Callable = configured_provider) -> FastAPI:
     @asynccontextmanager
     async def lifespan(app: FastAPI):
         # Verify source pins and joins once. Failure prevents readiness entirely.
         app.state.context = context_loader()
+        app.state.explanation_provider = provider_loader()
+        try:
+            app.state.geographic_map = prepare_map(app.state.context)
+        except Exception:
+            # Optional geography must not prevent the verified analysis from starting.
+            # The map endpoint returns a safe unavailable response without private details.
+            app.state.geographic_map = None
         yield
+        del app.state.geographic_map
         del app.state.context
+        del app.state.explanation_provider
 
     app = FastAPI(title="GridGuide", version="1.0.0", lifespan=lifespan)
 
@@ -82,18 +113,29 @@ def create_app(context_loader: Callable[[], PreparedContext] = prepare_context) 
     def locations(request: Request):
         return (request.app.state.context.location,)
 
+    @app.get("/api/map", response_model=GeographicMap)
+    def geographic_map(request: Request, location_alias: str = GOLDEN_ALIAS):
+        if location_alias != GOLDEN_ALIAS:
+            raise CheckpointError("unsupported_location", "Only the audited demo location is supported.")
+        if request.app.state.geographic_map is None:
+            return JSONResponse(status_code=503, content={"error": {
+                "code": "map_unavailable", "message": "Geographic context is unavailable. The dependency schematic and analysis remain available."}})
+        return request.app.state.geographic_map
+
     @app.post("/api/evaluate", response_model=AnalysisResponse)
     def analysis(body: AnalysisRequest, request: Request):
-        context = request.app.state.context
-        result = evaluate(context, default_scenario(context, location_alias=body.location_alias,
-            access=body.access, scenario_revision=body.scenario_revision))
-        comparison = None
-        previous = None
-        if body.previous:
-            previous = evaluate(context, default_scenario(context, location_alias=body.location_alias,
-                access=body.previous.access, scenario_revision=body.previous.scenario_revision))
-            comparison = compare_access(previous, result)
-        return AnalysisResponse(result=result, comparison=comparison, customer_journey=customer_journey(result, previous, comparison))
+        return analyze_selection(request.app.state.context, body)
+
+    @app.post("/api/explain", response_model=ExplanationResponse)
+    async def explanation(body: ExplanationRequest, request: Request):
+        # Recompute from validated selections. Never accept client-supplied facts.
+        analysis = analyze_selection(request.app.state.context, body)
+        previous_id = analysis.comparison.before_result_id if analysis.comparison else None
+        if analysis.result.result_id != body.result_id or previous_id != body.previous_result_id:
+            return JSONResponse(status_code=409, content={"error": {
+                "code": "stale_result", "message": "Reload the current scenario before asking for an explanation."}})
+        context = build_context(analysis.result, analysis.customer_journey, analysis.comparison)
+        return await explain(context, body.question, request.app.state.explanation_provider)
 
     return app
 
