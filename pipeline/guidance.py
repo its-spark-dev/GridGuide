@@ -58,7 +58,7 @@ def messages(risk, low_hrs, high_hrs, confidence="Medium", new_low=None, new_hig
         "pre_storm": f"AEP GridGuide: A storm is approaching. Your area has a {risk.upper()} chance of an outage. "
                      f"If power goes out, restoration could take {est}.{unsure} Charge devices now.",
         "outage_confirmed": f"AEP GridGuide: We know your power is out. Estimated restoration: {est}.{unsure} "
-                            "Stay away from downed lines. See the GridGuide app for safety apps.",
+                            "Stay away from downed lines. See the GridGuide app for safety tips.",
         "restored": "AEP GridGuide: Power should be restored in your area. If you are still out, "
                     "please report it so a crew can check your service.",
     }
