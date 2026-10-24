@@ -35,6 +35,8 @@ One vetted Virginia customer is selected automatically. The map shows generalize
 
 The first browser panel compares four source-backed repair candidates. A historical ARCOS fuse report is associated through a disclosed nearest-pole/device spatial hypothesis with a verified 23-premise reverse set. The two golden repairs and one critical-context fuse are declared damage. Together they affect **28 unique premise dependencies**, not confirmed current outages.
 
+The recommendation names its active **GridGuide prototype** policy: **Critical-service aware** or **Customer-impact focused**. A server-computed counterfactual makes the one-versus-23 tradeoff visible. The lead explicitly distinguishes scenario dependencies from current outages. See the [judge-facing UX verification and 2:45 demo](docs/JUDGE_UX_HARDENING.md).
+
 A fire-station/nearest-premise proxy can influence the explicit **GridGuide prototype policy**; it is never a verified facility electrical attachment. Compare alternatives, toggle spatial criticality preference, change each candidate's access, and select **one/two crews separately from two–eight people per crew**. Default four-person CLEAR plan: **15.192 person-hours**, **3.75–15.25 conditional elapsed hours** with one crew, **3.25–13.5** with two. Blocked work and dependent tasks are deferred. Actual switching-restorable counts stay null.
 
 The reusable private index has 8,093 physical assets with complete reverse evidence, out of 32,600 syntactically indexed assets. Incomplete memberships are withheld. The UI is a curated four-candidate comparison, not system-wide optimization. See [Q2/Q4 audit, evidence and demo](docs/Q2_Q4_DECISION_SUPPORT.md).

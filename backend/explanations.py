@@ -103,7 +103,12 @@ def question_intent(question: str, context: ExplanationContext) -> ExplanationIn
     normalized = " ".join(question.lower().replace("’", "'").replace("–", "-").strip().rstrip("?.").split())
     if context.scope == "restoration_plan":
         return {"which customers depend on this damage": "impact", "why this action first": "priority",
-                "how do available crews change this plan": "crew_plan"}.get(normalized, "unsupported")
+                "how do available crews change this plan": "crew_plan",
+                "why are you prioritizing one customer over 23": "policy_tradeoff",
+                "is that fire station actually powered by this fuse": "facility_connection",
+                "are 28 customers currently out": "current_outages",
+                "why does adding a second crew not cut the time in half": "crew_plan",
+                "can switching restore all of them": "switching"}.get(normalized, "unsupported")
     questions = {
         "why is my outage risk high": "risk", "what does high mean": "risk",
         "why did my estimate change": "change", "why did my restoration estimate change": "change",
@@ -125,7 +130,11 @@ def explanation_plan(context: ExplanationContext, intent: ExplanationIntent) -> 
     if context.scope == "restoration_plan":
         return {
             "impact": ("impact-summary", ("damage-match", "overlap", "switching-limit")),
-            "priority": ("priority-summary", ("criticality-context", "overlap", "access-detail")),
+            "priority": ("priority-summary", ("policy-tradeoff", "criticality-context", "access-detail")),
+            "policy_tradeoff": ("policy-tradeoff", ("criticality-context", "priority-summary", "access-detail")),
+            "facility_connection": ("facility-connection", ("criticality-context", "damage-match", "switching-limit")),
+            "current_outages": ("current-outages", ("impact-summary", "damage-match", "overlap")),
+            "switching": ("switching-limit", ("overlap", "access-detail", "crew-allocation")),
             "crew_plan": ("plan-summary", ("crew-allocation", "time-policy", "access-detail")),
         }[intent]
     risk_refs = tuple(c.id for c in context.clauses if c.id.startswith("risk-") and c.id != "risk-summary")

@@ -538,7 +538,7 @@ export interface components {
              * Intent
              * @enum {string}
              */
-            intent: "risk" | "restoration" | "change" | "preparation" | "availability" | "topology" | "alerts" | "labor" | "priority" | "impact" | "crew_plan" | "unsupported";
+            intent: "risk" | "restoration" | "change" | "preparation" | "availability" | "topology" | "alerts" | "labor" | "priority" | "impact" | "crew_plan" | "policy_tradeoff" | "facility_connection" | "current_outages" | "switching" | "unsupported";
             /**
              * Mode
              * @enum {string}

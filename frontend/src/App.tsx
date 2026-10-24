@@ -127,8 +127,8 @@ export function App() {
 
     <main id="main">
       <RestorationDecision />
-      <div className="intro"><div><span className="eyebrow">OUTAGE STATUS</span>
-        <h1>Your outage & restoration outlook</h1><p>Follow repair effort, crew assumptions and access through a modeled restoration.</p></div>
+      <div className="intro"><div><span className="eyebrow">SEPARATE CUSTOMER SCENARIO · DEMO A</span>
+        <h1>Your outage & restoration outlook</h1><p>This individual outlook covers Demo A’s two declared repairs. Its scope is separate from the four-candidate comparison above.</p></div>
         <div className="location-chip"><span className="location-icon" aria-hidden="true">⌖</span><div><strong>{location?.label ?? 'Loading location…'}</strong><span>Anonymized customer · Virginia challenge data</span></div></div>
       </div>
 

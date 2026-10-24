@@ -4,7 +4,7 @@ The original planning/engine/browser milestones are complete and superseded by t
 
 ## Current Q2/Q4 pass
 
-Implemented generalized complete reverse membership validation, qualified historical ARCOS pole/device spatial replay, facility/premise spatial proxy, four-candidate prototype ranking and one/two-crew scheduling with separate people controls. See [Q2/Q4 decision support](Q2_Q4_DECISION_SUPPORT.md) for current evidence and verification. Prior realignment is committed at `8d6f7ee`; this pass is intentionally uncommitted and must not be pushed without authorization.
+Implemented generalized complete reverse membership validation, qualified historical ARCOS pole/device spatial replay, facility/premise spatial proxy, four-candidate prototype ranking and one/two-crew scheduling with separate people controls. See [Q2/Q4 decision support](Q2_Q4_DECISION_SUPPORT.md) for current evidence and verification. Prior realignment is committed at `8d6f7ee`, and Q2/Q4 decision support at `e64edd5`. The final [judge-facing UX hardening](JUDGE_UX_HARDENING.md) preserves those algorithms and is intentionally uncommitted. Do not push without authorization.
 
 ## Ownership
 

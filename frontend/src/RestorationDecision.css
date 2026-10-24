@@ -68,3 +68,52 @@
 .decision-audit { border-top: 1px solid #ddd; font-size: 14px; }.decision-audit summary { padding: 18px 0; color: var(--action); font-size: 17px; font-weight: 700; }.decision-audit p,.decision-audit li { margin: 10px 0; }.decision-audit dl > div { margin: 16px 0; }.decision-audit dt { font-weight: 700; }.decision-audit dt .small-badge { margin-left: 8px; font-weight: 400; }.decision-audit dd { margin: 6px 0; color: var(--muted); }
 @media(max-width:1080px) { .decision-summary { grid-template-columns: 1fr; }.decision-stats { padding: 18px 0 0; border-left: 0; border-top: 1px solid #c4d9e7; flex-direction: row; justify-content: space-between; }.decision-stats > div { display: block; }.decision-stats dd { text-align: left; font-size: 23px; }.decision-access { grid-template-columns: 1fr 1fr; }.decision-controls { grid-template-columns: 1fr 1fr; }.decision-controls .decision-proxy-toggle { grid-column: 1 / -1; }.decision-geography { grid-template-columns: 1fr; } }
 @media(max-width:700px) { .decision-summary { padding: 22px 18px; }.decision-next h3 { font-size: 25px; }.decision-stats { flex-direction: column; gap: 10px; }.decision-stats > div { display: flex; }.decision-stats dd { text-align: right; }.decision-stats small { font-size: 11px; }.decision-controls,.decision-access { gap: 14px; }.decision-controls legend,.decision-access legend { font-size: 17px; }.decision-access { grid-template-columns: 1fr; }.decision-candidates { grid-template-columns: 1fr; }.decision-candidate { padding: 16px; }.decision-candidate-metrics { gap: 10px; }.decision-candidate-metrics dd { font-size: 23px; }.decision-geography { padding: 20px 16px; gap: 20px; }.decision-map { height: 270px; }.decision-lane { display: block; }.decision-lane h4 { margin: 0 0 12px; }.decision-lane ol { display: block; }.decision-lane li + li { margin-top: 10px; }.decision-milestones th,.decision-milestones td { padding: 10px 8px; }.decision-answer { padding: 16px; }.decision-explanation button { width: 100%; }.decision-comparison { gap: 14px; }.decision-comparison b { font-size: 14px; } }
+/* Judge-facing policy and evidence treatment; numerical rules remain server-owned. */
+.restoration-decision { margin-top: 20px; padding-top: 24px; border-top-width: 8px; }
+.decision-intro { margin-bottom: 18px; max-width: 920px; }
+.evidence-tag { display: inline-block; font-size: 12px; font-weight: 600; line-height: 1.4; padding: 4px 8px; border-radius: 4px; border: 1px solid transparent; }
+.evidence-tag.known { color: #175379; background: #e8f1f8; border-color: #c4d9e7; }
+.evidence-tag.modeled { color: #424c55; background: #eef1f3; border-color: #d6dde2; }
+.evidence-tag.policy { color: #185b53; background: #e8f5f1; border-color: #bbdacf; }
+.evidence-tag.spatial { color: #74501a; background: #fff4df; border-color: #e7d4ad; }
+.evidence-tag.unavailable { color: #5d4650; background: #f5eef1; border-color: #d9cbd1; }
+.decision-summary { gap: 18px 24px; padding-top: 22px; margin-bottom: 22px; }
+.decision-next h3 { margin-bottom: 10px; }
+.decision-next .decision-active-policy { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 0 0 12px; font-size: 15px; }
+.decision-next > p { margin-top: 10px; }
+.decision-critical-inline { margin: 12px 0; font-size: 13px; }
+.decision-critical-inline strong { display: block; margin-top: 5px; color: #624b2d; font-weight: 500; }
+.decision-action-facts { border-top: 1px solid #c4d9e7; padding-top: 12px; font-size: 15px; }
+.decision-next .decision-lead-counterfactual { font-size: 14px; color: #344b5a; }
+.decision-stats { justify-content: center; }
+.decision-stats dt { line-height: 1.5; }.decision-stats dt small { font-size: 12px; }
+.decision-stats dd small { white-space: normal; }
+.decision-policy { border: 0; padding: 0; margin: 20px 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.decision-policy legend { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+.decision-policy legend > span { display: block; font-size: 12px; color: var(--muted); font-weight: 400; margin-top: 3px; }
+.decision-policy label { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border: 1px solid var(--border); border-radius: 5px; cursor: pointer; }
+.decision-policy label.is-active { border-color: var(--action); box-shadow: inset 0 0 0 1px var(--action); background: #f1f7fb; }
+.decision-policy input { flex-shrink: 0; width: 19px; height: 19px; margin: 3px 0; accent-color: var(--action); }
+.decision-policy strong { display: block; font-size: 17px; }.decision-policy small { display: block; font-size: 13px; color: var(--muted); line-height: 1.5; margin-top: 4px; }
+.decision-tradeoff { border-left: 3px solid #6f9690; background: #f3f8f6; padding: 18px 22px; margin-bottom: 26px; }
+.decision-tradeoff h3 { margin-bottom: 14px; font-size: 20px; }.decision-tradeoff > p { font-size: 13px; margin-top: 12px; line-height: 1.55; }
+.decision-tradeoff-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.decision-tradeoff-options > div + div { border-left: 1px solid #c9d9d4; padding-left: 20px; }
+.decision-tradeoff-options span { display: block; font-size: 13px; color: #365950; margin-bottom: 6px; }.decision-tradeoff-options strong { font-size: 18px; }.decision-tradeoff-options p { font-size: 14px; margin-top: 6px; }
+.decision-controls { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 800px; }.decision-controls label > small { display: block; margin-top: 7px; font-size: 13px; font-weight: 400; color: var(--muted); line-height: 1.4; }
+.decision-deferred { padding: 20px 24px; margin: 20px 0; background: #f8f3ef; border-left: 4px solid #9b6a40; }.decision-deferred h3 { margin: 12px 0 8px; font-size: 23px; }.decision-deferred p,.decision-deferred li { font-size: 14px; }.decision-deferred ul { padding-left: 20px; margin-top: 12px; }.decision-deferred li + li { margin-top: 7px; }
+.decision-geography { grid-template-columns: .9fr 1fr; }
+.decision-evidence-chain { padding-left: 22px; margin: 18px 0; font-size: 14px; }.decision-evidence-chain li { padding: 5px 0; }.decision-evidence-chain li::marker { color: var(--action); font-weight: 700; }
+.decision-selected-prerequisites { border-top: 1px solid #d5dce0; padding-top: 16px; font-size: 14px; }.decision-selected-prerequisites p { margin-top: 8px; }
+.decision-lane li.is-selected { box-shadow: inset 0 0 0 1px var(--action); }
+.decision-task-select { display: block; background: none; color: var(--action); border: 0; text-align: left; padding: 4px 0; font-size: 15px; font-weight: 700; min-height: 44px; }
+.decision-lane .decision-task-wait { border-left: 2px dashed #907140; padding: 6px 9px; margin: 0 0 8px; background: #faf5e9; }.decision-task-wait strong { color: #64502c; font-size: 13px; }.decision-task-wait span { font-size: 12px; }
+.decision-lane ol { align-items: flex-start; }.decision-lane li { min-width: 0; }
+.restoration-decision button:focus-visible,.restoration-decision summary:focus-visible,.decision-table-scroll:focus-visible { outline: 3px solid var(--action); outline-offset: 3px; }
+.decision-hostile { margin-top: 16px; }.decision-hostile summary { padding: 12px 0; color: var(--action); font-weight: 700; }.decision-hostile .explanation-questions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+@media(max-width:1080px) { .decision-geography { grid-template-columns: 1fr; }.decision-summary { gap: 14px; }.decision-stats { justify-content: space-between; } }
+@media(max-width:700px) { .decision-policy,.decision-tradeoff-options { grid-template-columns: 1fr; }.decision-policy label { padding: 14px; }.decision-tradeoff { padding: 18px 16px; }.decision-tradeoff-options { gap: 12px; }.decision-tradeoff-options > div + div { border-left: 0; border-top: 1px solid #c9d9d4; padding: 12px 0 0; }.decision-hostile .explanation-questions { grid-template-columns: 1fr; }.decision-summary-note { font-size: 12px; }.decision-stats dt { max-width: 55%; }.decision-stats dd { white-space: normal; }.decision-deferred { padding: 18px 16px; } }
+@media(max-width:370px) { .decision-controls { grid-template-columns: 1fr; }.decision-stats > div { display: block; }.decision-stats dt { max-width: none; }.decision-stats dd { text-align: left; margin-top: 4px; }.decision-next h3 { font-size: 23px; } }
+.decision-story-links { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 14px; }
+.decision-story-links a { color: var(--action); text-decoration: underline; text-underline-offset: 3px; padding: 3px 0; }
+#decision-geography-title,#decision-schedule-title { scroll-margin-top: 24px; }

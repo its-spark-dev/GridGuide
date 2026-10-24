@@ -400,7 +400,7 @@ class GeographicMap(Contract):
     disclosures: tuple[str, ...]
 
 
-ExplanationIntent = Literal["risk", "restoration", "change", "preparation", "availability", "topology", "alerts", "labor", "priority", "impact", "crew_plan", "unsupported"]
+ExplanationIntent = Literal["risk", "restoration", "change", "preparation", "availability", "topology", "alerts", "labor", "priority", "impact", "crew_plan", "policy_tradeoff", "facility_connection", "current_outages", "switching", "unsupported"]
 ExplanationSource = Literal["modeled", "simulated", "verified", "mixed"]
 
 

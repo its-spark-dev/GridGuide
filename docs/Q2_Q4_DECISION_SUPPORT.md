@@ -4,6 +4,8 @@ Audit date: 2026-10-24. This document records the source investigation, bounded 
 
 The source investigations and integrated implementation are locally verified: **171 tests passed**, generated types reproduce byte-for-byte, strict TypeScript/production build passes, 15 desktop/mobile/keyboard/failure browser check groups pass, and all three live Gemini plan questions returned validated AI-assisted answers (2.3–2.8 seconds). Raw-source pins and teammate pipelines/data remain unchanged; credentials and generated artifacts remain excluded. No commit or push was made. See [executed freeze evidence](DEMO_FREEZE.md). Q2 historical matching remains conditional and Q4 remains prototype decision support, not operational confirmation.
 
+The implementation described here is now committed at `e64edd5`. Its historical 32-file manifest below records that completed pass. The subsequent presentation/explanation-only pass is documented in [JUDGE_UX_HARDENING.md](JUDGE_UX_HARDENING.md); current validation totals and demo wording are there.
+
 ## 1. What the prototype now supports
 
 A complete private reverse index is constructed from all supplied upstream records before any circuit or display filtering. Every candidate asset retains all source premise memberships. Publishing a complete dependent count requires validating every membership, including customer existence, exact typed equipment identity, type/location metadata, circuit/station agreement, unambiguous parentage, and each GIS upstream relationship. A valid path alone cannot make an incomplete asset reverse set valid.

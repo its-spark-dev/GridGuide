@@ -173,7 +173,8 @@ def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,
         plan = make_plan(context, body)
         if plan.result_id != body.result_id:
             return JSONResponse(status_code=409, content={"error": {"code": "stale_result", "message": "Reload the current plan before asking for an explanation."}})
-        return await request.app.state.explanation_service.answer(build_plan_context(plan), body.question)
+        alternative = make_plan(context, body.model_copy(update={"use_critical_proxy": not body.use_critical_proxy}))
+        return await request.app.state.explanation_service.answer(build_plan_context(plan, alternative), body.question)
 
     return app
 

@@ -1,8 +1,16 @@
-# GridGuide Q2/Q4 feature-freeze evidence — October 24, 2026
+# GridGuide feature-freeze evidence — October 24, 2026
 
 **Local implementation: GREEN. Operational evidence: bounded / YELLOW.** Q2 supports complete reverse dependencies for verified source assets and a qualified historical ARCOS spatial replay. It does not establish direct ARCOS identity or current outages. Q4 supports an explicit four-candidate prototype priority policy, spatial critical-premise context, one/two-crew scheduling and conditional time. It is not AEP dispatch policy. Actual switching, facility electrical attachment, measured efficiency and clearance duration remain unavailable.
 
 Detailed source investigation, coverage denominators, six-class evidence ledger, candidate comparison, ten hostile judge questions and the current 2–3 minute demo: [Q2_Q4_DECISION_SUPPORT.md](Q2_Q4_DECISION_SUPPORT.md). Formulas: [MODEL_SPEC.md](MODEL_SPEC.md). Requirement matrix: [REQUIREMENTS_TRACEABILITY.md](REQUIREMENTS_TRACEABILITY.md).
+
+## Current judge-facing hardening pass
+
+The Q2/Q4 implementation is committed at `e64edd5`. The subsequent UI/explanation pass is intentionally uncommitted: **177 backend tests pass**, types reproduce, strict TypeScript/production build pass, **19 browser groups** pass across 1440/768/390/320 widths, and all five live hostile questions return validated AI-assisted answers in 706–852 ms. Final navigation/timeline checks also pass. No numerical, matching, raw-data or teammate-pipeline changes; no commit/push in this pass.
+
+The lead now says **Scenario recommendation**, with **Critical-service aware** or **Customer-impact focused** visibly labeled **GridGuide prototype · not an AEP setting**. The one-versus-23 counterfactual is computed by the existing algorithm, not the browser. Facility electrical attachment remains unverified beside every spatial indicator. Crew waits and potential dependency-release milestones are explicit.
+
+Use the [current 2:45 demo, hostile question results and first-impression assessment](JUDGE_UX_HARDENING.md). Earlier Q2/Q4 validation below is retained as the implementation checkpoint record; the current pass supersedes its UI wording and test totals. **FREEZE** after review of the current diff.
 
 ## Recover the demo
 
@@ -55,7 +63,7 @@ Restricted access adds **2.25 person-hours per declared separate worksite**. Blo
 
 The original customer-v2 golden scenario remains **11.736 repair person-hours**; four-person clear **2.5–12 h**, restricted **16.236 person-hours / 4–16.5 h**, blocked null. Risk remains score 4 / HIGH, predictive confidence LOW, probability null. Customer declarations stay session-only and outside AI/infrastructure priority. Communications remain previews; no delivery occurs.
 
-## Executed validation
+## Q2/Q4 implementation checkpoint validation
 
 - Full `.venv/bin/python -m unittest discover -s tests -v`: **171 tests passed**, final run 55.885 s. Includes all 118 baseline tests plus source matching, spatial ambiguity, generalized reverse sets, candidate scheduling, null evidence, privacy and grounded-plan checks.
 - Golden `backend.demo`, RESTRICTED and BLOCKED commands succeeded. Source hashes checked throughout; no raw mutation.
@@ -70,6 +78,6 @@ Transient test logs, browser scripts and screenshots are under `/tmp/gridguide-q
 
 ## Freeze recommendation and boundaries
 
-**Ready for a bounded prototype feature freeze after review of this uncommitted diff.** Prior realignment is already committed at `8d6f7ee`; this pass deliberately creates no commit. Focus remaining effort on rehearsing the evidence chain and preserving the fallback path.
+**Ready for a bounded prototype feature freeze after review of this uncommitted diff.** Prior realignment is committed at `8d6f7ee` and Q2/Q4 decision support at `e64edd5`; the current UX pass deliberately creates no commit. Focus remaining effort on rehearsing the evidence chain and preserving the fallback path.
 
 Do not add weather, RAG, training, authentication, messaging, power flow or more candidate recipes in this freeze. Actual operational use needs authoritative damage identity, positional accuracy/service attachment, full topology reconciliation, measured productivity/concurrency, qualified crew composition, dispatch/clearance/material timing, switching state/protection/capacity and utility priority/alert policy. Preserve these as unavailable rather than choosing defaults.
