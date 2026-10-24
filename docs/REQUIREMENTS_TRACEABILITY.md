@@ -1,16 +1,22 @@
 # Requirements traceability
 
-Use this table before submission. Requirement IDs and authority are defined in [CHALLENGE_REQUIREMENTS.md](CHALLENGE_REQUIREMENTS.md). **The engine subset is implemented; no full customer UI/AI requirement is claimed complete.** The original table below retains planned full-product UI/demo checks. Current implementation evidence supersedes its engine-only planned statuses as follows:
+Final freeze review: 2026-10-24. Requirement IDs and source authority are in [CHALLENGE_REQUIREMENTS.md](CHALLENGE_REQUIREMENTS.md). **The frozen customer demo works, but full challenge coverage is not complete.** See [DEMO_FREEZE.md](DEMO_FREEZE.md) for startup, final test evidence and the judging sequence.
 
-| Requirement subset | Current evidence | Remaining work |
+| Requirement subset | Current evidence | Remaining limitation / gap |
 |---|---|---|
-| R01–R04 location, signals and risk | `backend/data.py`, `backend/engine.py`; actual golden joins, risk truth table and missing-input tests in `tests/test_checkpoint.py` | API/map/cards and customer-facing review; risk remains uncalibrated |
-| R05–R08 restoration, scenario and provenance | Independent workbook recomputation; access/quantity monotonicity; crew plateau; blocked null range; source/simulation/assumption fields | Resolve labor basis; connect controls and persistent caveats |
-| R16–R17 engine fallback and privacy | Typed null states, explicit unsupported-input errors, extra-field rejection, private-ID/coordinate serialization tests | API error handling, browser/LLM boundary and fallback integration |
-| E01 counterfactual comparison | `compare_access()` returns causal references, numeric deltas and null transitions; rejects mixed input/labor changes | Render comparison in the customer view |
-| R09–R15, R18–R19 | Design only; no guidance, alert, AI or accessibility implementation in this checkpoint | Implement and verify the full planned experience |
+| R01–R04 location, signals and risk | Vetted `demo-a`, map/list, three risk factors, LOW confidence; checkpoint/API/geography tests | One auto-selected demo customer; uncalibrated ordinal band, no outage probability |
+| R05–R08 restoration, scenario and provenance | Exact CLEAR/RESTRICTED/BLOCKED values; browser access changes; topology, workbook factors and caveats; crew plateau tests | Labor-hour basis unresolved; reference-crew conversion and upper allowance are assumptions; no real-world ETR validation |
+| R09–R10 preparation and safety | Teammate guidance adapted through `backend/customer.py`; finite/null and message consistency tests | General preparation only; no declared-needs input |
+| R11 declared accessibility, medical or critical-facility needs | Privacy tests confirm no inference; UI explicitly says no needs declared | **Not implemented in the customer journey.** Teammate helper support is not an end-to-end declaration feature. Outstanding challenge requirement; not added during freeze |
+| R12–R14 eligibility, timing/channel/escalation and lifecycle | Eligibility separated from consent; suggested channels/timing; four hypothetical messages; strict >6-hour raw change or availability transition | No enrollment, delivery or live schedule; needs-based channel/escalation path unavailable without R11. These are team policies |
+| R15, R18 grounded AI and integrated flow | Current result-bound approved references; live Gemini CLEAR/RESTRICTED/BLOCKED/risk; full browser journey | Curated question panel, not open-domain chat; network and quota availability vary |
+| R16–R17 fallback and privacy | Null bounds, safe Standard answers, provider fault tests, generalized GIS, strict DTOs, no raw IDs/coordinates in LLM context | Local backend and prepared source data still required; offline means external services optional, not a standalone offline browser |
+| R19 accessibility | Native keyboard radios/buttons/disclosures, text labels, live regions, 390/768 px checks | Focused browser checks, not a formal assistive-technology or WCAG certification |
+| E01 counterfactual comparison | Engine-derived before/after values, causal factors, result revision binding and stale-response rejection | Only access is interactive in this frozen UI |
 
-**Browser slice update:** the core R01–R08 and E01 behavior now runs through FastAPI and the React dashboard. The dependency view is a schematic; Leaflet remains deferred. R16/R17 API errors and privacy have dedicated tests, and browser checks cover keyboard access controls, narrow layout, stale requests and retry. The 36 checkpoint tests plus 12 API tests pass; TypeScript/build and the live-API browser flow pass. These results supersede the earlier engine-only remaining-work cells above. AI, guidance and alerts are still unimplemented, so the full submission is not complete. See [EXECUTION_PLAN.md](EXECUTION_PLAN.md).
+## Original planning matrix (not current completion claims)
+
+The table below retains the intended full-product acceptance plan. Its “planned” entries and broader controls must not be interpreted as shipped behavior; the current evidence and gaps above supersede earlier engine-only/browser-only status summaries.
 
 | AEP requirement | GridGuide feature | Source data | Computation | UI representation | Demo action | Validation / status |
 |---|---|---|---|---|---|---|

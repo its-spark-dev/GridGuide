@@ -101,19 +101,20 @@ Adapter policy (team choices): server-side fetch for a coarse representative reg
 
 ## Preparation and communication rules
 
-Guidance is a reviewed catalog keyed by band, duration interval, simulated lifecycle, and explicit declarations. Baseline covers lighting/charging and preparation; extended-duration scenarios add backup-plan review. For a declared power-dependent medical need, recommend contacting the person's provider/device supplier to plan backup power; never prescribe medical settings or infer urgency from raw customer fields. Keep personal declarations session-only and optional. Safety text should be fixed reviewed wording: outdoor generator use away from openings, and emergency help for immediate danger. See the [Ready.gov outage sheet](https://www.ready.gov/sites/default/files/2024-08/ready.gov_power-outage_info-sheet.pdf) and [FDA device preparedness guidance](https://www.fda.gov/medical-devices/emergency-situations-medical-devices/fda-offers-tips-about-medical-devices-and-natural-disasters). Do not let the LLM author equipment repair/switching instructions.
+The frozen browser adapts `pipeline/guidance.py` through `backend/customer.py`, using band, displayed duration and confidence. It collects no personal declarations, contacts or opt-in; `priority_needs=False` means no declaration was collected. Baseline covers lighting/charging and preparation; extended-duration scenarios add backup-plan review. Safety copy is fixed teammate guidance, never LLM-authored repair/switching instructions. Optional declared-needs adaptation remains an unimplemented challenge requirement, not a feature of this demo. A future implementation must use explicit declarations, never infer medical needs from raw customer fields. Background guidance: [Ready.gov outage sheet](https://www.ready.gov/sites/default/files/2024-08/ready.gov_power-outage_info-sheet.pdf) and [FDA device preparedness guidance](https://www.fda.gov/medical-devices/emergency-situations-medical-devices/fda-offers-tips-about-medical-devices-and-natural-disasters).
 
-Documented **GridGuide demo rules**, not AEP enrollment rules:
+Implemented **GridGuide prototype policies**, not official AEP enrollment or timing rules:
 
 | State/trigger | Eligibility and timing | Channel / escalation |
 |---|---|---|
-| Pre-storm HIGH/SEVERE, or declared power-dependent need | Eligible; preview immediately when entering state; otherwise show preparation without unsolicited alert | Preferred synthetic channel, default in-app; offer backup-plan review for declared need |
-| Explicit simulated outage-confirmed event | Eligible; immediate outage preview | Selected channel; clearly label simulated confirmation |
-| New estimate differs by at least one displayed endpoint hour, risk category worsens, or becomes unavailable | Eligible; immediate update preview; suppress duplicate revision | Selected channel; unknown/blocked access recommends checking utility information |
-| Explicit simulated restoration-complete event | Eligible; one completion preview | Selected channel; never triggered just by a timer/range expiring |
-| Immediate danger explicitly reported | Show emergency action promptly, independent of score or opt-in | Advise local emergency services; do not promise delivery/dispatch |
+| HIGH/SEVERE; or MODERATE with displayed upper bound ≥12 hours | Eligible for demo alerts; unknown duration cannot establish duration-dependent eligibility | Suggested SMS/in-app, never sent; LOW receives in-app information |
+| Pre-storm preview | Team timing assumption: 24 hours before a storm; no live storm schedule exists | Display sample text only |
+| Eligible customer and either raw restoration endpoint changes by **more than 6 hours**, or availability changes between finite/unavailable | Qualifies for an update preview; exactly 6 hours does not qualify | CLEAR → RESTRICTED qualifies through the 6.75-hour upper change; finite/unavailable is an explicit adapter extension |
+| Displayed bounds change without crossing the qualifying threshold | An estimate-update sample can be viewed, but is not an eligible notification | Preview availability and alert qualification are separate; identical scenarios do not create an update |
+| Outage-confirmed / restoration-complete preview selected | Hypothetical message only; no utility state changes | Never triggered by a timer or interpreted as a confirmed event |
+| Safety guidance | Always shown, independent of alert eligibility | No emergency dispatch integration |
 
-Separate `eligibility` from `opt_in`: an eligible person who has not opted in receives an explanation and on-screen preview, not a claim of enrollment. Sending is out of MVP scope; no SMS/email provider required. Channel choice is a recommendation/preview. Refresh on new scenario/lifecycle events; do not invent a utility update cadence. The UI must cover all four message states and show at least one proactive preview in the main demo.
+Eligibility is distinct from consent: no enrollment, channel selection or actual scheduling occurs. All four lifecycle states are previews. The earlier planning rule of a one-hour displayed change is superseded by the integrated **strict >6-hour raw endpoint** policy above; it is tested at 6 and 6.001 hours. See [customer integration](CUSTOMER_INTEGRATION.md) and [demo freeze](DEMO_FREEZE.md).
 
 ## Failure behavior
 

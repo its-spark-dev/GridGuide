@@ -2,6 +2,8 @@
 
 Baseline: 2026-10-24 audit. Likelihood describes the proposed hackathon build, not the probability of a real outage. Owner labels match EXECUTION_PLAN. Review at 2:30 PM and before the final rehearsal.
 
+**Final freeze review:** the customer journey, GIS, Gemini/Standard explanations and failure recovery now pass the local demo checks; the engine-only status at the end of this historical register is superseded by [DEMO_FREEZE.md](DEMO_FREEZE.md). Overall submission assessment remains YELLOW: R11 declared-needs adaptation is absent, R13 needs-based escalation is consequently partial, and labor semantics remain provisional. No runtime blocker was found. These gaps are disclosed rather than filled with new features during the authorized freeze. The integrated alert-update policy is strict **>6 raw endpoint hours**, or a finite/unavailable transition, subject to eligibility; the earlier one-displayed-hour planning rule is obsolete.
+
 | Risk | Likelihood / impact | Detection | Mitigation / owner | Fallback |
 |---|---|---|---|---|
 | Incomplete/contradictory topology | High / High | Only 52,321 customers have every non-circuit node ID resolved; 60 multi-parent nodes; 1,705 residual GIS-parent disagreements after recognizing terminal sentinel | Preserve per-premise paths, reject conflicting fixtures; no invented geometry; A | Use vetted Demo A path; insufficient-data state elsewhere |

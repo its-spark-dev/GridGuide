@@ -42,8 +42,10 @@ function VerifiedMap({ data }: { data: MapData }) {
       const area: L.LatLngBoundsExpression = [[point.latitude - half, point.longitude - half], [point.latitude + half, point.longitude + half]];
       bounds.extend(area);
       L.rectangle(area, { color: '#025a95', weight: 1, fillOpacity: .08, dashArray: '3 4', interactive: false }).addTo(map);
-      const label = assets.map(asset => asset.label).join(' + ');
       const containsCustomer = assets.some(asset => asset.kind === 'customer');
+      const label = assets.length === 2 && containsCustomer && assets.some(asset => asset.kind === 'transformer')
+        ? 'Customer + serving transformer'
+        : assets.length === 1 && assets[0].kind === 'fuse' ? 'Upstream fuse' : assets.map(asset => asset.label).join(' + ');
       const symbol = assets.map(asset => ({ customer: 'C', transformer: 'T', fuse: 'F', circuit_terminal: '' })[asset.kind]).join(' + ');
       const icon = L.divIcon({ className: 'verified-map-marker', html: `<span class="${containsCustomer ? 'customer-marker' : 'equipment-marker'}">${symbol}</span>`, iconSize: [52, 44], iconAnchor: [26, 22] });
       const popup = document.createElement('div');
@@ -93,8 +95,8 @@ function VerifiedMap({ data }: { data: MapData }) {
   };
   return <>
     <div className="geography-toolbar"><span>{data.region_label}</span><div>
-      <label><input type="checkbox" checked={streets} onChange={event => setStreets(event.target.checked)} /> Street basemap (online)</label>
-      <button type="button" onClick={() => { mapRef.current?.closePopup(); if (overview.current) mapRef.current?.fitBounds(overview.current, { padding: [30, 30], maxZoom: 12 }); }}>Show full context</button>
+      <label><input type="checkbox" checked={streets} onChange={event => setStreets(event.target.checked)} /> Street map</label>
+      <button type="button" onClick={() => { mapRef.current?.closePopup(); if (overview.current) mapRef.current?.fitBounds(overview.current, { padding: [30, 30], maxZoom: 12 }); }}>View full grid context</button>
     </div></div>
     <div className="geography-layout">
       <div><div className="geographic-map" ref={host} role="region" aria-label="Verified geographic context for Demo location A" aria-describedby="map-precision" data-testid="geographic-map" />
@@ -109,11 +111,11 @@ function VerifiedMap({ data }: { data: MapData }) {
         <a href="#topology-title">See the verified dependency path ↓</a>
       </div>
     </div>
-    <ul className="map-legend" aria-label="Map legend"><li><b>C + T</b> Customer & transformer area</li><li><b>F</b> Fuse area</li><li><span className="line-key" /> Generalized primary lines</li><li><span className="area-key" /> Privacy grid area</li></ul>
-    <p id="map-precision" className="map-disclosure">{data.disclosures[0]} {data.disclosures[1]}</p>
+    <ul className="map-legend" aria-label="Map legend"><li><b>C + T</b> Customer + transformer</li><li><b>F</b> Upstream fuse</li><li><span className="line-key" /> Generalized primary lines</li><li><span className="area-key" /> Approximate area</li></ul>
+    <p id="map-precision" className="map-disclosure">Approximate areas only; exact positions are hidden. Do not use this map for routing or distance measurement.</p>
     <p className="map-disclosure">{data.disclosures[3]}</p>
-    <details className="map-provenance"><summary>Map sources & missing geometry</summary>
-      <p>{data.disclosures[2]}</p><p>{data.primary_lines.note}</p>
+    <details className="map-provenance"><summary>Map details & limitations</summary>
+      {data.disclosures.slice(0, 3).map(disclosure => <p key={disclosure}>{disclosure}</p>)}<p>{data.primary_lines.note}</p>
       <p>Source layers: Customer_Clip, Transformer_Clip, Fuse_Bank_Clip, Primary_ExportFeatures. Point identities use the verified customer record and typed upstream IDs.</p>
       <p>{data.primary_lines.status === 'available' ? `${data.primary_lines.source_segment_count} source primary segments match the verified circuit; ${data.primary_lines.paths.length} generalized parts remain visible and ${data.primary_lines.omitted_collapsed_parts} parts collapse below the privacy grid.` : 'No primary lines are displayed.'}</p>
     </details>

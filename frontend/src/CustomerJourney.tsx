@@ -16,12 +16,12 @@ export function CustomerJourney({ journey }: { journey: Journey }) {
         <p className="journey-note">{preparation.note}</p>
       </article>
       <article className="alert-eligibility" aria-labelledby="eligibility-title">
-        <h3 id="eligibility-title">Will GridGuide keep me informed?</h3>
+        <h3 id="eligibility-title">Would this scenario qualify for alerts?</h3>
         <strong className="eligibility-status" data-testid="alert-eligibility">{alerts.eligible === true ? 'Eligible for demo alerts' : alerts.eligible === false ? 'In-app information only' : 'Eligibility needs more information'}</strong>
         <p>{alerts.reason}</p>
         <p>Suggested channels: {alerts.suggested_channels.map(channel => ({ app: 'in-app', sms: 'SMS', phone_call: 'phone call' })[channel]).join(', ')}.</p>
-        <p className="delivery-note">{journey.delivery_note}</p>
-        <details><summary>How demo eligibility works</summary><p>{alerts.assumptions}</p>{Object.entries(alerts.timing).map(([kind, timing]) => <p key={kind}>{kind === 'pre_storm' ? 'Pre-storm' : 'Estimate update'}: {timing}.</p>)}<p>No live storm schedule, subscription or contact information is connected.</p></details>
+        <p className="delivery-note"><strong>Preview only · No notification sent</strong><br />Eligibility does not enroll you or collect an opt-in.</p>
+        <details><summary>How demo eligibility works</summary><p>{journey.delivery_note}</p><p>{alerts.assumptions}</p>{Object.entries(alerts.timing).map(([kind, timing]) => <p key={kind}>{kind === 'pre_storm' ? 'Pre-storm' : 'Estimate update'}: {timing}.</p>)}<p>No live storm schedule, subscription or contact information is connected.</p></details>
       </article>
     </div>
     <article className="communication" aria-labelledby="communications-title">
@@ -31,7 +31,7 @@ export function CustomerJourney({ journey }: { journey: Journey }) {
       <fieldset className="lifecycle-selector"><legend className="sr-only">Communication stage preview</legend>
         {journey.messages.map((message, index) => <label className={selected === message.state ? 'selected' : ''} key={message.state}>
           <input type="radio" name="communication-stage" checked={selected === message.state} onChange={() => setSelected(message.state)} />
-          <span><small>Stage {index + 1}</small>{message.title}</span>
+          <span><small>Stage {index + 1}<span aria-hidden="true">{index < journey.messages.length - 1 ? ' →' : ''}</span></small>{message.title}</span>
         </label>)}
       </fieldset>
       <div className="message-preview" role="status" aria-live="polite" aria-atomic="true" data-testid="message-preview">

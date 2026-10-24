@@ -75,6 +75,7 @@ h1 { font-size: 40px; text-transform: uppercase; max-width: 710px; color: var(--
 .restoration-panel.blocked { border-color: var(--critical); }
 .blocked .state-title { color: var(--critical); }
 .blocked-note { margin-top: 12px; font-size: 14px; text-transform: capitalize; }
+.clearance-note { font-size: 16px; margin-bottom: 20px; }
 .access-panel { border-top: 18px solid var(--divider); padding: 30px 0; }
 .access-panel h2 { margin-bottom: 12px; }
 .access-options { border: 0; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
@@ -98,6 +99,7 @@ h1 { font-size: 40px; text-transform: uppercase; max-width: 710px; color: var(--
 .range-transition b { font-size: 28px; color: var(--action); }
 .range-transition > span { font-size: 30px; }
 .outlook-update p { font-size: 14px; color: var(--muted); }
+.outlook-update .access-change-summary { font-size: 18px; color: var(--text); margin-top: 12px; }
 .cause-list { list-style: none; padding: 20px 0 0; margin: 20px 0 0; border-top: 1px solid #ccd5dc; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
 .cause-list span { font-size: 14px; color: var(--muted); display: block; }
 .cause-list strong { display: block; font-size: 16px; margin-top: 6px; }

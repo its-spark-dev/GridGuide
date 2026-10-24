@@ -1,10 +1,12 @@
 # GridGuide
 
-GridGuide is a planned map-centered customer experience for the AEP HackOHI/O 2026 AI Outage Concierge challenge. It will connect an anonymized location to verified grid dependencies, explain a scenario-based outage-risk band, estimate a conditional restoration range, and show how access or damage assumptions change that result. Preparation guidance and communication previews will use validated results and explicitly declared customer needs.
+GridGuide is a working customer prototype for the AEP HackOHI/O 2026 AI Outage Concierge challenge. It connects one anonymized demo location to verified grid geography and dependencies, explains a scenario-based outage-risk band, models a provisional restoration range, and shows how access changes that result. Preparation and communication previews use the same validated result. Customer-needs declarations are not implemented or inferred.
 
-Proposed architecture: React/TypeScript and Leaflet, one Python/FastAPI service, preprocessed local data, deterministic risk/restoration rules, and a constrained AI explanation layer with a standard offline fallback. No trained probability model or live utility integration is supported by the current data.
+Architecture: React/TypeScript and Leaflet, one Python/FastAPI service, local data prepared once at startup, deterministic risk/restoration rules, and constrained AI explanations with a standard offline fallback. No trained probability model or live utility integration is supported by the current data.
 
 **Browser slice: GREEN for the demonstrated local flow; model credibility remains YELLOW.** The React dashboard calls FastAPI and the unchanged validated engine for customer → topology → risk → restoration → access change → causal explanation → preparation and alert previews. A Leaflet map shows verified, privacy-generalized AEP geography. “Ask GridGuide” adds constrained AI-assisted reference selection with deterministic fallback. Gemini Flash-Lite passed the four live smoke cases; see [provider setup and evidence](docs/GEMINI_PROVIDER.md). Labor-unit interpretation and predictive calibration remain unresolved; output remains a conditional simulation.
+
+**Judging recovery guide:** [Demo freeze, exact startup commands, expected outputs and remaining gaps](docs/DEMO_FREEZE.md). The frozen journey is functional; it does not complete every challenge requirement. In particular, declared-needs adaptation (R11) remains absent.
 
 ## Run the browser dashboard
 
@@ -45,7 +47,7 @@ npm --prefix frontend run types:generate
 npm --prefix frontend run build
 ```
 
-All **98 backend tests** pass (89 existing + 9 Gemini/cache tests). TypeScript and the production build pass. Chrome verification covered the complete live-API flow, preparation and previews, verified map, keyboard/mobile behavior, stale responses and failure/retry handling, plus no-key and AI-assisted explanations. Automated provider tests remain mocked. Generated TypeScript types come from FastAPI's OpenAPI schema; numerical formulas remain solely in the engine. See [map verification](docs/GEOGRAPHIC_MAP.md#verification-and-rehearsal) and [Gemini verification](docs/GEMINI_PROVIDER.md#live-results-and-checks).
+The final verification covers **99 backend tests** (98 baseline + the judge's adversarial question matrix), TypeScript and the production build. Chrome checks cover the complete live-API flow, preparation and previews, verified map, keyboard/mobile behavior, stale responses and failure/retry handling, plus no-key and AI-assisted explanations. Automated provider tests remain mocked. Generated TypeScript types come from FastAPI's OpenAPI schema; numerical formulas remain solely in the engine. See [final rehearsal evidence](docs/DEMO_FREEZE.md), [map verification](docs/GEOGRAPHIC_MAP.md#verification-and-rehearsal) and [Gemini verification](docs/GEMINI_PROVIDER.md#live-results-and-checks).
 
 ## Run the checkpoint
 

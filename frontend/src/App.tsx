@@ -116,13 +116,13 @@ export function App() {
     <main id="main">
       <div className="intro"><div><span className="eyebrow">OUTAGE STATUS</span>
         <h1>Your outage & restoration outlook</h1><p>Explore how access conditions affect a possible restoration.</p></div>
-        <div className="location-chip"><span className="location-icon" aria-hidden="true">⌖</span><div><strong>{location?.label ?? 'Loading location…'}</strong><span>Anonymized customer · verified AEP data</span></div></div>
+        <div className="location-chip"><span className="location-icon" aria-hidden="true">⌖</span><div><strong>{location?.label ?? 'Loading location…'}</strong><span>Anonymized customer · Virginia challenge data</span></div></div>
       </div>
 
       {error && <div className="error-panel" role="alert"><div><strong>Analysis unavailable</strong><p>{error}</p></div><button onClick={retry}>Try again</button></div>}
       <div className="results-grid">
         <section className="panel risk-panel" aria-labelledby="risk-title">
-          <span className="eyebrow">OUTAGE RISK</span><div className="risk-heading"><h2 id="risk-title" data-testid="risk-band">{risk?.band ?? (pending ? 'Loading…' : 'Unavailable')}</h2><span className="risk-caption">Concern under this scenario</span></div>
+          <span className="eyebrow">OUTAGE RISK</span><div className="risk-heading"><h2 id="risk-title" data-testid="risk-band">{risk?.band ?? (pending ? 'Loading…' : 'Unavailable')}</h2><span className="risk-caption">Modeled concern · not an outage probability</span></div>
           <p className="confidence">Predictive confidence: <strong>{risk?.predictive_confidence.toLowerCase() ?? (pending ? 'pending' : 'unavailable')}</strong></p>
           <details className="risk-details"><summary>What contributes to this risk?</summary><ul className="risk-factors">{risk?.factors.map(factor => <li key={factor.id}><div><strong>{factor.label}</strong><span>{typeof factor.value === 'boolean' ? (factor.value ? 'Evidence present in the historical extract' : 'No evidence in this extract') : String(factor.value ?? 'Unknown')}</span></div><span className="points">{factor.contribution_points == null ? '—' : `+${factor.contribution_points}`}</span></li>)}</ul>
           <p className="muted fine">{risk?.limitations[0] ?? 'Risk factors will appear after the verified analysis loads.'}</p></details>
@@ -133,6 +133,7 @@ export function App() {
           <div className="estimate" role="status" aria-live="polite" aria-atomic="true" data-testid="restoration-result">
             {pending ? <><h2 className="state-title">Updating estimate<span className="loading-dots" aria-hidden="true">…</span></h2><p>Calculating the {selected} access scenario.</p></> : error ? <><h2 className="state-title">Estimate unavailable</h2><p>Reconnect to the analysis service to update this scenario.</p></> : range ? <><h2 className="range">{format(range.lower)}–{format(range.upper)} <span>{current?.restoration.unit}</span></h2><p>From when an assigned crew begins its response</p></> : <><h2 className="state-title">Estimate unavailable</h2><p>{current?.restoration.status === 'pending_clearance' ? 'Pending access clearance' : 'Required information is missing'}</p></>}
           </div>
+          {current?.restoration.status === 'pending_clearance' && <p className="clearance-note">Access must be cleared before a credible modeled range is available. GridGuide will not invent a replacement estimate.</p>}
           <div className="estimate-note"><strong>Model-based provisional estimate · not an official live AEP ETR</strong><p>{result?.restoration.limitations[0] ?? 'Labor-hour interpretation uses a disclosed provisional assumption.'}</p></div>
           {current?.restoration.missing_inputs.length ? <p className="blocked-note">{current.restoration.missing_inputs.map(input => input.replaceAll('_', ' ')).join(' · ')}</p> : null}
         </section>
@@ -157,6 +158,7 @@ export function App() {
           <strong>Restoration outlook updated</strong>
           <div className="range-transition"><div><span>{previousResult.simulated_inputs.access} access</span><b>{previousResult.restoration.display_hours ? `${format(previousResult.restoration.display_hours.lower)}–${format(previousResult.restoration.display_hours.upper)} hours` : 'Estimate unavailable'}</b></div><span aria-hidden="true">→</span><div><span>{current?.simulated_inputs.access} access</span><b>{range ? `${format(range.lower)}–${format(range.upper)} hours` : 'Estimate unavailable'}</b></div></div>
           <p>Model comparison · access is the only changed input.</p>
+          {previousResult.simulated_inputs.access === 'clear' && current?.simulated_inputs.access === 'restricted' && <p className="access-change-summary">Restricted access at {current.restoration.worksite_count} work sites increases the modeled restoration range.</p>}
         </div>}
         <div role="status" aria-live="polite" data-testid="change-explanation">
           {pending ? <p className="muted">Updating the comparison with your last completed scenario…</p> : error ? <p className="muted">The comparison will return when analysis is available.</p> : comparison ? <p className="explanation">{comparison.explanation}</p> : <p className="muted">Choose Restricted or Blocked above to compare with this scenario. The explanation will show which calculated factors changed.</p>}

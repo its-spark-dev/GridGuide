@@ -2,9 +2,11 @@
 
 GREEN: the Gemini Developer API completed all four required live explanation cases with the existing strict server validator. Deterministic calculations, customer guidance and UI design are unchanged.
 
+Final freeze rehearsal also passed all four live cases, but uncached HTTP latency was 4.1–5.7 seconds; the exact repeated answer took 3.6 ms from cache. Do not assume the earlier subsecond sample below is typical. The provider-disabled browser rehearsal also passed. See [final measurements and remaining risks](DEMO_FREEZE.md#final-evidence-and-severity).
+
 ## Checkpoint and provider choice
 
-The previously verified GIS + AI work was committed together as `3ac13b8` (`feat: add verified GIS and grounded outage explanations`). Shared contracts/API/UI files made one coherent checkpoint safer than partial staging. Its 21 files exclude raw/processed data, teammate pipelines, credentials, caches and temporary outputs. Nothing was pushed. Gemini changes are a subsequent uncommitted slice.
+The previously verified GIS + AI work was committed together as `3ac13b8` (`feat: add verified GIS and grounded outage explanations`). Shared contracts/API/UI files made one coherent checkpoint safer than partial staging. Its 21 files exclude raw/processed data, teammate pipelines, credentials, caches and temporary outputs. Gemini was subsequently committed as `4c57b7b` (`feat: integrate validated Gemini outage explanations`) after rechecking all 98 baseline tests, CLI and build. Both commits were pushed to `origin/main` during the authorized final integration. See [the final freeze note](DEMO_FREEZE.md) for later rehearsal results.
 
 `GeminiExplanationProvider` implements the same async provider interface as the retained OpenAI adapter, using existing `httpx` and the official `v1beta/models/{model}:generateContent` endpoint. The default configured provider is now **gemini**. `GRIDGUIDE_AI_PROVIDER=none` disables external AI; `openai` explicitly selects the existing alternative. Missing credentials always use Standard explanation. There is no automatic switch to a paid model or another vendor.
 

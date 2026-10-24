@@ -6,7 +6,10 @@ Fetched origin on 2026-10-24. Teammate commits `44010cf` (guidance/alerts/messag
 `b52903e` (merge), and `41d4271` (message typo) were already on local main.
 No merge/rebase was needed. The user then authorized a UI-only checkpoint commit:
 `99cf8e2`, containing the completed AEP visual pass's three files. Integration
-changes remain uncommitted; nothing was pushed.
+was committed as `f6bb5a2` (`feat: integrate outage preparation and alert journey`).
+That checkpoint is now included in the shared branch. This section records the
+integration's original ownership; see [the final freeze note](DEMO_FREEZE.md) for
+current verification and remaining scope.
 
 `pipeline/guidance.py` owns `prep_guidance`, `alert_plan`, `messages`, `SAFETY`
 and `ALERT_RULES`. `backend/customer.py` calls these functions, adapts their
