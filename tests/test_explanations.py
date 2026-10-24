@@ -52,7 +52,7 @@ class ExplanationTests(unittest.TestCase):
         return asyncio.run(explain(self.contexts[access], question, provider))
 
     def test_context_is_explicit_allowlist_without_identifiers_or_coordinates(self):
-        allowed = {"version", "result_id", "scenario_revision", "location_label", "dataset_note", "risk_band", "risk_confidence",
+        allowed = {"version", "scope", "result_id", "scenario_revision", "location_label", "dataset_note", "risk_band", "risk_confidence",
                    "outage_probability", "repair_person_hours", "total_person_hours", "crew_size", "restoration_status", "restoration_bounds", "access", "topology", "alert_eligible",
                    "alert_delivery", "assumptions", "limitations", "clauses"}
         for context in self.contexts.values():

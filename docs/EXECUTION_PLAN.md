@@ -2,9 +2,13 @@
 
 The original planning/engine/browser milestones are complete and superseded by the AEP Data Guide realignment. Current formulas, values and evidence live in [MODEL_SPEC.md](MODEL_SPEC.md), [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md) and [DEMO_FREEZE.md](DEMO_FREEZE.md). Earlier labor interpretation is no longer an implementation target.
 
+## Current Q2/Q4 pass
+
+Implemented generalized complete reverse membership validation, qualified historical ARCOS pole/device spatial replay, facility/premise spatial proxy, four-candidate prototype ranking and one/two-crew scheduling with separate people controls. See [Q2/Q4 decision support](Q2_Q4_DECISION_SUPPORT.md) for current evidence and verification. Prior realignment is committed at `8d6f7ee`; this pass is intentionally uncommitted and must not be pushed without authorization.
+
 ## Ownership
 
-One schema/calculation owner maintains `backend/contracts.py`, `backend/engine.py`, source verification and tests. Customer UI consumes generated types and API values. Integration owns API, explanation and customer adapters. Preserve teammate pipeline files and all raw/processed data; do not duplicate their existing guidance rules. These workstreams do not authorize autonomous agent delegation.
+One schema/calculation owner maintains `backend/contracts.py`, `backend/engine.py`, source verification and tests. Customer UI consumes generated types and API values. Integration owns API, explanation and customer adapters. Preserve teammate pipeline files and all raw/processed data; do not duplicate their existing guidance rules. Module ownership remains explicit across cooperating agents; never overwrite another workstream.
 
 ## Realignment gates
 

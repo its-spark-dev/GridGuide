@@ -3,6 +3,7 @@ import { getAnalysis, getLocations } from './api';
 import { CustomerJourney } from './CustomerJourney';
 import { GeographicContext } from './GeographicContext';
 import { AskGridGuide } from './AskGridGuide';
+import { RestorationDecision } from './RestorationDecision';
 import { RepairEffort, RestorationSequence } from './RestorationEvidence';
 import type { Access, Analysis, Evaluation, Location, Need } from './api';
 
@@ -125,6 +126,7 @@ export function App() {
     <div className="breadcrumb"><span>GridGuide</span><span aria-hidden="true">/</span><span>Outage status</span></div>
 
     <main id="main">
+      <RestorationDecision />
       <div className="intro"><div><span className="eyebrow">OUTAGE STATUS</span>
         <h1>Your outage & restoration outlook</h1><p>Follow repair effort, crew assumptions and access through a modeled restoration.</p></div>
         <div className="location-chip"><span className="location-icon" aria-hidden="true">⌖</span><div><strong>{location?.label ?? 'Loading location…'}</strong><span>Anonymized customer · Virginia challenge data</span></div></div>

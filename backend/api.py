@@ -15,6 +15,9 @@ from .data import CheckpointError, PreparedContext, prepare_context
 from .engine import compare_scenarios, default_scenario, evaluate
 from .geography import prepare_map
 from .explanations import ExplanationService, build_context
+from .contracts import PlanRequest, PlanExplanationRequest, RestorationPlan
+from .planning import prepare_planning, make_plan
+from .plan_explanations import build_plan_context
 
 Revision = Annotated[int, Field(strict=True, ge=1)]
 
@@ -65,7 +68,8 @@ def analyze_selection(context: PreparedContext, body: AnalysisRequest) -> Analys
 
 
 def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,
-               provider_loader: Callable = configured_provider) -> FastAPI:
+               provider_loader: Callable = configured_provider,
+               planning_loader: Callable | None = None) -> FastAPI:
     @asynccontextmanager
     async def lifespan(app: FastAPI):
         # Verify source pins and joins once. Failure prevents readiness entirely.
@@ -78,7 +82,13 @@ def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,
             # Optional geography must not prevent the verified analysis from starting.
             # The map endpoint returns a safe unavailable response without private details.
             app.state.geographic_map = None
+        try:
+            loader = planning_loader or (prepare_planning if context_loader is prepare_context else None)
+            app.state.planning = loader() if loader else None
+        except Exception:
+            app.state.planning = None
         yield
+        del app.state.planning
         del app.state.geographic_map
         del app.state.context
         del app.state.explanation_provider
@@ -141,6 +151,29 @@ def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,
                 "code": "stale_result", "message": "Reload the current scenario before asking for an explanation."}})
         context = build_context(analysis.result, analysis.customer_journey, analysis.comparison)
         return await request.app.state.explanation_service.answer(context, body.question)
+
+    def planning_context(request: Request):
+        if request.app.state.planning is None:
+            return None
+        return request.app.state.planning
+
+    def planning_unavailable():
+        return JSONResponse(status_code=503, content={"error": {"code": "planning_unavailable", "message": "Restoration comparison evidence is unavailable. The customer analysis remains available."}})
+
+    @app.post("/api/restoration-plan", response_model=RestorationPlan)
+    def restoration_plan(body: PlanRequest, request: Request):
+        context = planning_context(request)
+        return make_plan(context, body) if context else planning_unavailable()
+
+    @app.post("/api/restoration-plan/explain", response_model=ExplanationResponse)
+    async def plan_explanation(body: PlanExplanationRequest, request: Request):
+        context = planning_context(request)
+        if context is None:
+            return planning_unavailable()
+        plan = make_plan(context, body)
+        if plan.result_id != body.result_id:
+            return JSONResponse(status_code=409, content={"error": {"code": "stale_result", "message": "Reload the current plan before asking for an explanation."}})
+        return await request.app.state.explanation_service.answer(build_plan_context(plan), body.question)
 
     return app
 

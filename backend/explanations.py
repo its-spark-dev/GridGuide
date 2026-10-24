@@ -101,6 +101,9 @@ def build_context(result: Evaluation, journey: CustomerJourney,
 def question_intent(question: str, context: ExplanationContext) -> ExplanationIntent:
     """Curated questions only. Arbitrary user text never reaches the provider."""
     normalized = " ".join(question.lower().replace("’", "'").replace("–", "-").strip().rstrip("?.").split())
+    if context.scope == "restoration_plan":
+        return {"which customers depend on this damage": "impact", "why this action first": "priority",
+                "how do available crews change this plan": "crew_plan"}.get(normalized, "unsupported")
     questions = {
         "why is my outage risk high": "risk", "what does high mean": "risk",
         "why did my estimate change": "change", "why did my restoration estimate change": "change",
@@ -119,6 +122,12 @@ def question_intent(question: str, context: ExplanationContext) -> ExplanationIn
 
 
 def explanation_plan(context: ExplanationContext, intent: ExplanationIntent) -> tuple[str, tuple[str, ...]]:
+    if context.scope == "restoration_plan":
+        return {
+            "impact": ("impact-summary", ("damage-match", "overlap", "switching-limit")),
+            "priority": ("priority-summary", ("criticality-context", "overlap", "access-detail")),
+            "crew_plan": ("plan-summary", ("crew-allocation", "time-policy", "access-detail")),
+        }[intent]
     risk_refs = tuple(c.id for c in context.clauses if c.id.startswith("risk-") and c.id != "risk-summary")
     prep_refs = tuple(c.id for c in context.clauses if c.id.startswith("preparation-") and c.id != "preparation-summary")
     # A blocked change answer must not reintroduce old finite bounds, even if a
@@ -141,7 +150,7 @@ def explanation_plan(context: ExplanationContext, intent: ExplanationIntent) -> 
 async def explain(context: ExplanationContext, question: str, provider: ExplanationProvider | None) -> ExplanationResponse:
     intent = question_intent(question, context)
     common = dict(result_id=context.result_id, scenario_revision=context.scenario_revision,
-                  intent=intent, uncertainty_note=UNCERTAINTY, dataset_note=context.dataset_note)
+                  intent=intent, uncertainty_note=("This is a GridGuide scenario plan, not an AEP dispatch order or ETR. Spatial matches are disclosed hypotheses; actual productivity, facility electrical attachment and switching feasibility remain unknown." if context.scope == "restoration_plan" else UNCERTAINTY), dataset_note=context.dataset_note)
     if intent == "unsupported":
         return ExplanationResponse(**common, answer="GridGuide does not have enough verified information to answer that question. "
             "Choose a question about this demo's risk, restoration, preparation or grid context.",

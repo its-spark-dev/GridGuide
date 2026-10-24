@@ -1,4 +1,4 @@
-# GridGuide model specification — v2
+# GridGuide model specification — customer v2 / restoration-plan v1
 
 Authority: the user supplied authoritative excerpts from the HackOHI/O 2026 AEP AI Outage Concierge Data Guide. They resolve direct-labor × 4.5 → total person-hours, including travel, safety discussions and setup. They do not specify actual conversion efficiency, default crew composition, switching feasibility, alert thresholds, clearance duration or priority weights. See [evidence ledger and requirement matrix](AEP_REALIGNMENT.md). No original guide PDF or page references are claimed.
 
@@ -8,11 +8,33 @@ Pinned source hashes and snapshot live in `backend/config.py`. `prepare_context(
 
 The source path is Customer → Distribution transformer → Fuse → abstract Circuit Breaker terminal. The transformer contains a 100-kVA phase specification. The scenario explicitly declares one replacement unit on that verified transformer and one cutout replacement on that verified fuse. Their identity is source-derived; damage and quantity are **scenario assumptions**. Historical same-circuit ARCOS evidence does not establish failure of either asset.
 
-The ARCOS schema has no verified equipment ID/pole-location key for these repairs. `NEAR_FID` has no established source-table identity and is not an equipment key. Poles and primary segments are absent from the upstream token identities. A nearest-pole hypothesis permitted by the guide would still need a defensible pole-to-equipment/section join; none is silently added. ARCOS-observed affected-customer count remains **null**.
+The ARCOS schema has no verified equipment ID/pole-location key for these repairs. `NEAR_FID` refers to a historical nearest-primary-line operation (verified XML metadata), not an equipment key or a stable current-layer row ordinal. Poles and primary segments are absent from the upstream token identities. A nearest-pole hypothesis permitted by the guide would still need a defensible pole-to-equipment/section join; none is silently added. ARCOS-observed affected-customer count for these two golden repairs remains **null**. The independent planning catalog below adds a qualified historical spatial replay on a different fuse.
 
 `TopologyIndex.premises_by_asset` reverses ALL supplied paths to private premise sets. For each declared asset, the engine checks every indexed premise against unique customer GIS, first-transformer typed identity/location, circuit/station, supported downstream path and terminal. It does not first filter away contradictory memberships. Any unresolved membership withholds the complete dependent count. Unknown asset identity is unavailable, never zero. Premise identities remain private.
 
 The golden fuse has **4** dependent premises; the transformer has **1**, contained in those four. Union impact is **4**, not five. There are **1,563** source-matched circuit paths, **1,559** outside this declared damage scope. These are approximate source dependencies under declared damage, not live outage counts or claims of complete regional electrical modeling.
+
+## 1A. Generalized reverse evidence and bounded planning catalog
+
+`backend/network.py` indexes 117,599 paths, 32,600 assets and 490,090 memberships. Full GIS/customer/circuit/station/parent validation supports 40,779 complete paths. Complete reverse membership exists for 6,103 transformers and 1,990 fuses, plus two abstract terminals. An asset with any unresolved member returns unavailable. O(1) prepared asset lookup retains private sets; unions and release groups deduplicate premises. Source syntax alone is not verified connectivity.
+
+`backend/damage.py` examines all 1,659 ARCOS rows. No direct equipment identifier is established. The prototype spatial policy requires same type/circuit/station, nearest device and nearest pole each ≤25 m with ≥10 m runner-up gap, unique pole-location label bridge and exact typed GIS/topology identity. 139 observations qualify spatially; 28 additionally have complete reverse memberships. Repeated observations never establish replacement quantity. Metadata explains NEAR_FID/NEAR_DIST as nearest-primary processing; neither is used as an equipment key or metric distance.
+
+`restoration-plan-v1` compares four curated candidates: golden fuse (4 dependent premises, 1.728 repair person-hours), golden transformer (1, 10.008), historical fuse replay (23, 1.728), and declared critical-context fuse (1, 1.728). Union 28, summed memberships 29, one duplicate. Three branches are independent within the verified source paths; transformer follows golden fuse under conservative prototype policy. One cutout per fuse bank and one transformer unit are replacement-scope assumptions, not source damage quantities.
+
+Facility policy: nearest premise ≤50 m with ≥10 m runner-up gap; then validate that premise's whole path. Across 52 facilities, 21 geometric proxies exist, four with valid paths. The selected fire-station proxy is 14.759 m from its nearest premise (runner-up 50.999 m), on the one-premise critical fuse branch. Its electrical attachment is always unknown. The golden-extent fire feature is ambiguous (13.287/16.590 m), on a different unresolved branch, and is not assigned to golden repairs.
+
+## 1B. Prototype priority, crews and planning time
+
+Ranking is lexicographic, not an AEP weighted score: exclude blocked/incomplete work and its dependents; require selected upstream predecessors; optional supported spatial-criticality preference (including prerequisites); then maximize marginal release / total person-hours including access; tie-break by greater release, lower total effort and stable alias. The default first candidate is the critical-context fuse (one premise); disabling proxy priority favors historical fuse replay (23 premises). Show this tradeoff explicitly.
+
+One or two available crews determine independent task concurrency. Two through eight people per crew determine only the ideal time boundary. Each task has duration `[P/N, P]`, with P = `(replacement direct labor + declared access direct work) × 4.5` once. A restricted worksite adds 2.25 person-hours; four curated locations are separate sites. Blocked work has no duration and defers its dependent tasks while independent work may proceed. Unknown complete duration stays null; scheduled subset duration is separate.
+
+For each selected task, choose the crew with earliest conservative upper completion (stable crew-number tie). Its lower/upper start is the respective maximum of that crew's availability and all selected upstream predecessor finishes. Add task duration endpoint-wise. This produces two conditional ideal/single-effective-worker schedules, not probabilistic windows. Milestones group equal endpoint pairs and compute set-based release after completed tasks. Uncertain real-world finish windows may overlap; the modeled order is not an observed execution sequence.
+
+Default four-person CLEAR total: **15.192 person-hours**. One crew: critical fuse → historical fuse → golden fuse → transformer; release increments **1, 23, 3, 1**; raw completion **3.798–15.192 h**. Two crews start critical/historical independently; then golden fuse; then transformer. Milestones **24, 27, 28** cumulative; raw completion **3.366–13.464 h**. Planning display rounds outward to **quarter hours**: **3.75–15.25 / 3.25–13.5**. This separate display policy preserves useful short-task detail; the customer-v2 outlook below retains half-hour rounding.
+
+All important rules/inputs carry exactly one six-class evidence label in the public plan ledger. Full investigation, source row locators, sensitivity, remaining unknowns and validation are in [Q2_Q4_DECISION_SUPPORT.md](Q2_Q4_DECISION_SUPPORT.md). Actual switching-restorable premises, measured efficiency, verified facility electrical dependencies and current damage confirmation remain null.
 
 ## 2. Risk — unchanged prototype policy
 
@@ -62,7 +84,7 @@ A fuse is a potential isolation boundary. Operating state, complete connections,
 
 Facilities are source-derived **spatial criticality context**, not verified electrical dependencies. Regional inventory: hospitals 5, fire stations 37, ambulance locations 10. Within the bounding extent of exact circuit/alias/station-matched primary segments: 0 / 1 / 0 respectively, after CRS validation/conversion. The extent is not a service/outage polygon. A missing extent yields null counts. Identities and coordinates are not exported.
 
-The nearby fire-station feature prompts a specific decision-support action: verify electrical attachment, outage and backup arrangements before dispatch prioritization. Affected critical facilities and priority weights/score remain null. The model recommends the fuse first because it is upstream and could release three declared dependencies; it does not invent an optimal ranking among independent jobs or a criticality multiplier.
+The nearby fire-station feature prompts a specific decision-support action: verify electrical attachment, outage and backup arrangements before dispatch prioritization. Affected critical facilities and priority weights/score remain null. The model recommends the fuse first because it is upstream and could release three declared dependencies; it does not claim an operational optimum or criticality multiplier. The separate restoration-plan-v1 comparison above implements disclosed independent-job ranking and spatial-proxy preference.
 
 ## 6. Customer guidance, communication and AI
 
