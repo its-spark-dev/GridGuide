@@ -4,7 +4,46 @@ GridGuide is a planned map-centered customer experience for the AEP HackOHI/O 20
 
 Proposed architecture: React/TypeScript and Leaflet, one Python/FastAPI service, preprocessed local data, deterministic risk/restoration rules, and a constrained AI explanation layer with a standard offline fallback. No trained probability model or live utility integration is supported by the current data.
 
-**Status: executable engine checkpoint passes; overall credibility remains YELLOW.** The real-data customer → topology → risk → restoration → access-change flow works. Labor-unit interpretation and predictive calibration remain unresolved; the output is a conditional simulation, not a utility ETR. Frontend, API and AI integration remain future work.
+**Browser slice: GREEN for the demonstrated local flow; model credibility remains YELLOW.** The React dashboard now calls FastAPI and the unchanged validated engine for customer → topology → risk → restoration → access change → causal explanation. Labor-unit interpretation and predictive calibration remain unresolved; output remains a conditional simulation. AI, preparation and alerts remain future work.
+
+## Run the browser dashboard
+
+From the repository root, with the existing Python 3.12 environment and Node 22.12+:
+
+```sh
+.venv/bin/python -m pip install -r requirements-web.txt
+npm --prefix frontend ci
+```
+
+Start the backend in one terminal:
+
+```sh
+.venv/bin/python -m uvicorn backend.api:app --host 127.0.0.1 --port 8000
+```
+
+Start the frontend in a second terminal:
+
+```sh
+npm --prefix frontend run dev
+```
+
+Open **http://127.0.0.1:5173/**. The frontend proxies `/api` to port 8000. Both ports must be available; the frontend fails explicitly rather than silently selecting another port. Wait for backend startup to finish, or use the dashboard's retry button. Initial preparation verifies the AEP sources once; scenario changes reuse that context.
+
+Select **Clear → Restricted → Blocked → Clear**. The browser displays API-provided ranges, stable HIGH risk and the engine's calculated explanation. Blocked access has null bounds and a pending-clearance message. During requests or failures, the previous restoration range is hidden. Aborted and superseded responses cannot replace a newer selection. Controls support keyboard navigation, and the layout adapts to mobile screens.
+
+Grid context is a source-derived **dependency diagram**, explicitly labeled as schematic. Leaflet is deferred to the next slice; no geographic relationships or terminal coordinates are invented. Expand “What this scenario assumes” for declared repair scope, workbook references, unit conversion, upper allowance and limitations. No external map, font, weather or AI service is required at runtime.
+
+API: `GET /api/locations` returns safe location/path data; `POST /api/evaluate` accepts `location_alias`, `access`, `scenario_revision` and optional `previous: {access, scenario_revision}`. It returns `{result, comparison}` using the existing `Evaluation` and `Comparison` contracts. Previous revisions are recomputed on the server from the same immutable context, not accepted as client-calculated results. `GET /api/health` reports readiness; `/docs` provides the local API reference.
+
+Checks and generated frontend types:
+
+```sh
+.venv/bin/python -m unittest discover -s tests -v
+npm --prefix frontend run types:generate
+npm --prefix frontend run build
+```
+
+All **48 backend tests** pass (36 original + 12 API tests). TypeScript and the production build pass. Chrome verification covered the complete live-API flow, returned explanation text, keyboard controls, mobile layout, rapid changes, initial-load failure, request failure and retry. Generated TypeScript types come from FastAPI's OpenAPI schema; numerical formulas remain solely in the engine. See [browser verification record](docs/EXECUTION_PLAN.md#browser-slice-verification--october-24).
 
 ## Run the checkpoint
 

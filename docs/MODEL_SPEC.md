@@ -166,7 +166,7 @@ The following **original full-product design sketch is not the executable checkp
 }
 ```
 
-The engine boundary now uses Pydantic models; generated/shared TypeScript types and API/LLM integration remain future work. Checkpoint validation covers supported aliases, strict scenario bounds, score/factor/band consistency, null probability, ordered finite ranges only when available, null unavailable ranges with reasons, and private-field exclusion. Future integration must additionally validate current revisions and all AI action/factor references. Historical inventory may be source-confirmed without being real-time-confirmed. Use explicit `null`, not absent fields or zero substitutes, for unavailable outputs.
+The engine boundary uses Pydantic models. The browser slice now exposes these through FastAPI, generates TypeScript types from OpenAPI, and checks result revisions before rendering. API tests preserve direct-engine equality and privacy; LLM integration remains future work. Checkpoint validation covers supported aliases, strict scenario bounds, score/factor/band consistency, null probability, ordered finite ranges only when available, null unavailable ranges with reasons, and private-field exclusion. Future AI integration must additionally validate all action/factor references. Historical inventory may be source-confirmed without being real-time-confirmed. Use explicit `null`, not absent fields or zero substitutes, for unavailable outputs.
 
 For a scenario comparison, pass two validated result IDs plus a server-computed change list. Never let the LLM recompute deltas. A response must match the latest `scenario_revision`; discard late answers after a newer scenario selection.
 

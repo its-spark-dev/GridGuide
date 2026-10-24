@@ -10,7 +10,7 @@ Use this table before submission. Requirement IDs and authority are defined in [
 | E01 counterfactual comparison | `compare_access()` returns causal references, numeric deltas and null transitions; rejects mixed input/labor changes | Render comparison in the customer view |
 | R09–R15, R18–R19 | Design only; no guidance, alert, AI or accessibility implementation in this checkpoint | Implement and verify the full planned experience |
 
-All 36 checkpoint tests and the manual normal/restricted/blocked CLI runs pass; see [EXECUTION_PLAN.md](EXECUTION_PLAN.md). Do not promote the full submission to complete based on the engine gate.
+**Browser slice update:** the core R01–R08 and E01 behavior now runs through FastAPI and the React dashboard. The dependency view is a schematic; Leaflet remains deferred. R16/R17 API errors and privacy have dedicated tests, and browser checks cover keyboard access controls, narrow layout, stale requests and retry. The 36 checkpoint tests plus 12 API tests pass; TypeScript/build and the live-API browser flow pass. These results supersede the earlier engine-only remaining-work cells above. AI, guidance and alerts are still unimplemented, so the full submission is not complete. See [EXECUTION_PLAN.md](EXECUTION_PLAN.md).
 
 | AEP requirement | GridGuide feature | Source data | Computation | UI representation | Demo action | Validation / status |
 |---|---|---|---|---|---|---|

@@ -4,7 +4,9 @@ Recommendation: a React/TypeScript map interface, one Python/FastAPI process, im
 
 This recommendation follows the measured coverage and failures in [DATA_AUDIT.md](DATA_AUDIT.md). [MODEL_SPEC.md](MODEL_SPEC.md) owns numerical rules, assumptions, golden values and JSON contracts. Do not duplicate calculation logic in frontend code or prompts.
 
-**Implemented checkpoint:** `backend/data.py` prepares the verified real customer in memory; `backend/engine.py` computes risk, restoration and access comparisons; `backend/contracts.py` owns the public Pydantic boundary; `backend/config.py` centralizes source pins and unit/scope assumptions; `backend/demo.py` is the executable CLI. This is the numerical core of the design below. API routes, frontend, AI, guidance and alerts are still proposed. Run `.venv/bin/python -m backend.demo` from the repository root.
+**Implemented engine:** `backend/data.py` prepares the verified real customer in memory; `backend/engine.py` computes risk, restoration and access comparisons; `backend/contracts.py` owns the public Pydantic boundary; `backend/config.py` centralizes source pins and unit/scope assumptions; `backend/demo.py` is the executable CLI. This is the numerical core of the design below. Run `.venv/bin/python -m backend.demo` from the repository root.
+
+**Browser slice update:** `backend/api.py` now loads one verified context during FastAPI lifespan startup and calls the unchanged engine. `frontend/` is React/TypeScript + Vite, using a same-origin `/api` proxy. The current grid view is a source-derived schematic; Leaflet remains the immediate map task. AI, guidance and alerts remain proposed. No persistence, external runtime services or new analytics were introduced. README contains the two local launch commands and setup.
 
 ## Components and data flow
 
@@ -62,15 +64,19 @@ Proposed outputs under ignored `data/derived/`:
 - `public/locations.geojson` and sanitized result fixtures: aliases/coarse geography, no private fields.
 - Versioned default scenarios and approved guidance/communication clauses.
 
-No persisted derived files are needed for the checkpoint: `prepare_context()` verifies the hashes, derives the selected path and labor references directly from archives, and returns a private context reusable across scenario changes. No full GIS extraction is performed. The future API should load this context once at startup. Add `data/derived/` to `.gitignore` before introducing the proposed disk artifacts. Existing raw inputs and ignore rules remain unchanged.
+No persisted derived files are needed: `prepare_context()` verifies the hashes, derives the selected path and labor references directly from archives, and returns a private context reusable across scenario changes. No full GIS extraction is performed. The API loads this context once at startup. Add `data/derived/` to `.gitignore` before introducing the proposed disk artifacts. Existing raw inputs and root ignore rules remain unchanged.
 
 Prepare data once at development startup, never unzip/reproject/scan 452k+ GIS features per request. Fail on hash/schema changes rather than silently serving incompatible fixtures. Runtime data lives in memory; scenario results cache by `(data_hash, model_versions, location_alias, canonical_inputs)`. Explanation cache additionally keys by result ID and supported question intent, never storing sensitive profile text. Public payload target: under 1 MB for curated initial map; scenario roundtrip target: under 300 ms locally after preload. These are acceptance targets, not measured product performance.
 
 Checkpoint measurement on this workstation: first `prepare_context()` call took 1.674 seconds (excluding Python/import startup; filesystem cache uncontrolled). Across 100 evaluations reusing that context, median was 0.089 ms and maximum 0.514 ms; one compact public result was 8,698 bytes. These are local engine timings, not an HTTP/browser benchmark. The small payload and reusable context make a persisted cache unnecessary for this checkpoint.
 
-Use FastAPI to serve the built frontend for the final single-process demo. During development, Vite may proxy to the backend. The CLI and engine test commands now work as documented in README; no HTTP/UI startup command exists yet. `requirements-checkpoint.txt` pins the four engine dependencies without changing the teammate's broader `requirements.txt`. No scenario cache is needed at this scale; evaluation reuses the prepared context and generates deterministic content-based result IDs.
+For a future single-process demo, FastAPI can serve the built frontend. The current browser slice uses two local processes: Vite on 5173 proxies `/api` to FastAPI on 8000. README documents the working CLI, API, UI and test commands. `requirements-web.txt` includes the four pinned engine dependencies and adds the HTTP/test dependencies without changing the teammate's broader `requirements.txt`. No scenario cache is needed at this scale; evaluation reuses the prepared context and generates deterministic content-based result IDs.
 
-## Proposed HTTP and state contracts
+## HTTP and state contracts
+
+Implemented: `GET /api/locations` returns the public location list, `GET /api/health` reports ready data/model versions, and `POST /api/evaluate` accepts `AnalysisRequest` and returns `AnalysisResponse {result: Evaluation, comparison: Comparison | null}`. The request exposes only the golden location, access and positive integer revision, plus an optional previous access/revision strictly earlier than the requested revision. The backend recomputes both selections and calls `compare_access`; it accepts no client-supplied model outputs. Invalid requests get sanitized 422 responses, unsupported locations get 404, and preparation failure prevents startup. Responses are not cached. Raw source files are never mounted.
+
+`scripts/export_api_schema.py` exports OpenAPI without starting the application or loading data. `npm --prefix frontend run types:generate` produces the checked-in TypeScript contract; the intermediate schema and build output are ignored. UI code formats returned numbers but contains no risk/restoration formulas or golden range constants. It cancels older requests, validates returned revision/access/location and comparison identity, and hides the old range during loading/failure. The remaining HTTP design below includes future full-product scope.
 
 | Proposed route | Input | Output / rule |
 |---|---|---|
@@ -79,7 +85,7 @@ Use FastAPI to serve the built frontend for the final single-process demo. Durin
 | `POST /api/explain` | Server-generated result ID, question, optional previous result ID | Validated clause selection rendered into grounded text; template fallback |
 | `GET /api/health` | None | Schema/model/data versions and readiness, without private paths or secrets |
 
-These are design contracts, not implemented endpoints. Bind locally for the hackathon. Keep model/API keys on the server, outside source control. No accounts or persistence are needed.
+`/api/explain` and declared profiles remain design only. The three implemented routes above cover this browser slice. Bind locally for the hackathon. Keep any future model/API keys on the server, outside source control. No accounts or persistence are needed.
 
 Frontend state: selected alias → immutable scenario inputs/revision → pending evaluation → validated result → explanation for that exact result. Abort superseded calls and discard stale revisions. Numeric cards, preparation and communication preview all read the same result. Show pending/failed state without silently retaining an obsolete range. Risk band, confidence, provenance and assumptions must remain visible when the chat panel is closed.
 

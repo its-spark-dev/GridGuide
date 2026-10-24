@@ -14,6 +14,20 @@ Planning baseline: 2026-10-24, America/New_York. First GO/NO-GO checkpoint: **Sa
 - Local measurement: source preparation 1.674 seconds excluding interpreter/import startup; 100 reused-context evaluations median 0.089 ms, maximum 0.514 ms; compact result 8,698 bytes. No disk cache or database was needed. These are engine timings with uncontrolled filesystem cache, not browser latency.
 - No frontend, endpoint, AI adapter, database, weather call or messaging integration was added. No commit or push was performed. Next: clarify source labor units with AEP, then build a thin API/customer view that consumes this contract without duplicating formulas.
 
+## Browser slice verification — October 24
+
+The later browser task now completes the local P0.1–P0.3 interaction: source-verified customer/path → FastAPI → React dashboard → access control → engine result and causal explanation. **GREEN for this runnable browser slice; model credibility remains YELLOW** while workbook-hour semantics and predictive calibration remain unresolved. The original engine modules and 36 tests are unchanged. No commit or push is part of this task.
+
+- Added 12 real-data API tests: all 48 backend tests pass. They compare every access result with direct engine output, exercise all nine access comparisons and revisions, verify null blocking/stable risk, sanitized invalid/unknown inputs, privacy, one-time preparation and failed-source startup.
+- The frontend passes strict TypeScript checking and a production build. It renders generated API types; numerical values and comparison explanations originate in the engine.
+- Chrome browser flow with the real local API: Clear **11–18**, Restricted **16–25**, Blocked **unavailable / pending clearance**, then Clear **11–18**. HIGH risk remains stable; explanation text matches the response. No browser page errors were observed.
+- Additional browser checks: native radio keyboard navigation, 390 px mobile layout without horizontal overflow, delayed older response cannot overwrite Blocked, service failure hides the old range, retry succeeds, initial-load failure/retry succeeds, and assumptions expand correctly. Fault injection was confined to browser QA; the demonstrated scenario uses the actual API/data.
+- Grid context uses the supplied dependency path as an explicitly schematic diagram. Leaflet is intentionally deferred; the terminal has no fabricated coordinates. Next map work must use only the existing generalized locations and retain the schematic for circuit supply.
+- Start the API with `.venv/bin/python -m uvicorn backend.api:app --host 127.0.0.1 --port 8000`; start the UI with `npm --prefix frontend run dev`; visit `http://127.0.0.1:5173/`. Setup/build/schema-generation commands are in README.
+- For manual rehearsal: change Clear → Restricted → Blocked → Clear; check risk stays HIGH, provisional/unknown-unit labels persist, and the explanation follows the last completed scenario. Use Tab/arrow keys on the access controls. Verify stopping the API hides the range on the next selection, then restarting it and choosing Try again recovers.
+
+The earlier milestone tables below remain the full-product plan. The next slice can add minimal verified mapping; labor-unit clarification remains the largest credibility issue. AI, preparation, alerts, weather, deployment and database work remain outside this completed slice.
+
 ## Team and integration contract
 
 Three people can work concurrently after agreeing on MODEL_SPEC's v1 types. Assign one owner per path to preserve teammate work; these are team workstreams, not authorization for autonomous agents to create separate chats.
