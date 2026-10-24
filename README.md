@@ -4,7 +4,7 @@ GridGuide is a planned map-centered customer experience for the AEP HackOHI/O 20
 
 Proposed architecture: React/TypeScript and Leaflet, one Python/FastAPI service, preprocessed local data, deterministic risk/restoration rules, and a constrained AI explanation layer with a standard offline fallback. No trained probability model or live utility integration is supported by the current data.
 
-**Browser slice: GREEN for the demonstrated local flow; model credibility remains YELLOW.** The React dashboard calls FastAPI and the unchanged validated engine for customer → topology → risk → restoration → access change → causal explanation → preparation and alert previews. A Leaflet map shows verified, privacy-generalized AEP geography. “Ask GridGuide” adds constrained AI-assisted reference selection with deterministic fallback. Labor-unit interpretation and predictive calibration remain unresolved; output remains a conditional simulation. Live AI-provider access has not yet been smoke-tested.
+**Browser slice: GREEN for the demonstrated local flow; model credibility remains YELLOW.** The React dashboard calls FastAPI and the unchanged validated engine for customer → topology → risk → restoration → access change → causal explanation → preparation and alert previews. A Leaflet map shows verified, privacy-generalized AEP geography. “Ask GridGuide” adds constrained AI-assisted reference selection with deterministic fallback. Gemini Flash-Lite passed the four live smoke cases; see [provider setup and evidence](docs/GEMINI_PROVIDER.md). Labor-unit interpretation and predictive calibration remain unresolved; output remains a conditional simulation.
 
 ## Run the browser dashboard
 
@@ -45,7 +45,7 @@ npm --prefix frontend run types:generate
 npm --prefix frontend run build
 ```
 
-All **89 backend tests** pass (66 existing + 23 explanation/provider tests). TypeScript and the production build pass. Chrome verification covered the complete live-API flow, preparation and previews, verified map, keyboard/mobile behavior, stale responses and failure/retry handling, plus no-key and mocked-provider explanations. Generated TypeScript types come from FastAPI's OpenAPI schema; numerical formulas remain solely in the engine. See [map verification](docs/GEOGRAPHIC_MAP.md#verification-and-rehearsal) and [AI verification](docs/AI_EXPLANATIONS.md#browser-experience-and-verification).
+All **98 backend tests** pass (89 existing + 9 Gemini/cache tests). TypeScript and the production build pass. Chrome verification covered the complete live-API flow, preparation and previews, verified map, keyboard/mobile behavior, stale responses and failure/retry handling, plus no-key and AI-assisted explanations. Automated provider tests remain mocked. Generated TypeScript types come from FastAPI's OpenAPI schema; numerical formulas remain solely in the engine. See [map verification](docs/GEOGRAPHIC_MAP.md#verification-and-rehearsal) and [Gemini verification](docs/GEMINI_PROVIDER.md#live-results-and-checks).
 
 ## Run the checkpoint
 
@@ -123,4 +123,4 @@ The browser now consumes teammate preparation, alert eligibility and lifecycle m
 
 Choose a suggested question beneath “Why the outlook changed.” `/api/explain` uses only the current server-validated scenario. The optional model selects approved explanation references; the server supplies all facts, numbers and caveats. Unsupported questions, malformed responses, timeouts and unavailable credentials never create new estimates. BLOCKED stays unavailable pending access clearance.
 
-No key is required. AI is disabled by default; the local “Standard explanation” path works offline. To enable the optional adapter, set server-side `GRIDGUIDE_AI_PROVIDER=openai` and securely supply `OPENAI_API_KEY`; optionally set `GRIDGUIDE_AI_MODEL`. Never use a frontend environment variable for credentials. See [provider configuration and limitations](docs/AI_EXPLANATIONS.md#optional-provider-setup). The UI is intentionally a small question panel, not general chat.
+No key is required for the local “Standard explanation” path. Gemini is the default live provider when server-side `GEMINI_API_KEY` is present, using `gemini-3.5-flash-lite`. `GRIDGUIDE_AI_MODEL` overrides the model; `GRIDGUIDE_AI_PROVIDER=none` disables AI, and `openai` explicitly selects the retained OpenAI alternative with `OPENAI_API_KEY`. Never use frontend environment variables for credentials. See [secure .env launch instructions and live verification](docs/GEMINI_PROVIDER.md#local-credential-and-launch-setup). The UI is intentionally a small question panel, not general chat.

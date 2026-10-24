@@ -1,6 +1,9 @@
 """Grounded reference selection. The engine and reviewed copy own every claim."""
 import asyncio
 import json
+import hashlib
+import time
+from collections import OrderedDict
 from typing import Protocol
 
 from pydantic import ValidationError
@@ -13,7 +16,7 @@ DATASET_NOTE = "Anonymized demo location in Virginia, using AEP-provided challen
 UNCERTAINTY = ("Predictive confidence is LOW. Risk is an ordinal modeled concern band, not an outage probability. "
                "Restoration is conditional on simulated repairs and access, with provisional labor units; "
                "it is not an official AEP ETR. No alert has been sent.")
-PROVIDER_TIMEOUT_SECONDS = 6.0
+PROVIDER_TIMEOUT_SECONDS = 8.0
 
 
 class ExplanationProvider(Protocol):
@@ -86,6 +89,7 @@ def question_intent(question: str, context: ExplanationContext) -> ExplanationIn
     questions = {
         "why is my outage risk high": "risk", "what does high mean": "risk",
         "why did my estimate change": "change", "why did my restoration estimate change": "change",
+        "why did my restoration outlook change": "change",
         "what is making restoration take longer": "restoration",
         "what should i prepare for": "preparation",
         "when will my power be restored": "availability",
@@ -163,3 +167,27 @@ async def explain(context: ExplanationContext, question: str, provider: Explanat
     return ExplanationResponse(**common, answer=catalog[lead].text, supporting_factors=selected,
         source_type=next(iter(types)) if len(types) == 1 else "mixed",
         mode="standard" if reason else "ai_assisted", fallback_reason=reason)
+
+
+class ExplanationService:
+    """Bounded process-local cache of validated answers; no persistence or raw questions."""
+    def __init__(self, provider: ExplanationProvider | None, max_entries: int = 64, ttl: float = 300):
+        self.provider, self.max_entries, self.ttl = provider, max_entries, ttl
+        self._cache = OrderedDict()
+
+    async def answer(self, context: ExplanationContext, question: str) -> ExplanationResponse:
+        intent = question_intent(question, context)
+        # Full context includes previous-comparison wording, revision and policy
+        # version. Identical current result IDs alone are insufficient for caching.
+        key = hashlib.sha256((context.model_dump_json() + intent).encode()).hexdigest()
+        cached = self._cache.get(key)
+        if cached and time.monotonic() - cached[0] < self.ttl:
+            self._cache.move_to_end(key)
+            return cached[1]
+        self._cache.pop(key, None)
+        answer = await explain(context, question, self.provider)
+        if answer.mode == "ai_assisted":
+            self._cache[key] = (time.monotonic(), answer)
+            while len(self._cache) > self.max_entries:
+                self._cache.popitem(last=False)
+        return answer

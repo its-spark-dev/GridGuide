@@ -1,6 +1,6 @@
 # Constrained explanations — October 24, 2026
 
-GREEN for local functionality, mocked-provider grounding and offline/no-key behavior. A live provider smoke test has **not** been performed: no API key is configured on this workstation. This does not change the unresolved labor-unit and calibration limits of the numerical model.
+GREEN for local functionality, mocked-provider grounding and offline/no-key behavior. The subsequent [Gemini integration](GEMINI_PROVIDER.md) completed all four live smoke cases and adds a bounded validated-answer cache. This does not change the unresolved labor-unit and calibration limits of the numerical model. The verification record below describes the original explanation slice; the linked Gemini record contains current provider setup and test counts.
 
 ## Authority and scope
 
@@ -36,7 +36,7 @@ The customer response contains authoritative `answer`, `supporting_factors`, `un
 
 - AI disabled/missing key: return the deterministic answer immediately, with no provider request.
 - Transport failure, rate limit, timeout, refusal, malformed/unsupported output: return the same grounded standard answer and approved default references. No retry loop or model repair request.
-- HTTP transport timeout: 4.5 seconds; overall async provider deadline: 6 seconds. Late browser answers are aborted/discarded on question or scenario changes.
+- HTTP transport timeout: OpenAI 4.5 seconds, Gemini 7 seconds; overall async provider deadline: 8 seconds. Late browser answers are aborted/discarded on question or scenario changes.
 - Unsupported question: say GridGuide lacks sufficient verified information; no external request.
 - Explanation-endpoint/network failure: retain the existing deterministic comparison and primary customer journey, with an explanation-only retry. This is distinct from provider failure, which returns a complete standard answer with HTTP 200.
 
@@ -44,7 +44,7 @@ BLOCKED context retains null restoration bounds. Restoration/availability/change
 
 ## Optional provider setup
 
-The application defaults to `GRIDGUIDE_AI_PROVIDER=none`, even if another application has set `OPENAI_API_KEY`. To enable the adapter, set these **server-side** environment variables before starting FastAPI:
+The application now defaults to Gemini when `GEMINI_API_KEY` is configured; otherwise it uses Standard explanation. See [Gemini setup](GEMINI_PROVIDER.md). To explicitly select the retained OpenAI adapter, set these **server-side** environment variables before starting FastAPI:
 
 ```sh
 export GRIDGUIDE_AI_PROVIDER=openai
@@ -84,4 +84,4 @@ TypeScript/production build and golden CLI pass. This repository has no separate
 
 Raw source hashes remain unchanged. No teammate pipeline or raw/processed data changes; no commit or push. The previous geographic slice remains uncommitted alongside this work.
 
-Immediate next task: run a small live-provider smoke test with a securely configured account, checking valid-reference selection, fallback rate and latency. Keep raw model prose disabled. Labor-unit interpretation and predictive calibration still need organizer/data clarification before any operational claim.
+The next live-provider smoke task is now complete through [Gemini](GEMINI_PROVIDER.md). Keep raw model prose disabled and rehearse quota/network fallback before judging. Labor-unit interpretation and predictive calibration still need organizer/data clarification before any operational claim.

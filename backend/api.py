@@ -14,7 +14,7 @@ from .customer import customer_journey
 from .data import CheckpointError, PreparedContext, prepare_context
 from .engine import compare_access, default_scenario, evaluate
 from .geography import prepare_map
-from .explanations import build_context, explain
+from .explanations import ExplanationService, build_context
 
 Revision = Annotated[int, Field(strict=True, ge=1)]
 
@@ -68,6 +68,7 @@ def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,
         # Verify source pins and joins once. Failure prevents readiness entirely.
         app.state.context = context_loader()
         app.state.explanation_provider = provider_loader()
+        app.state.explanation_service = ExplanationService(app.state.explanation_provider)
         try:
             app.state.geographic_map = prepare_map(app.state.context)
         except Exception:
@@ -78,6 +79,7 @@ def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,
         del app.state.geographic_map
         del app.state.context
         del app.state.explanation_provider
+        del app.state.explanation_service
 
     app = FastAPI(title="GridGuide", version="1.0.0", lifespan=lifespan)
 
@@ -135,7 +137,7 @@ def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,
             return JSONResponse(status_code=409, content={"error": {
                 "code": "stale_result", "message": "Reload the current scenario before asking for an explanation."}})
         context = build_context(analysis.result, analysis.customer_journey, analysis.comparison)
-        return await explain(context, body.question, request.app.state.explanation_provider)
+        return await request.app.state.explanation_service.answer(context, body.question)
 
     return app
 
