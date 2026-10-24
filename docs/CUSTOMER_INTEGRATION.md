@@ -1,90 +1,25 @@
-# Preparation and communication integration
+# Preparation, declared needs and communication
 
-## Source and ownership
+`pipeline/guidance.py` owns existing preparation, eligibility, safety and lifecycle templates. `backend/customer.py` adapts them to typed engine results without editing teammate files. Do not import the alternate batch builder/restoration pipeline or infer life-support needs from its `critical_c` flag. Numerical authority remains `backend/engine.py`.
 
-Fetched origin on 2026-10-24. Teammate commits `44010cf` (guidance/alerts/messages),
-`b52903e` (merge), and `41d4271` (message typo) were already on local main.
-No merge/rebase was needed. The user then authorized a UI-only checkpoint commit:
-`99cf8e2`, containing the completed AEP visual pass's three files. Integration
-was committed as `f6bb5a2` (`feat: integrate outage preparation and alert journey`).
-That checkpoint is now included in the shared branch. This section records the
-integration's original ownership; see [the final freeze note](DEMO_FREEZE.md) for
-current verification and remaining scope.
+## Explicit declarations
 
-`pipeline/guidance.py` owns `prep_guidance`, `alert_plan`, `messages`, `SAFETY`
-and `ALERT_RULES`. `backend/customer.py` calls these functions, adapts their
-outputs to the verified engine and returns explicit typed customer contracts.
-No teammate source or processed dataset was modified. No new dependencies.
+The UI offers optional powered-medical-equipment/medical need, accessibility assistance, critical responsibility and None/clear. The request accepts only those enums, no free text/contact/medical records. Default is empty. Selections are held only in page memory and request processing; refresh clears them. They cannot change risk, person-hours, elapsed bounds, asset counts or facility priority. They are removed before every provider context/cache is created, and the browser sends empty declarations with explanation requests.
 
-`pipeline/build.py` is an alternate batch risk pipeline: proximity/percentile
-scores, normalized circuit strings and inferred `critical_c` life-support flag.
-It executes data reads/writes at import. Do not import it or use its CSV as the
-browser's risk/profile source. `pipeline/restore.py` is an alternate aggregate
-calculator: parallel crew division, per-item fractional access, generic fallback
-recipes and 0.4/1.25 bounds. It does not model blocked/null access. Neither
-replaces the typed topology, serial restoration or privacy boundary in backend.
+Reviewed fixed copy adds a provider/device-supplier backup plan for medical devices; support-network, transport and communication planning for accessibility; continuity/coordinator planning for critical responsibility. The adapter uses the teammate's explicit `priority_needs` input to recommend phone contact, and adds a direct-support escalation message even when duration is unknown. This is prototype guidance, not AEP program enrollment, medical advice, automated contact or dispatch.
 
-## Public contract and rules
+Medical source: [FDA emergency-device preparedness](https://www.fda.gov/medical-devices/emergency-situations-medical-devices/fda-offers-tips-about-medical-devices-and-natural-disasters). Accessibility planning: [Ready.gov disability planning](https://www.ready.gov/disability), also reflected by [Alameda County emergency planning](https://www.acgov.org/ready/disability.htm). Existing safety/food copy remains teammate-owned; references include [Ohio EMA](https://ema.ohio.gov/prepare-respond/preparedness-resources/power-outages) and [FoodSafety.gov](https://www.foodsafety.gov/keep-food-safe/food-safety-in-disaster-or-emergency).
 
-`POST /api/evaluate` adds `customer_journey` next to the unchanged `result` and
-`comparison`. It is tied to the same result ID and request revision. Generated
-OpenAPI types carry preparation, eligibility and four lifecycle previews. The
-browser checks that ID, hides stale content during loading/errors and selects
-one lifecycle message at a time. No lifecycle selection changes real utility
-state or schedules delivery.
+## Elapsed-time policy
 
-- Preparation uses the engine's displayed upper bound and LOW confidence, and
-  the teammate's rule-selected actions/safety. Additional actions are expandable.
-- Map MODERATE to the teammate's Medium and SEVERE to High (compatibility only;
-  the engine band is unchanged). Demo A remains HIGH.
-- No needs, contacts or subscriptions are inferred. `priority_needs=False` means
-  no explicit declaration was collected; it is not a medical classification.
-  The API rejects arbitrary priority/contact fields. No declaration UI added.
-- HIGH is eligible for demo SMS/in-app suggestions. Delivery is always
-  `preview_only`; no provider is connected and nothing is sent. The teammate's
-  12-hour medium threshold and 24-hour pre-storm timing remain labeled assumptions.
-- Interpret the teammate's >6-hour update rule as either absolute raw endpoint
-  delta from `Comparison`. CLEAR → RESTRICTED has upper delta 6.75 and qualifies.
-  The browser does not compute deltas. Identical scenarios do not create updates.
-- Adapter extension: a finite/unavailable transition also qualifies for an
-  availability preview. This is disclosed separately from the teammate threshold.
-- For unknown duration, call teammate rules at zero and an unbounded policy probe
-  and retain invariant actions/eligibility. These are internal rule probes, never
-  estimated hours. Suppress the longer-end-of-range tip when no range exists;
-  eligibility is unknown if the duration-dependent decisions differ. HIGH remains
-  eligible without inventing a duration. Nulls remain null in engine/API output.
+Preparation consumes the displayed elapsed upper endpoint and LOW confidence. Default four-person CLEAR is 2.5–12 elapsed hours; RESTRICTED 4–16.5; BLOCKED null. Neither finite golden state triggers >24-hour preparation. Person-hours never feed elapsed thresholds.
 
-## Message wording and safety
+Existing HIGH/SEVERE eligibility, Medium >12 hours, pre-storm timing and strict >6-hour update threshold are **prototype policies**, not AEP rules. Eligibility is separate from consent. An update qualifies for an eligible customer if either absolute raw elapsed endpoint delta exceeds six hours, or duration availability changes. Exactly six is excluded. CLEAR→RESTRICTED at four people changes the upper endpoint by 4.5 hours and does not qualify; RESTRICTED eight→two changes the lower endpoint by 6.0885 hours and does qualify despite unchanged person-hours. A viewable estimate-update sample is not proof of qualifying delivery.
 
-Finite messages come from the teammate generator, using existing displayed
-bounds. The adapter replaces probability-like “chance” with a risk band,
-AEP-branded assertions with GridGuide previews, and live outage/crew/restoration
-claims with hypothetical conditions. It appends the provisional time origin.
-Null-state messages cover the missing teammate interface without formatting fake
-numbers. Estimate-updated is unavailable until a scenario change exists. All four
-stages are explicitly future samples, not a historical event stream.
+Unknown duration uses internal zero/unbounded rule probes to retain only invariant teammate guidance/eligibility; these are never claimed as estimates. HIGH eligibility survives unknown duration. Declared support remains available without a finite ETA. No long-duration tip or zero-hour restoration is fabricated.
 
-Safety and food preparation text remains teammate-owned. Reviewed against:
+## Messages and state
 
-- [Ohio EMA power outage guidance](https://ema.ohio.gov/prepare-respond/preparedness-resources/power-outages)
-- [Columbus downed-line safety](https://www.columbus.gov/Government/Mayors-Office/Extreme-Weather-August-2026/Weather-Safety)
-- [FoodSafety.gov outage guidance](https://www.foodsafety.gov/keep-food-safe/food-safety-in-disaster-or-emergency)
+Four lifecycle previews are hypothetical: pre-storm, outage-confirmed, estimate-updated and restoration-complete. Finite messages come from the teammate generator; the adapter replaces probability/live-utility assertions, preserves the canonical half-hour range and adds conditional time origin. BLOCKED uses reviewed null-state messages. All delivery is `preview_only`.
 
-## Verification and demo
-
-Run the existing README startup commands. At Demo Location A: CLEAR 11–18,
-RESTRICTED 16–25, BLOCKED unavailable/null; HIGH throughout. In Preparation &
-alerts, inspect the teammate actions and demo eligibility. Change access to
-Restricted: Estimate updated selects automatically and displays the generated
-16–25 message. Expand additional preparation to see the >24-hour actions.
-Preview the other three stages; they never assert that delivery happened.
-
-57 backend tests cover the original 48 plus source delegation, rule mutation,
-nulls, eligibility boundaries, four states, privacy, comparison references,
-all access transitions and the raw update threshold. Frontend typecheck/build,
-golden CLI and real-API browser checks cover message/action equality, keyboard,
-mobile, retry and stale requests. There is no separate frontend unit-test runner.
-
-Remaining: organizer confirmation of labor units and alert assumptions; actual
-customer declarations and real delivery remain outside this slice. Keep future
-teammate template changes covered by the no-live-claims regression tests.
+The API returns preparation/alerts/messages with the same result ID and revision. The browser verifies ID, crew/access and declaration selection, cancels stale requests and hides old guidance during pending/error states. It does not calculate thresholds or persist declarations. See full test/browser evidence in [DEMO_FREEZE.md](DEMO_FREEZE.md).

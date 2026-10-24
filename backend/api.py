@@ -8,11 +8,11 @@ from fastapi.responses import JSONResponse
 from pydantic import Field, model_validator
 
 from .config import GOLDEN_ALIAS, RISK_VERSION, RESTORATION_VERSION, SNAPSHOT
-from .contracts import Access, Comparison, Contract, CustomerJourney, Evaluation, ExplanationResponse, GeographicMap, Location
+from .contracts import Access, CrewSize, DeclaredNeeds, Comparison, Contract, CustomerJourney, Evaluation, ExplanationResponse, GeographicMap, Location
 from .ai_provider import configured_provider
 from .customer import customer_journey
 from .data import CheckpointError, PreparedContext, prepare_context
-from .engine import compare_access, default_scenario, evaluate
+from .engine import compare_scenarios, default_scenario, evaluate
 from .geography import prepare_map
 from .explanations import ExplanationService, build_context
 
@@ -21,12 +21,15 @@ Revision = Annotated[int, Field(strict=True, ge=1)]
 
 class PreviousSelection(Contract):
     access: Access
+    crew_size: CrewSize = 4
     scenario_revision: Revision
 
 
 class AnalysisRequest(Contract):
     location_alias: str = GOLDEN_ALIAS
     access: Access = "clear"
+    crew_size: CrewSize = 4
+    declared_needs: DeclaredNeeds = DeclaredNeeds()
     scenario_revision: Revision = 1
     previous: PreviousSelection | None = None
 
@@ -51,14 +54,14 @@ class ExplanationRequest(AnalysisRequest):
 
 def analyze_selection(context: PreparedContext, body: AnalysisRequest) -> AnalysisResponse:
     result = evaluate(context, default_scenario(context, location_alias=body.location_alias,
-        access=body.access, scenario_revision=body.scenario_revision))
+        access=body.access, crew_size=body.crew_size, scenario_revision=body.scenario_revision))
     comparison = None
     previous = None
     if body.previous:
         previous = evaluate(context, default_scenario(context, location_alias=body.location_alias,
-            access=body.previous.access, scenario_revision=body.previous.scenario_revision))
-        comparison = compare_access(previous, result)
-    return AnalysisResponse(result=result, comparison=comparison, customer_journey=customer_journey(result, previous, comparison))
+            access=body.previous.access, crew_size=body.previous.crew_size, scenario_revision=body.previous.scenario_revision))
+        comparison = compare_scenarios(previous, result)
+    return AnalysisResponse(result=result, comparison=comparison, customer_journey=customer_journey(result, previous, comparison, body.declared_needs))
 
 
 def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,

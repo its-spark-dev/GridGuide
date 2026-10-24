@@ -7,7 +7,7 @@ export function AskGridGuide({ analysis, previous }: { analysis: Analysis; previ
   const bounds = result.restoration.display_hours;
   const questions = [
     bounds ? `Why is restoration ${bounds.lower}–${bounds.upper} hours?` : 'Why can’t GridGuide estimate restoration right now?',
-    'Why did my estimate change?', 'What does HIGH mean?', 'What should I prepare for?', 'When will my power be restored?',
+    'Why did my estimate change?', 'How is repair effort calculated?', 'Why this repair sequence?', 'What does HIGH mean?', 'What should I prepare for?', 'When will my power be restored?',
   ];
   const [question, setQuestion] = useState<string | null>(null);
   const [answer, setAnswer] = useState<Explanation | null>(null);
@@ -25,8 +25,10 @@ export function AskGridGuide({ analysis, previous }: { analysis: Analysis; previ
     try {
       const response = await getExplanation({
         location_alias: result.location.alias, access: result.simulated_inputs.access,
+        crew_size: result.simulated_inputs.crew_size,
+        declared_needs: { selections: [], classification: 'user-declared' },
         scenario_revision: result.scenario_revision, result_id: result.result_id, question: next,
-        previous: previous && comparison ? { access: previous.simulated_inputs.access, scenario_revision: previous.scenario_revision } : null,
+        previous: previous && comparison ? { access: previous.simulated_inputs.access, crew_size: previous.simulated_inputs.crew_size, scenario_revision: previous.scenario_revision } : null,
         previous_result_id: comparison?.before_result_id ?? null,
       }, controller.signal);
       if (controller.signal.aborted || requestNumber !== sequence.current) return;
@@ -42,7 +44,7 @@ export function AskGridGuide({ analysis, previous }: { analysis: Analysis; previ
 
   return <section className="ask-gridguide panel" aria-labelledby="ask-title">
     <div className="section-heading"><div><span className="eyebrow">UNDERSTAND YOUR OUTLOOK</span><h2 id="ask-title">Ask GridGuide</h2></div><span className="small-badge">Current scenario only</span></div>
-    <p className="muted">Choose a question. Answers use this scenario’s validated results, with a standard explanation whenever AI is unavailable.</p>
+    <p className="muted">Choose a question about validated results and general guidance. Optional declared-needs guidance stays in Preparation & alerts. Standard explanations remain available when AI is unavailable.</p>
     <div className="explanation-questions" aria-label="Suggested questions">{questions.map(item => <button key={item} type="button" aria-pressed={question === item} onClick={() => void ask(item)}>{item}</button>)}</div>
     <div className="explanation-answer" aria-live="polite" aria-atomic="true" aria-busy={pending} data-testid="ai-explanation">
       {pending && <p role="status">Preparing an explanation for this scenario…</p>}

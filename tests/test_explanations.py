@@ -53,7 +53,7 @@ class ExplanationTests(unittest.TestCase):
 
     def test_context_is_explicit_allowlist_without_identifiers_or_coordinates(self):
         allowed = {"version", "result_id", "scenario_revision", "location_label", "dataset_note", "risk_band", "risk_confidence",
-                   "outage_probability", "restoration_status", "restoration_bounds", "access", "topology", "alert_eligible",
+                   "outage_probability", "repair_person_hours", "total_person_hours", "crew_size", "restoration_status", "restoration_bounds", "access", "topology", "alert_eligible",
                    "alert_delivery", "assumptions", "limitations", "clauses"}
         for context in self.contexts.values():
             self.assertEqual(set(context.model_dump()), allowed)
@@ -77,18 +77,18 @@ class ExplanationTests(unittest.TestCase):
             build_context(self.results['clear'], customer_journey(self.results['clear']), compare_access(self.results['clear'],self.results['restricted']))
 
     def test_no_key_fallback_is_deterministic_and_explains_clear(self):
-        first = self.answer(question='Why is restoration 11–18 hours?')
-        self.assertEqual(first, self.answer(question='Why is restoration 11–18 hours?'))
+        first = self.answer(question='Why is restoration 2.5–12 hours?')
+        self.assertEqual(first, self.answer(question='Why is restoration 2.5–12 hours?'))
         self.assertEqual(first.mode, 'standard')
         self.assertEqual(first.fallback_reason, 'not_configured')
-        self.assertIn('11–18 hours', first.answer)
+        self.assertIn('2.5–12 elapsed hours', first.answer)
         self.assertIn('assigned crew', first.answer)
         self.assertIn('4.5', ' '.join(f.text for f in first.supporting_factors))
 
     def test_restricted_uses_exact_engine_comparison_and_new_bounds(self):
         response = self.answer('restricted', 'Why did my estimate change?', FakeProvider())
         expected = compare_access(self.results['clear'], self.results['restricted'])
-        self.assertIn('16–25 hours', response.answer)
+        self.assertIn('4–16.5 elapsed hours', response.answer)
         self.assertIn(expected.explanation, [f.text for f in response.supporting_factors])
         self.assertEqual(response.mode, 'ai_assisted')
 
@@ -186,7 +186,7 @@ class ExplanationTests(unittest.TestCase):
         questions = [
             'What percentage chance do I have of losing power?',
             'Give me the exact restoration time.',
-            "Is 11–18 hours AEP's official estimate?",
+            "Is 2.5–12 hours AEP's official estimate?",
             'What exact address is this customer?',
             'Which hospital is connected here?',
             'What equipment failed?',

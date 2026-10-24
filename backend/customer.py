@@ -6,12 +6,17 @@ Teammate rules remain the sole preparation/eligibility threshold authority.
 """
 from pipeline import guidance
 
-from .contracts import (AlertEligibility, CommunicationPreview, Comparison,
+from .contracts import (AlertEligibility, CommunicationPreview, Comparison, DeclaredNeeds,
                         CustomerJourney, Evaluation, Preparation)
 
 TITLES = {"pre_storm": "Pre-storm", "outage_confirmed": "Outage confirmed",
           "estimate_updated": "Estimate updated", "restored": "Restored"}
 BANDS = {"LOW": "Low", "MODERATE": "Medium", "HIGH": "High", "SEVERE": "High"}
+DECLARED_ACTIONS = {
+    "medical": "You selected a medical or powered-equipment need. Review your backup plan with your healthcare provider or device supplier; follow the device instructions for backup power.",
+    "accessibility": "You selected an accessibility need. Plan with your support network for accessible transport, communication and a place you can safely use during an outage.",
+    "critical_responsibility": "You selected a critical responsibility. Review your organization's continuity plan and contact its emergency coordinator about backup arrangements.",
+}
 
 
 def _preparation(risk: str, upper: float | None, confidence: str) -> Preparation:
@@ -28,18 +33,25 @@ def _preparation(risk: str, upper: float | None, confidence: str) -> Preparation
     return Preparation(**prepared, duration_known=upper is not None, note=note)
 
 
-def _eligibility(risk: str, upper: float | None, confidence: str) -> AlertEligibility:
+def _eligibility(risk: str, upper: float | None, confidence: str, declared: bool = False) -> AlertEligibility:
+    escalation = ("Because you declared a need, arrange support directly now. If power loss creates immediate danger, contact emergency services; do not wait for this modeled estimate. No contact or dispatch occurs here."
+                  if declared else "No special need was declared. Suggested channels are previews; no contact or dispatch occurs here.")
     if upper is not None:
-        plan = guidance.alert_plan(risk, upper, priority_needs=False, confidence=confidence)
+        plan = guidance.alert_plan(risk, upper, priority_needs=declared, confidence=confidence)
     else:
-        low = guidance.alert_plan(risk, 0, priority_needs=False, confidence=confidence)
-        high = guidance.alert_plan(risk, float("inf"), priority_needs=False, confidence=confidence)
+        low = guidance.alert_plan(risk, 0, priority_needs=declared, confidence=confidence)
+        high = guidance.alert_plan(risk, float("inf"), priority_needs=declared, confidence=confidence)
         if low["eligible"] != high["eligible"]:
             return AlertEligibility(eligible=None, reason="Duration is unknown; duration-based eligibility cannot be determined.",
-                                    suggested_channels=("app",), timing={})
+                                    suggested_channels=("app",), timing={}, escalation_guidance=escalation)
         plan = low
+        if declared:
+            # Unknown duration must not suppress direct support planning. This is
+            # a disclosed prototype extension, never an automatic call.
+            plan = {**plan, "channels": [*plan["channels"], "phone_call"]}
     return AlertEligibility(eligible=plan["eligible"], reason=plan["reason"],
-                            suggested_channels=plan["channels"], timing=plan.get("timing", {}))
+                            suggested_channels=plan["channels"], timing=plan.get("timing", {}),
+                            priority_needs_declared=declared, escalation_guidance=escalation)
 
 
 def _preview_text(text: str, risk: str) -> str:
@@ -56,7 +68,7 @@ def _preview_text(text: str, risk: str) -> str:
 
 
 def customer_journey(result: Evaluation, previous: Evaluation | None = None,
-                     comparison: Comparison | None = None) -> CustomerJourney:
+                     comparison: Comparison | None = None, declared_needs: DeclaredNeeds = DeclaredNeeds()) -> CustomerJourney:
     if previous is not None and (comparison is None or comparison.before_result_id != previous.result_id
                                  or comparison.after_result_id != result.result_id):
         raise ValueError("Customer comparison must reference the supplied results")
@@ -64,7 +76,7 @@ def customer_journey(result: Evaluation, previous: Evaluation | None = None,
     confidence = result.risk.predictive_confidence.title()
     bounds = result.restoration.display_hours
     old = previous.restoration.display_hours if previous else None
-    alerts = _eligibility(risk, bounds.upper if bounds else None, confidence)
+    alerts = _eligibility(risk, bounds.upper if bounds else None, confidence, bool(declared_needs.selections))
     changed = previous is not None and previous.restoration.display_hours != bounds
     availability_changed = previous is not None and (old is None) != (bounds is None)
     threshold = guidance.ALERT_RULES["update_threshold_hours"]
@@ -74,8 +86,8 @@ def customer_journey(result: Evaluation, previous: Evaluation | None = None,
                         and c.delta is not None and abs(c.delta) > threshold for c in comparison.changes))
     eligible_update = alerts.eligible is True and (threshold_met or availability_changed)
     update_reason = ("Estimate availability changed; preview an availability update." if availability_changed else
-                     f"A modeled bound moved by more than {threshold:g} hours; eligible for an update preview." if threshold_met else
-                     f"Update previews qualify when a modeled bound moves by more than {threshold:g} hours or availability changes.")
+                     f"A modeled elapsed-time bound moved by more than {threshold:g} hours; eligible for an update preview." if threshold_met else
+                     f"Prototype policy: updates qualify when a raw elapsed-time bound moves by more than {threshold:g} hours or availability changes, subject to eligibility.")
     generated = {}
     if bounds is not None:
         generated = guidance.messages(risk, bounds.lower, bounds.upper, confidence)
@@ -96,13 +108,24 @@ def customer_journey(result: Evaluation, previous: Evaluation | None = None,
     for state, title in TITLES.items():
         available = state != "estimate_updated" or changed
         body = (_preview_text(generated[state], risk) if state in generated else fallback[state])
+        if bounds is not None:
+            # Teammate fmt rounds to whole hours/days; preserve the authoritative
+            # half-hour elapsed bounds without modifying their source templates.
+            rounded = f"{guidance.fmt(bounds.lower)} to {guidance.fmt(bounds.upper)}"
+            body = body.replace(rounded, f"{bounds.lower:g}–{bounds.upper:g} elapsed hours")
         if not available:
-            body = "Change worksite access to preview an estimate update. No estimate change has occurred in this session."
+            body = "Change access or crew size to preview an estimate update. No estimate change has occurred in this session."
         elif bounds is not None and state != "restored":
             body += " Hours are provisional, from when an assigned crew begins its response; not an official live AEP ETR."
         previews.append(CommunicationPreview(state=state, title=title, body=body, available=available,
             source="teammate_template_adapted" if state in generated else "null_state_adapter"))
-    return CustomerJourney(result_id=result.result_id,
-        preparation=_preparation(risk, bounds.upper if bounds else None, confidence), alerts=alerts,
+    preparation = _preparation(risk, bounds.upper if bounds else None, confidence)
+    if declared_needs.selections:
+        preparation = preparation.model_copy(update={
+            "declared_actions": tuple(DECLARED_ACTIONS[n] for n in declared_needs.selections),
+            "note": "General preparation plus your explicit session-only declarations. No medical or accessibility need was inferred; no enrollment or contact is created.",
+        })
+    return CustomerJourney(result_id=result.result_id, declared_needs=declared_needs,
+        preparation=preparation, alerts=alerts,
         messages=tuple(previews), selected_state="estimate_updated" if changed else "pre_storm",
         estimate_update_eligible=eligible_update, update_reason=update_reason)

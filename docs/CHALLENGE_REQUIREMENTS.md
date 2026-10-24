@@ -45,3 +45,8 @@ MUST = explicit challenge behavior; SHOULD = recommended challenge presentation;
 ## Definition of submission readiness
 
 Every MUST row needs implemented behavior and recorded evidence in [REQUIREMENTS_TRACEABILITY.md](REQUIREMENTS_TRACEABILITY.md). Planning documents, a valid formula, or an offline template alone do not prove a working AI experience. A live LLM failure may fall back gracefully during a demo, but the team must first verify and demonstrate the grounded AI path. The 2:30 PM gate intentionally tests only the core data/calculation path, not full submission readiness.
+
+
+## Subsequent authoritative Data Guide alignment
+
+The user-supplied guide excerpts additionally resolve person-hour semantics and identify crew assumptions (2–8 people, intentionally open), approximate topology, step restoration and hospital/fire/ambulance context. They do not settle measured productivity, default composition, switching feasibility, clearance, alert thresholds or priority weights. [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md) records the pre-edit matrix and evidence classes. [REQUIREMENTS_TRACEABILITY.md](REQUIREMENTS_TRACEABILITY.md) separately evaluates customer→upstream, damaged asset→dependent customers and section→restoration through sectionalization. Only the explicit statements supplied are treated as AEP authority.

@@ -46,7 +46,7 @@ class CustomerJourneyTests(unittest.TestCase):
             self.assertEqual(journey.alerts.suggested_channels, ('sms', 'app'))
         clear = customer_journey(self.results['clear']).preparation.actions
         restricted = customer_journey(self.results['restricted']).preparation.actions
-        self.assertGreater(len(restricted), len(clear))
+        self.assertEqual(restricted, clear)  # Both corrected upper bounds remain below 24 elapsed hours.
 
     def test_teammate_rule_changes_are_consumed(self):
         with patch('backend.customer.guidance.prep_guidance', return_value={'actions': ['team-owned-action'], 'safety': ['team-owned-safety']}):
@@ -73,14 +73,14 @@ class CustomerJourneyTests(unittest.TestCase):
         with patch('backend.customer.guidance.messages', wraps=guidance.messages) as messages:
             journey = self.transition('clear', 'restricted')
             self.assertEqual(messages.call_count, 2)
-            messages.assert_called_with('High', 11.0, 18.0, 'Low', new_low=16.0, new_high=25.0)
+            messages.assert_called_with('High', 2.5, 12.0, 'Low', new_low=4.0, new_high=16.5)
         self.assertEqual([m.state for m in journey.messages], ['pre_storm', 'outage_confirmed', 'estimate_updated', 'restored'])
         self.assertTrue(all(m.source == 'teammate_template_adapted' for m in journey.messages))
         updated = next(m for m in journey.messages if m.state == 'estimate_updated')
-        self.assertIn('16 hours to 25 hours', updated.body)
+        self.assertIn('4–16.5 elapsed hours', updated.body)
         self.assertTrue(updated.available)
         self.assertEqual(journey.selected_state, 'estimate_updated')
-        self.assertTrue(journey.estimate_update_eligible)  # raw upper delta 6.75 > team threshold 6
+        self.assertFalse(journey.estimate_update_eligible)  # raw upper elapsed delta 4.5 is below the prototype threshold
 
     def test_null_transitions_and_no_change(self):
         for before in self.results:
@@ -89,7 +89,7 @@ class CustomerJourneyTests(unittest.TestCase):
                     journey = self.transition(before, after)
                     updated = next(m for m in journey.messages if m.state == 'estimate_updated')
                     self.assertEqual(updated.available, before != after)
-                    self.assertEqual(journey.estimate_update_eligible, before != after)
+                    self.assertEqual(journey.estimate_update_eligible, (before == 'blocked') != (after == 'blocked'))
                     if after == 'blocked' and before != after:
                         self.assertIn('Estimate unavailable', updated.body)
                         self.assertNotIn('hours', updated.body)

@@ -101,6 +101,12 @@ export interface components {
              */
             assumptions: string;
             /**
+             * Classification
+             * @default prototype policy
+             * @constant
+             */
+            classification: "prototype policy";
+            /**
              * Delivery
              * @default preview_only
              * @constant
@@ -108,12 +114,13 @@ export interface components {
             delivery: "preview_only";
             /** Eligible */
             eligible: boolean | null;
+            /** Escalation Guidance */
+            escalation_guidance: string;
             /**
              * Priority Needs Declared
              * @default false
-             * @constant
              */
-            priority_needs_declared: false;
+            priority_needs_declared: boolean;
             /** Reason */
             reason: string;
             /** Suggested Channels */
@@ -132,6 +139,18 @@ export interface components {
              */
             access: "clear" | "restricted" | "blocked";
             /**
+             * Crew Size
+             * @default 4
+             */
+            crew_size: number;
+            /**
+             * @default {
+             *       "classification": "user-declared",
+             *       "selections": []
+             *     }
+             */
+            declared_needs: components["schemas"]["DeclaredNeeds"];
+            /**
              * Location Alias
              * @default demo-a
              */
@@ -149,20 +168,55 @@ export interface components {
             customer_journey: components["schemas"]["CustomerJourney"];
             result: components["schemas"]["Evaluation-Output"];
         };
+        /** AssetImpact */
+        AssetImpact: {
+            /**
+             * Damage Classification
+             * @default scenario assumption
+             * @constant
+             */
+            damage_classification: "scenario assumption";
+            /**
+             * Dependency Classification
+             * @enum {string}
+             */
+            dependency_classification: "source-derived" | "unavailable";
+            /** Dependent Customers */
+            dependent_customers: number | null;
+            /**
+             * Identity Basis
+             * @enum {string}
+             */
+            identity_basis: "exact_typed_GIS_and_topology" | "unavailable";
+            /** Node Alias */
+            node_alias: string;
+            /** Note */
+            note: string;
+            /** Source Refs */
+            source_refs: string[];
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "verified_reverse_dependency" | "unavailable";
+            /** Topology Path Count */
+            topology_path_count: number | null;
+            /** Unresolved Path Count */
+            unresolved_path_count: number;
+        };
         /** Assumption */
         Assumption: {
+            /**
+             * Classification
+             * @enum {string}
+             */
+            classification: "AEP-specified" | "source-derived" | "scenario assumption" | "prototype policy" | "user-declared" | "unavailable";
             /** Description */
             description: string;
             /** Id */
             id: string;
-            /**
-             * Provenance
-             * @default team_assumption
-             * @constant
-             */
-            provenance: "team_assumption";
             /** Value */
-            value: string | number;
+            value: string | number | null;
         };
         /** Bounds */
         Bounds: {
@@ -211,6 +265,11 @@ export interface components {
             after_result_id: string;
             /** Before Result Id */
             before_result_id: string;
+            /**
+             * Changed Inputs
+             * @default []
+             */
+            changed_inputs: ("access" | "crew_size")[];
             /** Changes */
             changes: components["schemas"]["Change"][];
             /** Explanation */
@@ -232,6 +291,13 @@ export interface components {
         /** CustomerJourney */
         CustomerJourney: {
             alerts: components["schemas"]["AlertEligibility"];
+            /**
+             * @default {
+             *       "classification": "user-declared",
+             *       "selections": []
+             *     }
+             */
+            declared_needs: components["schemas"]["DeclaredNeeds"];
             /**
              * Delivery Note
              * @default Preview only. No SMS, email or phone service is connected; no alert has been sent.
@@ -257,6 +323,20 @@ export interface components {
             source: "pipeline.guidance";
             /** Update Reason */
             update_reason: string;
+        };
+        /** DeclaredNeeds */
+        DeclaredNeeds: {
+            /**
+             * Classification
+             * @default user-declared
+             * @constant
+             */
+            classification: "user-declared";
+            /**
+             * Selections
+             * @default []
+             */
+            selections: ("medical" | "accessibility" | "critical_responsibility")[];
         };
         /** DependencyEdge */
         DependencyEdge: {
@@ -285,7 +365,7 @@ export interface components {
             limitations: string[];
             location: components["schemas"]["Location-Input"];
             model_versions: components["schemas"]["ModelVersions"];
-            restoration: components["schemas"]["RestorationResult"];
+            restoration: components["schemas"]["RestorationResult-Input"];
             /** Result Id */
             result_id: string;
             risk: components["schemas"]["RiskResult"];
@@ -293,10 +373,10 @@ export interface components {
             scenario_revision: number;
             /**
              * Schema Version
-             * @default 1.0
+             * @default 2.0
              * @constant
              */
-            schema_version: "1.0";
+            schema_version: "2.0";
             simulated_inputs: components["schemas"]["Scenario"];
             source_facts: components["schemas"]["SourceFacts"];
         };
@@ -314,7 +394,7 @@ export interface components {
             limitations: string[];
             location: components["schemas"]["Location-Output"];
             model_versions: components["schemas"]["ModelVersions"];
-            restoration: components["schemas"]["RestorationResult"];
+            restoration: components["schemas"]["RestorationResult-Output"];
             /** Result Id */
             result_id: string;
             risk: components["schemas"]["RiskResult"];
@@ -322,10 +402,10 @@ export interface components {
             scenario_revision: number;
             /**
              * Schema Version
-             * @default 1.0
+             * @default 2.0
              * @constant
              */
-            schema_version: "1.0";
+            schema_version: "2.0";
             simulated_inputs: components["schemas"]["Scenario"];
             source_facts: components["schemas"]["SourceFacts"];
         };
@@ -349,6 +429,18 @@ export interface components {
              * @enum {string}
              */
             access: "clear" | "restricted" | "blocked";
+            /**
+             * Crew Size
+             * @default 4
+             */
+            crew_size: number;
+            /**
+             * @default {
+             *       "classification": "user-declared",
+             *       "selections": []
+             *     }
+             */
+            declared_needs: components["schemas"]["DeclaredNeeds"];
             /**
              * Location Alias
              * @default demo-a
@@ -379,7 +471,7 @@ export interface components {
              * Intent
              * @enum {string}
              */
-            intent: "risk" | "restoration" | "change" | "preparation" | "availability" | "topology" | "alerts" | "unsupported";
+            intent: "risk" | "restoration" | "change" | "preparation" | "availability" | "topology" | "alerts" | "labor" | "priority" | "unsupported";
             /**
              * Mode
              * @enum {string}
@@ -399,8 +491,33 @@ export interface components {
             /** Uncertainty Note */
             uncertainty_note: string;
         };
+        /** FacilityCount */
+        FacilityCount: {
+            /**
+             * Classification
+             * @default source-derived
+             * @constant
+             */
+            classification: "source-derived";
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "hospital" | "fire_station" | "ambulance";
+            /** Regional Features */
+            regional_features: number;
+            /** Source Layer */
+            source_layer: string;
+            /** Within Primary Extent */
+            within_primary_extent: number | null;
+        };
         /** Factor */
         Factor: {
+            /**
+             * Classification
+             * @enum {string}
+             */
+            classification: "AEP-specified" | "source-derived" | "scenario assumption" | "prototype policy" | "user-declared" | "unavailable";
             /** Contribution Points */
             contribution_points?: number | null;
             /** Id */
@@ -511,6 +628,18 @@ export interface components {
             provenance: "source_rates_with_simulated_quantity";
             /** Quantity */
             quantity: number;
+            /**
+             * Quantity Classification
+             * @default scenario assumption
+             * @constant
+             */
+            quantity_classification: "scenario assumption";
+            /**
+             * Rate Classification
+             * @default source-derived
+             * @constant
+             */
+            rate_classification: "source-derived";
             /** Recipe */
             recipe: string;
             /** Remove Hours Per Unit */
@@ -608,6 +737,11 @@ export interface components {
         Preparation: {
             /** Actions */
             actions: string[];
+            /**
+             * Declared Actions
+             * @default []
+             */
+            declared_actions: string[];
             /** Duration Known */
             duration_known: boolean;
             /** Note */
@@ -622,6 +756,11 @@ export interface components {
              * @enum {string}
              */
             access: "clear" | "restricted" | "blocked";
+            /**
+             * Crew Size
+             * @default 4
+             */
+            crew_size: number;
             /** Scenario Revision */
             scenario_revision: number;
         };
@@ -685,6 +824,8 @@ export interface components {
         RepairStage: {
             /** Depends On Task Ids */
             depends_on_task_ids: string[];
+            /** Newly Eligible Customers */
+            newly_eligible_customers: number | null;
             /** Node Alias */
             node_alias: string;
             /**
@@ -693,20 +834,97 @@ export interface components {
              * @constant
              */
             provenance: "source_ancestry_with_assumed_serial_repairs";
+            /**
+             * Release Status
+             * @default conditional_only
+             * @constant
+             */
+            release_status: "conditional_only";
+            /** Repair Person Hours */
+            repair_person_hours: number;
             /** Task Id */
             task_id: string;
         };
+        /** RestorationPriority */
+        RestorationPriority: {
+            /** Affected Critical Facilities */
+            affected_critical_facilities?: null;
+            /** Arcos Affected Customers */
+            arcos_affected_customers?: null;
+            /**
+             * Arcos Asset Match
+             * @default unavailable
+             * @constant
+             */
+            arcos_asset_match: "unavailable";
+            /** Asset Impacts */
+            asset_impacts: components["schemas"]["AssetImpact"][];
+            /** Circuit Customer Paths */
+            circuit_customer_paths: number;
+            /**
+             * Classification
+             * @default prototype policy
+             * @constant
+             */
+            classification: "prototype policy";
+            /** Criticality Action */
+            criticality_action: string;
+            /**
+             * Damage Origin
+             * @default declared_on_source_verified_assets
+             * @constant
+             */
+            damage_origin: "declared_on_source_verified_assets";
+            /** Dependent Customer Paths */
+            dependent_customer_paths: number | null;
+            /** Facilities */
+            facilities: components["schemas"]["FacilityCount"][];
+            /** Limitations */
+            limitations: string[];
+            /** Paths Outside Declared Damage */
+            paths_outside_declared_damage: number | null;
+            /** Priority Score */
+            priority_score?: null;
+            /** Reasoning */
+            reasoning: string;
+            /** Recommended First Task */
+            recommended_first_task: string | null;
+            /** Sectionalization Restorable Customers */
+            sectionalization_restorable_customers?: null;
+            /**
+             * Switching Feasibility
+             * @default unavailable
+             * @constant
+             */
+            switching_feasibility: "unavailable";
+        };
         /** RestorationResult */
-        RestorationResult: {
+        "RestorationResult-Input": {
             /** Access Labor Hours */
             access_labor_hours: number | null;
+            /** Actual Conversion Efficiency */
+            actual_conversion_efficiency?: null;
             /** Direct Labor Hours */
             direct_labor_hours: number;
             display_hours: components["schemas"]["Bounds"] | null;
+            /**
+             * Effort Unit
+             * @default person-hours
+             * @constant
+             */
+            effort_unit: "person-hours";
+            /**
+             * Elapsed Method
+             * @default serial_tasks_ideal_to_single_effective_worker
+             * @constant
+             */
+            elapsed_method: "serial_tasks_ideal_to_single_effective_worker";
             /** Factors */
             factors: components["schemas"]["Factor"][];
             /** Indirect Labor Multiplier */
             indirect_labor_multiplier: number;
+            /** Installation Direct Hours */
+            installation_direct_hours: number;
             /**
              * Kind
              * @default conditional_simulation
@@ -719,14 +937,13 @@ export interface components {
             limitations: string[];
             /** Missing Inputs */
             missing_inputs: string[];
-            /** Modeled Effort Hours */
-            modeled_effort_hours: number | null;
             /**
              * Predictive Confidence
              * @default LOW
              * @constant
              */
             predictive_confidence: "LOW";
+            priority: components["schemas"]["RestorationPriority"];
             /**
              * Provisional
              * @default true
@@ -734,6 +951,10 @@ export interface components {
              */
             provisional: true;
             raw_hours: components["schemas"]["Bounds"] | null;
+            /** Removal Direct Hours */
+            removal_direct_hours: number;
+            /** Repair Person Hours */
+            repair_person_hours: number;
             /** Repair Stages */
             repair_stages: components["schemas"]["RepairStage"][];
             /**
@@ -747,12 +968,95 @@ export interface components {
              * @constant
              */
             time_origin: "assigned_crew_begins_response";
+            /** Total Person Hours */
+            total_person_hours: number | null;
             /**
              * Unit
-             * @default hours
+             * @default elapsed hours
              * @constant
              */
-            unit: "hours";
+            unit: "elapsed hours";
+            /** Worksite Count */
+            worksite_count: number;
+        };
+        /** RestorationResult */
+        "RestorationResult-Output": {
+            /** Access Labor Hours */
+            access_labor_hours: number | null;
+            /** Actual Conversion Efficiency */
+            actual_conversion_efficiency?: null;
+            /** Direct Labor Hours */
+            direct_labor_hours: number;
+            display_hours: components["schemas"]["Bounds"] | null;
+            /**
+             * Effort Unit
+             * @default person-hours
+             * @constant
+             */
+            effort_unit: "person-hours";
+            /**
+             * Elapsed Method
+             * @default serial_tasks_ideal_to_single_effective_worker
+             * @constant
+             */
+            elapsed_method: "serial_tasks_ideal_to_single_effective_worker";
+            /** Factors */
+            factors: components["schemas"]["Factor"][];
+            /** Indirect Labor Multiplier */
+            indirect_labor_multiplier: number;
+            /** Installation Direct Hours */
+            installation_direct_hours: number;
+            /**
+             * Kind
+             * @default conditional_simulation
+             * @constant
+             */
+            kind: "conditional_simulation";
+            /** Labor Contributions */
+            labor_contributions: components["schemas"]["LaborContribution"][];
+            /** Limitations */
+            limitations: string[];
+            /** Missing Inputs */
+            missing_inputs: string[];
+            /**
+             * Predictive Confidence
+             * @default LOW
+             * @constant
+             */
+            predictive_confidence: "LOW";
+            priority: components["schemas"]["RestorationPriority"];
+            /**
+             * Provisional
+             * @default true
+             * @constant
+             */
+            provisional: true;
+            raw_hours: components["schemas"]["Bounds"] | null;
+            /** Removal Direct Hours */
+            removal_direct_hours: number;
+            /** Repair Person Hours */
+            repair_person_hours: number;
+            /** Repair Stages */
+            repair_stages: components["schemas"]["RepairStage"][];
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "available" | "pending_clearance" | "pending_assignment" | "insufficient_data";
+            /**
+             * Time Origin
+             * @default assigned_crew_begins_response
+             * @constant
+             */
+            time_origin: "assigned_crew_begins_response";
+            /** Total Person Hours */
+            total_person_hours: number | null;
+            /**
+             * Unit
+             * @default elapsed hours
+             * @constant
+             */
+            unit: "elapsed hours";
             /** Worksite Count */
             worksite_count: number;
         };
@@ -798,6 +1102,11 @@ export interface components {
              * @default 1
              */
             crew_count: number;
+            /**
+             * Crew Size
+             * @default 4
+             */
+            crew_size: number;
             /**
              * Lifecycle State
              * @default pre_storm
@@ -848,10 +1157,10 @@ export interface components {
             kind: "static_inventory_and_historical_extract";
             /**
              * Labor Unit Status
-             * @default unspecified_workbook_labor_hours
+             * @default AEP_direct_labor_times_4_5_is_person_hours
              * @constant
              */
-            labor_unit_status: "unspecified_workbook_labor_hours";
+            labor_unit_status: "AEP_direct_labor_times_4_5_is_person_hours";
             /** Path Types */
             path_types: string[];
             /** Snapshot Date */

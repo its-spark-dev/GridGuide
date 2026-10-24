@@ -5,6 +5,7 @@ export type Evaluation = Analysis['result'];
 export type Location = Evaluation['location'];
 export type AnalysisRequest = components['schemas']['AnalysisRequest'];
 export type Access = AnalysisRequest['access'];
+export type Need = Analysis['customer_journey']['declared_needs']['selections'][number];
 
 export type Explanation = components['schemas']['ExplanationResponse'];
 export type ExplanationRequest = components['schemas']['ExplanationRequest'];

@@ -1,87 +1,25 @@
-# Constrained explanations — October 24, 2026
+# Grounded explanations — v2
 
-GREEN for local functionality, mocked-provider grounding and offline/no-key behavior. The subsequent [Gemini integration](GEMINI_PROVIDER.md) completed all four live smoke cases and adds a bounded validated-answer cache. This does not change the unresolved labor-unit and calibration limits of the numerical model. The verification record below describes the original explanation slice; the linked Gemini record contains current provider setup and test counts.
+Flow: validated deterministic result → minimized approved clauses → optional provider reference selection → strict validation → server-rendered answer. Gemini never calculates person-hours, elapsed duration, risk, customer dependency, repair priority, alert eligibility or medical/accessibility needs.
 
-## Authority and scope
+## Context and privacy
 
-The flow is verified engine → allowlisted explanation context → optional model reference selection → server validation → server-rendered answer. The LLM neither calculates nor supplies factual prose. This implements the reference-selection design in [MODEL_SPEC §6](MODEL_SPEC.md#6-ai-output-and-grounded-rendering). It is deliberately more constrained than arbitrary generated answers.
+`ExplanationContext` version v2 separates repair person-hours, total person-hours and nullable elapsed bounds; it includes selected crew size, approved source/dependency/priority clauses and classified assumptions. Labor answers show installation/removal/direct labor, one AEP 4.5 multiplier and the distinction between effort and elapsed outlook. Sequence answers distinguish conditional repair release, spatial criticality and unknown switching.
 
-`backend/explanations.py` defines the vendor-neutral async `ExplanationProvider.select(context, intent, allowed_refs)` interface. `backend/ai_provider.py` implements an optional OpenAI Responses adapter using the already installed `httpx`; no new Python or frontend dependency is needed for this slice. The UI displays “AI-assisted explanation” only after a successful validated model selection. All other supported answers display “Standard explanation.”
+No raw source IDs, premise lists, exact/generalized coordinates, contact fields, source records or workbook cell references reach the provider. Declared-needs selections, tailored actions and eligibility reasons are replaced by the generic journey before context construction; the same generic context is used for every vendor and cache. Raw user questions are not sent: a bounded catalog maps exact supported questions to canonical intents. The browser has seven suggested questions, including labor and repair sequence, not general chat.
 
-The model chooses and orders one to three supporting clauses for the chosen question. It cannot replace the mandatory answer, uncertainty statement, region disclosure or safety guidance. Every displayed sentence comes from the current validated result, the existing engine comparison, teammate-derived preparation, or reviewed templates. The engine, teammate pipelines, data files and existing safety copy are unchanged.
+`/api/explain` recomputes current/previous location, access, crew and revisions. Result IDs must match; stale or forged inputs return sanitized 409. Extra calculation/credential fields are rejected. No explanation mutates the engine result.
 
-## Context, request and response contracts
+## Strict selection contract
 
-`ExplanationContext` is an explicit Pydantic allowlist: opaque result ID and revision, anonymized label, Virginia challenge-data disclosure, risk band/confidence/null probability, restoration status/nullable display bounds, simulated access, verified topology types, demo alert eligibility/preview-only delivery, assumptions, limitations and approved clauses. Each clause has an ID, text and provenance type (`modeled`, `simulated`, `verified`, `mixed`).
+The provider returns exactly `result_id`, `intent`, and one to three `supporting_refs`. It cannot supply an answer, numbers, operational status or uncertainty. Schema enums are request-specific. Independent validation rejects extra/duplicate keys, malformed/oversized output, stale IDs, wrong intent, duplicates, irrelevant references and finite-change answers omitting the deterministic comparison. Every displayed claim is rendered by the server from current result/policy templates.
 
-No precise or generalized coordinates, raw premise/equipment/circuit identifiers, contact fields, medical/critical flags, shapefile attributes, workbook cell references or private source objects are included. Raw user question text is **not sent to the model**. A bounded exact-match question catalog resolves to a canonical intent on the server; anything outside it receives an insufficient-verified-information response without contacting a provider. The customer UI offers five suggested questions and no general-purpose chat input.
+The mandatory lead distinguishes **11.736 repair person-hours** from **2.5–12 conditional elapsed hours** at four-person CLEAR. BLOCKED duration stays null; no previous finite comparison can become a current ETA. Clearance, switching and measured efficiency remain unavailable. Unsupported/adversarial requests are refused without provider traffic.
 
-`POST /api/explain` accepts the existing validated location/access/revision selection and optional previous selection, plus current `result_id`, optional `previous_result_id` and a question of at most 240 characters. The server recomputes current/previous evaluations and the comparison with the unchanged engine. Both result IDs must match; mismatches return a sanitized 409. Client-supplied analysis, bounds, credentials or extra fields are rejected. The endpoint returns `ExplanationResponse`, not a modified `Evaluation`; the original `generated_explanation: null` field remains unchanged.
+## Providers, fallback and browser
 
-The only accepted model output is:
+Gemini is the default when a server-side key is present; OpenAI remains an explicit alternative. Missing/disabled credentials make no external request. Provider failure, 429, timeout, refusal, truncated or invalid output yields deterministic Standard explanation. Gemini transport deadline is seven seconds; overall async deadline eight, browser ten. No automatic paid/model/vendor failover. See [Gemini setup and current smoke evidence](GEMINI_PROVIDER.md).
 
-```json
-{
-  "result_id": "<current opaque result ID>",
-  "intent": "change",
-  "supporting_refs": ["comparison-summary", "access-detail"]
-}
-```
+The process-local validated-answer cache holds 64 entries with five-minute TTL. Keys bind full generic context and intent, including comparison/revision. Invalid answers are not cached; no raw response, declaration or credential persists. The frontend aborts old questions and discards wrong result/revision responses. Explanation-only failure retains the numerical journey and supports retry.
 
-There are no model-authored `answer`, numeric or uncertainty fields. Strict JSON Schema constrains IDs/intent/references in the provider request. The server independently rejects extra/duplicate keys, malformed or oversized output, stale IDs, wrong intents, duplicate references, references outside the current intent and finite-change responses that omit the engine comparison. Choosing an irrelevant but otherwise valid global clause is rejected. A refusal or incomplete provider response is also rejected.
-
-The customer response contains authoritative `answer`, `supporting_factors`, `uncertainty_note`, `dataset_note`, `source_type`, `mode`, safe `fallback_reason`, and result/revision binding. No raw provider response, reasoning, error details or credentials are returned or logged by application code.
-
-## Fallback and BLOCKED behavior
-
-- AI disabled/missing key: return the deterministic answer immediately, with no provider request.
-- Transport failure, rate limit, timeout, refusal, malformed/unsupported output: return the same grounded standard answer and approved default references. No retry loop or model repair request.
-- HTTP transport timeout: OpenAI 4.5 seconds, Gemini 7 seconds; overall async provider deadline: 8 seconds. Late browser answers are aborted/discarded on question or scenario changes.
-- Unsupported question: say GridGuide lacks sufficient verified information; no external request.
-- Explanation-endpoint/network failure: retain the existing deterministic comparison and primary customer journey, with an explanation-only retry. This is distinct from provider failure, which returns a complete standard answer with HTTP 200.
-
-BLOCKED context retains null restoration bounds. Restoration/availability/change answers lead with unknown clearance time and the need to clear access before a credible modeled range is available. A blocked change cannot select a previous finite-range comparison clause. No replacement duration is synthesized. Preparation may still contain existing food-storage durations, clearly labeled as preparation rather than restoration estimates.
-
-## Optional provider setup
-
-The application now defaults to Gemini when `GEMINI_API_KEY` is configured; otherwise it uses Standard explanation. See [Gemini setup](GEMINI_PROVIDER.md). To explicitly select the retained OpenAI adapter, set these **server-side** environment variables before starting FastAPI:
-
-```sh
-export GRIDGUIDE_AI_PROVIDER=openai
-export GRIDGUIDE_AI_MODEL=gpt-4o-mini-2024-07-18
-```
-
-Supply `OPENAI_API_KEY` securely through the server environment; never place it in source, frontend/Vite variables, screenshots or shell commands saved in this repository. The root `.env` is already ignored, but the app does not automatically load it. Restart the backend after configuration changes. `GRIDGUIDE_AI_MODEL` is optional; the adapter defaults to the snapshot shown above. Model access must be checked on the actual account.
-
-The fixed endpoint is `https://api.openai.com/v1/responses`. Requests use strict structured output, `store: false`, a bounded output budget and no tools, retrieval, browsing, conversations or external endpoints selected by the user/model. Only the sanitized context and canonical intent leave the server. Disabling AI restores fully local behavior. `store: false` is a request setting, not a blanket promise about a provider's retention policies.
-
-Official implementation references: [Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs) and [GPT-4o mini capabilities/snapshot](https://developers.openai.com/api/docs/models/gpt-4o-mini). Another vendor can implement the small provider interface without changing customer policy or the numerical engine.
-
-## Browser experience and verification
-
-“Ask GridGuide” sits after “Why the outlook changed,” before the map. Suggested questions and one answer panel preserve the AEP-derived shell; there is no conversation history or chatbot takeover. Scenario updates remove the old answer immediately. The component verifies result/revision identity, aborts superseded requests, supports keyboard selection and retains the primary page when explanations fail.
-
-Baseline: 66 backend tests, frontend build and the existing browser journey passed before edits. Final: **89 backend tests pass**, including 23 explanation/provider tests. They cover context privacy, exact server rendering, all access states, unsupported/injected questions, stale/forged request binding, malformed/duplicate/irrelevant model output, every prohibited claim category, deadlines, no-key configuration, strict HTTP request shape, provider refusal/rate limit and transport failures. All provider tests use fakes or `httpx.MockTransport`; they make no real API calls.
-
-Verification commands:
-
-```sh
-.venv/bin/python -m unittest discover -s tests -v
-.venv/bin/python -m backend.demo
-npm --prefix frontend run types:generate
-npm --prefix frontend run build
-```
-
-TypeScript/production build and golden CLI pass. This repository has no separate frontend unit-test runner; real-API Chrome automation provides the frontend behavior checks. The browser verification exercised:
-
-1. CLEAR: “Why is restoration 11–18 hours?” explains the simulated scope, clear access, workbook allowance and crew-response time origin.
-2. CLEAR → RESTRICTED: “Why did my estimate change?” shows 16–25 and the exact engine comparison, including two worksites. UI text matches the returned supporting clauses.
-3. BLOCKED: “When will my power be restored?” says access must be cleared and provides no numeric restoration duration.
-4. Risk: HIGH is an ordinal modeled concern band, not a probability; confidence remains LOW.
-5. No-key standard answers and an isolated mocked-provider server exercising actual API validation/rendering and the “AI-assisted” UI state. No live provider performance claim is made.
-6. Explanation failure/retry, forged result response rejection, delayed prior question suppression and scenario-change cancellation; zero uncaught browser errors.
-7. Existing map/tile failures and retries, schematic, all lifecycle messages, preparation, alert previews, scenario/error/retry behavior and 390/768 px mobile/tablet layouts. Desktop/mobile explanation screenshots reviewed.
-
-Raw source hashes remain unchanged. No teammate pipeline or raw/processed data changes; no commit or push. The previous geographic slice remains uncommitted alongside this work.
-
-The next live-provider smoke task is now complete through [Gemini](GEMINI_PROVIDER.md). Keep raw model prose disabled and rehearse quota/network fallback before judging. Labor-unit interpretation and predictive calibration still need organizer/data clarification before any operational claim.
+Tests cover both provider request schemas, numerical/operational injection, hidden needs, source privacy, missing credentials, timeouts/quota/errors, strict references, cache binding, BLOCKED and stale IDs. Browser/live outcomes are recorded in [DEMO_FREEZE.md](DEMO_FREEZE.md). Automated provider tests are mocked; live smoke is separately labeled.

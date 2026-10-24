@@ -90,8 +90,8 @@ class GeminiTests(unittest.TestCase):
         comparison=compare_access(self.clear,self.restricted)
         restricted=build_context(self.restricted,customer_journey(self.restricted,self.clear,comparison),comparison)
         blocked=build_context(self.blocked,customer_journey(self.blocked))
-        cases=[(self.context,'Why is restoration 11–18 hours?','restoration',['repair-scope'],'11–18'),
-               (restricted,'Why did my restoration outlook change?','change',['comparison-summary'],'16–25'),
+        cases=[(self.context,'Why is restoration 2.5–12 hours?','restoration',['repair-scope'],'2.5–12'),
+               (restricted,'Why did my restoration outlook change?','change',['comparison-summary'],'4–16.5'),
                (blocked,'When will my power be restored?','availability',['access-detail'],'Access must be cleared'),
                (self.context,'What does HIGH mean?','risk',['risk-storm-scenario'],'not an outage probability')]
         for context,question,intent,refs,expected in cases:

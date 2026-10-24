@@ -14,8 +14,8 @@ from .contracts import (Comparison, CustomerJourney, Evaluation, ExplanationClau
 
 DATASET_NOTE = "Anonymized demo location in Virginia, using AEP-provided challenge data; no live utility connection."
 UNCERTAINTY = ("Predictive confidence is LOW. Risk is an ordinal modeled concern band, not an outage probability. "
-               "Restoration is conditional on simulated repairs and access, with provisional labor units; "
-               "it is not an official AEP ETR. No alert has been sent.")
+               "AEP effort is person-hours. Elapsed restoration is conditional on simulated repairs, crew contribution and access; actual productivity is unavailable. "
+               "It is not an official AEP ETR. No alert has been sent.")
 PROVIDER_TIMEOUT_SECONDS = 8.0
 
 
@@ -28,6 +28,11 @@ def build_context(result: Evaluation, journey: CustomerJourney,
                   comparison: Comparison | None = None) -> ExplanationContext:
     if journey.result_id != result.result_id or (comparison and comparison.after_result_id != result.result_id):
         raise ValueError("Explanation context must describe the same validated result")
+    if journey.declared_needs.selections:
+        # Personal declarations and their tailored actions/reasons never enter
+        # ANY provider's context or explanation cache. General guidance only.
+        from .customer import customer_journey
+        journey = customer_journey(result)
     clauses = []
     def add(identifier, text, source="modeled"):
         clauses.append(ExplanationClause(id=identifier, text=text, source_type=source))
@@ -43,17 +48,26 @@ def build_context(result: Evaluation, journey: CustomerJourney,
         value = ("present in the historical extract" if factor.value is True else "not found in this extract; coverage is unknown" if factor.value is False else str(factor.value) if factor.value is not None else "unavailable")
         add(f"risk-{factor.id}", f"{factor.label}: {value}.", "verified" if factor.provenance == "source_fact" else "simulated")
     if bounds:
-        add("restoration-summary", f"The current provisional modeled range is {bounds.lower:g}–{bounds.upper:g} hours "
-            "from when an assigned crew begins its response. It covers the declared replacement work and access conditions, not a clock-time promise.")
+        add("restoration-summary", f"The current conditional modeled range is {bounds.lower:g}–{bounds.upper:g} elapsed hours "
+            f"from when an assigned crew begins its response. Labor effort is {restoration.total_person_hours:g} person-hours, not an ETA. "
+            "The range spans ideal crew contribution to one effective worker; actual productivity is unknown and delays can exceed it.")
     elif restoration.status == "pending_clearance":
         add("restoration-summary", "A modeled restoration range is unavailable. Access must be cleared before a credible modeled range can be provided. "
             "The clearance time is unknown, so GridGuide cannot say when power will be restored.")
     else:
         add("restoration-summary", "A modeled restoration range is unavailable because required resources or information are missing. GridGuide cannot provide a time estimate.")
     add("repair-scope", "Simulated replacement scope: " + "; ".join(f"{work.quantity} × {work.recipe.replace('-', ' ')}" for work in restoration.labor_contributions) + ". These are declared repairs, not observed current damage.", "simulated")
-    add("serial-work", "The model sequences repairs along the verified dependency path. Additional crews do not divide this serial repair duration.", "mixed")
+    add("serial-work", f"The model sequences repairs along the approximate source dependency path. The selected crew has {result.simulated_inputs.crew_size} people. "
+        "Additional crews do not divide this serial path. More people can lower the ideal-duration boundary, but cannot guarantee proportional speedup.", "mixed")
     add("labor-allowance", f"The engine applies the workbook's {restoration.indirect_labor_multiplier:g} indirect-work multiplier once. "
-        "The upper allowance and reference-crew conversion are disclosed team assumptions.", "mixed")
+        "AEP specifies that the result is total person-hours, including travel, safety discussions and setup. No separate travel/setup adder is used.", "mixed")
+    add("labor-summary", f"Declared replacement scope: {restoration.installation_direct_hours:g} installation + {restoration.removal_direct_hours:g} removal = "
+        f"{restoration.direct_labor_hours:g} direct labor hours. Multiplying once by {restoration.indirect_labor_multiplier:g} gives {restoration.repair_person_hours:g} repair person-hours. "
+        + (f"Access adds {restoration.access_labor_hours:g} direct hours, for {restoration.total_person_hours:g} total person-hours. " if restoration.total_person_hours is not None else "Additional access work and clearance duration are unknown. ")
+        + "Labor effort is separate from elapsed restoration time.", "mixed")
+    add("priority-summary", restoration.priority.reasoning, "mixed")
+    add("criticality-context", restoration.priority.criticality_action, "mixed")
+    add("switching-limit", "Actual switching feasibility and the electrical attachment of critical facilities are unavailable. No switching operation or criticality ranking is authorized by this model.", "mixed")
     if access == "blocked":
         add("access-detail", "Simulated access is blocked. Clearance is a prerequisite with unknown duration, so both restoration bounds stay unavailable.", "simulated")
     elif access == "restricted":
@@ -62,11 +76,11 @@ def build_context(result: Evaluation, journey: CustomerJourney,
         add("access-detail", "Simulated access is clear, so the engine adds no restricted-access work.", "simulated")
     # The engine owns all deltas. No comparison math is repeated here.
     add("comparison-summary", comparison.explanation if comparison else
-        "No previous scenario is selected for comparison. Change access to compare with the last completed scenario.")
+        "No previous scenario is selected for comparison. Change access or crew size to compare with the last completed scenario.")
     topology = ("Customer", *["Distribution transformer" if asset.kind == "Distribution" else asset.kind for asset in result.location.upstream_assets])
     add("topology-summary", "Verified dependency order: " + " → ".join(topology) +
         ". The Circuit Breaker terminal is abstract and has no supplied geometry; this is not live switching status.", "verified")
-    add("preparation-summary", journey.preparation.note)
+    add("preparation-summary", "General preparation for this modeled scenario. Any optional declared-needs guidance stays in the preparation panel and is not sent to AI. " + ("Duration is unknown; showing general preparation only." if not journey.preparation.duration_known else "Plan for uncertainty in elapsed restoration time."))
     for index, action in enumerate(journey.preparation.actions):
         add(f"preparation-{index}", action)
     # Safety wording is never authored by the model; the existing guidance section
@@ -78,8 +92,9 @@ def build_context(result: Evaluation, journey: CustomerJourney,
         location_label=result.location.label, dataset_note=DATASET_NOTE,
         risk_band=risk.band, risk_confidence=risk.predictive_confidence,
         restoration_status=restoration.status, restoration_bounds=bounds, access=access,
+        repair_person_hours=restoration.repair_person_hours, total_person_hours=restoration.total_person_hours, crew_size=result.simulated_inputs.crew_size,
         topology=topology, alert_eligible=journey.alerts.eligible,
-        assumptions=tuple(f"{a.description} Assumed value: {a.value}." for a in result.assumptions),
+        assumptions=tuple(f"{a.classification}: {a.description} Value: {a.value}." for a in result.assumptions),
         limitations=(*risk.limitations, *restoration.limitations), clauses=tuple(clauses))
 
 
@@ -95,6 +110,7 @@ def question_intent(question: str, context: ExplanationContext) -> ExplanationIn
         "when will my power be restored": "availability",
         "why can't gridguide estimate restoration right now": "availability",
         "how is my location connected": "topology", "am i eligible for demo alerts": "alerts",
+        "how is repair effort calculated": "labor", "why this repair sequence": "priority",
     }
     if context.restoration_bounds:
         b = context.restoration_bounds
@@ -109,13 +125,15 @@ def explanation_plan(context: ExplanationContext, intent: ExplanationIntent) -> 
     # future comparison template contains them. Current availability always leads.
     plans = {
         "risk": ("risk-summary", risk_refs),
-        "restoration": ("restoration-summary", ("access-detail", "repair-scope", "labor-allowance", "serial-work")),
+        "restoration": ("restoration-summary", ("labor-summary", "serial-work", "access-detail", "labor-allowance", "repair-scope")),
         "availability": ("restoration-summary", ("access-detail", "repair-scope", "serial-work")),
         "change": ("restoration-summary", ("access-detail", "serial-work")) if context.restoration_bounds is None else
                   ("restoration-summary", ("comparison-summary", "access-detail", "serial-work")),
         "preparation": ("preparation-summary", prep_refs),
         "topology": ("topology-summary", ("serial-work",)),
         "alerts": ("alerts-summary", ("preparation-summary",)),
+        "labor": ("labor-summary", ("repair-scope", "labor-allowance", "serial-work")),
+        "priority": ("priority-summary", ("criticality-context", "switching-limit", "serial-work")),
     }
     return plans[intent]
 

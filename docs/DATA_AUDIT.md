@@ -134,7 +134,7 @@ Exact attributes are listed in [DATA_SCHEMA.md](DATA_SCHEMA.md). Key findings:
 
 Useful exact cells on `Labor time material related`: pole small/medium/large C12:D14; transformer size/counted references A19:D30; 100 kVA C25=1.2800000000000007 and D25=0.944; recloser A68:B70; service A78:B80; switch A83:B85; fuse cutout A88:B90, with A90=0.25600000000000017 and B90=0.12800000000000009. A transformer's `CU Count` is the number of reference CU definitions averaged, **not** a number of damaged units. Freeze these cell mappings with workbook hash validation.
 
-The workbook does not state whether hours are person-hours or elapsed hours for a standard crew, nor define standard crew size. Values are installation/removal work references, not complete storm repair job durations. There is no supplied calibrated uncertainty distribution. Treat hours as provisional reference-crew effort only under the prominent assumption in MODEL_SPEC; ask an AEP mentor to clarify before claiming operational accuracy. Unsupported items (wire spans, lights, capacitors, step transformers, unspecified excavation) must not silently receive zero or a generic average. The first demo explicitly simulates one fuse cutout and one 100-kVA transformer unit.
+The newly supplied AEP Data Guide resolves the workbook semantics: direct labor times 4.5 produces total person-hours, including travel, safety discussion and setup. It does not define actual crew conversion efficiency, composition/default, or a calibrated elapsed-time distribution. See MODEL_SPEC for separate effort and conditional duration; those operational unknowns remain open. Unsupported items (wire spans, lights, capacitors, step transformers, unspecified excavation) must not silently receive zero or a generic average. The first demo explicitly simulates one fuse cutout and one 100-kVA transformer unit.
 
 ## Privacy and absent sources
 
@@ -162,6 +162,13 @@ That planning pass ran no product tests. The later implementation checkpoint is 
 
 The full audit was repeated before writing the engine. Source hashes, the row-1077 golden path, 140 historical circuit records, overhead mounting, three 100-kVA phase specifications, and 140.266 m worksite separation reproduced without discrepancy. The engine uses the pinned row only as an internal locator, derives the source premise and typed asset IDs at startup, and rejects changed files or inconsistent joins before evaluation.
 
-Re-read the official challenge and every workbook sheet/label, including comments, defined names and document metadata. No comments or defined names clarify labor units; document metadata supplies no person-hour/crew-hour definition either. The previous unit ambiguity therefore remains. Installation/removal cells, restricted-access D2 and ILM B1 are read at runtime with source hashes and relevant recipe-label checks; no final demo durations are stored as calculation inputs.
+Re-read the official challenge and every workbook sheet/label, including comments, defined names and document metadata. Workbook metadata alone did not resolve units; the subsequently supplied AEP Data Guide explicitly resolves direct labor × 4.5 as person-hours. Actual conversion efficiency and crew composition remain unresolved. Installation/removal cells, restricted-access D2 and ILM B1 are read at runtime with source hashes and relevant recipe-label checks; no final demo durations are stored as calculation inputs.
 
 The implemented CLI and 36 tests now verify the real-data path, independently recomputed labor arithmetic, deterministic risk, access behavior, private/public separation and immutable raw bytes. Minimal preparation is in memory; no derived file or raw edit is needed. Detailed commands and measured results are in [EXECUTION_PLAN.md](EXECUTION_PLAN.md).
+
+
+## AEP realignment reverse audit
+
+The global reverse index independently reproduces one premise through the selected transformer and four through the selected fuse; every membership has matching customer GIS, first transformer, circuit and terminal. There are 1,563 matched circuit paths; union declared impact is four, with 1,559 outside the declared scope. Counts are conditional on damage explicitly declared on these exact verified assets. No ARCOS row is asserted to identify them. The exact missing join is described in [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md); actual sectionalization count is null.
+
+The supplied facility layers are now used as aggregate spatial context: 5 hospitals, 37 fire stations and 10 ambulance features regionally; 0, 1 and 0 within the matched primary bounding extent. This does not establish affected facilities or electrical service. Their presence prompts verification before priority decisions; no operational weights are invented.

@@ -4,6 +4,7 @@ Private IDs/precise coordinates remain in PreparedContext. Only its public
 Location and SourceFacts cross the presentation boundary. No source extraction,
 disk cache, nearest-neighbor identity matching, or synthetic fallback path.
 """
+from __future__ import annotations
 from collections import defaultdict, deque
 from contextlib import contextmanager
 from dataclasses import dataclass
@@ -12,7 +13,7 @@ import hashlib
 import io
 import math
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, TYPE_CHECKING
 import zipfile
 
 import openpyxl
@@ -23,6 +24,8 @@ from .config import GOLDEN_ALIAS, GOLDEN_CUSTOMER_RECORD, RAW, SNAPSHOT_DATE, SO
 from .contracts import DependencyEdge, Issue, Location, MapPoint, PublicAsset, SourceFacts
 
 NodeKey = tuple[str, str]
+if TYPE_CHECKING:
+    from .impact import ImpactContext
 
 
 class CheckpointError(ValueError):
@@ -49,6 +52,8 @@ class TopologyToken:
 class TopologyIndex:
     paths: dict[str, tuple[TopologyToken, ...]]
     parents: dict[NodeKey, set[NodeKey]]
+    # Private, deterministic reverse lookup across ALL supplied premise paths.
+    premises_by_asset: dict[NodeKey, frozenset[str]]
 
 
 @dataclass(frozen=True)
@@ -95,6 +100,7 @@ class PreparedContext:
     private_customer_id: str
     private_customer_point: tuple[float, float]
     transformer_fuse_distance_m: float
+    impact: ImpactContext
 
 
 def source_hashes(raw: Path = RAW) -> dict[str, str]:
@@ -120,6 +126,7 @@ def parse_topology(lines: Iterable[str]) -> TopologyIndex:
     paths: dict[str, tuple[TopologyToken, ...]] = {}
     parents: dict[NodeKey, set[NodeKey]] = defaultdict(set)
     metadata: dict[NodeKey, TopologyToken] = {}
+    reverse: dict[NodeKey, set[str]] = defaultdict(set)
     for line in lines:
         if not line.strip():
             continue
@@ -137,6 +144,7 @@ def parse_topology(lines: Iterable[str]) -> TopologyIndex:
             if token.key in metadata and metadata[token.key] != token:
                 raise CheckpointError("conflicting_node_metadata", "One equipment key has conflicting source descriptions.")
             metadata[token.key] = token
+            reverse[token.key].add(premise)
             parents.setdefault(token.key, set())
         for child, parent in zip(path, path[1:]):
             parents[child.key].add(parent.key)
@@ -157,7 +165,7 @@ def parse_topology(lines: Iterable[str]) -> TopologyIndex:
                 queue.append(parent)
     if visited != len(metadata):
         raise CheckpointError("topology_cycle", "The union of source paths contains a cycle.")
-    return TopologyIndex(paths, dict(parents))
+    return TopologyIndex(paths, dict(parents), {key: frozenset(values) for key, values in reverse.items()})
 
 
 def select_path(index: TopologyIndex, premise: str) -> tuple[TopologyToken, ...]:
@@ -349,6 +357,7 @@ def prepare_context(raw: Path = RAW, location_alias: str = GOLDEN_ALIAS) -> Prep
     facts = SourceFacts(snapshot_date=SNAPSHOT_DATE.isoformat(), path_types=tuple(t.kind for t in path),
         transformer_mounting=transformer.mounting or "Unknown", historical_circuit_evidence=history_count > 0,
         historical_damage_record_count=history_count)
+    from .impact import prepare_impact
     return PreparedContext(location, facts, resolved, read_labor(raw), tuple(sorted(hashes.items())),
         customer["premise_nu"], str(customer["id"]), customer_point,
-        Geod(ellps="WGS84").inv(*transformer.point, *fuse.point)[2])
+        Geod(ellps="WGS84").inv(*transformer.point, *fuse.point)[2], prepare_impact(raw, index, resolved))

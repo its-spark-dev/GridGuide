@@ -68,7 +68,7 @@ The golden CLI, strict TypeScript and production bundle pass. Chrome browser ver
 
 1. Two map markers representing three verified assets, 165 primary paths plus two privacy rectangles, default customer selection, keyboard asset selection and no terminal marker.
 2. Live OSM tiles and attribution, street-layer toggle, tile-network failure and successful retry, map-API 503 and successful retry.
-3. CLEAR **11–18**, RESTRICTED **16–25**, BLOCKED **unavailable/null**; HIGH risk invariant and displayed values/explanations equal API responses, including when tiles are blocked.
+3. CLEAR **2.5–12**, RESTRICTED **4–16.5**, BLOCKED **unavailable/null**; HIGH risk invariant and displayed values/explanations equal API responses, including when tiles are blocked.
 4. All four message lifecycle previews, preparation content equal API values, estimate-update selection, preview-only eligibility, keyboard controls, stale request suppression and analysis/initial-load error recovery.
 5. Desktop 1440 px, tablet 768 px and mobile 390 px without horizontal overflow; desktop/mobile map screenshots reviewed; no uncaught browser errors.
 

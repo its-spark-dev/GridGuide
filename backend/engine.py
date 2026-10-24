@@ -8,7 +8,7 @@ from pyproj import Geod
 from .config import ASSUMPTIONS, RISK_VERSION, RESTORATION_VERSION, SNAPSHOT, Assumptions, risk_band_for_score
 from .contracts import (
     Assumption, Bounds, Change, Comparison, Evaluation, Factor, LaborContribution,
-    ModelVersions, RepairStage, RestorationResult, RiskResult, Scenario, SourceFacts, WorkItem,
+    ModelVersions, RepairStage, RestorationResult, RestorationPriority, RiskResult, Scenario, SourceFacts, WorkItem,
 )
 from .data import CheckpointError, PreparedContext
 
@@ -18,10 +18,10 @@ RISK_LIMITATIONS = (
     "Transformer mounting is a limited exposure proxy, not a complete assessment of the supply path.",
 )
 RESTORATION_LIMITATIONS = (
-    "Workbook hour basis is unspecified; elapsed hours use a provisional reference-crew conversion.",
+    "AEP labor effort is person-hours. Elapsed time uses an explicit conditional crew envelope; actual efficiency is unknown.",
     "Conditional on declared replacement tasks, available circuit supply, and the assumed serial repair sequence.",
     "Excludes the queue before crew assignment, unknown storm hold, unlisted damage and material shortages.",
-    "The upper allowance is a team scenario assumption, not a calibrated confidence interval or guarantee.",
+    "The ideal-to-single-effective-worker envelope is a prototype policy, not a calibrated interval or a guaranteed duration limit.",
     "Not an AEP restoration estimate or confirmation that power is available.",
 )
 
@@ -49,11 +49,11 @@ def calculate_risk(facts: SourceFacts, storm_level: int | None) -> RiskResult:
     overhead = None if facts.transformer_mounting == "Unknown" else int(facts.transformer_mounting == "Overhead")
     historical = None if facts.historical_circuit_evidence is None else int(facts.historical_circuit_evidence)
     factors = (
-        Factor(id="storm-scenario", label="Selected storm concern level", provenance="simulated_input", value=storm_level,
+        Factor(id="storm-scenario", label="Selected storm concern level", classification="scenario assumption", provenance="simulated_input", value=storm_level,
                contribution_points=storm_level, source_refs=("declared storm scenario; team ordinal scale 0–3",)),
-        Factor(id="overhead-transformer", label="Serving transformer mounting", provenance="source_fact", value=facts.transformer_mounting,
+        Factor(id="overhead-transformer", label="Serving transformer mounting", classification="source-derived", provenance="source_fact", value=facts.transformer_mounting,
                contribution_points=overhead, source_refs=("Transformer_Clip.mounting; exact typed ID join",)),
-        Factor(id="historical-circuit-damage", label="Historical damage evidence on the verified circuit alias", provenance="source_fact",
+        Factor(id="historical-circuit-damage", label="Historical damage evidence on the verified circuit alias", classification="source-derived", provenance="source_fact",
                value=facts.historical_circuit_evidence, contribution_points=historical,
                source_refs=("arcos_prod_damage_09_28_Clip.Circuit and Report_Tim; unambiguous GIS crosswalk",)),
     )
@@ -88,85 +88,134 @@ def calculate_restoration(context: PreparedContext, scenario: Scenario, assumpti
     assets = {a.alias: a for a in context.assets}
     recipes = {r.id: r for r in context.labor.recipes}
     contributions = []
-    direct = Decimal(0)
-    # Validate all tasks before considering blocked/no-crew states.
+    installation = removal = Decimal(0)
     for work in scenario.work_items:
         if work.node_alias not in assets:
             raise CheckpointError("unknown_repair_node", "A repair task references an asset outside the verified customer path.")
         if work.recipe not in recipes:
-            raise CheckpointError("unsupported_recipe", "This repair recipe has no validated checkpoint labor mapping.")
+            raise CheckpointError("unsupported_recipe", "This repair recipe has no validated labor mapping.")
         recipe = recipes[work.recipe]
         if assets[work.node_alias].token.kind != recipe.asset_kind:
             raise CheckpointError("recipe_asset_mismatch", "The repair recipe does not match the verified equipment type.")
-        effort = work.quantity * (recipe.install_hours + recipe.remove_hours)
-        direct += effort
+        installation += work.quantity * recipe.install_hours
+        removal += work.quantity * recipe.remove_hours
         contributions.append(LaborContribution(task_id=work.task_id, node_alias=work.node_alias, recipe=recipe.id,
             quantity=work.quantity, install_hours_per_unit=float(recipe.install_hours), remove_hours_per_unit=float(recipe.remove_hours),
-            direct_labor_hours=float(effort), source_refs=recipe.source_refs))
-
+            direct_labor_hours=float(work.quantity * (recipe.install_hours + recipe.remove_hours)), source_refs=recipe.source_refs))
+    direct = installation + removal
     sites = worksite_count(context, scenario.work_items, assumptions.worksite_radius_m)
     access = (context.labor.restricted_access_hours * sites if scenario.access == "restricted" else
               None if scenario.access == "blocked" else Decimal(0))
-    nominal = None if access is None else (direct + access) * context.labor.indirect_multiplier * assumptions.reference_crew_hours_per_labor_hour
+    repair_person_hours = direct * context.labor.indirect_multiplier
+    total = None if access is None else (direct + access) * context.labor.indirect_multiplier
     missing = []
-    if not scenario.work_items:
-        missing.append("declared_damage_work_items")
-    if scenario.access == "blocked":
-        missing.append("access_clearance_time")
-    if scenario.crew_count == 0:
-        missing.append("crew_assignment")
+    if not scenario.work_items: missing.append("declared_damage_work_items")
+    if scenario.access == "blocked": missing.append("access_clearance_time")
+    if scenario.crew_count == 0: missing.append("crew_assignment")
     status = ("insufficient_data" if not scenario.work_items else "pending_clearance" if scenario.access == "blocked" else
               "pending_assignment" if scenario.crew_count == 0 else "available")
     raw = display = None
     if status == "available":
-        high = nominal * assumptions.upper_scope_multiplier
-        raw = Bounds(lower=float(nominal), upper=float(high))
-        display = Bounds(lower=int(nominal.to_integral_value(rounding=ROUND_FLOOR)), upper=int(high.to_integral_value(rounding=ROUND_CEILING)))
-
+        # No measured productivity is available. This is an explicit conditional
+        # envelope: ideal all-person contribution through one effective worker.
+        # Tasks remain serial; extra CREWS never divide this path's effort.
+        low, high = total / Decimal(scenario.crew_size), total
+        raw = Bounds(lower=float(low), upper=float(high))
+        step = assumptions.display_step_hours
+        display = Bounds(lower=float((low / step).to_integral_value(rounding=ROUND_FLOOR) * step),
+                         upper=float((high / step).to_integral_value(rounding=ROUND_CEILING) * step))
     work_by_node = {w.node_alias: w for w in scenario.work_items}
-    stages = []
-    previous = ()
+    contributions_by_node = {c.node_alias: c for c in contributions}
+    damaged = set(work_by_node)
+    asset_impacts = tuple(item for item in context.impact.asset_impacts if item.node_alias in damaged)
+    impact_available = (bool(damaged) and len(asset_impacts) == len(damaged) and
+                        all(item.status == "verified_reverse_dependency" for item in asset_impacts))
+    groups = [(set(path) & damaged, count) for path, count in context.impact.dependency_groups]
+    affected = sum(count for required, count in groups if required)
+    circuit_count = sum(count for _, count in groups)
+    stages, completed, previous, released = [], set(), (), 0
     for asset in reversed(context.assets):
         if asset.alias in work_by_node:
             work = work_by_node[asset.alias]
-            stages.append(RepairStage(task_id=work.task_id, node_alias=asset.alias, depends_on_task_ids=previous))
-            previous = (work.task_id,)
+            completed.add(asset.alias)
+            eligible = sum(count for required, count in groups if required and required <= completed)
+            stages.append(RepairStage(task_id=work.task_id, node_alias=asset.alias, depends_on_task_ids=previous,
+                repair_person_hours=float(Decimal(str(contributions_by_node[asset.alias].direct_labor_hours)) * context.labor.indirect_multiplier),
+                newly_eligible_customers=eligible-released if impact_available else None))
+            released, previous = eligible, (work.task_id,)
+    nearby = (None if any(f.within_primary_extent is None for f in context.impact.facilities)
+              else sum(f.within_primary_extent for f in context.impact.facilities))
+    facility_context = ("Critical-facility counts within the primary-line extent are unavailable. " if nearby is None else
+                        f"{nearby} critical-facility features lie within the verified primary-line extent. ")
+    priority = RestorationPriority(circuit_customer_paths=circuit_count,
+        dependent_customer_paths=affected if impact_available else None,
+        paths_outside_declared_damage=circuit_count-affected if impact_available else None,
+        asset_impacts=asset_impacts, facilities=context.impact.facilities,
+        recommended_first_task=stages[0].task_id if stages else None,
+        reasoning=((f"Dependency-first sequence for {affected} source-matched customer paths through the declared damaged equipment. "
+                   f"The first repair could release {stages[0].newly_eligible_customers if stages else 0} paths from this declared damage scope; "
+                   "remaining repairs still gate their downstream customers. These are conditional releases, not confirmed restorations or independent competing repair jobs. "
+                   "Damage is simulated on source-verified assets; an ARCOS-to-these-assets match and actual sectionalization-restorable count are unavailable.") if impact_available else
+                   "A complete reverse dependency join is unavailable for the declared repair scope. Customer impact and potential release counts are withheld; repair order is only an assumed upstream sequence."),
+        criticality_action=(facility_context +
+                            "Confirm their electrical supply, outage status and backup arrangements before making a dispatch priority decision. "
+                            "No facility is assigned to this damaged section by proximity, and no criticality weight or rank is invented."),
+        limitations=("Customer counts use distinct source-matched approximate upstream paths, not live outage counts.",
+                     "Possible release assumes all other equipment intact, supply available, access cleared and operational authorization.",
+                     "A fuse is a potential isolation boundary; actual switching feasibility/state and complete connectivity are unavailable.",
+                     "ARCOS-to-selected-asset identity is unavailable. Counts describe simulated damage on exact source assets, not an observed ARCOS outage.",
+                     "Paths outside the declared damage need not await these repairs in principle; actual energization cannot be established.",
+                     "Facility counts describe a geographic bounding extent, not an outage area. Affected facilities and operational priority remain unavailable."))
+    def factor(identifier, label, value, classification, provenance="computed", unit=None, refs=()):
+        return Factor(id=identifier, label=label, value=value, classification=classification, provenance=provenance, unit=unit, source_refs=refs)
     factors = (
-        Factor(id="replacement-work", label="Direct replacement labor for declared quantities", value=float(direct), unit="source_labor_hours",
-               provenance="computed", source_refs=tuple(ref for c in contributions for ref in c.source_refs)),
-        Factor(id="access-condition", label="Declared access condition", value=scenario.access, provenance="simulated_input"),
-        Factor(id="restricted-access-work", label="Additional access labor; unknown when blocked", value=None if access is None else float(access),
-               unit="source_labor_hours", provenance="computed", source_refs=(context.labor.access_source, "A2-worksite-access-adder")),
-        Factor(id="worksite-count", label="Distinct modeled repair worksites", value=sites, unit="worksites", provenance="computed",
-               source_refs=("verified asset geometry; A2-worksite-access-adder",)),
-        Factor(id="indirect-labor-multiplier", label="Travel, setup and other indirect work included once", value=float(context.labor.indirect_multiplier),
-               unit="multiplier", provenance="source_fact", source_refs=(context.labor.multiplier_source,)),
-        Factor(id="serial-upstream-dependency", label="Upstream tasks must complete before downstream restoration stages", value=len(stages),
-               unit="ordered_repair_stages", provenance="computed", source_refs=("matched_upstream.txt; assumed serial repair sequencing",)),
-        Factor(id="crew-capacity", label="Additional crews cannot shorten this serial path", value=scenario.crew_count,
-               unit="available_reference_crews", provenance="simulated_input"),
-        Factor(id="upper-scope-allowance", label="Illustrative upper scope allowance, not statistical confidence", value=float(assumptions.upper_scope_multiplier),
-               unit="multiplier", provenance="team_rule", source_refs=("A3-upper-scope-allowance",)),
+        factor("replacement-work", "Direct installation plus removal labor", float(direct), "scenario assumption", unit="direct labor hours", refs=tuple(ref for c in contributions for ref in c.source_refs)),
+        factor("access-condition", "Declared access condition", scenario.access, "scenario assumption", "simulated_input"),
+        factor("restricted-access-work", "Additional direct access labor; unknown when blocked", None if access is None else float(access), "scenario assumption", unit="direct labor hours", refs=(context.labor.access_source,)),
+        factor("worksite-count", "Modeled repair worksites", sites, "prototype policy", unit="worksites"),
+        factor("indirect-labor-multiplier", "AEP multiplier: includes travel, safety discussions and setup once", float(context.labor.indirect_multiplier), "AEP-specified", "source_fact", "multiplier", (context.labor.multiplier_source,)),
+        factor("total-person-hours", "Total labor effort, not elapsed duration", None if total is None else float(total), "prototype policy", unit="person-hours"),
+        factor("serial-upstream-dependency", "Serial upstream-first repair stages", len(stages), "prototype policy", unit="stages"),
+        factor("crew-capacity", "Available crews; extra crews do not divide serial work", scenario.crew_count, "scenario assumption", "simulated_input", "crews"),
+        factor("crew-size", "People in the assigned crew", scenario.crew_size, "scenario assumption", "simulated_input", "people"),
+        factor("elapsed-envelope", "Conditional ideal-to-single-effective-worker envelope; actual efficiency unknown", "not calibrated", "prototype policy", "team_rule"),
     )
     return RestorationResult(status=status, raw_hours=raw, display_hours=display, direct_labor_hours=float(direct),
+        installation_direct_hours=float(installation), removal_direct_hours=float(removal),
         access_labor_hours=None if access is None else float(access), worksite_count=sites,
-        indirect_labor_multiplier=float(context.labor.indirect_multiplier), modeled_effort_hours=None if nominal is None else float(nominal),
+        indirect_labor_multiplier=float(context.labor.indirect_multiplier), repair_person_hours=float(repair_person_hours),
+        total_person_hours=None if total is None else float(total), priority=priority,
         factors=factors, labor_contributions=tuple(contributions), repair_stages=tuple(stages),
         limitations=RESTORATION_LIMITATIONS, missing_inputs=tuple(missing))
 
 
 def assumption_records(assumptions: Assumptions) -> tuple[Assumption, ...]:
-    return (
-        Assumption(id="A1-reference-crew-unit", description="Provisional reference-crew hours per workbook labor hour; source unit basis is not confirmed.",
-                   value=float(assumptions.reference_crew_hours_per_labor_hour)),
-        Assumption(id="A2-worksite-access-adder", description="Apply restricted-access labor once per modeled worksite; group repair points within this distance.",
-                   value=assumptions.worksite_radius_m),
-        Assumption(id="A3-upper-scope-allowance", description="Upper duration multiplier is a team scenario allowance, not a fitted statistical interval.",
-                   value=float(assumptions.upper_scope_multiplier)),
-        Assumption(id="supply-available", description="Circuit supply is assumed available in the scenario; it is not observed live.", value="simulated"),
-        Assumption(id="listed-damage-only", description="Only the declared component quantities require replacement; other units are assumed intact.", value="simulated"),
-        Assumption(id="serial-repair-sequencing", description="Conservative upstream-first serial repair stages; no parallel crew acceleration.", value="team_model"),
+    rows = (
+        ("labor-semantics", "Direct labor times the 4.5 multiplier is total person-hours, not elapsed time.", "person-hours", "AEP-specified"),
+        ("workbook-rates", "Installation, removal and access rates come from pinned workbook cells.", "source cells", "source-derived"),
+        ("crew-range", "AEP describes a reasonable crew of 2–8 people and leaves assumptions open.", "2–8 people", "AEP-specified"),
+        ("crew-default", "Initial four-person crew and one available crew are demo selections, not an AEP staffing rule.", "4 people; 1 crew", "scenario assumption"),
+        ("productivity", "Actual skill mix, task parallelizability and person-hour conversion efficiency are not supplied.", None, "unavailable"),
+        ("elapsed-envelope", "Serial task effort / selected people to serial task effort / one effective worker; conditional what-if envelope, not an outage-duration bound.", "ideal to single effective worker", "prototype policy"),
+        ("rounding", "Outward elapsed-time display rounding step.", float(assumptions.display_step_hours), "prototype policy"),
+        ("worksite-grouping", "Group repair points within this distance in meters; apply restricted-access work once per site.", assumptions.worksite_radius_m, "prototype policy"),
+        ("scope", "Only the declared replacement quantities are damaged; circuit supply and materials are assumed available.", "simulated", "scenario assumption"),
+        ("step-sequence", "Model upstream-first serial repairs; releases require all dependencies in the declared scope to complete.", "conditional release", "prototype policy"),
+        ("switching", "Actual switching feasibility, operating state and facility electrical attachment are unknown.", None, "unavailable"),
+        ("delays", "Dispatch queue, storm hold and access-clearance duration are unknown and not assigned convenient defaults.", None, "unavailable"),
+        ("criticality", "AEP identifies hospitals, fire stations and ambulance locations as priority context; no weights are supplied.", "critical-facility context", "AEP-specified"),
+        ("priority-weights", "Operational priority weights and independent competing repair candidates are not verified.", None, "unavailable"),
+        ("risk-rule", "Ordinal score = declared storm level + overhead indicator + historical-circuit indicator; LOW 0, MODERATE 1–2, HIGH 3–4, SEVERE 5. Not calibrated probability.", "scenario-risk-v1", "prototype policy"),
+        ("damage-identity", "Damage is declared explicitly on the exact GIS/topology-verified fuse and transformer; this is not a verified ARCOS damage match.", "declared on source assets", "scenario assumption"),
+        ("arcos-join", "No verified ARCOS equipment ID or pole-to-topology join identifies the selected repairs; observed affected customers remain unavailable.", None, "unavailable"),
+        ("reverse-dependencies", "All premise paths containing each declared asset's typed source identity are indexed and checked against customer GIS before a dependent count is exposed.", "exact reverse index", "source-derived"),
+        ("access-rate", "Restricted-access direct labor rate is loaded from the pinned workbook; applying it once per modeled site is a separate scenario assumption.", "Labor only work!D2", "source-derived"),
+        ("access-scope", "Restricted access requires the workbook access task at each modeled worksite; blocked clearance is unknown.", "one task per site", "scenario assumption"),
+        ("alert-rule", "Update previews qualify for an eligible customer when an absolute raw elapsed endpoint change exceeds six hours, or availability changes. Not an AEP threshold.", ">6 elapsed hours or finite/unavailable", "prototype policy"),
+        ("official-alert-rule", "Official AEP alert thresholds and escalation rules are not supplied.", None, "unavailable"),
+        ("declared-needs", "Optional needs are explicitly selected by the customer; no selection is inferred from GIS, history or AI.", "optional session selections", "user-declared"),
     )
+    return tuple(Assumption(id=i, description=d, value=v, classification=c) for i, d, v, c in rows)
 
 
 def evaluate(context: PreparedContext, scenario: Scenario, assumptions: Assumptions = ASSUMPTIONS) -> Evaluation:
@@ -189,41 +238,56 @@ def evaluate(context: PreparedContext, scenario: Scenario, assumptions: Assumpti
     return Evaluation(result_id=f"{scenario.location_alias}:{digest}", **data)
 
 
-def compare_access(before: Evaluation, after: Evaluation) -> Comparison:
-    """Only claim access causality when every other scenario/model/source input is fixed."""
-    a = before.simulated_inputs.model_dump(exclude={"access", "scenario_revision"})
-    b = after.simulated_inputs.model_dump(exclude={"access", "scenario_revision"})
+def compare_scenarios(before: Evaluation, after: Evaluation) -> Comparison:
+    """Explain only supported access/people changes; reject other causal confounders."""
+    a = before.simulated_inputs.model_dump(exclude={"access", "crew_size", "scenario_revision"})
+    b = after.simulated_inputs.model_dump(exclude={"access", "crew_size", "scenario_revision"})
     x, y = before.restoration, after.restoration
     if (a != b or before.location != after.location or before.data_snapshot != after.data_snapshot or
             before.source_facts != after.source_facts or before.model_versions != after.model_versions or before.assumptions != after.assumptions or
             before.risk != after.risk or x.labor_contributions != y.labor_contributions or
             x.indirect_labor_multiplier != y.indirect_labor_multiplier or x.worksite_count != y.worksite_count or
-            x.repair_stages != y.repair_stages):
-        raise CheckpointError("not_access_only", "An access-only comparison requires identical non-access inputs, data and assumptions.")
-    causes = ("access-condition", "restricted-access-work", "worksite-count", "indirect-labor-multiplier")
-    changes = [Change(field="simulated_inputs.access", before=before.simulated_inputs.access, after=after.simulated_inputs.access, cause_factor_ids=("access-condition",))]
-    changes.append(Change(field="restoration.status", before=x.status, after=y.status, cause_factor_ids=("access-condition",)))
-    changes.append(Change(field="restoration.access_labor_hours", before=x.access_labor_hours, after=y.access_labor_hours,
-        delta=None if x.access_labor_hours is None or y.access_labor_hours is None else round(y.access_labor_hours-x.access_labor_hours, 12),
-        unit="source_labor_hours", cause_factor_ids=("access-condition", "restricted-access-work", "worksite-count")))
+            x.repair_stages != y.repair_stages or x.priority != y.priority):
+        raise CheckpointError("not_scenario_only", "A comparison requires identical non-access/non-crew-size inputs, data and assumptions.")
+    changed = tuple(field for field in ("access", "crew_size") if getattr(before.simulated_inputs, field) != getattr(after.simulated_inputs, field))
+    causes = ("access-condition", "restricted-access-work", "worksite-count", "indirect-labor-multiplier", "crew-size", "elapsed-envelope")
+    changes = [Change(field=f"simulated_inputs.{field}", before=getattr(before.simulated_inputs,field), after=getattr(after.simulated_inputs,field), cause_factor_ids=("access-condition" if field=="access" else "crew-size",)) for field in changed]
+    changes.append(Change(field="restoration.status", before=x.status, after=y.status, cause_factor_ids=causes))
+    for field, unit in (("access_labor_hours", "direct labor hours"), ("total_person_hours", "person-hours")):
+        old, new = getattr(x, field), getattr(y, field)
+        changes.append(Change(field=f"restoration.{field}", before=old, after=new,
+            delta=None if old is None or new is None else round(new-old,12), unit=unit, cause_factor_ids=causes))
     for endpoint in ("lower", "upper"):
         old = None if x.raw_hours is None else getattr(x.raw_hours, endpoint)
         new = None if y.raw_hours is None else getattr(y.raw_hours, endpoint)
         changes.append(Change(field=f"restoration.raw_hours.{endpoint}", before=old, after=new,
-            delta=None if old is None or new is None else round(new-old, 12), unit="hours", cause_factor_ids=causes))
-    if x.raw_hours is not None and y.raw_hours is not None:
-        extra_labor = round(y.access_labor_hours - x.access_labor_hours, 12)
-        lower_delta = round(y.raw_hours.lower-x.raw_hours.lower, 12)
-        upper_delta = round(y.raw_hours.upper-x.raw_hours.upper, 12)
-        explanation = (f"Access changed from {before.simulated_inputs.access} to {after.simulated_inputs.access}. "
-            f"Access labor changed by {extra_labor:g} source labor hours across {y.worksite_count} modeled worksites. "
-            f"After the {y.indirect_labor_multiplier:g} indirect-work multiplier and the disclosed unit/scope assumptions, "
-            f"the raw lower bound changed by {lower_delta:g} hours and the upper bound by {upper_delta:g} hours. "
-            "Risk is unchanged because access is not a risk-band input.")
-    elif y.status == "pending_clearance":
-        explanation = "Access is blocked. Clearance time is unknown, so the finite restoration range is withdrawn. Risk is unchanged."
+            delta=None if old is None or new is None else round(new-old,12), unit="elapsed hours", cause_factor_ids=causes))
+    if y.status == "pending_clearance":
+        explanation = "Access is blocked. Clearance time is unknown, so the finite restoration range is withdrawn. Crew size cannot resolve unknown clearance. Risk is unchanged."
     elif y.raw_hours is not None:
-        explanation = "Access no longer blocks the declared repairs. A conditional finite range is available under the same assumptions. Risk is unchanged."
+        parts = []
+        if "access" in changed:
+            parts.append(f"Access changed from {before.simulated_inputs.access} to {after.simulated_inputs.access} across {y.worksite_count} modeled worksites.")
+            if x.total_person_hours is not None:
+                parts.append(f"Total labor effort changes from {x.total_person_hours:g} to {y.total_person_hours:g} person-hours after one {y.indirect_labor_multiplier:g} multiplier.")
+            else:
+                parts.append(f"Clearance no longer blocks the declared scope; total effort is {y.total_person_hours:g} person-hours.")
+        if "crew_size" in changed:
+            parts.append(f"Crew size changed from {before.simulated_inputs.crew_size} to {after.simulated_inputs.crew_size} people. Repair effort remains {y.repair_person_hours:g} person-hours; people change the ideal-duration boundary, not the damage or serial dependencies.")
+        if not changed: parts.append("Access and crew size are unchanged; the restoration outlook is unchanged.")
+        parts.append(f"The conditional outlook is {y.display_hours.lower:g}–{y.display_hours.upper:g} elapsed hours. Actual crew efficiency is unknown; the single-effective-worker boundary is a scenario, not a guaranteed completion limit. Risk is unchanged.")
+        explanation = " ".join(parts)
     else:
         explanation = "No finite restoration range is available: " + ", ".join(y.missing_inputs) + ". Risk is unchanged."
-    return Comparison(before_result_id=before.result_id, after_result_id=after.result_id, changes=tuple(changes), explanation=explanation)
+    return Comparison(before_result_id=before.result_id, after_result_id=after.result_id,
+        changed_inputs=changed, changes=tuple(changes), explanation=explanation)
+
+
+def compare_access(before: Evaluation, after: Evaluation) -> Comparison:
+    """Narrow access-only caller compatibility; never attribute a crew change to access."""
+    if before.simulated_inputs.crew_size != after.simulated_inputs.crew_size:
+        raise CheckpointError("not_access_only", "An access-only comparison requires identical non-access inputs.")
+    try:
+        return compare_scenarios(before, after)
+    except CheckpointError as error:
+        raise CheckpointError("not_access_only", "An access-only comparison requires identical non-access inputs, data and assumptions.") from error

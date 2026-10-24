@@ -16,6 +16,7 @@
 * { box-sizing: border-box; }
 body { margin: 0; }
 button,input { font: inherit; }
+button:disabled { cursor: default; opacity: .65; }
 a { color: var(--action); }
 button,summary { cursor: pointer; }
 button:focus-visible,a:focus-visible,summary:focus-visible { outline: 3px solid var(--action); outline-offset: 5px; }
@@ -76,6 +77,22 @@ h1 { font-size: 40px; text-transform: uppercase; max-width: 710px; color: var(--
 .blocked .state-title { color: var(--critical); }
 .blocked-note { margin-top: 12px; font-size: 14px; text-transform: capitalize; }
 .clearance-note { font-size: 16px; margin-bottom: 20px; }
+.repair-evidence,.restoration-sequence { padding: 28px 0; border-top: 1px solid var(--border); margin-bottom: 24px; }
+.repair-evidence p,.restoration-sequence p { margin: 12px 0; }
+.repair-evidence summary,.restoration-sequence summary { padding: 12px 0; color: var(--action); }
+.repair-evidence small,.restoration-sequence small { display: block; color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+.effort-total strong { color: var(--action); font-size: 26px; }
+.repair-stages { padding-left: 24px; }
+.repair-stages li { margin: 16px 0; }
+.repair-stages span { display: block; }
+.crew-options { margin-bottom: 14px; }
+.crew-options legend { font-size: 18px; padding-top: 20px; }
+.declared-needs { border: 1px solid var(--border); padding: 20px; margin: 24px 0; }
+.declared-needs label { display: flex; align-items: center; gap: 12px; padding: 12px 0; }
+.declared-needs input { width: 20px; height: 20px; accent-color: var(--action); flex-shrink: 0; }
+.declared-needs button { padding: 12px 18px; border: 1px solid var(--border); background: white; color: var(--action); min-height: 44px; }
+.declared-needs label:focus-within { outline: 3px solid var(--action); outline-offset: 3px; }
+.declared-guidance { background: var(--surface-secondary); border-left: 3px solid var(--action); margin-top: 20px; padding: 18px; }
 .access-panel { border-top: 18px solid var(--divider); padding: 30px 0; }
 .access-panel h2 { margin-bottom: 12px; }
 .access-options { border: 0; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }

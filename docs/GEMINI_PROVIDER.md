@@ -50,17 +50,22 @@ Gemini has a seven-second transport timeout and an eight-second overall async pr
 
 A process-local LRU cache holds at most 64 **validated AI-assisted answers**, expiring after five minutes. Its key hashes the full allowlisted context and canonical intent, including revision, comparison text and policy version. It cannot reuse a prior comparison just because the current result ID matches. No raw questions, secrets or responses are stored. Failed/unsupported answers are not cached. Sequential identical questions reuse the answer; simultaneous cold requests can still produce separate calls. No persistence or background prefetching was added.
 
-## Live results and checks
+## Live results and checks — AEP realignment
 
-| Case | Mode | Observed seconds | Validated behavior |
-|---|---|---:|---|
-| CLEAR | AI-assisted | 0.970 | 11–18 provisional hours after crew response begins; approved repair, serial-work and labor clauses |
-| RESTRICTED | AI-assisted | 0.931 | 16–25 provisional hours; required exact engine comparison and access detail |
-| BLOCKED | AI-assisted | 0.877 | Null bounds; access clearance required, no numeric restoration estimate |
-| HIGH risk | AI-assisted | 1.269 | Ordinal modeled concern band, not outage probability; LOW confidence retained |
+Model discovery was repeated on October 24, 2026: HTTP 200; `gemini-3.5-flash-lite` listed with `generateContent`. The official Standard pricing table was rechecked and lists Free Tier input/output at no charge. This does not independently verify project billing; billing disabled is user-declared. No billing/account changes, paid fallback or model change were made.
 
-All calls used the configured key and the same minimized context and validator used by the service. An initial signature-envelope rejection and deadline failures produced safe standard answers; no fabricated values reached the UI.
+The following browser smoke calls used the current AEP person-hour model, actual local FastAPI service, configured key and existing strict validator. Times include browser interaction and visible response, not a service guarantee.
 
-**98 automated backend tests pass**, all provider calls mocked. Added tests cover Gemini request schema, credential placement/non-echo, minimized context, response parsing, opaque signature handling, 4xx/5xx/429/timeout, malformed JSON/schema, unsupported references, stale IDs, four scenarios, no-key configuration, cache bounds/expiry/context binding and invalid-response non-caching. Existing OpenAI tests still pass. Tests do not load the local secret file or require live quota.
+| Case | Mode | Observed seconds |
+|---|---|---:|
+| CLEAR | ai_assisted | 1.030 |
+| CLEAR cached | ai_assisted | 0.049 |
+| LABOR | ai_assisted | 0.928 |
+| PRIORITY | ai_assisted | 0.962 |
+| RISK | ai_assisted | 0.884 |
+| RESTRICTED | ai_assisted | 0.848 |
+| BLOCKED | ai_assisted | 0.806 |
 
-The golden CLI and frontend TypeScript/build pass. Chrome regression checks cover map/tiles/fallback, schematic, preparation, alert lifecycle, scenario changes, retries, stale responses and mobile/tablet layout. A separate local API instance loaded the secret only into its server environment: the browser displayed a successful live Gemini-backed AI-assisted answer. Repeating that exact result/question returned HTTP 200 from the validated cache in about 0.0015 seconds. No numerical engine, teammate pipeline or raw/processed data was changed. Keep Free Tier quota monitoring and Standard explanation available during the demo.
+CLEAR rendered 11.736 person-hours separately from 2.5–12 elapsed hours. RESTRICTED rendered 16.236 person-hours, 4–16.5 elapsed hours and exact comparison evidence. Labor rendered 2.608 direct hours and the single 4.5 multiplier. Priority explicitly retained the missing ARCOS join and unavailable actual sectionalization count. BLOCKED had no finite ETA. Risk remained ordinal HIGH/LOW confidence. All six uncached intents succeeded; the repeated identical CLEAR request used the validated cache. No secret or raw provider response was printed or persisted.
+
+Full automated tests include mocked provider faults, strict references, privacy, declaration exclusion, numerical invariants and reverse joins. Standard-mode browser checks separately verified all scenarios, stale response suppression, failure/retry, map isolation and customer previews. See [current freeze evidence](DEMO_FREEZE.md) for counts, commands and boundaries. The provider adapter itself was not changed during this realignment.

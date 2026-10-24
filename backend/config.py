@@ -17,23 +17,20 @@ SOURCE_SHA256 = {
     "Install_Labor_HackOHIO.xlsx": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b",
 }
 RISK_VERSION = "scenario-risk-v1"
-RESTORATION_VERSION = "serial-path-v1"
+RESTORATION_VERSION = "person-hours-serial-envelope-v2"
 
 
 @dataclass(frozen=True)
 class Assumptions:
-    """Change this version and rerun golden tests when the unit basis is clarified."""
+    """Prototype policies, never claimed as AEP staffing/productivity standards."""
 
-    version: str = "provisional-crew-unit-v1"
-    reference_crew_hours_per_labor_hour: Decimal = Decimal("1")
-    upper_scope_multiplier: Decimal = Decimal("1.5")
+    version: str = "explicit-person-hour-envelope-v2"
+    display_step_hours: Decimal = Decimal("0.5")
     worksite_radius_m: float = 50.0
 
     def __post_init__(self):
-        if not self.reference_crew_hours_per_labor_hour.is_finite() or self.reference_crew_hours_per_labor_hour <= 0:
-            raise ValueError("Labor conversion must be finite and positive")
-        if not self.upper_scope_multiplier.is_finite() or self.upper_scope_multiplier < 1:
-            raise ValueError("Upper scope multiplier must be finite and at least one")
+        if not self.display_step_hours.is_finite() or self.display_step_hours <= 0:
+            raise ValueError("Display step must be finite and positive")
         if not 0 < self.worksite_radius_m <= 1000:
             raise ValueError("Worksite radius must be finite and positive")
 

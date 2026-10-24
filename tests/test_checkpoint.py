@@ -123,13 +123,14 @@ class RealPipelineTests(unittest.TestCase):
         expected_clear = source_direct * ilm
         expected_restricted = (source_direct + 2 * adder) * ilm
         for actual, expected in ((self.clear, expected_clear), (self.restricted, expected_restricted)):
-            self.assertAlmostEqual(actual.restoration.raw_hours.lower, expected, places=10)
-            self.assertAlmostEqual(actual.restoration.raw_hours.upper, expected * 1.5, places=10)
+            self.assertAlmostEqual(actual.restoration.total_person_hours, expected, places=10)
+            self.assertAlmostEqual(actual.restoration.raw_hours.upper, expected, places=10)
+            self.assertAlmostEqual(actual.restoration.raw_hours.lower, expected / 4, places=10)
             self.assertLessEqual(actual.restoration.raw_hours.lower, actual.restoration.raw_hours.upper)
-            self.assertEqual(actual.restoration.display_hours.lower, math.floor(expected))
-            self.assertEqual(actual.restoration.display_hours.upper, math.ceil(expected * 1.5))
-        self.assertEqual(self.clear.restoration.display_hours, Bounds(lower=11, upper=18))
-        self.assertEqual(self.restricted.restoration.display_hours, Bounds(lower=16, upper=25))
+            self.assertEqual(actual.restoration.display_hours.lower, math.floor((expected / 4) * 2) / 2)
+            self.assertEqual(actual.restoration.display_hours.upper, math.ceil(expected * 2) / 2)
+        self.assertEqual(self.clear.restoration.display_hours, Bounds(lower=2.5, upper=12))
+        self.assertEqual(self.restricted.restoration.display_hours, Bounds(lower=4, upper=16.5))
 
     def test_blocked_access_withdraws_finite_estimate(self):
         result = self.blocked.restoration
@@ -173,7 +174,7 @@ class RealPipelineTests(unittest.TestCase):
             self.assertEqual(restricted.risk, self.clear.risk)
             previous = clear.restoration.raw_hours.lower
             if quantity == 2:
-                self.assertEqual(clear.restoration.display_hours, Bounds(lower=21, upper=33))
+                self.assertEqual(clear.restoration.display_hours, Bounds(lower=5, upper=22))
 
     def test_synthetic_colocated_jobs_pay_access_once(self):
         # Explicit unit-test counterexample, not a claim about the actual golden geometry.
@@ -182,7 +183,7 @@ class RealPipelineTests(unittest.TestCase):
         result = evaluate(colocated, default_scenario(colocated, access="restricted"))
         self.assertEqual(result.restoration.worksite_count, 1)
         self.assertAlmostEqual(result.restoration.access_labor_hours, float(self.context.labor.restricted_access_hours))
-        self.assertEqual(result.restoration.display_hours, Bounds(lower=13, upper=21))
+        self.assertEqual(result.restoration.display_hours, Bounds(lower=3, upper=14))
 
     def test_actual_dependency_order_is_reversed_for_repairs(self):
         stages = self.clear.restoration.repair_stages
@@ -196,14 +197,18 @@ class RealPipelineTests(unittest.TestCase):
         self.assertIsNone(result.restoration.raw_hours)
         self.assertIsNone(result.confirmed_utility.outage_status)
 
-    def test_hour_basis_is_central_replaceable_and_disclosed(self):
-        updated = Assumptions(version="test-conversion", reference_crew_hours_per_labor_hour=Decimal("2"))
-        result = evaluate(self.context, self.base, updated)
-        self.assertEqual(result.restoration.raw_hours.lower, 2 * self.clear.restoration.raw_hours.lower)
-        self.assertEqual(result.restoration.raw_hours.upper, 2 * self.clear.restoration.raw_hours.upper)
-        self.assertTrue(result.restoration.provisional)
-        self.assertIn("unspecified", result.source_facts.labor_unit_status)
-        self.assertNotEqual(result.result_id, self.clear.result_id)
+    def test_aep_unit_semantics_and_unknown_efficiency_are_separate(self):
+        result = self.clear
+        self.assertEqual(result.source_facts.labor_unit_status, 'AEP_direct_labor_times_4_5_is_person_hours')
+        self.assertEqual(result.restoration.effort_unit, 'person-hours')
+        self.assertEqual(result.restoration.unit, 'elapsed hours')
+        self.assertIsNone(result.restoration.actual_conversion_efficiency)
+        self.assertAlmostEqual(result.restoration.installation_direct_hours * 4.5, 6.912)
+        self.assertAlmostEqual(result.restoration.removal_direct_hours * 4.5, 4.824)
+        self.assertEqual(result.restoration.total_person_hours, 11.736)
+        self.assertNotEqual(result.restoration.raw_hours.lower, result.restoration.total_person_hours)
+        self.assertEqual(next(a.classification for a in result.assumptions if a.id == 'productivity'), 'unavailable')
+        self.assertFalse(hasattr(ASSUMPTIONS, 'reference_crew_hours_per_labor_hour'))
 
     def test_synthetic_changed_source_rate_changes_output(self):
         # Proves the engine uses rates, not hard-coded final golden numbers.
@@ -211,12 +216,12 @@ class RealPipelineTests(unittest.TestCase):
         changed = replace(self.context, labor=replace(self.context.labor, recipes=recipes))
         result = evaluate(changed, default_scenario(changed))
         self.assertAlmostEqual(result.restoration.raw_hours.lower - self.clear.restoration.raw_hours.lower,
-                               float(self.context.labor.indirect_multiplier))
+                               float(self.context.labor.indirect_multiplier) / self.base.crew_size)
 
     def test_comparison_exposes_causal_delta_without_llm(self):
         comparison = compare_access(self.clear, self.restricted)
         lower = next(c for c in comparison.changes if c.field.endswith("raw_hours.lower"))
-        self.assertEqual(lower.delta, 4.5)
+        self.assertEqual(lower.delta, 1.125)
         self.assertIn("restricted-access-work", lower.cause_factor_ids)
         available_ids = {f.id for f in self.restricted.restoration.factors}
         self.assertTrue(all(set(c.cause_factor_ids) <= available_ids for c in comparison.changes))

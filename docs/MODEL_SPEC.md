@@ -1,190 +1,79 @@
-# Model and interface specification
+# GridGuide model specification — v2
 
-Status: risk/restoration/access checkpoint, customer guidance/preview alerts and constrained AI explanations are implemented and tested. Numerical rules and golden values remain unchanged. The older full-product sketches below are still proposals where identified; [AI_EXPLANATIONS.md](AI_EXPLANATIONS.md) records the exact implemented provider boundary and validation. Every coefficient labeled “team assumption” is visible in the assumptions panel and included in the structured result. Source facts are documented in [DATA_AUDIT.md](DATA_AUDIT.md); synthetic inputs are not observations.
+Authority: the user supplied authoritative excerpts from the HackOHI/O 2026 AEP AI Outage Concierge Data Guide. They resolve direct-labor × 4.5 → total person-hours, including travel, safety discussions and setup. They do not specify actual conversion efficiency, default crew composition, switching feasibility, alert thresholds, clearance duration or priority weights. See [evidence ledger and requirement matrix](AEP_REALIGNMENT.md). No original guide PDF or page references are claimed.
 
-## 1. Risk band: `scenario-risk-v1`
+## 1. Source, damage and dependency identity
 
-Use a transparent ordinal score for **relative outage concern under the selected storm scenario**. It is not a probability, calibrated forecast, or actual outage detection. The challenge accepts this representation (PDF p3 §1).
+Pinned source hashes and snapshot live in `backend/config.py`. `prepare_context()` verifies them before reading. Demo A is anchored by 1-based Customer_Clip row 1077 in that exact snapshot. Identifiers stay strings. Exact `(entity, id)` topology keys must match GIS `id`, type, location, circuit and parent relationships; circuit aliases must be unique in both directions. Unknown IDs never receive a guessed location match.
 
-Inputs and rules:
+The source path is Customer → Distribution transformer → Fuse → abstract Circuit Breaker terminal. The transformer contains a 100-kVA phase specification. The scenario explicitly declares one replacement unit on that verified transformer and one cutout replacement on that verified fuse. Their identity is source-derived; damage and quantity are **scenario assumptions**. Historical same-circuit ARCOS evidence does not establish failure of either asset.
 
-| Input | Definition | Points / provenance |
-|---|---|---|
-| `storm_level` | Explicit scenario choice: calm, elevated, strong, severe | 0, 1, 2, 3; team-authored scenario scale, not meteorological thresholds |
-| `overhead_transformer` | Selected premise's uniquely resolved first transformer has `mounting == "Overhead"` | 1 if overhead, 0 if Underground; observed inventory proxy for exposure, not the whole supply path |
-| `historical_circuit_evidence` | At least one historical damage row on the selected **unambiguous** code/alias pair before the snapshot date | 1 if present, 0 if none found in this extract; observed historical context, not a failure rate |
+The ARCOS schema has no verified equipment ID/pole-location key for these repairs. `NEAR_FID` has no established source-table identity and is not an equipment key. Poles and primary segments are absent from the upstream token identities. A nearest-pole hypothesis permitted by the guide would still need a defensible pole-to-equipment/section join; none is silently added. ARCOS-observed affected-customer count remains **null**.
 
-`score = storm_level + overhead_transformer + historical_circuit_evidence`.
+`TopologyIndex.premises_by_asset` reverses ALL supplied paths to private premise sets. For each declared asset, the engine checks every indexed premise against unique customer GIS, first-transformer typed identity/location, circuit/station, supported downstream path and terminal. It does not first filter away contradictory memberships. Any unresolved membership withholds the complete dependent count. Unknown asset identity is unavailable, never zero. Premise identities remain private.
 
-| Score | Band | Customer meaning |
-|---:|---|---|
-| 0 | LOW | Few concern signals in this limited scenario; interruption remains possible |
-| 1–2 | MODERATE | Some concern signals; prepare and monitor information |
-| 3–4 | HIGH | Several concern signals; prepare for a possible interruption |
-| 5 | SEVERE | Highest concern category in these scenario rules |
+The golden fuse has **4** dependent premises; the transformer has **1**, contained in those four. Union impact is **4**, not five. There are **1,563** source-matched circuit paths, **1,559** outside this declared damage scope. These are approximate source dependencies under declared damage, not live outage counts or claims of complete regional electrical modeling.
 
-Weights and cutoffs are **team assumptions**, chosen for clarity and monotonicity, not fitted to data. Storm level dominates the range of possible scores; inventory and history are small contextual additions. Expose each contribution in plain language. Do not use fabricated percentages, risk heatmaps that imply calibrated probabilities, or “90% confidence.”
+## 2. Risk — unchanged prototype policy
 
-Missing handling: absent/invalid storm level, missing first transformer, Unknown mounting, or ambiguous code/alias mapping produces `status: "insufficient_data"`, `band: null`, `score: null`. No historical records on an otherwise verified alias yields zero *historical uplift* plus “no records found in this extract; coverage unknown,” not “never had an outage.” Incomplete later upstream geometry may still allow this limited band, but the missing dependencies must be disclosed. Changing access, crew count, or restoration work quantities does not change this pre-storm risk score; damage impact is a separate scenario state.
+`score = storm_level + overhead_indicator + historical_circuit_indicator`. Storm level 0–3 is a scenario assumption. Mounting and binary historical context are source-derived. Score-to-band policy: 0 LOW; 1–2 MODERATE; 3–4 HIGH; 5 SEVERE. Missing required inputs produce null score/band. Probability is always null; predictive confidence LOW. Golden: 2 + 1 + 1 = **4 / HIGH**. Crew, access and declared needs cannot alter it.
 
-Confidence has two meanings that must stay separate:
+## 3. Direct labor and person-hours
 
-- `data_quality`: `verified_subset`, `partial`, or `unavailable`, determined by identity/circuit checks.
-- `predictive_confidence`: always `LOW` for v1, because the score has no outcome calibration. A clean join does not create high predictive confidence.
+Rates below are **source-derived** from `Labor time material related`; quantities and replacement scope are **scenario assumptions**.
 
-No model training, scikit-learn, probability calibration, or accuracy claims in MVP. Later statistical work requires an event-by-premise exposure panel with positive/negative outages, consistent observation windows, storm features, reliable labels, and event/time-separated validation.
+| Work | Install cell / direct hours | Remove cell / direct hours | Quantity | Direct replacement hours | Repair person-hours |
+|---|---|---|---:|---:|---:|
+| 100-kVA transformer unit | C25 / 1.28 | D25 / 0.944 | 1 | 2.224 | 10.008 |
+| Fuse cutout | A90 / 0.256 | B90 / 0.128 | 1 | 0.384 | 1.728 |
+| Total | 1.536 | 1.072 | | **2.608** | **11.736** |
 
-## 2. Restoration: `serial-path-v1`
+AEP-specified rule: `person_hours = direct_hours × 4.5`, once. Installation alone is `1.536 × 4.5 = 6.912 person-hours`; removal is `1.072 × 4.5 = 4.824`. Full replacement requires both. The guide's installation example is not permission to omit removal.
 
-### Supported scope
+CLEAR adds zero access work by scenario assumption. RESTRICTED uses `Labor only work!D2 = 0.5` direct hours; applying one access task per modeled worksite is a scenario assumption. The 50 m grouping radius is a prototype policy; source points are 140.266 m apart, producing two modeled sites. Restricted total: `(2.608 + 2 × 0.5) × 4.5 = 16.236 person-hours`. The 4.5 access person-hours are additional direct work expanded once; there is no second travel/setup allowance.
 
-Calculate a **conditional duration range for declared repairs on the selected premise's verified dependency path**, measured from when an assigned crew begins its response. It includes the workbook's indirect work allowance. It excludes an unknown queue before crew assignment, unknown storm hold, unlisted damage, material shortages, actual switching decisions, and off-path work. These exclusions must accompany the estimate. The result is not a clock-time ETR or an AEP commitment.
+BLOCKED has unknown clearance: access work, complete total effort and duration bounds are null. Known repair-only effort remains 11.736 person-hours. Zero available crews also withholds duration; unsupported/incorrect recipes fail validation. Invalid work is validated before access gating. Source rates are loaded at runtime with pinned hashes, not frozen result constants.
 
-The P0 path is serial: damaged upstream equipment must be completed before the downstream task's restoration stage. This is a conservative team sequencing assumption, not a claim that field crews cannot prepare work in parallel. Resolve task ancestry through the ordered source path, even across intact nodes. Preserve the distinction between a customer→upstream tracing edge and the reverse upstream→downstream repair prerequisite. Abstract circuit terminals are assumed available in the demo; no source data establishes their current state.
+## 4. Conditional elapsed-time envelope
 
-Each work item has a stable task ID, a public node alias, a component recipe, positive integer quantity, a workbook rate reference, an access state, and source classification. Quantity is explicitly simulated. One damage report is not one known damaged unit. Multiple customers sharing a damaged node must share one task in any future grouped scope.
+AEP specifies a reasonable **2–8 people** and leaves crew assumptions open. Default **4 people, 1 available crew** is a scenario assumption. API accepts integer 2–8; UI offers 2/4/8. Actual productivity, skill mix and task parallelizability are **unavailable**, represented as null, not a chosen efficiency factor.
 
-### Rates, units, and formula
+Prototype policy: keep the declared repair tasks serial. For total person-hours P and selected people N, display a conditional envelope from ideal all-person contribution to one effective worker:
 
-Provisional assumption **A1**: a workbook labor hour is treated as one reference-crew effort hour. The file does not define crew composition or person-hour versus crew-hour semantics. Do not divide by worker headcount. Seek organizer clarification; if contradicted, revise the conversion and golden results before making operational claims. Retain low confidence until clarified.
+`raw elapsed hours = [sum(P_task / N), sum(P_task / 1)] = [P / N, P]`
 
-For damaged work item `i`:
+This does not measure actual efficiency or promise that an eight-person crew works four times faster than two people. Only the ideal boundary scales; the single-effective-worker scenario remains fixed. Extra available crews never divide this serial path. The old fixed unit conversion and arbitrary upper multiplier are removed.
 
-```text
-direct_i = quantity_i × (install_rate_i + remove_rate_i)
-access_i = 0 for clear; 0.5 for restricted access at that repair worksite
-effort_i = (direct_i + access_i) × 4.5
-nominal_hours = sum(effort_i for the selected serial repair path)
-raw_range_hours = [nominal_hours, nominal_hours × 1.5]
-display_range_hours = [floor(raw_low), ceil(raw_high)]
-```
+Round the lower boundary down and upper boundary up to 0.5 elapsed hours (prototype display policy). No clipping to attractive prior results. This is a **what-if envelope, not a calibrated confidence interval or guaranteed bound on restoration**. Actual inefficiency, dispatch queues, storm holds, switching authorization, material shortages or unlisted damage can exceed the upper value. The nominal time origin is assigned-crew response; the excluded delays are not set to zero as known facts.
 
-- Install plus remove assumes replacement, not simple reset or inspection. Recipes must name that assumption.
-- The 0.5 restricted-access rate comes from `Labor only work!D2`; applying it once per repair worksite is team assumption **A2** because the workbook does not define the application unit. Co-located jobs must share one access adder if they represent one worksite. Do not stack overlapping backyard, remote, and access adders automatically.
-- 4.5 comes from `Indirect Labor Multiplier!B1`. Apply it exactly once to direct effort plus the selected labor adder. It already includes driving, safety discussion, and setup; do not add a second default travel factor.
-- The upper factor 1.5 is team assumption **A3**, an illustrative scope/condition allowance. The interval is a scenario envelope, **not** a confidence interval, P10/P90, or validated coverage guarantee. Unmodeled conditions can exceed it.
-- Outward integer-hour rounding avoids displaying many decimal places. Keep unrounded values for comparisons. No tasks produces “No repairs specified; restoration duration not determined,” with null duration, rather than a claim of power restoration.
-- `crew_count` is an integer 0–4 in MVP (team UI limit). Zero means unavailable/pending assignment, null range. One or more crews gives the same serial-path duration: the bottleneck is dependencies. Label this plateau. Do not divide this chain's duration by crew count or add fake acceleration.
-- `access = blocked` means pending clearance, null finite range. Restricted access is extra effort; blocked access is a gate, not a finite arbitrary multiplier. The LLM cannot invent clearance time.
+| People | CLEAR raw elapsed | CLEAR display | RESTRICTED raw elapsed | RESTRICTED display |
+|---:|---|---|---|---|
+| 2 | 5.868–11.736 | **5.5–12** | 8.118–16.236 | **8–16.5** |
+| 4 | 2.934–11.736 | **2.5–12** | 4.059–16.236 | **4–16.5** |
+| 8 | 1.467–11.736 | **1–12** | 2.0295–16.236 | **2–16.5** |
 
-Why this method: it is easy to compute, inspect and explain, gives reproducible interactive behavior, respects the verified chain, and does not invent probability distributions. Monte Carlo would add precision unsupported by samples; historical regression would learn unreliable calendar-date artifacts. Full crew scheduling and road routing are deferred. A P1 independent-branch demo may add crew benefits only after proving branch identity and testing scheduling behavior; it must have its own versioned model contract, not silently change v1.
+All crew sizes under BLOCKED retain null bounds. Access and crew changes compare raw elapsed hours separately from person-hours. Changes to unrelated facts/recipes/models are rejected as confounded comparisons.
 
-### Recipe coverage
+## 5. Repair sequence, sectionalization and criticality
 
-| Component | Source | MVP rule |
-|---|---|---|
-| Fuse cutout replacement | `Labor time material related!A90:B90` | One declared cutout; not a whole fuse bank unless the quantity explicitly says so |
-| 100-kVA transformer unit replacement | Same sheet `C25:D25` | One declared unit; do not assume all phases/units in a bank are damaged |
-| Pole replacement | Same sheet `C12:D14` | P1 only after known height class and explicit supporting-material scope |
-| Recloser / switch / service | Same sheet `A70:B70`, `A85:B85`, `A80:B80` | P1, with reconciled identity and explicit component recipe |
-| Primary/secondary wire, lights, capacitors, step transformers, excavation without volume | No complete validated recipe | Unavailable for numerical restoration; explain missing scope/rate, never zero |
+Upstream-first serial repair is a **prototype policy**, based on source ancestry. The fuse repair carries 1.728 repair person-hours and could clear the declared damage dependency for three paths. The transformer carries 10.008 person-hours and could clear the remaining one after the fuse. This is conditional on other assets intact, supply/materials available, access cleared and operational authorization. It is not an actual restoration schedule.
 
-Step restoration in P0: the dependency view shows that completing an upstream repair alone does not restore a premise with a remaining downstream damaged task. Completing the final prerequisite makes this premise *eligible for modeled restoration*, not confirmed energized. P1 may show two vetted customers on different branches reaching this condition at different stages. Do not simulate tie-switch energization or claim operational switching authority.
+A fuse is a potential isolation boundary. Operating state, complete connections, backfeed, protection and switching authorization are unavailable. `sectionalization_restorable_customers` stays **null**. Do not relabel the 1,559 paths outside declared damage as customers actually restored by switching.
 
-## 3. Scenario contract and invariants
+Facilities are source-derived **spatial criticality context**, not verified electrical dependencies. Regional inventory: hospitals 5, fire stations 37, ambulance locations 10. Within the bounding extent of exact circuit/alias/station-matched primary segments: 0 / 1 / 0 respectively, after CRS validation/conversion. The extent is not a service/outage polygon. A missing extent yields null counts. Identities and coordinates are not exported.
 
-| Control | Support | Expected behavior |
-|---|---|---|
-| Clear → restricted access | P0, workbook adder with declared application unit | Both unrounded endpoints nondecreasing; band unchanged |
-| Restricted → blocked | P0 | Finite estimate withdrawn, clearance needed |
-| More units of an existing supported damaged component | P0/P1 UI | Both endpoints nondecreasing; same frozen path and recipe |
-| Additional supported damaged node on same verified path | P1 | Add work, never shorten; deduplicate shared tasks |
-| Crew count 1 → 4 | Supported plateau in v1 | Equal duration, with explanation of serial dependency |
-| Crew count → 0 | P0 edge case | Pending assignment, null range |
-| Storm level increase | P0 | Risk score/band nondecreasing; restoration unchanged unless explicit work/access inputs change |
-| Changed network assumptions | P1 | Revalidate path; unresolved/conflicting path withdraws estimate; no guessed edge |
+The nearby fire-station feature prompts a specific decision-support action: verify electrical attachment, outage and backup arrangements before dispatch prioritization. Affected critical facilities and priority weights/score remain null. The model recommends the fuse first because it is upstream and could release three declared dependencies; it does not invent an optimal ranking among independent jobs or a criticality multiplier.
 
-Inputs must be typed and bounded. Reject negative/fractional quantities, NaN, unknown recipe IDs, forged node aliases, cycles, repeated tasks, invalid scenario revisions, and quantities outside the demo cap (1–10 per item, a team guardrail). Keep the scenario immutable per revision. Repeated identical inputs must yield byte-equivalent numerical results excluding request IDs/timestamps. Restoring an input restores the result. Never infer new damage from the risk band.
+## 6. Customer guidance, communication and AI
 
-## 4. Golden demo scenario
+Optional medical, accessibility and critical-responsibility needs are **user-declared**, held only in page memory and request processing. None is the default. They add reviewed preparation and direct-support/phone guidance; they do not alter risk, labor, duration, infrastructure priority or facility counts. They are never inferred from `critical_c`, geography or AI, and are stripped from every provider context/cache. No enrollment/contact/delivery occurs.
 
-Fixture locator: pinned Data1 file, `Customer_Clip` 1-based DBF record **1077**, privately mapped to `demo-a`. DATA_AUDIT records its verified Distribution → Fuse → Circuit Breaker path. A golden fixture must fail closed if source hashes or verification facts change.
+Teammate `pipeline/guidance.py` remains authoritative for existing preparation/eligibility/message templates. The backend adapter applies the new elapsed bounds and preserves finite/null handling. Alert update rule is **prototype policy**: eligible customer plus absolute raw elapsed endpoint delta strictly greater than six hours, or finite/unavailable transition. Exactly six does not qualify. CLEAR→RESTRICTED at four people changes the upper endpoint by 4.5 hours and does **not** qualify; an update sample is still viewable. RESTRICTED eight→two people changes the lower endpoint by 6.0885 and qualifies with unchanged person-hours. Official AEP thresholds remain unavailable.
 
-Scenario: strong storm (`storm_level=2`), overhead transformer, historical evidence present (140 same-alias reports, used only as a binary indicator), one simulated fuse cutout replacement, one simulated 100-kVA transformer unit replacement at two separate modeled repair worksites, other bank units intact, circuit supply available, one reference crew, clear access. The source transformer and fuse points are 140.266 meters apart. Team assumption A2 groups sites within 50 meters; this candidate has two worksites. Pin this interpretation in preprocessing. This geometric grouping is not evidence of actual damaged assets or road access.
+AI receives validated, minimized context and can only select approved references. Server templates render person-hours separately from elapsed hours, include unknown-efficiency caveats and expose missing switching evidence. Unsupported questions, extra fields, invented values, wrong IDs, stale revisions, timeouts or provider errors fall back/refuse safely. The LLM cannot calculate, infer needs, determine connectivity or dispatch priority. See [explanation contract](AI_EXPLANATIONS.md).
 
-Risk: `2 + 1 + 1 = 4`, **HIGH**, predictive confidence **LOW**.
+## 7. Contracts and verification
 
-Base labor: fuse `0.256 + 0.128 = 0.384`; transformer `1.28 + 0.944 = 2.224`; total `2.608 × 4.5 = 11.736` hours. Base raw range `[11.736, 17.604]`; display **11–18 hours** after crew response begins.
+`backend/contracts.py` is the executable Pydantic source; OpenAPI generates frontend types. Evaluation schema 2.0 uses restoration model `person-hours-serial-envelope-v2` and assumptions `explicit-person-hour-envelope-v2`. Result IDs bind public results and source hashes; API recomputes prior scenarios rather than accepting client-calculated values. Declared guidance is separately bound to the same result/revision. Every important input/rule has one evidence class in the [ledger](AEP_REALIGNMENT.md); computed output provenance is not a substitute for classifying its ingredients.
 
-Restricted access at two distinct worksites: `(2.608 + 2 × 0.5) × 4.5 = 16.236`; raw `[16.236, 24.354]`; display **16–25 hours**. Risk stays HIGH. Increasing crews to two leaves this serial estimate unchanged. Blocked access removes the finite range. Adding a second damaged 100-kVA unit at the existing transformer worksite gives clear-access raw `[21.744, 32.616]`, display **21–33 hours**.
-
-These analytical acceptance values now pass real-data engine tests with independent workbook recomputation. A separate explicitly synthetic co-located-worksite test verifies one adder: raw `[13.986, 20.979]`, display **13–21 hours**. Do not apply that value to the two-worksite golden fixture. Source decimal values are normalized to 12 fractional places to remove Excel binary representation noise before arithmetic and outward rounding.
-
-## 5. Validated explanation input
-
-**Executable checkpoint contract:** [backend/contracts.py](../backend/contracts.py) is authoritative; generate its JSON Schema with `.venv/bin/python -m backend.demo --schema` and actual results with `--json`. `raw_hours` and `display_hours` use named `{ "lower": ..., "upper": ... }` bounds or null. Factors carry values, provenance, units, points and source references; labor contributions and repair stages are explicit. Assumptions carry their values and a model version, including the replaceable labor conversion. Source facts include mounting, historical count and unresolved labor-unit status. Safe node aliases, approximate points and dependency edges support a future map. Result IDs hash canonical results and private source hashes; there is no wall-clock field that breaks repeatability. `snapshot_date` is the audit cutoff, not an assertion that inventory was observed that day.
-
-The `--json` CLI envelope contains `results` and `comparisons`. Each comparison contains before/after result IDs, changed field paths, before/after values, numerical deltas where defined, and causal factor IDs. Null range transitions explicitly represent blocking/recovery. Comparisons reject changes to other scenario inputs, facts, labor context or assumptions. The explanation is a deterministic template, and `generated_explanation` is null. No AI, profile, guidance or alert implementation is claimed.
-
-The following **original full-product design sketch is not the executable checkpoint schema**. It retains the planned profile/guidance/alert additions for later integration; do not copy its array bounds, illustrative IDs or older factor names into clients. Internal source IDs, source medical/critical flags, exact coordinates, raw text fields, and contact details remain excluded. `customer_declared` would contain only explicit synthetic/session choices, never inferred attributes; a future LLM adapter should omit that object and use selected guidance references instead. Neither `source_facts` nor `confirmed_utility` implies live outage confirmation.
-
-```json
-{
-  "schema_version": "1.0",
-  "result_id": "demo-a:base:1",
-  "scenario_revision": 1,
-  "model_versions": {"risk": "scenario-risk-v1", "restoration": "serial-path-v1"},
-  "data_snapshot": "aep-hack26-28a5520",
-  "location": {"alias": "demo-a", "label": "Demo location A"},
-  "source_facts": {
-    "kind": "static_inventory_and_historical_extract",
-    "path_types": ["Distribution", "Fuse", "Circuit Breaker"],
-    "data_quality": "verified_subset",
-    "overhead_transformer": true,
-    "historical_circuit_evidence": true
-  },
-  "confirmed_utility": {"outage_status": null, "restoration_time": null},
-  "simulated_inputs": {
-    "storm_level": 2,
-    "lifecycle_state": "pre_storm",
-    "crew_count": 1,
-    "access": "clear",
-    "work_items": [
-      {"task_id": "fuse-task", "node_alias": "protective-a", "recipe": "fuse-cutout-replace", "quantity": 1},
-      {"task_id": "transformer-task", "node_alias": "transformer-a", "recipe": "transformer-100kva-replace", "quantity": 1}
-    ]
-  },
-  "customer_declared": {"power_dependent_need": false, "accessible_format": "plain_text", "preferred_channel": "in_app", "opt_in": true},
-  "risk": {
-    "status": "available", "band": "HIGH", "score": 4, "probability": null,
-    "predictive_confidence": "LOW",
-    "factor_ids": ["storm-strong", "overhead-transformer", "historical-circuit-damage"]
-  },
-  "restoration": {
-    "status": "available", "kind": "conditional_simulation",
-    "time_origin": "assigned_crew_begins_response",
-    "raw_hours": [11.736, 17.604], "display_hours": [11, 18],
-    "predictive_confidence": "LOW",
-    "factor_ids": ["serial-upstream-dependency", "two-replacement-tasks", "ilm-4.5"],
-    "source_refs": ["Labor time material related!A90:B90", "Labor time material related!C25:D25", "Indirect Labor Multiplier!B1"]
-  },
-  "assumption_ids": ["A1-reference-crew-unit", "A2-worksite-access-adder", "A3-upper-factor-1.5", "supply-available", "listed-damage-only"],
-  "limitations": ["not_calibrated", "no_live_utility_feed", "dispatch_queue_unknown", "storm_hold_unknown"],
-  "missing_inputs": [],
-  "guidance_ids": ["prepare-lighting-charging", "review-backup-plan", "generator-safety"],
-  "alerts": {"eligibility": "eligible_demo", "rule_ids": ["high-risk-prestorm"], "recommended_channel": "in_app", "delivery": "preview_only"}
-}
-```
-
-The engine boundary uses Pydantic models. The browser slice now exposes these through FastAPI, generates TypeScript types from OpenAPI, and checks result revisions before rendering. API tests preserve direct-engine equality and privacy; LLM integration remains future work. Checkpoint validation covers supported aliases, strict scenario bounds, score/factor/band consistency, null probability, ordered finite ranges only when available, null unavailable ranges with reasons, and private-field exclusion. Future AI integration must additionally validate all action/factor references. Historical inventory may be source-confirmed without being real-time-confirmed. Use explicit `null`, not absent fields or zero substitutes, for unavailable outputs.
-
-For a scenario comparison, pass two validated result IDs plus a server-computed change list. Never let the LLM recompute deltas. A response must match the latest `scenario_revision`; discard late answers after a newer scenario selection.
-
-## 6. AI output and grounded rendering
-
-**Implemented:** `/api/explain` accepts validated selections plus current/previous result IDs and a curated question. The server recomputes and binds the scenario, then builds `ExplanationContext`. The actual `ModelSelection` contract is `{result_id, intent, supporting_refs}`; the model selects only approved clauses for that intent. The server supplies the mandatory answer and caveats. Extra fields, unsupported references, stale IDs or malformed output are rejected. BLOCKED answers cannot select old finite-range comparison clauses. A vendor-neutral provider interface has an optional OpenAI adapter; no key is required. UI states distinguish AI-assisted from standard explanations. The example below remains the original design sketch, not the executable schema. See [AI_EXPLANATIONS.md](AI_EXPLANATIONS.md) for tests, timeout/fallback and privacy details. Numerical formulas above are unchanged.
-
-P0 AI role: interpret the question and select relevant explanation/guidance clauses from the validated result. Request a constrained object such as:
-
-```json
-{
-  "result_id": "demo-a:base:1",
-  "answer_template_id": "explain_restoration",
-  "factor_ids": ["serial-upstream-dependency", "two-replacement-tasks", "ilm-4.5"],
-  "guidance_ids": ["review-backup-plan"]
-}
-```
-
-The server validates references and renders concise natural language, inserting the authoritative numbers, units, caveats, and safety text itself. No numeric field or unconstrained operational claim is accepted from the LLM. This bounded AI orchestration is intentional: factual grounding can be verified by construction. A future free-prose mode needs additional evaluation; string-matching digits alone cannot detect invented claims in words.
-
-On invalid JSON/references, timeout, missing key, or unsupported question: deterministic response from the same result; visibly label “Standard explanation” if the AI path was unavailable. For insufficient data: state the missing inputs, keep numerical outputs null, provide general preparation and escalation options. Never claim a notification was sent, an account enrolled, a crew dispatched, or a premise energized. Questions and retrieved data are untrusted text; they cannot modify model configuration, execute code, or override the source/provenance boundary.
+Run the full tests, `python -m backend.demo`, type generation and frontend build using README commands. [DEMO_FREEZE.md](DEMO_FREEZE.md) records current browser/live evidence and remaining gaps. No operational accuracy or full regional reverse-join coverage is claimed.

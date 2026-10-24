@@ -3,7 +3,8 @@ import { getAnalysis, getLocations } from './api';
 import { CustomerJourney } from './CustomerJourney';
 import { GeographicContext } from './GeographicContext';
 import { AskGridGuide } from './AskGridGuide';
-import type { Access, Analysis, Evaluation, Location } from './api';
+import { RepairEffort, RestorationSequence } from './RestorationEvidence';
+import type { Access, Analysis, Evaluation, Location, Need } from './api';
 
 const options: { value: NonNullable<Access>; title: string; detail: string }[] = [
   { value: 'clear', title: 'Clear', detail: 'Worksites are accessible' },
@@ -41,28 +42,34 @@ export function App() {
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
   const [previousResult, setPreviousResult] = useState<Evaluation | null>(null);
   const [selected, setSelected] = useState<NonNullable<Access>>('clear');
+  const [crewSize, setCrewSize] = useState(4);
+  const [needs, setNeeds] = useState<Need[]>([]);
   const [pending, setPending] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [bootAttempt, setBootAttempt] = useState(0);
   const revision = useRef(0);
   const active = useRef<AbortController | null>(null);
   const confirmed = useRef<Evaluation | null>(null);
+  const selection = useRef({ access: 'clear' as NonNullable<Access>, crewSize: 4, needs: [] as Need[] });
 
-  const analyze = useCallback(async (alias: string, access: NonNullable<Access>) => {
+  const analyze = useCallback(async (alias: string, access: NonNullable<Access>, people = 4, declarations: Need[] = []) => {
     const requestRevision = ++revision.current;
     active.current?.abort();
     const controller = new AbortController();
     active.current = controller;
     setSelected(access);
+    setCrewSize(people); setNeeds(declarations);
+    selection.current = { access, crewSize: people, needs: declarations };
     setPending(true);
     setError(null);
     const previous = confirmed.current;
     try {
-      const response = await getAnalysis({ location_alias: alias, access, scenario_revision: requestRevision,
-        previous: previous ? { access: previous.simulated_inputs.access, scenario_revision: previous.scenario_revision } : null,
+      const response = await getAnalysis({ location_alias: alias, access, crew_size: people, declared_needs: { selections: declarations, classification: 'user-declared' }, scenario_revision: requestRevision,
+        previous: previous ? { access: previous.simulated_inputs.access, crew_size: previous.simulated_inputs.crew_size, scenario_revision: previous.scenario_revision } : null,
       }, controller.signal);
       if (requestRevision !== revision.current || controller.signal.aborted) return;
       if (response.result.scenario_revision !== requestRevision || response.result.simulated_inputs.access !== access ||
+          response.result.simulated_inputs.crew_size !== people || response.customer_journey.declared_needs.selections.join(',') !== declarations.join(',') ||
           response.result.location.alias !== alias || response.customer_journey.result_id !== response.result.result_id || (previous && response.comparison?.before_result_id !== previous.result_id)) {
         throw new Error('The analysis response did not match your selection. Please try again.');
       }
@@ -102,7 +109,11 @@ export function App() {
   const causeIds = new Set(comparison?.changes.flatMap(change => change.cause_factor_ids) ?? []);
   const causes = current?.restoration.factors.filter(factor => causeIds.has(factor.id)) ?? [];
   const risk = result?.risk;
-  const retry = () => location ? void analyze(location.alias, selected) : setBootAttempt(attempt => attempt + 1);
+  const changeSelection = (patch: Partial<typeof selection.current>) => {
+    const next = { ...selection.current, ...patch };
+    if (location) void analyze(location.alias, next.access, next.crewSize, next.needs);
+  };
+  const retry = () => location ? changeSelection({}) : setBootAttempt(attempt => attempt + 1);
 
   return <>
     <a className="skip-link" href="#main">Skip to analysis</a>
@@ -115,7 +126,7 @@ export function App() {
 
     <main id="main">
       <div className="intro"><div><span className="eyebrow">OUTAGE STATUS</span>
-        <h1>Your outage & restoration outlook</h1><p>Explore how access conditions affect a possible restoration.</p></div>
+        <h1>Your outage & restoration outlook</h1><p>Follow repair effort, crew assumptions and access through a modeled restoration.</p></div>
         <div className="location-chip"><span className="location-icon" aria-hidden="true">⌖</span><div><strong>{location?.label ?? 'Loading location…'}</strong><span>Anonymized customer · Virginia challenge data</span></div></div>
       </div>
 
@@ -134,19 +145,23 @@ export function App() {
             {pending ? <><h2 className="state-title">Updating estimate<span className="loading-dots" aria-hidden="true">…</span></h2><p>Calculating the {selected} access scenario.</p></> : error ? <><h2 className="state-title">Estimate unavailable</h2><p>Reconnect to the analysis service to update this scenario.</p></> : range ? <><h2 className="range">{format(range.lower)}–{format(range.upper)} <span>{current?.restoration.unit}</span></h2><p>From when an assigned crew begins its response</p></> : <><h2 className="state-title">Estimate unavailable</h2><p>{current?.restoration.status === 'pending_clearance' ? 'Pending access clearance' : 'Required information is missing'}</p></>}
           </div>
           {current?.restoration.status === 'pending_clearance' && <p className="clearance-note">Access must be cleared before a credible modeled range is available. GridGuide will not invent a replacement estimate.</p>}
-          <div className="estimate-note"><strong>Model-based provisional estimate · not an official live AEP ETR</strong><p>{result?.restoration.limitations[0] ?? 'Labor-hour interpretation uses a disclosed provisional assumption.'}</p></div>
+          <div className="estimate-note"><strong>Conditional model · not an official live AEP ETR</strong><p>{result?.restoration.limitations[0] ?? 'AEP person-hours measure effort; elapsed time requires explicit crew assumptions.'}</p></div>
           {current?.restoration.missing_inputs.length ? <p className="blocked-note">{current.restoration.missing_inputs.map(input => input.replaceAll('_', ' ')).join(' · ')}</p> : null}
         </section>
       </div>
 
+      {current && <RepairEffort result={current} />}
+
       <div className="scenario-label"><span className="small-badge">SIMULATED SCENARIO</span><p>Explore a repair scenario. Current utility outage status and official AEP restoration times are not connected.</p></div>
 
       <section className="panel access-panel" aria-labelledby="access-title">
-        <div><span className="eyebrow">RESTORATION DETAILS</span><h2 id="access-title">What may affect restoration?</h2><p className="muted">Worksite access can affect when repairs can finish. Explore the conditions below.</p></div>
+        <div><span className="eyebrow">RESTORATION DETAILS</span><h2 id="access-title">What may affect restoration?</h2><p className="muted">Same damage and risk; change the crew assumption or worksite access.</p></div>
+        <fieldset className="crew-options access-options"><legend>Crew size · scenario assumption</legend>{[2, 4, 8].map(people => <label key={people} className={`access-option ${crewSize === people ? 'selected' : ''}`}><input type="radio" name="crew-size" checked={crewSize === people} disabled={!location} onChange={() => changeSelection({ crewSize: people })} /><span><strong>{people} people</strong><small>One assigned crew</small></span></label>)}</fieldset>
+        <p className="muted fine">Four is a demo default, not an AEP requirement. Actual crew composition and efficiency are unavailable. More people lower the ideal boundary; they do not guarantee proportional speedup.</p>
         <fieldset className="access-options"><legend className="sr-only">Repair access</legend>
           {options.map(option => <label key={option.value} className={`access-option ${selected === option.value ? 'selected' : ''}`}>
             <input type="radio" name="access" value={option.value} checked={selected === option.value} disabled={!location}
-              onChange={() => location && void analyze(location.alias, option.value)} />
+              onChange={() => changeSelection({ access: option.value })} />
             <span><strong>{option.title}</strong><small>{option.detail}</small></span>
           </label>)}
         </fieldset>
@@ -155,13 +170,13 @@ export function App() {
       <section className="panel change-panel" aria-labelledby="change-title" aria-busy={pending}>
         <div className="change-heading"><span className="change-icon" aria-hidden="true">↗</span><div><span className="eyebrow">SCENARIO UPDATE</span><h2 id="change-title">Why the outlook changed</h2></div><span className="small-badge">Model-generated update</span></div>
         {comparison && previousResult && comparison.before_result_id === previousResult.result_id && <div className="outlook-update" data-testid="outlook-update">
-          <strong>Restoration outlook updated</strong>
-          <div className="range-transition"><div><span>{previousResult.simulated_inputs.access} access</span><b>{previousResult.restoration.display_hours ? `${format(previousResult.restoration.display_hours.lower)}–${format(previousResult.restoration.display_hours.upper)} hours` : 'Estimate unavailable'}</b></div><span aria-hidden="true">→</span><div><span>{current?.simulated_inputs.access} access</span><b>{range ? `${format(range.lower)}–${format(range.upper)} hours` : 'Estimate unavailable'}</b></div></div>
-          <p>Model comparison · access is the only changed input.</p>
-          {previousResult.simulated_inputs.access === 'clear' && current?.simulated_inputs.access === 'restricted' && <p className="access-change-summary">Restricted access at {current.restoration.worksite_count} work sites increases the modeled restoration range.</p>}
+          <strong>{comparison.changed_inputs.length ? 'Restoration outlook updated' : 'Restoration outlook unchanged'}</strong>
+          <div className="range-transition"><div><span>{previousResult.simulated_inputs.access} access · {previousResult.simulated_inputs.crew_size} people</span><b>{previousResult.restoration.display_hours ? `${format(previousResult.restoration.display_hours.lower)}–${format(previousResult.restoration.display_hours.upper)} elapsed hours` : 'Estimate unavailable'}</b></div><span aria-hidden="true">→</span><div><span>{current?.simulated_inputs.access} access · {current?.simulated_inputs.crew_size} people</span><b>{range ? `${format(range.lower)}–${format(range.upper)} elapsed hours` : 'Estimate unavailable'}</b></div></div>
+          <p>Changed scenario inputs: {comparison.changed_inputs.length ? comparison.changed_inputs.map(input => input.replaceAll('_', ' ')).join(', ') : 'none; declarations affect guidance only'}.</p>
+          {previousResult.simulated_inputs.access === 'clear' && current?.simulated_inputs.access === 'restricted' && <p className="access-change-summary">Restricted access at {current.restoration.worksite_count} work sites adds labor effort. The elapsed outlook also depends on the selected crew size.</p>}
         </div>}
         <div role="status" aria-live="polite" data-testid="change-explanation">
-          {pending ? <p className="muted">Updating the comparison with your last completed scenario…</p> : error ? <p className="muted">The comparison will return when analysis is available.</p> : comparison ? <p className="explanation">{comparison.explanation}</p> : <p className="muted">Choose Restricted or Blocked above to compare with this scenario. The explanation will show which calculated factors changed.</p>}
+          {pending ? <p className="muted">Updating the comparison with your last completed scenario…</p> : error ? <p className="muted">The comparison will return when analysis is available.</p> : comparison ? <p className="explanation">{comparison.explanation}</p> : <p className="muted">Change crew size or access above. The explanation will identify the changed assumptions.</p>}
         </div>
         {causes.length > 0 && <ul className="cause-list">{causes.map(factor => <li key={factor.id}><span>{factor.label}</span><strong>{factor.value == null ? 'Unknown' : String(factor.value)}{factor.unit ? ` ${factor.unit.replaceAll('_', ' ')}` : ''}</strong></li>)}</ul>}
       </section>
@@ -169,13 +184,18 @@ export function App() {
       {current && analysis && <AskGridGuide key={current.result_id} analysis={analysis} previous={previousResult} />}
       {location && <GeographicContext locationAlias={location.alias} />}
       {location && <Topology location={location} />}
-      {result && <details className="panel assumptions"><summary>What this scenario assumes <span>Scope, sources & limitations</span></summary>
-        <div className="assumptions-body"><div><h3>Declared repair scope</h3><ul>{result.restoration.labor_contributions.map(work => <li key={work.task_id}>{work.quantity} × {work.recipe.replaceAll('-', ' ')}<small>Workbook: {work.source_refs.join('; ')}</small></li>)}</ul><p className="muted">Storm concern level {result.simulated_inputs.storm_level}; {result.simulated_inputs.crew_count} available reference crew. Damage and access are simulated inputs.</p></div>
-        <div><h3>Model assumptions</h3><ul>{result.assumptions.map(assumption => <li key={assumption.id}>{assumption.description}<small>Assumed value: {String(assumption.value)}</small></li>)}</ul></div>
-        <div><h3>Limits to the estimate</h3><ul>{result.restoration.limitations.slice(1).map(limit => <li key={limit}>{limit}</li>)}</ul></div></div>
+      {current && <RestorationSequence result={current} />}
+      {current && <details className="panel assumptions"><summary>Evidence, assumptions & unknowns <span>Scope, sources & limitations</span></summary>
+        <div className="assumptions-body"><div><h3>Scenario inputs</h3><p>Storm concern level {current.simulated_inputs.storm_level}; {current.simulated_inputs.crew_count} available crew; {current.simulated_inputs.crew_size} people per crew. Damage and access are simulated inputs.</p></div>
+        <div><h3>Input and rule classification</h3><ul>{current.assumptions.map(assumption => <li key={assumption.id}><strong>{assumption.classification}</strong>: {assumption.description}<small>Value: {assumption.value === null ? 'Unavailable' : String(assumption.value)}</small></li>)}</ul></div>
+        <div><h3>Limits to the estimate</h3><ul>{current.restoration.limitations.map(limit => <li key={limit}>{limit}</li>)}</ul></div></div>
       </details>}
       <section className="customer-updates" id="customer-updates" aria-labelledby="updates-title" aria-busy={pending}>
         <h2 id="updates-title">Preparation & alerts</h2>
+        <fieldset className="declared-needs"><legend>Your optional needs · user-declared</legend><p className="muted fine">Choose only what you want to declare. Selections last for this page session, are not inferred from location, and are not sent to AI. No enrollment or contact occurs.</p>
+          {([['medical', 'Powered medical equipment / medical need'], ['accessibility', 'Accessibility assistance'], ['critical_responsibility', 'Critical responsibility']] as [Need, string][]).map(([need, label]) => <label key={need}><input type="checkbox" checked={needs.includes(need)} disabled={!location} onChange={() => changeSelection({ needs: selection.current.needs.includes(need) ? selection.current.needs.filter(n => n !== need) : [...selection.current.needs, need].sort() })} />{label}</label>)}
+          <button type="button" onClick={() => changeSelection({ needs: [] })} disabled={!location || !needs.length}>None / clear declarations</button>
+        </fieldset>
         {current && analysis ? <CustomerJourney key={current.scenario_revision} journey={analysis.customer_journey} /> : <p className="journey-pending" role="status">{pending ? 'Updating preparation and communication previews…' : 'Preparation and communication previews are unavailable. Use Try again above to reconnect.'}</p>}
       </section>
       <footer><span>GridGuide</span><p>Verified challenge data · modeled scenarios · no live utility connection</p></footer>

@@ -7,6 +7,21 @@ from .config import risk_band_for_score
 
 Count = Annotated[int, Field(strict=True, ge=0)]
 Access = Literal["clear", "restricted", "blocked"]
+CrewSize = Annotated[int, Field(strict=True, ge=2, le=8)]
+EvidenceClass = Literal["AEP-specified", "source-derived", "scenario assumption", "prototype policy", "user-declared", "unavailable"]
+Need = Literal["medical", "accessibility", "critical_responsibility"]
+
+
+class DeclaredNeeds(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+    selections: Annotated[tuple[Need, ...], Field(max_length=3)] = ()
+    classification: Literal["user-declared"] = "user-declared"
+
+    @model_validator(mode="after")
+    def unique_selections(self):
+        if len(set(self.selections)) != len(self.selections):
+            raise ValueError("Duplicate declarations are not allowed")
+        return self
 
 
 class Contract(BaseModel):
@@ -58,7 +73,7 @@ class SourceFacts(Contract):
     transformer_mounting: Literal["Overhead", "Underground", "Unknown"]
     historical_circuit_evidence: bool | None
     historical_damage_record_count: Count
-    labor_unit_status: Literal["unspecified_workbook_labor_hours"] = "unspecified_workbook_labor_hours"
+    labor_unit_status: Literal["AEP_direct_labor_times_4_5_is_person_hours"] = "AEP_direct_labor_times_4_5_is_person_hours"
 
 
 class WorkItem(Contract):
@@ -73,6 +88,7 @@ class Scenario(Contract):
     scenario_revision: Annotated[int, Field(strict=True, ge=1)] = 1
     storm_level: Annotated[int, Field(strict=True, ge=0, le=3)] | None = 2
     crew_count: Annotated[int, Field(strict=True, ge=0, le=4)] = 1
+    crew_size: CrewSize = 4
     access: Access = "clear"
     work_items: tuple[WorkItem, ...]
     lifecycle_state: Literal["pre_storm"] = "pre_storm"
@@ -91,6 +107,7 @@ class Factor(Contract):
     id: str
     label: str
     provenance: Literal["source_fact", "simulated_input", "team_rule", "computed"]
+    classification: EvidenceClass
     value: str | int | float | bool | None
     unit: str | None = None
     contribution_points: int | None = None
@@ -142,6 +159,8 @@ class LaborContribution(Contract):
     direct_labor_hours: float
     source_refs: tuple[str, ...]
     provenance: Literal["source_rates_with_simulated_quantity"] = "source_rates_with_simulated_quantity"
+    rate_classification: Literal["source-derived"] = "source-derived"
+    quantity_classification: Literal["scenario assumption"] = "scenario assumption"
 
 
 class RepairStage(Contract):
@@ -149,22 +168,73 @@ class RepairStage(Contract):
     node_alias: str
     depends_on_task_ids: tuple[str, ...]
     provenance: Literal["source_ancestry_with_assumed_serial_repairs"] = "source_ancestry_with_assumed_serial_repairs"
+    repair_person_hours: float
+    newly_eligible_customers: Count | None
+    release_status: Literal["conditional_only"] = "conditional_only"
+
+
+class FacilityCount(Contract):
+    kind: Literal["hospital", "fire_station", "ambulance"]
+    source_layer: str
+    regional_features: Count
+    within_primary_extent: Count | None
+    classification: Literal["source-derived"] = "source-derived"
+
+
+class AssetImpact(Contract):
+    node_alias: str
+    status: Literal["verified_reverse_dependency", "unavailable"]
+    identity_basis: Literal["exact_typed_GIS_and_topology", "unavailable"]
+    topology_path_count: Count | None
+    dependent_customers: Count | None
+    unresolved_path_count: Count
+    damage_classification: Literal["scenario assumption"] = "scenario assumption"
+    dependency_classification: Literal["source-derived", "unavailable"]
+    source_refs: tuple[str, ...]
+    note: str
+
+
+class RestorationPriority(Contract):
+    circuit_customer_paths: Count
+    dependent_customer_paths: Count | None
+    paths_outside_declared_damage: Count | None
+    asset_impacts: tuple[AssetImpact, ...]
+    damage_origin: Literal["declared_on_source_verified_assets"] = "declared_on_source_verified_assets"
+    arcos_asset_match: Literal["unavailable"] = "unavailable"
+    arcos_affected_customers: None = None
+    sectionalization_restorable_customers: None = None
+    facilities: tuple[FacilityCount, ...]
+    affected_critical_facilities: None = None
+    switching_feasibility: Literal["unavailable"] = "unavailable"
+    priority_score: None = None
+    recommended_first_task: str | None
+    reasoning: str
+    criticality_action: str
+    limitations: tuple[str, ...]
+    classification: Literal["prototype policy"] = "prototype policy"
 
 
 class RestorationResult(Contract):
     status: Literal["available", "pending_clearance", "pending_assignment", "insufficient_data"]
     kind: Literal["conditional_simulation"] = "conditional_simulation"
-    unit: Literal["hours"] = "hours"
+    unit: Literal["elapsed hours"] = "elapsed hours"
     provisional: Literal[True] = True
     time_origin: Literal["assigned_crew_begins_response"] = "assigned_crew_begins_response"
     raw_hours: Bounds | None
     display_hours: Bounds | None
     predictive_confidence: Literal["LOW"] = "LOW"
     direct_labor_hours: float
+    installation_direct_hours: float
+    removal_direct_hours: float
     access_labor_hours: float | None
     worksite_count: Count
     indirect_labor_multiplier: float
-    modeled_effort_hours: float | None
+    repair_person_hours: float
+    total_person_hours: float | None
+    effort_unit: Literal["person-hours"] = "person-hours"
+    actual_conversion_efficiency: None = None
+    elapsed_method: Literal["serial_tasks_ideal_to_single_effective_worker"] = "serial_tasks_ideal_to_single_effective_worker"
+    priority: RestorationPriority
     factors: tuple[Factor, ...]
     labor_contributions: tuple[LaborContribution, ...]
     repair_stages: tuple[RepairStage, ...]
@@ -186,8 +256,8 @@ class RestorationResult(Contract):
 class Assumption(Contract):
     id: str
     description: str
-    value: str | float
-    provenance: Literal["team_assumption"] = "team_assumption"
+    value: str | float | None
+    classification: EvidenceClass
 
 
 class ConfirmedUtility(Contract):
@@ -202,7 +272,7 @@ class ModelVersions(Contract):
 
 
 class Evaluation(Contract):
-    schema_version: Literal["1.0"] = "1.0"
+    schema_version: Literal["2.0"] = "2.0"
     result_id: str
     scenario_revision: int
     data_snapshot: str
@@ -232,6 +302,7 @@ class Comparison(Contract):
     after_result_id: str
     changes: tuple[Change, ...]
     explanation: str
+    changed_inputs: tuple[Literal["access", "crew_size"], ...] = ()
     explanation_kind: Literal["deterministic_calculation_summary"] = "deterministic_calculation_summary"
 
 
@@ -240,6 +311,7 @@ class Preparation(Contract):
     safety: tuple[str, ...]
     duration_known: bool
     note: str
+    declared_actions: tuple[str, ...] = ()
 
 
 class AlertEligibility(Contract):
@@ -247,7 +319,9 @@ class AlertEligibility(Contract):
     reason: str
     suggested_channels: tuple[Literal["app", "sms", "phone_call"], ...]
     delivery: Literal["preview_only"] = "preview_only"
-    priority_needs_declared: Literal[False] = False
+    priority_needs_declared: bool = False
+    escalation_guidance: str
+    classification: Literal["prototype policy"] = "prototype policy"
     timing: dict[str, str]
     assumptions: str = "Thresholds are team assumptions, not official utility eligibility rules."
 
@@ -265,6 +339,7 @@ class CommunicationPreview(Contract):
 
 class CustomerJourney(Contract):
     result_id: str
+    declared_needs: DeclaredNeeds = DeclaredNeeds()
     source: Literal["pipeline.guidance"] = "pipeline.guidance"
     preparation: Preparation
     alerts: AlertEligibility
@@ -325,7 +400,7 @@ class GeographicMap(Contract):
     disclosures: tuple[str, ...]
 
 
-ExplanationIntent = Literal["risk", "restoration", "change", "preparation", "availability", "topology", "alerts", "unsupported"]
+ExplanationIntent = Literal["risk", "restoration", "change", "preparation", "availability", "topology", "alerts", "labor", "priority", "unsupported"]
 ExplanationSource = Literal["modeled", "simulated", "verified", "mixed"]
 
 
@@ -337,7 +412,7 @@ class ExplanationClause(Contract):
 
 class ExplanationContext(Contract):
     """Provider allowlist: no coordinates, source rows, contact fields or raw IDs."""
-    version: Literal["explanation-v1"] = "explanation-v1"
+    version: Literal["explanation-v2"] = "explanation-v2"
     result_id: str
     scenario_revision: int
     location_label: str
@@ -347,6 +422,9 @@ class ExplanationContext(Contract):
     outage_probability: None = None
     restoration_status: str
     restoration_bounds: Bounds | None
+    repair_person_hours: float
+    total_person_hours: float | None
+    crew_size: CrewSize
     access: Access
     topology: tuple[str, ...]
     alert_eligible: bool | None

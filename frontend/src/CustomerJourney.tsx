@@ -14,12 +14,14 @@ export function CustomerJourney({ journey }: { journey: Journey }) {
         <ul className="preparation-actions" data-testid="preparation-actions">{preparation.actions.slice(0, 4).map(action => <li key={action}>{action}</li>)}</ul>
         {preparation.actions.length > 4 && <details><summary>More preparation for this scenario</summary><ul>{preparation.actions.slice(4).map(action => <li key={action}>{action}</li>)}</ul></details>}
         <p className="journey-note">{preparation.note}</p>
+        {preparation.declared_actions.length > 0 && <aside className="declared-guidance" aria-label="Guidance for your declarations"><strong>User-declared needs · suggested preparation</strong><ul>{preparation.declared_actions.map(action => <li key={action}>{action}</li>)}</ul><p><a href="https://www.fda.gov/medical-devices/emergency-situations-medical-devices/fda-offers-tips-about-medical-devices-and-natural-disasters">FDA device preparedness</a> · <a href="https://www.ready.gov/disability">Accessible emergency planning</a></p></aside>}
       </article>
       <article className="alert-eligibility" aria-labelledby="eligibility-title">
         <h3 id="eligibility-title">Would this scenario qualify for alerts?</h3>
         <strong className="eligibility-status" data-testid="alert-eligibility">{alerts.eligible === true ? 'Eligible for demo alerts' : alerts.eligible === false ? 'In-app information only' : 'Eligibility needs more information'}</strong>
         <p>{alerts.reason}</p>
         <p>Suggested channels: {alerts.suggested_channels.map(channel => ({ app: 'in-app', sms: 'SMS', phone_call: 'phone call' })[channel]).join(', ')}.</p>
+        <p className="journey-note">Prototype policy: {alerts.escalation_guidance}</p>
         <p className="delivery-note"><strong>Preview only · No notification sent</strong><br />Eligibility does not enroll you or collect an opt-in.</p>
         <details><summary>How demo eligibility works</summary><p>{journey.delivery_note}</p><p>{alerts.assumptions}</p>{Object.entries(alerts.timing).map(([kind, timing]) => <p key={kind}>{kind === 'pre_storm' ? 'Pre-storm' : 'Estimate update'}: {timing}.</p>)}<p>No live storm schedule, subscription or contact information is connected.</p></details>
       </article>
