@@ -1,0 +1,5 @@
+# Python 3.12 recommended. Small engine-only dependency set; no UI/API/ML stack.
+pyshp==3.1.6
+pyproj==3.8.0
+openpyxl==3.1.5
+pydantic==2.12.3
