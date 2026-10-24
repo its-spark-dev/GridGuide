@@ -172,3 +172,12 @@ The implemented CLI and 36 tests now verify the real-data path, independently re
 The global reverse index independently reproduces one premise through the selected transformer and four through the selected fuse; every membership has matching customer GIS, first transformer, circuit and terminal. There are 1,563 matched circuit paths; union declared impact is four, with 1,559 outside the declared scope. Counts are conditional on damage explicitly declared on these exact verified assets. No ARCOS row is asserted to identify them. The exact missing join is described in [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md); actual sectionalization count is null.
 
 The supplied facility layers are now used as aggregate spatial context: 5 hospitals, 37 fire stations and 10 ambulance features regionally; 0, 1 and 0 within the matched primary bounding extent. This does not establish affected facilities or electrical service. Their presence prompts verification before priority decisions; no operational weights are invented.
+
+
+## Q2/Q4 supplemental audit — October 24, 2026
+
+The dedicated [Q2/Q4 investigation](Q2_Q4_DECISION_SUPPORT.md) supersedes earlier blanket statements that no useful observed-damage relationship could be constructed. ARCOS XML identifies NEAR_FID/NEAR_DIST as historical nearest-primary processing, not equipment identity. A separate metric nearest-pole/device policy with type/circuit/station and exact pole-location bridge produces 139 spatial candidate observations; 28 have complete reverse membership evidence. No direct ARCOS identifier or observed customer outage count is established.
+
+Global source syntax indexes 117,599 paths / 32,600 assets / 490,090 memberships; 40,779 paths pass all supported GIS/customer/crosswalk/parent checks. Complete reverse evidence covers 6,103 transformers and 1,990 fuses, plus two abstract terminals. Forty-seven customer rows lack topology paths; four topology paths lack customer rows. Failure categories overlap and cannot be added as disjoint counts. Raw IDs remain private.
+
+Facility audit: 52 features; ≤50 m nearest-premise radius with ≥10 m runner-up gap gives 21 spatial proxies, 11 ambiguous and 20 unmatched. Four proxy premises have complete paths. The selected fire-station proxy survives 40/50/75 m radius sensitivity; its electrical attachment is still unavailable. The golden-extent fire feature is ambiguous and on an unresolved different branch.

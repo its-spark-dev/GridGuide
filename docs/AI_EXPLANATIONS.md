@@ -10,6 +10,10 @@ No raw source IDs, premise lists, exact/generalized coordinates, contact fields,
 
 `/api/explain` recomputes current/previous location, access, crew and revisions. Result IDs must match; stale or forged inputs return sanitized 409. Extra calculation/credential fields are rejected. No explanation mutates the engine result.
 
+## Restoration-plan scope
+
+The context now carries `scope=customer|restoration_plan`. Three plan questions cover damage dependencies, why the recommended action is first, and crew-driven scheduling. `backend/plan_explanations.py` builds every count, recommendation, timing and caveat from the recomputed deterministic plan. No map positions, private IDs, source row locators or facility identity enter the provider. Gemini selects relevant approved references; it cannot alter the mandatory answer or author new priority reasons. Unknown complete duration under blocked work remains unavailable, while independent scheduled work can still be explained. Cross-scope and injected questions never reach the provider.
+
 ## Strict selection contract
 
 The provider returns exactly `result_id`, `intent`, and one to three `supporting_refs`. It cannot supply an answer, numbers, operational status or uncertainty. Schema enums are request-specific. Independent validation rejects extra/duplicate keys, malformed/oversized output, stale IDs, wrong intent, duplicates, irrelevant references and finite-change answers omitting the deterministic comparison. Every displayed claim is rendered by the server from current result/policy templates.

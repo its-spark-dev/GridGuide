@@ -89,6 +89,40 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/restoration-plan": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Restoration Plan */
+        post: operations["restoration_plan_api_restoration_plan_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/restoration-plan/explain": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Plan Explanation */
+        post: operations["plan_explanation_api_restoration_plan_explain_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -225,6 +259,16 @@ export interface components {
             /** Upper */
             upper: number;
         };
+        /** CandidateAccess */
+        CandidateAccess: {
+            /**
+             * Access
+             * @enum {string}
+             */
+            access: "clear" | "restricted" | "blocked";
+            /** Candidate Id */
+            candidate_id: string;
+        };
         /** Change */
         Change: {
             /** After */
@@ -287,6 +331,29 @@ export interface components {
             outage_status?: null;
             /** Restoration Time */
             restoration_time?: null;
+        };
+        /** CriticalProxyContext */
+        CriticalProxyContext: {
+            /**
+             * Classification
+             * @default prototype policy
+             * @constant
+             */
+            classification: "prototype policy";
+            /** Distance M */
+            distance_m: number;
+            /** Kind */
+            kind: string;
+            /**
+             * Relationship
+             * @default spatially associated critical premise proxy
+             * @constant
+             */
+            relationship: "spatially associated critical premise proxy";
+            /** Runner Up Distance M */
+            runner_up_distance_m: number;
+            /** Verified Electrical Attachment */
+            verified_electrical_attachment?: null;
         };
         /** CustomerJourney */
         CustomerJourney: {
@@ -471,7 +538,7 @@ export interface components {
              * Intent
              * @enum {string}
              */
-            intent: "risk" | "restoration" | "change" | "preparation" | "availability" | "topology" | "alerts" | "labor" | "priority" | "unsupported";
+            intent: "risk" | "restoration" | "change" | "preparation" | "availability" | "topology" | "alerts" | "labor" | "priority" | "impact" | "crew_plan" | "unsupported";
             /**
              * Mode
              * @enum {string}
@@ -605,6 +672,12 @@ export interface components {
             /** Detail */
             detail?: components["schemas"]["ValidationError"][];
         };
+        /** ImpactCell */
+        ImpactCell: {
+            position: components["schemas"]["MapPoint"];
+            /** Premises */
+            premises: number;
+        };
         /** Issue */
         Issue: {
             /** Code */
@@ -733,6 +806,257 @@ export interface components {
             /** Risk */
             risk: string;
         };
+        /** PlanCandidate */
+        "PlanCandidate-Input": {
+            /**
+             * Access
+             * @enum {string}
+             */
+            access: "clear" | "restricted" | "blocked";
+            /** Access Direct Hours */
+            access_direct_hours: number | null;
+            /** Actually Restorable Via Switching */
+            actually_restorable_via_switching?: null;
+            /** Critical Proxies */
+            critical_proxies: components["schemas"]["CriticalProxyContext"][];
+            /** Current Damage Confirmed */
+            current_damage_confirmed?: null;
+            /** Customer Cells */
+            customer_cells: components["schemas"]["ImpactCell"][];
+            /**
+             * Damage Source
+             * @enum {string}
+             */
+            damage_source: "historical ARCOS replay" | "declared damage scenario";
+            /** Dependent Premises */
+            dependent_premises: number | null;
+            /** Direct Labor Hours */
+            direct_labor_hours: number;
+            elapsed_hours: components["schemas"]["Bounds"] | null;
+            /** Evidence Note */
+            evidence_note: string;
+            /** Id */
+            id: string;
+            /** Kind */
+            kind: string;
+            /** Label */
+            label: string;
+            /** Match Distance M */
+            match_distance_m: number | null;
+            /** Match Method */
+            match_method: string;
+            /** Overlap Premises */
+            overlap_premises: number | null;
+            /** Pole Distance M */
+            pole_distance_m: number | null;
+            position: components["schemas"]["MapPoint"] | null;
+            /** Potential Release At Stage */
+            potential_release_at_stage: number | null;
+            /** Prerequisite Ids */
+            prerequisite_ids: string[];
+            /** Priority Rank */
+            priority_rank: number | null;
+            /** Reason */
+            reason: string;
+            /** Release Per Total Person Hour */
+            release_per_total_person_hour: number | null;
+            /** Repair Person Hours */
+            repair_person_hours: number;
+            /** Runner Up Distance M */
+            runner_up_distance_m: number | null;
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "scheduled" | "blocked" | "dependency_blocked" | "evidence_unavailable";
+            /** Total Person Hours */
+            total_person_hours: number | null;
+        };
+        /** PlanCandidate */
+        "PlanCandidate-Output": {
+            /**
+             * Access
+             * @enum {string}
+             */
+            access: "clear" | "restricted" | "blocked";
+            /** Access Direct Hours */
+            access_direct_hours: number | null;
+            /** Actually Restorable Via Switching */
+            actually_restorable_via_switching?: null;
+            /** Critical Proxies */
+            critical_proxies: components["schemas"]["CriticalProxyContext"][];
+            /** Current Damage Confirmed */
+            current_damage_confirmed?: null;
+            /** Customer Cells */
+            customer_cells: components["schemas"]["ImpactCell"][];
+            /**
+             * Damage Source
+             * @enum {string}
+             */
+            damage_source: "historical ARCOS replay" | "declared damage scenario";
+            /** Dependent Premises */
+            dependent_premises: number | null;
+            /** Direct Labor Hours */
+            direct_labor_hours: number;
+            elapsed_hours: components["schemas"]["Bounds"] | null;
+            /** Evidence Note */
+            evidence_note: string;
+            /** Id */
+            id: string;
+            /** Kind */
+            kind: string;
+            /** Label */
+            label: string;
+            /** Match Distance M */
+            match_distance_m: number | null;
+            /** Match Method */
+            match_method: string;
+            /** Overlap Premises */
+            overlap_premises: number | null;
+            /** Pole Distance M */
+            pole_distance_m: number | null;
+            position: components["schemas"]["MapPoint"] | null;
+            /** Potential Release At Stage */
+            potential_release_at_stage: number | null;
+            /** Prerequisite Ids */
+            prerequisite_ids: string[];
+            /** Priority Rank */
+            priority_rank: number | null;
+            /** Reason */
+            reason: string;
+            /** Release Per Total Person Hour */
+            release_per_total_person_hour: number | null;
+            /** Repair Person Hours */
+            repair_person_hours: number;
+            /** Runner Up Distance M */
+            runner_up_distance_m: number | null;
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "scheduled" | "blocked" | "dependency_blocked" | "evidence_unavailable";
+            /** Total Person Hours */
+            total_person_hours: number | null;
+        };
+        /** PlanCoverage */
+        PlanCoverage: {
+            /** Arcos Records */
+            arcOS_records: number;
+            /** Complete Reverse Assets */
+            complete_reverse_assets: number;
+            /** Complete Spatial Candidates */
+            complete_spatial_candidates: number;
+            /** Facility Features */
+            facility_features: number;
+            /** Facility Proxies With Verified Paths */
+            facility_proxies_with_verified_paths: number;
+            /** Facility Spatial Proxies */
+            facility_spatial_proxies: number;
+            /** Fuse Reverse Assets */
+            fuse_reverse_assets: number;
+            /** Indexed Assets */
+            indexed_assets: number;
+            /** Indexed Memberships */
+            indexed_memberships: number;
+            /** Indexed Paths */
+            indexed_paths: number;
+            /** Missing Customer Paths */
+            missing_customer_paths: number;
+            /** Missing Topology Customer Rows */
+            missing_topology_customer_rows: number;
+            /** Spatial Candidates */
+            spatial_candidates: number;
+            /** Supported Physical Reverse Assets */
+            supported_physical_reverse_assets: number;
+            /** Transformer Reverse Assets */
+            transformer_reverse_assets: number;
+            /** Unresolved Paths */
+            unresolved_paths: number;
+            /** Verified Paths */
+            verified_paths: number;
+        };
+        /** PlanEvidence */
+        PlanEvidence: {
+            /**
+             * Classification
+             * @enum {string}
+             */
+            classification: "AEP-specified" | "source-derived" | "scenario assumption" | "prototype policy" | "user-declared" | "unavailable";
+            /** Detail */
+            detail: string;
+            /** Input Or Rule */
+            input_or_rule: string;
+        };
+        /** PlanExplanationRequest */
+        PlanExplanationRequest: {
+            /**
+             * Access
+             * @default []
+             */
+            access: components["schemas"]["CandidateAccess"][];
+            /**
+             * Crew Count
+             * @default 1
+             */
+            crew_count: number;
+            /**
+             * Crew Size
+             * @default 4
+             */
+            crew_size: number;
+            /** Question */
+            question: string;
+            /** Result Id */
+            result_id: string;
+            /**
+             * Scenario Revision
+             * @default 1
+             */
+            scenario_revision: number;
+            /**
+             * Use Critical Proxy
+             * @default true
+             */
+            use_critical_proxy: boolean;
+        };
+        /** PlanRequest */
+        PlanRequest: {
+            /**
+             * Access
+             * @default []
+             */
+            access: components["schemas"]["CandidateAccess"][];
+            /**
+             * Crew Count
+             * @default 1
+             */
+            crew_count: number;
+            /**
+             * Crew Size
+             * @default 4
+             */
+            crew_size: number;
+            /**
+             * Scenario Revision
+             * @default 1
+             */
+            scenario_revision: number;
+            /**
+             * Use Critical Proxy
+             * @default true
+             */
+            use_critical_proxy: boolean;
+        };
+        /** PlanTask */
+        PlanTask: {
+            /** Candidate Id */
+            candidate_id: string;
+            /** Crew */
+            crew: number;
+            display_finish_hours: components["schemas"]["Bounds"];
+            finish_hours: components["schemas"]["Bounds"];
+            start_hours: components["schemas"]["Bounds"];
+        };
         /** Preparation */
         Preparation: {
             /** Actions */
@@ -820,6 +1144,17 @@ export interface components {
              */
             resolution: "exact_typed_id" | "abstract_circuit_terminal";
         };
+        /** ReleaseMilestone */
+        ReleaseMilestone: {
+            /** Additional Premises */
+            additional_premises: number;
+            /** Candidate Ids */
+            candidate_ids: string[];
+            /** Cumulative Premises */
+            cumulative_premises: number;
+            display_hours: components["schemas"]["Bounds"];
+            elapsed_hours: components["schemas"]["Bounds"];
+        };
         /** RepairStage */
         RepairStage: {
             /** Depends On Task Ids */
@@ -844,6 +1179,61 @@ export interface components {
             repair_person_hours: number;
             /** Task Id */
             task_id: string;
+        };
+        /** RestorationPlan */
+        RestorationPlan: {
+            /** Actual Efficiency */
+            actual_efficiency?: null;
+            /** Actual Switching Restorable Premises */
+            actual_switching_restorable_premises?: null;
+            /** Candidates */
+            candidates: components["schemas"]["PlanCandidate-Output"][];
+            completion_hours: components["schemas"]["Bounds"] | null;
+            coverage: components["schemas"]["PlanCoverage"];
+            /** Crew Count */
+            crew_count: number;
+            /** Crew Size */
+            crew_size: number;
+            display_completion_hours: components["schemas"]["Bounds"] | null;
+            /** Evidence */
+            evidence: components["schemas"]["PlanEvidence"][];
+            executable_completion_hours: components["schemas"]["Bounds"] | null;
+            /** Limitations */
+            limitations: string[];
+            /** Milestones */
+            milestones: components["schemas"]["ReleaseMilestone"][];
+            /** Overlap Memberships */
+            overlap_memberships: number | null;
+            /** Policy */
+            policy: string[];
+            /** Recommended Id */
+            recommended_id: string | null;
+            /** Repair Person Hours */
+            repair_person_hours: number;
+            /** Result Id */
+            result_id: string;
+            /** Scenario Revision */
+            scenario_revision: number;
+            /** Scheduled Release Potential */
+            scheduled_release_potential: number | null;
+            /** Summed Memberships */
+            summed_memberships: number | null;
+            /** Tasks */
+            tasks: components["schemas"]["PlanTask"][];
+            /** Total Person Hours */
+            total_person_hours: number | null;
+            /** Unique Dependent Premises */
+            unique_dependent_premises: number | null;
+            /** Use Critical Proxy */
+            use_critical_proxy: boolean;
+            /** Verified Critical Electrical Dependencies */
+            verified_critical_electrical_dependencies?: null;
+            /**
+             * Version
+             * @default restoration-plan-v1
+             * @constant
+             */
+            version: "restoration-plan-v1";
         };
         /** RestorationPriority */
         RestorationPriority: {
@@ -1324,6 +1714,72 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["GeographicMap"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    restoration_plan_api_restoration_plan_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["PlanRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RestorationPlan"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    plan_explanation_api_restoration_plan_explain_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["PlanExplanationRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ExplanationResponse"];
                 };
             };
             /** @description Validation Error */

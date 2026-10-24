@@ -2,7 +2,7 @@
 
 GridGuide is a working AEP HackOHI/O 2026 outage-concierge prototype: verified GIS and topology → declared damage on specific source assets → reverse customer dependencies → workbook repair effort → crew/access conditional duration → bounded repair priority → customer preparation, communication previews and grounded explanation.
 
-The AEP Data Guide resolves **direct labor × 4.5 = total person-hours**, including travel, safety discussion and setup. Actual crew efficiency, default composition, switching feasibility, clearance time, official alert rules and priority weights remain open. The demo uses a transparent conditional elapsed-time envelope, not an official AEP ETR. Read [the model](docs/MODEL_SPEC.md), [requirement/evidence matrix](docs/AEP_REALIGNMENT.md) and [demo freeze](docs/DEMO_FREEZE.md).
+The AEP Data Guide resolves **direct labor × 4.5 = total person-hours**, including travel, safety discussion and setup. Actual crew efficiency, default composition, switching feasibility, clearance time, official alert rules and priority weights remain open. The demo uses a transparent conditional elapsed-time envelope, not an official AEP ETR. Read [the model](docs/MODEL_SPEC.md), [requirement/evidence matrix](docs/REQUIREMENTS_TRACEABILITY.md) and [demo freeze](docs/DEMO_FREEZE.md).
 
 ## Run the browser
 
@@ -30,6 +30,16 @@ npm --prefix frontend run dev
 Open **http://127.0.0.1:5173/** after backend startup. Both ports must be available. For live Gemini, use the secure [local `.env` loader](docs/GEMINI_PROVIDER.md#local-credential-and-launch-setup) instead of the provider-disabled command. Never display a key or put it in frontend variables. Missing AI credentials/network/quota uses Standard explanation.
 
 One vetted Virginia customer is selected automatically. The map shows generalized source geometry; the dependency schematic explains upstream relationships. Crew size, access and optional customer-declared needs are interactive. Refresh resets four-person CLEAR and removes declarations. No declarations are stored or sent to AI. No alerts are delivered and no enrollment occurs.
+
+## Damage impact and restoration decision
+
+The first browser panel compares four source-backed repair candidates. A historical ARCOS fuse report is associated through a disclosed nearest-pole/device spatial hypothesis with a verified 23-premise reverse set. The two golden repairs and one critical-context fuse are declared damage. Together they affect **28 unique premise dependencies**, not confirmed current outages.
+
+A fire-station/nearest-premise proxy can influence the explicit **GridGuide prototype policy**; it is never a verified facility electrical attachment. Compare alternatives, toggle spatial criticality preference, change each candidate's access, and select **one/two crews separately from two–eight people per crew**. Default four-person CLEAR plan: **15.192 person-hours**, **3.75–15.25 conditional elapsed hours** with one crew, **3.25–13.5** with two. Blocked work and dependent tasks are deferred. Actual switching-restorable counts stay null.
+
+The reusable private index has 8,093 physical assets with complete reverse evidence, out of 32,600 syntactically indexed assets. Incomplete memberships are withheld. The UI is a curated four-candidate comparison, not system-wide optimization. See [Q2/Q4 audit, evidence and demo](docs/Q2_Q4_DECISION_SUPPORT.md).
+
+API: `POST /api/restoration-plan` accepts crew count/size, candidate access, proxy preference and revision. `/api/restoration-plan/explain` recomputes and binds the plan before optional Gemini reference selection. Standard explanations work offline.
 
 ## Golden model
 

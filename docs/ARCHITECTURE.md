@@ -6,6 +6,9 @@ React/TypeScript + Leaflet consumes one Python/FastAPI service. Pinned local sou
 |---|---|
 | `backend/data.py` | Hash/identity/CRS checks, private paths and labor cells; all-path asset→premise reverse index. Never serialize private source objects. |
 | `backend/impact.py` | Validate reverse memberships against customer/transformer GIS; public counts and spatial facility inventory. Missing joins withhold impact. No proximity-based electrical links. |
+| `backend/network.py` | Reusable private full-source reverse index with complete-path and membership validation. |
+| `backend/spatial.py`, `damage.py`, `criticality.py` | Metric spatial hypotheses, ARCOS pole/device bridge, facility/premise proxy; no proximity-derived electrical truth. |
+| `backend/planning.py`, `plan_explanations.py` | Four-candidate lexicographic prototype policy, constrained crew schedule, union/release milestones, server-owned plan clauses. |
 | `backend/geography.py` | Separate public map DTO, 0.01° generalized geometry and exact circuit-matched lines; absent terminal remains unlocated. |
 | `backend/engine.py` | Risk, AEP person-hours, explicit conditional crew envelope, access/crew comparisons and bounded dependency release. |
 | `backend/contracts.py` | Frozen typed public contracts, nulls, provenance/classifications and result binding. |
@@ -17,9 +20,13 @@ React/TypeScript + Leaflet consumes one Python/FastAPI service. Pinned local sou
 
 ## Data and evidence flow
 
-Historical ARCOS circuit context contributes only to a disclosed risk indicator. It is not a verified asset-damage join. Golden damage is explicitly declared on two GIS/topology-verified assets → reverse premise sets → union impact → repair scope/cells → direct labor × 4.5 person-hours → crew/access conditional duration → bounded repair order → preparation/communication → constrained explanation. Original guide statements and missing links are documented in [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md) and formulas in [MODEL_SPEC.md](MODEL_SPEC.md).
+In the customer-v2 journey, historical ARCOS circuit context contributes to a disclosed risk indicator. It is not a verified asset-damage join. Golden damage is explicitly declared on two GIS/topology-verified assets → reverse premise sets → union impact → repair scope/cells → direct labor × 4.5 person-hours → crew/access conditional duration → bounded repair order → preparation/communication → constrained explanation. Original guide statements and missing links are documented in [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md) and formulas in [MODEL_SPEC.md](MODEL_SPEC.md).
 
 Keep three relations separate: customer→upstream; damaged asset→dependent premises; damaged section→customers restorable through switching. The first two are source-defensible for the bounded scenario. The third remains unavailable as an actual operation. Spatial facility context changes the verification questions asked before prioritization, never creates an affected-facility count or numerical criticality weight.
+
+The separate restoration-plan-v1 journey prepares a full private network index, all historical damage associations and facility proximity hypotheses once. A curated qualified historical replay plus three declared source assets produce a 28-premise union. Independent source branches support separate crews under an explicit prototype concurrency policy; source ancestry conservatively sequences dependent tasks. A facility proxy may influence priority only with clear spatial-hypothesis labeling; verified facility electrical dependency remains null.
+
+`POST /api/restoration-plan` exposes only aggregates, opaque aliases and generalized cells. `/api/restoration-plan/explain` binds recomputed plan/revision/settings to scope-specific approved questions. The optional planning subsystem returns safe 503 if preparation fails; baseline customer analysis remains available. No per-request raw GIS loading occurs.
 
 ## Requests and session behavior
 

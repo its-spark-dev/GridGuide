@@ -400,7 +400,7 @@ class GeographicMap(Contract):
     disclosures: tuple[str, ...]
 
 
-ExplanationIntent = Literal["risk", "restoration", "change", "preparation", "availability", "topology", "alerts", "labor", "priority", "unsupported"]
+ExplanationIntent = Literal["risk", "restoration", "change", "preparation", "availability", "topology", "alerts", "labor", "priority", "impact", "crew_plan", "unsupported"]
 ExplanationSource = Literal["modeled", "simulated", "verified", "mixed"]
 
 
@@ -413,6 +413,7 @@ class ExplanationClause(Contract):
 class ExplanationContext(Contract):
     """Provider allowlist: no coordinates, source rows, contact fields or raw IDs."""
     version: Literal["explanation-v2"] = "explanation-v2"
+    scope: Literal["customer", "restoration_plan"] = "customer"
     result_id: str
     scenario_revision: int
     location_label: str
@@ -452,3 +453,143 @@ class ExplanationResponse(Contract):
     source_type: ExplanationSource
     mode: Literal["ai_assisted", "standard", "unsupported"]
     fallback_reason: Literal["not_configured", "timeout", "provider_unavailable", "invalid_response", "unsupported_question"] | None
+
+
+class CandidateAccess(Contract):
+    candidate_id: str
+    access: Access
+
+
+class PlanRequest(Contract):
+    scenario_revision: Annotated[int, Field(strict=True, ge=1)] = 1
+    crew_count: Annotated[int, Field(strict=True, ge=1, le=2)] = 1
+    crew_size: CrewSize = 4
+    use_critical_proxy: bool = True
+    access: tuple[CandidateAccess, ...] = ()
+
+    @model_validator(mode="after")
+    def unique_access(self):
+        if len({a.candidate_id for a in self.access}) != len(self.access):
+            raise ValueError("Duplicate candidate selection")
+        return self
+
+
+class PlanExplanationRequest(PlanRequest):
+    result_id: Annotated[str, Field(min_length=1, max_length=128)]
+    question: Annotated[str, Field(min_length=1, max_length=240)]
+
+
+class ImpactCell(Contract):
+    position: MapPoint
+    premises: Count
+
+
+class CriticalProxyContext(Contract):
+    kind: str
+    distance_m: float
+    runner_up_distance_m: float
+    classification: Literal["prototype policy"] = "prototype policy"
+    relationship: Literal["spatially associated critical premise proxy"] = "spatially associated critical premise proxy"
+    verified_electrical_attachment: None = None
+
+
+class PlanCandidate(Contract):
+    id: str
+    label: str
+    kind: str
+    damage_source: Literal["historical ARCOS replay", "declared damage scenario"]
+    match_method: str
+    match_distance_m: float | None
+    pole_distance_m: float | None
+    runner_up_distance_m: float | None
+    evidence_note: str
+    dependent_premises: Count | None
+    overlap_premises: Count | None
+    prerequisite_ids: tuple[str, ...]
+    direct_labor_hours: float
+    repair_person_hours: float
+    access: Access
+    access_direct_hours: float | None
+    total_person_hours: float | None
+    elapsed_hours: Bounds | None
+    potential_release_at_stage: Count | None
+    release_per_total_person_hour: float | None
+    critical_proxies: tuple[CriticalProxyContext, ...]
+    status: Literal["scheduled", "blocked", "dependency_blocked", "evidence_unavailable"]
+    priority_rank: int | None
+    reason: str
+    position: MapPoint | None
+    customer_cells: tuple[ImpactCell, ...]
+    current_damage_confirmed: None = None
+    actually_restorable_via_switching: None = None
+
+
+class PlanTask(Contract):
+    candidate_id: str
+    crew: int
+    start_hours: Bounds
+    finish_hours: Bounds
+    display_finish_hours: Bounds
+
+
+class ReleaseMilestone(Contract):
+    candidate_ids: tuple[str, ...]
+    elapsed_hours: Bounds
+    display_hours: Bounds
+    additional_premises: Count
+    cumulative_premises: Count
+
+
+class PlanCoverage(Contract):
+    indexed_paths: Count
+    indexed_assets: Count
+    indexed_memberships: Count
+    verified_paths: Count
+    unresolved_paths: Count
+    complete_reverse_assets: Count
+    supported_physical_reverse_assets: Count
+    transformer_reverse_assets: Count
+    fuse_reverse_assets: Count
+    missing_customer_paths: Count
+    missing_topology_customer_rows: Count
+    arcOS_records: Count
+    spatial_candidates: Count
+    complete_spatial_candidates: Count
+    facility_features: Count
+    facility_spatial_proxies: Count
+    facility_proxies_with_verified_paths: Count
+
+
+class PlanEvidence(Contract):
+    input_or_rule: str
+    classification: EvidenceClass
+    detail: str
+
+
+class RestorationPlan(Contract):
+    version: Literal["restoration-plan-v1"] = "restoration-plan-v1"
+    result_id: str
+    scenario_revision: int
+    crew_count: int
+    crew_size: int
+    use_critical_proxy: bool
+    candidates: tuple[PlanCandidate, ...]
+    tasks: tuple[PlanTask, ...]
+    milestones: tuple[ReleaseMilestone, ...]
+    recommended_id: str | None
+    unique_dependent_premises: Count | None
+    summed_memberships: Count | None
+    overlap_memberships: Count | None
+    scheduled_release_potential: Count | None
+    repair_person_hours: float
+    total_person_hours: float | None
+    completion_hours: Bounds | None
+    display_completion_hours: Bounds | None
+    executable_completion_hours: Bounds | None
+    coverage: PlanCoverage
+    policy: tuple[str, ...]
+    evidence: tuple[PlanEvidence, ...]
+    limitations: tuple[str, ...]
+    actual_efficiency: None = None
+    actual_switching_restorable_premises: None = None
+    verified_critical_electrical_dependencies: None = None
