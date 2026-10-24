@@ -36,6 +36,7 @@ function Topology({ location }: { location: Location }) {
 export function App() {
   const [location, setLocation] = useState<Location | null>(null);
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
+  const [previousResult, setPreviousResult] = useState<Evaluation | null>(null);
   const [selected, setSelected] = useState<NonNullable<Access>>('clear');
   const [pending, setPending] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -62,6 +63,7 @@ export function App() {
           response.result.location.alias !== alias || (previous && response.comparison?.before_result_id !== previous.result_id)) {
         throw new Error('The analysis response did not match your selection. Please try again.');
       }
+      setPreviousResult(previous);
       confirmed.current = response.result;
       setAnalysis(response);
       setPending(false);
@@ -101,22 +103,42 @@ export function App() {
 
   return <>
     <a className="skip-link" href="#main">Skip to analysis</a>
+    <div className="utility-bar"><span>Customer outage information</span><span>Demo environment</span></div>
     <header className="site-header"><div className="header-inner">
       <a className="brand" href="/" aria-label="GridGuide home"><span className="brand-mark"><GridMark /></span>GridGuide</a>
-      <span className="header-description">Outage intelligence</span>
-      <span className="demo-tag"><span aria-hidden="true" /> AEP challenge demo</span>
+      <nav className="customer-nav" aria-label="Customer navigation"><a href="#main" aria-current="page">Outage status</a><a href="#topology-title">Grid context</a><a href="#customer-updates">Alerts & preparation</a></nav>
     </div></header>
+    <div className="breadcrumb"><span>GridGuide</span><span aria-hidden="true">/</span><span>Outage status</span></div>
 
     <main id="main">
-      <div className="intro"><div><span className="eyebrow">A CLEARER VIEW OF WHAT COMES NEXT</span>
-        <h1>Your outage outlook</h1><p>Explore how access conditions affect a possible restoration.</p></div>
+      <div className="intro"><div><span className="eyebrow">OUTAGE STATUS</span>
+        <h1>Your outage & restoration outlook</h1><p>Explore how access conditions affect a possible restoration.</p></div>
         <div className="location-chip"><span className="location-icon" aria-hidden="true">⌖</span><div><strong>{location?.label ?? 'Loading location…'}</strong><span>Anonymized customer · verified AEP data</span></div></div>
+      </div>
+
+      {error && <div className="error-panel" role="alert"><div><strong>Analysis unavailable</strong><p>{error}</p></div><button onClick={retry}>Try again</button></div>}
+      <div className="results-grid">
+        <section className="panel risk-panel" aria-labelledby="risk-title">
+          <span className="eyebrow">OUTAGE RISK</span><div className="risk-heading"><h2 id="risk-title" data-testid="risk-band">{risk?.band ?? (pending ? 'Loading…' : 'Unavailable')}</h2><span className="risk-caption">Concern under this scenario</span></div>
+          <p className="confidence">Predictive confidence: <strong>{risk?.predictive_confidence.toLowerCase() ?? (pending ? 'pending' : 'unavailable')}</strong></p>
+          <details className="risk-details"><summary>What contributes to this risk?</summary><ul className="risk-factors">{risk?.factors.map(factor => <li key={factor.id}><div><strong>{factor.label}</strong><span>{typeof factor.value === 'boolean' ? (factor.value ? 'Evidence present in the historical extract' : 'No evidence in this extract') : String(factor.value ?? 'Unknown')}</span></div><span className="points">{factor.contribution_points == null ? '—' : `+${factor.contribution_points}`}</span></li>)}</ul>
+          <p className="muted fine">{risk?.limitations[0] ?? 'Risk factors will appear after the verified analysis loads.'}</p></details>
+        </section>
+
+        <section className={`restoration-panel ${current?.restoration.status === 'pending_clearance' ? 'blocked' : ''}`} aria-labelledby="restoration-title" aria-busy={pending}>
+          <div className="restoration-top"><span className="eyebrow" id="restoration-title">RESTORATION OUTLOOK</span><span className="access-badge">{selected} access</span></div>
+          <div className="estimate" role="status" aria-live="polite" aria-atomic="true" data-testid="restoration-result">
+            {pending ? <><h2 className="state-title">Updating estimate<span className="loading-dots" aria-hidden="true">…</span></h2><p>Calculating the {selected} access scenario.</p></> : error ? <><h2 className="state-title">Estimate unavailable</h2><p>Reconnect to the analysis service to update this scenario.</p></> : range ? <><h2 className="range">{format(range.lower)}–{format(range.upper)} <span>{current?.restoration.unit}</span></h2><p>From when an assigned crew begins its response</p></> : <><h2 className="state-title">Estimate unavailable</h2><p>{current?.restoration.status === 'pending_clearance' ? 'Pending access clearance' : 'Required information is missing'}</p></>}
+          </div>
+          <div className="estimate-note"><strong>Model-based provisional estimate · not an official live AEP ETR</strong><p>{result?.restoration.limitations[0] ?? 'Labor-hour interpretation uses a disclosed provisional assumption.'}</p></div>
+          {current?.restoration.missing_inputs.length ? <p className="blocked-note">{current.restoration.missing_inputs.map(input => input.replaceAll('_', ' ')).join(' · ')}</p> : null}
+        </section>
       </div>
 
       <div className="scenario-label"><span className="small-badge">SIMULATED SCENARIO</span><p>Explore a repair scenario. Current utility outage status and official AEP restoration times are not connected.</p></div>
 
       <section className="panel access-panel" aria-labelledby="access-title">
-        <div><span className="eyebrow">EXPLORE A SCENARIO</span><h2 id="access-title">How accessible are the worksites?</h2><p className="muted">Change access to see the effect on restoration.</p></div>
+        <div><span className="eyebrow">RESTORATION DETAILS</span><h2 id="access-title">What may affect restoration?</h2><p className="muted">Worksite access can affect when repairs can finish. Explore the conditions below.</p></div>
         <fieldset className="access-options"><legend className="sr-only">Repair access</legend>
           {options.map(option => <label key={option.value} className={`access-option ${selected === option.value ? 'selected' : ''}`}>
             <input type="radio" name="access" value={option.value} checked={selected === option.value} disabled={!location}
@@ -126,27 +148,13 @@ export function App() {
         </fieldset>
       </section>
 
-      {error && <div className="error-panel" role="alert"><div><strong>Analysis unavailable</strong><p>{error}</p></div><button onClick={retry}>Try again</button></div>}
-      <div className="results-grid">
-        <section className="panel risk-panel" aria-labelledby="risk-title">
-          <span className="eyebrow">OUTAGE RISK</span><div className="risk-heading"><h2 id="risk-title" data-testid="risk-band">{risk?.band ?? (pending ? 'Loading…' : 'Unavailable')}</h2><span className="risk-caption">Concern under this scenario</span></div>
-          <p className="confidence">Predictive confidence: <strong>{risk?.predictive_confidence.toLowerCase() ?? (pending ? 'pending' : 'unavailable')}</strong></p>
-          <ul className="risk-factors">{risk?.factors.map(factor => <li key={factor.id}><div><strong>{factor.label}</strong><span>{typeof factor.value === 'boolean' ? (factor.value ? 'Evidence present in the historical extract' : 'No evidence in this extract') : String(factor.value ?? 'Unknown')}</span></div><span className="points">{factor.contribution_points == null ? '—' : `+${factor.contribution_points}`}</span></li>)}</ul>
-          <p className="muted fine">{risk?.limitations[0] ?? 'Risk factors will appear after the verified analysis loads.'}</p>
-        </section>
-
-        <section className={`restoration-panel ${current?.restoration.status === 'pending_clearance' ? 'blocked' : ''}`} aria-labelledby="restoration-title" aria-busy={pending}>
-          <div className="restoration-top"><span className="eyebrow" id="restoration-title">RESTORATION OUTLOOK</span><span className="access-badge">{selected} access</span></div>
-          <div className="estimate" role="status" aria-live="polite" aria-atomic="true" data-testid="restoration-result">
-            {pending ? <><h2 className="state-title">Updating estimate<span className="loading-dots" aria-hidden="true">…</span></h2><p>Calculating the {selected} access scenario.</p></> : error ? <><h2 className="state-title">Estimate unavailable</h2><p>Reconnect to the analysis service to update this scenario.</p></> : range ? <><h2 className="range">{format(range.lower)}–{format(range.upper)} <span>{current?.restoration.unit}</span></h2><p>From when an assigned crew begins its response</p></> : <><h2 className="state-title">Estimate unavailable</h2><p>{current?.restoration.status === 'pending_clearance' ? 'Pending access clearance' : 'Required information is missing'}</p></>}
-          </div>
-          <div className="estimate-note"><strong>Model-based provisional estimate</strong><p>{result?.restoration.limitations[0] ?? 'Labor-hour interpretation uses a disclosed provisional assumption.'}</p></div>
-          {current?.restoration.missing_inputs.length ? <p className="blocked-note">{current.restoration.missing_inputs.map(input => input.replaceAll('_', ' ')).join(' · ')}</p> : null}
-        </section>
-      </div>
-
       <section className="panel change-panel" aria-labelledby="change-title" aria-busy={pending}>
-        <div className="change-heading"><span className="change-icon" aria-hidden="true">↗</span><div><span className="eyebrow">THE REASON BEHIND THE RESULT</span><h2 id="change-title">Why it changed</h2></div><span className="small-badge">Calculated explanation</span></div>
+        <div className="change-heading"><span className="change-icon" aria-hidden="true">↗</span><div><span className="eyebrow">SCENARIO UPDATE</span><h2 id="change-title">Why the outlook changed</h2></div><span className="small-badge">Model-generated update</span></div>
+        {comparison && previousResult && comparison.before_result_id === previousResult.result_id && <div className="outlook-update" data-testid="outlook-update">
+          <strong>Restoration outlook updated</strong>
+          <div className="range-transition"><div><span>{previousResult.simulated_inputs.access} access</span><b>{previousResult.restoration.display_hours ? `${format(previousResult.restoration.display_hours.lower)}–${format(previousResult.restoration.display_hours.upper)} hours` : 'Estimate unavailable'}</b></div><span aria-hidden="true">→</span><div><span>{current?.simulated_inputs.access} access</span><b>{range ? `${format(range.lower)}–${format(range.upper)} hours` : 'Estimate unavailable'}</b></div></div>
+          <p>Model comparison · access is the only changed input.</p>
+        </div>}
         <div role="status" aria-live="polite" data-testid="change-explanation">
           {pending ? <p className="muted">Updating the comparison with your last completed scenario…</p> : error ? <p className="muted">The comparison will return when analysis is available.</p> : comparison ? <p className="explanation">{comparison.explanation}</p> : <p className="muted">Choose Restricted or Blocked above to compare with this scenario. The explanation will show which calculated factors changed.</p>}
         </div>
@@ -159,7 +167,8 @@ export function App() {
         <div><h3>Model assumptions</h3><ul>{result.assumptions.map(assumption => <li key={assumption.id}>{assumption.description}<small>Assumed value: {String(assumption.value)}</small></li>)}</ul></div>
         <div><h3>Limits to the estimate</h3><ul>{result.restoration.limitations.slice(1).map(limit => <li key={limit}>{limit}</li>)}</ul></div></div>
       </details>}
-      <footer><span>GridGuide</span><p>Source-verified grid context. Transparent scenario assumptions.</p><span>HackOHI/O 2026</span></footer>
+      <section className="customer-updates" id="customer-updates" aria-labelledby="updates-title"><h2 id="updates-title">Preparation & alerts</h2><div><article><h3>Preparation guidance</h3><p>Guidance is not available in this preview.</p></article><article><h3>Outage notifications</h3><p>Alert eligibility and notifications are not connected.</p></article></div></section>
+      <footer><span>GridGuide</span><p>Verified challenge data · modeled scenarios · no live utility connection</p></footer>
     </main>
   </>;
 }
