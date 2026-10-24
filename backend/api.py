@@ -8,7 +8,8 @@ from fastapi.responses import JSONResponse
 from pydantic import Field, model_validator
 
 from .config import GOLDEN_ALIAS, RISK_VERSION, RESTORATION_VERSION, SNAPSHOT
-from .contracts import Access, Comparison, Contract, Evaluation, Location
+from .contracts import Access, Comparison, Contract, CustomerJourney, Evaluation, Location
+from .customer import customer_journey
 from .data import CheckpointError, PreparedContext, prepare_context
 from .engine import compare_access, default_scenario, evaluate
 
@@ -36,6 +37,7 @@ class AnalysisRequest(Contract):
 class AnalysisResponse(Contract):
     result: Evaluation
     comparison: Comparison | None = None
+    customer_journey: CustomerJourney
 
 
 def create_app(context_loader: Callable[[], PreparedContext] = prepare_context) -> FastAPI:
@@ -86,11 +88,12 @@ def create_app(context_loader: Callable[[], PreparedContext] = prepare_context) 
         result = evaluate(context, default_scenario(context, location_alias=body.location_alias,
             access=body.access, scenario_revision=body.scenario_revision))
         comparison = None
+        previous = None
         if body.previous:
             previous = evaluate(context, default_scenario(context, location_alias=body.location_alias,
                 access=body.previous.access, scenario_revision=body.previous.scenario_revision))
             comparison = compare_access(previous, result)
-        return AnalysisResponse(result=result, comparison=comparison)
+        return AnalysisResponse(result=result, comparison=comparison, customer_journey=customer_journey(result, previous, comparison))
 
     return app
 

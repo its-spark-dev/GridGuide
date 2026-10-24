@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { getAnalysis, getLocations } from './api';
+import { CustomerJourney } from './CustomerJourney';
 import type { Access, Analysis, Evaluation, Location } from './api';
 
 const options: { value: NonNullable<Access>; title: string; detail: string }[] = [
@@ -60,7 +61,7 @@ export function App() {
       }, controller.signal);
       if (requestRevision !== revision.current || controller.signal.aborted) return;
       if (response.result.scenario_revision !== requestRevision || response.result.simulated_inputs.access !== access ||
-          response.result.location.alias !== alias || (previous && response.comparison?.before_result_id !== previous.result_id)) {
+          response.result.location.alias !== alias || response.customer_journey.result_id !== response.result.result_id || (previous && response.comparison?.before_result_id !== previous.result_id)) {
         throw new Error('The analysis response did not match your selection. Please try again.');
       }
       setPreviousResult(previous);
@@ -167,7 +168,10 @@ export function App() {
         <div><h3>Model assumptions</h3><ul>{result.assumptions.map(assumption => <li key={assumption.id}>{assumption.description}<small>Assumed value: {String(assumption.value)}</small></li>)}</ul></div>
         <div><h3>Limits to the estimate</h3><ul>{result.restoration.limitations.slice(1).map(limit => <li key={limit}>{limit}</li>)}</ul></div></div>
       </details>}
-      <section className="customer-updates" id="customer-updates" aria-labelledby="updates-title"><h2 id="updates-title">Preparation & alerts</h2><div><article><h3>Preparation guidance</h3><p>Guidance is not available in this preview.</p></article><article><h3>Outage notifications</h3><p>Alert eligibility and notifications are not connected.</p></article></div></section>
+      <section className="customer-updates" id="customer-updates" aria-labelledby="updates-title" aria-busy={pending}>
+        <h2 id="updates-title">Preparation & alerts</h2>
+        {current && analysis ? <CustomerJourney key={current.scenario_revision} journey={analysis.customer_journey} /> : <p className="journey-pending" role="status">{pending ? 'Updating preparation and communication previews…' : 'Preparation and communication previews are unavailable. Use Try again above to reconnect.'}</p>}
+      </section>
       <footer><span>GridGuide</span><p>Verified challenge data · modeled scenarios · no live utility connection</p></footer>
     </main>
   </>;

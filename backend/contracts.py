@@ -233,3 +233,43 @@ class Comparison(Contract):
     changes: tuple[Change, ...]
     explanation: str
     explanation_kind: Literal["deterministic_calculation_summary"] = "deterministic_calculation_summary"
+
+
+class Preparation(Contract):
+    actions: tuple[str, ...]
+    safety: tuple[str, ...]
+    duration_known: bool
+    note: str
+
+
+class AlertEligibility(Contract):
+    eligible: bool | None
+    reason: str
+    suggested_channels: tuple[Literal["app", "sms", "phone_call"], ...]
+    delivery: Literal["preview_only"] = "preview_only"
+    priority_needs_declared: Literal[False] = False
+    timing: dict[str, str]
+    assumptions: str = "Thresholds are team assumptions, not official utility eligibility rules."
+
+
+Lifecycle = Literal["pre_storm", "outage_confirmed", "estimate_updated", "restored"]
+
+
+class CommunicationPreview(Contract):
+    state: Lifecycle
+    title: str
+    body: str
+    available: bool
+    source: Literal["teammate_template_adapted", "null_state_adapter"]
+
+
+class CustomerJourney(Contract):
+    result_id: str
+    source: Literal["pipeline.guidance"] = "pipeline.guidance"
+    preparation: Preparation
+    alerts: AlertEligibility
+    messages: tuple[CommunicationPreview, ...]
+    selected_state: Lifecycle
+    estimate_update_eligible: bool
+    update_reason: str
+    delivery_note: str = "Preview only. No SMS, email or phone service is connected; no alert has been sent."

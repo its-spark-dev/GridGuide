@@ -110,3 +110,7 @@ python scripts/audit_data.py --output /tmp/gridguide-audit.json
 ```
 
 See DATA_AUDIT for setup context and limitations. The audit has its own `shapely` dependency; the checkpoint does not require it. Next: clarify the workbook's labor basis with AEP and connect a thin API/customer view to the validated engine contract.
+
+### Preparation and communication previews
+
+The browser now consumes teammate preparation, alert eligibility and lifecycle messages through the API. CLEAR → RESTRICTED selects an estimate-update preview; BLOCKED preserves unavailable bounds. No messages are sent and no customer needs are inferred. See [integration ownership, assumptions and rehearsal](docs/CUSTOMER_INTEGRATION.md).

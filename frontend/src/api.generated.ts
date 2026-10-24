@@ -59,6 +59,36 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** AlertEligibility */
+        AlertEligibility: {
+            /**
+             * Assumptions
+             * @default Thresholds are team assumptions, not official utility eligibility rules.
+             */
+            assumptions: string;
+            /**
+             * Delivery
+             * @default preview_only
+             * @constant
+             */
+            delivery: "preview_only";
+            /** Eligible */
+            eligible: boolean | null;
+            /**
+             * Priority Needs Declared
+             * @default false
+             * @constant
+             */
+            priority_needs_declared: false;
+            /** Reason */
+            reason: string;
+            /** Suggested Channels */
+            suggested_channels: ("app" | "sms" | "phone_call")[];
+            /** Timing */
+            timing: {
+                [key: string]: string;
+            };
+        };
         /** AnalysisRequest */
         AnalysisRequest: {
             /**
@@ -82,6 +112,7 @@ export interface components {
         /** AnalysisResponse */
         AnalysisResponse: {
             comparison?: components["schemas"]["Comparison"] | null;
+            customer_journey: components["schemas"]["CustomerJourney"];
             result: components["schemas"]["Evaluation-Output"];
         };
         /** Assumption */
@@ -121,6 +152,25 @@ export interface components {
             /** Unit */
             unit?: string | null;
         };
+        /** CommunicationPreview */
+        CommunicationPreview: {
+            /** Available */
+            available: boolean;
+            /** Body */
+            body: string;
+            /**
+             * Source
+             * @enum {string}
+             */
+            source: "teammate_template_adapted" | "null_state_adapter";
+            /**
+             * State
+             * @enum {string}
+             */
+            state: "pre_storm" | "outage_confirmed" | "estimate_updated" | "restored";
+            /** Title */
+            title: string;
+        };
         /** Comparison */
         Comparison: {
             /** After Result Id */
@@ -144,6 +194,35 @@ export interface components {
             outage_status?: null;
             /** Restoration Time */
             restoration_time?: null;
+        };
+        /** CustomerJourney */
+        CustomerJourney: {
+            alerts: components["schemas"]["AlertEligibility"];
+            /**
+             * Delivery Note
+             * @default Preview only. No SMS, email or phone service is connected; no alert has been sent.
+             */
+            delivery_note: string;
+            /** Estimate Update Eligible */
+            estimate_update_eligible: boolean;
+            /** Messages */
+            messages: components["schemas"]["CommunicationPreview"][];
+            preparation: components["schemas"]["Preparation"];
+            /** Result Id */
+            result_id: string;
+            /**
+             * Selected State
+             * @enum {string}
+             */
+            selected_state: "pre_storm" | "outage_confirmed" | "estimate_updated" | "restored";
+            /**
+             * Source
+             * @default pipeline.guidance
+             * @constant
+             */
+            source: "pipeline.guidance";
+            /** Update Reason */
+            update_reason: string;
         };
         /** DependencyEdge */
         DependencyEdge: {
@@ -359,6 +438,17 @@ export interface components {
             restoration: string;
             /** Risk */
             risk: string;
+        };
+        /** Preparation */
+        Preparation: {
+            /** Actions */
+            actions: string[];
+            /** Duration Known */
+            duration_known: boolean;
+            /** Note */
+            note: string;
+            /** Safety */
+            safety: string[];
         };
         /** PreviousSelection */
         PreviousSelection: {
