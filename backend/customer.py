@@ -19,7 +19,9 @@ DECLARED_ACTIONS = {
 }
 
 
-def _preparation(risk: str, upper: float | None, confidence: str) -> Preparation:
+def _preparation(risk: str | None, upper: float | None, confidence: str) -> Preparation:
+    # None selects only the teammate's general/duration-based actions, never a
+    # fabricated Low band or the Medium/High risk-specific actions.
     if upper is not None:
         prepared = guidance.prep_guidance(risk, upper, priority_needs=False, confidence=confidence)
         note = "Actions selected for this modeled scenario. No personal or medical needs have been declared."
@@ -33,9 +35,14 @@ def _preparation(risk: str, upper: float | None, confidence: str) -> Preparation
     return Preparation(**prepared, duration_known=upper is not None, note=note)
 
 
-def _eligibility(risk: str, upper: float | None, confidence: str, declared: bool = False) -> AlertEligibility:
+def _eligibility(risk: str | None, upper: float | None, confidence: str, declared: bool = False) -> AlertEligibility:
     escalation = ("Because you declared a need, arrange support directly now. If power loss creates immediate danger, contact emergency services; do not wait for this modeled estimate. No contact or dispatch occurs here."
                   if declared else "No special need was declared. Suggested channels are previews; no contact or dispatch occurs here.")
+    if risk is None and not declared:
+        return AlertEligibility(eligible=None, reason="Risk evidence is insufficient; demo alert eligibility cannot be determined without a risk band or a declared support need.",
+                                suggested_channels=("app",), timing={}, escalation_guidance=escalation)
+    # A declared need independently qualifies under the existing teammate rule,
+    # even when risk is unknown. Duration still controls channel recommendations.
     if upper is not None:
         plan = guidance.alert_plan(risk, upper, priority_needs=declared, confidence=confidence)
     else:
@@ -55,8 +62,8 @@ def _eligibility(risk: str, upper: float | None, confidence: str, declared: bool
 
 
 def _preview_text(text: str, risk: str) -> str:
-    # Narrow, reviewed wording adaptations of the teammate templates. The functions
-    # still generate all finite-range messages; browser code contains no message copy.
+    # Narrow, reviewed adaptations of teammate templates. Finite comparisons and
+    # missing-evidence messages are handled below; browser code owns no message copy.
     return (text.replace("AEP GridGuide:", "GridGuide preview:")
             .replace(f"A storm is approaching. Your area has a {risk.upper()} chance of an outage.",
                      f"In this storm scenario, your outage risk band is {risk.upper()} (not a probability).")
@@ -72,7 +79,7 @@ def customer_journey(result: Evaluation, previous: Evaluation | None = None,
     if previous is not None and (comparison is None or comparison.before_result_id != previous.result_id
                                  or comparison.after_result_id != result.result_id):
         raise ValueError("Customer comparison must reference the supplied results")
-    risk = BANDS[result.risk.band]
+    risk = BANDS[result.risk.band] if result.risk.band is not None else None
     confidence = result.risk.predictive_confidence.title()
     bounds = result.restoration.display_hours
     old = previous.restoration.display_hours if previous else None
@@ -89,25 +96,34 @@ def customer_journey(result: Evaluation, previous: Evaluation | None = None,
                      f"A modeled elapsed-time bound moved by more than {threshold:g} hours; eligible for an update preview." if threshold_met else
                      f"Prototype policy: updates qualify when a raw elapsed-time bound moves by more than {threshold:g} hours or availability changes, subject to eligibility.")
     generated = {}
-    if bounds is not None:
+    if bounds is not None and risk is not None:
         generated = guidance.messages(risk, bounds.lower, bounds.upper, confidence)
-        if changed and old is not None:
-            generated["estimate_updated"] = guidance.messages(risk, old.lower, old.upper, confidence,
-                new_low=bounds.lower, new_high=bounds.upper)["estimate_updated"]
+    if changed and old is not None and bounds is not None:
+        # Adapt the finite update at this boundary: an unchanged upper endpoint
+        # or crossing endpoints cannot justify the template's sooner/later claim.
+        generated["estimate_updated"] = (
+            f"GridGuide preview: The conditional restoration range changed from {old.lower:g}–{old.upper:g} "
+            f"to {bounds.lower:g}–{bounds.upper:g} elapsed hours. This is a scenario change, not a live crew update.")
     # Null state copy adds behavior the teammate API cannot represent. No made-up
     # duration is passed to its formatter, and a blocked estimate stays unavailable.
     unavailable = "Estimate unavailable. Pending access clearance." if result.restoration.status == "pending_clearance" else "Estimate unavailable. Required information is missing."
+    outlook = (f"Provisional modeled restoration: {bounds.lower:g}–{bounds.upper:g} elapsed hours."
+               if bounds is not None else unavailable)
+    risk_summary = (f"In this storm scenario, your outage risk band is {result.risk.band} (not a probability)."
+                    if risk is not None else "Risk estimate unavailable: evidence is insufficient. No risk band has been assigned.")
     fallback = {
-        "pre_storm": f"GridGuide preview: In this storm scenario, your outage risk band is {result.risk.band} (not a probability). {unavailable} Review preparation guidance.",
-        "outage_confirmed": f"GridGuide preview: If an outage is confirmed: {unavailable} Review the safety guidance below.",
+        "pre_storm": f"GridGuide preview: {risk_summary} {outlook} Review preparation guidance.",
+        "outage_confirmed": f"GridGuide preview: If an outage is confirmed: {outlook} Review the safety guidance below.",
         "estimate_updated": (f"GridGuide preview: {unavailable} No finite restoration outlook is available." if bounds is None else
-                             f"GridGuide preview: A provisional restoration outlook is available again: {bounds.lower:g} to {bounds.upper:g} hours."),
+                             f"GridGuide preview: A conditional restoration range is available again: {bounds.lower:g}–{bounds.upper:g} elapsed hours."),
         "restored": "GridGuide preview: If the utility confirms restoration, check your service and report any continuing outage through the utility's official channels.",
     }
     previews = []
     for state, title in TITLES.items():
         available = state != "estimate_updated" or changed
-        body = (_preview_text(generated[state], risk) if state in generated else fallback[state])
+        body = generated.get(state, fallback[state])
+        if risk is not None:
+            body = _preview_text(body, risk)
         if bounds is not None:
             # Teammate fmt rounds to whole hours/days; preserve the authoritative
             # half-hour elapsed bounds without modifying their source templates.
@@ -124,6 +140,10 @@ def customer_journey(result: Evaluation, previous: Evaluation | None = None,
         preparation = preparation.model_copy(update={
             "declared_actions": tuple(DECLARED_ACTIONS[n] for n in declared_needs.selections),
             "note": "General preparation plus your explicit session-only declarations. No medical or accessibility need was inferred; no enrollment or contact is created.",
+        })
+    if risk is None:
+        preparation = preparation.model_copy(update={
+            "note": "Risk evidence is insufficient; no risk band is assumed. " + preparation.note,
         })
     return CustomerJourney(result_id=result.result_id, declared_needs=declared_needs,
         preparation=preparation, alerts=alerts,
