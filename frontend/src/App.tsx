@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { CustomerJourney } from './CustomerJourney';
 import { GeographicContext } from './GeographicContext';
 import { AskGridGuide } from './AskGridGuide';
@@ -68,13 +68,26 @@ export function App() {
     const target = document.getElementById(id); target?.focus({ preventScroll: true }); target?.scrollIntoView({ block: 'start' });
   });
   useEffect(() => {
+    // Route history always starts at page top; native history restoration must
+    // not compete with the route's focus/scroll handling below.
+    const restoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
     const onHash = () => { if (!window.location.hash || pages.some(p => p.id === window.location.hash.slice(1))) setPage(pageFromHash()); };
-    window.addEventListener('hashchange', onHash); return () => window.removeEventListener('hashchange', onHash);
+    window.addEventListener('hashchange', onHash);
+    return () => { window.removeEventListener('hashchange', onHash); window.history.scrollRestoration = restoration; };
   }, []);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (page === 'grid') setGridVisited(true);
     if (initialNavigation.current) { initialNavigation.current = false; return; }
-    focusSection(focusTarget.current ?? pageHeading[page]); focusTarget.current = null;
+    const target = focusTarget.current;
+    focusTarget.current = null;
+    // Explicit evidence/communication links retain their section destination.
+    if (target) {
+      const frame = focusSection(target);
+      return () => window.cancelAnimationFrame(frame);
+    }
+    document.getElementById(pageHeading[page])?.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [page]);
   useEffect(() => { if (location) setDraftLocation(location.alias); }, [location]);
   // Results are withdrawn during a request. Restore keyboard position when that
@@ -102,8 +115,12 @@ export function App() {
     }
   }, [pending, page]);
   const navigate = (next: Page, target?: string) => {
-    focusTarget.current = target ?? pageHeading[next];
-    if (next === page) { focusSection(focusTarget.current); focusTarget.current = null; }
+    focusTarget.current = target ?? null;
+    if (next === page) {
+      if (target) focusSection(target);
+      else document.getElementById(pageHeading[next])?.focus({ preventScroll: true });
+      focusTarget.current = null;
+    }
     else window.location.hash = next;
   };
   const showEvidence = (target: 'risk' | 'restoration' | 'preparation' | 'topology') => {

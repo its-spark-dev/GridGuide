@@ -42,8 +42,8 @@ async function start(page: Page, hash = '#overview') {
 async function nav(page: Page, name: 'Overview' | 'Prepare & alerts' | 'Grid insights') {
   await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name, exact: true }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(name === 'Overview' ? 'Your storm outlook' : name === 'Prepare & alerts' ? 'Prepare & stay informed' : 'Grid insights');
-  // Navigation moves focus on the next animation frame. Wait for that actual
-  // accessibility contract before a test sends keyboard input to another control.
+  // Wait for the destination's accessibility focus before sending keyboard
+  // input to another control.
   await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
 }
 
@@ -590,6 +590,7 @@ test('evidence disclosures have unique anchors and communication CTA focuses its
   await expect(page).toHaveURL(/#prepare$/);
   await expect(page.locator('#communications')).toBeFocused();
   await expect(page.getByTestId('message-preview')).toBeVisible();
+  await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(200);
 });
 
 test('keyboard declaration updates retain focus without stealing focus after navigation', async ({ page }) => {
@@ -801,4 +802,89 @@ test('missing source ledger and incomplete dependencies never acquire a verified
   await expect(panel.getByTestId('candidate-lineage')).not.toContainText('All reverse memberships validated');
   await expect(panel.getByTestId('decision-map')).toHaveCount(0);
   await expect(panel.getByText('Generalized geometry is unavailable for this candidate.', { exact: true })).toBeVisible();
+});
+
+async function scrollBelowHeader(page: Page) {
+  await page.evaluate(() => window.scrollTo({ top: 1000, behavior: 'instant' }));
+  await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(200);
+}
+
+async function expectPrimaryPageTop(page: Page, hash: 'overview' | 'prepare' | 'grid') {
+  await expect(page).toHaveURL(new RegExp(`#${hash}$`));
+  const titles = { overview: 'Your storm outlook', prepare: 'Prepare & stay informed', grid: 'Grid insights' };
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(titles[hash]);
+  await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
+  // Cross a paint boundary as well: browser history must not restore old scroll
+  // after React has focused the new page. No timer-based navigation workaround.
+  await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+  expect(await page.evaluate(() => scrollY)).toBeLessThanOrEqual(1);
+  for (const selector of ['.site-header', '.product-nav', '.prototype-identity', '.service-location']) {
+    const box = await page.locator(selector).boundingBox();
+    expect(box, selector).not.toBeNull();
+    expect(box!.y, selector).toBeGreaterThanOrEqual(0);
+    expect(box!.y + box!.height, selector).toBeLessThanOrEqual(page.viewportSize()!.height);
+  }
+}
+
+for (const width of [1440, 390]) {
+  test(`primary route clicks reset to page top while preserving heading focus at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
+    await start(page, '#prepare');
+    await expect(page.getByTestId('preparation-actions')).toBeVisible();
+    for (const [name, hash] of [['Overview', 'overview'], ['Grid insights', 'grid'], ['Prepare & alerts', 'prepare']] as const) {
+      await scrollBelowHeader(page);
+      await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name, exact: true }).click();
+      await expectPrimaryPageTop(page, hash);
+      if (hash === 'grid') await expect(page.getByTestId('decision-recommendation')).toBeVisible();
+    }
+    expect(await page.locator('.site-header').evaluate(e => getComputedStyle(e).position)).not.toMatch(/fixed|sticky/);
+  });
+
+  test(`Back and Forward reset primary pages to the top at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
+    await start(page, '#prepare');
+    await nav(page, 'Overview'); await grid(page);
+    for (const [direction, hash] of [['back', 'overview'], ['back', 'prepare'], ['forward', 'overview'], ['forward', 'grid']] as const) {
+      await scrollBelowHeader(page);
+      if (direction === 'back') await page.goBack(); else await page.goForward();
+      await expectPrimaryPageTop(page, hash);
+    }
+    expect(await page.evaluate(() => history.scrollRestoration)).toBe('manual');
+  });
+}
+
+test('same-screen scenarios, disclosures, explanations, previews, candidate and map controls never reset to page top', async ({ page }) => {
+  const remainsBelowHeader = async (hash: string) => {
+    await expect(page).toHaveURL(new RegExp(`#${hash}$`));
+    await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(200);
+  };
+  await start(page); await explore(page);
+  await remainsBelowHeader('overview');
+  await crew(page, 2, '5.5–12'); await remainsBelowHeader('overview');
+  await access(page, 'Restricted', '8–16.5'); await remainsBelowHeader('overview');
+  await page.getByText('Model assumptions & limits', { exact: true }).click();
+  await remainsBelowHeader('overview');
+  await page.getByRole('button', { name: 'Why is restoration 8–16.5 hours?', exact: true }).click();
+  await expect(page.getByTestId('ai-explanation').filter({ hasText: 'Standard explanation' })).toBeVisible();
+  await remainsBelowHeader('overview');
+  await nav(page, 'Prepare & alerts');
+  await page.locator('#communications').scrollIntoViewIfNeeded();
+  await remainsBelowHeader('prepare');
+  await stage(page, 'Outage confirmed');
+  await remainsBelowHeader('prepare');
+  await stage(page, 'Estimate updated');
+  await expect(page.getByTestId('message-preview')).toContainText('Estimate updated');
+  await remainsBelowHeader('prepare');
+  const panel = await grid(page);
+  await panel.locator('.decision-select').filter({ hasText: 'Historical fuse replay' }).click();
+  await expect(panel.getByTestId('candidate-lineage')).toContainText('23 customer locations');
+  await remainsBelowHeader('grid');
+  await panel.getByRole('checkbox', { name: 'Street map', exact: true }).uncheck();
+  await expect(panel.locator('.decision-tile-status')).toContainText('Street map off');
+  await remainsBelowHeader('grid');
+  await panel.getByText('Inspect match, labor & uncertainty', { exact: true }).click();
+  await remainsBelowHeader('grid');
+  await panel.getByRole('combobox', { name: /^Available crews/ }).selectOption('2');
+  await expect(panel.getByTestId('decision-recommendation')).toContainText('3.25–13.5');
+  await remainsBelowHeader('grid');
 });
