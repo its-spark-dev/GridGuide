@@ -26,7 +26,7 @@ export function CustomerJourney({ journey, checkedActions, onToggleAction, decla
           <div><span className="journey-kicker">Your next steps</span><h2 id="prepare-title">Be ready, one step at a time.</h2></div>
           <span className="checklist-count">{completed} of {preparation.actions.length} checked</span>
         </div>
-        <p className="journey-intro">A practical checklist for this scenario. Check items for your own reference; checks stay in this session and reset on refresh.</p>
+        <p className="journey-intro">Check off your preparation. Your checks stay in this visit and reset on refresh.</p>
         {preparation.declared_actions.length > 0 && <aside className="declared-guidance" aria-label="Guidance for your declarations">
           <div className="journey-callout-heading"><Icon name="accessibility" /><strong>For the needs you shared</strong></div>
           <p className="journey-caption">User-declared · nothing inferred from your location</p>
@@ -43,7 +43,7 @@ export function CustomerJourney({ journey, checkedActions, onToggleAction, decla
       </section>
       <aside className="safety-guidance journey-safety" aria-labelledby="safety-title">
         <div className="journey-callout-heading"><Icon name="shield" /><h2 id="safety-title">Safety comes first</h2></div>
-        <p className="journey-caption">Keep these precautions in mind, whatever the estimate.</p>
+        <p className="journey-caption">Whatever the estimate, keep these precautions in mind.</p>
         <ul>{preparation.safety.map(tip => <li key={tip}>{tip}</li>)}</ul>
         <div className="journey-source-links"><a href="https://www.aepohio.com/safety/">Utility safety guidance</a><a href="https://www.foodsafety.gov/keep-food-safe/food-safety-in-disaster-or-emergency">Food safety during outages</a></div>
       </aside>
@@ -51,14 +51,14 @@ export function CustomerJourney({ journey, checkedActions, onToggleAction, decla
     {explanation}
     <section className="journey-alert-section" aria-labelledby="eligibility-title">
       <div className="journey-section-heading"><div><span className="journey-kicker">Stay informed</span><h2 id="eligibility-title">What updates could I receive?</h2></div><Icon name="alert" /></div>
-      <p className="journey-intro">Explore the recommended communication for this scenario. This prototype does not enroll you in a utility alert service.</p>
+      <p className="journey-intro">Scenario communication guidance. No utility alert enrollment.</p>
       <div className="journey-alert-summary">
         <div className="alert-eligibility">
           <span className="journey-label">Scenario eligibility</span>
           <strong className="eligibility-status" data-testid="alert-eligibility">{alerts.eligible === true ? 'Eligible for demo alerts' : alerts.eligible === false ? 'In-app information only' : 'Eligibility needs more information'}</strong>
           <p>{alerts.reason}</p>
         </div>
-        <div className="journey-delivery"><span className="journey-label">Delivery status</span><strong>No notifications are being sent</strong><p>Preview only. No contact details, subscription or consent are collected.</p></div>
+        <div className="journey-delivery"><span className="journey-label">Delivery status</span><strong>No notifications are being sent</strong><p>Preview only. No contact details, subscriptions or consent collected.</p></div>
       </div>
       <div className="journey-channel-row">
         <div><span className="journey-label">Suggested channels</span><ul className="journey-channels">{alerts.suggested_channels.map(channel => <li key={channel}><Icon name={channel === 'sms' ? 'sms' : 'alert'} /><span>{channelName[channel]}</span></li>)}</ul></div>
@@ -70,7 +70,7 @@ export function CustomerJourney({ journey, checkedActions, onToggleAction, decla
     <section id="communications" tabIndex={-1} className="communication journey-communication" aria-labelledby="communications-title">
       <span className="journey-kicker">Communication preview · not sent</span>
       <h2 id="communications-title">A message for each stage</h2>
-      <p className="journey-intro">Choose an example below. These stages are possible communications, not a record of an actual outage.</p>
+      <p className="journey-intro">Choose an example. These previews do not represent an actual outage.</p>
       <fieldset className="lifecycle-selector journey-lifecycle"><legend className="sr-only">Communication stage preview</legend>
         {journey.messages.map((message, index) => <Fragment key={message.state}>
           <label className={`journey-stage journey-stage-${index + 1} ${selected === message.state ? 'selected' : ''}`}>
@@ -82,7 +82,7 @@ export function CustomerJourney({ journey, checkedActions, onToggleAction, decla
             <div className="journey-message-heading"><Icon name="sms" /><div><span className="journey-label">Example communication</span><h3 id="message-preview-title">{message.title}</h3></div><span className="journey-message-state">{message.available ? 'Preview only' : 'Not yet available'}</span></div>
             <p className="journey-message-body">{message.body}</p>
             {selected === 'estimate_updated' && <p className="journey-note journey-update-note">{journey.update_reason} {journey.estimate_update_eligible ? 'Eligible for a demo update; not sent.' : 'No qualifying update is scheduled.'}</p>}
-            <p className="journey-message-footer">No notification has been sent. Selecting a stage does not change your outage status.</p>
+            <p className="journey-message-footer">Not sent. Selecting a preview does not change outage status.</p>
           </div>}
         </Fragment>)}
       </fieldset>

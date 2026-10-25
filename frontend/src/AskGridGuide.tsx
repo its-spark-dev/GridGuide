@@ -14,6 +14,11 @@ type Props = {
   onEvidence?: (target: EvidenceTarget) => void;
 };
 
+const questionLabel = (question: string) => ({
+  'Why did my estimate change?': 'Why did this change?',
+  'Why can’t GridGuide estimate restoration right now?': 'Why is the range unavailable?',
+} as Record<string, string>)[question] ?? question;
+
 export function AskGridGuide({ analysis, previous, context = 'restoration', anchorPrefix, onEvidence }: Props) {
   const unique = useId();
   const titleId = `${anchorPrefix ?? `ask-${context}-${unique}`}-explanation-title`;
@@ -63,11 +68,11 @@ export function AskGridGuide({ analysis, previous, context = 'restoration', anch
   }
 
   return <section className="ask-gridguide contextual-explanation" aria-labelledby={titleId} data-explanation-context={context}>
-    <div className="contextual-heading"><Icon name="explain" /><div><h3 id={titleId}>Ask GridGuide</h3><p>Understand the information behind this {context === 'preparation' ? 'guidance' : context === 'topology' ? 'connection' : 'outlook'}.</p></div></div>
+    <div className="contextual-heading"><Icon name="explain" /><div><h3 id={titleId}>Ask GridGuide</h3><p>The evidence behind this {context === 'preparation' ? 'guidance' : context === 'topology' ? 'connection' : 'outlook'}.</p></div></div>
     {context === 'risk' && result.risk.band === null && <details className="contextual-missing"><summary>Why is risk unavailable?</summary><p>There isn’t enough verified information to assign a risk band. Available restoration and preparation guidance remain separate.</p><ul>{result.risk.missing_inputs.map(input => <li key={input}>{input.replaceAll('_', ' ')}</li>)}</ul>{result.risk.limitations.map(limit => <p key={limit}>{limit}</p>)}</details>}
     {context === 'risk' && result.risk.band !== null && !questions.length && <details className="contextual-missing"><summary>What contributes to this risk band?</summary><ul>{result.risk.factors.map(factor => <li key={factor.id}><strong>{factor.label}:</strong> {factor.value === null ? 'Unavailable' : typeof factor.value === 'boolean' ? factor.value ? 'Evidence present' : 'No evidence in this extract' : String(factor.value)}</li>)}</ul></details>}
-    {!!questions.length && <div className="explanation-questions" aria-label="Suggested questions">{questions.map(item => <button key={item} type="button" aria-pressed={question === item} onClick={() => void ask(item)}>{item}<Icon name="arrow" /></button>)}</div>}
-    {context === 'restoration' && <details className="contextual-more"><summary>More about this restoration scenario</summary><div className="explanation-questions">{['When will my power be restored?', 'Why this repair sequence?'].map(item => <button key={item} type="button" aria-pressed={question === item} onClick={() => void ask(item)}>{item}<Icon name="arrow" /></button>)}</div></details>}
+    {!!questions.length && <div className="explanation-questions" aria-label="Suggested questions">{questions.map(item => <button key={item} type="button" aria-pressed={question === item} onClick={() => void ask(item)}>{questionLabel(item)}<Icon name="arrow" /></button>)}</div>}
+    {context === 'restoration' && <details className="contextual-more"><summary>More about this restoration scenario</summary><div className="explanation-questions">{['When will my power be restored?', 'Why this repair sequence?'].map(item => <button key={item} type="button" aria-pressed={question === item} onClick={() => void ask(item)}>{questionLabel(item)}<Icon name="arrow" /></button>)}</div></details>}
     <p className="sr-only" role="status" aria-atomic="true">{pending ? 'Preparing an explanation.' : answer ? 'Explanation ready below.' : failed ? 'Explanation unavailable. Retry is available.' : ''}</p>
     <div className="explanation-answer" aria-busy={pending} data-testid="ai-explanation">
       {pending && <p className="contextual-loading">Preparing an explanation for this scenario…</p>}

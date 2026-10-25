@@ -14,12 +14,23 @@ type Page = 'overview' | 'prepare' | 'grid';
 const pages: { id: Page; label: string }[] = [{ id: 'overview', label: 'Overview' }, { id: 'prepare', label: 'Prepare & alerts' }, { id: 'grid', label: 'Grid insights' }];
 const pageFromHash = (): Page => pages.some(p => p.id === window.location.hash.slice(1)) ? window.location.hash.slice(1) as Page : 'overview';
 const pageHeading: Record<Page, string> = { overview: 'overview-title', prepare: 'prepare-page-title', grid: 'grid-page-title' };
-const accessOptions = [{ value: 'clear', title: 'Clear', detail: 'Worksites are accessible' }, { value: 'restricted', title: 'Restricted', detail: 'Extra access work is needed' }, { value: 'blocked', title: 'Blocked', detail: 'Access must be cleared first' }] as const;
+const accessOptions = [{ value: 'clear', title: 'Clear', detail: 'Worksites accessible' }, { value: 'restricted', title: 'Restricted', detail: 'Extra access work' }, { value: 'blocked', title: 'Blocked', detail: 'Clearance needed first' }] as const;
 const needsOptions: { value: Need; label: string; icon: IconName }[] = [
   { value: 'medical', label: 'Powered medical equipment / medical need', icon: 'medical' },
   { value: 'accessibility', label: 'Accessibility assistance', icon: 'accessibility' },
   { value: 'critical_responsibility', label: 'Critical responsibility', icon: 'critical' },
 ];
+
+// Select verbatim server sentences/clauses for the preview; never compare or
+// reinterpret numerical endpoints here. The full message stays in the existing
+// model disclosure, and unknown server wording is shown without abbreviation.
+function comparisonPreview(message: string): string[] {
+  const sentences = message.split(/(?<=[.!?])\s+(?=[A-Z])/);
+  if (!/^(Access |Crew size )/.test(sentences[0] ?? '')) return [message];
+  return sentences.filter(sentence => !sentence.startsWith('The conditional outlook is ')
+    && !sentence.startsWith('Actual crew efficiency is unknown;'))
+    .map(sentence => sentence.startsWith('Repair effort remains ') ? sentence.split(';')[0] + '.' : sentence);
+}
 
 function Topology({ location }: { location: Location }) {
   const nodes = [{ alias: location.alias, title: 'Your location', subtitle: location.label, icon: 'home' as IconName },
@@ -146,7 +157,7 @@ export function App() {
           <section className={'restoration-summary ' + (result?.restoration.display_hours === null ? 'range-unavailable' : '')} aria-labelledby="restoration-title">
             <div className="result-heading"><Icon name="clock"/><h2 id="restoration-title">If an outage occurs</h2><span className="scenario-access">{settings.access} access</span></div>
             {result ? <RestorationRange result={result}/> : <div className="result-placeholder" data-testid="restoration-result"><strong>{pending ? 'Updating your outlook…' : 'Estimate unavailable'}</strong><p>{pending ? 'Using the verified scenario inputs.' : 'Retry the analysis to see your outlook.'}</p></div>}
-            <div className="restoration-footer"><p>Conditional scenario · not an official live AEP estimate</p><button className="button button-text" type="button" disabled={!location} onClick={() => { setExplore(true); focusSection('restoration-details'); }}>Explore this range <Icon name="arrow"/></button></div>
+            <div className="restoration-footer"><p>Modeled range · not a live AEP estimate</p><button className="button button-text" type="button" disabled={!location} onClick={() => { setExplore(true); focusSection('restoration-details'); }}>Explore this range <Icon name="arrow"/></button></div>
           </section>
         </div>
         <div className="next-steps" aria-busy={pending}>
@@ -155,16 +166,16 @@ export function App() {
         </div>
         {journey && journey.preparation.declared_actions.length > 0 && <aside className="overview-declared"><Icon name="shield"/><div><strong>Your declared needs are included in preparation.</strong><p>{journey.preparation.declared_actions[0]}</p><button className="button button-text" onClick={() => navigate('prepare')}>Review your support guidance</button></div></aside>}
         <details className="restoration-details" open={explore} onToggle={event => setExplore(event.currentTarget.open)}><summary id="restoration-details"><span><Icon name="crew"/>Explore repair conditions</span><Icon name="chevron"/></summary>
-          <div className="details-content"><div className="section-heading"><div><span className="eyebrow">Your location · two declared repairs</span><h2>What changes the range?</h2><p>Change a scenario assumption to see its effect. These controls do not request a crew or change utility operations.</p></div></div>
+          <div className="details-content"><div className="section-heading"><div><span className="eyebrow">Your location · two declared repairs</span><h2>What changes the range?</h2><p>Explore crew size and access. These scenario controls do not request real crews.</p></div></div>
             <div className="scenario-controls"><fieldset className="crew-options"><legend>People in one assigned crew</legend>{[2, 4, 8].map(people => <label className={settings.crewSize === people ? 'selected' : ''} key={people}><input type="radio" name="crew-size" checked={settings.crewSize === people} disabled={!location} onChange={() => customer.changeSelection({ crewSize: people })}/><Icon name="crew"/><span><strong>{people} people</strong><small>One assigned crew</small></span></label>)}</fieldset>
               <fieldset className="access-options"><legend>Repair access</legend>{accessOptions.map(option => <label className={settings.access === option.value ? 'selected' : ''} key={option.value}><input type="radio" name="access" checked={settings.access === option.value} disabled={!location} onChange={() => customer.changeSelection({ access: option.value })}/><span><strong>{option.title}</strong><small>{option.detail}</small></span></label>)}</fieldset>
             </div>
-            <p className="fine">Scenario assumptions: four people by default. Actual crew composition and efficiency are unknown. More people do not guarantee proportional speedup.</p>
+            <p className="fine">Scenario default: four people. Actual staffing and efficiency are unknown; more people do not guarantee proportional speedup.</p>
             {current && result && <><div className="scenario-comparison" data-testid="outlook-update"><RestorationRange result={result} previous={previousResult} compact/>
-              <div data-testid="change-explanation"><span className="field-label">{current.comparison?.changed_inputs.length ? 'What changed' : 'How to explore'}</span><p>{current.comparison?.explanation ?? 'Try a different crew size or access condition. The model will compare it with your last completed scenario.'}</p></div>
+              <div data-testid="change-explanation"><h3>{current.comparison ? current.comparison.changed_inputs.length ? 'What changed' : 'Scenario unchanged' : 'Try a scenario'}</h3>{current.comparison ? comparisonPreview(current.comparison.explanation).map((line, index) => <p key={index}>{line}</p>) : <p>Change people or access to compare with your last completed scenario.</p>}</div>
             </div><AskGridGuide key={'restoration-' + result.result_id} analysis={current} previous={previousResult} context="restoration" anchorPrefix="restoration" onEvidence={showEvidence}/>
               <details className="evidence-disclosure"><summary><Icon name="evidence"/>Work, effort & repair dependencies<Icon name="chevron"/></summary><RepairEffort result={result}/><RestorationSequence result={result}/></details>
-              <details className="evidence-disclosure"><summary><Icon name="book"/>Model assumptions & limits<Icon name="chevron"/></summary><div className="assumptions-body"><ul>{result.assumptions.map(assumption => <li key={assumption.id}><strong>{assumption.classification}</strong><p>{assumption.description}</p><small>Value: {assumption.value === null ? 'Unavailable' : String(assumption.value)}</small></li>)}</ul><ul>{result.restoration.limitations.map(limit => <li key={limit}>{limit}</li>)}</ul></div></details>
+              <details className="evidence-disclosure"><summary><Icon name="book"/>Model assumptions & limits<Icon name="chevron"/></summary><div className="assumptions-body">{current.comparison && <div className="full-comparison"><h3>Full server comparison</h3><p>{current.comparison.explanation}</p></div>}<ul>{result.assumptions.map(assumption => <li key={assumption.id}><strong>{assumption.classification}</strong><p>{assumption.description}</p><small>Value: {assumption.value === null ? 'Unavailable' : String(assumption.value)}</small></li>)}</ul><ul>{result.restoration.limitations.map(limit => <li key={limit}>{limit}</li>)}</ul></div></details>
             </>}
             {pending && <p className="loading-state">Updating your comparison…</p>}
           </div>

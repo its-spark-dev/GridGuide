@@ -140,3 +140,33 @@
   .journey-stage { padding: 14px 8px; }
   .journey-stage-title { font-size: 16px; }
 }
+/* Readable demo copy without changing journey or lifecycle behavior. */
+.journey-intro,.journey-escalation { max-width: 68ch; }
+.journey-content .journey-message-body { max-width: 65ch; }
+.contextual-explanation .explanation-questions { gap: 12px; }
+.contextual-explanation .explanation-questions button { font-size: 16px; line-height: 1.45; }
+@media (min-width: 1025px) {
+  .journey-content h2 { font-size: 30px; }
+  .journey-content h3 { font-size: 26px; }
+  .journey-kicker,.checklist-count,.journey-content .journey-note,.journey-content .journey-caption,.journey-label,.journey-source-links { font-size: 16px; }
+  .journey-intro { font-size: 18px; }
+  .journey-checklist label { font-size: 19px; line-height: 1.5; padding: 18px 0; }
+  .journey-safety { padding: 24px 28px; }
+  .journey-safety h2 { font-size: 26px; }
+  .journey-safety li { font-size: 18px; line-height: 1.5; padding: 16px 0; }
+  .journey-alert-summary p,.journey-channels li,.journey-triggers > div,.journey-trigger-unknown,.journey-content .journey-escalation { font-size: 18px; }
+  .journey-triggers > div { grid-template-columns: 130px 1fr; }
+  .journey-alert-summary strong { font-size: 26px; }
+  .journey-policy { font-size: 16px; }
+  .journey-stage { padding: 18px 12px; }
+  .journey-stage-title { font-size: 20px; }
+  .journey-stage-number,.journey-stage-title small,.journey-message-state,.journey-content .journey-message-footer { font-size: 16px; }
+  .journey-content .journey-message-body { font-size: 20px; line-height: 1.55; }
+  .contextual-heading h3 { font-size: 24px; }
+  .contextual-heading p,.contextual-more,.contextual-missing,.contextual-explanation .contextual-footnote { font-size: 16px; }
+  .contextual-explanation .explanation-questions { margin-top: 20px; }
+  .contextual-explanation .explanation-questions button { font-size: 18px; padding: 10px 16px; }
+  .explanation-labels,.grounded-limits,.grounded-links button { font-size: 16px; }
+  .grounded-answer .answer-lead { font-size: 20px; line-height: 1.5; max-width: 65ch; }
+  .grounded-factors { font-size: 18px; max-width: 68ch; }
+}

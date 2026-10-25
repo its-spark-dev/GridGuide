@@ -609,3 +609,66 @@ test('keyboard declaration updates retain focus without stealing focus after nav
   await page.waitForTimeout(500);
   await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
 });
+
+test('demo type hierarchy and two-crew composition remain readable without page scaling', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await start(page);
+  const sizes = async (selectors: string[]) => page.evaluate(items => items.map(selector => {
+    const element = document.querySelector(selector)!;
+    return { selector, size: parseFloat(getComputedStyle(element).fontSize) };
+  }), selectors);
+  for (const item of await sizes(['.field-label', '.confidence', '.live-status', '.range-axis', '.range-limit'])) expect(item.size, item.selector).toBeGreaterThanOrEqual(16);
+  for (const item of await sizes(['.product-nav a', '.restoration-value p', '.next-alert p'])) expect(item.size, item.selector).toBeGreaterThanOrEqual(18);
+  expect(await page.evaluate(() => getComputedStyle(document.documentElement).fontSize)).toBe('18px');
+  expect(await page.evaluate(() => getComputedStyle(document.body).transform)).toBe('none');
+  await explore(page); await crew(page, 2, '5.5–12');
+  await page.locator('#restoration-details').evaluate(el => scrollTo(0, el.getBoundingClientRect().top + scrollY - 24));
+  const comparison = await page.locator('.scenario-comparison').boundingBox();
+  expect(comparison!.y + comparison!.height).toBeLessThan(900);
+  for (const item of await sizes(['.scenario-controls label small', '.previous-range > span', '.scenario-comparison [data-testid="change-explanation"] p', '.explanation-questions button'])) expect(item.size, item.selector).toBeGreaterThanOrEqual(16);
+  await nav(page, 'Prepare & alerts');
+  for (const item of await sizes(['.journey-checklist label', '.journey-safety li', '.journey-stage-title', '.journey-message-body'])) expect(item.size, item.selector).toBeGreaterThanOrEqual(18);
+  const panel = await grid(page);
+  for (const item of await sizes(['.decision-policy-metrics span', '.decision-origin', '.decision-select small', '.decision-evidence-chain span', '.decision-map-caption'])) expect(item.size, item.selector).toBeGreaterThanOrEqual(16);
+  await page.locator('.decision-policy-section').evaluate(el => scrollTo(0, el.getBoundingClientRect().top + scrollY - 24));
+  const policies = await panel.locator('.decision-policy').boundingBox();
+  expect(policies!.y + policies!.height).toBeLessThan(900);
+  await page.locator('#plan-crew-count').selectOption('2');
+  await expect(panel.locator('.decision-lane')).toHaveCount(2);
+  await page.locator('#decision-panel-crew').evaluate(el => scrollTo(0, el.getBoundingClientRect().top + scrollY - 24));
+  const lanes = await panel.locator('.decision-lanes').boundingBox();
+  expect(lanes!.y + lanes!.height).toBeLessThan(900);
+  for (const item of await sizes(['.decision-task-order', '.decision-task-select', '.decision-task-wait', '.decision-task-finish span'])) expect(item.size, item.selector).toBeGreaterThanOrEqual(16);
+});
+
+test('compact comparison retains server facts and full wording; shortened questions keep canonical requests', async ({ page }) => {
+  await start(page); await explore(page); await crew(page, 2, '5.5–12');
+  const data = latest(page);
+  const preview = page.getByTestId('change-explanation');
+  await expect(preview).toContainText('Crew size changed from 4 to 2 people.');
+  await expect(preview).toContainText('Repair effort remains 11.736 person-hours.');
+  await expect(preview).toContainText('Risk is unchanged.');
+  expect((await preview.innerText()).length).toBeLessThan(data.comparison!.explanation.length * .7);
+  await page.getByText('Model assumptions & limits', { exact: true }).click();
+  await expect(page.locator('.full-comparison')).toContainText(data.comparison!.explanation);
+  const changeRequest = page.waitForRequest(request => request.url().endsWith('/api/explain'));
+  await page.getByRole('button', { name: 'Why did this change?', exact: true }).click();
+  expect((await changeRequest).postDataJSON().question).toBe('Why did my estimate change?');
+  await access(page, 'Blocked', 'unavailable');
+  const missingRequest = page.waitForRequest(request => request.url().endsWith('/api/explain'));
+  await page.getByRole('button', { name: 'Why is the range unavailable?', exact: true }).click();
+  expect((await missingRequest).postDataJSON().question).toBe('Why can’t GridGuide estimate restoration right now?');
+  await grid(page);
+  const planRequest = page.waitForRequest(request => request.url().endsWith('/api/restoration-plan/explain'));
+  await page.getByRole('button', { name: 'Why don’t two crews halve the time?', exact: true }).click();
+  expect((await planRequest).postDataJSON().question).toBe('Why does adding a second crew not cut the time in half?');
+});
+
+test('1080p recording keeps the customer answers and actions in the first frame', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await start(page); await page.evaluate(() => document.fonts.ready);
+  for (const locator of [page.getByTestId('risk-band'), page.getByTestId('restoration-result'), page.getByRole('button', { name: 'Prepare now', exact: true }), page.locator('.next-alert')]) {
+    const box = await locator.boundingBox(); expect(box!.y + box!.height).toBeLessThan(1080);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});

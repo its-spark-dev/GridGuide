@@ -257,3 +257,57 @@ details[open] > summary > svg:last-child { transform: rotate(180deg); }
 .line-key { display: inline-block; width: 24px; border-top: 2px dashed var(--action); }
 .area-key { display: inline-block; width: 16px; height: 16px; border: 1px dashed var(--action); background: #eaf5fc; }
 .risk-factors small { overflow-wrap: anywhere; }
+/* Demo readability: component-specific type, with the approved layout intact. */
+:root { --muted: #465661; }
+.full-comparison { grid-column: 1 / -1; max-width: 68ch; }
+.full-comparison p { margin-top: 12px; }
+.scenario-comparison [data-testid=change-explanation] h3 { font-size: 24px; margin-bottom: 12px; }
+.scenario-comparison [data-testid=change-explanation] p { max-width: 62ch; }
+@media (min-width: 1025px) {
+  .product-nav a,.button,.location-selector > summary { font-size: 18px; }
+  .field-label,.location-context,.brand small,.prototype-identity,.eyebrow { font-size: 16px; }
+  .location-identity strong { font-size: 20px; }
+  .live-status { font-size: 18px; max-width: 370px; }
+  .live-status small { font-size: 16px; }
+  .result-heading h2 { font-size: 26px; }
+  .risk-heading > span,.confidence,.risk-meaning,.risk-details { font-size: 18px; }
+  .risk-summary,.restoration-summary { padding-top: 20px; }
+  .restoration-value { margin-top: 16px; }
+  .restoration-value p { font-size: 18px; }
+  .scenario-access,.range-axis,.range-end,.range-end small,.range-limit,.previous-range > span { font-size: 16px; }
+  .restoration-summary .range-diagram { margin-top: 20px; }
+  .restoration-footer { margin-top: 12px; padding-top: 10px; }
+  .restoration-footer p { font-size: 16px; max-width: 25ch; }
+  .next-steps { padding-top: 20px; gap: 32px; }
+  .next-steps h2 { font-size: 21px; }
+  .next-alert p { font-size: 18px; }
+  .next-steps .button { margin-top: 12px; }
+  .next-alert .button { margin-top: 4px; }
+  .section-heading h2 { font-size: 30px; }
+  .section-heading p,.page-intro > div > p { font-size: 18px; max-width: 65ch; }
+  .scenario-controls legend,.scenario-controls label strong { font-size: 18px; }
+  .scenario-controls legend { margin-bottom: 14px; }
+  .scenario-controls label small { font-size: 16px; line-height: 1.4; }
+  .scenario-controls label { padding: 14px 12px; }
+  .details-content > .fine { font-size: 16px; max-width: 96ch; }
+  .scenario-comparison { margin-top: 24px; gap: 36px; padding: 24px 28px; }
+  .scenario-comparison [data-testid=change-explanation] p { font-size: 18px; line-height: 1.5; margin-top: 10px; }
+  .scenario-comparison [data-testid=change-explanation] h3 { font-size: 26px; }
+  .scenario-comparison .restoration-value p { font-size: 18px; }
+  .evidence-disclosure > summary { font-size: 18px; }
+  .assumptions-body,.declared-needs .fine { font-size: 16px; }
+  .declared-needs label { font-size: 18px; }
+  .scope-note { font-size: 18px; max-width: 330px; }
+  .context-entry p,.geography-panel > p { font-size: 18px; }
+  .context-entry h2 { font-size: 26px; }
+  .map-location-list button span,.map-selection,.map-service-status,.map-disclosure,.map-legend,.map-provenance { font-size: 16px; }
+  .map-disclosure,.map-provenance p { max-width: 75ch; }
+  .dependency-path strong { font-size: 18px; }
+  .dependency-path li > span:not(.dependency-symbol):not(.dependency-link),.topology > .fine { font-size: 16px; }
+  .site-footer { font-size: 16px; }
+  .site-footer details { max-width: 300px; }
+}
+@media (max-width: 767px) {
+  .scenario-comparison [data-testid=change-explanation] h3 { font-size: 22px; }
+  .scenario-comparison [data-testid=change-explanation] p { font-size: 17px; }
+}

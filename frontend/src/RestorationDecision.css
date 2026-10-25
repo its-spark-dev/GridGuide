@@ -221,3 +221,51 @@
  .decision-policy-card > label strong { font-size: 18px; }
  .decision-policy-card input { width: 16px; height: 16px; }
 }
+/* Demo type hierarchy; existing policy cards, evidence flow and lanes stay put. */
+.decision-tradeoff-note,.decision-next > p,.decision-answer-lead,.decision-answer ul { max-width: 70ch; }
+@media (min-width: 1025px) {
+  .restoration-decision h3 { font-size: 30px; }
+  .decision-step,.decision-policy-boundary,.decision-policy-choice,.decision-small-detail { font-size: 16px; }
+  .decision-policy-boundary { max-width: 30ch; }
+  .decision-policy-card > label strong { font-size: 23px; }
+  .decision-policy-card > label small { font-size: 16px; line-height: 1.5; }
+  .decision-policy-card > label { padding: 20px 24px; }
+  .decision-policy-card.is-active > label { padding: 19px 23px 20px; }
+  .decision-policy-result h4 { font-size: 24px; }
+  .decision-policy-metrics { margin: 20px 0 16px; }
+  .decision-policy-metrics span,.decision-origin { font-size: 16px; line-height: 1.4; }
+  .decision-origin .icon { width: 20px; height: 20px; }
+  .decision-tradeoff-note,.decision-questions button { font-size: 18px; }
+  .decision-questions { gap: 12px 24px; margin-top: 16px; }
+  .decision-controls label,.decision-controls select,.decision-access label,.decision-access select { font-size: 18px; }
+  .decision-controls small,.decision-fine,.decision-summary-note,.decision-schedule-note { font-size: 16px; }
+  .decision-scenario-settings h3 { font-size: 25px; }
+  .decision-next h3 { font-size: 27px; }
+  .decision-next > p { font-size: 18px; }
+  .decision-stats dt,.decision-stats small { font-size: 16px; }
+  .decision-stats { grid-template-columns: .8fr 1fr 1.15fr; }
+  .decision-select strong { font-size: 20px; }
+  .decision-select small,.decision-candidate-state,.decision-candidate-state strong { font-size: 16px; }
+  .decision-map-caption,.decision-map-accessible,.decision-critical-inline { font-size: 16px; }
+  .decision-evidence h3 { font-size: 27px; }
+  .decision-evidence-chain strong { font-size: 19px; }
+  .decision-evidence-chain span { font-size: 16px; line-height: 1.45; }
+  .decision-evidence-chain li { padding-bottom: 20px; }
+  .decision-selected-prerequisites { font-size: 18px; }
+  .decision-candidate-evidence,.decision-candidate-evidence dl > div,.decision-comparison dl > div { font-size: 16px; }
+  .decision-crew-summary { font-size: 20px; }
+  .decision-schedule-note { max-width: 75ch; margin-bottom: 24px !important; }
+  .decision-lane h4 { font-size: 22px; }
+  .decision-task-order,.decision-task-wait,.decision-lane li > p:not(.decision-task-wait),.decision-task-finish span { font-size: 16px; }
+  .decision-task-select { font-size: 19px !important; }
+  .decision-task-finish strong { font-size: 22px; }
+  .decision-task-wait { margin-top: 8px !important; }
+  .decision-task-wait span { margin-top: 4px; }
+  .decision-milestones h4 { font-size: 26px; }
+  .decision-milestone-number span,.decision-milestones li > div:last-child > span,.decision-milestones li p { font-size: 16px; }
+  .decision-milestones li > div:last-child > strong { font-size: 20px; }
+  .decision-milestones li { grid-template-columns: 180px minmax(0,1fr); }
+  .decision-explanation-scope,.decision-audit { font-size: 16px; }
+  .decision-answer-mode,.decision-answer ul { font-size: 18px; }
+  .decision-answer-lead { font-size: 20px; }
+}
