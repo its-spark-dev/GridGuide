@@ -42,6 +42,9 @@ async function start(page: Page, hash = '#overview') {
 async function nav(page: Page, name: 'Overview' | 'Prepare & alerts' | 'Grid insights') {
   await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name, exact: true }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(name === 'Overview' ? 'Your storm outlook' : name === 'Prepare & alerts' ? 'Prepare & stay informed' : 'Grid insights');
+  // Navigation moves focus on the next animation frame. Wait for that actual
+  // accessibility contract before a test sends keyboard input to another control.
+  await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
 }
 
 async function explore(page: Page) {
@@ -236,6 +239,9 @@ test('B2 null risk keeps valid restoration, general preparation and independent 
   await expect(page.getByTestId('preparation-actions')).not.toContainText('longer end of the range');
   await page.getByRole('button', { name: /None \/ clear declarations/ }).click();
   await expect(page.locator('.declared-guidance li')).toHaveCount(0);
+  // The guidance also disappears while a request is pending. Confirm the new
+  // eligibility is rendered before inspecting the latest completed API result.
+  await expect(page.getByTestId('alert-eligibility')).toContainText(/more information|undetermined/i);
   expect(latest(page).customer_journey.alerts.eligible).toBeNull();
   await expect(page.locator('.error-panel')).toHaveCount(0);
 });
@@ -671,4 +677,128 @@ test('1080p recording keeps the customer answers and actions in the first frame'
     const box = await locator.boundingBox(); expect(box!.y + box!.height).toBeLessThan(1080);
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('source lineage follows the selected candidate and preserves separate recommendation and provenance', async ({ page }) => {
+  await start(page); const panel = await grid(page);
+  const source = panel.getByTestId('scenario-sources');
+  await expect(source).toContainText('Historical ARCOS damage');
+  await expect(source).toContainText('AEP labor workbook');
+  await expect(source).toContainText('prototype policy');
+  const recommendation = await panel.getByTestId('decision-recommendation').innerText();
+  const select = (name: string) => panel.locator('.decision-select').filter({ hasText: name });
+  await select('Historical fuse replay').click();
+  const chain = panel.getByTestId('candidate-lineage');
+  await expect(chain).toContainText('Historical ARCOS observation');
+  await expect(chain).toContainText('Qualified spatial hypothesis');
+  await expect(chain).toContainText('no exact damage identifier match');
+  await expect(chain).toContainText('Not a current outage');
+  await expect(chain).toContainText('23 customer locations');
+  await expect(chain).toContainText('0.384 direct hours');
+  await expect(chain).toContainText('1.728 repair person-hours');
+  await expect(chain).toContainText('AEP-specified');
+  await expect(chain).toContainText('not confirmed restoration');
+  await expect(chain.locator('ol > li')).toHaveCount(6);
+  expect(await chain.locator('li.is-spatial').first().evaluate(e => getComputedStyle(e, '::after').borderLeftStyle)).toBe('dashed');
+  await expect(panel.locator('.decision-lane li.is-selected')).toContainText('Historical fuse replay');
+  await expect(panel.locator('.decision-candidate.is-selected')).toContainText('Currently inspecting');
+  await expect(panel.getByTestId('decision-recommendation')).toHaveText(recommendation, { useInnerText: true });
+  await select('Golden upstream fuse').click();
+  await expect(chain).toContainText('Declared damage scenario');
+  await expect(chain).toContainText('Verified source identity');
+  await expect(chain).toContainText('4 customer locations');
+  await expect(chain).not.toContainText('Historical ARCOS observation');
+  await expect(chain.locator('li.is-spatial')).toHaveCount(0);
+  await expect(panel.getByTestId('decision-map')).toHaveAttribute('aria-label', /Golden upstream fuse/);
+  await expect(panel.locator('.decision-lane li.is-selected')).toContainText('Golden upstream fuse');
+  await select('Critical-context fuse').click();
+  await expect(panel.locator('.decision-critical-inline')).toContainText('Facility service attachment is not verified');
+  await expect(chain).toContainText('Recommended first');
+});
+
+test('candidate basemap failure, retry and keyboard toggle preserve generalized geometry and the list', async ({ page }) => {
+  await start(page); const panel = await grid(page);
+  await panel.locator('.decision-select').filter({ hasText: 'Historical fuse replay' }).click();
+  const map = panel.getByTestId('decision-map');
+  const original = await panel.getByTestId('candidate-lineage').innerText();
+  await expect(panel.locator('.decision-tile-status')).toContainText('Street map unavailable');
+  await visibleVectorGeometry(map);
+  const paths = await map.locator('.leaflet-overlay-pane path').count();
+  const cells = await map.locator('.decision-cell-count').allTextContents();
+  await panel.getByText('Read the map as a list', { exact: true }).click();
+  await expect(panel.locator('.decision-map-accessible')).toContainText('18 dependent premises');
+  await expect(panel.locator('.decision-map-accessible')).toContainText('5 dependent premises');
+  await expect(panel.locator('#decision-map-note')).toContainText('Exact positions hidden');
+  const tileRequests: string[] = [];
+  // A tiny valid image exercises the loaded-tile path without a network dependency.
+  // Actual street imagery is inspected separately, not claimed from this fixture.
+  await page.route('https://tile.openstreetmap.org/**', route => {
+    tileRequests.push(route.request().url());
+    expect(route.request().postData()).toBeNull();
+    return route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aPtUAAAAASUVORK5CYII=', 'base64') });
+  });
+  await panel.getByRole('button', { name: 'Retry street map', exact: true }).click();
+  await expect(panel.locator('.decision-tile-status')).toContainText('Street context: OpenStreetMap');
+  await expect(map.getByRole('link', { name: 'OpenStreetMap', exact: true })).toBeVisible();
+  await expect(map).toContainText('AEP challenge GIS');
+  expect(tileRequests.length).toBeGreaterThan(0);
+  expect(tileRequests.every(url => /^https:\/\/tile\.openstreetmap\.org\/\d+\/\d+\/\d+\.png$/.test(url))).toBe(true);
+  expect(await map.locator('.leaflet-overlay-pane path').count()).toBe(paths);
+  expect(await map.locator('.decision-cell-count').allTextContents()).toEqual(cells);
+  const toggle = panel.getByRole('checkbox', { name: 'Street map', exact: true });
+  await toggle.focus(); await page.keyboard.press('Space');
+  await expect(toggle).not.toBeChecked();
+  await expect(toggle).toBeFocused();
+  await expect(panel.locator('.decision-tile-status')).toContainText('Street map off');
+  await expect(map.locator('.leaflet-tile-pane img')).toHaveCount(0);
+  await visibleVectorGeometry(map);
+  await expect(panel.getByTestId('candidate-lineage')).toHaveText(original, { useInnerText: true });
+});
+
+test('candidate map survives resize, mobile tabs and page navigation without stale selection', async ({ page }) => {
+  await start(page); const panel = await grid(page);
+  await panel.locator('.decision-select').filter({ hasText: 'Historical fuse replay' }).click();
+  await panel.getByRole('checkbox', { name: 'Street map', exact: true }).uncheck();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await visibleVectorGeometry(panel.getByTestId('decision-map'));
+  await panel.getByRole('tab', { name: 'Map', exact: true }).focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(panel.getByRole('tabpanel', { name: 'Evidence', exact: true })).toBeVisible();
+  await expect(panel.getByTestId('candidate-lineage')).toContainText('23 customer locations');
+  await page.keyboard.press('ArrowRight');
+  await expect(panel.locator('.decision-lane li.is-selected')).toContainText('Historical fuse replay');
+  await panel.getByRole('tab', { name: 'Map', exact: true }).click();
+  await visibleVectorGeometry(panel.getByTestId('decision-map'));
+  await nav(page, 'Overview'); await grid(page);
+  await expect(panel.getByTestId('decision-map')).toHaveAttribute('aria-label', /Historical fuse/);
+  await expect(panel.getByRole('checkbox', { name: 'Street map', exact: true })).not.toBeChecked();
+  await expect(panel.locator('.decision-tile-status')).toContainText('Street map off');
+  await visibleVectorGeometry(panel.getByTestId('decision-map'));
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await visibleVectorGeometry(panel.getByTestId('decision-map'));
+  await expect(panel.getByTestId('candidate-lineage')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('missing source ledger and incomplete dependencies never acquire a verified provenance label', async ({ page }) => {
+  await start(page);
+  await page.route('**/api/restoration-plan', async route => {
+    const response = await route.fetch({ url: `${normalApi}/api/restoration-plan` });
+    const body = await response.json();
+    body.evidence = [];
+    const candidate = body.candidates.find((c: { id: string }) => c.id === body.recommended_id);
+    candidate.dependent_premises = null;
+    candidate.customer_cells = [];
+    candidate.position = null;
+    candidate.status = 'evidence_unavailable';
+    await route.fulfill({ response, json: body });
+  });
+  const panel = await grid(page);
+  await expect(panel.getByTestId('scenario-sources')).toContainText('Labor source unavailable');
+  await expect(panel.getByTestId('candidate-lineage')).toContainText('Association unavailable');
+  await expect(panel.getByTestId('candidate-lineage')).toContainText('Incomplete dependency count withheld');
+  await expect(panel.getByTestId('candidate-lineage')).toContainText('Labor semantics unavailable');
+  await expect(panel.getByTestId('candidate-lineage')).not.toContainText('All reverse memberships validated');
+  await expect(panel.getByTestId('decision-map')).toHaveCount(0);
+  await expect(panel.getByText('Generalized geometry is unavailable for this candidate.', { exact: true })).toBeVisible();
 });
