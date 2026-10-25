@@ -1,0 +1,4 @@
+Barlow by Jeremy Tribby. SIL Open Font License 1.1; see OFL.txt.
+Source: https://github.com/jpt/barlow
+Revision: dc2940e2e04ef4ec96c07e23e0f02aefbddd343b
+Unmodified static WOFF2 files from fonts/woff2/.

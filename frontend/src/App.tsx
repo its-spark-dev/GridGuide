@@ -1,206 +1,182 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { getAnalysis, getLocations } from './api';
+import { useEffect, useRef, useState } from 'react';
 import { CustomerJourney } from './CustomerJourney';
 import { GeographicContext } from './GeographicContext';
 import { AskGridGuide } from './AskGridGuide';
 import { RestorationDecision } from './RestorationDecision';
 import { RepairEffort, RestorationSequence } from './RestorationEvidence';
-import type { Access, Analysis, Evaluation, Location, Need } from './api';
+import { RestorationRange } from './RestorationRange';
+import { useCustomerAnalysis } from './useCustomerAnalysis';
+import { Icon } from './Icon';
+import type { IconName } from './Icon';
+import type { Location, Need } from './api';
 
-const options: { value: NonNullable<Access>; title: string; detail: string }[] = [
-  { value: 'clear', title: 'Clear', detail: 'Worksites are accessible' },
-  { value: 'restricted', title: 'Restricted', detail: 'Extra access work is needed' },
-  { value: 'blocked', title: 'Blocked', detail: 'Access must be cleared first' },
+type Page = 'overview' | 'prepare' | 'grid';
+const pages: { id: Page; label: string }[] = [{ id: 'overview', label: 'Overview' }, { id: 'prepare', label: 'Prepare & alerts' }, { id: 'grid', label: 'Grid insights' }];
+const pageFromHash = (): Page => pages.some(p => p.id === window.location.hash.slice(1)) ? window.location.hash.slice(1) as Page : 'overview';
+const pageHeading: Record<Page, string> = { overview: 'overview-title', prepare: 'prepare-page-title', grid: 'grid-page-title' };
+const accessOptions = [{ value: 'clear', title: 'Clear', detail: 'Worksites are accessible' }, { value: 'restricted', title: 'Restricted', detail: 'Extra access work is needed' }, { value: 'blocked', title: 'Blocked', detail: 'Access must be cleared first' }] as const;
+const needsOptions: { value: Need; label: string; icon: IconName }[] = [
+  { value: 'medical', label: 'Powered medical equipment / medical need', icon: 'medical' },
+  { value: 'accessibility', label: 'Accessibility assistance', icon: 'accessibility' },
+  { value: 'critical_responsibility', label: 'Critical responsibility', icon: 'critical' },
 ];
-const format = (value: number) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(value);
-
-function GridMark() {
-  return <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M17 3 5 18h10l-1 11 13-16H17l1-10Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /></svg>;
-}
 
 function Topology({ location }: { location: Location }) {
-  const nodes = [{ alias: location.alias, title: 'Customer', subtitle: location.label },
-    ...location.upstream_assets.map(asset => ({ alias: asset.alias,
-      title: asset.kind === 'Distribution' ? 'Distribution transformer' : asset.kind,
-      subtitle: asset.resolution === 'abstract_circuit_terminal' ? 'Abstract supply terminal' : 'Verified equipment' }))];
-  return <section className="panel topology" aria-labelledby="topology-title">
-    <div className="section-heading"><div><span className="eyebrow">YOUR GRID CONTEXT</span><h2 id="topology-title">Connected to your location</h2></div><span className="small-badge">Verified path</span></div>
-    <p className="muted">Follow your location’s dependencies upstream.</p>
-    <ol className="path" aria-label="Upstream dependency path">
-      {nodes.map((node, index) => <li key={node.alias}>
-        <span className="node-symbol" aria-hidden="true">{index === 0 ? '⌂' : index === nodes.length - 1 ? '↥' : '◇'}</span>
-        <div><strong>{node.title}</strong><span>{node.subtitle}</span></div>
-        {index < nodes.length - 1 && <span className="path-arrow" aria-hidden="true">→</span>}
-      </li>)}
-    </ol>
-    <p className="diagram-note">Dependency diagram · not a geographic map</p>
-    {location.topology_warnings.map(warning => <p className="muted fine" key={warning.code}>{warning.message}</p>)}
+  const nodes = [{ alias: location.alias, title: 'Your location', subtitle: location.label, icon: 'home' as IconName },
+    ...location.upstream_assets.map(asset => ({ alias: asset.alias, title: asset.kind === 'Distribution' ? 'Serving transformer' : asset.kind === 'Circuit Breaker' ? 'Supply terminal' : 'Upstream fuse',
+      subtitle: asset.resolution === 'abstract_circuit_terminal' ? 'Abstract · no map position' : 'Source identity verified', icon: (asset.kind === 'Distribution' ? 'transformer' : asset.kind === 'Fuse' ? 'fuse' : 'network') as IconName }))];
+  return <section className="topology" aria-labelledby="topology-title">
+    <div className="section-heading"><div><span className="eyebrow">Source-derived dependencies</span><h2 id="topology-title" tabIndex={-1}>What supplies your location?</h2></div><Icon name="network"/></div>
+    <ol className="dependency-path" aria-label="Upstream dependency path">{nodes.map(node => <li key={node.alias}>
+      <span className="dependency-symbol"><Icon name={node.icon}/></span><strong>{node.title}</strong><span>{node.subtitle}</span>
+      {location.dependency_edges.some(edge => edge.downstream_alias === node.alias) && <span className="dependency-link"><Icon name="arrow"/><small>depends on</small></span>}
+    </li>)}</ol>
+    <p className="fine">Approximate source topology · a dependency schematic, not a geographic line route.</p>
+    {location.topology_warnings.map(warning => <p className="fine" key={warning.code}>{warning.message}</p>)}
   </section>;
 }
 
 export function App() {
-  const [location, setLocation] = useState<Location | null>(null);
-  const [analysis, setAnalysis] = useState<Analysis | null>(null);
-  const [previousResult, setPreviousResult] = useState<Evaluation | null>(null);
-  const [selected, setSelected] = useState<NonNullable<Access>>('clear');
-  const [crewSize, setCrewSize] = useState(4);
-  const [needs, setNeeds] = useState<Need[]>([]);
-  const [pending, setPending] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [bootAttempt, setBootAttempt] = useState(0);
-  const revision = useRef(0);
-  const active = useRef<AbortController | null>(null);
-  const confirmed = useRef<Evaluation | null>(null);
-  const selection = useRef({ access: 'clear' as NonNullable<Access>, crewSize: 4, needs: [] as Need[] });
-
-  const analyze = useCallback(async (alias: string, access: NonNullable<Access>, people = 4, declarations: Need[] = []) => {
-    const requestRevision = ++revision.current;
-    active.current?.abort();
-    const controller = new AbortController();
-    active.current = controller;
-    setSelected(access);
-    setCrewSize(people); setNeeds(declarations);
-    selection.current = { access, crewSize: people, needs: declarations };
-    setPending(true);
-    setError(null);
-    const previous = confirmed.current;
-    try {
-      const response = await getAnalysis({ location_alias: alias, access, crew_size: people, declared_needs: { selections: declarations, classification: 'user-declared' }, scenario_revision: requestRevision,
-        previous: previous ? { access: previous.simulated_inputs.access, crew_size: previous.simulated_inputs.crew_size, scenario_revision: previous.scenario_revision } : null,
-      }, controller.signal);
-      if (requestRevision !== revision.current || controller.signal.aborted) return;
-      if (response.result.scenario_revision !== requestRevision || response.result.simulated_inputs.access !== access ||
-          response.result.simulated_inputs.crew_size !== people || response.customer_journey.declared_needs.selections.join(',') !== declarations.join(',') ||
-          response.result.location.alias !== alias || response.customer_journey.result_id !== response.result.result_id || (previous && response.comparison?.before_result_id !== previous.result_id)) {
-        throw new Error('The analysis response did not match your selection. Please try again.');
-      }
-      setPreviousResult(previous);
-      confirmed.current = response.result;
-      setAnalysis(response);
-      setPending(false);
-    } catch (failure) {
-      if (requestRevision !== revision.current || controller.signal.aborted) return;
-      setError(failure instanceof Error && failure.name !== 'TimeoutError' ? failure.message : 'The analysis service took too long to respond. Please try again.');
-      setPending(false);
-    }
-  }, []);
-
+  const customer = useCustomerAnalysis();
+  const { location, locations, current, previousResult, settings, pending, error } = customer;
+  const result = current?.result;
+  const journey = current?.customer_journey;
+  const [page, setPage] = useState<Page>(pageFromHash);
+  const [gridVisited, setGridVisited] = useState(page === 'grid');
+  const [explore, setExplore] = useState(false);
+  const [mapOpen, setMapOpen] = useState(false);
+  const [riskOpen, setRiskOpen] = useState(false);
+  const [checkedActions, setCheckedActions] = useState<Set<string>>(new Set());
+  const [draftLocation, setDraftLocation] = useState('');
+  const locationDetails = useRef<HTMLDetailsElement>(null);
+  const declarationFields = useRef<HTMLFieldSetElement>(null);
+  const declarationFocus = useRef<Need | 'clear' | null>(null);
+  const focusTarget = useRef<string | null>(null);
+  const initialNavigation = useRef(true);
+  const focusSection = (id: string) => window.requestAnimationFrame(() => {
+    const target = document.getElementById(id); target?.focus({ preventScroll: true }); target?.scrollIntoView({ block: 'start' });
+  });
   useEffect(() => {
-    const controller = new AbortController();
-    setPending(true);
-    setError(null);
-    getLocations(controller.signal).then(locations => {
-      if (controller.signal.aborted) return;
-      if (!locations.length) throw new Error('No verified demo location is available.');
-      setLocation(locations[0]);
-      void analyze(locations[0].alias, 'clear');
-    }).catch(() => {
-      if (!controller.signal.aborted) {
-        setError('We could not load your demo location. Check that the analysis service is running and try again.');
-        setPending(false);
-      }
-    });
-    return () => { controller.abort(); active.current?.abort(); };
-  }, [analyze, bootAttempt]);
-
-  const result = analysis?.result;
-  const current = !pending && !error ? result : undefined;
-  const range = current?.restoration.display_hours;
-  const comparison = current ? analysis?.comparison : null;
-  const causeIds = new Set(comparison?.changes.flatMap(change => change.cause_factor_ids) ?? []);
-  const causes = current?.restoration.factors.filter(factor => causeIds.has(factor.id)) ?? [];
-  const risk = result?.risk;
-  const changeSelection = (patch: Partial<typeof selection.current>) => {
-    const next = { ...selection.current, ...patch };
-    if (location) void analyze(location.alias, next.access, next.crewSize, next.needs);
+    const onHash = () => { if (!window.location.hash || pages.some(p => p.id === window.location.hash.slice(1))) setPage(pageFromHash()); };
+    window.addEventListener('hashchange', onHash); return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+  useEffect(() => {
+    if (page === 'grid') setGridVisited(true);
+    if (initialNavigation.current) { initialNavigation.current = false; return; }
+    focusSection(focusTarget.current ?? pageHeading[page]); focusTarget.current = null;
+  }, [page]);
+  useEffect(() => { if (location) setDraftLocation(location.alias); }, [location]);
+  // Results are withdrawn during a request. Restore keyboard position when that
+  // replacement remounts its declaration controls, unless the user moved on.
+  useEffect(() => {
+    const moved = () => { declarationFocus.current = null; };
+    const focused = (event: FocusEvent) => {
+      if (event.target !== document.body && !declarationFields.current?.contains(event.target as Node)) moved();
+    };
+    document.addEventListener('pointerdown', moved);
+    document.addEventListener('keydown', moved);
+    document.addEventListener('focusin', focused);
+    return () => {
+      document.removeEventListener('pointerdown', moved);
+      document.removeEventListener('keydown', moved);
+      document.removeEventListener('focusin', focused);
+    };
+  }, []);
+  useEffect(() => {
+    if (pending) return;
+    const target = declarationFocus.current;
+    declarationFocus.current = null;
+    if (page === 'prepare' && target && document.activeElement === document.body) {
+      declarationFields.current?.querySelector<HTMLElement>(`[data-declaration="${target}"]`)?.focus({ preventScroll: true });
+    }
+  }, [pending, page]);
+  const navigate = (next: Page, target?: string) => {
+    focusTarget.current = target ?? pageHeading[next];
+    if (next === page) { focusSection(focusTarget.current); focusTarget.current = null; }
+    else window.location.hash = next;
   };
-  const retry = () => location ? changeSelection({}) : setBootAttempt(attempt => attempt + 1);
+  const showEvidence = (target: 'risk' | 'restoration' | 'preparation' | 'topology') => {
+    if (target === 'preparation') { navigate('prepare'); return; }
+    if (target === 'risk') setRiskOpen(true);
+    if (target === 'restoration') setExplore(true);
+    if (target === 'topology') setMapOpen(true);
+    navigate('overview', target === 'risk' ? 'risk-title' : target === 'restoration' ? 'restoration-details' : 'customer-map-section');
+  };
+  const toggleAction = (action: string) => setCheckedActions(old => { const next = new Set(old); if (next.has(action)) next.delete(action); else next.add(action); return next; });
+  const declarations = <fieldset className="declared-needs" ref={declarationFields}><legend>Your optional needs</legend>
+    <p className="fine">Only what you choose to share. These selections stay in this page session and are not sent to AI.</p>
+    {needsOptions.map(need => <label key={need.value}><input type="checkbox" data-declaration={need.value} checked={settings.needs.includes(need.value)} disabled={!location} onChange={event => { if (document.activeElement === event.currentTarget) declarationFocus.current = need.value; customer.toggleNeed(need.value); }}/><Icon name={need.icon}/><span>{need.label}</span></label>)}
+    <button className="button button-text" data-declaration="clear" type="button" onClick={event => { if (settings.needs.length) { if (document.activeElement === event.currentTarget) declarationFocus.current = 'clear'; customer.changeSelection({ needs: [] }); } }} disabled={!location}>None / clear declarations</button>
+    <p className="fine">User-declared · no need is inferred, no enrollment or contact is created.</p>
+  </fieldset>;
+  const alertLabel = journey?.alerts.eligible === true ? 'Eligible under prototype rules' : journey?.alerts.eligible === false ? 'In-app information only' : 'Eligibility needs more information';
 
   return <>
-    <a className="skip-link" href="#main">Skip to analysis</a>
-    <div className="utility-bar"><span>Customer outage information</span><span>Demo environment</span></div>
+    <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header"><div className="header-inner">
-      <a className="brand" href="/" aria-label="GridGuide home"><span className="brand-mark"><GridMark /></span>GridGuide</a>
-      <nav className="customer-nav" aria-label="Customer navigation"><a href="#main" aria-current="page">Outage status</a><a href="#geography-title">Grid context</a><a href="#customer-updates">Alerts & preparation</a></nav>
+      <a className="brand" href="#overview" onClick={event => { event.preventDefault(); navigate('overview'); }} aria-label="GridGuide overview"><span className="brand-mark"><Icon name="network"/></span><span><strong>GridGuide</strong><small>AI Outage Concierge</small></span></a>
+      <nav className="product-nav" aria-label="Main navigation">{pages.map(item => <a href={'#' + item.id} key={item.id} aria-current={page === item.id ? 'page' : undefined} onClick={event => { event.preventDefault(); navigate(item.id); }}>{item.label}</a>)}</nav>
+      <span className="prototype-identity">HackOHI/O 2026<br/>Challenge Prototype</span>
     </div></header>
-    <div className="breadcrumb"><span>GridGuide</span><span aria-hidden="true">/</span><span>Outage status</span></div>
-
-    <main id="main">
-      <RestorationDecision />
-      <div className="intro"><div><span className="eyebrow">SEPARATE CUSTOMER SCENARIO · DEMO A</span>
-        <h1>Your outage & restoration outlook</h1><p>This individual outlook covers Demo A’s two declared repairs. Its scope is separate from the four-candidate comparison above.</p></div>
-        <div className="location-chip"><span className="location-icon" aria-hidden="true">⌖</span><div><strong>{location?.label ?? 'Loading location…'}</strong><span>Anonymized customer · Virginia challenge data</span></div></div>
+    <main id="main" tabIndex={-1}>
+      <div className="service-location"><div className="location-identity"><Icon name="location"/><div><span className="field-label">Service location</span><strong>{location?.label ?? 'Loading location…'}</strong></div><span className="location-context">Anonymized Virginia challenge data</span></div>
+        <details ref={locationDetails} className="location-selector"><summary>Choose location <Icon name="chevron"/></summary><div className="location-options"><h2>Choose your service location</h2><p>Explore a verified, anonymized location from the challenge dataset. Address search is not connected.</p>
+          {locations.map(item => <label key={item.alias}><input type="radio" name="service-location" checked={draftLocation === item.alias} onChange={() => setDraftLocation(item.alias)}/><span><strong>{item.label}</strong><small>Source-verified dependencies · Virginia</small></span></label>)}
+          <button className="button" type="button" disabled={!locations.length} onClick={() => { const item = locations.find(l => l.alias === draftLocation); if (item) { if (item.alias !== location?.alias) setCheckedActions(new Set()); customer.selectLocation(item); } if (locationDetails.current) { locationDetails.current.open = false; locationDetails.current.querySelector('summary')?.focus({ preventScroll: true }); } }}>Use this location</button>
+        </div></details>
       </div>
-
-      {error && <div className="error-panel" role="alert"><div><strong>Analysis unavailable</strong><p>{error}</p></div><button onClick={retry}>Try again</button></div>}
-      <div className="results-grid">
-        <section className="panel risk-panel" aria-labelledby="risk-title">
-          <span className="eyebrow">OUTAGE RISK</span><div className="risk-heading"><h2 id="risk-title" data-testid="risk-band">{risk?.band ?? (pending ? 'Loading…' : 'Unavailable')}</h2><span className="risk-caption">Modeled concern · not an outage probability</span></div>
-          <p className="confidence">Predictive confidence: <strong>{risk?.predictive_confidence.toLowerCase() ?? (pending ? 'pending' : 'unavailable')}</strong></p>
-          <details className="risk-details"><summary>What contributes to this risk?</summary><ul className="risk-factors">{risk?.factors.map(factor => <li key={factor.id}><div><strong>{factor.label}</strong><span>{typeof factor.value === 'boolean' ? (factor.value ? 'Evidence present in the historical extract' : 'No evidence in this extract') : String(factor.value ?? 'Unknown')}</span></div><span className="points">{factor.contribution_points == null ? '—' : `+${factor.contribution_points}`}</span></li>)}</ul>
-          <p className="muted fine">{risk?.limitations[0] ?? 'Risk factors will appear after the verified analysis loads.'}</p></details>
-        </section>
-
-        <section className={`restoration-panel ${current?.restoration.status === 'pending_clearance' ? 'blocked' : ''}`} aria-labelledby="restoration-title" aria-busy={pending}>
-          <div className="restoration-top"><span className="eyebrow" id="restoration-title">RESTORATION OUTLOOK</span><span className="access-badge">{selected} access</span></div>
-          <div className="estimate" role="status" aria-live="polite" aria-atomic="true" data-testid="restoration-result">
-            {pending ? <><h2 className="state-title">Updating estimate<span className="loading-dots" aria-hidden="true">…</span></h2><p>Calculating the {selected} access scenario.</p></> : error ? <><h2 className="state-title">Estimate unavailable</h2><p>Reconnect to the analysis service to update this scenario.</p></> : range ? <><h2 className="range">{format(range.lower)}–{format(range.upper)} <span>{current?.restoration.unit}</span></h2><p>From when an assigned crew begins its response</p></> : <><h2 className="state-title">Estimate unavailable</h2><p>{current?.restoration.status === 'pending_clearance' ? 'Pending access clearance' : 'Required information is missing'}</p></>}
-          </div>
-          {current?.restoration.status === 'pending_clearance' && <p className="clearance-note">Access must be cleared before a credible modeled range is available. GridGuide will not invent a replacement estimate.</p>}
-          <div className="estimate-note"><strong>Conditional model · not an official live AEP ETR</strong><p>{result?.restoration.limitations[0] ?? 'AEP person-hours measure effort; elapsed time requires explicit crew assumptions.'}</p></div>
-          {current?.restoration.missing_inputs.length ? <p className="blocked-note">{current.restoration.missing_inputs.map(input => input.replaceAll('_', ' ')).join(' · ')}</p> : null}
-        </section>
-      </div>
-
-      {current && <RepairEffort result={current} />}
-
-      <div className="scenario-label"><span className="small-badge">SIMULATED SCENARIO</span><p>Explore a repair scenario. Current utility outage status and official AEP restoration times are not connected.</p></div>
-
-      <section className="panel access-panel" aria-labelledby="access-title">
-        <div><span className="eyebrow">RESTORATION DETAILS</span><h2 id="access-title">What may affect restoration?</h2><p className="muted">Same damage and risk; change the crew assumption or worksite access.</p></div>
-        <fieldset className="crew-options access-options"><legend>Crew size · scenario assumption</legend>{[2, 4, 8].map(people => <label key={people} className={`access-option ${crewSize === people ? 'selected' : ''}`}><input type="radio" name="crew-size" checked={crewSize === people} disabled={!location} onChange={() => changeSelection({ crewSize: people })} /><span><strong>{people} people</strong><small>One assigned crew</small></span></label>)}</fieldset>
-        <p className="muted fine">Four is a demo default, not an AEP requirement. Actual crew composition and efficiency are unavailable. More people lower the ideal boundary; they do not guarantee proportional speedup.</p>
-        <fieldset className="access-options"><legend className="sr-only">Repair access</legend>
-          {options.map(option => <label key={option.value} className={`access-option ${selected === option.value ? 'selected' : ''}`}>
-            <input type="radio" name="access" value={option.value} checked={selected === option.value} disabled={!location}
-              onChange={() => changeSelection({ access: option.value })} />
-            <span><strong>{option.title}</strong><small>{option.detail}</small></span>
-          </label>)}
-        </fieldset>
-      </section>
-
-      <section className="panel change-panel" aria-labelledby="change-title" aria-busy={pending}>
-        <div className="change-heading"><span className="change-icon" aria-hidden="true">↗</span><div><span className="eyebrow">SCENARIO UPDATE</span><h2 id="change-title">Why the outlook changed</h2></div><span className="small-badge">Model-generated update</span></div>
-        {comparison && previousResult && comparison.before_result_id === previousResult.result_id && <div className="outlook-update" data-testid="outlook-update">
-          <strong>{comparison.changed_inputs.length ? 'Restoration outlook updated' : 'Restoration outlook unchanged'}</strong>
-          <div className="range-transition"><div><span>{previousResult.simulated_inputs.access} access · {previousResult.simulated_inputs.crew_size} people</span><b>{previousResult.restoration.display_hours ? `${format(previousResult.restoration.display_hours.lower)}–${format(previousResult.restoration.display_hours.upper)} elapsed hours` : 'Estimate unavailable'}</b></div><span aria-hidden="true">→</span><div><span>{current?.simulated_inputs.access} access · {current?.simulated_inputs.crew_size} people</span><b>{range ? `${format(range.lower)}–${format(range.upper)} elapsed hours` : 'Estimate unavailable'}</b></div></div>
-          <p>Changed scenario inputs: {comparison.changed_inputs.length ? comparison.changed_inputs.map(input => input.replaceAll('_', ' ')).join(', ') : 'none; declarations affect guidance only'}.</p>
-          {previousResult.simulated_inputs.access === 'clear' && current?.simulated_inputs.access === 'restricted' && <p className="access-change-summary">Restricted access at {current.restoration.worksite_count} work sites adds labor effort. The elapsed outlook also depends on the selected crew size.</p>}
-        </div>}
-        <div role="status" aria-live="polite" data-testid="change-explanation">
-          {pending ? <p className="muted">Updating the comparison with your last completed scenario…</p> : error ? <p className="muted">The comparison will return when analysis is available.</p> : comparison ? <p className="explanation">{comparison.explanation}</p> : <p className="muted">Change crew size or access above. The explanation will identify the changed assumptions.</p>}
+      <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">{pending ? 'Updating your scenario.' : error ? 'Customer analysis is unavailable.' : result ? 'Customer scenario updated. ' + settings.access + ' access, ' + settings.crewSize + ' people. ' + (result.restoration.display_hours ? result.restoration.display_hours.lower + ' to ' + result.restoration.display_hours.upper + ' conditional elapsed hours.' : 'Restoration range unavailable.') : ''}</p>
+      <section className="product-page overview-page" hidden={page !== 'overview'} aria-labelledby="overview-title">
+        <div className="page-intro"><div><span className="eyebrow">A little clarity. A better plan.</span><h1 id="overview-title" tabIndex={-1}>Your storm outlook</h1></div><p className="live-status"><Icon name="unknown"/><span>Live outage status isn’t connected.<small>This outlook explores a modeled storm scenario.</small></span></p></div>
+        {error && <div className="error-panel" role="alert"><Icon name="unknown"/><div><h2>Analysis unavailable</h2><p>{error}</p></div><button className="button" onClick={customer.retry}>Try again</button></div>}
+        <div className="outlook-grid" aria-busy={pending}>
+          <section className={'risk-summary ' + (result?.risk.band === null ? 'risk-unknown' : '')} aria-labelledby="risk-title">
+            <div className="result-heading"><Icon name="storm"/><h2 id="risk-title" tabIndex={-1}>Could I lose power?</h2></div>
+            <div className="risk-heading"><strong data-testid="risk-band">{result?.risk.band ?? (pending ? 'Loading…' : 'Unavailable')}</strong><span>{result?.risk.band ? 'Modeled concern' : 'Risk estimate'}</span></div>
+            <p className="confidence">Confidence in prediction: <strong>{result?.risk.predictive_confidence.toLowerCase() ?? 'unavailable'}</strong></p>
+            <p className="risk-meaning">{result?.risk.band === null ? 'There is not enough verified evidence to assign a risk band. Your other results are still available.' : 'Modeled concern, not an outage prediction.'}</p>
+            <details className="risk-details" open={riskOpen} onToggle={event => setRiskOpen(event.currentTarget.open)}><summary>{result?.risk.band === null ? 'Why is risk unavailable?' : 'What informs this outlook?'}<Icon name="chevron"/></summary>
+              <p className="fine">Ordinal model score: {result?.risk.score ?? 'unavailable'}. This is not an outage probability.</p>
+              <ul className="risk-factors">{result?.risk.factors.map(factor => <li key={factor.id}><strong>{factor.label}</strong><span>{typeof factor.value === 'boolean' ? factor.value ? 'Historical evidence present' : 'No evidence in this extract' : String(factor.value ?? 'Unknown')}{factor.unit ? ` ${factor.unit}` : ''}</span><small>{factor.classification}{factor.contribution_points != null ? ` · ${factor.contribution_points} model points` : ''}</small>{factor.source_refs.length > 0 && <small>Source: {factor.source_refs.join('; ')}</small>}</li>)}</ul>
+              {result?.risk.missing_inputs.map(input => <p key={input} className="missing-evidence">Missing: {input.replaceAll('_', ' ')}</p>)}
+              <p className="fine">{result?.risk.limitations[0] ?? 'Factors will appear after analysis loads.'}</p>
+              {current && result?.risk.band === 'HIGH' && <AskGridGuide key={'risk-' + result.result_id} analysis={current} previous={previousResult} context="risk" anchorPrefix="risk" onEvidence={showEvidence}/>}
+            </details>
+          </section>
+          <section className={'restoration-summary ' + (result?.restoration.display_hours === null ? 'range-unavailable' : '')} aria-labelledby="restoration-title">
+            <div className="result-heading"><Icon name="clock"/><h2 id="restoration-title">If an outage occurs</h2><span className="scenario-access">{settings.access} access</span></div>
+            {result ? <RestorationRange result={result}/> : <div className="result-placeholder" data-testid="restoration-result"><strong>{pending ? 'Updating your outlook…' : 'Estimate unavailable'}</strong><p>{pending ? 'Using the verified scenario inputs.' : 'Retry the analysis to see your outlook.'}</p></div>}
+            <div className="restoration-footer"><p>Conditional scenario · not an official live AEP estimate</p><button className="button button-text" type="button" disabled={!location} onClick={() => { setExplore(true); focusSection('restoration-details'); }}>Explore this range <Icon name="arrow"/></button></div>
+          </section>
         </div>
-        {causes.length > 0 && <ul className="cause-list">{causes.map(factor => <li key={factor.id}><span>{factor.label}</span><strong>{factor.value == null ? 'Unknown' : String(factor.value)}{factor.unit ? ` ${factor.unit.replaceAll('_', ' ')}` : ''}</strong></li>)}</ul>}
+        <div className="next-steps" aria-busy={pending}>
+          <section className="next-action"><span className="action-symbol"><Icon name="check"/></span><div><span className="field-label">Start here</span><h2>{journey?.preparation.actions[0] ?? (pending ? 'Preparing your guidance…' : 'Your preparation guidance')}</h2><button className="button" onClick={() => navigate('prepare')}>Prepare now <Icon name="arrow"/></button></div></section>
+          <section className="next-alert"><Icon name="alert"/><div><span className="field-label">Your updates</span><h2>{journey ? alertLabel : 'Preview communications'}</h2><p>No notifications are being sent.</p><button className="button button-text" onClick={() => navigate('prepare', 'communications')}>Preview communications <Icon name="arrow"/></button></div></section>
+        </div>
+        {journey && journey.preparation.declared_actions.length > 0 && <aside className="overview-declared"><Icon name="shield"/><div><strong>Your declared needs are included in preparation.</strong><p>{journey.preparation.declared_actions[0]}</p><button className="button button-text" onClick={() => navigate('prepare')}>Review your support guidance</button></div></aside>}
+        <details className="restoration-details" open={explore} onToggle={event => setExplore(event.currentTarget.open)}><summary id="restoration-details"><span><Icon name="crew"/>Explore repair conditions</span><Icon name="chevron"/></summary>
+          <div className="details-content"><div className="section-heading"><div><span className="eyebrow">Your location · two declared repairs</span><h2>What changes the range?</h2><p>Change a scenario assumption to see its effect. These controls do not request a crew or change utility operations.</p></div></div>
+            <div className="scenario-controls"><fieldset className="crew-options"><legend>People in one assigned crew</legend>{[2, 4, 8].map(people => <label className={settings.crewSize === people ? 'selected' : ''} key={people}><input type="radio" name="crew-size" checked={settings.crewSize === people} disabled={!location} onChange={() => customer.changeSelection({ crewSize: people })}/><Icon name="crew"/><span><strong>{people} people</strong><small>One assigned crew</small></span></label>)}</fieldset>
+              <fieldset className="access-options"><legend>Repair access</legend>{accessOptions.map(option => <label className={settings.access === option.value ? 'selected' : ''} key={option.value}><input type="radio" name="access" checked={settings.access === option.value} disabled={!location} onChange={() => customer.changeSelection({ access: option.value })}/><span><strong>{option.title}</strong><small>{option.detail}</small></span></label>)}</fieldset>
+            </div>
+            <p className="fine">Scenario assumptions: four people by default. Actual crew composition and efficiency are unknown. More people do not guarantee proportional speedup.</p>
+            {current && result && <><div className="scenario-comparison" data-testid="outlook-update"><RestorationRange result={result} previous={previousResult} compact/>
+              <div data-testid="change-explanation"><span className="field-label">{current.comparison?.changed_inputs.length ? 'What changed' : 'How to explore'}</span><p>{current.comparison?.explanation ?? 'Try a different crew size or access condition. The model will compare it with your last completed scenario.'}</p></div>
+            </div><AskGridGuide key={'restoration-' + result.result_id} analysis={current} previous={previousResult} context="restoration" anchorPrefix="restoration" onEvidence={showEvidence}/>
+              <details className="evidence-disclosure"><summary><Icon name="evidence"/>Work, effort & repair dependencies<Icon name="chevron"/></summary><RepairEffort result={result}/><RestorationSequence result={result}/></details>
+              <details className="evidence-disclosure"><summary><Icon name="book"/>Model assumptions & limits<Icon name="chevron"/></summary><div className="assumptions-body"><ul>{result.assumptions.map(assumption => <li key={assumption.id}><strong>{assumption.classification}</strong><p>{assumption.description}</p><small>Value: {assumption.value === null ? 'Unavailable' : String(assumption.value)}</small></li>)}</ul><ul>{result.restoration.limitations.map(limit => <li key={limit}>{limit}</li>)}</ul></div></details>
+            </>}
+            {pending && <p className="loading-state">Updating your comparison…</p>}
+          </div>
+        </details>
+        <div className="context-entry"><div><Icon name="network"/><h2>See the reasoning behind your outlook</h2><p>Explore the supplied equipment and approximate dependencies, or compare a separate four-candidate repair scenario.</p></div><button className="button button-secondary" onClick={() => navigate('grid')}>Explore grid insights <Icon name="arrow"/></button></div>
+        <details className="customer-map-section" open={mapOpen} onToggle={event => setMapOpen(event.currentTarget.open)}><summary id="customer-map-section"><span><Icon name="location"/>See your grid context</span><Icon name="chevron"/></summary>{mapOpen && location && <div className="details-content"><GeographicContext locationAlias={location.alias}/><Topology location={location}/>{current && <AskGridGuide key={'topology-' + current.result.result_id} analysis={current} previous={previousResult} context="topology" anchorPrefix="topology" onEvidence={showEvidence}/>}</div>}</details>
       </section>
-
-      {current && analysis && <AskGridGuide key={current.result_id} analysis={analysis} previous={previousResult} />}
-      {location && <GeographicContext locationAlias={location.alias} />}
-      {location && <Topology location={location} />}
-      {current && <RestorationSequence result={current} />}
-      {current && <details className="panel assumptions"><summary>Evidence, assumptions & unknowns <span>Scope, sources & limitations</span></summary>
-        <div className="assumptions-body"><div><h3>Scenario inputs</h3><p>Storm concern level {current.simulated_inputs.storm_level}; {current.simulated_inputs.crew_count} available crew; {current.simulated_inputs.crew_size} people per crew. Damage and access are simulated inputs.</p></div>
-        <div><h3>Input and rule classification</h3><ul>{current.assumptions.map(assumption => <li key={assumption.id}><strong>{assumption.classification}</strong>: {assumption.description}<small>Value: {assumption.value === null ? 'Unavailable' : String(assumption.value)}</small></li>)}</ul></div>
-        <div><h3>Limits to the estimate</h3><ul>{current.restoration.limitations.map(limit => <li key={limit}>{limit}</li>)}</ul></div></div>
-      </details>}
-      <section className="customer-updates" id="customer-updates" aria-labelledby="updates-title" aria-busy={pending}>
-        <h2 id="updates-title">Preparation & alerts</h2>
-        <fieldset className="declared-needs"><legend>Your optional needs · user-declared</legend><p className="muted fine">Choose only what you want to declare. Selections last for this page session, are not inferred from location, and are not sent to AI. No enrollment or contact occurs.</p>
-          {([['medical', 'Powered medical equipment / medical need'], ['accessibility', 'Accessibility assistance'], ['critical_responsibility', 'Critical responsibility']] as [Need, string][]).map(([need, label]) => <label key={need}><input type="checkbox" checked={needs.includes(need)} disabled={!location} onChange={() => changeSelection({ needs: selection.current.needs.includes(need) ? selection.current.needs.filter(n => n !== need) : [...selection.current.needs, need].sort() })} />{label}</label>)}
-          <button type="button" onClick={() => changeSelection({ needs: [] })} disabled={!location || !needs.length}>None / clear declarations</button>
-        </fieldset>
-        {current && analysis ? <CustomerJourney key={current.scenario_revision} journey={analysis.customer_journey} /> : <p className="journey-pending" role="status">{pending ? 'Updating preparation and communication previews…' : 'Preparation and communication previews are unavailable. Use Try again above to reconnect.'}</p>}
+      <section className="product-page prepare-page" hidden={page !== 'prepare'} aria-labelledby="prepare-page-title"><div className="page-intro"><div><span className="eyebrow">A few practical steps</span><h1 id="prepare-page-title" tabIndex={-1}>Prepare & stay informed</h1><p>Make a plan for this scenario. Your checklist stays with you during this visit.</p></div></div>
+        {current && journey ? <CustomerJourney key={current.result.scenario_revision} journey={journey} checkedActions={checkedActions} onToggleAction={toggleAction} declarations={declarations} explanation={<AskGridGuide key={'prepare-' + current.result.result_id} analysis={current} previous={previousResult} context="preparation" anchorPrefix="preparation" onEvidence={showEvidence}/>}/> : <><div className="loading-state" role="status"><h2>{pending ? 'Updating preparation and communication previews…' : 'Preparation is unavailable'}</h2>{error && <><p>{error}</p><button className="button" onClick={customer.retry}>Try again</button></>}</div>{declarations}</>}
       </section>
-      <footer><span>GridGuide</span><p>Verified challenge data · modeled scenarios · no live utility connection</p></footer>
+      <section className="product-page grid-page" hidden={page !== 'grid'} aria-labelledby="grid-page-title"><div className="page-intro"><div><span className="eyebrow">Evidence behind the decisions</span><h1 id="grid-page-title" tabIndex={-1}>Grid insights</h1><p>A separate four-candidate repair scenario. Explore dependencies, priorities and available crews.</p></div><span className="scope-note"><Icon name="model"/>This plan is not your personal restoration estimate.</span></div>{gridVisited && <RestorationDecision active={page === 'grid'}/>}</section>
     </main>
+    <footer className="site-footer"><div><strong>GridGuide</strong><span>HackOHI/O 2026 Challenge Prototype</span></div><p>Verified challenge data. Modeled scenarios.<br/>No live utility connection or notification delivery.</p><details><summary>Privacy & prototype scope</summary><p>Location data is generalized. Optional needs and checklist selections stay in this page session. No contact information is collected. This is not an official AEP service.</p></details></footer>
   </>;
 }

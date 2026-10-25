@@ -1,3 +1,5 @@
 node_modules/
 dist/
 .api-schema.json
+test-results/
+playwright-report/
