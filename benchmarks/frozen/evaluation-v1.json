@@ -1,0 +1,2195 @@
+{
+  "cases": [
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-1-101",
+      "seed": 101,
+      "sha256": "20a9ec84b8622efa12656998d67638b15deaff34df882a21c1a4ffc7ae15a9a0",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-1-211",
+      "seed": 211,
+      "sha256": "c50b10f47d5523361c8f32e0fd0bcd55b039b02374ac8aafe667aed393e82c8e",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-1-307",
+      "seed": 307,
+      "sha256": "6ebc60d9b6593e0d5a289fcb4eb5af871dcc7935e0db18936f45006b59272ae1",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-1-401",
+      "seed": 401,
+      "sha256": "a9fe06423403e09d847fcf86bafbc293a95380faaa591b338409a8ea116946a7",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-1-503",
+      "seed": 503,
+      "sha256": "5178ca1719857131591312a7b347bde01fe7d29032699e586d12a5af381707ce",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-2-101",
+      "seed": 101,
+      "sha256": "cff7d0841a6b3b8356657e05e996ff5b4179bf0d3eef314001ed41503da4073a",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-2-211",
+      "seed": 211,
+      "sha256": "97be335c7fa60ec8f6f9c8bea2e67e28120f62d8796dc8ac4a26f438f191820c",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-2-307",
+      "seed": 307,
+      "sha256": "560c46ac5f93af30d336ea8ca462da542dd84a913dee5a76450024de977327a7",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-2-401",
+      "seed": 401,
+      "sha256": "15379fcdb75840d435398294d603cb21999e5aa557921cbffbc700a67c07eea7",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-2-503",
+      "seed": 503,
+      "sha256": "0a40d208b31c69884914485a90a5b0ca654c46cabc37a9d94da652528edc091d",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-4-101",
+      "seed": 101,
+      "sha256": "df7f3a80476476ae3e8c4821ebd4582ad42273c8b3db7eae4b685a448ef4f30c",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-4-211",
+      "seed": 211,
+      "sha256": "7fb1c38ae9515a3c824cf31c0e31afc647215d0643fb9a09233020ac7eb9e331",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-4-307",
+      "seed": 307,
+      "sha256": "a05ef4e3ce25161f7bf798016266a894378d6426a5290f87921d770384ef1a9c",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-4-401",
+      "seed": 401,
+      "sha256": "1470cb872c6bd7b6dfe868aa87f96c392d2847c942e35130560f399fb77026f1",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-10-4-503",
+      "seed": 503,
+      "sha256": "e9fa1aefc341c366d96d982bed6b84f54946e0bd3b306dc6e0bb65e2756a58fb",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-1-101",
+      "seed": 101,
+      "sha256": "c601ee86eb32d6552bc032b64324c291e7fd4b1e7118795682da49a680ffd3fb",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-1-211",
+      "seed": 211,
+      "sha256": "e98d94c5c1130339d92ec0630751a2735e87d039f47f2b50433e3a0faf47ecdd",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-1-307",
+      "seed": 307,
+      "sha256": "f8fd364953c3baaeb2e7fcab7ceedb2ea81a074b7c196e0bea3f1805496f5ce9",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-1-401",
+      "seed": 401,
+      "sha256": "31b4aba8229b31bb4fbf5764297fd5124e02ef05448aaa2076b70c37cddbdef1",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-1-503",
+      "seed": 503,
+      "sha256": "087dab593ad732404dc22e545dc97bdf022c1e82d251c0f99356102f1d6ae09c",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-2-101",
+      "seed": 101,
+      "sha256": "666fd1b82751e6cbaa6b60d4b2e58053c733c60904446625ff7b5efaf06c775d",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-2-211",
+      "seed": 211,
+      "sha256": "a42591a59c1e757b1760ca0eed42a760687952def9a80656c51a48633852276d",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-2-307",
+      "seed": 307,
+      "sha256": "ab4d10e04d3278f9c28bf3ce5019e3720f9b2b213eea8615aaf2d118df1765f9",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-2-401",
+      "seed": 401,
+      "sha256": "09cdcd3d52412b512cc33993b46ef1fb8b8f4aee9f445e92c838b6064340b348",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-2-503",
+      "seed": 503,
+      "sha256": "f07b54d93b81a2807cc37326c203c9980d919fc2ac64bee9639a39c0a7bcba23",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-4-101",
+      "seed": 101,
+      "sha256": "1c98c66fe24444f5d8a540c652709975a3c4b6fcd1140d9067154a84e6656a61",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-4-211",
+      "seed": 211,
+      "sha256": "958eddf2bf7a4fdfdb9d5f746e154a074443cd467f571af1ac057e7aa0bad35c",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-4-307",
+      "seed": 307,
+      "sha256": "6eac4c927e71be55e0323ea6046fc8970af4888401edaaaa62bf95a9e0d3c4c1",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-4-401",
+      "seed": 401,
+      "sha256": "b35583ac0628ebb8f88d1d197aaf668c7167d5c7686027703bf132e2849bb4c5",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-25-4-503",
+      "seed": 503,
+      "sha256": "0af29925b039dae97fd2c58f52f050bcb746afb3564899bd17efee55535f4c30",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-1-101",
+      "seed": 101,
+      "sha256": "3084a85ae8a84add92c6ceb524c06b6ba8dca62c58506ac4cefbca04f2d55672",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-1-211",
+      "seed": 211,
+      "sha256": "7aae8b115fac4d644c43a1d0085933eda81261a4d35c00d6ece0c28a491f0cc6",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-1-307",
+      "seed": 307,
+      "sha256": "409ae3ee6afc379cf9383cf1f82925ad7e4eaa0503119c174ea3c0096b72612a",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-1-401",
+      "seed": 401,
+      "sha256": "7009516c2a56217904987ecd17531dca2a0fa7b91a4000e6e3a6c870c8b052a8",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-1-503",
+      "seed": 503,
+      "sha256": "3e2de793d76f8d007b0da8613c36add2a22c565c8feeb4840cd5fd514fad46fe",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-2-101",
+      "seed": 101,
+      "sha256": "505c48e293876e06017a3f9b313220ab0c10bc9e98744b81629651a53f4f3e7f",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-2-211",
+      "seed": 211,
+      "sha256": "32844a9c597cb5707643c2fadf86e03ef8265a3b91d918234e0877fb66f2fcd6",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-2-307",
+      "seed": 307,
+      "sha256": "c0bb5db757fa4897c4cffd1f19dfa2ced366782dc9a046a3bbebccf7addff001",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-2-401",
+      "seed": 401,
+      "sha256": "c6dc10a76d59475d9685342d35c6e7ef6017647d937e8ff2cb7f772773cddb05",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-2-503",
+      "seed": 503,
+      "sha256": "afcd8f309becd4fac402277657f6e8fbe25720171611b43139d483a09ebf88af",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-4-101",
+      "seed": 101,
+      "sha256": "d2ec10475e21c5c5201a912898391a774fa871a49e5d654de4b3f10d52eb4deb",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-4-211",
+      "seed": 211,
+      "sha256": "8b89acc9aea7e2b63069edc50183d908e6c7d2b4d84aa56dd6f506712562d915",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-4-307",
+      "seed": 307,
+      "sha256": "3072f6b1dd076cc202722dad8de90cdb4ef1cd9dc67627c84c2ed4036002917b",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-4-401",
+      "seed": 401,
+      "sha256": "57a9b360886e0d939a23edf559a067e80b2a21a7b2b8056a94c5985a5ea22156",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "serial-chain",
+      "id": "syn-serial-chain-100-4-503",
+      "seed": 503,
+      "sha256": "253d90cf8502aaf94abc12955ce7900bd471d1f996bc8eda90508ded77f4ad81",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-1-101",
+      "seed": 101,
+      "sha256": "cf54e3c4d0e53a2ed5bef6ad1bee7cb4463ecf83adda68a729391b96da51d1d6",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-1-211",
+      "seed": 211,
+      "sha256": "9ae9f1a412f3ccded936625f0de8490099164e5b52df1146e07d192d5bca654d",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-1-307",
+      "seed": 307,
+      "sha256": "6b76043b0f6055bab76a7491dbb9f5a1c6166eaff006e8f67793d6d43a810dec",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-1-401",
+      "seed": 401,
+      "sha256": "3d76e733b488a1a376f73cb4fbd99620da8ff8bb620eeeef9d7aacedff1bed28",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-1-503",
+      "seed": 503,
+      "sha256": "b8de5fe5bf9af0dd91551cde53d0b33ead22fa4e1097e9b3b732a993691abdd2",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-2-101",
+      "seed": 101,
+      "sha256": "7496158ffe24e92825ff84031b3ef99a1d9567a6406d8835fd35fc442e90e6d0",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-2-211",
+      "seed": 211,
+      "sha256": "b109234c4610558e8c9500c9d4212bcf6c2a4ce46dcda022e2ab8f578818abad",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-2-307",
+      "seed": 307,
+      "sha256": "a66f1344635a7ebf88cc1cbd09f5379576a98b8aa9af807040232441ac88c4bf",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-2-401",
+      "seed": 401,
+      "sha256": "1b00de3b4061a5f27823834bbd4fd94d160042b3ba0d5925e7c5d172cfcfbd61",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-2-503",
+      "seed": 503,
+      "sha256": "18a32178ab2ad1ee7819278d13d88ef421b94c78a8fcb40fe44efec425e42096",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-4-101",
+      "seed": 101,
+      "sha256": "1f6d23520cc4d1504ebc12ddc60e834730458ad42654f0a5250c5a76236d3aaa",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-4-211",
+      "seed": 211,
+      "sha256": "5385e8cc56e6d314189cfe63cd03cb02a4bc7fb59a9ae04e9e203d501f38fba2",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-4-307",
+      "seed": 307,
+      "sha256": "459f20f5669e1cf8db0092e4025811244fe8e00a1d36e9b279742d7b79582dce",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-4-401",
+      "seed": 401,
+      "sha256": "8eb8ce69784385dba81b38204edf2cf2a693a9ffd2206917a581c6ce61986243",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-10-4-503",
+      "seed": 503,
+      "sha256": "1714133b6f36eb998c69961cee26f32a6ddcf324811cc0cbb09d62b4b697cc56",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-1-101",
+      "seed": 101,
+      "sha256": "2707f9aac769b98e9c441ebef48896722a98541209e5ba7825a0280ed6265d9c",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-1-211",
+      "seed": 211,
+      "sha256": "a4ec64bd4ed1d368f5468c5c8d8d6765e5cd4504e1dbb53ed59dd01e937838c7",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-1-307",
+      "seed": 307,
+      "sha256": "807dde5322635a089052f30d5b38a4da2f72cafb2ddc5088431ea2a10f587c5f",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-1-401",
+      "seed": 401,
+      "sha256": "2b50a513f1345dec52401579a6046d97d0949ab2fd40abd3c5f86c7db9d6e380",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-1-503",
+      "seed": 503,
+      "sha256": "2d7d5c465b49f3ebc33de59af6f05834dc75612e3b4aa338ac2ba766c228cb48",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-2-101",
+      "seed": 101,
+      "sha256": "7f2bb5bc9f3a779b84881e3aaf5402f764194ed03bf7e16eb918f12d93cd5862",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-2-211",
+      "seed": 211,
+      "sha256": "9291161f58f27ecdfb064d57e1564677cbba5526bf2caf4ec83d651498a900f7",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-2-307",
+      "seed": 307,
+      "sha256": "6e01b875f7a343412e540f14973acd83a1b60825c8bfc2046c5755f78f1da37c",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-2-401",
+      "seed": 401,
+      "sha256": "5c78c2f5302cbebc2ab48a4360f5d15027f0786c3aff8d63fbeca310b83db591",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-2-503",
+      "seed": 503,
+      "sha256": "dcdfb65ffa7b589dca0c59e7660fa5386c76327694da6eee0406006589422b12",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-4-101",
+      "seed": 101,
+      "sha256": "8d66c7ca2f809a740a5f370dd074b7bb2c375217b16caff98e6a97bc077ce318",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-4-211",
+      "seed": 211,
+      "sha256": "c2f4f372c7e1e54aaa4a66b8860b5b6e0553a0d2d64259a1e09205bcfb440622",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-4-307",
+      "seed": 307,
+      "sha256": "c703b61c75b9437751a51e52a07750f476cce874adc642db38d4b71bc3105fbf",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-4-401",
+      "seed": 401,
+      "sha256": "7e3f9a351f57b9af95c1996c3876373f5f68549d12d318645b8d5af47793af42",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-25-4-503",
+      "seed": 503,
+      "sha256": "49e284f8507c14a0f4e797319b904cc6badbce173434b0d17f1f8903caa85875",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-1-101",
+      "seed": 101,
+      "sha256": "84ea702ef0789a075f58d63f7fef55399e3831fd66340145d78e26a98d44ee28",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-1-211",
+      "seed": 211,
+      "sha256": "3150af63d33e1ed27389b4433b40579ca97717af4b9bb029f1179abe0444353a",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-1-307",
+      "seed": 307,
+      "sha256": "f3ec4cfe48a6ca2a414475622d81d2edde948f9b85c79eeb027190c266fced2e",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-1-401",
+      "seed": 401,
+      "sha256": "5d06a8b13e2967b3ee9dab39ae84b42a471a69f2f2f59f72b1cc2462803c7309",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-1-503",
+      "seed": 503,
+      "sha256": "ddfe91b53a5cf66eac63a1b0a9b89a435085197c2cb4ba88dc6cedd74479548f",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-2-101",
+      "seed": 101,
+      "sha256": "c754d9e8c449b7035ec9684aacae94ed68eed0cbfd966c6101aab28d750d523a",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-2-211",
+      "seed": 211,
+      "sha256": "633e415cb03d2bc2fab1dd50a8e3c51a831dbeb06d459cb70a64f5d5fc0caa76",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-2-307",
+      "seed": 307,
+      "sha256": "077b7883d824258cb107c5c620217ff5e0c148964b05ebfb7e15aa9cec40c06c",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-2-401",
+      "seed": 401,
+      "sha256": "edd6d3d624c86e9c9c3691b7d40416fe879467d9c49cbe0a158458e1146c55bd",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-2-503",
+      "seed": 503,
+      "sha256": "77917a6f8e60903d42b586817fe0792ac492b8bcd24153e67f29dc2093142dfa",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-4-101",
+      "seed": 101,
+      "sha256": "bb7cc7ba68839a188cd3b64503674276a1c5830a83a11dfce553e8f0c6fc8764",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-4-211",
+      "seed": 211,
+      "sha256": "170c58c60502b7001263063b8d7c68b437ca854e3403042991e42249790c3a17",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-4-307",
+      "seed": 307,
+      "sha256": "0594aee62975dae8eb49e5ac3df309cd9f55d2448af970d708d821c4f2b7358b",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-4-401",
+      "seed": 401,
+      "sha256": "0bc70e45ecdb1053ba65ad9c04b5aad3348829afe665cb6b28c3923f943e56bf",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "independent-branches",
+      "id": "syn-independent-branches-100-4-503",
+      "seed": 503,
+      "sha256": "31fb8d41c9c554ee9c6b1d2c605733a2cd243953f9e45516ae18b98ac0123946",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-1-101",
+      "seed": 101,
+      "sha256": "8ad943c926c61c77e43fa78d67ac11af88b124b1bda463bea78ffdf68c0f42be",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-1-211",
+      "seed": 211,
+      "sha256": "07226002b6d1e5d6cac522815287219cf9b7e269ef14600250842398a1b589fc",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-1-307",
+      "seed": 307,
+      "sha256": "ed03a0f0756f090a4d53e4159a69fdad1ed3a66a45e9218ddd7b7d03586d3942",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-1-401",
+      "seed": 401,
+      "sha256": "92f753ef119a3277289c081acc601d2c766c227ff923193cce0b9026cb82b7b6",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-1-503",
+      "seed": 503,
+      "sha256": "a7e497f68aa9eb60f3bcdd5eb0f9c3013ae900417e86bfeab789114034858a5d",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-2-101",
+      "seed": 101,
+      "sha256": "f5667805e5877680c5c66800f42bd85f71f8f3da5560121e18f8299da0e6e7e2",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-2-211",
+      "seed": 211,
+      "sha256": "6f8424bf3e96b7e5ff13a55b9f4d092b9a3e624e941a488ee1e3e19b372ddc6a",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-2-307",
+      "seed": 307,
+      "sha256": "7fd0af3c9d187314aa387cfe9b9c12e9e1a0511c1a26f67b10b76ef6d8434d58",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-2-401",
+      "seed": 401,
+      "sha256": "5140308fda35e6033a9bb3d7ef8d1a5a49ca24d79eae1c643ac773cebbe24725",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-2-503",
+      "seed": 503,
+      "sha256": "cd4e92e8a396c7f68e9feaf7e2b1ba608c67cc217e04e34570fe11b1022d0a7d",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-4-101",
+      "seed": 101,
+      "sha256": "5bebbb7c1daec8f0a424874fa73c1e4298fda8f67dbe2ee4529b8dad1417fcc0",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-4-211",
+      "seed": 211,
+      "sha256": "3ca76dd2d7a3a2ed068d25a66041516417e24e2b32e62c4dc038d511ec96db56",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-4-307",
+      "seed": 307,
+      "sha256": "03fddd8956a29bdcb239d853b031853cadea1752de188d1cd5d82fa5dbf681e4",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-4-401",
+      "seed": 401,
+      "sha256": "1204bb01653947e97f3d004deaed4045575c114378c29f7dcfa3eff600d5822d",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-10-4-503",
+      "seed": 503,
+      "sha256": "9621dcea2efe74fb0329b76b859bd7635ebd0dfc8a32a0f36fe25eb2f657c626",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-1-101",
+      "seed": 101,
+      "sha256": "d37e4432780db62c12bf86d6531217021ae160533e088d92ff00bf46cbc6fefc",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-1-211",
+      "seed": 211,
+      "sha256": "79af32179e44c94db20e61a836f6847abeb70faa6208fdbe5afb685a0e6c9684",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-1-307",
+      "seed": 307,
+      "sha256": "427559f18ed60b2538591162bbe56b1e4cd537ca7ba824add3ef971142a276e0",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-1-401",
+      "seed": 401,
+      "sha256": "36ca43072d0cdf9e6cc3f9358d5a4fb61a0712276c36445f088845adbf6e2694",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-1-503",
+      "seed": 503,
+      "sha256": "8f652e989304c85a65a69b57e17bec9c112aab79c4d47e287356bb8dc923b778",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-2-101",
+      "seed": 101,
+      "sha256": "b0bd5e8a7895653a2c99e20d1dd77e7645118a30330505a2d2690c6ac5288117",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-2-211",
+      "seed": 211,
+      "sha256": "a225333b6b3d918928ef63f3e5fc1f6708376f29ba9a4bdd81cd0f7d935637d8",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-2-307",
+      "seed": 307,
+      "sha256": "b42002fde4764f274d6caf9b0e985aa966e58ed9c533b449750f5cddaaab9480",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-2-401",
+      "seed": 401,
+      "sha256": "9ab7d159c1bcf33b486dca6c877fc0b10d888b2c08d21bd34e0045e8e1118ce5",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-2-503",
+      "seed": 503,
+      "sha256": "579438f6937a30a2d4758daaf629feb074dbbd5132bae8db29752a11d9a321e9",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-4-101",
+      "seed": 101,
+      "sha256": "201fab7380525e7331a2c2affadd155d38e5fc4ade6320012720531e68a25b51",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-4-211",
+      "seed": 211,
+      "sha256": "1acaceb731b8e2f70732ec0ddfcb756833f11fb0e57ffb1d3518423189f18105",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-4-307",
+      "seed": 307,
+      "sha256": "a5556e3ad13c4ad1e017a3a81481d7b5af5bf04d57aee66fb2cfbb11fd945898",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-4-401",
+      "seed": 401,
+      "sha256": "0a9a0a84e8af318ada612d3038b0bcd493e54899238a382f44f26e312bc6b058",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-25-4-503",
+      "seed": 503,
+      "sha256": "b5e429b0607f6af0703cf3ec2ada272d1a115760bf2153a611a2ee421cc90795",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-1-101",
+      "seed": 101,
+      "sha256": "4dbdc6da276b7190a2b55aeb9187b2fd78b0755bee323615372ffce1250bde8d",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-1-211",
+      "seed": 211,
+      "sha256": "446f8c12b180c5f1286ead6ef983b190247066303e372d9e336a23a50dbb3bcc",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-1-307",
+      "seed": 307,
+      "sha256": "5d725e592d31752480dbe3ad32a60318fe26d32bf3bc2f3550d11eed894b51fb",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-1-401",
+      "seed": 401,
+      "sha256": "c9b38de34967576d7d57d7af9db46eb4f66b5f06299c782a131decd73484fc53",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-1-503",
+      "seed": 503,
+      "sha256": "dc04d444d96c0839790168ac4f45a8a2adee12ed5f4c32d089f3a01f9618dac8",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-2-101",
+      "seed": 101,
+      "sha256": "1e61c93a84ed1b63ea67ac420bf61bd5350f77238ec8b2f2b1e03c1f1293fdc5",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-2-211",
+      "seed": 211,
+      "sha256": "ba2a6ae034d7ecc9052b713b553a3ccdc0954be601e549b02bdf9c58e86c8ae6",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-2-307",
+      "seed": 307,
+      "sha256": "54fbec0b8217598c780c2aabe8052f1a6dc58ad35c27b965a71046c11690336b",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-2-401",
+      "seed": 401,
+      "sha256": "6e15a7c54cd5f7b7caa16bd860ebc891b0d15fa6893cf6d825743efb3f7203b6",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-2-503",
+      "seed": 503,
+      "sha256": "94715fd971b20daf067ed1fcde92a3ff80f75c548e28d89a88cd248ab55a5e8d",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-4-101",
+      "seed": 101,
+      "sha256": "7d61d6550b7cf4867b1658f5955e288b38f767f5042680d468ca8c8ae3d26d2a",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-4-211",
+      "seed": 211,
+      "sha256": "2e41f07a15f53bbda7db43a705995651f6e71e3963b0c84ae948349d280d9bf7",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-4-307",
+      "seed": 307,
+      "sha256": "921699c6a5bbc0b7518e3428af8e9f789fd7b70b8284041efec3e8bcd35b6535",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-4-401",
+      "seed": 401,
+      "sha256": "8846bc082823c3443fbe14b68594e6cebe355b47e785a17e88a52920102fc7ca",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "upstream-bottleneck",
+      "id": "syn-upstream-bottleneck-100-4-503",
+      "seed": 503,
+      "sha256": "3d742ed4402ba3d6e45bc348e31b8ea482af0fbf590f75ef7fa9ff5b1efe83c7",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-1-101",
+      "seed": 101,
+      "sha256": "51934e0dd91430f5fa61bbc6de99bf600a5988e448475b909fe9b36f732aa8a7",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-1-211",
+      "seed": 211,
+      "sha256": "0e905094afa4164c18f1f2d837669963b5ad1c31a59d510f678f111c53e0bd8b",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-1-307",
+      "seed": 307,
+      "sha256": "8dbea36d57e02360c2af86774d1b28af4c872280868246a6a6ac85ddfb548f43",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-1-401",
+      "seed": 401,
+      "sha256": "b8e57bcad6df5e5f415fc92833114812e4013f896d2c7271ac90f707224b3899",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-1-503",
+      "seed": 503,
+      "sha256": "832d0ffd68b6651317a8f00eef5c5b3143b319432b64f9588c10c059aa3df828",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-2-101",
+      "seed": 101,
+      "sha256": "993fe545e44c772191e2bf624b9e3ec862ae2ef578ee3b4415524e83d1307bfe",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-2-211",
+      "seed": 211,
+      "sha256": "4431be495f6f59eb19f0e295a0ab3b6140086384322c599970880300c25d3b48",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-2-307",
+      "seed": 307,
+      "sha256": "fbb45c7fc19042b4a4ed075ea663fd9020ef0d4c1ce0548b340b1fc6ec28de31",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-2-401",
+      "seed": 401,
+      "sha256": "7ab838cb34f7784da25058db33bf0911a6c6780f6fc3fd9185ee2beecf90f6c7",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-2-503",
+      "seed": 503,
+      "sha256": "aeeac8e3d50b204b7ce615c68d2c479e27cae0ecca25a9b9ec6b7b0f8dca449e",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-4-101",
+      "seed": 101,
+      "sha256": "2479a0f3d1e14e9a5e91cbd097e36bd158064b59d308cbe9a0aedec08c81a85d",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-4-211",
+      "seed": 211,
+      "sha256": "cc8ead9415f19cb4bb26021edac9814a24e8ce0a54003aacee6a4f634ce5f239",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-4-307",
+      "seed": 307,
+      "sha256": "ed449187826430a8de56ec8167011ac0cefb7522df38e9eea3c2303b2d1ef0fe",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-4-401",
+      "seed": 401,
+      "sha256": "8236842709697025ff9107d708ab712a89ce17d65ad1d46eb886000465cea572",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-10-4-503",
+      "seed": 503,
+      "sha256": "1afeb802cc05495600cad02d968799cf41fac14b7281fa22820255074ef03ed8",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-1-101",
+      "seed": 101,
+      "sha256": "638e16fa985819a6360bc023cb3edac561de93f2eb995264ed2ba1b0624e4511",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-1-211",
+      "seed": 211,
+      "sha256": "97da3d7a978561db562c0871b514f2d084e6e4b079ec62d91f9ebae69e214e3b",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-1-307",
+      "seed": 307,
+      "sha256": "db47f9501a0437f5ee203ce5727b751d10b95c08c835ac26d795580966966f74",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-1-401",
+      "seed": 401,
+      "sha256": "418f844d6ea059c3e0b8d0febff9f5ced4e2cc3cfec5a8561b9c9c29d16a8b43",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-1-503",
+      "seed": 503,
+      "sha256": "7297caa77dac74b35b8ad8b5d088197bcc78c28a4d5492b416459489150e7e9c",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-2-101",
+      "seed": 101,
+      "sha256": "b66a5ba150a61222e433a279b4395e4c132c5e4b5195d0fc015abd5f815a1752",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-2-211",
+      "seed": 211,
+      "sha256": "d1df41abe3727bf085b5da06c2c15e9b15b3d9c2940ad25a73c50a92319b8c6e",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-2-307",
+      "seed": 307,
+      "sha256": "609db78f398ec86452405578ffd43e05cc0dabcfc21fe85718f598988b0e98c7",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-2-401",
+      "seed": 401,
+      "sha256": "d5b6667a14c8e9de414219a34b5a066ed0ae9fbc911a549eab6d4b08107c0f7e",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-2-503",
+      "seed": 503,
+      "sha256": "d2d189d30250ce17864737f3315541eccdd8a5eed5d6e35646a3c4f2decfcc73",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-4-101",
+      "seed": 101,
+      "sha256": "4f6a67bcf5d597987741fbb76cfd870507e60b30d2d289a461f01cd111ea2ff2",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-4-211",
+      "seed": 211,
+      "sha256": "7cec6a6cea36f59c032b2910bc5a784d8fd0ecacbeff821207981c721e1df71b",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-4-307",
+      "seed": 307,
+      "sha256": "9e171d3d65636ae9238338312f2db55658b523a7a821a0f4ae069880da05e9f6",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-4-401",
+      "seed": 401,
+      "sha256": "373d96714fede1e93cf3c45ae7eb8d7c703be054e4eade77dbc7d803d93c642c",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-25-4-503",
+      "seed": 503,
+      "sha256": "8e8c2101d73acde6ee1cbd479ade3712682922e639a6195465f7de561e5446a4",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-1-101",
+      "seed": 101,
+      "sha256": "1de78454c6aca1fbdca215c942fb2e0162734dfd47e80e81836588b214519e94",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-1-211",
+      "seed": 211,
+      "sha256": "037acbdfa4d597efd7f51498739968772780718609c079b9805f280601956a4f",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-1-307",
+      "seed": 307,
+      "sha256": "13f76acb77bf8e80e8abf8ebb3c50bfd57ea3a3d2c483d6ef442570393171897",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-1-401",
+      "seed": 401,
+      "sha256": "88896377c2dccb0d5d48c547740b1d9fd0e0a08e26d589a004569bac5112980f",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-1-503",
+      "seed": 503,
+      "sha256": "d54c3498529d16cdff54b4582e2c95732cbde83c0fe51bd724ea4b5a6514ea9a",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-2-101",
+      "seed": 101,
+      "sha256": "0d346822dd4189c2981d6ee44ff7d880115d2a666efa2549c74f2d93f6c909d0",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-2-211",
+      "seed": 211,
+      "sha256": "9d509064fd1342b2978b360166a640d3ab0f527cb75db5edc82e9b234b83ec5f",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-2-307",
+      "seed": 307,
+      "sha256": "a9ec282a0a7e06a214e1c877f9ba9c79d76cae9d93f17281143d00f4b479b60a",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-2-401",
+      "seed": 401,
+      "sha256": "98509b165ac830422d6b2d63db9a7e8e508405bb1efb24710103ef1b92485fc8",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-2-503",
+      "seed": 503,
+      "sha256": "57e35c27a9b6ed2296e27398bce6bebed5db8f94ee507a801cf9de5d9fad67fb",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-4-101",
+      "seed": 101,
+      "sha256": "9d003bbd4bbd1a2b67982c4a1ac14fd81c02de98d3f65be2d18efded258249a2",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-4-211",
+      "seed": 211,
+      "sha256": "e6e3d13743aed8b46469561c21d2669bf35c59e2608f320424bee4d4e5b90982",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-4-307",
+      "seed": 307,
+      "sha256": "e96472d04c5cbd9aaed85e24b51ece128d083863b2405964f93e2abca21f9acb",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-4-401",
+      "seed": 401,
+      "sha256": "5b5cead4f500a44d0e29c53d72ae6d84fe87e4682e81cf275278f1a0950bd4e2",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "overlapping-dependencies",
+      "id": "syn-overlapping-dependencies-100-4-503",
+      "seed": 503,
+      "sha256": "ee14ae3587285ecde3c3475103b430e81ec4196767b3d44ac7dff1bbf169d504",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-1-101",
+      "seed": 101,
+      "sha256": "d2069cdab241b6a45089c820abc968972dc12cd85e683914b8c5af0585f73990",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-1-211",
+      "seed": 211,
+      "sha256": "5664dc8069df0aeaf0b661e844290702c7a975d967dfa710e56957ffd7978149",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-1-307",
+      "seed": 307,
+      "sha256": "3572d8efac1d5cc1fc92d18be8d45fc938f5de941e5d87a3012caac16966e5c4",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-1-401",
+      "seed": 401,
+      "sha256": "4ad77bd6e0ef57803730b56654eab1b1d50e692ce509b921098573e8c929647e",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-1-503",
+      "seed": 503,
+      "sha256": "e1e9dccbb71e18be38c596caf5e80e27b125a99ea9f6da748d6fffabe1a10969",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-2-101",
+      "seed": 101,
+      "sha256": "191990360c97a87630aad07f214f7550cf36ec3074a4d3da658d4642ea51325f",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-2-211",
+      "seed": 211,
+      "sha256": "2b3571e5bc3b1cf712524145455da68d51bda79546c3b9db5b4e15e39336409b",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-2-307",
+      "seed": 307,
+      "sha256": "af9556b09c16944be0855f8435f43d260ada6a39892a7eae2504fd16f0a55bd4",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-2-401",
+      "seed": 401,
+      "sha256": "84f2635f098151d594c0fb4cecbebeae82052b1852e57d9583b3aee04291496a",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-2-503",
+      "seed": 503,
+      "sha256": "5aa2bd5f27d47f8b732b48e72ea329c96df4edb1be1d907a7105b14805fdda42",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-4-101",
+      "seed": 101,
+      "sha256": "d2c3adb80e5568a1464ac2d9f41ff74df51914a609c12ad85ab9d1405b21d3e6",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-4-211",
+      "seed": 211,
+      "sha256": "6163854539d31f58cdae78e5196e26f155c4614ff5c3d677cb931d225de4b4c4",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-4-307",
+      "seed": 307,
+      "sha256": "5fc135b916a8e2539f03f36f56e24f2e9cf3d9a401fbfe785d01e89c13151f0f",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-4-401",
+      "seed": 401,
+      "sha256": "444df1f178be45912b1faa57dc8012b36bc0a268fbc7468554464d1d2301761a",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-10-4-503",
+      "seed": 503,
+      "sha256": "0a466d174c1c7f1f3443a4fbc21c196d05fdc781aff3592ca8da71c541ce9fd1",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-1-101",
+      "seed": 101,
+      "sha256": "f7e0103e8c3986a0c2fb48c2671889cafe446e1ede99dfe01edc3371904c1c72",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-1-211",
+      "seed": 211,
+      "sha256": "8a6d814ff4fa75643f735eb5c84647d660f8865e81fef8bb70906edf72a23f01",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-1-307",
+      "seed": 307,
+      "sha256": "7eaf5033e27f98913022cf7bf3f4ce84095efddec7349fe39a36889a1ae3fccd",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-1-401",
+      "seed": 401,
+      "sha256": "ef25e8f89f187436016862363df682792340c977c3689fcb04d991fdc6ef9272",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-1-503",
+      "seed": 503,
+      "sha256": "254cf5dde48aa1e6b2a06ee59964d5addbb668940b2d31bdcd4d1a72d0a183d6",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-2-101",
+      "seed": 101,
+      "sha256": "931ea23665c64727d3c73c18afa133cdfff058d8c8744ea0bfe561d2a6e6c1f2",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-2-211",
+      "seed": 211,
+      "sha256": "ec3982d896c5e788ca8737cf7d79c99c58de8ef878705ca6f5831a4e6a75d3f3",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-2-307",
+      "seed": 307,
+      "sha256": "052b025686b5960ff33815e268a776dbe6779a14ae76786d0cc65bb5814f492b",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-2-401",
+      "seed": 401,
+      "sha256": "68d4c5faa3f3cdc137bc2f4f7ad8f226705816dedaa48ae492283bfea557a6a7",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-2-503",
+      "seed": 503,
+      "sha256": "b031c4edb101b12c64e3db59f8441baa860d530e0ed2beac1fc63f2c86f06cad",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-4-101",
+      "seed": 101,
+      "sha256": "8209f15336994d6244a22ec97d3710d8cfcb2cb1ff291f449dde3194e7b57da8",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-4-211",
+      "seed": 211,
+      "sha256": "95ede2c8ec3b64863c18dfa96f6fc90a8890726c7fa9d578924a7164edc4b57d",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-4-307",
+      "seed": 307,
+      "sha256": "54cd4074e47e7946dfdeb41b84aa34a76a96cef08ef6791e00e494747becd7b8",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-4-401",
+      "seed": 401,
+      "sha256": "9aedc5f4b145e274a9e0270ff3f29ab8cb3d246b0a3cba48964ffd493c6620cc",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-25-4-503",
+      "seed": 503,
+      "sha256": "2731154938354a13a69c5048c5cf57640cb7bc095d59a26d18eef780a096cf26",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-1-101",
+      "seed": 101,
+      "sha256": "9f792a7900e2cef09523670f3f68fe79d6f9cb6e4786ef13dc605a798835ec2b",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-1-211",
+      "seed": 211,
+      "sha256": "b26b75e31a7f429783fbdead21954a98b4819d7b8e0f3c2819415bbe9771d3b1",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-1-307",
+      "seed": 307,
+      "sha256": "89ddb179257ba365b261d63ad4cc23f5c446907085f32a1482b7a0886abe0622",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-1-401",
+      "seed": 401,
+      "sha256": "de391804af7f7a62e9af9092066204cc0a2e6adcca748d1bae7f6d599c904252",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-1-503",
+      "seed": 503,
+      "sha256": "62609cc08002c20023cf5a3e0415c8becfa96972177b87225b1865dbe558e335",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-2-101",
+      "seed": 101,
+      "sha256": "c6e4a570c59e8bd437a015440d8c4365e10d58e4736fb392a5032020a3373e5e",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-2-211",
+      "seed": 211,
+      "sha256": "64ab29d812a318febea77ff59a3b248141f4e876a805cb4641a31c24d0566d8d",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-2-307",
+      "seed": 307,
+      "sha256": "3b81df0f3e498a3b31fbae5710fda0d1ad7c0c62ffea145acaa3e83b94b182f1",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-2-401",
+      "seed": 401,
+      "sha256": "87deab77779ffa3add4a4efaf7011138d213fbf2d7bba5be4bb4a28e01eebe03",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-2-503",
+      "seed": 503,
+      "sha256": "7f5dd82ec254f7b6d85ec689c18933ca31ecb07adc16a518d446f2bf19ae7cab",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-4-101",
+      "seed": 101,
+      "sha256": "c8480beb0c3647b4b7e2c5c0cd0a0e02db9dafd40878d86b12833a6d9ac38272",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-4-211",
+      "seed": 211,
+      "sha256": "ec682a1271ff8cc022efbb5535b83d2f21a7dcca6ecda4061f6a0f918fc493a3",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-4-307",
+      "seed": 307,
+      "sha256": "fce03688a0f550d53fd0a69973ad19f2d7b5985abce7b848ba8d76c3b1b3790e",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-4-401",
+      "seed": 401,
+      "sha256": "ee1d4c662605ebb54273b92a375b7326aa88e1e501b812f1df371d11ad6b5bfd",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "blocked-prerequisites",
+      "id": "syn-blocked-prerequisites-100-4-503",
+      "seed": 503,
+      "sha256": "021b7eed1f2d98497e3cd9a4cd906d06e7bd184a6f030654c8e515d550083d42",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-1-101",
+      "seed": 101,
+      "sha256": "4587f7373fb976360da437d05e51e66892561c42131f5b1a94ab23117699a031",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-1-211",
+      "seed": 211,
+      "sha256": "0733684c7d74b55a3d67207f0ec7f9b913bd68865cde65df4176ca83d460afea",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-1-307",
+      "seed": 307,
+      "sha256": "3827a50340681630e2a163698607a12cddfcf3bc21933737412c2ba63530585c",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-1-401",
+      "seed": 401,
+      "sha256": "6cae03b27f5226bacb0cca32180a65e75022b39380ddfd30f2189d1d6fadfa17",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-1-503",
+      "seed": 503,
+      "sha256": "76a420c4acad84da1df3eb40435ffd6647da68b1a80a52cc93c9f7e7832bbe93",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-2-101",
+      "seed": 101,
+      "sha256": "b1cdcd4566991638fd3c22de122c1fca33c1048ee3936d9c47d74cf72596f8f7",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-2-211",
+      "seed": 211,
+      "sha256": "a64362af7e06404ba9bce75144dc4ec144817000b1d6e9199b0a931cfef6d7c9",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-2-307",
+      "seed": 307,
+      "sha256": "b02c8a408dc22e53686f59557586464aff0cc5e4f44b604832b440e2066157b8",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-2-401",
+      "seed": 401,
+      "sha256": "13f60e9c1e43e3cadb2bda9634ce371fdab000f082b29d6dcc3b7e6367a8950b",
+      "tasks": 10
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-2-503",
+      "seed": 503,
+      "sha256": "6ab4c3609c554e21f17d0c4b6875106db471e6008388570149023409cd4ae437",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-4-101",
+      "seed": 101,
+      "sha256": "1e29eff92c85df2cfd3ec7f80ef06ae78933d5c4f2b594057b4483d80e7e0683",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-4-211",
+      "seed": 211,
+      "sha256": "de14d9ed8f0cb6362ae0f457fe513edc5d8bf26f06f3dddc7f2a669083ecad21",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-4-307",
+      "seed": 307,
+      "sha256": "d8982dedaa7ff702cb2e0b8949035c0a7eb0c86f73491fad164d1075e1d5945e",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-4-401",
+      "seed": 401,
+      "sha256": "fc43daeef9b645cf7ef039304aef188cd113b5f0efa476e4c9f7b5a3f22709a5",
+      "tasks": 10
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-10-4-503",
+      "seed": 503,
+      "sha256": "77aac9b8b166860c0ec049913a3813c16d9e788273495ce031a608e18e2df371",
+      "tasks": 10
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-1-101",
+      "seed": 101,
+      "sha256": "c8a08555efd9a0324fd8cfc08cab51de4d6e1377c1a0cf986263468732c3af92",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-1-211",
+      "seed": 211,
+      "sha256": "628bc7ae662909a5fe3b5601a6cd0aca124b5dc478e6cfca205cd4710a79e91a",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-1-307",
+      "seed": 307,
+      "sha256": "aa8016be657076094ce5e044fc915e9517bf2f48130f68b04d5a505793591847",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-1-401",
+      "seed": 401,
+      "sha256": "16c65ecb71e533038702a5e63f07180c62e377cfab14eb48afe68cf4f91bfd50",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-1-503",
+      "seed": 503,
+      "sha256": "d24cbc76279c9aa209002dbfbf8e838c821500d2a12b4bbaa5e21620838527aa",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-2-101",
+      "seed": 101,
+      "sha256": "cc32c815a039e2fbcc69059538c0cec1adee6f99edcc01aa967af4ead3a8c2f7",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-2-211",
+      "seed": 211,
+      "sha256": "74d6a2b3148ed141c0e8967b0360b6166059ace75039355c2daa527c33e33eca",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-2-307",
+      "seed": 307,
+      "sha256": "d4d3a5bd54f3ad3412be975eab072ca1d1c3a6994e0a0da169320229f9b13857",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-2-401",
+      "seed": 401,
+      "sha256": "1908e5439750c9d081cf14922e6991072c69e79b6332d0faeaad9cbcbab30517",
+      "tasks": 25
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-2-503",
+      "seed": 503,
+      "sha256": "1fb5d686b04e604209a44f1843cbad5588a5093d5b7b191e5b36264c19112354",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-4-101",
+      "seed": 101,
+      "sha256": "7a7b5c584e6a37e7f3e0219be9af1b02b9500619520b63c56a166e50b92614b0",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-4-211",
+      "seed": 211,
+      "sha256": "d672910baece9823a652b5c69dbb9b9cf7effbfb6d75cfd986283e4f052ffd06",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-4-307",
+      "seed": 307,
+      "sha256": "c1532b5608066ab605037df153af93344d19316057013fea1687e630c89e776e",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-4-401",
+      "seed": 401,
+      "sha256": "ddbd4897fe15723b5fee9df7ce62a27507c08c69908c7d2139eae5b96e759f0c",
+      "tasks": 25
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-25-4-503",
+      "seed": 503,
+      "sha256": "0b1beb7a7027200259022cc8e88b4172845862aff4ea657138710e6fd83f7211",
+      "tasks": 25
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-1-101",
+      "seed": 101,
+      "sha256": "ae9ae87ad0eaacd5098fc1f7b6e35cd66c4ee0ebb93c6e73c4a5cc18121d7f29",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-1-211",
+      "seed": 211,
+      "sha256": "c66c55a6891b3e3c486252c08379d4a4de9176459ba7857c4152dadc1086d994",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-1-307",
+      "seed": 307,
+      "sha256": "f6d8897e9eb054b25acd1d3e7e4fc0835e7b3585cbe2012d5a13174cdcafdb62",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-1-401",
+      "seed": 401,
+      "sha256": "3bf6f01d984b2a5fa8d05d3b36223f4274cebf39025c7e42b2f3259ef547ac27",
+      "tasks": 100
+    },
+    {
+      "crews": 1,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-1-503",
+      "seed": 503,
+      "sha256": "9016de7d9c6782884305366bdb79ace9f7a08dd2b41e31eda68631adaa5c25d8",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-2-101",
+      "seed": 101,
+      "sha256": "d43b66cb8d8b63f58d5eb35f06100d94bf246c76775f559ea0ad30e5327f332e",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-2-211",
+      "seed": 211,
+      "sha256": "229351c9aeacf94cc567a0f9d0b15f51d94b20cb6a26b72258f4b13a594da873",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-2-307",
+      "seed": 307,
+      "sha256": "62d90f0ba1683d288dc043560f11b8c43cad4c2c43f64d668dc2179232fdc6c5",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-2-401",
+      "seed": 401,
+      "sha256": "038392a2335782325fabb916c4da71732a14e276876fd83f0e64bfe8a4d762a2",
+      "tasks": 100
+    },
+    {
+      "crews": 2,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-2-503",
+      "seed": 503,
+      "sha256": "9f62095e71dfabe3b19ea1f66f14119933b0eda816c793cf0f23a56557848d85",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-4-101",
+      "seed": 101,
+      "sha256": "a5aa0adf01c04cbdece90ffd6063033e5cb1df0809ae597d9b18dd580796efdc",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-4-211",
+      "seed": 211,
+      "sha256": "f9e376000db9d9d3e66a70fa056dbd8b74659451730df679db71fd9977ef8bdf",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-4-307",
+      "seed": 307,
+      "sha256": "57de3bf6f35a4fd8f356df5138b286fcfd46077ab79ef269c1d231ffb449e67f",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-4-401",
+      "seed": 401,
+      "sha256": "0f3db7a584fa15f6b95b317d428416d349b415a3bf38b8374ce853323e547db8",
+      "tasks": 100
+    },
+    {
+      "crews": 4,
+      "family": "critical-tradeoffs",
+      "id": "syn-critical-tradeoffs-100-4-503",
+      "seed": 503,
+      "sha256": "33a50428a7473140482b742d7d81519bcbca86f4ee21ae25d4a283e955728df5",
+      "tasks": 100
+    }
+  ],
+  "crews": [
+    1,
+    2,
+    4
+  ],
+  "development_seeds": [
+    17,
+    29
+  ],
+  "evaluation_seeds": [
+    101,
+    211,
+    307,
+    401,
+    503
+  ],
+  "families": [
+    "serial-chain",
+    "independent-branches",
+    "upstream-bottleneck",
+    "overlapping-dependencies",
+    "blocked-prerequisites",
+    "critical-tradeoffs"
+  ],
+  "generator": "benchmark-generator-v1",
+  "tasks": [
+    10,
+    25,
+    100
+  ],
+  "version": "evaluation-manifest-v1"
+}
