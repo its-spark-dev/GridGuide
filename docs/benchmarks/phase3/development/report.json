@@ -1,0 +1,3938 @@
+{
+  "failures": [],
+  "fallback_reasons": {
+    "no_executable_tasks": 13
+  },
+  "oracle_checks": [
+    {
+      "case_id": "syn-micro-weighted",
+      "gap_ticks": 0,
+      "nodes": 5,
+      "objective_ticks": 54000,
+      "status": "optimal"
+    },
+    {
+      "case_id": "syn-micro-overlap",
+      "gap_ticks": 0,
+      "nodes": 5,
+      "objective_ticks": 43200,
+      "status": "optimal"
+    },
+    {
+      "case_id": "syn-micro-chain-eight",
+      "gap_ticks": 0,
+      "nodes": 9,
+      "objective_ticks": 129600,
+      "status": "optimal"
+    },
+    {
+      "case_id": "syn-micro-two-crews",
+      "gap_ticks": 0,
+      "nodes": 79,
+      "objective_ticks": 61200,
+      "status": "optimal"
+    },
+    {
+      "case_id": "syn-micro-blocked",
+      "gap_ticks": null,
+      "nodes": 0,
+      "objective_ticks": null,
+      "status": "unsupported"
+    },
+    {
+      "case_id": "syn-micro-unknown",
+      "gap_ticks": null,
+      "nodes": 0,
+      "objective_ticks": null,
+      "status": "unsupported"
+    },
+    {
+      "case_id": "syn-micro-censored",
+      "gap_ticks": 0,
+      "nodes": 5,
+      "objective_ticks": 727200,
+      "status": "optimal"
+    },
+    {
+      "case_id": "syn-micro-critical",
+      "gap_ticks": 0,
+      "nodes": 5,
+      "objective_ticks": 54000,
+      "status": "optimal"
+    }
+  ],
+  "promotion_target_met_on_published_suite": false,
+  "raw_candidate_rejections": [
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-10-1-17",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-10-1-29",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-10-2-17",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-10-2-29",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-10-4-17",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-10-4-29",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-25-1-17",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-25-1-29",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-25-2-17",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-25-2-29",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-25-4-17",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-blocked-prerequisites-25-4-29",
+      "reason": "no_executable_tasks"
+    },
+    {
+      "candidate_ticks": null,
+      "case_id": "syn-micro-blocked",
+      "reason": "no_executable_tasks"
+    }
+  ],
+  "solver_gaps": [
+    {
+      "bound": 15868800.0,
+      "case_id": "syn-serial-chain-10-1-17",
+      "objective_ticks": 15868800,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 9835200.0,
+      "case_id": "syn-serial-chain-10-1-29",
+      "objective_ticks": 9835200,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 15868800.0,
+      "case_id": "syn-serial-chain-10-2-17",
+      "objective_ticks": 15868800,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 9835200.0,
+      "case_id": "syn-serial-chain-10-2-29",
+      "objective_ticks": 9835200,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 15868800.0,
+      "case_id": "syn-serial-chain-10-4-17",
+      "objective_ticks": 15868800,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 9835200.0,
+      "case_id": "syn-serial-chain-10-4-29",
+      "objective_ticks": 9835200,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 87652800.0,
+      "case_id": "syn-serial-chain-25-1-17",
+      "objective_ticks": 87652800,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 67726800.0,
+      "case_id": "syn-serial-chain-25-1-29",
+      "objective_ticks": 67726800,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 87652800.0,
+      "case_id": "syn-serial-chain-25-2-17",
+      "objective_ticks": 87652800,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 67726800.0,
+      "case_id": "syn-serial-chain-25-2-29",
+      "objective_ticks": 67726800,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 87652800.0,
+      "case_id": "syn-serial-chain-25-4-17",
+      "objective_ticks": 87652800,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 67726800.0,
+      "case_id": "syn-serial-chain-25-4-29",
+      "objective_ticks": 67726800,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 2430000.0,
+      "case_id": "syn-independent-branches-10-1-17",
+      "objective_ticks": 8380800,
+      "relative_gap": 0.7100515463917526
+    },
+    {
+      "bound": 2138410.0,
+      "case_id": "syn-independent-branches-10-1-29",
+      "objective_ticks": 5929200,
+      "relative_gap": 0.6393425757269109
+    },
+    {
+      "bound": 2430000.0,
+      "case_id": "syn-independent-branches-10-2-17",
+      "objective_ticks": 4878000,
+      "relative_gap": 0.5018450184501845
+    },
+    {
+      "bound": 2102400.0,
+      "case_id": "syn-independent-branches-10-2-29",
+      "objective_ticks": 3888000,
+      "relative_gap": 0.45925925925925926
+    },
+    {
+      "bound": 2430000.0,
+      "case_id": "syn-independent-branches-10-4-17",
+      "objective_ticks": 3416400,
+      "relative_gap": 0.28872497365648053
+    },
+    {
+      "bound": 2102400.0,
+      "case_id": "syn-independent-branches-10-4-29",
+      "objective_ticks": 2937600,
+      "relative_gap": 0.28431372549019607
+    },
+    {
+      "bound": 7099200.0,
+      "case_id": "syn-independent-branches-25-1-17",
+      "objective_ticks": 59216400,
+      "relative_gap": 0.8801142926621679
+    },
+    {
+      "bound": 5580000.0,
+      "case_id": "syn-independent-branches-25-1-29",
+      "objective_ticks": 35650800,
+      "relative_gap": 0.8434817732000404
+    },
+    {
+      "bound": 7099200.0,
+      "case_id": "syn-independent-branches-25-2-17",
+      "objective_ticks": 31485600,
+      "relative_gap": 0.7745254973702264
+    },
+    {
+      "bound": 5580000.0,
+      "case_id": "syn-independent-branches-25-2-29",
+      "objective_ticks": 20206800,
+      "relative_gap": 0.7238553358275432
+    },
+    {
+      "bound": 7099200.0,
+      "case_id": "syn-independent-branches-25-4-17",
+      "objective_ticks": 18324000,
+      "relative_gap": 0.612573673870334
+    },
+    {
+      "bound": 5580000.0,
+      "case_id": "syn-independent-branches-25-4-29",
+      "objective_ticks": 12542400,
+      "relative_gap": 0.5551090700344432
+    },
+    {
+      "bound": 5670000.0,
+      "case_id": "syn-upstream-bottleneck-10-1-17",
+      "objective_ticks": 9432000,
+      "relative_gap": 0.3988549618320611
+    },
+    {
+      "bound": 5929200.0,
+      "case_id": "syn-upstream-bottleneck-10-1-29",
+      "objective_ticks": 5929200,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 5670000.0,
+      "case_id": "syn-upstream-bottleneck-10-2-17",
+      "objective_ticks": 7167600,
+      "relative_gap": 0.20894023103967854
+    },
+    {
+      "bound": 2426400.0,
+      "case_id": "syn-upstream-bottleneck-10-2-29",
+      "objective_ticks": 3880800,
+      "relative_gap": 0.3747680890538033
+    },
+    {
+      "bound": 5670000.0,
+      "case_id": "syn-upstream-bottleneck-10-4-17",
+      "objective_ticks": 6037200,
+      "relative_gap": 0.06082289803220036
+    },
+    {
+      "bound": 2426400.0,
+      "case_id": "syn-upstream-bottleneck-10-4-29",
+      "objective_ticks": 2937600,
+      "relative_gap": 0.17401960784313725
+    },
+    {
+      "bound": 16099200.0,
+      "case_id": "syn-upstream-bottleneck-25-1-17",
+      "objective_ticks": 60552000,
+      "relative_gap": 0.7341260404280618
+    },
+    {
+      "bound": 6490800.0,
+      "case_id": "syn-upstream-bottleneck-25-1-29",
+      "objective_ticks": 35672400,
+      "relative_gap": 0.8180442022403875
+    },
+    {
+      "bound": 16099200.0,
+      "case_id": "syn-upstream-bottleneck-25-2-17",
+      "objective_ticks": 36824400,
+      "relative_gap": 0.562811614038518
+    },
+    {
+      "bound": 6490800.0,
+      "case_id": "syn-upstream-bottleneck-25-2-29",
+      "objective_ticks": 20228400,
+      "relative_gap": 0.6791243993593166
+    },
+    {
+      "bound": 16099200.0,
+      "case_id": "syn-upstream-bottleneck-25-4-17",
+      "objective_ticks": 24980400,
+      "relative_gap": 0.35552673295863957
+    },
+    {
+      "bound": 6490800.0,
+      "case_id": "syn-upstream-bottleneck-25-4-29",
+      "objective_ticks": 12564000,
+      "relative_gap": 0.4833810888252149
+    },
+    {
+      "bound": 7268400.0,
+      "case_id": "syn-overlapping-dependencies-10-1-17",
+      "objective_ticks": 12805200,
+      "relative_gap": 0.43238684284509415
+    },
+    {
+      "bound": 4215600.0,
+      "case_id": "syn-overlapping-dependencies-10-1-29",
+      "objective_ticks": 8982000,
+      "relative_gap": 0.5306613226452905
+    },
+    {
+      "bound": 3934800.0,
+      "case_id": "syn-overlapping-dependencies-10-2-17",
+      "objective_ticks": 6789600,
+      "relative_gap": 0.42046659597030756
+    },
+    {
+      "bound": 3056400.0,
+      "case_id": "syn-overlapping-dependencies-10-2-29",
+      "objective_ticks": 5958000,
+      "relative_gap": 0.48700906344410877
+    },
+    {
+      "bound": 3934800.0,
+      "case_id": "syn-overlapping-dependencies-10-4-17",
+      "objective_ticks": 4474800,
+      "relative_gap": 0.12067578439259855
+    },
+    {
+      "bound": 3866400.0,
+      "case_id": "syn-overlapping-dependencies-10-4-29",
+      "objective_ticks": 3866400,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 22348800.0,
+      "case_id": "syn-overlapping-dependencies-25-1-17",
+      "objective_ticks": 81846000,
+      "relative_gap": 0.7269408401143611
+    },
+    {
+      "bound": 12135600.0,
+      "case_id": "syn-overlapping-dependencies-25-1-29",
+      "objective_ticks": 59004000,
+      "relative_gap": 0.7943258084197682
+    },
+    {
+      "bound": 9939600.0,
+      "case_id": "syn-overlapping-dependencies-25-2-17",
+      "objective_ticks": 42814800,
+      "relative_gap": 0.7678466324728832
+    },
+    {
+      "bound": 8128800.0,
+      "case_id": "syn-overlapping-dependencies-25-2-29",
+      "objective_ticks": 32436000,
+      "relative_gap": 0.7493895671476137
+    },
+    {
+      "bound": 9939600.0,
+      "case_id": "syn-overlapping-dependencies-25-4-17",
+      "objective_ticks": 24645600,
+      "relative_gap": 0.5966988022202746
+    },
+    {
+      "bound": 8128800.0,
+      "case_id": "syn-overlapping-dependencies-25-4-29",
+      "objective_ticks": 19112400,
+      "relative_gap": 0.5746844980222264
+    },
+    {
+      "bound": 2430000.0,
+      "case_id": "syn-critical-tradeoffs-10-1-17",
+      "objective_ticks": 8380800,
+      "relative_gap": 0.7100515463917526
+    },
+    {
+      "bound": 2138410.0,
+      "case_id": "syn-critical-tradeoffs-10-1-29",
+      "objective_ticks": 5929200,
+      "relative_gap": 0.6393425757269109
+    },
+    {
+      "bound": 2430000.0,
+      "case_id": "syn-critical-tradeoffs-10-2-17",
+      "objective_ticks": 4878000,
+      "relative_gap": 0.5018450184501845
+    },
+    {
+      "bound": 2102400.0,
+      "case_id": "syn-critical-tradeoffs-10-2-29",
+      "objective_ticks": 3888000,
+      "relative_gap": 0.45925925925925926
+    },
+    {
+      "bound": 2430000.0,
+      "case_id": "syn-critical-tradeoffs-10-4-17",
+      "objective_ticks": 3416400,
+      "relative_gap": 0.28872497365648053
+    },
+    {
+      "bound": 2102400.0,
+      "case_id": "syn-critical-tradeoffs-10-4-29",
+      "objective_ticks": 2937600,
+      "relative_gap": 0.28431372549019607
+    },
+    {
+      "bound": 7099200.0,
+      "case_id": "syn-critical-tradeoffs-25-1-17",
+      "objective_ticks": 59216400,
+      "relative_gap": 0.8801142926621679
+    },
+    {
+      "bound": 5580000.0,
+      "case_id": "syn-critical-tradeoffs-25-1-29",
+      "objective_ticks": 35650800,
+      "relative_gap": 0.8434817732000404
+    },
+    {
+      "bound": 7099200.0,
+      "case_id": "syn-critical-tradeoffs-25-2-17",
+      "objective_ticks": 31485600,
+      "relative_gap": 0.7745254973702264
+    },
+    {
+      "bound": 5580000.0,
+      "case_id": "syn-critical-tradeoffs-25-2-29",
+      "objective_ticks": 20206800,
+      "relative_gap": 0.7238553358275432
+    },
+    {
+      "bound": 7099200.0,
+      "case_id": "syn-critical-tradeoffs-25-4-17",
+      "objective_ticks": 18324000,
+      "relative_gap": 0.612573673870334
+    },
+    {
+      "bound": 5580000.0,
+      "case_id": "syn-critical-tradeoffs-25-4-29",
+      "objective_ticks": 12542400,
+      "relative_gap": 0.5551090700344432
+    },
+    {
+      "bound": 54000.0,
+      "case_id": "syn-micro-weighted",
+      "objective_ticks": 54000,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 43200.0,
+      "case_id": "syn-micro-overlap",
+      "objective_ticks": 43200,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 129600.0,
+      "case_id": "syn-micro-chain-eight",
+      "objective_ticks": 129600,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 61200.0,
+      "case_id": "syn-micro-two-crews",
+      "objective_ticks": 61200,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 1220400.0,
+      "case_id": "syn-micro-unknown",
+      "objective_ticks": 1220400,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 727200.0,
+      "case_id": "syn-micro-censored",
+      "objective_ticks": 727200,
+      "relative_gap": 0.0
+    },
+    {
+      "bound": 54000.0,
+      "case_id": "syn-micro-critical",
+      "objective_ticks": 54000,
+      "relative_gap": 0.0
+    }
+  ],
+  "solver_statuses": {
+    "FEASIBLE": 46,
+    "NOT_RUN": 13,
+    "OPTIMAL": 21
+  },
+  "summaries": {
+    "modeled_customer_outage_hours": {
+      "best-of-four": {
+        "baseline_mean_hours": 6886.8,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 9363.2,
+            "mean_absolute_improvement_hours": 6.8,
+            "mean_percent": 0.25845686050931205,
+            "median_percent": 0.0,
+            "micro_percent": 0.07262474367737526,
+            "optimizer_mean_hours": 9356.4,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 19,
+            "undefined_percentages": 0,
+            "wins": 1,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 6364.05,
+            "mean_absolute_improvement_hours": 1.55,
+            "mean_percent": 0.09270745364353838,
+            "median_percent": 0.0,
+            "micro_percent": 0.024355559745759384,
+            "optimizer_mean_hours": 6362.5,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 17,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 4933.15,
+            "mean_absolute_improvement_hours": 14.5,
+            "mean_percent": 0.8011406928105804,
+            "median_percent": 0.0,
+            "micro_percent": 0.29392984198737115,
+            "optimizer_mean_hours": 4918.65,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 11,
+            "undefined_percentages": 0,
+            "wins": 9,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 4789.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017400382808421787,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 4789.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017400382808421787,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 7043.416666666667,
+            "mean_absolute_improvement_hours": 35.666666666666664,
+            "mean_percent": 1.639918542752032,
+            "median_percent": 0.33223301934442007,
+            "micro_percent": 0.5063830290696987,
+            "optimizer_mean_hours": 7007.75,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 5,
+            "undefined_percentages": 0,
+            "wins": 7,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12575.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12575.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5237.0,
+            "mean_absolute_improvement_hours": 0.75,
+            "mean_percent": 0.08631099710484076,
+            "median_percent": 0.0,
+            "micro_percent": 0.014321176245942334,
+            "optimizer_mean_hours": 5236.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 1994.2,
+            "mean_absolute_improvement_hours": 10.566666666666666,
+            "mean_percent": 0.6840097154498024,
+            "median_percent": 0.0,
+            "micro_percent": 0.5298699562063317,
+            "optimizer_mean_hours": 1983.6333333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 19,
+            "undefined_percentages": 0,
+            "wins": 11,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 11779.4,
+            "mean_absolute_improvement_hours": 4.666666666666667,
+            "mean_percent": 0.08419362252581815,
+            "median_percent": 0.0,
+            "micro_percent": 0.03961718480284791,
+            "optimizer_mean_hours": 11774.733333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 28,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 5,
+          "mean_95": [
+            0.021008403361344536,
+            1.1813652683736298
+          ],
+          "median_95": [
+            0.0,
+            0.0
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 12,
+        "macro_family_mean_percent": 0.3841016689878103,
+        "mean_absolute_improvement_hours": 7.616666666666666,
+        "mean_percent": 0.3841016689878103,
+        "median_percent": 0.0,
+        "micro_percent": 0.11059805231263674,
+        "optimizer_mean_hours": 6879.183333333333,
+        "pairs": 60,
+        "regressions": 0,
+        "ties": 47,
+        "undefined_percentages": 0,
+        "wins": 13,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-4-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "customer-count-v1": {
+        "baseline_mean_hours": 7488.133333333333,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 10518.0,
+            "mean_absolute_improvement_hours": 1161.6,
+            "mean_percent": 12.480539615922108,
+            "median_percent": 11.751326762699014,
+            "micro_percent": 11.043924700513406,
+            "optimizer_mean_hours": 9356.4,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 5,
+            "undefined_percentages": 0,
+            "wins": 15,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 6851.3,
+            "mean_absolute_improvement_hours": 488.8,
+            "mean_percent": 8.566379459385063,
+            "median_percent": 7.337695664446233,
+            "micro_percent": 7.134412447272781,
+            "optimizer_mean_hours": 6362.5,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 16,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 5095.1,
+            "mean_absolute_improvement_hours": 176.45,
+            "mean_percent": 4.9619623363736025,
+            "median_percent": 4.349514392034686,
+            "micro_percent": 3.463131243743989,
+            "optimizer_mean_hours": 4918.65,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 5,
+            "undefined_percentages": 0,
+            "wins": 15,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 5512.583333333333,
+            "mean_absolute_improvement_hours": 724.25,
+            "mean_percent": 13.029573332456682,
+            "median_percent": 10.642847416826225,
+            "micro_percent": 13.138123384378165,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 1.861427094105481
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 5512.583333333333,
+            "mean_absolute_improvement_hours": 724.25,
+            "mean_percent": 13.029573332456682,
+            "median_percent": 10.642847416826225,
+            "micro_percent": 13.138123384378165,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 1.861427094105481
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 8091.75,
+            "mean_absolute_improvement_hours": 1084.0,
+            "mean_percent": 9.278354730222835,
+            "median_percent": 8.542866081631193,
+            "micro_percent": 13.396360490623165,
+            "optimizer_mean_hours": 7007.75,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 1,
+            "undefined_percentages": 0,
+            "wins": 11,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12575.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12575.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5748.5,
+            "mean_absolute_improvement_hours": 512.25,
+            "mean_percent": 8.010634290998421,
+            "median_percent": 5.74403641985686,
+            "micro_percent": 8.911020266156388,
+            "optimizer_mean_hours": 5236.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 1,
+            "undefined_percentages": 0,
+            "wins": 11,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 2136.8333333333335,
+            "mean_absolute_improvement_hours": 153.2,
+            "mean_percent": 7.953219734350469,
+            "median_percent": 3.5495036887532634,
+            "micro_percent": 7.16948755947274,
+            "optimizer_mean_hours": 1983.6333333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 8,
+            "undefined_percentages": 0,
+            "wins": 22,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 12839.433333333332,
+            "mean_absolute_improvement_hours": 1064.7,
+            "mean_percent": 9.38603454010338,
+            "median_percent": 8.748984086772333,
+            "micro_percent": 8.292422043548132,
+            "optimizer_mean_hours": 11774.733333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 6,
+            "undefined_percentages": 0,
+            "wins": 24,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 5,
+          "mean_95": [
+            2.8212586571438765,
+            16.431647460577743
+          ],
+          "median_95": [
+            0.0,
+            17.770290067389393
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 12,
+        "macro_family_mean_percent": 8.669627137226923,
+        "mean_absolute_improvement_hours": 608.95,
+        "mean_percent": 8.669627137226925,
+        "median_percent": 7.797179999883704,
+        "micro_percent": 8.132200281334022,
+        "optimizer_mean_hours": 6879.183333333333,
+        "pairs": 60,
+        "regressions": 0,
+        "ties": 14,
+        "undefined_percentages": 0,
+        "wins": 46,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-overlapping-dependencies-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-4-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-25-2-17",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "fifo-v1": {
+        "baseline_mean_hours": 9618.116666666667,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 14162.15,
+            "mean_absolute_improvement_hours": 4805.75,
+            "mean_percent": 33.71035880967034,
+            "median_percent": 40.76830260766168,
+            "micro_percent": 33.93376005761837,
+            "optimizer_mean_hours": 9356.4,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 16,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 8678.4,
+            "mean_absolute_improvement_hours": 2315.9,
+            "mean_percent": 29.115966069688415,
+            "median_percent": 33.59898844336804,
+            "micro_percent": 26.685794616519175,
+            "optimizer_mean_hours": 6362.5,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 16,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 6013.8,
+            "mean_absolute_improvement_hours": 1095.15,
+            "mean_percent": 23.3843115392198,
+            "median_percent": 26.60971645153837,
+            "micro_percent": 18.21061558415644,
+            "optimizer_mean_hours": 4918.65,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 16,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 7787.416666666667,
+            "mean_absolute_improvement_hours": 2999.0833333333335,
+            "mean_percent": 37.82080606135987,
+            "median_percent": 38.67642743372109,
+            "micro_percent": 38.51191559032199,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 26.466339208321294
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 7787.416666666667,
+            "mean_absolute_improvement_hours": 2999.0833333333335,
+            "mean_percent": 37.82080606135987,
+            "median_percent": 38.67642743372109,
+            "micro_percent": 38.51191559032199,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 26.466339208321294
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 12003.083333333334,
+            "mean_absolute_improvement_hours": 4995.333333333333,
+            "mean_percent": 36.94781722116452,
+            "median_percent": 36.76167532075209,
+            "micro_percent": 41.61708449912175,
+            "optimizer_mean_hours": 7007.75,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 24.68443197755961
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12575.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12575.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 7937.416666666667,
+            "mean_absolute_improvement_hours": 2701.1666666666665,
+            "mean_percent": 31.094964687080008,
+            "median_percent": 29.86074495881519,
+            "micro_percent": 34.030803473002344,
+            "optimizer_mean_hours": 5236.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 15.002534211860112
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 2734.3333333333335,
+            "mean_absolute_improvement_hours": 750.7,
+            "mean_percent": 27.704198284154696,
+            "median_percent": 30.90601185436071,
+            "micro_percent": 27.454589784225284,
+            "optimizer_mean_hours": 1983.6333333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 6,
+            "undefined_percentages": 0,
+            "wins": 24,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 16501.9,
+            "mean_absolute_improvement_hours": 4727.166666666667,
+            "mean_percent": 29.769559328231008,
+            "median_percent": 31.687362431994686,
+            "micro_percent": 28.64619629658807,
+            "optimizer_mean_hours": 11774.733333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 6,
+            "undefined_percentages": 0,
+            "wins": 24,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 5,
+          "mean_95": [
+            14.336642159525383,
+            40.349110800280286
+          ],
+          "median_95": [
+            0.0,
+            39.732142857142854
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 12,
+        "macro_family_mean_percent": 28.736878806192852,
+        "mean_absolute_improvement_hours": 2738.9333333333334,
+        "mean_percent": 28.736878806192852,
+        "median_percent": 31.034104266899384,
+        "micro_percent": 28.476815454168957,
+        "optimizer_mean_hours": 6879.183333333333,
+        "pairs": 60,
+        "regressions": 0,
+        "ties": 12,
+        "undefined_percentages": 0,
+        "wins": 48,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-10-4-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-serial-chain-25-2-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "fixed": {
+        "baseline_mean_hours": 6898.516666666666,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 9377.7,
+            "mean_absolute_improvement_hours": 21.3,
+            "mean_percent": 0.6353739387520987,
+            "median_percent": 0.0,
+            "micro_percent": 0.22713458523945104,
+            "optimizer_mean_hours": 9356.4,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 18,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 6375.15,
+            "mean_absolute_improvement_hours": 12.65,
+            "mean_percent": 0.6145441244937857,
+            "median_percent": 0.0,
+            "micro_percent": 0.1984267036854035,
+            "optimizer_mean_hours": 6362.5,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 17,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 4942.7,
+            "mean_absolute_improvement_hours": 24.05,
+            "mean_percent": 1.4621248565293927,
+            "median_percent": 0.029797377830750895,
+            "micro_percent": 0.4865761628259858,
+            "optimizer_mean_hours": 4918.65,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 10,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 4789.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017400382808421787,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 4789.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017400382808421787,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 7101.916666666667,
+            "mean_absolute_improvement_hours": 94.16666666666667,
+            "mean_percent": 4.234515501133317,
+            "median_percent": 1.7651532623856434,
+            "micro_percent": 1.3259331401147578,
+            "optimizer_mean_hours": 7007.75,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 8,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12575.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12575.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5237.083333333333,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09127722674329924,
+            "median_percent": 0.0,
+            "micro_percent": 0.015912164850027846,
+            "optimizer_mean_hours": 5236.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 9,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 2017.6333333333334,
+            "mean_absolute_improvement_hours": 34.0,
+            "mean_percent": 1.7238349906577,
+            "median_percent": 0.0,
+            "micro_percent": 1.6851426588907796,
+            "optimizer_mean_hours": 1983.6333333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 17,
+            "undefined_percentages": 0,
+            "wins": 13,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 11779.4,
+            "mean_absolute_improvement_hours": 4.666666666666667,
+            "mean_percent": 0.08419362252581815,
+            "median_percent": 0.0,
+            "micro_percent": 0.03961718480284791,
+            "optimizer_mean_hours": 11774.733333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 28,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 5,
+          "mean_95": [
+            0.02299489521672793,
+            2.578392626536868
+          ],
+          "median_95": [
+            0.0,
+            0.0
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 12,
+        "macro_family_mean_percent": 0.904014306591759,
+        "mean_absolute_improvement_hours": 19.333333333333332,
+        "mean_percent": 0.9040143065917591,
+        "median_percent": 0.0,
+        "micro_percent": 0.28025348444472364,
+        "optimizer_mean_hours": 6879.183333333333,
+        "pairs": 60,
+        "regressions": 0,
+        "ties": 45,
+        "undefined_percentages": 0,
+        "wins": 15,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-4-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "legacy-critical-proxy-first-adapter-v1": {
+        "baseline_mean_hours": 7079.216666666666,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 9695.9,
+            "mean_absolute_improvement_hours": 339.5,
+            "mean_percent": 3.08653736405553,
+            "median_percent": 0.0,
+            "micro_percent": 3.5014800070132734,
+            "optimizer_mean_hours": 9356.4,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 14,
+            "undefined_percentages": 0,
+            "wins": 6,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 6532.1,
+            "mean_absolute_improvement_hours": 169.6,
+            "mean_percent": 2.805954934806397,
+            "median_percent": 0.0,
+            "micro_percent": 2.596408505687298,
+            "optimizer_mean_hours": 6362.5,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 13,
+            "undefined_percentages": 0,
+            "wins": 7,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 5009.65,
+            "mean_absolute_improvement_hours": 91.0,
+            "mean_percent": 2.9121318065441777,
+            "median_percent": 0.2523290260848471,
+            "micro_percent": 1.8164941662591199,
+            "optimizer_mean_hours": 4918.65,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 8,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 5692.666666666667,
+            "mean_absolute_improvement_hours": 904.3333333333334,
+            "mean_percent": 10.25144137859247,
+            "median_percent": 9.829666875531808,
+            "micro_percent": 15.885935121208572,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 0.5524861878453039
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 4789.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017400382808421787,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 7101.916666666667,
+            "mean_absolute_improvement_hours": 94.16666666666667,
+            "mean_percent": 4.234515501133317,
+            "median_percent": 1.7651532623856434,
+            "micro_percent": 1.3259331401147578,
+            "optimizer_mean_hours": 7007.75,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 8,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12575.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12575.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5237.083333333333,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09127722674329924,
+            "median_percent": 0.0,
+            "micro_percent": 0.015912164850027846,
+            "optimizer_mean_hours": 5236.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 9,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 2028.8666666666666,
+            "mean_absolute_improvement_hours": 45.233333333333334,
+            "mean_percent": 2.3130326698314927,
+            "median_percent": 0.2501556178026766,
+            "micro_percent": 2.229487727138304,
+            "optimizer_mean_hours": 1983.6333333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 13,
+            "undefined_percentages": 0,
+            "wins": 17,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 12129.566666666668,
+            "mean_absolute_improvement_hours": 354.8333333333333,
+            "mean_percent": 3.556716733772577,
+            "median_percent": 0.0,
+            "micro_percent": 2.925358696518425,
+            "optimizer_mean_hours": 11774.733333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 22,
+            "undefined_percentages": 0,
+            "wins": 8,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 5,
+          "mean_95": [
+            0.03768332585687772,
+            6.997767927382145
+          ],
+          "median_95": [
+            0.0,
+            4.034958523967071
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 12,
+        "macro_family_mean_percent": 2.934874701802035,
+        "mean_absolute_improvement_hours": 200.03333333333333,
+        "mean_percent": 2.934874701802035,
+        "median_percent": 0.0,
+        "micro_percent": 2.8256421967590577,
+        "optimizer_mean_hours": 6879.183333333333,
+        "pairs": 60,
+        "regressions": 0,
+        "ties": 35,
+        "undefined_percentages": 0,
+        "wins": 25,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-25-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-25-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-independent-branches-25-4-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "legacy-release-per-person-hour-adapter-v1": {
+        "baseline_mean_hours": 6898.516666666666,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 9377.7,
+            "mean_absolute_improvement_hours": 21.3,
+            "mean_percent": 0.6353739387520987,
+            "median_percent": 0.0,
+            "micro_percent": 0.22713458523945104,
+            "optimizer_mean_hours": 9356.4,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 18,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 6375.15,
+            "mean_absolute_improvement_hours": 12.65,
+            "mean_percent": 0.6145441244937857,
+            "median_percent": 0.0,
+            "micro_percent": 0.1984267036854035,
+            "optimizer_mean_hours": 6362.5,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 17,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 4942.7,
+            "mean_absolute_improvement_hours": 24.05,
+            "mean_percent": 1.4621248565293927,
+            "median_percent": 0.029797377830750895,
+            "micro_percent": 0.4865761628259858,
+            "optimizer_mean_hours": 4918.65,
+            "pairs": 20,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 10,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 4789.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017400382808421787,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 4789.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017400382808421787,
+            "optimizer_mean_hours": 4788.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 7101.916666666667,
+            "mean_absolute_improvement_hours": 94.16666666666667,
+            "mean_percent": 4.234515501133317,
+            "median_percent": 1.7651532623856434,
+            "micro_percent": 1.3259331401147578,
+            "optimizer_mean_hours": 7007.75,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 8,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12575.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12575.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5237.083333333333,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09127722674329924,
+            "median_percent": 0.0,
+            "micro_percent": 0.015912164850027846,
+            "optimizer_mean_hours": 5236.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 9,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 2017.6333333333334,
+            "mean_absolute_improvement_hours": 34.0,
+            "mean_percent": 1.7238349906577,
+            "median_percent": 0.0,
+            "micro_percent": 1.6851426588907796,
+            "optimizer_mean_hours": 1983.6333333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 17,
+            "undefined_percentages": 0,
+            "wins": 13,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 11779.4,
+            "mean_absolute_improvement_hours": 4.666666666666667,
+            "mean_percent": 0.08419362252581815,
+            "median_percent": 0.0,
+            "micro_percent": 0.03961718480284791,
+            "optimizer_mean_hours": 11774.733333333334,
+            "pairs": 30,
+            "regressions": 0,
+            "ties": 28,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 5,
+          "mean_95": [
+            0.02299489521672793,
+            2.578392626536868
+          ],
+          "median_95": [
+            0.0,
+            0.0
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 12,
+        "macro_family_mean_percent": 0.904014306591759,
+        "mean_absolute_improvement_hours": 19.333333333333332,
+        "mean_percent": 0.9040143065917591,
+        "median_percent": 0.0,
+        "micro_percent": 0.28025348444472364,
+        "optimizer_mean_hours": 6879.183333333333,
+        "pairs": 60,
+        "regressions": 0,
+        "ties": 45,
+        "undefined_percentages": 0,
+        "wins": 15,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-critical-tradeoffs-25-4-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      }
+    },
+    "restricted_horizon_customer_hours": {
+      "best-of-four": {
+        "baseline_mean_hours": 10966.25,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 13028.416666666666,
+            "mean_absolute_improvement_hours": 5.666666666666667,
+            "mean_percent": 0.21538071709109338,
+            "median_percent": 0.0,
+            "micro_percent": 0.04349466870494624,
+            "optimizer_mean_hours": 13022.75,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 23,
+            "undefined_percentages": 0,
+            "wins": 1,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 10531.375,
+            "mean_absolute_improvement_hours": 1.2916666666666667,
+            "mean_percent": 0.07725621136961532,
+            "median_percent": 0.0,
+            "micro_percent": 0.012264938497268084,
+            "optimizer_mean_hours": 10530.083333333334,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 21,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 9338.958333333334,
+            "mean_absolute_improvement_hours": 12.083333333333334,
+            "mean_percent": 0.6676172440088171,
+            "median_percent": 0.0,
+            "micro_percent": 0.12938630735940393,
+            "optimizer_mean_hours": 9326.875,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 15,
+            "undefined_percentages": 0,
+            "wins": 9,
+            "worst_percent": 0.0
+          },
+          "family:blocked-prerequisites": {
+            "baseline_mean_hours": 31374.0,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 31374.0,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 4788.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017404016847088307,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 4788.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017404016847088307,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 7041.916666666667,
+            "mean_absolute_improvement_hours": 35.666666666666664,
+            "mean_percent": 1.639918542752032,
+            "median_percent": 0.33223301934442007,
+            "micro_percent": 0.5064908938144208,
+            "optimizer_mean_hours": 7006.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 5,
+            "undefined_percentages": 0,
+            "wins": 7,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12569.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12569.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5236.0,
+            "mean_absolute_improvement_hours": 0.75,
+            "mean_percent": 0.08631099710484076,
+            "median_percent": 0.0,
+            "micro_percent": 0.014323911382734911,
+            "optimizer_mean_hours": 5235.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 4629.833333333333,
+            "mean_absolute_improvement_hours": 8.805555555555555,
+            "mean_percent": 0.5700080962081687,
+            "median_percent": 0.0,
+            "micro_percent": 0.190191631568211,
+            "optimizer_mean_hours": 4621.027777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 25,
+            "undefined_percentages": 0,
+            "wins": 11,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 17302.666666666668,
+            "mean_absolute_improvement_hours": 3.888888888888889,
+            "mean_percent": 0.07016135210484846,
+            "median_percent": 0.0,
+            "micro_percent": 0.022475662068788368,
+            "optimizer_mean_hours": 17298.777777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 34,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 6,
+          "mean_95": [
+            0.01618990042351489,
+            0.9896150898998355
+          ],
+          "median_95": [
+            0.0,
+            0.0
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 0,
+        "macro_family_mean_percent": 0.32008472415650857,
+        "mean_absolute_improvement_hours": 6.347222222222222,
+        "mean_percent": 0.32008472415650857,
+        "median_percent": 0.0,
+        "micro_percent": 0.05787960535481338,
+        "optimizer_mean_hours": 10959.902777777777,
+        "pairs": 72,
+        "regressions": 0,
+        "ties": 59,
+        "undefined_percentages": 0,
+        "wins": 13,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "customer-count-v1": {
+        "baseline_mean_hours": 11467.527777777777,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 13991.25,
+            "mean_absolute_improvement_hours": 968.5,
+            "mean_percent": 10.404107239411506,
+            "median_percent": 8.78974529715332,
+            "micro_percent": 6.922183507549361,
+            "optimizer_mean_hours": 13022.75,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 9,
+            "undefined_percentages": 0,
+            "wins": 15,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 10937.416666666666,
+            "mean_absolute_improvement_hours": 407.3333333333333,
+            "mean_percent": 7.138649549487552,
+            "median_percent": 5.754623065243223,
+            "micro_percent": 3.7242188511912473,
+            "optimizer_mean_hours": 10530.083333333334,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 8,
+            "undefined_percentages": 0,
+            "wins": 16,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 9473.916666666666,
+            "mean_absolute_improvement_hours": 147.04166666666666,
+            "mean_percent": 4.134968613644668,
+            "median_percent": 2.5954676088770796,
+            "micro_percent": 1.5520683983217078,
+            "optimizer_mean_hours": 9326.875,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 9,
+            "undefined_percentages": 0,
+            "wins": 15,
+            "worst_percent": 0.0
+          },
+          "family:blocked-prerequisites": {
+            "baseline_mean_hours": 31374.0,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 31374.0,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 5511.916666666667,
+            "mean_absolute_improvement_hours": 724.5833333333334,
+            "mean_percent": 13.031747228043317,
+            "median_percent": 10.642847416826225,
+            "micro_percent": 13.145759944362972,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 1.861427094105481
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 5511.916666666667,
+            "mean_absolute_improvement_hours": 724.5833333333334,
+            "mean_percent": 13.031747228043317,
+            "median_percent": 10.642847416826225,
+            "micro_percent": 13.145759944362972,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 1.861427094105481
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 8090.25,
+            "mean_absolute_improvement_hours": 1084.0,
+            "mean_percent": 9.279224964676445,
+            "median_percent": 8.542866081631193,
+            "micro_percent": 13.398844287877383,
+            "optimizer_mean_hours": 7006.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 1,
+            "undefined_percentages": 0,
+            "wins": 11,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12569.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12569.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5747.833333333333,
+            "mean_absolute_improvement_hours": 512.5833333333334,
+            "mean_percent": 8.012731384324374,
+            "median_percent": 5.756618979812574,
+            "micro_percent": 8.9178531040682,
+            "optimizer_mean_hours": 5235.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 1,
+            "undefined_percentages": 0,
+            "wins": 11,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 4748.694444444444,
+            "mean_absolute_improvement_hours": 127.66666666666667,
+            "mean_percent": 6.627683111958724,
+            "median_percent": 1.861427094105481,
+            "micro_percent": 2.6884582312097476,
+            "optimizer_mean_hours": 4621.027777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 14,
+            "undefined_percentages": 0,
+            "wins": 22,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 18186.36111111111,
+            "mean_absolute_improvement_hours": 887.5833333333334,
+            "mean_percent": 7.824133823070426,
+            "median_percent": 7.968344014682521,
+            "micro_percent": 4.880488888956773,
+            "optimizer_mean_hours": 17298.777777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 24,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 6,
+          "mean_95": [
+            1.997039009644903,
+            14.600190728035313
+          ],
+          "median_95": [
+            0.0,
+            14.396709323583181
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 0,
+        "macro_family_mean_percent": 7.225908467514575,
+        "mean_absolute_improvement_hours": 507.625,
+        "mean_percent": 7.225908467514575,
+        "median_percent": 5.047940740242031,
+        "micro_percent": 4.426629783131596,
+        "optimizer_mean_hours": 10959.902777777777,
+        "pairs": 72,
+        "regressions": 0,
+        "ties": 26,
+        "undefined_percentages": 0,
+        "wins": 46,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "fifo-v1": {
+        "baseline_mean_hours": 13238.430555555555,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 17015.791666666668,
+            "mean_absolute_improvement_hours": 3993.0416666666665,
+            "mean_percent": 28.06624896019256,
+            "median_percent": 33.9267935120303,
+            "micro_percent": 23.466681685395184,
+            "optimizer_mean_hours": 13022.75,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 8,
+            "undefined_percentages": 0,
+            "wins": 16,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 12460.0,
+            "mean_absolute_improvement_hours": 1929.9166666666667,
+            "mean_percent": 24.26330505807368,
+            "median_percent": 30.043193089105742,
+            "micro_percent": 15.488897806313537,
+            "optimizer_mean_hours": 10530.083333333334,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 8,
+            "undefined_percentages": 0,
+            "wins": 16,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 10239.5,
+            "mean_absolute_improvement_hours": 912.625,
+            "mean_percent": 19.486926282683168,
+            "median_percent": 25.57538559294045,
+            "micro_percent": 8.91278871038625,
+            "optimizer_mean_hours": 9326.875,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 8,
+            "undefined_percentages": 0,
+            "wins": 16,
+            "worst_percent": 0.0
+          },
+          "family:blocked-prerequisites": {
+            "baseline_mean_hours": 31374.0,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 31374.0,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 7780.916666666667,
+            "mean_absolute_improvement_hours": 2993.5833333333335,
+            "mean_percent": 37.80647198593834,
+            "median_percent": 38.67642743372109,
+            "micro_percent": 38.473401805699844,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 26.466339208321294
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 7780.916666666667,
+            "mean_absolute_improvement_hours": 2993.5833333333335,
+            "mean_percent": 37.80647198593834,
+            "median_percent": 38.67642743372109,
+            "micro_percent": 38.473401805699844,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 26.466339208321294
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 11994.583333333334,
+            "mean_absolute_improvement_hours": 4988.333333333333,
+            "mean_percent": 36.94057928437023,
+            "median_percent": 36.76167532075209,
+            "micro_percent": 41.58821690346337,
+            "optimizer_mean_hours": 7006.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 24.68443197755961
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12569.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12569.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 7930.916666666667,
+            "mean_absolute_improvement_hours": 2695.6666666666665,
+            "mean_percent": 31.079437345651908,
+            "median_percent": 29.7675809102466,
+            "micro_percent": 33.98934549390045,
+            "optimizer_mean_hours": 5235.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 15.002534211860112
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 5246.611111111111,
+            "mean_absolute_improvement_hours": 625.5833333333334,
+            "mean_percent": 23.086831903462247,
+            "median_percent": 27.887537993920972,
+            "micro_percent": 11.923569711665731,
+            "optimizer_mean_hours": 4621.027777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 24,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 21230.25,
+            "mean_absolute_improvement_hours": 3931.472222222222,
+            "mean_percent": 24.790821630504027,
+            "median_percent": 30.043193089105742,
+            "micro_percent": 18.51825683740051,
+            "optimizer_mean_hours": 17298.777777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 24,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 6,
+          "mean_95": [
+            10.447402495574298,
+            37.51784108541563
+          ],
+          "median_95": [
+            0.0,
+            39.42217069456234
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 0,
+        "macro_family_mean_percent": 23.938826766983134,
+        "mean_absolute_improvement_hours": 2278.527777777778,
+        "mean_percent": 23.938826766983137,
+        "median_percent": 29.167438981869086,
+        "micro_percent": 17.211464517760266,
+        "optimizer_mean_hours": 10959.902777777777,
+        "pairs": 72,
+        "regressions": 0,
+        "ties": 24,
+        "undefined_percentages": 0,
+        "wins": 48,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "fixed": {
+        "baseline_mean_hours": 10976.013888888889,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 13040.5,
+            "mean_absolute_improvement_hours": 17.75,
+            "mean_percent": 0.5294782822934155,
+            "median_percent": 0.0,
+            "micro_percent": 0.1361144127909206,
+            "optimizer_mean_hours": 13022.75,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 22,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 10540.625,
+            "mean_absolute_improvement_hours": 10.541666666666666,
+            "mean_percent": 0.5121201037448214,
+            "median_percent": 0.0,
+            "micro_percent": 0.10000988239944658,
+            "optimizer_mean_hours": 10530.083333333334,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 21,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 9346.916666666666,
+            "mean_absolute_improvement_hours": 20.041666666666668,
+            "mean_percent": 1.2184373804411606,
+            "median_percent": 0.0,
+            "micro_percent": 0.21442008505478632,
+            "optimizer_mean_hours": 9326.875,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 14,
+            "undefined_percentages": 0,
+            "wins": 10,
+            "worst_percent": 0.0
+          },
+          "family:blocked-prerequisites": {
+            "baseline_mean_hours": 31374.0,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 31374.0,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 4788.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017404016847088307,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 4788.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017404016847088307,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 7100.416666666667,
+            "mean_absolute_improvement_hours": 94.16666666666667,
+            "mean_percent": 4.234515501133317,
+            "median_percent": 1.7651532623856434,
+            "micro_percent": 1.3262132503961035,
+            "optimizer_mean_hours": 7006.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 8,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12569.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12569.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5236.083333333333,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09127722674329924,
+            "median_percent": 0.0,
+            "micro_percent": 0.015915203794184585,
+            "optimizer_mean_hours": 5235.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 9,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 4649.361111111111,
+            "mean_absolute_improvement_hours": 28.333333333333332,
+            "mean_percent": 1.4365291588814166,
+            "median_percent": 0.0,
+            "micro_percent": 0.6094027255835629,
+            "optimizer_mean_hours": 4621.027777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 23,
+            "undefined_percentages": 0,
+            "wins": 13,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 17302.666666666668,
+            "mean_absolute_improvement_hours": 3.888888888888889,
+            "mean_percent": 0.07016135210484846,
+            "median_percent": 0.0,
+            "micro_percent": 0.022475662068788368,
+            "optimizer_mean_hours": 17298.777777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 34,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 6,
+          "mean_95": [
+            0.01618990042351489,
+            2.1496375514136883
+          ],
+          "median_95": [
+            0.0,
+            0.0
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 0,
+        "macro_family_mean_percent": 0.7533452554931325,
+        "mean_absolute_improvement_hours": 16.11111111111111,
+        "mean_percent": 0.7533452554931326,
+        "median_percent": 0.0,
+        "micro_percent": 0.1467847186984751,
+        "optimizer_mean_hours": 10959.902777777777,
+        "pairs": 72,
+        "regressions": 0,
+        "ties": 57,
+        "undefined_percentages": 0,
+        "wins": 15,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "legacy-critical-proxy-first-adapter-v1": {
+        "baseline_mean_hours": 11126.597222222223,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 13305.666666666666,
+            "mean_absolute_improvement_hours": 282.9166666666667,
+            "mean_percent": 2.5724712491982396,
+            "median_percent": 0.0,
+            "micro_percent": 2.126287045619661,
+            "optimizer_mean_hours": 13022.75,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 18,
+            "undefined_percentages": 0,
+            "wins": 6,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 10671.416666666666,
+            "mean_absolute_improvement_hours": 141.33333333333334,
+            "mean_percent": 2.338295779005331,
+            "median_percent": 0.0,
+            "micro_percent": 1.3244102235723154,
+            "optimizer_mean_hours": 10530.083333333334,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 17,
+            "undefined_percentages": 0,
+            "wins": 7,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 9402.708333333334,
+            "mean_absolute_improvement_hours": 75.83333333333333,
+            "mean_percent": 2.426776505453481,
+            "median_percent": 0.029797377830750895,
+            "micro_percent": 0.806505217911506,
+            "optimizer_mean_hours": 9326.875,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 0.0
+          },
+          "family:blocked-prerequisites": {
+            "baseline_mean_hours": 31374.0,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 31374.0,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 5691.666666666667,
+            "mean_absolute_improvement_hours": 904.3333333333334,
+            "mean_percent": 10.252154936896398,
+            "median_percent": 9.829666875531808,
+            "micro_percent": 15.888726207906295,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 0,
+            "undefined_percentages": 0,
+            "wins": 12,
+            "worst_percent": 0.5524861878453039
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 4788.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017404016847088307,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 7100.416666666667,
+            "mean_absolute_improvement_hours": 94.16666666666667,
+            "mean_percent": 4.234515501133317,
+            "median_percent": 1.7651532623856434,
+            "micro_percent": 1.3262132503961035,
+            "optimizer_mean_hours": 7006.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 8,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12569.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12569.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5236.083333333333,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09127722674329924,
+            "median_percent": 0.0,
+            "micro_percent": 0.015915203794184585,
+            "optimizer_mean_hours": 5235.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 9,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 4658.722222222223,
+            "mean_absolute_improvement_hours": 37.69444444444444,
+            "mean_percent": 1.9275272248595774,
+            "median_percent": 0.0,
+            "micro_percent": 0.8091155180843579,
+            "optimizer_mean_hours": 4621.027777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 19,
+            "undefined_percentages": 0,
+            "wins": 17,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 17594.472222222223,
+            "mean_absolute_improvement_hours": 295.69444444444446,
+            "mean_percent": 2.964168464245124,
+            "median_percent": 0.0,
+            "micro_percent": 1.6806099137828958,
+            "optimizer_mean_hours": 17298.777777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 28,
+            "undefined_percentages": 0,
+            "wins": 8,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 6,
+          "mean_95": [
+            0.02081782256009277,
+            5.8470429230943015
+          ],
+          "median_95": [
+            0.0,
+            1.2023418018864516
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 0,
+        "macro_family_mean_percent": 2.4458478445523504,
+        "mean_absolute_improvement_hours": 166.69444444444446,
+        "mean_percent": 2.445847844552351,
+        "median_percent": 0.0,
+        "micro_percent": 1.4981619368005843,
+        "optimizer_mean_hours": 10959.902777777777,
+        "pairs": 72,
+        "regressions": 0,
+        "ties": 47,
+        "undefined_percentages": 0,
+        "wins": 25,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      },
+      "legacy-release-per-person-hour-adapter-v1": {
+        "baseline_mean_hours": 10976.013888888889,
+        "breakdowns": {
+          "crews:1": {
+            "baseline_mean_hours": 13040.5,
+            "mean_absolute_improvement_hours": 17.75,
+            "mean_percent": 0.5294782822934155,
+            "median_percent": 0.0,
+            "micro_percent": 0.1361144127909206,
+            "optimizer_mean_hours": 13022.75,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 22,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "crews:2": {
+            "baseline_mean_hours": 10540.625,
+            "mean_absolute_improvement_hours": 10.541666666666666,
+            "mean_percent": 0.5121201037448214,
+            "median_percent": 0.0,
+            "micro_percent": 0.10000988239944658,
+            "optimizer_mean_hours": 10530.083333333334,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 21,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "crews:4": {
+            "baseline_mean_hours": 9346.916666666666,
+            "mean_absolute_improvement_hours": 20.041666666666668,
+            "mean_percent": 1.2184373804411606,
+            "median_percent": 0.0,
+            "micro_percent": 0.21442008505478632,
+            "optimizer_mean_hours": 9326.875,
+            "pairs": 24,
+            "regressions": 0,
+            "ties": 14,
+            "undefined_percentages": 0,
+            "wins": 10,
+            "worst_percent": 0.0
+          },
+          "family:blocked-prerequisites": {
+            "baseline_mean_hours": 31374.0,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 31374.0,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:critical-tradeoffs": {
+            "baseline_mean_hours": 4788.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017404016847088307,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:independent-branches": {
+            "baseline_mean_hours": 4788.166666666667,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09713940254108934,
+            "median_percent": 0.0,
+            "micro_percent": 0.017404016847088307,
+            "optimizer_mean_hours": 4787.333333333333,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 10,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          },
+          "family:overlapping-dependencies": {
+            "baseline_mean_hours": 7100.416666666667,
+            "mean_absolute_improvement_hours": 94.16666666666667,
+            "mean_percent": 4.234515501133317,
+            "median_percent": 1.7651532623856434,
+            "micro_percent": 1.3262132503961035,
+            "optimizer_mean_hours": 7006.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 4,
+            "undefined_percentages": 0,
+            "wins": 8,
+            "worst_percent": 0.0
+          },
+          "family:serial-chain": {
+            "baseline_mean_hours": 12569.25,
+            "mean_absolute_improvement_hours": 0.0,
+            "mean_percent": 0.0,
+            "median_percent": 0.0,
+            "micro_percent": 0.0,
+            "optimizer_mean_hours": 12569.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 12,
+            "undefined_percentages": 0,
+            "wins": 0,
+            "worst_percent": 0.0
+          },
+          "family:upstream-bottleneck": {
+            "baseline_mean_hours": 5236.083333333333,
+            "mean_absolute_improvement_hours": 0.8333333333333334,
+            "mean_percent": 0.09127722674329924,
+            "median_percent": 0.0,
+            "micro_percent": 0.015915203794184585,
+            "optimizer_mean_hours": 5235.25,
+            "pairs": 12,
+            "regressions": 0,
+            "ties": 9,
+            "undefined_percentages": 0,
+            "wins": 3,
+            "worst_percent": 0.0
+          },
+          "tasks:10": {
+            "baseline_mean_hours": 4649.361111111111,
+            "mean_absolute_improvement_hours": 28.333333333333332,
+            "mean_percent": 1.4365291588814166,
+            "median_percent": 0.0,
+            "micro_percent": 0.6094027255835629,
+            "optimizer_mean_hours": 4621.027777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 23,
+            "undefined_percentages": 0,
+            "wins": 13,
+            "worst_percent": 0.0
+          },
+          "tasks:25": {
+            "baseline_mean_hours": 17302.666666666668,
+            "mean_absolute_improvement_hours": 3.888888888888889,
+            "mean_percent": 0.07016135210484846,
+            "median_percent": 0.0,
+            "micro_percent": 0.022475662068788368,
+            "optimizer_mean_hours": 17298.777777777777,
+            "pairs": 36,
+            "regressions": 0,
+            "ties": 34,
+            "undefined_percentages": 0,
+            "wins": 2,
+            "worst_percent": 0.0
+          }
+        },
+        "cluster_interval": {
+          "families": 6,
+          "mean_95": [
+            0.01618990042351489,
+            2.1496375514136883
+          ],
+          "median_95": [
+            0.0,
+            0.0
+          ],
+          "method": "crossed-family-seed-pigeonhole; all scale/crew variants retained",
+          "resamples": 5000,
+          "seeds": 2
+        },
+        "excluded_unavailable_or_failed_cases": 0,
+        "macro_family_mean_percent": 0.7533452554931325,
+        "mean_absolute_improvement_hours": 16.11111111111111,
+        "mean_percent": 0.7533452554931326,
+        "median_percent": 0.0,
+        "micro_percent": 0.1467847186984751,
+        "optimizer_mean_hours": 10959.902777777777,
+        "pairs": 72,
+        "regressions": 0,
+        "ties": 57,
+        "undefined_percentages": 0,
+        "wins": 15,
+        "worst_cases": [
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-2-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-10-4-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-1-29",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-17",
+            "percent": 0.0
+          },
+          {
+            "absolute_hours": 0.0,
+            "case_id": "syn-blocked-prerequisites-25-2-29",
+            "percent": 0.0
+          }
+        ],
+        "worst_percent": 0.0
+      }
+    }
+  },
+  "tradeoffs": [
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-10-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-10-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-10-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-10-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-10-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-10-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-25-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-25-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-25-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-25-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-25-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-serial-chain-25-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-10-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-10-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-10-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-10-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": -1.6155172413793117,
+      "case_id": "syn-independent-branches-10-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.23076923076922995
+    },
+    {
+      "branch_disparity_delta_hours": 1.8947368421052637,
+      "case_id": "syn-independent-branches-10-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 1.166666666666666
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-25-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-25-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-25-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-25-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-25-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-independent-branches-25-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-upstream-bottleneck-10-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-upstream-bottleneck-10-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-upstream-bottleneck-10-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.23026315789473717,
+      "case_id": "syn-upstream-bottleneck-10-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": -1.0,
+      "small_group_wait_delta_hours": -0.3333333333333339
+    },
+    {
+      "branch_disparity_delta_hours": -0.09999999999999787,
+      "case_id": "syn-upstream-bottleneck-10-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": -1.0,
+      "small_group_wait_delta_hours": -0.07692307692307665
+    },
+    {
+      "branch_disparity_delta_hours": 1.8947368421052637,
+      "case_id": "syn-upstream-bottleneck-10-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 1.166666666666666
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-upstream-bottleneck-25-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-upstream-bottleneck-25-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-upstream-bottleneck-25-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-upstream-bottleneck-25-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-upstream-bottleneck-25-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-upstream-bottleneck-25-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 5.720881226053635,
+      "case_id": "syn-overlapping-dependencies-10-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": -5.0
+    },
+    {
+      "branch_disparity_delta_hours": -8.79598549946294,
+      "case_id": "syn-overlapping-dependencies-10-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.24999999999999822,
+      "case_id": "syn-overlapping-dependencies-10-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": -1.0,
+      "small_group_wait_delta_hours": -5.615384615384617
+    },
+    {
+      "branch_disparity_delta_hours": -4.367346938775508,
+      "case_id": "syn-overlapping-dependencies-10-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 4.0,
+      "small_group_wait_delta_hours": 4.0
+    },
+    {
+      "branch_disparity_delta_hours": -0.17337164750957967,
+      "case_id": "syn-overlapping-dependencies-10-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": -1.0,
+      "small_group_wait_delta_hours": -1.76923076923077
+    },
+    {
+      "branch_disparity_delta_hours": -5.587540279269602,
+      "case_id": "syn-overlapping-dependencies-10-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 1.0,
+      "small_group_wait_delta_hours": 2.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-overlapping-dependencies-25-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-overlapping-dependencies-25-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-overlapping-dependencies-25-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-overlapping-dependencies-25-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": -0.3201754385964968,
+      "case_id": "syn-overlapping-dependencies-25-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.1785714285714306
+    },
+    {
+      "branch_disparity_delta_hours": 1.1719367588932812,
+      "case_id": "syn-overlapping-dependencies-25-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": -2.0,
+      "small_group_wait_delta_hours": 3.6666666666666643
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-10-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-10-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-10-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-10-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-10-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-10-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-25-1-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-25-1-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-25-2-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-25-2-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-25-4-17",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-blocked-prerequisites-25-4-29",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-10-1-17",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-10-1-29",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-10-2-17",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-10-2-29",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": -1.6155172413793117,
+      "case_id": "syn-critical-tradeoffs-10-4-17",
+      "critical_latency_delta_hours": {
+        "syn-group-000": -3.0,
+        "syn-group-005": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.23076923076922995
+    },
+    {
+      "branch_disparity_delta_hours": 1.8947368421052637,
+      "case_id": "syn-critical-tradeoffs-10-4-29",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 2.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 1.166666666666666
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-25-1-17",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0,
+        "syn-group-010": 0.0,
+        "syn-group-015": 0.0,
+        "syn-group-020": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-25-1-29",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0,
+        "syn-group-010": 0.0,
+        "syn-group-015": 0.0,
+        "syn-group-020": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-25-2-17",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0,
+        "syn-group-010": 0.0,
+        "syn-group-015": 0.0,
+        "syn-group-020": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-25-2-29",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0,
+        "syn-group-010": 0.0,
+        "syn-group-015": 0.0,
+        "syn-group-020": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-25-4-17",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0,
+        "syn-group-010": 0.0,
+        "syn-group-015": 0.0,
+        "syn-group-020": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-critical-tradeoffs-25-4-29",
+      "critical_latency_delta_hours": {
+        "syn-group-000": 0.0,
+        "syn-group-005": 0.0,
+        "syn-group-010": 0.0,
+        "syn-group-015": 0.0,
+        "syn-group-020": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-micro-weighted",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-micro-overlap",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-micro-chain-eight",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": -1.0,
+      "case_id": "syn-micro-two-crews",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": -1.0,
+      "small_group_wait_delta_hours": -0.16666666666666652
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-micro-blocked",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": null,
+      "case_id": "syn-micro-unknown",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": null,
+      "small_group_wait_delta_hours": null
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-micro-censored",
+      "critical_latency_delta_hours": {},
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    },
+    {
+      "branch_disparity_delta_hours": 0.0,
+      "case_id": "syn-micro-critical",
+      "critical_latency_delta_hours": {
+        "syn-group-0": 0.0
+      },
+      "makespan_delta_hours": 0.0,
+      "small_group_wait_delta_hours": 0.0
+    }
+  ],
+  "version": "optimization-report-v1"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "cases": 278,
+  "scope": "Full published matrix and microcases, independently validated; no source files or outgoing connections",
+  "results_sha256": "c438686e6f62c62dc31fd4871b80f1f8cab0b90434378b7d78d8fc676c9c8f49",
+  "repeated_for": "numerical reproducibility only; no optimizer/configuration changes",
+  "forbidden_imports_absent": [
+    "backend.config",
+    "backend.planning"
+  ]
+}

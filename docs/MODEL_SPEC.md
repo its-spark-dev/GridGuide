@@ -121,3 +121,14 @@ only known modeled release and separately counts known-later censoring and unres
 outcomes. These are synthetic prototype calculations, not observed durations or an AEP
 conversion rule. The four generalized baseline adapters and bounded exhaustive reference
 are offline measurement tools; no application policy or numerical rule above changes.
+
+## 9. Phase 3 integer restoration optimization
+
+The optional `restoration-cpsat-v1` model minimizes exact customer-weighted release ticks
+under G2 durations and constraints. Partial problems instead minimize restricted-horizon
+cost including unresolved customer mass; no unknown full outcome becomes finite.
+Secondary makespan is optimized only after proof of the primary optimum with its value
+fixed. All accepted candidates pass the unchanged independent G2 validator and cannot
+worsen their validated incumbent objective. This changes no source labor arithmetic,
+legacy policies or application defaults. [Mathematical model](research/phase3/MODEL.md)
+and [G3 results](planning/V1_1_0_PHASE3.md) disclose assumptions and the missed 5% target.

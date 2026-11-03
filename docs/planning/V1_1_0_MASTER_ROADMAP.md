@@ -1,6 +1,6 @@
 # GridGuide v1.1.0 — Evidence-driven final feature release
 
-Approved November 3, 2026. This document preserves the complete approved roadmap; repository links are made relative for portability. Approval authorizes phased execution, not automatic passage through review gates. **Execution update: G1 was approved and PR #3 merged at `9b04fcf`. Phase 2 is now authorized through a G2 review PR only; do not merge that PR or begin Phase 3 without approval.** The public README remains product-focused.
+Approved November 3, 2026. This document preserves the complete approved roadmap; repository links are made relative for portability. Approval authorizes phased execution, not automatic passage through review gates. **Execution update: G1 was approved and PR #3 merged at `9b04fcf`. G2 was approved and merged at `8f1b064`; Phase 3 is now authorized through a G3 review PR only. Do not merge or start later phases without approval.** The public README remains product-focused.
 
 ## Approval refinements (controlling interpretation)
 
@@ -498,7 +498,7 @@ Prediction research runs alongside this path and terminates with a documented de
 
 Recommended execution order: **P1 → P8a → P2 → P3 → P5 → P7 → P8b → P9**, with P4 and the independent parts of P6 progressing alongside stable contracts.
 
-Use small, dependency-linked PRs. Each PR must include its evidence classification changes, relevant tests, before/after results, and limitations. Shared contract changes receive review before dependent frontend work. No phase may silently redefine an earlier benchmark or evidence gate. The latest owner instruction authorizes Phase 2 and its focused G2 PR only; Phase 3 remains unapproved.
+Use small, dependency-linked PRs. Each PR must include its evidence classification changes, relevant tests, before/after results, and limitations. Shared contract changes receive review before dependent frontend work. No phase may silently redefine an earlier benchmark or evidence gate. The latest owner instruction authorizes Phase 3 and its focused G3 PR only; later phases remain unapproved.
 
 ## 5. Scope control and final release decision
 

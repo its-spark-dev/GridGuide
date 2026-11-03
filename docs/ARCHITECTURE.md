@@ -88,3 +88,12 @@ separate execution/reporting modules. It imports shared schema primitives but no
 loaders or AI. Only the explicitly invoked `benchmarks.legacy` lane imports the original
 planner. No endpoint, browser behavior or Phase 1 package input changes. See the
 [benchmark specification](benchmarks/PHASE2_SPEC.md) and [G2 record](planning/V1_1_0_PHASE2.md).
+
+## Optional Phase 3 optimization boundary
+
+`backend/optimization.py` consumes the unchanged G2 benchmark problem and emits a
+versioned validated schedule plus solver/fallback metadata. OR-Tools is lazy and optional;
+no application endpoint, provider or source loader is added. The original planner and
+Phase 1 package remain unchanged. Execution/reporting tools live in separate new modules.
+See [model](research/phase3/MODEL.md), [protocol](research/phase3/EVALUATION_PROTOCOL.md) and
+[G3 evidence](planning/V1_1_0_PHASE3.md).
