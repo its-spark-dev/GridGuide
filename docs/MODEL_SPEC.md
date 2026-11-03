@@ -109,3 +109,15 @@ AI receives validated, minimized context and can only select approved references
 `backend/contracts.py` is the executable Pydantic source; OpenAPI generates frontend types. Evaluation schema 2.0 uses restoration model `person-hours-serial-envelope-v2` and assumptions `explicit-person-hour-envelope-v2`. Result IDs bind public results and source hashes; API recomputes prior scenarios rather than accepting client-calculated values. Declared guidance is separately bound to the same result/revision. Every important input/rule has one evidence class in the [ledger](AEP_REALIGNMENT.md); computed output provenance is not a substitute for classifying its ingredients.
 
 Run the full tests, `python -m backend.demo`, type generation and frontend build using README commands. [Release verification](releases/VERIFICATION.md) records the November 3 regression checks; [DEMO_FREEZE.md](DEMO_FREEZE.md) retains dated browser/live-provider evidence. No operational accuracy or full regional reverse-join coverage is claimed.
+
+## 8. Offline Phase 2 benchmark model
+
+The [versioned benchmark specification](benchmarks/PHASE2_SPEC.md) defines independently
+authored tasks, disjoint customer groups, explicit repair prerequisites and conditional
+durations. Standard duration is ceil(total person-hours × 3600 / one effective worker),
+with integer seconds. Completed modeled customer-hours sum group size × last required
+repair completion; unresolved full totals stay null. Restricted 168-hour scoring credits
+only known modeled release and separately counts known-later censoring and unresolved
+outcomes. These are synthetic prototype calculations, not observed durations or an AEP
+conversion rule. The four generalized baseline adapters and bounded exhaustive reference
+are offline measurement tools; no application policy or numerical rule above changes.

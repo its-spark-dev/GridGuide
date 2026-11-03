@@ -1,0 +1,2 @@
+# Offline benchmark core; same version as existing project. No solver/AI/GIS dependency.
+pydantic==2.12.3
