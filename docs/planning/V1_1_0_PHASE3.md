@@ -1,21 +1,30 @@
 # v1.1.0 Phase 3 — G3 review packet
 
-**Implemented for independent review; G3 is not approved. Do not merge or begin later
-phases without owner approval.** Based on merged G2 at
+**G3 approved by the owner as a technically valid experiment whose preregistered
+performance target failed. Merge is authorized after this documentation clarification
+and verification; later phases remain unapproved.** Based on merged G2 at
 `8f1b0640f7a080de1578fc10dc195182fd7fec80`, on branch
 `feat/v1.1-phase3-restoration-optimization`.
 
 ## Outcome and default recommendation
 
-The optimizer returns independently verified schedules and improves some cases, but
-**misses the preregistered 5% median promotion target**. Against the selected strongest
-fixed baseline, completed-customer-hour median improvement is **0%**, clustered 95%
-median interval **[0%, 0%]**; mean paired improvement is **0.3510349569%**. No benchmark,
+The combined policy selects a validated per-instance best-of-four baseline incumbent
+and then applies bounded CP-SAT search. Its mean paired completed-customer-hour
+improvement versus the strongest single fixed baseline is **0.3510349569% (0.351%)**.
+That combined result includes incumbent selection and must not be attributed entirely
+to CP-SAT. The incremental result beyond per-instance best-of-four is
+**0.1736351944% (0.174%)**. These percentages use different paired denominators and
+are not an additive decomposition.
+
+**The preregistered 5% median promotion target failed.** Median improvement versus
+the strongest fixed baseline is **0%**, with clustered 95% median interval **[0%, 0%]**;
+median incremental improvement beyond best-of-four is also **0%**. No benchmark,
 comparison method or search budget was changed to manufacture success.
 
 Keep the strongest fixed baseline as the recommended default for future integration.
-Offer the validated incumbent-protected optimizer as an explicit experimental comparison
-only after G3 review. This PR changes no application default or endpoint. It does not
+Keep CP-SAT available only as an optional, validated experimental comparison using the
+best-of-four incumbent safeguard. G3 approval accepts the experiment, not default
+promotion. This PR changes no application default or endpoint. It does not
 claim reduced real restoration times, operational safety or an untouched final holdout.
 
 ## Implementation and mathematical design
@@ -205,20 +214,26 @@ is counted as passed. Dependencies/host/settings and implementation hashes are r
 - [x] Full matrix retained; paired clustered inference, nulls and tradeoffs disclosed.
 - [x] Exact reproducibility and applicable existing/new verification completed.
 - [x] Research target assessed honestly: **not met**; no default promotion claimed.
-- [ ] Independent reviewer accepts model scope, correctness and negative-result interpretation.
-- [ ] Owner approves G3/merge; later phases remain separately gated.
+- [x] Owner reviewed and accepts model scope, correctness and negative-result interpretation.
+- [x] Owner approves G3 and authorizes merge after documentation clarification and verification; later phases remain separately gated.
 
-Review questions: accept the conditional integer model and explicit subset objective?
-Accept the limited cluster uncertainty interpretation without a blind holdout claim?
-Keep strongest fixed baseline default and solver opt-in, given weak large-case bounds
-and no median improvement? Are the critical-service/fairness tradeoffs sufficiently visible?
+Owner disposition: accepts the conditional model, limited cluster-bootstrap interpretation,
+absence of a blind holdout, and disclosed critical-service/fairness regressions. Retain
+the strongest fixed baseline as default and CP-SAT as an optional validated experiment.
 
 For **Phase 5**, use fixed precomputed validated schedules and common random draws;
 never let a policy inspect future sampled durations. Preserve the deterministic tick model,
 unknown clearance and unresolved denominator when adding separately labeled uncertainty.
+Retain the strongest fixed baseline as default. If the optional validated CP-SAT
+comparison is simulated, distinguish its combined best-of-four-plus-search performance
+from its incremental performance beyond best-of-four. Simulation must not recast the
+failed 5% median promotion target as successful optimization or empirical calibration.
 For **Phase 7**, bind results to input fingerprint and versions, show fixed and best-of-four
 comparisons, raw solver status versus returned fallback, gaps and secondary regressions,
-and require human review. Neither integration is implemented here.
+and require human review. Keep the strongest fixed baseline as default and CP-SAT
+optional. Label the 0.351% mean as the combined policy's gain versus fixed and the
+0.174% mean as its incremental gain beyond best-of-four; explicitly show that the 5%
+median target failed. Neither integration is implemented here.
 
 This is an agent-assisted engineering session, not measured human engineering-day evidence.
 Reassessment retains roughly 27–41 provisional engineering days for remaining required work,
