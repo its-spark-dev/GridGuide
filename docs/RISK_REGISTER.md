@@ -57,3 +57,12 @@ critical-service metric. Such regressions are retained in the G3 report. Publish
 is not a blind holdout; crossed cluster intervals with only five seeds provide limited
 design sensitivity, not operational confidence. Missing OR-Tools falls back explicitly.
 See [G3](planning/V1_1_0_PHASE3.md).
+
+## Phase 4 findings
+
+Outage-payload permission, acquisition, zero/missing resolution and county-time validity
+remain unmet. NOAA report counts cannot substitute for outage coverage or independent
+evaluation clusters. No-Go with null predictive metrics prevents unsupported promotion.
+The executable checks test software behavior; they cannot certify source rights or real
+event reconstruction. Public URLs and revisions may change, so cached response hashes
+separate exact replay from new acquisition. See [G4](planning/V1_1_0_PHASE4.md).

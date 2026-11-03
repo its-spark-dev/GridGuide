@@ -55,4 +55,13 @@ See [G2 acceptance and results](planning/V1_1_0_PHASE2.md).
 | Reproducibility | Full source-free hash match, version/settings manifest | Wall timing is separate |
 | Human tradeoff visibility | Critical/fairness regressions and fallback metadata retained | Operator integration is future work |
 
-[G3 review packet](planning/V1_1_0_PHASE3.md) records results and pending approval.
+[G3 review packet](planning/V1_1_0_PHASE3.md) records results and owner approval.
+
+## Phase 4 / G4 additions
+
+| Requirement | Evidence | Limit |
+|---|---|---|
+| Preregistered county risk task | Risk protocol committed before modeling | No model authorized by current evidence |
+| Actual access and rights review | Pinned HTTP audit, two NOAA payload audits, evidence ledger | No outage payload/permission or county-time validity mask established |
+| Leakage and label safeguards | 20 research tests and deterministic decision replay | Artificial tests do not establish real-data validity |
+| Research disposition | [G4 No-Go packet](planning/V1_1_0_PHASE4.md) | Independent G4 approval pending; no customer-risk integration |
