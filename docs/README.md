@@ -80,3 +80,7 @@ Phase 3 review: [model](research/phase3/MODEL.md), [preregistered evaluation](re
 [complete comparison report](benchmarks/phase3/published/REPORT.md), and
 [G3 review packet](planning/V1_1_0_PHASE3.md). The optional optimizer is verified on the
 synthetic suite; its 5% median promotion target was not met. Application defaults are unchanged.
+
+Phase 4 review: [risk protocol](research/RISK_PROTOCOL.md), [No-Go findings](research/RISK_FINDINGS.md),
+[recorded feasibility](research/phase4/feasibility.json), and [G4 review packet](planning/V1_1_0_PHASE4.md).
+No predictive model was fitted or promoted; application behavior remains unchanged.

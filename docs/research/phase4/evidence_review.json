@@ -1,0 +1,57 @@
+{
+  "version": "risk-evidence-review-v1",
+  "scope": "County reported-outage target in RISK_PROTOCOL.md; human-reviewed evidence ledger, not a trained model",
+  "datasets": [
+    {
+      "id": "ornl-eagle-i",
+      "version": "DOI 10.13139/ORNLNCCS/1975202, 2014-2022 release",
+      "origin": "real-source-metadata; outcome observations unavailable",
+      "evidence_class": "source-derived",
+      "research_use": "unverified",
+      "rights_evidence": ["https://api.datacite.org/dois/10.13139/ORNLNCCS/1975202", "https://doi.ccs.ornl.gov/dataset/ccec86f0-e144-5de8-aee0-fb26028b26e1"],
+      "rights_scope": "Empty DataCite rightsList and no payload-specific grant established from catalog. Not evidence of prohibition; article terms are not substituted.",
+      "payload_status": "not_acquired",
+      "coverage_status": "not_measured",
+      "zero_semantics": "Descriptor states omitted records conflate zero outages and collection gaps. No county-time success mask acquired.",
+      "allowed_claims": ["Metadata/access inspection", "Documented omitted-record ambiguity"],
+      "excluded_claims": ["Usable labeled population", "Predictive performance", "Empirical restoration calibration"]
+    },
+    {
+      "id": "noaa-storm-events",
+      "version": "C00510; details v1.0 2018 c20260323 and 2022 c20260625",
+      "origin": "real observed retrospective storm reports",
+      "evidence_class": "source-derived",
+      "research_use": "accepted_for_aggregate_audit",
+      "rights_evidence": ["https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00510/html", "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf"],
+      "rights_scope": "NWS/NOAA-produced records for aggregate research with citation under NCEI federal-data policy; no blanket license for third-party narratives or redistribution asserted.",
+      "payload_status": "two_pinned_years_acquired_and_audited",
+      "coverage_status": "report counts only; not outage/non-outage surveillance",
+      "allowed_claims": ["Measured schema, row and reported identifier counts", "Candidate retrospective grouping"],
+      "excluded_claims": ["Storm IDs are independent outage events", "Missing report is no outage", "Retrospective severity is available before prediction"]
+    },
+    {
+      "id": "doe-417",
+      "version": "Program and annual-summary route probed 2026-11-03",
+      "origin": "real-source web shell; report observations unavailable",
+      "evidence_class": "source-derived",
+      "research_use": "unverified",
+      "rights_evidence": ["https://doe417.energy.gov/"],
+      "rights_scope": "Exact report payload and terms not established. Optional only.",
+      "payload_status": "html_shell_only",
+      "coverage_status": "not_measured",
+      "allowed_claims": ["Bounded access attempt"],
+      "excluded_claims": ["All-customer exposure panel", "Verified outage negatives"]
+    }
+  ],
+  "gates": {
+    "research_permission": {"status":"unverified", "evidence":["source_audit.json:ornl_datacite_rights", "RISK_FINDINGS.md#rights-and-access"], "reason":"Outcome-payload research permission not established."},
+    "outcome_payload": {"status":"fail", "evidence":["source_audit.json:responses"], "reason":"No EAGLE-I observation payload acquired through the bounded anonymous probes."},
+    "zero_missing_semantics": {"status":"fail", "evidence":["https://www.nature.com/articles/s41597-024-03095-5#Sec3"], "reason":"Omitted records conflate zeros and gaps; no county-time collection-success mask acquired. Full observed low-count windows remain unmeasured."},
+    "county_time_coverage": {"status":"unverified", "evidence":["source_audit.json:county_time_outage_coverage"], "reason":"No measured eligible daily windows for fixed Ohio/Pennsylvania populations."},
+    "labels_both_classes": {"status":"unverified", "evidence":["source_audit.json:eligible_outage_labels"], "reason":"No positive/negative outage label panel constructed."},
+    "event_reconstruction": {"status":"unverified", "evidence":["source_audit.json:noaa"], "reason":"Two storm snapshots audited; no outage join, full five-year county/time crosswalk or connected event clustering validated."},
+    "predictor_availability": {"status":"unverified", "evidence":["RISK_PROTOCOL.md#features-and-temporal-availability"], "reason":"No timestamped historical predictor panel or publication latency evidence acquired."},
+    "split_integrity": {"status":"unverified", "evidence":["RISK_PROTOCOL.md#split-and-event-controls"], "reason":"Rules and executable guards exist; real-data event-separated partitions do not."},
+    "final_event_count": {"status":"unverified", "evidence":["source_audit.json:noaa"], "reason":"Storm episode counts cannot establish 30 independent final outage clusters and both classes."}
+  }
+}

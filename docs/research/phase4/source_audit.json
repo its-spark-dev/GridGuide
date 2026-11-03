@@ -1,0 +1,194 @@
+{
+  "access_manifest_sha256": "aab455fb9e7b7cbd2a359635d3dd300be65b8774de9e70457cfb5892408174fe",
+  "county_time_outage_coverage": null,
+  "eligible_outage_labels": null,
+  "noaa": {
+    "noaa_2018": {
+      "duplicate_event_ids": 0,
+      "limitation": "Reported county codes/episode IDs are not validated outage coverage or independent final evaluation clusters.",
+      "missing_required": {},
+      "reported_county_codes": {
+        "39": 85,
+        "42": 67
+      },
+      "reported_episode_ids_in_county_rows": {
+        "39": 172,
+        "42": 158
+      },
+      "rows": 62699,
+      "selected_state_zone_rows": {
+        "39:C": 982,
+        "39:Z": 350,
+        "42:C": 1163,
+        "42:Z": 393
+      },
+      "selected_timezones": {
+        "EST-5": 2888
+      },
+      "years": {
+        "2018": 62699
+      },
+      "zone_types": {
+        "C": 35755,
+        "Z": 26944
+      }
+    },
+    "noaa_2022": {
+      "duplicate_event_ids": 0,
+      "limitation": "Reported county codes/episode IDs are not validated outage coverage or independent final evaluation clusters.",
+      "missing_required": {},
+      "reported_county_codes": {
+        "39": 88,
+        "42": 66
+      },
+      "reported_episode_ids_in_county_rows": {
+        "39": 129,
+        "42": 107
+      },
+      "rows": 69887,
+      "selected_state_zone_rows": {
+        "39:C": 1076,
+        "39:Z": 489,
+        "42:C": 888,
+        "42:Z": 639
+      },
+      "selected_timezones": {
+        "EST-5": 3092
+      },
+      "years": {
+        "2022": 69887
+      },
+      "zone_types": {
+        "C": 32927,
+        "Z": 36960
+      }
+    }
+  },
+  "note": "Access records prove responses, not dataset permission. No EAGLE-I observation file was acquired; null does not mean zero eligible windows exist.",
+  "ornl_datacite_rights": [],
+  "outage_payload_acquired": false,
+  "responses": [
+    {
+      "bytes": 24701,
+      "content_type": "text/html; charset=UTF-8",
+      "file": "ornl_catalog.response",
+      "final_url": "https://doi.ccs.ornl.gov/dataset/ccec86f0-e144-5de8-aee0-fb26028b26e1",
+      "id": "ornl_catalog",
+      "retrieved_at": "2026-11-03T23:23:39.343338+00:00",
+      "sha256": "a010fdc448a07f83dceb0692e8b71dbda850ec47e35b2f4c31b731c5454fb1b3",
+      "status": 200,
+      "url": "https://doi.ccs.ornl.gov/dataset/ccec86f0-e144-5de8-aee0-fb26028b26e1"
+    },
+    {
+      "bytes": 14593,
+      "content_type": "application/json; charset=utf-8",
+      "file": "ornl_datacite.response",
+      "final_url": "https://api.datacite.org/dois/10.13139/ORNLNCCS/1975202",
+      "id": "ornl_datacite",
+      "retrieved_at": "2026-11-03T23:23:39.714809+00:00",
+      "sha256": "b08bf00874536818810abd079fed309e871ea4ed5ebd16434da1a17df96b79f7",
+      "status": 200,
+      "url": "https://api.datacite.org/dois/10.13139/ORNLNCCS/1975202"
+    },
+    {
+      "bytes": 3813,
+      "content_type": "text/html",
+      "file": "ornl_globus.response",
+      "final_url": "https://app.globus.org/file-manager?origin_id=57618e0a-2c99-45ff-9694-24141b92fa17&origin_path=%2F%2Fgen101%2Fworld-shared%2Fdoi-data%2FORNLNCCS%2F202305%2F10.13139_ORNLNCCS_1975202%2F",
+      "id": "ornl_globus",
+      "retrieved_at": "2026-11-03T23:23:40.548597+00:00",
+      "sha256": "e54851578f940307e5816373934c410f823bc32ef8ac4010ab2903e4a9cad359",
+      "status": 200,
+      "url": "https://app.globus.org/file-manager?origin_id=57618e0a-2c99-45ff-9694-24141b92fa17&origin_path=%2F%2Fgen101%2Fworld-shared%2Fdoi-data%2FORNLNCCS%2F202305%2F10.13139_ORNLNCCS_1975202%2F"
+    },
+    {
+      "bytes": 218,
+      "content_type": "application/json",
+      "file": "ornl_listing.response",
+      "final_url": "https://transfer.api.globus.org/v0.10/operation/57618e0a-2c99-45ff-9694-24141b92fa17/ls?path=%2F%2Fgen101%2Fworld-shared%2Fdoi-data%2FORNLNCCS%2F202305%2F10.13139_ORNLNCCS_1975202%2F",
+      "id": "ornl_listing",
+      "retrieved_at": "2026-11-03T23:23:41.063796+00:00",
+      "sha256": "00ed55e0963ba4b9e96574fb4a4a52f18787b1d99bc1bfdc0d09a2cab59efa29",
+      "status": 404,
+      "url": "https://transfer.api.globus.org/v0.10/operation/57618e0a-2c99-45ff-9694-24141b92fa17/ls?path=%2F%2Fgen101%2Fworld-shared%2Fdoi-data%2FORNLNCCS%2F202305%2F10.13139_ORNLNCCS_1975202%2F"
+    },
+    {
+      "bytes": 47693,
+      "content_type": "text/html;charset=UTF-8",
+      "file": "noaa_metadata.response",
+      "final_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00510/html",
+      "id": "noaa_metadata",
+      "retrieved_at": "2026-11-03T23:23:41.414537+00:00",
+      "sha256": "f9baf30595cd1f38c7b9535956fa69db449250b22061ec1dcb7e766e8f68459d",
+      "status": 200,
+      "url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00510/html"
+    },
+    {
+      "bytes": 334827,
+      "content_type": "application/pdf",
+      "file": "noaa_policy.response",
+      "final_url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf",
+      "id": "noaa_policy",
+      "retrieved_at": "2026-11-03T23:23:42.199650+00:00",
+      "sha256": "575f4b269ea2c7c963573e4e9b8f40288e3a78442b19ef6dafdc9f4bfd52eb4a",
+      "status": 200,
+      "url": "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf"
+    },
+    {
+      "bytes": 53139,
+      "content_type": "text/html; charset=UTF-8",
+      "file": "noaa_index.response",
+      "final_url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+      "id": "noaa_index",
+      "retrieved_at": "2026-11-03T23:23:42.709052+00:00",
+      "sha256": "0b2494a0377f6a8780a66f96eb632507309c1892148fde61b8cf152ef1d1c7c5",
+      "status": 200,
+      "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/"
+    },
+    {
+      "bytes": 9585982,
+      "content_type": "application/gzip",
+      "file": "noaa_2018.response",
+      "final_url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2018_c20260323.csv.gz",
+      "id": "noaa_2018",
+      "retrieved_at": "2026-11-03T23:23:43.163487+00:00",
+      "sha256": "19702480f50cd2a8dacce5e57891feba156afb87b1ea5cbb4eaeda69d2b964a4",
+      "status": 200,
+      "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2018_c20260323.csv.gz"
+    },
+    {
+      "bytes": 11817849,
+      "content_type": "application/gzip",
+      "file": "noaa_2022.response",
+      "final_url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2022_c20260625.csv.gz",
+      "id": "noaa_2022",
+      "retrieved_at": "2026-11-03T23:23:44.061269+00:00",
+      "sha256": "7d6b79d0049a6edec96b061738289daddba90be26fc9afe7b0a6fd617f21452e",
+      "status": 200,
+      "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2022_c20260625.csv.gz"
+    },
+    {
+      "bytes": 481,
+      "content_type": "text/html",
+      "file": "doe_program.response",
+      "final_url": "https://doe417.energy.gov/",
+      "id": "doe_program",
+      "retrieved_at": "2026-11-03T23:23:45.017315+00:00",
+      "sha256": "f3c1a3d8b73b5e7f6e5c9e8fcfc5e09f08a30914d0b1c734cba75cafdb426f45",
+      "status": 200,
+      "url": "https://doe417.energy.gov/"
+    },
+    {
+      "bytes": 481,
+      "content_type": "text/html",
+      "file": "doe_summary.response",
+      "final_url": "https://doe417.energy.gov/annual_summary.aspx",
+      "id": "doe_summary",
+      "retrieved_at": "2026-11-03T23:23:45.435018+00:00",
+      "sha256": "f3c1a3d8b73b5e7f6e5c9e8fcfc5e09f08a30914d0b1c734cba75cafdb426f45",
+      "status": 200,
+      "url": "https://doe417.energy.gov/annual_summary.aspx"
+    }
+  ],
+  "version": "risk-source-audit-v1"
+}

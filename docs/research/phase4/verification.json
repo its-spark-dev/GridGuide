@@ -1,0 +1,33 @@
+{
+  "base_sha": "976a67f68dfc55380ed7f157560e51cf73abf5e2",
+  "browser_tests": 49,
+  "checks": {
+    "api_type_regeneration": "byte_unchanged",
+    "browser": "passed",
+    "cached_source_audit_reproduction": "byte_identical",
+    "decision_replay": "byte_identical",
+    "decision_without_raw_data_or_network": "passed",
+    "dependency_consistency": "passed",
+    "documentation_links": "passed",
+    "golden_cli": "passed",
+    "production_build": "passed",
+    "protected_paths": "unchanged",
+    "python": "passed",
+    "source_audit": "completed",
+    "source_hashes": "four_pins_match"
+  },
+  "limits": [
+    "Validation fixtures are artificial software tests, not empirical prediction evidence.",
+    "No model fitted or predictive metrics calculated; no real-data split was validated.",
+    "Fresh web responses may change; exact audit replay needs the pinned ignored cache."
+  ],
+  "new_research_tests": 20,
+  "python_tests": 301,
+  "source_sha256": {
+    "Data1.zip": "08ac47b7dd7f43cde56509644d7292d0b6978dcd62300912b4ecf0a2c3c6eca3",
+    "Data2.zip": "13bea1c84636989a6475f481d67f25b25a17fcac8b77f674a5157e3a1d105f00",
+    "Install_Labor_HackOHIO.xlsx": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b",
+    "matched_upstream.zip": "13f8d9da49843c959059b4074417c47671105131cdc4bfe9daf7b534e5f522c3"
+  },
+  "version": "g4-verification-v1"
+}
