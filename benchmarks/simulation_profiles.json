@@ -1,0 +1,14 @@
+{
+  "version": "simulation-profiles-v1",
+  "classification": "scenario assumption",
+  "calibrated_to_observations": false,
+  "profiles": {
+    "deterministic-v1": {"family":"deterministic","sigma":0.0,"shared":false,"hold_hours":0},
+    "independent-025-v1": {"family":"lognormal","sigma":0.25,"shared":false,"hold_hours":0},
+    "independent-050-v1": {"family":"lognormal","sigma":0.5,"shared":false,"hold_hours":0},
+    "shared-025-v1": {"family":"lognormal","sigma":0.25,"shared":true,"hold_hours":0},
+    "shared-050-v1": {"family":"lognormal","sigma":0.5,"shared":true,"hold_hours":0},
+    "storm-hold-v1": {"family":"lognormal","sigma":0.5,"shared":true,"hold_hours":4},
+    "uniform-sensitivity-v1": {"family":"uniform","sigma":0.0,"shared":false,"hold_hours":0}
+  }
+}
