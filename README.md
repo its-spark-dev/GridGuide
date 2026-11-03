@@ -114,7 +114,7 @@ npm --prefix frontend ci
 Terminal 1 — backend:
 
 ```sh
-GRIDGUIDE_AI_PROVIDER=none .venv/bin/python -m uvicorn backend.api:app --host 127.0.0.1 --port 8000
+GRIDGUIDE_MODE=challenge-local GRIDGUIDE_AI_PROVIDER=none .venv/bin/python -m uvicorn backend.runtime:app --host 127.0.0.1 --port 8000
 ```
 
 Wait for startup preparation. Terminal 2 — frontend:

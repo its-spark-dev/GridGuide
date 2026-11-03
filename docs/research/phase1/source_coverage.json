@@ -1,0 +1,156 @@
+{
+  "complete_reverse_spatial_candidate_observations": 28,
+  "damage": {
+    "candidate_observations": 139,
+    "classification": "prototype policy",
+    "direct_identifier_join": false,
+    "historical_only": true,
+    "max_distance_m": 25.0,
+    "min_runner_up_gap_m": 10.0,
+    "near_metadata_verified": true,
+    "near_method": "PLANAR",
+    "near_search_radius": "200 Feet",
+    "near_target_layer": "Primary_ExportFeatures",
+    "observations": 1659,
+    "policy_version": "historical-pole-device-spatial-v1",
+    "reasons": {
+      "ambiguous_circuit_crosswalk": 165,
+      "device_ambiguous": 72,
+      "device_unmatched": 29,
+      "missing_or_conflicting_pole_location_bridge": 30,
+      "no_same_type_circuit_station_device": 3,
+      "pole_ambiguous": 20,
+      "pole_unmatched": 6,
+      "unresolved_typed_equipment_identity": 109,
+      "unsupported_asset_type": 1228
+    },
+    "reverse_dependencies_validated": false,
+    "statuses": {
+      "spatial_candidate": 139,
+      "unavailable": 1520
+    },
+    "unique_candidate_assets": 131
+  },
+  "damage_quality": {
+    "default_event_labels": 1659,
+    "not_repaired_with_repair_date": 76,
+    "observed_outage_duration_targets": null,
+    "reports": 1659,
+    "same_day_report_and_repair": 500,
+    "verified_non_outage_controls": null,
+    "zero_incident_ids": 1659,
+    "zero_outage_ids": 1659
+  },
+  "implementation_sha256": {
+    "backend/damage.py": "1f64c4444460df56ebf84b8a98d69c3086b50c6d0532701251f03d0676617787",
+    "backend/data.py": "c3a1de7f6428505f0663c7b910704e47c36aa50450fc2a80e96f4a35440076da",
+    "backend/network.py": "339d8e1f656e1c359fd627f8f217a64d1b8d33c1e37fff547a9f3f6e1121d827",
+    "scripts/phase1_evidence.py": "b630e2623256ef7b8710ef285cb378d010cacac70e6ee090061eb9e7da34fe7a"
+  },
+  "network": {
+    "all_gis_ids_resolved_paths": 52322,
+    "by_kind": {
+      "Circuit Breaker": {
+        "fully_verified_reverse_assets": 2,
+        "indexed_assets": 110,
+        "node_failure_reasons": {},
+        "topology_memberships": 117599,
+        "unique_gis_id_assets": 0
+      },
+      "Distribution": {
+        "fully_verified_reverse_assets": 6103,
+        "indexed_assets": 25302,
+        "node_failure_reasons": {
+          "GIS_location_conflict": 2,
+          "GIS_parent_conflict": 1715,
+          "circuit_crosswalk_conflict": 5621,
+          "missing_GIS_ID": 2
+        },
+        "topology_memberships": 117599,
+        "unique_gis_id_assets": 25300
+      },
+      "Fuse": {
+        "fully_verified_reverse_assets": 1990,
+        "indexed_assets": 6757,
+        "node_failure_reasons": {
+          "GIS_parent_conflict": 10,
+          "circuit_crosswalk_conflict": 1601,
+          "missing_GIS_ID": 101,
+          "multiple_parents": 36
+        },
+        "topology_memberships": 154821,
+        "unique_gis_id_assets": 6656
+      },
+      "Recloser (Electronic)": {
+        "fully_verified_reverse_assets": 0,
+        "indexed_assets": 36,
+        "node_failure_reasons": {
+          "missing_GIS_ID": 36
+        },
+        "topology_memberships": 28399,
+        "unique_gis_id_assets": 0
+      },
+      "Recloser (Hydraulic)": {
+        "fully_verified_reverse_assets": 0,
+        "indexed_assets": 286,
+        "node_failure_reasons": {
+          "missing_GIS_ID": 286,
+          "multiple_parents": 9
+        },
+        "topology_memberships": 64910,
+        "unique_gis_id_assets": 0
+      },
+      "Sectionalizer": {
+        "fully_verified_reverse_assets": 0,
+        "indexed_assets": 1,
+        "node_failure_reasons": {
+          "missing_GIS_ID": 1
+        },
+        "topology_memberships": 148,
+        "unique_gis_id_assets": 0
+      },
+      "Step": {
+        "fully_verified_reverse_assets": 0,
+        "indexed_assets": 108,
+        "node_failure_reasons": {
+          "missing_GIS_ID": 108,
+          "multiple_parents": 15
+        },
+        "topology_memberships": 6614,
+        "unique_gis_id_assets": 0
+      }
+    },
+    "customer_rows": 117642,
+    "customer_rows_missing_paths": 47,
+    "fully_verified_paths": 40779,
+    "fully_verified_reverse_assets": 8095,
+    "path_failure_reasons": {
+      "GIS_location_conflict": 12,
+      "GIS_parent_conflict": 7754,
+      "circuit_crosswalk_conflict": 16829,
+      "customer_terminal_circuit_conflict": 7,
+      "customer_transformer_location_conflict": 39,
+      "device_customer_circuit_conflict": 7,
+      "missing_GIS_ID": 65277,
+      "missing_customer": 4,
+      "multiple_parents": 2123,
+      "path_alias_station_conflict": 5,
+      "unsupported_type": 64816
+    },
+    "topology_assets": 32600,
+    "topology_edges": 32551,
+    "topology_memberships": 490090,
+    "topology_paths": 117599,
+    "topology_paths_missing_customers": 4,
+    "unique_customer_premises": 117642
+  },
+  "source_sha256": {
+    "Data1.zip": "08ac47b7dd7f43cde56509644d7292d0b6978dcd62300912b4ecf0a2c3c6eca3",
+    "Data2.zip": "13bea1c84636989a6475f481d67f25b25a17fcac8b77f674a5157e3a1d105f00",
+    "Install_Labor_HackOHIO.xlsx": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b",
+    "matched_upstream.zip": "13f8d9da49843c959059b4074417c47671105131cdc4bfe9daf7b534e5f522c3"
+  },
+  "source_snapshot": "aep-hack26-28a5520",
+  "version": "phase1-evidence-v1",
+  "warning": "Failure categories overlap and must not be added. Spatial candidates are hypotheses, not direct asset identity, observed outages or duration labels."
+}

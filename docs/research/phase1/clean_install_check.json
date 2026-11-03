@@ -1,0 +1,35 @@
+{
+  "artifact_sha256": "97a02b353d5b1c6db2729d1b069acf0f4059f0fa731d3b13b1d5ce7dc435612b",
+  "checks": [
+    "fresh virtual environment installed requirements-synthetic.txt",
+    "pip check passed",
+    "six allowlisted scenarios returned",
+    "missing evidence withheld",
+    "external AI disabled",
+    "no challenge files in extraction"
+  ],
+  "limitations": [
+    "Dependency acquisition used network; server endpoints were local. Separate subprocess tests forbid outgoing network/source reads.",
+    "Transitive versions recorded for this check; full release locking is later work.",
+    "Catalog only, not the frontend or a hosted deployment."
+  ],
+  "passed": true,
+  "python": "Python 3.12.14",
+  "resolved_dependencies": [
+    "annotated-types==0.8.0",
+    "anyio==4.16.0",
+    "click==8.5.0",
+    "fastapi==0.119.1",
+    "h11==0.16.0",
+    "idna==3.20",
+    "pydantic==2.12.3",
+    "pydantic_core==2.41.4",
+    "starlette==0.48.0",
+    "typing-inspection==0.4.4",
+    "typing_extensions==4.16.0",
+    "uvicorn==0.38.0"
+  ],
+  "review_date": "2026-11-03",
+  "transport": "real loopback HTTP, uvicorn in isolated extracted directory",
+  "version": "phase1-clean-install-check-v1"
+}

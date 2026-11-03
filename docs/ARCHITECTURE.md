@@ -1,5 +1,39 @@
 # Architecture
 
+## v1.1 Phase 1 mode boundary
+
+The canonical entrypoint is `backend.runtime:app`. `GRIDGUIDE_MODE=challenge-local`
+explicitly selects the preserved application described below; invalid mode values
+fail startup. The old `backend.api:app` remains a challenge-only compatibility entrypoint.
+Source pins, preparation, numerical behavior and UI routes are unchanged. Health now
+identifies the active mode and prepared capabilities.
+
+The default `synthetic-demo` prepares a hash-pinned, immutable fictional catalog once
+through `backend/scenarios.py` and `backend/synthetic_api.py`. It serves
+`GET /api/v2/scenarios`, `GET /api/v2/scenarios/{scenario_id}`, and `/api/v2/health`
+(with `/api/health` as an alias). It imports no challenge loader, source configuration
+or AI provider. Missing/corrupt fixtures withhold startup; no source fallback exists.
+Every definition has a revision, evidence lineage and canonical input fingerprint.
+Incomplete dependencies and blocked clearance stay unavailable.
+
+This is **catalog-only Phase 1**, not the future synthetic customer frontend.
+The existing frontend still requires challenge-local mode. Numerical v2 routes,
+benchmarks, browser workflows and hosting remain later gated work. One mode is
+selected per process; no second service or database is introduced.
+
+Public contracts stay centralized in `backend/contracts.py`. The export script merges
+both modes' schemas for TypeScript generation; each running app's OpenAPI serves only
+its own routes. Unchanged ordinal thresholds moved to `backend/risk_rules.py`,
+re-exported by `backend/config.py`, removing source configuration from contract imports.
+
+`scripts/check_phase1_artifact.py` builds a catalog-only ZIP using an exact allowlist,
+checksums and entry/content checks. Extracted startup requires no challenge files or
+external network. No Git history, raw/processed data, private caches, source configuration
+or provider code enters the archive. Notices are preserved; no license is added and
+historical repository exposures remain. See [G1](planning/V1_1_0_PHASE1.md).
+
+## Preserved challenge-local application
+
 React/TypeScript + Leaflet consumes one Python/FastAPI service. Pinned local sources prepare once at startup. Deterministic backend rules own all numerical results and customer policy; optional Gemini selects explanation references. No database, external weather, notification delivery, authentication or training pipeline is involved.
 
 | Module | Responsibility / boundary |

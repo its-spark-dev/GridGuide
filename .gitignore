@@ -5,3 +5,7 @@ __pycache__/
 node_modules/
 *_output.txt
 .idea/
+# v1.1 evidence work: never publish downloaded observations or private derivations.
+data/external/
+data/prepared/
+artifacts/

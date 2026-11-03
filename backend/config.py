@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from datetime import date
 from decimal import Decimal
 from pathlib import Path
+from .risk_rules import risk_band_for_score  # Existing import compatibility.
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "raw"
@@ -36,15 +37,3 @@ class Assumptions:
 
 
 ASSUMPTIONS = Assumptions()
-
-
-def risk_band_for_score(score: int) -> str:
-    if score == 0:
-        return "LOW"
-    if 1 <= score <= 2:
-        return "MODERATE"
-    if 3 <= score <= 4:
-        return "HIGH"
-    if score == 5:
-        return "SEVERE"
-    raise ValueError("Risk score is outside the v1 range")

@@ -1,5 +1,19 @@
 # Requirements traceability
 
+## v1.1 Phase 1 review scope
+
+| Requirement | Evidence | Remaining limit |
+|---|---|---|
+| Preserve roadmap and refinements | [Master plan](planning/V1_1_0_MASTER_ROADMAP.md) | Later phases need approval |
+| Licensing, coverage, target feasibility | [Findings and register](research/phase1/FEASIBILITY.md), reproducible aggregate audit | External payloads/coverage unvalidated; no new outcome labels |
+| Independent synthetic startup | Six-case pinned catalog, strict contracts, lazy mode selection, extracted tests | Catalog-only API; browser remains challenge-local |
+| Publication boundary | Exact allowlist, checksum/content checks, rejection tests | No history remediation, new license or hosted release |
+| Baseline preservation | Source pins, golden/API/browser regressions, v1.0.0 identity | Source-dependent tests still require authorized files |
+
+Evidence and owner review status are in [G1](planning/V1_1_0_PHASE1.md).
+
+## Preserved challenge requirements
+
 Coverage review: dedicated Q2/Q4 pass, October 24, 2026. Later test/build checks are recorded in [release verification](releases/VERIFICATION.md). Detailed audit: [Q2/Q4 decision support](Q2_Q4_DECISION_SUPPORT.md). Source authority and original requirement IDs: [CHALLENGE_REQUIREMENTS.md](CHALLENGE_REQUIREMENTS.md). The pre-implementation matrix and evidence classes are in [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md). Operational correctness beyond the supplied evidence is not implied by passing prototype tests.
 
 | Requirement | Implemented evidence | Coverage / remaining limit |

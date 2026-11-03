@@ -1,0 +1,8 @@
+{
+  "artifact_sha256": "97a02b353d5b1c6db2729d1b069acf0f4059f0fa731d3b13b1d5ce7dc435612b",
+  "catalog_sha256": "907aa9493c9650a875eafeb7fedd67267d320d9f0ba563407ca17851a6c5dee9",
+  "files": 12,
+  "passed": true,
+  "scope": "Catalog API only; no frontend, source datasets, Git history, research observations or provider code. Not a repository-history remediation or a license grant.",
+  "version": "phase1-artifact-check-v1"
+}
