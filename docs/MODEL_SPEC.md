@@ -1,5 +1,15 @@
 # GridGuide model specification — customer v2 / restoration-plan v1
 
+Phase 1 of v1.1.0 preserves all numerical rules below. Its independent fictional
+catalog uses `synthetic-scenario-v1` definitions, not legacy source DTOs. Synthetic
+repair effort is explicitly authored total person-hours, neither workbook-derived nor
+multiplied by 4.5. No synthetic elapsed-time, risk or release calculation is implemented.
+Numerical model version and observed outcomes remain null. Crew availability, supply,
+topology and effort bind explicit evidence; repair precedence is separate from customer
+supply dependencies. See the [fixture specification](../data/synthetic/README.md) and
+[feasibility findings](research/phase1/FEASIBILITY.md). Legacy risk thresholds were
+extracted unchanged into `backend/risk_rules.py` to decouple contracts from source configuration.
+
 Authority: the user supplied authoritative excerpts from the HackOHI/O 2026 AEP AI Outage Concierge Data Guide. They resolve direct-labor × 4.5 → total person-hours, including travel, safety discussions and setup. They do not specify actual conversion efficiency, default crew composition, switching feasibility, alert thresholds, clearance duration or priority weights. See [evidence ledger and requirement matrix](AEP_REALIGNMENT.md). No original guide PDF or page references are claimed.
 
 ## 1. Source, damage and dependency identity

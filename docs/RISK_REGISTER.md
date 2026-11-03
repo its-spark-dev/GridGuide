@@ -1,5 +1,21 @@
 # Remaining risks — AEP Q2/Q4 decision support
 
+## v1.1 Phase 1 additions
+
+| Risk | Control / remaining limit |
+|---|---|
+| Metadata mistaken for licensed observations | Separate licensing, coverage and inclusion gates; no observation checksums invented |
+| Fiction inherits source claims | Separate strict fictional contracts, consistent origin/classification pairs, null outcomes and no legacy numerical routes |
+| Challenge data enters a public artifact | Exact allowlist, symlink/path/extra-entry rejection, manifest/content checks and extracted startup tests; original history remains exposed |
+| Wrong startup mode | Default synthetic, explicit challenge-local, fail-closed catalog; legacy named entrypoint stays challenge-only |
+| Fixtures mistaken for performance benchmarks | Six Phase 1 cases test contracts/isolation only; Phase 2 evaluation remains unstarted |
+| Research expands indefinitely | Bounded metadata decisions, valid no-go outcomes and recalibrated provisional estimates; partner/paid data are not dependencies |
+
+See [G1](planning/V1_1_0_PHASE1.md). Controls do not establish operational safety,
+deployment readiness, authenticated audit infrastructure or resolved source licensing.
+
+## Preserved challenge-local risks
+
 The AEP guide resolves explicitly stated labor semantics, crew-size allowance and permission for reasonable spatial relationships; it does not establish operational accuracy. Runtime verification and source-defensible conditional reasoning do not prove operational accuracy or complete the observed ARCOS damage chain. See [coverage](REQUIREMENTS_TRACEABILITY.md) and [release verification](releases/VERIFICATION.md). This register addresses model and runtime risks; the [publication assessment](releases/PUBLIC_RELEASE_AUDIT.md#findings) separately records unresolved exposures in tracked data.
 
 | Risk / unresolved evidence | Severity | Current handling |

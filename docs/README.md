@@ -42,6 +42,10 @@ Start with the [project walkthrough](../README.md#product-walkthrough) or [local
 
 [Install and run](../README.md#getting-started) · [Optional Gemini configuration](GEMINI_PROVIDER.md#local-credential-and-launch-setup) · [Contributing](../CONTRIBUTING.md) · [Published v1.0.0 release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0)
 
+## v1.1.0 phased work
+
+The [approved master roadmap](planning/V1_1_0_MASTER_ROADMAP.md) preserves the full scope and controlling refinements. Only Phase 1 is implemented for review: see the [G1 checklist](planning/V1_1_0_PHASE1.md), [feasibility findings](research/phase1/FEASIBILITY.md), and [isolated catalog instructions](research/phase1/ARTIFACT_README.md). Later phases require their review gates; this is not a v1.1.0 release announcement.
+
 ## Historical development records
 
 The original plans, checkpoints, and release records remain at their existing paths. Their test totals, working-tree status, demo scripts, and provider observations describe their dates, not pending work or current service guarantees.

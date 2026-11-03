@@ -1,0 +1,405 @@
+{
+  "datasets": [
+    {
+      "availability": "local_pinned",
+      "classification": "source-derived",
+      "coverage": "117599 indexed paths; 40779 completely validated; 8093 physical assets have complete reverse membership. 1659 damage reports, 139 spatial candidates, 28 with complete reverse membership. See regenerated coverage report.",
+      "data_use_feasibility": "GO for existing owner-authorized local regression and explicitly declared scenarios only; exclude from new synthetic publication artifacts.",
+      "files": [
+        {
+          "checksum_status": "pinned_local_bytes",
+          "name": "Data1.zip",
+          "sha256": "08ac47b7dd7f43cde56509644d7292d0b6978dcd62300912b4ecf0a2c3c6eca3"
+        },
+        {
+          "checksum_status": "pinned_local_bytes",
+          "name": "Data2.zip",
+          "sha256": "13bea1c84636989a6475f481d67f25b25a17fcac8b77f674a5157e3a1d105f00"
+        },
+        {
+          "checksum_status": "pinned_local_bytes",
+          "name": "Install_Labor_HackOHIO.xlsx",
+          "sha256": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b"
+        },
+        {
+          "checksum_status": "pinned_local_bytes",
+          "name": "matched_upstream.zip",
+          "sha256": "13f8d9da49843c959059b4074417c47671105131cdc4bfe9daf7b534e5f522c3"
+        }
+      ],
+      "id": "aep-challenge",
+      "included_in_public_artifact": false,
+      "license_evidence": [
+        "https://github.com/hackohio/aep_challenge_hack26/tree/28a5520262b71a9fbf753b3031abf67781ca66ff",
+        "docs/releases/PUBLIC_RELEASE_AUDIT.md",
+        "THIRD_PARTY_NOTICES.md"
+      ],
+      "license_status": "No explicit redistribution grant established; existing owner retention decision is not a license grant.",
+      "missingness": "534 unresolved non-circuit topology nodes in original audit; 60 multiparent nodes; contradictory crosswalks. Failure categories overlap. 76 unrepaired flags have repair dates; 1659 outage/incident IDs are zero.",
+      "observation_process": "Selected historical damage reports plus inventory; reporting completeness and exposed non-outage population are unknown.",
+      "permitted_claims": [
+        "Pinned-source integrity and bounded validated dependency coverage",
+        "Conditional effort under declared replacement scope"
+      ],
+      "prohibited_claims": [
+        "Observed current outages",
+        "Damage reports as outage-positive/negative labels",
+        "Date differences as repair or customer restoration duration",
+        "Spatial matches as electrical truth"
+      ],
+      "schema_and_units": [
+        "Typed string equipment/premise identifiers and ordered upstream paths",
+        "Mixed EPSG:4326 and EPSG:3857 geometry; no inferred electrical edges",
+        "Historical damage dates and status flags; no validated outage target",
+        "Workbook direct labor multiplied by 4.5 once gives person-hours, not elapsed time"
+      ],
+      "sources": [
+        "https://github.com/hackohio/aep_challenge_hack26/tree/28a5520262b71a9fbf753b3031abf67781ca66ff",
+        "docs/DATA_AUDIT.md",
+        "docs/MODEL_SPEC.md"
+      ],
+      "spatial_resolution": "Precise source customer/equipment/facility geometry remains private to local processing.",
+      "temporal_resolution": "Static inventory; damage report and repair dates have day precision, not outage timestamps.",
+      "unresolved_requirements": [
+        "Redistribution permission for any new data distribution",
+        "Observed outage/negative exposure panel",
+        "Verified restoration/crew/task timestamps",
+        "Original challenge PDF and Data Guide attachments are not present in checkout"
+      ],
+      "version": "aep-hack26-28a5520"
+    },
+    {
+      "availability": "local_pinned",
+      "classification": "scenario assumption",
+      "coverage": "Six boundary fixtures: simple, branching, overlap, blocked, missing evidence, critical-service tradeoff. Not a representative benchmark or population.",
+      "data_use_feasibility": "GO for fictional contract/isolation testing and the Phase 1 catalog artifact; no predictive or operational validation.",
+      "files": [
+        {
+          "checksum_status": "pinned_local_bytes",
+          "name": "catalog.json",
+          "sha256": "907aa9493c9650a875eafeb7fedd67267d320d9f0ba563407ca17851a6c5dee9"
+        }
+      ],
+      "id": "synthetic-fixtures",
+      "included_in_public_artifact": true,
+      "license_evidence": [
+        "data/synthetic/README.md",
+        "THIRD_PARTY_NOTICES.md"
+      ],
+      "license_status": "Project-authored fixtures under the owner's implementation authorization. No new project-wide license or third-party grant is asserted.",
+      "missingness": "One deliberately unresolved topology case and missing effort; blocked access retains unknown clearance; actual efficiency and outcomes are always null.",
+      "observation_process": "Independently authored literal examples, not observations, samples, or transformations of challenge data.",
+      "permitted_claims": [
+        "Valid-by-construction fictional definitions",
+        "Unavailable evidence remains explicit"
+      ],
+      "prohibited_claims": [
+        "Observed outages or restoration outcomes",
+        "Utility topology validation",
+        "Empirical model performance"
+      ],
+      "schema_and_units": [
+        "SyntheticScenario v1; fictional string identities and explicit path/repair relations",
+        "Independent total repair person-hours; no source workbook or duration labels"
+      ],
+      "sources": [
+        "scripts/generate_synthetic.py",
+        "data/synthetic/README.md"
+      ],
+      "spatial_resolution": "No coordinates or real geography.",
+      "temporal_resolution": "No real observation dates; crew availability is a modeled response-origin assumption.",
+      "unresolved_requirements": [
+        "Later benchmark preregistration is separate from these boundary fixtures"
+      ],
+      "version": "synthetic-catalog-v1"
+    },
+    {
+      "availability": "metadata_only",
+      "classification": "source-derived",
+      "coverage": "Landing-page metadata reviewed; no observation files or target county/window coverage validated in Phase 1. Annual state coverage does not prove a complete county target window.",
+      "data_use_feasibility": "CONDITIONAL, NOT CLEARED: promising county research candidate only. Metadata/Globus discovery is not validated acquisition, license clearance, or label feasibility.",
+      "files": [
+        {
+          "checksum_status": "not_acquired",
+          "name": "county observations and coverage files",
+          "sha256": null
+        }
+      ],
+      "id": "ornl-eagle-i",
+      "included_in_public_artifact": false,
+      "license_evidence": [
+        "https://doi.ccs.ornl.gov/dataset/ccec86f0-e144-5de8-aee0-fb26028b26e1",
+        "https://api.datacite.org/dois/10.13139/ORNLNCCS/1975202"
+      ],
+      "license_status": "Dataset redistribution/use terms for the exact downloadable payload remain unverified; article terms are not substituted for dataset terms.",
+      "missingness": "Unverified county-time observation completeness, reporting changes, missing-versus-zero semantics and publication latency. No negative labels inferred.",
+      "observation_process": "ETL from utilities' public outage maps; coverage varies and acquisition failures can resemble missing/zero reports.",
+      "permitted_claims": [
+        "A county-level research candidate exists"
+      ],
+      "prohibited_claims": [
+        "Verified negative windows",
+        "Premise outage probabilities",
+        "Repair-task durations",
+        "Empirical validation before acquisition and coverage audit"
+      ],
+      "schema_and_units": [
+        "Documented FIPS/county/state, customers without power, timestamp",
+        "Counts of reported customers, not individual outage identities"
+      ],
+      "sources": [
+        "https://doi.ccs.ornl.gov/dataset/ccec86f0-e144-5de8-aee0-fb26028b26e1",
+        "https://doi.org/10.1038/s41597-024-03095-5"
+      ],
+      "spatial_resolution": "County aggregates; no premise/equipment crosswalk.",
+      "temporal_resolution": "Documented 15-minute observations during 2014-2022.",
+      "unresolved_requirements": [
+        "Exact files/checksums and payload terms",
+        "County-time quality masks and zero semantics",
+        "As-of latency and event grouping",
+        "Complete target windows and adequate held-out events"
+      ],
+      "version": "DOI 10.13139/ORNLNCCS/1975202; 2014-2022 release"
+    },
+    {
+      "availability": "metadata_only",
+      "classification": "source-derived",
+      "coverage": "Metadata/schema inspected only. No selected period/geography observation completeness established.",
+      "data_use_feasibility": "CONDITIONAL for retrospective grouping/context after acquisition, attribution and zone/time audits; NO-GO as standalone outage labels or future-available predictors.",
+      "files": [
+        {
+          "checksum_status": "not_acquired",
+          "name": "StormEvents details/locations/fatalities snapshot",
+          "sha256": null
+        }
+      ],
+      "id": "noaa-storm-events",
+      "included_in_public_artifact": false,
+      "license_evidence": [
+        "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00510/html",
+        "https://www.ncei.noaa.gov/sites/default/files/2023-12/NCEI%20PD-10-2-02%20-%20Open%20Data%20Policy%20Signed.pdf"
+      ],
+      "license_status": "NCEI open-data policy describes US public-domain data; dataset metadata requires citation and cautions about third-party source information. Exact snapshot review still required.",
+      "missingness": "Unreported events and revised narratives; reports can be unverified. No outage negatives or real-time availability implied.",
+      "observation_process": "Reported significant weather phenomena from NWS and other credited sources; not an exhaustive exposure or outage panel.",
+      "permitted_claims": [
+        "Potential retrospective episode grouping"
+      ],
+      "prohibited_claims": [
+        "Storm report implies a verified outage",
+        "Post-event severity available before prediction",
+        "County FIPS inferred from every zone identifier"
+      ],
+      "schema_and_units": [
+        "EPISODE_ID and EVENT_ID connect retrospective storm records",
+        "CZ_TYPE distinguishes counties, forecast zones and marine areas; CZ_FIPS is not always a county FIPS",
+        "BEGIN/END_DATE_TIME and CZ_TIMEZONE require timezone validation"
+      ],
+      "sources": [
+        "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00510/html",
+        "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/Storm-Data-Bulk-csv-Format.pdf"
+      ],
+      "spatial_resolution": "County, forecast-zone or marine report geography; explicit crosswalk required.",
+      "temporal_resolution": "Event start/end times; retrospective monthly product, metadata notes up to 120-day delay.",
+      "unresolved_requirements": [
+        "Pinned observation snapshot and source-specific terms",
+        "Zone-to-county and time conversion validation",
+        "Outage observations from an independent compatible source"
+      ],
+      "version": "C00510 metadata and bulk-format documentation reviewed 2026-11-03; observation snapshot not acquired"
+    },
+    {
+      "availability": "metadata_only",
+      "classification": "source-derived",
+      "coverage": "Program landing page identified; rendered page supplied no readable report table during this review. No records or observation coverage validated.",
+      "data_use_feasibility": "NOT CLEARED; corroborating incident context only after source/schema/terms review.",
+      "files": [
+        {
+          "checksum_status": "not_acquired",
+          "name": "public incident-report snapshot",
+          "sha256": null
+        }
+      ],
+      "id": "doe-417",
+      "included_in_public_artifact": false,
+      "license_evidence": [
+        "https://doe417.energy.gov/"
+      ],
+      "license_status": "Exact public report payload terms not established; no blanket permission inferred from a government-hosted landing page.",
+      "missingness": "Reporting thresholds, revisions and omissions prevent interpreting absent reports as no outage.",
+      "observation_process": "Reportable electric incidents/emergencies, not all interruptions or a complete non-outage denominator.",
+      "permitted_claims": [
+        "Potential corroborating incident source"
+      ],
+      "prohibited_claims": [
+        "Complete outage/non-outage panel",
+        "Customer restoration observations"
+      ],
+      "schema_and_units": [
+        "Incident/emergency reporting context; exact downloadable schema not verified"
+      ],
+      "sources": [
+        "https://doe417.energy.gov/"
+      ],
+      "spatial_resolution": "Incident/report geography, not premise membership.",
+      "temporal_resolution": "Incident reporting; exact timestamp semantics not verified.",
+      "unresolved_requirements": [
+        "Accessible pinned public report files and terms",
+        "Report scope and timestamp semantics"
+      ],
+      "version": "Reporting-program reference reviewed 2026-11-03; no data release acquired"
+    },
+    {
+      "availability": "not_provided",
+      "classification": "unavailable",
+      "coverage": "No partner observations supplied.",
+      "data_use_feasibility": "NO-GO now; optional and never a release dependency.",
+      "files": [
+        {
+          "checksum_status": "not_acquired",
+          "name": "partner observations",
+          "sha256": null
+        }
+      ],
+      "id": "optional-partner",
+      "included_in_public_artifact": false,
+      "license_evidence": [],
+      "license_status": "No access agreement or data-use permission supplied.",
+      "missingness": "All prerequisites unavailable.",
+      "observation_process": "Unavailable",
+      "permitted_claims": [
+        "Missing-data requirements can be documented"
+      ],
+      "prohibited_claims": [
+        "Utility partnership, access or deployment"
+      ],
+      "schema_and_units": [
+        "Required schema specified in feasibility document; no supplied data"
+      ],
+      "sources": [],
+      "spatial_resolution": "Unavailable",
+      "temporal_resolution": "Unavailable",
+      "unresolved_requirements": [
+        "Written permitted uses and retention/export rules",
+        "Stable event/asset identities and explicit observation coverage",
+        "Outage onset/restoration, task and crew timestamps with censoring",
+        "Privacy-reviewed crosswalks and exposed non-outage controls"
+      ],
+      "version": "none"
+    }
+  ],
+  "feasibility_decisions": [
+    {
+      "coverage_gate": "No eligible labeled observation panel.",
+      "decision": "no_go_current_data",
+      "evidence": [
+        "aep-challenge"
+      ],
+      "horizon_and_origin": "24 hours after a declared prediction issue time; unavailable in the challenge extract",
+      "inclusion_rule": "Requires verified positives AND observed non-outage windows with known exposure and event grouping.",
+      "licensing_gate": "Challenge local analysis only; no new redistribution permission.",
+      "missing_prerequisites": [
+        "Confirmed premise outages",
+        "Verified non-outage controls and coverage",
+        "Prediction-time features and timestamps"
+      ],
+      "observation_process": "Damage reporting is not premise outage surveillance.",
+      "target": "premise_outage_risk",
+      "unit": "probability per premise/window"
+    },
+    {
+      "coverage_gate": "No local observation snapshot or quality mask; county/time completeness and as-of latency unvalidated.",
+      "decision": "conditional_not_cleared",
+      "evidence": [
+        "ornl-eagle-i",
+        "noaa-storm-events",
+        "doe-417"
+      ],
+      "horizon_and_origin": "Next 24 hours; more than 100 reported customers without power for at least one hour",
+      "inclusion_rule": "Complete quality-audited target windows, stable county mapping, event-separated temporal splits; missing windows excluded with counts.",
+      "licensing_gate": "Exact EAGLE-I payload terms remain unverified; no observations redistributed.",
+      "missing_prerequisites": [
+        "Pinned permitted files",
+        "Validated zero/missing semantics and coverage",
+        "Independent event clusters and available-at-time features"
+      ],
+      "observation_process": "Candidate utility-map aggregate observations; acquisition gaps are not negatives.",
+      "target": "county_reported_outage_risk",
+      "unit": "probability per county/24-hour window"
+    },
+    {
+      "coverage_gate": "No compatible measured task outcomes.",
+      "decision": "no_go_current_data",
+      "evidence": [
+        "aep-challenge",
+        "optional-partner"
+      ],
+      "horizon_and_origin": "Actual task start to actual task completion, distinct from report-to-repair dates",
+      "inclusion_rule": "Requires linked task/asset/crew records, start/finish, pauses and censoring; labor rates alone are not labels.",
+      "licensing_gate": "Optional partner terms absent.",
+      "missing_prerequisites": [
+        "Task timestamps and scope",
+        "Crew composition and interruptions",
+        "Observed completed and censored work"
+      ],
+      "observation_process": "No task execution timeline or measured productivity is supplied.",
+      "target": "repair_task_duration",
+      "unit": "elapsed hours per task"
+    },
+    {
+      "coverage_gate": "No observed premise outcomes.",
+      "decision": "no_go_current_data",
+      "evidence": [
+        "aep-challenge",
+        "optional-partner"
+      ],
+      "horizon_and_origin": "Observed outage onset to confirmed restoration; not modeled crew response time",
+      "inclusion_rule": "Requires verified service identity, event membership, onset/restoration and unresolved/censored outcomes.",
+      "licensing_gate": "Partner permission and privacy-reviewed crosswalks absent.",
+      "missing_prerequisites": [
+        "Verified outage and restoration timestamps",
+        "Coverage/censoring definitions",
+        "Permitted private linkage"
+      ],
+      "observation_process": "No premise outage-onset/restoration linkage is supplied.",
+      "target": "customer_restoration_time",
+      "unit": "elapsed hours per premise outage"
+    },
+    {
+      "coverage_gate": "No local audited aggregate time series.",
+      "decision": "conditional_not_cleared",
+      "evidence": [
+        "ornl-eagle-i",
+        "doe-417"
+      ],
+      "horizon_and_origin": "Event-specific aggregate response origin and horizon must be preregistered after coverage validation",
+      "inclusion_rule": "Requires stable reporting coverage, event boundaries, missing-interval rules and explicit censoring.",
+      "licensing_gate": "Exact external payload terms not established.",
+      "missing_prerequisites": [
+        "Pinned permitted observations",
+        "Stable reporting coverage",
+        "Event origin and censoring protocol"
+      ],
+      "observation_process": "Counts can decrease due to recovery, reporting changes or missing utilities; decreases are not individual restoration labels.",
+      "target": "aggregate_outage_recovery",
+      "unit": "county reported-outage counts over elapsed hours"
+    },
+    {
+      "coverage_gate": "Six defined boundary cases only; no statistical coverage claim.",
+      "decision": "go_synthetic_only",
+      "evidence": [
+        "synthetic-fixtures"
+      ],
+      "horizon_and_origin": "No elapsed-time outcome; response origin is an explicitly declared scenario assumption",
+      "inclusion_rule": "Strict schema, unique fictional IDs, explicit graph links, classified evidence, immutable catalog hash.",
+      "licensing_gate": "Owner-authorized new project fixtures; no third-party source data or new project license.",
+      "missing_prerequisites": [],
+      "observation_process": "Literal independent fixture authoring, no observation process.",
+      "target": "synthetic_contract_isolation",
+      "unit": "fictional scenario definition"
+    }
+  ],
+  "review_date": "2026-11-03",
+  "scope": "Evidence and access feasibility only; no training or predictive validation performed.",
+  "version": "phase1-evidence-v1"
+}

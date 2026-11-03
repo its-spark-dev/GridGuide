@@ -3,7 +3,7 @@ from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from .config import risk_band_for_score
+from .risk_rules import risk_band_for_score
 
 Count = Annotated[int, Field(strict=True, ge=0)]
 Access = Literal["clear", "restricted", "blocked"]
@@ -593,3 +593,258 @@ class RestorationPlan(Contract):
     actual_efficiency: None = None
     actual_switching_restorable_premises: None = None
     verified_critical_electrical_dependencies: None = None
+
+
+# v1.1 Phase 1: explicit fictional inputs, never legacy verified-source DTOs.
+SyntheticID = Annotated[str, Field(strict=True, pattern=r"^syn-[a-z0-9-]{1,60}$")]
+PositiveHours = Annotated[float, Field(strict=True, gt=0, le=10000)]
+EvidenceID = Annotated[str, Field(strict=True, pattern=r"^ev-[a-z0-9-]{1,60}$")]
+
+
+class ScenarioEvidence(Contract):
+    id: EvidenceID
+    classification: EvidenceClass
+    origin: Literal["synthetic_definition", "prototype_rule", "missing_evidence"]
+    detail: Annotated[str, Field(min_length=1, max_length=1000)]
+
+    @model_validator(mode="after")
+    def consistent_origin(self):
+        expected = {"synthetic_definition": "scenario assumption",
+                    "prototype_rule": "prototype policy", "missing_evidence": "unavailable"}
+        if self.classification != expected[self.origin]:
+            raise ValueError("Synthetic evidence cannot assert an observed source fact")
+        return self
+
+
+class SyntheticAsset(Contract):
+    id: SyntheticID
+    kind: Literal["supply_terminal", "fuse", "transformer", "unresolved"]
+    identity_status: Literal["defined_in_fixture", "unresolved"]
+    evidence_ref: EvidenceID
+
+    @model_validator(mode="after")
+    def identity_matches_kind(self):
+        if (self.kind == "unresolved") != (self.identity_status == "unresolved"):
+            raise ValueError("Unresolved equipment must remain explicitly unresolved")
+        return self
+
+
+class SyntheticLink(Contract):
+    downstream_id: SyntheticID
+    upstream_id: SyntheticID
+    status: Literal["defined_in_fixture", "unresolved"]
+    evidence_ref: EvidenceID
+
+
+class SyntheticCustomerPath(Contract):
+    customer_id: SyntheticID
+    asset_ids: Annotated[tuple[SyntheticID, ...], Field(min_length=1, max_length=25)]
+    evidence_ref: EvidenceID
+
+
+class SyntheticRepair(Contract):
+    id: SyntheticID
+    asset_id: SyntheticID
+    # Independently authored TOTAL effort; no hidden rate or multiplier conversion.
+    repair_person_hours: PositiveHours | None
+    access: Access
+    prerequisite_ids: tuple[SyntheticID, ...] = ()
+    scope_evidence_ref: EvidenceID
+    labor_evidence_ref: EvidenceID
+    access_evidence_ref: EvidenceID
+    precedence_evidence_ref: EvidenceID
+
+
+class SyntheticCriticalService(Contract):
+    id: SyntheticID
+    customer_id: SyntheticID
+    relationship: Literal["explicit_fictional_dependency"] = "explicit_fictional_dependency"
+    evidence_ref: EvidenceID
+
+
+class SyntheticCrewAssumptions(Contract):
+    count: Annotated[int, Field(strict=True, ge=1, le=4)] = 1
+    people_per_crew: CrewSize = 4
+    available_at_hours: Annotated[tuple[Annotated[float, Field(strict=True, ge=0)], ...], Field(min_length=1, max_length=4)] = (0.0,)
+    evidence_ref: EvidenceID
+    actual_efficiency: None = None
+    efficiency_evidence_ref: EvidenceID
+
+    @model_validator(mode="after")
+    def availability_matches_crews(self):
+        if len(self.available_at_hours) != self.count:
+            raise ValueError("Each crew requires an explicit availability assumption")
+        return self
+
+
+class SyntheticScenario(Contract):
+    schema_version: Literal["synthetic-scenario-v1"] = "synthetic-scenario-v1"
+    mode: Literal["synthetic-demo"] = "synthetic-demo"
+    origin: Literal["independently_authored_fiction"] = "independently_authored_fiction"
+    id: SyntheticID
+    revision: Annotated[int, Field(strict=True, ge=1)]
+    label: Annotated[str, Field(min_length=1, max_length=100)]
+    purpose: Annotated[str, Field(min_length=1, max_length=500)]
+    topology_status: Literal["valid_by_construction", "partial_by_construction"]
+    assets: Annotated[tuple[SyntheticAsset, ...], Field(min_length=1, max_length=25)]
+    links: Annotated[tuple[SyntheticLink, ...], Field(max_length=50)]
+    customer_paths: Annotated[tuple[SyntheticCustomerPath, ...], Field(min_length=1, max_length=100)]
+    repairs: Annotated[tuple[SyntheticRepair, ...], Field(min_length=1, max_length=25)]
+    critical_services: tuple[SyntheticCriticalService, ...] = ()
+    crews: SyntheticCrewAssumptions
+    supply_available: Literal[True] = True
+    supply_evidence_ref: EvidenceID
+    operational_evidence_ref: EvidenceID
+    evidence: Annotated[tuple[ScenarioEvidence, ...], Field(min_length=1, max_length=30)]
+    observed_outages: None = None
+    observed_restoration_hours: None = None
+
+    @model_validator(mode="after")
+    def validate_definition(self):
+        def index(items, attr="id"):
+            result = {getattr(item, attr): item for item in items}
+            if len(result) != len(items):
+                raise ValueError("Duplicate fictional identity")
+            return result
+        assets, repairs, evidence = index(self.assets), index(self.repairs), index(self.evidence)
+        customers = index(self.customer_paths, "customer_id")
+        services = index(self.critical_services)
+        ids = [*assets, *repairs, *customers, *services]
+        if len(set(ids)) != len(ids):
+            raise ValueError("Fictional identities must be distinct across entity types")
+        used = set()
+        def check_ref(ref, expected):
+            if ref not in evidence or evidence[ref].classification != expected:
+                raise ValueError("Missing or incorrectly classified evidence reference")
+            used.add(ref)
+        edges = {}
+        for asset in self.assets:
+            check_ref(asset.evidence_ref, "unavailable" if asset.kind == "unresolved" else "scenario assumption")
+        for link in self.links:
+            if link.downstream_id not in assets or link.upstream_id not in assets:
+                raise ValueError("Link references undefined equipment")
+            if link.downstream_id in edges:
+                raise ValueError("Duplicate or ambiguous parent relationship")
+            if assets[link.downstream_id].kind == "supply_terminal":
+                raise ValueError("Supply terminal must have no upstream equipment")
+            endpoints = (assets[link.downstream_id], assets[link.upstream_id])
+            if any(a.kind == "unresolved" for a in endpoints) and link.status != "unresolved":
+                raise ValueError("An unresolved endpoint cannot acquire a defined link")
+            edges[link.downstream_id] = link
+            check_ref(link.evidence_ref, "unavailable" if link.status == "unresolved" else "scenario assumption")
+        # Check the complete graph, including assets unused by a displayed path.
+        def acyclic(graph):
+            visiting, done = set(), set()
+            def visit(node):
+                if node in visiting:
+                    raise ValueError("Dependency cycle")
+                if node in done:
+                    return
+                visiting.add(node)
+                for parent in graph.get(node, ()):
+                    visit(parent)
+                visiting.remove(node)
+                done.add(node)
+            for node in graph:
+                visit(node)
+        acyclic({key: (link.upstream_id,) for key, link in edges.items()})
+        for path in self.customer_paths:
+            if len(set(path.asset_ids)) != len(path.asset_ids) or any(a not in assets for a in path.asset_ids):
+                raise ValueError("Customer path repeats or references undefined equipment")
+            if assets[path.asset_ids[-1]].kind != "supply_terminal":
+                raise ValueError("Customer path must end at an abstract supply terminal")
+            for downstream, upstream in zip(path.asset_ids, path.asset_ids[1:]):
+                if downstream not in edges or edges[downstream].upstream_id != upstream:
+                    raise ValueError("Customer path has no explicit matching relationship")
+            incomplete = any(assets[a].kind == "unresolved" for a in path.asset_ids) or any(
+                edges[a].status == "unresolved" for a in path.asset_ids[:-1])
+            check_ref(path.evidence_ref, "unavailable" if incomplete else "scenario assumption")
+        if len({r.asset_id for r in self.repairs}) != len(self.repairs):
+            raise ValueError("Multiple repairs on one asset require an explicit future scope model")
+        for repair in self.repairs:
+            if repair.asset_id not in assets or assets[repair.asset_id].kind == "supply_terminal":
+                raise ValueError("Repair equipment is undefined or an abstract terminal")
+            if len(set(repair.prerequisite_ids)) != len(repair.prerequisite_ids) or any(p not in repairs for p in repair.prerequisite_ids):
+                raise ValueError("Repair prerequisite is duplicated or undefined")
+            check_ref(repair.scope_evidence_ref, "scenario assumption")
+            check_ref(repair.labor_evidence_ref, "unavailable" if repair.repair_person_hours is None else "scenario assumption")
+            check_ref(repair.access_evidence_ref, "scenario assumption")
+            check_ref(repair.precedence_evidence_ref, "prototype policy")
+        acyclic({r.id: r.prerequisite_ids for r in self.repairs})
+        for service in self.critical_services:
+            if service.customer_id not in customers:
+                raise ValueError("Critical-service dependency must name a fictional customer")
+            check_ref(service.evidence_ref, "scenario assumption")
+        check_ref(self.crews.evidence_ref, "scenario assumption")
+        check_ref(self.crews.efficiency_evidence_ref, "unavailable")
+        check_ref(self.supply_evidence_ref, "scenario assumption")
+        check_ref(self.operational_evidence_ref, "unavailable")
+        partial = any(a.kind == "unresolved" for a in self.assets) or any(l.status == "unresolved" for l in self.links)
+        if partial != (self.topology_status == "partial_by_construction"):
+            raise ValueError("Topology status must disclose all unresolved evidence")
+        if used != set(evidence):
+            raise ValueError("Evidence ledger contains unbound entries")
+        return self
+
+
+class SyntheticCatalog(Contract):
+    version: Literal["synthetic-catalog-v1"] = "synthetic-catalog-v1"
+    generator_version: Literal["fictional-graphs-v1"] = "fictional-graphs-v1"
+    scenarios: Annotated[tuple[SyntheticScenario, ...], Field(min_length=1, max_length=20)]
+
+    @model_validator(mode="after")
+    def unique_scenarios(self):
+        if len({s.id for s in self.scenarios}) != len(self.scenarios):
+            raise ValueError("Duplicate scenario identity")
+        return self
+
+
+class ScenarioMetadata(Contract):
+    schema_version: Literal["scenario-metadata-v1"] = "scenario-metadata-v1"
+    mode: Literal["synthetic-demo"] = "synthetic-demo"
+    scenario_id: SyntheticID
+    scenario_revision: Annotated[int, Field(strict=True, ge=1)]
+    input_fingerprint: Annotated[str, Field(pattern=r"^[a-f0-9]{64}$")]
+    definition_version: Literal["synthetic-scenario-v1"] = "synthetic-scenario-v1"
+    catalog_version: Literal["synthetic-catalog-v1"] = "synthetic-catalog-v1"
+    provenance: Literal["independently_authored_fiction"] = "independently_authored_fiction"
+    numerical_model_version: None = None
+
+
+class ScenarioSummary(Contract):
+    metadata: ScenarioMetadata
+    label: str
+    purpose: str
+    topology_status: Literal["valid_by_construction", "partial_by_construction"]
+    complete_dependency_customer_count: Count | None
+    missing_inputs: tuple[str, ...]
+
+
+class ScenarioCatalogResponse(Contract):
+    schema_version: Literal["scenario-catalog-response-v1"] = "scenario-catalog-response-v1"
+    mode: Literal["synthetic-demo"] = "synthetic-demo"
+    catalog_sha256: Annotated[str, Field(pattern=r"^[a-f0-9]{64}$")]
+    scenarios: tuple[ScenarioSummary, ...]
+    capabilities: tuple[Literal["scenario_catalog", "scenario_definition"], ...] = ("scenario_catalog", "scenario_definition")
+    numerical_evaluation_available: Literal[False] = False
+
+
+class ScenarioDefinitionResponse(Contract):
+    metadata: ScenarioMetadata
+    definition: SyntheticScenario
+    complete_dependency_customer_count: Count | None
+    missing_inputs: tuple[str, ...]
+    outage_probability: None = None
+    restoration_hours: None = None
+    numerical_evaluation_available: Literal[False] = False
+
+
+class SyntheticHealth(Contract):
+    ready: bool
+    mode: Literal["synthetic-demo"] = "synthetic-demo"
+    stage: Literal["v1.1-phase1"] = "v1.1-phase1"
+    catalog_version: Literal["synthetic-catalog-v1"] = "synthetic-catalog-v1"
+    catalog_sha256: str
+    capabilities: tuple[Literal["scenario_catalog", "scenario_definition"], ...] = ("scenario_catalog", "scenario_definition")
+    external_ai_enabled: Literal[False] = False
+    numerical_evaluation_available: Literal[False] = False

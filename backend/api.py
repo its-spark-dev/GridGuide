@@ -121,7 +121,10 @@ def create_app(context_loader: Callable[[], PreparedContext] = prepare_context,
     @app.get("/api/health")
     def health(request: Request):
         # Accessing context ensures the lifespan preparation ran successfully.
-        return {"ready": bool(request.app.state.context), "data_snapshot": SNAPSHOT,
+        return {"ready": bool(request.app.state.context), "mode": "challenge-local", "data_snapshot": SNAPSHOT,
+                "capabilities": ["customer_evaluation", "customer_explanation"] +
+                    (["geographic_map"] if request.app.state.geographic_map is not None else []) +
+                    (["legacy_restoration_plan"] if request.app.state.planning is not None else []),
                 "model_versions": {"risk": RISK_VERSION, "restoration": RESTORATION_VERSION}}
 
     @app.get("/api/locations", response_model=tuple[Location, ...])

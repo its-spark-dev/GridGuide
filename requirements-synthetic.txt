@@ -1,0 +1,4 @@
+# Phase 1 catalog runtime only. No GIS, workbook, model-provider or optimizer stack.
+pydantic==2.12.3
+fastapi==0.119.1
+uvicorn==0.38.0

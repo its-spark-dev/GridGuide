@@ -123,6 +123,57 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v2/health": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Health */
+        get: operations["health_api_v2_health_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/scenarios": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Scenarios */
+        get: operations["scenarios_api_v2_scenarios_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/scenarios/{scenario_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Scenario */
+        get: operations["scenario_api_v2_scenarios__scenario_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -1527,6 +1578,133 @@ export interface components {
             /** Work Items */
             work_items: components["schemas"]["WorkItem"][];
         };
+        /** ScenarioCatalogResponse */
+        ScenarioCatalogResponse: {
+            /**
+             * Capabilities
+             * @default [
+             *       "scenario_catalog",
+             *       "scenario_definition"
+             *     ]
+             */
+            capabilities: ("scenario_catalog" | "scenario_definition")[];
+            /** Catalog Sha256 */
+            catalog_sha256: string;
+            /**
+             * Mode
+             * @default synthetic-demo
+             * @constant
+             */
+            mode: "synthetic-demo";
+            /**
+             * Numerical Evaluation Available
+             * @default false
+             * @constant
+             */
+            numerical_evaluation_available: false;
+            /** Scenarios */
+            scenarios: components["schemas"]["ScenarioSummary"][];
+            /**
+             * Schema Version
+             * @default scenario-catalog-response-v1
+             * @constant
+             */
+            schema_version: "scenario-catalog-response-v1";
+        };
+        /** ScenarioDefinitionResponse */
+        ScenarioDefinitionResponse: {
+            /** Complete Dependency Customer Count */
+            complete_dependency_customer_count: number | null;
+            definition: components["schemas"]["SyntheticScenario"];
+            metadata: components["schemas"]["ScenarioMetadata"];
+            /** Missing Inputs */
+            missing_inputs: string[];
+            /**
+             * Numerical Evaluation Available
+             * @default false
+             * @constant
+             */
+            numerical_evaluation_available: false;
+            /** Outage Probability */
+            outage_probability?: null;
+            /** Restoration Hours */
+            restoration_hours?: null;
+        };
+        /** ScenarioEvidence */
+        ScenarioEvidence: {
+            /**
+             * Classification
+             * @enum {string}
+             */
+            classification: "AEP-specified" | "source-derived" | "scenario assumption" | "prototype policy" | "user-declared" | "unavailable";
+            /** Detail */
+            detail: string;
+            /** Id */
+            id: string;
+            /**
+             * Origin
+             * @enum {string}
+             */
+            origin: "synthetic_definition" | "prototype_rule" | "missing_evidence";
+        };
+        /** ScenarioMetadata */
+        ScenarioMetadata: {
+            /**
+             * Catalog Version
+             * @default synthetic-catalog-v1
+             * @constant
+             */
+            catalog_version: "synthetic-catalog-v1";
+            /**
+             * Definition Version
+             * @default synthetic-scenario-v1
+             * @constant
+             */
+            definition_version: "synthetic-scenario-v1";
+            /** Input Fingerprint */
+            input_fingerprint: string;
+            /**
+             * Mode
+             * @default synthetic-demo
+             * @constant
+             */
+            mode: "synthetic-demo";
+            /** Numerical Model Version */
+            numerical_model_version?: null;
+            /**
+             * Provenance
+             * @default independently_authored_fiction
+             * @constant
+             */
+            provenance: "independently_authored_fiction";
+            /** Scenario Id */
+            scenario_id: string;
+            /** Scenario Revision */
+            scenario_revision: number;
+            /**
+             * Schema Version
+             * @default scenario-metadata-v1
+             * @constant
+             */
+            schema_version: "scenario-metadata-v1";
+        };
+        /** ScenarioSummary */
+        ScenarioSummary: {
+            /** Complete Dependency Customer Count */
+            complete_dependency_customer_count: number | null;
+            /** Label */
+            label: string;
+            metadata: components["schemas"]["ScenarioMetadata"];
+            /** Missing Inputs */
+            missing_inputs: string[];
+            /** Purpose */
+            purpose: string;
+            /**
+             * Topology Status
+             * @enum {string}
+             */
+            topology_status: "valid_by_construction" | "partial_by_construction";
+        };
         /** SourceFacts */
         SourceFacts: {
             /**
@@ -1560,6 +1738,223 @@ export interface components {
              * @enum {string}
              */
             transformer_mounting: "Overhead" | "Underground" | "Unknown";
+        };
+        /** SyntheticAsset */
+        SyntheticAsset: {
+            /** Evidence Ref */
+            evidence_ref: string;
+            /** Id */
+            id: string;
+            /**
+             * Identity Status
+             * @enum {string}
+             */
+            identity_status: "defined_in_fixture" | "unresolved";
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "supply_terminal" | "fuse" | "transformer" | "unresolved";
+        };
+        /** SyntheticCrewAssumptions */
+        SyntheticCrewAssumptions: {
+            /** Actual Efficiency */
+            actual_efficiency?: null;
+            /**
+             * Available At Hours
+             * @default [
+             *       0
+             *     ]
+             */
+            available_at_hours: number[];
+            /**
+             * Count
+             * @default 1
+             */
+            count: number;
+            /** Efficiency Evidence Ref */
+            efficiency_evidence_ref: string;
+            /** Evidence Ref */
+            evidence_ref: string;
+            /**
+             * People Per Crew
+             * @default 4
+             */
+            people_per_crew: number;
+        };
+        /** SyntheticCriticalService */
+        SyntheticCriticalService: {
+            /** Customer Id */
+            customer_id: string;
+            /** Evidence Ref */
+            evidence_ref: string;
+            /** Id */
+            id: string;
+            /**
+             * Relationship
+             * @default explicit_fictional_dependency
+             * @constant
+             */
+            relationship: "explicit_fictional_dependency";
+        };
+        /** SyntheticCustomerPath */
+        SyntheticCustomerPath: {
+            /** Asset Ids */
+            asset_ids: string[];
+            /** Customer Id */
+            customer_id: string;
+            /** Evidence Ref */
+            evidence_ref: string;
+        };
+        /** SyntheticHealth */
+        SyntheticHealth: {
+            /**
+             * Capabilities
+             * @default [
+             *       "scenario_catalog",
+             *       "scenario_definition"
+             *     ]
+             */
+            capabilities: ("scenario_catalog" | "scenario_definition")[];
+            /** Catalog Sha256 */
+            catalog_sha256: string;
+            /**
+             * Catalog Version
+             * @default synthetic-catalog-v1
+             * @constant
+             */
+            catalog_version: "synthetic-catalog-v1";
+            /**
+             * External Ai Enabled
+             * @default false
+             * @constant
+             */
+            external_ai_enabled: false;
+            /**
+             * Mode
+             * @default synthetic-demo
+             * @constant
+             */
+            mode: "synthetic-demo";
+            /**
+             * Numerical Evaluation Available
+             * @default false
+             * @constant
+             */
+            numerical_evaluation_available: false;
+            /** Ready */
+            ready: boolean;
+            /**
+             * Stage
+             * @default v1.1-phase1
+             * @constant
+             */
+            stage: "v1.1-phase1";
+        };
+        /** SyntheticLink */
+        SyntheticLink: {
+            /** Downstream Id */
+            downstream_id: string;
+            /** Evidence Ref */
+            evidence_ref: string;
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "defined_in_fixture" | "unresolved";
+            /** Upstream Id */
+            upstream_id: string;
+        };
+        /** SyntheticRepair */
+        SyntheticRepair: {
+            /**
+             * Access
+             * @enum {string}
+             */
+            access: "clear" | "restricted" | "blocked";
+            /** Access Evidence Ref */
+            access_evidence_ref: string;
+            /** Asset Id */
+            asset_id: string;
+            /** Id */
+            id: string;
+            /** Labor Evidence Ref */
+            labor_evidence_ref: string;
+            /** Precedence Evidence Ref */
+            precedence_evidence_ref: string;
+            /**
+             * Prerequisite Ids
+             * @default []
+             */
+            prerequisite_ids: string[];
+            /** Repair Person Hours */
+            repair_person_hours: number | null;
+            /** Scope Evidence Ref */
+            scope_evidence_ref: string;
+        };
+        /** SyntheticScenario */
+        SyntheticScenario: {
+            /** Assets */
+            assets: components["schemas"]["SyntheticAsset"][];
+            crews: components["schemas"]["SyntheticCrewAssumptions"];
+            /**
+             * Critical Services
+             * @default []
+             */
+            critical_services: components["schemas"]["SyntheticCriticalService"][];
+            /** Customer Paths */
+            customer_paths: components["schemas"]["SyntheticCustomerPath"][];
+            /** Evidence */
+            evidence: components["schemas"]["ScenarioEvidence"][];
+            /** Id */
+            id: string;
+            /** Label */
+            label: string;
+            /** Links */
+            links: components["schemas"]["SyntheticLink"][];
+            /**
+             * Mode
+             * @default synthetic-demo
+             * @constant
+             */
+            mode: "synthetic-demo";
+            /** Observed Outages */
+            observed_outages?: null;
+            /** Observed Restoration Hours */
+            observed_restoration_hours?: null;
+            /** Operational Evidence Ref */
+            operational_evidence_ref: string;
+            /**
+             * Origin
+             * @default independently_authored_fiction
+             * @constant
+             */
+            origin: "independently_authored_fiction";
+            /** Purpose */
+            purpose: string;
+            /** Repairs */
+            repairs: components["schemas"]["SyntheticRepair"][];
+            /** Revision */
+            revision: number;
+            /**
+             * Schema Version
+             * @default synthetic-scenario-v1
+             * @constant
+             */
+            schema_version: "synthetic-scenario-v1";
+            /**
+             * Supply Available
+             * @default true
+             * @constant
+             */
+            supply_available: true;
+            /** Supply Evidence Ref */
+            supply_evidence_ref: string;
+            /**
+             * Topology Status
+             * @enum {string}
+             */
+            topology_status: "valid_by_construction" | "partial_by_construction";
         };
         /** ValidationError */
         ValidationError: {
@@ -1780,6 +2175,77 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ExplanationResponse"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    health_api_v2_health_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SyntheticHealth"];
+                };
+            };
+        };
+    };
+    scenarios_api_v2_scenarios_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ScenarioCatalogResponse"];
+                };
+            };
+        };
+    };
+    scenario_api_v2_scenarios__scenario_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                scenario_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ScenarioDefinitionResponse"];
                 };
             };
             /** @description Validation Error */

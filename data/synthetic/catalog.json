@@ -1,0 +1,1013 @@
+{
+  "generator_version": "fictional-graphs-v1",
+  "scenarios": [
+    {
+      "assets": [
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-simple-asset-supply",
+          "identity_status": "defined_in_fixture",
+          "kind": "supply_terminal"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-simple-asset-f1",
+          "identity_status": "defined_in_fixture",
+          "kind": "fuse"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-simple-asset-t1",
+          "identity_status": "defined_in_fixture",
+          "kind": "transformer"
+        }
+      ],
+      "crews": {
+        "available_at_hours": [
+          0.0
+        ],
+        "count": 1,
+        "efficiency_evidence_ref": "ev-unavailable",
+        "evidence_ref": "ev-crews",
+        "people_per_crew": 4
+      },
+      "critical_services": [],
+      "customer_paths": [
+        {
+          "asset_ids": [
+            "syn-simple-asset-t1",
+            "syn-simple-asset-f1",
+            "syn-simple-asset-supply"
+          ],
+          "customer_id": "syn-simple-customer-1",
+          "evidence_ref": "ev-topology"
+        },
+        {
+          "asset_ids": [
+            "syn-simple-asset-f1",
+            "syn-simple-asset-supply"
+          ],
+          "customer_id": "syn-simple-customer-2",
+          "evidence_ref": "ev-topology"
+        }
+      ],
+      "evidence": [
+        {
+          "classification": "scenario assumption",
+          "detail": "Equipment, customers and dependencies are independently authored fiction; no real network was copied or transformed.",
+          "id": "ev-topology",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "The listed fictional repairs are declared damage scope, not observed damage or quantities.",
+          "id": "ev-scope",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Literal total repair person-hours are fictional engineering inputs. No workbook rates, elapsed times or extra multipliers are implied.",
+          "id": "ev-labor",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Access states are declared fiction. Blocked access does not supply a clearance time.",
+          "id": "ev-access",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "prototype policy",
+          "detail": "Listed repair prerequisites are an explicit conservative scenario policy, separate from the customer supply path.",
+          "id": "ev-precedence",
+          "origin": "prototype_rule"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "One four-person interchangeable crew is assumed available at modeled response time zero. Actual staffing is unknown.",
+          "id": "ev-crews",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Supply is assumed available at an abstract, unlocated fictional terminal.",
+          "id": "ev-supply",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "unavailable",
+          "detail": "Actual productivity, current outage confirmation and restoration outcomes are unavailable; unresolved links stay unknown.",
+          "id": "ev-unavailable",
+          "origin": "missing_evidence"
+        }
+      ],
+      "id": "syn-simple",
+      "label": "Fictional simple path",
+      "links": [
+        {
+          "downstream_id": "syn-simple-asset-f1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-simple-asset-supply"
+        },
+        {
+          "downstream_id": "syn-simple-asset-t1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-simple-asset-f1"
+        }
+      ],
+      "operational_evidence_ref": "ev-unavailable",
+      "purpose": "A two-repair serial path with distinct person-hour inputs.",
+      "repairs": [
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-simple-asset-f1",
+          "id": "syn-simple-repair-f1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [],
+          "repair_person_hours": 2.0,
+          "scope_evidence_ref": "ev-scope"
+        },
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-simple-asset-t1",
+          "id": "syn-simple-repair-t1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [
+            "syn-simple-repair-f1"
+          ],
+          "repair_person_hours": 5.0,
+          "scope_evidence_ref": "ev-scope"
+        }
+      ],
+      "revision": 1,
+      "supply_evidence_ref": "ev-supply",
+      "topology_status": "valid_by_construction"
+    },
+    {
+      "assets": [
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-branching-asset-supply",
+          "identity_status": "defined_in_fixture",
+          "kind": "supply_terminal"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-branching-asset-f1",
+          "identity_status": "defined_in_fixture",
+          "kind": "fuse"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-branching-asset-t1",
+          "identity_status": "defined_in_fixture",
+          "kind": "transformer"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-branching-asset-t2",
+          "identity_status": "defined_in_fixture",
+          "kind": "transformer"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-branching-asset-f2",
+          "identity_status": "defined_in_fixture",
+          "kind": "fuse"
+        }
+      ],
+      "crews": {
+        "available_at_hours": [
+          0.0
+        ],
+        "count": 1,
+        "efficiency_evidence_ref": "ev-unavailable",
+        "evidence_ref": "ev-crews",
+        "people_per_crew": 4
+      },
+      "critical_services": [],
+      "customer_paths": [
+        {
+          "asset_ids": [
+            "syn-branching-asset-t1",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "customer_id": "syn-branching-customer-1",
+          "evidence_ref": "ev-topology"
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-t2",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "customer_id": "syn-branching-customer-2",
+          "evidence_ref": "ev-topology"
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-f2",
+            "syn-branching-asset-supply"
+          ],
+          "customer_id": "syn-branching-customer-3",
+          "evidence_ref": "ev-topology"
+        }
+      ],
+      "evidence": [
+        {
+          "classification": "scenario assumption",
+          "detail": "Equipment, customers and dependencies are independently authored fiction; no real network was copied or transformed.",
+          "id": "ev-topology",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "The listed fictional repairs are declared damage scope, not observed damage or quantities.",
+          "id": "ev-scope",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Literal total repair person-hours are fictional engineering inputs. No workbook rates, elapsed times or extra multipliers are implied.",
+          "id": "ev-labor",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Access states are declared fiction. Blocked access does not supply a clearance time.",
+          "id": "ev-access",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "prototype policy",
+          "detail": "Listed repair prerequisites are an explicit conservative scenario policy, separate from the customer supply path.",
+          "id": "ev-precedence",
+          "origin": "prototype_rule"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "One four-person interchangeable crew is assumed available at modeled response time zero. Actual staffing is unknown.",
+          "id": "ev-crews",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Supply is assumed available at an abstract, unlocated fictional terminal.",
+          "id": "ev-supply",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "unavailable",
+          "detail": "Actual productivity, current outage confirmation and restoration outcomes are unavailable; unresolved links stay unknown.",
+          "id": "ev-unavailable",
+          "origin": "missing_evidence"
+        }
+      ],
+      "id": "syn-branching",
+      "label": "Fictional branching repairs",
+      "links": [
+        {
+          "downstream_id": "syn-branching-asset-f1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-branching-asset-supply"
+        },
+        {
+          "downstream_id": "syn-branching-asset-t1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-branching-asset-f1"
+        },
+        {
+          "downstream_id": "syn-branching-asset-t2",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-branching-asset-f1"
+        },
+        {
+          "downstream_id": "syn-branching-asset-f2",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-branching-asset-supply"
+        }
+      ],
+      "operational_evidence_ref": "ev-unavailable",
+      "purpose": "Independent branches and a shared upstream prerequisite.",
+      "repairs": [
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-branching-asset-f1",
+          "id": "syn-branching-repair-f1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [],
+          "repair_person_hours": 3.0,
+          "scope_evidence_ref": "ev-scope"
+        },
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-branching-asset-t1",
+          "id": "syn-branching-repair-t1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "repair_person_hours": 4.0,
+          "scope_evidence_ref": "ev-scope"
+        },
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-branching-asset-t2",
+          "id": "syn-branching-repair-t2",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "repair_person_hours": 6.0,
+          "scope_evidence_ref": "ev-scope"
+        },
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-branching-asset-f2",
+          "id": "syn-branching-repair-f2",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [],
+          "repair_person_hours": 2.0,
+          "scope_evidence_ref": "ev-scope"
+        }
+      ],
+      "revision": 1,
+      "supply_evidence_ref": "ev-supply",
+      "topology_status": "valid_by_construction"
+    },
+    {
+      "assets": [
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-overlap-asset-supply",
+          "identity_status": "defined_in_fixture",
+          "kind": "supply_terminal"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-overlap-asset-f1",
+          "identity_status": "defined_in_fixture",
+          "kind": "fuse"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-overlap-asset-t1",
+          "identity_status": "defined_in_fixture",
+          "kind": "transformer"
+        }
+      ],
+      "crews": {
+        "available_at_hours": [
+          0.0
+        ],
+        "count": 1,
+        "efficiency_evidence_ref": "ev-unavailable",
+        "evidence_ref": "ev-crews",
+        "people_per_crew": 4
+      },
+      "critical_services": [],
+      "customer_paths": [
+        {
+          "asset_ids": [
+            "syn-overlap-asset-t1",
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "customer_id": "syn-overlap-customer-1",
+          "evidence_ref": "ev-topology"
+        },
+        {
+          "asset_ids": [
+            "syn-overlap-asset-t1",
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "customer_id": "syn-overlap-customer-2",
+          "evidence_ref": "ev-topology"
+        },
+        {
+          "asset_ids": [
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "customer_id": "syn-overlap-customer-3",
+          "evidence_ref": "ev-topology"
+        }
+      ],
+      "evidence": [
+        {
+          "classification": "scenario assumption",
+          "detail": "Equipment, customers and dependencies are independently authored fiction; no real network was copied or transformed.",
+          "id": "ev-topology",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "The listed fictional repairs are declared damage scope, not observed damage or quantities.",
+          "id": "ev-scope",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Literal total repair person-hours are fictional engineering inputs. No workbook rates, elapsed times or extra multipliers are implied.",
+          "id": "ev-labor",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Access states are declared fiction. Blocked access does not supply a clearance time.",
+          "id": "ev-access",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "prototype policy",
+          "detail": "Listed repair prerequisites are an explicit conservative scenario policy, separate from the customer supply path.",
+          "id": "ev-precedence",
+          "origin": "prototype_rule"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "One four-person interchangeable crew is assumed available at modeled response time zero. Actual staffing is unknown.",
+          "id": "ev-crews",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Supply is assumed available at an abstract, unlocated fictional terminal.",
+          "id": "ev-supply",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "unavailable",
+          "detail": "Actual productivity, current outage confirmation and restoration outcomes are unavailable; unresolved links stay unknown.",
+          "id": "ev-unavailable",
+          "origin": "missing_evidence"
+        }
+      ],
+      "id": "syn-overlap",
+      "label": "Fictional overlapping dependencies",
+      "links": [
+        {
+          "downstream_id": "syn-overlap-asset-f1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-overlap-asset-supply"
+        },
+        {
+          "downstream_id": "syn-overlap-asset-t1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-overlap-asset-f1"
+        }
+      ],
+      "operational_evidence_ref": "ev-unavailable",
+      "purpose": "Three distinct customers share a fuse; two also require its transformer repair. Counts must never be summed across assets.",
+      "repairs": [
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-overlap-asset-f1",
+          "id": "syn-overlap-repair-f1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [],
+          "repair_person_hours": 3.5,
+          "scope_evidence_ref": "ev-scope"
+        },
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-overlap-asset-t1",
+          "id": "syn-overlap-repair-t1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [
+            "syn-overlap-repair-f1"
+          ],
+          "repair_person_hours": 7.0,
+          "scope_evidence_ref": "ev-scope"
+        }
+      ],
+      "revision": 1,
+      "supply_evidence_ref": "ev-supply",
+      "topology_status": "valid_by_construction"
+    },
+    {
+      "assets": [
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-blocked-asset-supply",
+          "identity_status": "defined_in_fixture",
+          "kind": "supply_terminal"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-blocked-asset-f1",
+          "identity_status": "defined_in_fixture",
+          "kind": "fuse"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-blocked-asset-t1",
+          "identity_status": "defined_in_fixture",
+          "kind": "transformer"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-blocked-asset-f2",
+          "identity_status": "defined_in_fixture",
+          "kind": "fuse"
+        }
+      ],
+      "crews": {
+        "available_at_hours": [
+          0.0
+        ],
+        "count": 1,
+        "efficiency_evidence_ref": "ev-unavailable",
+        "evidence_ref": "ev-crews",
+        "people_per_crew": 4
+      },
+      "critical_services": [],
+      "customer_paths": [
+        {
+          "asset_ids": [
+            "syn-blocked-asset-t1",
+            "syn-blocked-asset-f1",
+            "syn-blocked-asset-supply"
+          ],
+          "customer_id": "syn-blocked-customer-1",
+          "evidence_ref": "ev-topology"
+        },
+        {
+          "asset_ids": [
+            "syn-blocked-asset-f2",
+            "syn-blocked-asset-supply"
+          ],
+          "customer_id": "syn-blocked-customer-2",
+          "evidence_ref": "ev-topology"
+        }
+      ],
+      "evidence": [
+        {
+          "classification": "scenario assumption",
+          "detail": "Equipment, customers and dependencies are independently authored fiction; no real network was copied or transformed.",
+          "id": "ev-topology",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "The listed fictional repairs are declared damage scope, not observed damage or quantities.",
+          "id": "ev-scope",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Literal total repair person-hours are fictional engineering inputs. No workbook rates, elapsed times or extra multipliers are implied.",
+          "id": "ev-labor",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Access states are declared fiction. Blocked access does not supply a clearance time.",
+          "id": "ev-access",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "prototype policy",
+          "detail": "Listed repair prerequisites are an explicit conservative scenario policy, separate from the customer supply path.",
+          "id": "ev-precedence",
+          "origin": "prototype_rule"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "One four-person interchangeable crew is assumed available at modeled response time zero. Actual staffing is unknown.",
+          "id": "ev-crews",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Supply is assumed available at an abstract, unlocated fictional terminal.",
+          "id": "ev-supply",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "unavailable",
+          "detail": "Actual productivity, current outage confirmation and restoration outcomes are unavailable; unresolved links stay unknown.",
+          "id": "ev-unavailable",
+          "origin": "missing_evidence"
+        }
+      ],
+      "id": "syn-blocked",
+      "label": "Fictional blocked access",
+      "links": [
+        {
+          "downstream_id": "syn-blocked-asset-f1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-blocked-asset-supply"
+        },
+        {
+          "downstream_id": "syn-blocked-asset-t1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-blocked-asset-f1"
+        },
+        {
+          "downstream_id": "syn-blocked-asset-f2",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-blocked-asset-supply"
+        }
+      ],
+      "operational_evidence_ref": "ev-unavailable",
+      "purpose": "An upstream site has unknown clearance; an independent branch remains represented.",
+      "repairs": [
+        {
+          "access": "blocked",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-blocked-asset-f1",
+          "id": "syn-blocked-repair-f1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [],
+          "repair_person_hours": 2.5,
+          "scope_evidence_ref": "ev-scope"
+        },
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-blocked-asset-t1",
+          "id": "syn-blocked-repair-t1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [
+            "syn-blocked-repair-f1"
+          ],
+          "repair_person_hours": 4.5,
+          "scope_evidence_ref": "ev-scope"
+        },
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-blocked-asset-f2",
+          "id": "syn-blocked-repair-f2",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [],
+          "repair_person_hours": 3.0,
+          "scope_evidence_ref": "ev-scope"
+        }
+      ],
+      "revision": 1,
+      "supply_evidence_ref": "ev-supply",
+      "topology_status": "valid_by_construction"
+    },
+    {
+      "assets": [
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-missing-asset-supply",
+          "identity_status": "defined_in_fixture",
+          "kind": "supply_terminal"
+        },
+        {
+          "evidence_ref": "ev-unavailable",
+          "id": "syn-missing-asset-unknown",
+          "identity_status": "unresolved",
+          "kind": "unresolved"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-missing-asset-f1",
+          "identity_status": "defined_in_fixture",
+          "kind": "fuse"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-missing-asset-t1",
+          "identity_status": "defined_in_fixture",
+          "kind": "transformer"
+        }
+      ],
+      "crews": {
+        "available_at_hours": [
+          0.0
+        ],
+        "count": 1,
+        "efficiency_evidence_ref": "ev-unavailable",
+        "evidence_ref": "ev-crews",
+        "people_per_crew": 4
+      },
+      "critical_services": [],
+      "customer_paths": [
+        {
+          "asset_ids": [
+            "syn-missing-asset-t1",
+            "syn-missing-asset-f1",
+            "syn-missing-asset-unknown",
+            "syn-missing-asset-supply"
+          ],
+          "customer_id": "syn-missing-customer-1",
+          "evidence_ref": "ev-unavailable"
+        }
+      ],
+      "evidence": [
+        {
+          "classification": "scenario assumption",
+          "detail": "Equipment, customers and dependencies are independently authored fiction; no real network was copied or transformed.",
+          "id": "ev-topology",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "The listed fictional repairs are declared damage scope, not observed damage or quantities.",
+          "id": "ev-scope",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Literal total repair person-hours are fictional engineering inputs. No workbook rates, elapsed times or extra multipliers are implied.",
+          "id": "ev-labor",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Access states are declared fiction. Blocked access does not supply a clearance time.",
+          "id": "ev-access",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "prototype policy",
+          "detail": "Listed repair prerequisites are an explicit conservative scenario policy, separate from the customer supply path.",
+          "id": "ev-precedence",
+          "origin": "prototype_rule"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "One four-person interchangeable crew is assumed available at modeled response time zero. Actual staffing is unknown.",
+          "id": "ev-crews",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Supply is assumed available at an abstract, unlocated fictional terminal.",
+          "id": "ev-supply",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "unavailable",
+          "detail": "Actual productivity, current outage confirmation and restoration outcomes are unavailable; unresolved links stay unknown.",
+          "id": "ev-unavailable",
+          "origin": "missing_evidence"
+        }
+      ],
+      "id": "syn-missing",
+      "label": "Fictional unresolved evidence",
+      "links": [
+        {
+          "downstream_id": "syn-missing-asset-unknown",
+          "evidence_ref": "ev-unavailable",
+          "status": "unresolved",
+          "upstream_id": "syn-missing-asset-supply"
+        },
+        {
+          "downstream_id": "syn-missing-asset-f1",
+          "evidence_ref": "ev-unavailable",
+          "status": "unresolved",
+          "upstream_id": "syn-missing-asset-unknown"
+        },
+        {
+          "downstream_id": "syn-missing-asset-t1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-missing-asset-f1"
+        }
+      ],
+      "operational_evidence_ref": "ev-unavailable",
+      "purpose": "An explicit unresolved upstream device withholds complete dependency coverage; missing effort remains null.",
+      "repairs": [
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-missing-asset-f1",
+          "id": "syn-missing-repair-f1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [],
+          "repair_person_hours": 2.0,
+          "scope_evidence_ref": "ev-scope"
+        },
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-missing-asset-t1",
+          "id": "syn-missing-repair-t1",
+          "labor_evidence_ref": "ev-unavailable",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [
+            "syn-missing-repair-f1"
+          ],
+          "repair_person_hours": null,
+          "scope_evidence_ref": "ev-scope"
+        }
+      ],
+      "revision": 1,
+      "supply_evidence_ref": "ev-supply",
+      "topology_status": "partial_by_construction"
+    },
+    {
+      "assets": [
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-critical-asset-supply",
+          "identity_status": "defined_in_fixture",
+          "kind": "supply_terminal"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-critical-asset-f1",
+          "identity_status": "defined_in_fixture",
+          "kind": "fuse"
+        },
+        {
+          "evidence_ref": "ev-topology",
+          "id": "syn-critical-asset-f2",
+          "identity_status": "defined_in_fixture",
+          "kind": "fuse"
+        }
+      ],
+      "crews": {
+        "available_at_hours": [
+          0.0
+        ],
+        "count": 1,
+        "efficiency_evidence_ref": "ev-unavailable",
+        "evidence_ref": "ev-crews",
+        "people_per_crew": 4
+      },
+      "critical_services": [
+        {
+          "customer_id": "syn-critical-customer-1",
+          "evidence_ref": "ev-critical",
+          "id": "syn-critical-service-1"
+        }
+      ],
+      "customer_paths": [
+        {
+          "asset_ids": [
+            "syn-critical-asset-f1",
+            "syn-critical-asset-supply"
+          ],
+          "customer_id": "syn-critical-customer-1",
+          "evidence_ref": "ev-topology"
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "customer_id": "syn-critical-customer-2",
+          "evidence_ref": "ev-topology"
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "customer_id": "syn-critical-customer-3",
+          "evidence_ref": "ev-topology"
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "customer_id": "syn-critical-customer-4",
+          "evidence_ref": "ev-topology"
+        }
+      ],
+      "evidence": [
+        {
+          "classification": "scenario assumption",
+          "detail": "Equipment, customers and dependencies are independently authored fiction; no real network was copied or transformed.",
+          "id": "ev-topology",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "The listed fictional repairs are declared damage scope, not observed damage or quantities.",
+          "id": "ev-scope",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Literal total repair person-hours are fictional engineering inputs. No workbook rates, elapsed times or extra multipliers are implied.",
+          "id": "ev-labor",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Access states are declared fiction. Blocked access does not supply a clearance time.",
+          "id": "ev-access",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "prototype policy",
+          "detail": "Listed repair prerequisites are an explicit conservative scenario policy, separate from the customer supply path.",
+          "id": "ev-precedence",
+          "origin": "prototype_rule"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "One four-person interchangeable crew is assumed available at modeled response time zero. Actual staffing is unknown.",
+          "id": "ev-crews",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Supply is assumed available at an abstract, unlocated fictional terminal.",
+          "id": "ev-supply",
+          "origin": "synthetic_definition"
+        },
+        {
+          "classification": "unavailable",
+          "detail": "Actual productivity, current outage confirmation and restoration outcomes are unavailable; unresolved links stay unknown.",
+          "id": "ev-unavailable",
+          "origin": "missing_evidence"
+        },
+        {
+          "classification": "scenario assumption",
+          "detail": "Critical-service attachment is explicitly authored fiction, never inferred from geography or a customer's personal needs.",
+          "id": "ev-critical",
+          "origin": "synthetic_definition"
+        }
+      ],
+      "id": "syn-critical",
+      "label": "Fictional critical-service tradeoff",
+      "links": [
+        {
+          "downstream_id": "syn-critical-asset-f1",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-critical-asset-supply"
+        },
+        {
+          "downstream_id": "syn-critical-asset-f2",
+          "evidence_ref": "ev-topology",
+          "status": "defined_in_fixture",
+          "upstream_id": "syn-critical-asset-supply"
+        }
+      ],
+      "operational_evidence_ref": "ev-unavailable",
+      "purpose": "One explicitly fictional critical service and a larger separate customer group; no proximity or personal-needs inference.",
+      "repairs": [
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-critical-asset-f1",
+          "id": "syn-critical-repair-f1",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [],
+          "repair_person_hours": 6.0,
+          "scope_evidence_ref": "ev-scope"
+        },
+        {
+          "access": "clear",
+          "access_evidence_ref": "ev-access",
+          "asset_id": "syn-critical-asset-f2",
+          "id": "syn-critical-repair-f2",
+          "labor_evidence_ref": "ev-labor",
+          "precedence_evidence_ref": "ev-precedence",
+          "prerequisite_ids": [],
+          "repair_person_hours": 2.0,
+          "scope_evidence_ref": "ev-scope"
+        }
+      ],
+      "revision": 1,
+      "supply_evidence_ref": "ev-supply",
+      "topology_status": "valid_by_construction"
+    }
+  ],
+  "version": "synthetic-catalog-v1"
+}

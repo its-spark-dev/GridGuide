@@ -1,5 +1,12 @@
 # Data audit
 
+November 3, 2026 Phase 1 follow-up: [aggregate coverage](research/phase1/source_coverage.json),
+[dataset register](research/phase1/dataset_register.json) and [target decisions](research/phase1/FEASIBILITY.md)
+reproduce existing validators and distinguish licensing, observation coverage and uses.
+The reverse-index total includes two abstract terminals: 8,095 total entries correspond
+to 8,093 physical assets. Rejection categories overlap. This adds no outage labels,
+direct ARCOS identities or observed restoration outcomes.
+
 > Source investigation with dated implementation follow-ups. Initial repository descriptions and test totals are historical. Complete-validation definitions are in the [model specification](MODEL_SPEC.md); [release verification](releases/VERIFICATION.md) records the November 3 checks.
 
 Audit date: 2026-10-24. Starting local revision: `6e35ee6` (“Project skeleton + challenge data”), preceded by `d7c8aea`. Working tree was clean. Existing dependencies: unpinned `geopandas`, `pandas`, `openpyxl`, `fastapi`, `uvicorn`. No frontend, server, tests, package lock, or product pipeline existed.
