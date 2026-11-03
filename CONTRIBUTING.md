@@ -1,6 +1,6 @@
 # Contributing to GridGuide
 
-GridGuide v1.0.0 preserves the HackOHI/O 2026 implementation. This release branch is limited to documentation, genuine demo assets, and repository presentation. Discuss functional improvements separately for a future v1.1.0.
+GridGuide v1.0.0 preserves the HackOHI/O 2026 implementation. Documentation corrections and reproducible issue reports help readers understand and run the prototype. Propose functional changes separately, with their evidence and validation scope; the released tag remains an immutable reference.
 
 Before changing product behavior, read [AGENTS.md](AGENTS.md), the [architecture](docs/ARCHITECTURE.md), and the [model specification](docs/MODEL_SPEC.md). Keep formulas and numerical validation in Python, API contracts centralized, and presentation in React/TypeScript. Preserve teammate work and immutable source files.
 
@@ -19,4 +19,4 @@ Follow [local setup](README.md#getting-started) with authorized access to the pi
 
 If an API contract changes in a future release, regenerate `frontend/src/api.generated.ts` with `npm --prefix frontend run types:generate`; never edit generated types by hand. Keep fail-safe unavailable states, source pins, privacy, revision binding, and offline Standard explanations intact.
 
-Preserve original commits and contributor attribution. A project-wide license and complete contributor publication consent are pending owner review; do not assume an incoming contribution or a public repository grants rights to third-party data. Release tags, pushes, merges, and publication remain owner actions.
+Preserve original commits and contributor attribution. No project-wide software license has been selected; see [license status and third-party notices](THIRD_PARTY_NOTICES.md). Agree on contribution rights with the maintainers before submitting code. Repository visibility does not grant rights to third-party data.

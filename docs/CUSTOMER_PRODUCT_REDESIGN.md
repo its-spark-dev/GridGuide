@@ -1,5 +1,7 @@
 # Customer product redesign — frontend freeze review
 
+> Historical frontend implementation record. Uncommitted-work statements, test totals, and local service observations describe that pass. See [release verification](releases/VERIFICATION.md) for the published implementation.
+
 Implemented against backend freeze `a4a457b60dc61d50fd65477b2c0692f320622f04`.
 This pass changes presentation, browser session state and frontend verification.
 It does not change API contracts, generated types, numerical rules, AI grounding,

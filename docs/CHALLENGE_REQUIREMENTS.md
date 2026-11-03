@@ -1,5 +1,7 @@
 # Challenge requirements
 
+> Historical planning record from October 24, 2026. “No product implementation” and readiness gates below describe the initial plan. See [requirements coverage](REQUIREMENTS_TRACEABILITY.md) for implemented scope and [release verification](releases/VERIFICATION.md) for later results.
+
 Reviewed 2026-10-24. Scope of this pass: planning, data validation, and documentation. No product implementation is complete.
 
 ## Authority and interpretation

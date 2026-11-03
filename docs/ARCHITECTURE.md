@@ -36,7 +36,7 @@ Browser selection refs preserve combined fast crew/access/need changes. Abort co
 
 ## Privacy and external services
 
-Private IDs, precise customer/facility positions, `road_name`, `anno_strin`, `critical_c` and source records stay server-side. Only aggregate impact/facility counts and generalized map geometry are exposed. AI receives no location coordinates, identities, raw user questions or declared-needs selections/actions. The provider key exists only in the server environment; `.env` remains ignored. Provider logs/answers cannot expose it.
+Within the running application, private IDs, precise customer/facility positions, `road_name`, `anno_strin`, `critical_c` and source records stay server-side. Only aggregate impact/facility counts and generalized map geometry are exposed. AI receives no location coordinates, identities, raw user questions or declared-needs selections/actions. The provider key exists only in the server environment; `.env` remains ignored. Provider logs/answers cannot expose it. These are runtime boundaries; identifying fields remain in tracked source data as documented in the [publication assessment](releases/PUBLIC_RELEASE_AUDIT.md#findings).
 
 Optional OSM tiles have attribution and an offline-vector fallback. Missing map geometry does not fabricate a point. Missing Gemini key, quota, invalid output or timeout yields Standard explanation. Offline means the local backend/frontend remain running without external AI/tiles, not a standalone offline browser.
 
@@ -44,4 +44,4 @@ Optional OSM tiles have attribution and an offline-vector fallback. Missing map 
 
 Preserve teammate `pipeline/`, data/raw and data/processed. Call `pipeline/guidance.py` only; do not import `pipeline/build.py` (import side effects, inferred sensitive flags) or substitute its CSV. `pipeline/restore.py` has alternate aggregation assumptions and is not the browser's numerical engine. Existing safety templates remain teammate-owned; new explicit-needs copy is reviewed separately.
 
-Run full Python tests, golden CLI, generated-type consistency and TypeScript/production build. Browser regression covers mobile/keyboard, combined changes, reverse impact, declared guidance, stale answers, four preview states, GIS failure/retry and Standard/live AI. See [freeze evidence](DEMO_FREEZE.md).
+Run full Python tests, golden CLI, generated-type consistency and TypeScript/production build. Browser regression covers mobile/keyboard, combined changes, reverse impact, declared guidance, stale answers, four preview states, GIS failure/retry and Standard/live AI. See [release verification](releases/VERIFICATION.md) and [historical live-provider checks](DEMO_FREEZE.md).

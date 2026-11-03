@@ -1,5 +1,7 @@
 # Data audit
 
+> Source investigation with dated implementation follow-ups. Initial repository descriptions and test totals are historical. Complete-validation definitions are in the [model specification](MODEL_SPEC.md); [release verification](releases/VERIFICATION.md) records the November 3 checks.
+
 Audit date: 2026-10-24. Starting local revision: `6e35ee6` (“Project skeleton + challenge data”), preceded by `d7c8aea`. Working tree was clean. Existing dependencies: unpinned `geopandas`, `pandas`, `openpyxl`, `fastapi`, `uvicorn`. No frontend, server, tests, package lock, or product pipeline existed.
 
 **Verdict: YELLOW.** The data supports a credible, explicitly simulated customer journey using validated paths and rule-based risk bands. It does not support calibrated outage probabilities, observed current outage status, or empirically calibrated restoration promises.

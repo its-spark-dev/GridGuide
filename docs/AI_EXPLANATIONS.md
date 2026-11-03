@@ -22,7 +22,7 @@ The mandatory lead distinguishes **11.736 repair person-hours** from **2.5–12 
 
 ## Providers, fallback and browser
 
-Gemini is the default when a server-side key is present; OpenAI remains an explicit alternative. Missing/disabled credentials make no external request. Provider failure, 429, timeout, refusal, truncated or invalid output yields deterministic Standard explanation. Gemini transport deadline is seven seconds; overall async deadline eight, browser ten. No automatic paid/model/vendor failover. See [Gemini setup and current smoke evidence](GEMINI_PROVIDER.md).
+Gemini is the default when a server-side key is present; OpenAI remains an explicit alternative. Missing/disabled credentials make no external request. Provider failure, 429, timeout, refusal, truncated or invalid output yields deterministic Standard explanation. Gemini transport deadline is seven seconds; overall async deadline eight, browser ten. No automatic paid/model/vendor failover. See [Gemini setup and dated smoke evidence](GEMINI_PROVIDER.md).
 
 The process-local validated-answer cache holds 64 entries with five-minute TTL. Keys bind full generic context and intent, including comparison/revision. Invalid answers are not cached; no raw response, declaration or credential persists. The frontend aborts old questions and discards wrong result/revision responses. Explanation-only failure retains the numerical journey and supports retry.
 

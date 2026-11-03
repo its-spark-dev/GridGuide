@@ -1,10 +1,12 @@
 # Q2/Q4 decision support: engineering evidence and demonstration
 
+> Technical evidence with historical demonstration and handoff sections. Counts and methods below describe the bounded model; test totals, scripts, and uncommitted-work statements record the October 24 pass. See [release verification](releases/VERIFICATION.md) for later checks.
+
 Audit date: 2026-10-24. This document records the source investigation, bounded implementation, and claims that can be defended for damaged-asset impact and restoration prioritization. It supplements [MODEL_SPEC](MODEL_SPEC.md), [DATA_AUDIT](DATA_AUDIT.md), and [AEP_REALIGNMENT](AEP_REALIGNMENT.md). It does not redefine current outage status, electrical switching capability, or AEP operating policy.
 
 The source investigations and integrated implementation are locally verified: **171 tests passed**, generated types reproduce byte-for-byte, strict TypeScript/production build passes, 15 desktop/mobile/keyboard/failure browser check groups pass, and all three live Gemini plan questions returned validated AI-assisted answers (2.3–2.8 seconds). Raw-source pins and teammate pipelines/data remain unchanged; credentials and generated artifacts remain excluded. No commit or push was made. See [executed freeze evidence](DEMO_FREEZE.md). Q2 historical matching remains conditional and Q4 remains prototype decision support, not operational confirmation.
 
-The implementation described here is now committed at `e64edd5`. Its historical 32-file manifest below records that completed pass. The subsequent presentation/explanation-only pass is documented in [JUDGE_UX_HARDENING.md](JUDGE_UX_HARDENING.md); current validation totals and demo wording are there.
+The implementation described here is now committed at `e64edd5`. Its historical 32-file manifest below records that completed pass. The subsequent presentation/explanation-only pass is documented in [JUDGE_UX_HARDENING.md](JUDGE_UX_HARDENING.md); that pass’s validation totals and demo wording are there. The released customer-first journey is shown in the [project walkthrough](../README.md#product-walkthrough).
 
 ## 1. What the prototype now supports
 

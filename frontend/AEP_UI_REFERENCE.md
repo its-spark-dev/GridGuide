@@ -1,5 +1,7 @@
 # Customer UI reference pass — 2026-10-24
 
+> Historical visual research. The early restoration ranges and UI order below are superseded by the [model specification](../docs/MODEL_SPEC.md) and [current walkthrough](../README.md#product-walkthrough). Referenced utility designs do not imply endorsement or branding permission.
+
 Inspected live rendered pages in isolated Chrome with Playwright, using DOM,
 computed styles and screenshots at 1440px and 390px. References:
 

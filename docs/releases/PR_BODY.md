@@ -1,3 +1,7 @@
+# Original portfolio-release PR body
+
+> Historical description for [PR #1](https://github.com/its-spark-dev/GridGuide/pull/1), merged November 3, 2026. The merge, tag, and release described below are complete; this is not the PR body for subsequent editorial changes. Original text is retained for provenance. See the [publication record](CHECKLIST.md).
+
 ## Summary
 
 Prepare GridGuide’s first official portfolio release while preserving the HackOHI/O 2026 implementation and original history.
