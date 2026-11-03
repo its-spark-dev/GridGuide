@@ -1,0 +1,47 @@
+{
+  "reference": "Python 3.12.14 macOS arm64; same host as run manifest",
+  "rows": [
+    {
+      "case_id": "syn-serial-chain-25-4-17",
+      "end_to_end_seconds": 0.35639116703532636,
+      "solver_wall_seconds": 0.022434000000000003,
+      "fallback_reason": null,
+      "violations": []
+    },
+    {
+      "case_id": "syn-independent-branches-25-4-17",
+      "end_to_end_seconds": 0.23680741694988683,
+      "solver_wall_seconds": 0.22897,
+      "fallback_reason": null,
+      "violations": []
+    },
+    {
+      "case_id": "syn-upstream-bottleneck-25-4-17",
+      "end_to_end_seconds": 0.21751508302986622,
+      "solver_wall_seconds": 0.209519,
+      "fallback_reason": null,
+      "violations": []
+    },
+    {
+      "case_id": "syn-overlapping-dependencies-25-4-17",
+      "end_to_end_seconds": 0.36353550001513213,
+      "solver_wall_seconds": 0.35514100000000004,
+      "fallback_reason": null,
+      "violations": []
+    },
+    {
+      "case_id": "syn-blocked-prerequisites-25-4-17",
+      "end_to_end_seconds": 0.001778332982212305,
+      "solver_wall_seconds": 0,
+      "fallback_reason": "no_executable_tasks",
+      "violations": []
+    },
+    {
+      "case_id": "syn-critical-tradeoffs-25-4-17",
+      "end_to_end_seconds": 0.23184212495107204,
+      "solver_wall_seconds": 0.22384300000000001,
+      "fallback_reason": null,
+      "violations": []
+    }
+  ]
+}

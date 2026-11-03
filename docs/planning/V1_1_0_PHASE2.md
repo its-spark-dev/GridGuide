@@ -2,8 +2,7 @@
 
 The owner approved G1 and PR #3 was merged at `9b04fcf`. This phase implements the
 [approved benchmark foundation](V1_1_0_MASTER_ROADMAP.md) on
-`feat/v1.1-phase2-benchmark-foundation`. **G2 acceptance is pending owner review.
-Do not merge this PR or start Phase 3 without approval.** No release, tag or deployment
+`feat/v1.1-phase2-benchmark-foundation`. **G2 was approved by the owner; PR #4 merged at `8f1b0640f7a080de1578fc10dc195182fd7fec80`. The original stop-point notes below are historical.** No release, tag or deployment
 is authorized or performed by this phase.
 
 ## Deliverables and boundaries
@@ -166,8 +165,8 @@ never counts them as passed. Source data is not required by the standard benchma
 - [x] All cases retained; deterministic results separated from runtime observations.
 - [x] Source-free full reproduction, legacy regression lane and applicable checks.
 - [x] Complete results, report, specifications, commands and limitations retained.
-- [ ] Owner accepts benchmark fairness and evidence boundaries (G2).
-- [ ] Owner authorizes merge; Phase 3 remains separately gated.
+- [x] Owner accepts benchmark fairness and evidence boundaries (G2).
+- [x] Owner authorized merge; Phase 3 was separately approved afterward.
 
 ## Limitations, effort reassessment and stop
 

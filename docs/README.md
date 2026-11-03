@@ -74,4 +74,9 @@ The [v1.0.0 snapshot](https://github.com/its-spark-dev/GridGuide/tree/v1.0.0) pr
 
 Phase 2 review: [benchmark specification](benchmarks/PHASE2_SPEC.md),
 [G2 evidence and acceptance checklist](planning/V1_1_0_PHASE2.md), and
-[complete baseline report](benchmarks/phase2/standard/REPORT.md). No improved optimizer is implemented.
+[complete baseline report](benchmarks/phase2/standard/REPORT.md). That phase introduced no optimizer.
+
+Phase 3 review: [model](research/phase3/MODEL.md), [preregistered evaluation](research/phase3/EVALUATION_PROTOCOL.md),
+[complete comparison report](benchmarks/phase3/published/REPORT.md), and
+[G3 review packet](planning/V1_1_0_PHASE3.md). The optional optimizer is verified on the
+synthetic suite; its 5% median promotion target was not met. Application defaults are unchanged.

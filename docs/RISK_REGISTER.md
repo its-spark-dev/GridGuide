@@ -47,3 +47,13 @@ within the node budget. Restricted-horizon scoring must never be relabeled compl
 outage duration. Legacy adapters do not claim exact UI equivalence. Runtime/memory
 observations include instrumentation and are separate from deterministic result hashes.
 See [G2](planning/V1_1_0_PHASE2.md) for observed checks and approval status.
+
+## Phase 3 findings
+
+The median promotion target was missed: no default optimizer promotion is recommended.
+Small fixed search budgets leave large optimality gaps on some cases; FEASIBLE is not
+OPTIMAL. Validated fallback protects the declared primary cost, not every fairness or
+critical-service metric. Such regressions are retained in the G3 report. Published data
+is not a blind holdout; crossed cluster intervals with only five seeds provide limited
+design sensitivity, not operational confidence. Missing OR-Tools falls back explicitly.
+See [G3](planning/V1_1_0_PHASE3.md).

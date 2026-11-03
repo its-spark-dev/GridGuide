@@ -1,0 +1,410 @@
+[
+  {
+    "case_id": "syn-serial-chain-10-1-17",
+    "end_to_end_seconds": 0.33601195795927197,
+    "primary_wall_seconds": 0.012573,
+    "secondary_wall_seconds": 0.00064
+  },
+  {
+    "case_id": "syn-serial-chain-10-1-29",
+    "end_to_end_seconds": 0.002922249957919121,
+    "primary_wall_seconds": 0.00027,
+    "secondary_wall_seconds": 0.0002
+  },
+  {
+    "case_id": "syn-serial-chain-10-2-17",
+    "end_to_end_seconds": 0.004828582983464003,
+    "primary_wall_seconds": 0.001686,
+    "secondary_wall_seconds": 0.00047200000000000003
+  },
+  {
+    "case_id": "syn-serial-chain-10-2-29",
+    "end_to_end_seconds": 0.0037374580278992653,
+    "primary_wall_seconds": 0.0005970000000000001,
+    "secondary_wall_seconds": 0.0005110000000000001
+  },
+  {
+    "case_id": "syn-serial-chain-10-4-17",
+    "end_to_end_seconds": 0.009064875019248575,
+    "primary_wall_seconds": 0.004078,
+    "secondary_wall_seconds": 0.001884
+  },
+  {
+    "case_id": "syn-serial-chain-10-4-29",
+    "end_to_end_seconds": 0.00695454201195389,
+    "primary_wall_seconds": 0.002065,
+    "secondary_wall_seconds": 0.0019470000000000002
+  },
+  {
+    "case_id": "syn-serial-chain-25-1-17",
+    "end_to_end_seconds": 0.008194833004381508,
+    "primary_wall_seconds": 0.0008420000000000001,
+    "secondary_wall_seconds": 0.000471
+  },
+  {
+    "case_id": "syn-serial-chain-25-1-29",
+    "end_to_end_seconds": 0.00830241700168699,
+    "primary_wall_seconds": 0.0008,
+    "secondary_wall_seconds": 0.00047500000000000005
+  },
+  {
+    "case_id": "syn-serial-chain-25-2-17",
+    "end_to_end_seconds": 0.011006166983861476,
+    "primary_wall_seconds": 0.002091,
+    "secondary_wall_seconds": 0.0014910000000000001
+  },
+  {
+    "case_id": "syn-serial-chain-25-2-29",
+    "end_to_end_seconds": 0.011458749999292195,
+    "primary_wall_seconds": 0.0023840000000000003,
+    "secondary_wall_seconds": 0.0016300000000000002
+  },
+  {
+    "case_id": "syn-serial-chain-25-4-17",
+    "end_to_end_seconds": 0.02012791601009667,
+    "primary_wall_seconds": 0.0061400000000000005,
+    "secondary_wall_seconds": 0.005478
+  },
+  {
+    "case_id": "syn-serial-chain-25-4-29",
+    "end_to_end_seconds": 0.02095908299088478,
+    "primary_wall_seconds": 0.006602,
+    "secondary_wall_seconds": 0.005901
+  },
+  {
+    "case_id": "syn-independent-branches-10-1-17",
+    "end_to_end_seconds": 0.056026750011369586,
+    "primary_wall_seconds": 0.053764000000000006
+  },
+  {
+    "case_id": "syn-independent-branches-10-1-29",
+    "end_to_end_seconds": 0.08640312496572733,
+    "primary_wall_seconds": 0.08403100000000001
+  },
+  {
+    "case_id": "syn-independent-branches-10-2-17",
+    "end_to_end_seconds": 0.1350242500193417,
+    "primary_wall_seconds": 0.13236900000000001
+  },
+  {
+    "case_id": "syn-independent-branches-10-2-29",
+    "end_to_end_seconds": 0.08931579097406939,
+    "primary_wall_seconds": 0.086414
+  },
+  {
+    "case_id": "syn-independent-branches-10-4-17",
+    "end_to_end_seconds": 0.21821216703392565,
+    "primary_wall_seconds": 0.21518700000000002
+  },
+  {
+    "case_id": "syn-independent-branches-10-4-29",
+    "end_to_end_seconds": 0.18946299998788163,
+    "primary_wall_seconds": 0.186499
+  },
+  {
+    "case_id": "syn-independent-branches-25-1-17",
+    "end_to_end_seconds": 0.08816400001524016,
+    "primary_wall_seconds": 0.082181
+  },
+  {
+    "case_id": "syn-independent-branches-25-1-29",
+    "end_to_end_seconds": 0.13627420901320875,
+    "primary_wall_seconds": 0.13037500000000002
+  },
+  {
+    "case_id": "syn-independent-branches-25-2-17",
+    "end_to_end_seconds": 0.20527862501330674,
+    "primary_wall_seconds": 0.19895200000000002
+  },
+  {
+    "case_id": "syn-independent-branches-25-2-29",
+    "end_to_end_seconds": 0.49056812503840774,
+    "primary_wall_seconds": 0.48416800000000004
+  },
+  {
+    "case_id": "syn-independent-branches-25-4-17",
+    "end_to_end_seconds": 0.22139741596765816,
+    "primary_wall_seconds": 0.214183
+  },
+  {
+    "case_id": "syn-independent-branches-25-4-29",
+    "end_to_end_seconds": 0.19800179096637294,
+    "primary_wall_seconds": 0.190749
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-1-17",
+    "end_to_end_seconds": 0.1992830000235699,
+    "primary_wall_seconds": 0.19681400000000002
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-1-29",
+    "end_to_end_seconds": 0.1900243329582736,
+    "primary_wall_seconds": 0.18708000000000002,
+    "secondary_wall_seconds": 0.000375
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-2-17",
+    "end_to_end_seconds": 0.10761712503153831,
+    "primary_wall_seconds": 0.105035
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-2-29",
+    "end_to_end_seconds": 0.1078180410549976,
+    "primary_wall_seconds": 0.105049
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-4-17",
+    "end_to_end_seconds": 0.13205583300441504,
+    "primary_wall_seconds": 0.12885000000000002
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-4-29",
+    "end_to_end_seconds": 0.23552537499926984,
+    "primary_wall_seconds": 0.23253900000000002
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-1-17",
+    "end_to_end_seconds": 0.20253200002480298,
+    "primary_wall_seconds": 0.196033
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-1-29",
+    "end_to_end_seconds": 0.1594235409866087,
+    "primary_wall_seconds": 0.153044
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-2-17",
+    "end_to_end_seconds": 0.10667495802044868,
+    "primary_wall_seconds": 0.09961500000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-2-29",
+    "end_to_end_seconds": 0.6872713330085389,
+    "primary_wall_seconds": 0.6797150000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-4-17",
+    "end_to_end_seconds": 0.20673329202691093,
+    "primary_wall_seconds": 0.19904200000000002
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-4-29",
+    "end_to_end_seconds": 1.064163249975536,
+    "primary_wall_seconds": 1.0565170000000002
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-1-17",
+    "end_to_end_seconds": 0.12722995795775205,
+    "primary_wall_seconds": 0.12482000000000001
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-1-29",
+    "end_to_end_seconds": 0.16403149999678135,
+    "primary_wall_seconds": 0.161618
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-2-17",
+    "end_to_end_seconds": 0.16755420895060524,
+    "primary_wall_seconds": 0.164971
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-2-29",
+    "end_to_end_seconds": 0.10441324999555945,
+    "primary_wall_seconds": 0.101828
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-4-17",
+    "end_to_end_seconds": 0.16961295896908268,
+    "primary_wall_seconds": 0.166691
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-4-29",
+    "end_to_end_seconds": 0.10387616697698832,
+    "primary_wall_seconds": 0.054979,
+    "secondary_wall_seconds": 0.0458
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-1-17",
+    "end_to_end_seconds": 0.4876379169872962,
+    "primary_wall_seconds": 0.481152
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-1-29",
+    "end_to_end_seconds": 0.25901758298277855,
+    "primary_wall_seconds": 0.252539
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-2-17",
+    "end_to_end_seconds": 0.28989554196596146,
+    "primary_wall_seconds": 0.283028
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-2-29",
+    "end_to_end_seconds": 0.9554111249744892,
+    "primary_wall_seconds": 0.9483940000000001
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-4-17",
+    "end_to_end_seconds": 0.33824641699902713,
+    "primary_wall_seconds": 0.330394
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-4-29",
+    "end_to_end_seconds": 0.3026479580439627,
+    "primary_wall_seconds": 0.295069
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-1-17",
+    "end_to_end_seconds": 0.000816625019069761
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-1-29",
+    "end_to_end_seconds": 0.0007999999797903001
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-2-17",
+    "end_to_end_seconds": 0.0008487089653499424
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-2-29",
+    "end_to_end_seconds": 0.0007381250034086406
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-4-17",
+    "end_to_end_seconds": 0.0007481249631382525
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-4-29",
+    "end_to_end_seconds": 0.0007360419840551913
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-1-17",
+    "end_to_end_seconds": 0.0015870420029386878
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-1-29",
+    "end_to_end_seconds": 0.0015728750149719417
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-2-17",
+    "end_to_end_seconds": 0.001583542034495622
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-2-29",
+    "end_to_end_seconds": 0.001574791967868805
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-4-17",
+    "end_to_end_seconds": 0.0016188329900614917
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-4-29",
+    "end_to_end_seconds": 0.0015987500082701445
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-1-17",
+    "end_to_end_seconds": 0.055530000012367964,
+    "primary_wall_seconds": 0.053215000000000005
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-1-29",
+    "end_to_end_seconds": 0.08338525000726804,
+    "primary_wall_seconds": 0.081095
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-2-17",
+    "end_to_end_seconds": 0.13331337494309992,
+    "primary_wall_seconds": 0.130887
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-2-29",
+    "end_to_end_seconds": 0.08641041599912569,
+    "primary_wall_seconds": 0.083886
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-4-17",
+    "end_to_end_seconds": 0.220551542006433,
+    "primary_wall_seconds": 0.217726
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-4-29",
+    "end_to_end_seconds": 0.1919833749998361,
+    "primary_wall_seconds": 0.18911
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-1-17",
+    "end_to_end_seconds": 0.0872292909771204,
+    "primary_wall_seconds": 0.081308
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-1-29",
+    "end_to_end_seconds": 0.13722149998648092,
+    "primary_wall_seconds": 0.13134500000000002
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-2-17",
+    "end_to_end_seconds": 0.21007691702106968,
+    "primary_wall_seconds": 0.20345600000000003
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-2-29",
+    "end_to_end_seconds": 0.49688099999912083,
+    "primary_wall_seconds": 0.49041700000000005
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-4-17",
+    "end_to_end_seconds": 0.2217482079868205,
+    "primary_wall_seconds": 0.21447400000000003
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-4-29",
+    "end_to_end_seconds": 0.2014411250129342,
+    "primary_wall_seconds": 0.194139
+  },
+  {
+    "case_id": "syn-micro-weighted",
+    "end_to_end_seconds": 0.001085124968085438,
+    "primary_wall_seconds": 0.00017600000000000002,
+    "secondary_wall_seconds": 9.7e-05
+  },
+  {
+    "case_id": "syn-micro-overlap",
+    "end_to_end_seconds": 0.0010868749814108014,
+    "primary_wall_seconds": 0.000162,
+    "secondary_wall_seconds": 0.00019600000000000002
+  },
+  {
+    "case_id": "syn-micro-chain-eight",
+    "end_to_end_seconds": 0.0020239580189809203,
+    "primary_wall_seconds": 0.00015700000000000002,
+    "secondary_wall_seconds": 0.00015900000000000002
+  },
+  {
+    "case_id": "syn-micro-two-crews",
+    "end_to_end_seconds": 0.0016684579895809293,
+    "primary_wall_seconds": 0.000438,
+    "secondary_wall_seconds": 0.000295
+  },
+  {
+    "case_id": "syn-micro-blocked",
+    "end_to_end_seconds": 0.00028320797719061375
+  },
+  {
+    "case_id": "syn-micro-unknown",
+    "end_to_end_seconds": 0.0007534169708378613,
+    "primary_wall_seconds": 6.2e-05,
+    "secondary_wall_seconds": 5.5e-05
+  },
+  {
+    "case_id": "syn-micro-censored",
+    "end_to_end_seconds": 0.0008558749686926603,
+    "primary_wall_seconds": 8.6e-05,
+    "secondary_wall_seconds": 8.2e-05
+  },
+  {
+    "case_id": "syn-micro-critical",
+    "end_to_end_seconds": 0.0008897079969756305,
+    "primary_wall_seconds": 8.6e-05,
+    "secondary_wall_seconds": 8.6e-05
+  }
+]

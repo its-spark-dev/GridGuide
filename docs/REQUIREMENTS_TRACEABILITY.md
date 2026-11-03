@@ -44,3 +44,15 @@ Coverage review: dedicated Q2/Q4 pass, October 24, 2026. Later test/build checks
 | Baseline preservation | Separate 24-case source regression lane and existing suites | Missing source tests are unexecuted, not passed |
 
 See [G2 acceptance and results](planning/V1_1_0_PHASE2.md).
+
+## Phase 3 / G3 additions
+
+| Requirement | Evidence | Limit |
+|---|---|---|
+| Integer dependency-aware optimization | CP-SAT interval/assignment/release model | Synthetic conditional durations; no operational constraints inferred |
+| Correctness and safe failure | Unchanged G2 validator, exhaustive micro-oracle and fault tests | Only proof-bearing accepted candidates labeled optimal |
+| Fair comparison | Preregistered fixed baseline, separate best-of-four, paired crossed clusters | Public suite, no blind holdout; 5% median target missed |
+| Reproducibility | Full source-free hash match, version/settings manifest | Wall timing is separate |
+| Human tradeoff visibility | Critical/fairness regressions and fallback metadata retained | Operator integration is future work |
+
+[G3 review packet](planning/V1_1_0_PHASE3.md) records results and pending approval.

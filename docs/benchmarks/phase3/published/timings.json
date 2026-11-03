@@ -1,0 +1,1398 @@
+[
+  {
+    "case_id": "syn-serial-chain-10-1-101",
+    "end_to_end_seconds": 0.3611229579546489,
+    "primary_wall_seconds": 0.009001,
+    "secondary_wall_seconds": 0.000576
+  },
+  {
+    "case_id": "syn-serial-chain-10-1-211",
+    "end_to_end_seconds": 0.003254791023209691,
+    "primary_wall_seconds": 0.00028700000000000004,
+    "secondary_wall_seconds": 0.000218
+  },
+  {
+    "case_id": "syn-serial-chain-10-1-307",
+    "end_to_end_seconds": 0.003033582994248718,
+    "primary_wall_seconds": 0.000297,
+    "secondary_wall_seconds": 0.00020600000000000002
+  },
+  {
+    "case_id": "syn-serial-chain-10-1-401",
+    "end_to_end_seconds": 0.003462792024947703,
+    "primary_wall_seconds": 0.00028500000000000004,
+    "secondary_wall_seconds": 0.000275
+  },
+  {
+    "case_id": "syn-serial-chain-10-1-503",
+    "end_to_end_seconds": 0.003241624974180013,
+    "primary_wall_seconds": 0.000275,
+    "secondary_wall_seconds": 0.00024700000000000004
+  },
+  {
+    "case_id": "syn-serial-chain-10-2-101",
+    "end_to_end_seconds": 0.005342999997083098,
+    "primary_wall_seconds": 0.0016890000000000002,
+    "secondary_wall_seconds": 0.000747
+  },
+  {
+    "case_id": "syn-serial-chain-10-2-211",
+    "end_to_end_seconds": 0.003566958010196686,
+    "primary_wall_seconds": 0.000508,
+    "secondary_wall_seconds": 0.00047700000000000005
+  },
+  {
+    "case_id": "syn-serial-chain-10-2-307",
+    "end_to_end_seconds": 0.003994375001639128,
+    "primary_wall_seconds": 0.000599,
+    "secondary_wall_seconds": 0.000647
+  },
+  {
+    "case_id": "syn-serial-chain-10-2-401",
+    "end_to_end_seconds": 0.006252999999560416,
+    "primary_wall_seconds": 0.000679,
+    "secondary_wall_seconds": 0.002743
+  },
+  {
+    "case_id": "syn-serial-chain-10-2-503",
+    "end_to_end_seconds": 0.004651749972254038,
+    "primary_wall_seconds": 0.0006850000000000001,
+    "secondary_wall_seconds": 0.0012070000000000002
+  },
+  {
+    "case_id": "syn-serial-chain-10-4-101",
+    "end_to_end_seconds": 0.008689084032084793,
+    "primary_wall_seconds": 0.002919,
+    "secondary_wall_seconds": 0.0024690000000000003
+  },
+  {
+    "case_id": "syn-serial-chain-10-4-211",
+    "end_to_end_seconds": 0.007511749980039895,
+    "primary_wall_seconds": 0.002053,
+    "secondary_wall_seconds": 0.0019360000000000002
+  },
+  {
+    "case_id": "syn-serial-chain-10-4-307",
+    "end_to_end_seconds": 0.008038415980990976,
+    "primary_wall_seconds": 0.0024890000000000003,
+    "secondary_wall_seconds": 0.0024170000000000003
+  },
+  {
+    "case_id": "syn-serial-chain-10-4-401",
+    "end_to_end_seconds": 0.008404000021982938,
+    "primary_wall_seconds": 0.002424,
+    "secondary_wall_seconds": 0.002677
+  },
+  {
+    "case_id": "syn-serial-chain-10-4-503",
+    "end_to_end_seconds": 0.008256000000983477,
+    "primary_wall_seconds": 0.002473,
+    "secondary_wall_seconds": 0.002624
+  },
+  {
+    "case_id": "syn-serial-chain-25-1-101",
+    "end_to_end_seconds": 0.00837774999672547,
+    "primary_wall_seconds": 0.0008410000000000001,
+    "secondary_wall_seconds": 0.000517
+  },
+  {
+    "case_id": "syn-serial-chain-25-1-211",
+    "end_to_end_seconds": 0.008621459011919796,
+    "primary_wall_seconds": 0.0008640000000000001,
+    "secondary_wall_seconds": 0.000535
+  },
+  {
+    "case_id": "syn-serial-chain-25-1-307",
+    "end_to_end_seconds": 0.00842149998061359,
+    "primary_wall_seconds": 0.000852,
+    "secondary_wall_seconds": 0.000496
+  },
+  {
+    "case_id": "syn-serial-chain-25-1-401",
+    "end_to_end_seconds": 0.00847570801852271,
+    "primary_wall_seconds": 0.000821,
+    "secondary_wall_seconds": 0.0004890000000000001
+  },
+  {
+    "case_id": "syn-serial-chain-25-1-503",
+    "end_to_end_seconds": 0.00841104204300791,
+    "primary_wall_seconds": 0.000786,
+    "secondary_wall_seconds": 0.000508
+  },
+  {
+    "case_id": "syn-serial-chain-25-2-101",
+    "end_to_end_seconds": 0.01218508300371468,
+    "primary_wall_seconds": 0.002876,
+    "secondary_wall_seconds": 0.001619
+  },
+  {
+    "case_id": "syn-serial-chain-25-2-211",
+    "end_to_end_seconds": 0.012070792028680444,
+    "primary_wall_seconds": 0.0022180000000000004,
+    "secondary_wall_seconds": 0.0014290000000000001
+  },
+  {
+    "case_id": "syn-serial-chain-25-2-307",
+    "end_to_end_seconds": 0.012033374980092049,
+    "primary_wall_seconds": 0.002454,
+    "secondary_wall_seconds": 0.0017970000000000002
+  },
+  {
+    "case_id": "syn-serial-chain-25-2-401",
+    "end_to_end_seconds": 0.011444042029324919,
+    "primary_wall_seconds": 0.0023870000000000002,
+    "secondary_wall_seconds": 0.00161
+  },
+  {
+    "case_id": "syn-serial-chain-25-2-503",
+    "end_to_end_seconds": 0.011510415992233902,
+    "primary_wall_seconds": 0.002268,
+    "secondary_wall_seconds": 0.001624
+  },
+  {
+    "case_id": "syn-serial-chain-25-4-101",
+    "end_to_end_seconds": 0.02509008301422,
+    "primary_wall_seconds": 0.008333,
+    "secondary_wall_seconds": 0.007801000000000001
+  },
+  {
+    "case_id": "syn-serial-chain-25-4-211",
+    "end_to_end_seconds": 0.022535500000230968,
+    "primary_wall_seconds": 0.006766,
+    "secondary_wall_seconds": 0.0063490000000000005
+  },
+  {
+    "case_id": "syn-serial-chain-25-4-307",
+    "end_to_end_seconds": 0.025366917019709945,
+    "primary_wall_seconds": 0.008487,
+    "secondary_wall_seconds": 0.007696000000000001
+  },
+  {
+    "case_id": "syn-serial-chain-25-4-401",
+    "end_to_end_seconds": 0.025373124983161688,
+    "primary_wall_seconds": 0.008048000000000001,
+    "secondary_wall_seconds": 0.007945
+  },
+  {
+    "case_id": "syn-serial-chain-25-4-503",
+    "end_to_end_seconds": 0.0251822080463171,
+    "primary_wall_seconds": 0.008431000000000001,
+    "secondary_wall_seconds": 0.007607
+  },
+  {
+    "case_id": "syn-serial-chain-100-1-101",
+    "end_to_end_seconds": 0.09890120901400223,
+    "primary_wall_seconds": 0.026147,
+    "secondary_wall_seconds": 0.003367
+  },
+  {
+    "case_id": "syn-serial-chain-100-1-211",
+    "end_to_end_seconds": 0.09853587503312156,
+    "primary_wall_seconds": 0.026092,
+    "secondary_wall_seconds": 0.0032660000000000002
+  },
+  {
+    "case_id": "syn-serial-chain-100-1-307",
+    "end_to_end_seconds": 0.09733520896406844,
+    "primary_wall_seconds": 0.026484,
+    "secondary_wall_seconds": 0.003376
+  },
+  {
+    "case_id": "syn-serial-chain-100-1-401",
+    "end_to_end_seconds": 0.11559812497580424,
+    "primary_wall_seconds": 0.028773000000000003,
+    "secondary_wall_seconds": 0.003461
+  },
+  {
+    "case_id": "syn-serial-chain-100-1-503",
+    "end_to_end_seconds": 0.10096983396215364,
+    "primary_wall_seconds": 0.028723000000000002,
+    "secondary_wall_seconds": 0.003627
+  },
+  {
+    "case_id": "syn-serial-chain-100-2-101",
+    "end_to_end_seconds": 0.15424408402759582,
+    "primary_wall_seconds": 0.063043,
+    "secondary_wall_seconds": 0.018233000000000003
+  },
+  {
+    "case_id": "syn-serial-chain-100-2-211",
+    "end_to_end_seconds": 0.14597975002834573,
+    "primary_wall_seconds": 0.059522000000000005,
+    "secondary_wall_seconds": 0.016764
+  },
+  {
+    "case_id": "syn-serial-chain-100-2-307",
+    "end_to_end_seconds": 0.15638224995927885,
+    "primary_wall_seconds": 0.065363,
+    "secondary_wall_seconds": 0.019051000000000002
+  },
+  {
+    "case_id": "syn-serial-chain-100-2-401",
+    "end_to_end_seconds": 0.15649545897031203,
+    "primary_wall_seconds": 0.06796400000000001,
+    "secondary_wall_seconds": 0.018448000000000003
+  },
+  {
+    "case_id": "syn-serial-chain-100-2-503",
+    "end_to_end_seconds": 0.15608916705241427,
+    "primary_wall_seconds": 0.066874,
+    "secondary_wall_seconds": 0.017954
+  },
+  {
+    "case_id": "syn-serial-chain-100-4-101",
+    "end_to_end_seconds": 0.23221591697074473,
+    "primary_wall_seconds": 0.082499,
+    "secondary_wall_seconds": 0.073119
+  },
+  {
+    "case_id": "syn-serial-chain-100-4-211",
+    "end_to_end_seconds": 0.1849315410363488,
+    "primary_wall_seconds": 0.059805000000000004,
+    "secondary_wall_seconds": 0.05144000000000001
+  },
+  {
+    "case_id": "syn-serial-chain-100-4-307",
+    "end_to_end_seconds": 0.21642658300697803,
+    "primary_wall_seconds": 0.074224,
+    "secondary_wall_seconds": 0.06905700000000001
+  },
+  {
+    "case_id": "syn-serial-chain-100-4-401",
+    "end_to_end_seconds": 0.22617516602622345,
+    "primary_wall_seconds": 0.073079,
+    "secondary_wall_seconds": 0.065307
+  },
+  {
+    "case_id": "syn-serial-chain-100-4-503",
+    "end_to_end_seconds": 0.21493216697126627,
+    "primary_wall_seconds": 0.075186,
+    "secondary_wall_seconds": 0.066749
+  },
+  {
+    "case_id": "syn-independent-branches-10-1-101",
+    "end_to_end_seconds": 0.2739735000068322,
+    "primary_wall_seconds": 0.27137300000000003
+  },
+  {
+    "case_id": "syn-independent-branches-10-1-211",
+    "end_to_end_seconds": 0.9838896250003017,
+    "primary_wall_seconds": 0.9809370000000001
+  },
+  {
+    "case_id": "syn-independent-branches-10-1-307",
+    "end_to_end_seconds": 0.23269266600254923,
+    "primary_wall_seconds": 0.230113
+  },
+  {
+    "case_id": "syn-independent-branches-10-1-401",
+    "end_to_end_seconds": 0.24775041599059477,
+    "primary_wall_seconds": 0.24510400000000002
+  },
+  {
+    "case_id": "syn-independent-branches-10-1-503",
+    "end_to_end_seconds": 0.24496066698338836,
+    "primary_wall_seconds": 0.24247300000000002
+  },
+  {
+    "case_id": "syn-independent-branches-10-2-101",
+    "end_to_end_seconds": 0.14310008304892108,
+    "primary_wall_seconds": 0.139518
+  },
+  {
+    "case_id": "syn-independent-branches-10-2-211",
+    "end_to_end_seconds": 0.23430108302272856,
+    "primary_wall_seconds": 0.229385
+  },
+  {
+    "case_id": "syn-independent-branches-10-2-307",
+    "end_to_end_seconds": 0.22952750005060807,
+    "primary_wall_seconds": 0.22027400000000003
+  },
+  {
+    "case_id": "syn-independent-branches-10-2-401",
+    "end_to_end_seconds": 0.11298220802564174,
+    "primary_wall_seconds": 0.11016500000000001
+  },
+  {
+    "case_id": "syn-independent-branches-10-2-503",
+    "end_to_end_seconds": 0.11876333301188424,
+    "primary_wall_seconds": 0.115764
+  },
+  {
+    "case_id": "syn-independent-branches-10-4-101",
+    "end_to_end_seconds": 0.6015884579974227,
+    "primary_wall_seconds": 0.596859
+  },
+  {
+    "case_id": "syn-independent-branches-10-4-211",
+    "end_to_end_seconds": 0.24062829103786498,
+    "primary_wall_seconds": 0.237329
+  },
+  {
+    "case_id": "syn-independent-branches-10-4-307",
+    "end_to_end_seconds": 0.1696575409732759,
+    "primary_wall_seconds": 0.16651500000000002
+  },
+  {
+    "case_id": "syn-independent-branches-10-4-401",
+    "end_to_end_seconds": 0.15120999998180196,
+    "primary_wall_seconds": 0.148033
+  },
+  {
+    "case_id": "syn-independent-branches-10-4-503",
+    "end_to_end_seconds": 0.2188910419936292,
+    "primary_wall_seconds": 0.215865
+  },
+  {
+    "case_id": "syn-independent-branches-25-1-101",
+    "end_to_end_seconds": 0.17830029199831188,
+    "primary_wall_seconds": 0.17187100000000002
+  },
+  {
+    "case_id": "syn-independent-branches-25-1-211",
+    "end_to_end_seconds": 0.41955987497931346,
+    "primary_wall_seconds": 0.41295400000000004
+  },
+  {
+    "case_id": "syn-independent-branches-25-1-307",
+    "end_to_end_seconds": 0.27725874999305233,
+    "primary_wall_seconds": 0.27082100000000003
+  },
+  {
+    "case_id": "syn-independent-branches-25-1-401",
+    "end_to_end_seconds": 0.23937241698149592,
+    "primary_wall_seconds": 0.232554
+  },
+  {
+    "case_id": "syn-independent-branches-25-1-503",
+    "end_to_end_seconds": 0.4023166669649072,
+    "primary_wall_seconds": 0.39452800000000005
+  },
+  {
+    "case_id": "syn-independent-branches-25-2-101",
+    "end_to_end_seconds": 0.28421483299462125,
+    "primary_wall_seconds": 0.27742900000000004
+  },
+  {
+    "case_id": "syn-independent-branches-25-2-211",
+    "end_to_end_seconds": 0.23167841701069847,
+    "primary_wall_seconds": 0.22470400000000001
+  },
+  {
+    "case_id": "syn-independent-branches-25-2-307",
+    "end_to_end_seconds": 0.5411115000024438,
+    "primary_wall_seconds": 0.534413
+  },
+  {
+    "case_id": "syn-independent-branches-25-2-401",
+    "end_to_end_seconds": 2.0881456659990363,
+    "primary_wall_seconds": 2.078441
+  },
+  {
+    "case_id": "syn-independent-branches-25-2-503",
+    "end_to_end_seconds": 0.2561080420273356,
+    "primary_wall_seconds": 0.24822300000000003
+  },
+  {
+    "case_id": "syn-independent-branches-25-4-101",
+    "end_to_end_seconds": 0.3121607089997269,
+    "primary_wall_seconds": 0.30427000000000004
+  },
+  {
+    "case_id": "syn-independent-branches-25-4-211",
+    "end_to_end_seconds": 0.2903319580364041,
+    "primary_wall_seconds": 0.283552
+  },
+  {
+    "case_id": "syn-independent-branches-25-4-307",
+    "end_to_end_seconds": 0.20061541598988697,
+    "primary_wall_seconds": 0.192998
+  },
+  {
+    "case_id": "syn-independent-branches-25-4-401",
+    "end_to_end_seconds": 0.5591665420215577,
+    "primary_wall_seconds": 0.551608
+  },
+  {
+    "case_id": "syn-independent-branches-25-4-503",
+    "end_to_end_seconds": 0.17627083300612867,
+    "primary_wall_seconds": 0.168684
+  },
+  {
+    "case_id": "syn-independent-branches-100-1-101",
+    "end_to_end_seconds": 0.42393270903266966,
+    "primary_wall_seconds": 0.36036100000000004
+  },
+  {
+    "case_id": "syn-independent-branches-100-1-211",
+    "end_to_end_seconds": 0.44697962497593835,
+    "primary_wall_seconds": 0.383834
+  },
+  {
+    "case_id": "syn-independent-branches-100-1-307",
+    "end_to_end_seconds": 0.5308334580040537,
+    "primary_wall_seconds": 0.46679000000000004
+  },
+  {
+    "case_id": "syn-independent-branches-100-1-401",
+    "end_to_end_seconds": 0.43466179101960734,
+    "primary_wall_seconds": 0.37093400000000004
+  },
+  {
+    "case_id": "syn-independent-branches-100-1-503",
+    "end_to_end_seconds": 0.5969816250144504,
+    "primary_wall_seconds": 0.531602
+  },
+  {
+    "case_id": "syn-independent-branches-100-2-101",
+    "end_to_end_seconds": 1.6585974999470636,
+    "primary_wall_seconds": 1.593301
+  },
+  {
+    "case_id": "syn-independent-branches-100-2-211",
+    "end_to_end_seconds": 0.6780739999958314,
+    "primary_wall_seconds": 0.6131230000000001
+  },
+  {
+    "case_id": "syn-independent-branches-100-2-307",
+    "end_to_end_seconds": 0.7967435829923488,
+    "primary_wall_seconds": 0.72968
+  },
+  {
+    "case_id": "syn-independent-branches-100-2-401",
+    "end_to_end_seconds": 2.3035259579773992,
+    "primary_wall_seconds": 2.2378970000000002
+  },
+  {
+    "case_id": "syn-independent-branches-100-2-503",
+    "end_to_end_seconds": 1.4586282079690136,
+    "primary_wall_seconds": 1.366892
+  },
+  {
+    "case_id": "syn-independent-branches-100-4-101",
+    "end_to_end_seconds": 0.6505783330067061,
+    "primary_wall_seconds": 0.5813360000000001
+  },
+  {
+    "case_id": "syn-independent-branches-100-4-211",
+    "end_to_end_seconds": 0.5885948750074022,
+    "primary_wall_seconds": 0.520287
+  },
+  {
+    "case_id": "syn-independent-branches-100-4-307",
+    "end_to_end_seconds": 0.7584130829782225,
+    "primary_wall_seconds": 0.6899230000000001
+  },
+  {
+    "case_id": "syn-independent-branches-100-4-401",
+    "end_to_end_seconds": 0.5614172090427019,
+    "primary_wall_seconds": 0.49224500000000004
+  },
+  {
+    "case_id": "syn-independent-branches-100-4-503",
+    "end_to_end_seconds": 0.710310791968368,
+    "primary_wall_seconds": 0.6416350000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-1-101",
+    "end_to_end_seconds": 0.4600235419929959,
+    "primary_wall_seconds": 0.45744300000000004
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-1-211",
+    "end_to_end_seconds": 0.2997056250460446,
+    "primary_wall_seconds": 0.29724300000000003
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-1-307",
+    "end_to_end_seconds": 0.4431495000026189,
+    "primary_wall_seconds": 0.44065200000000004
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-1-401",
+    "end_to_end_seconds": 1.8664352499763481,
+    "primary_wall_seconds": 1.8636800000000002
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-1-503",
+    "end_to_end_seconds": 0.34942887496436015,
+    "primary_wall_seconds": 0.346868
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-2-101",
+    "end_to_end_seconds": 0.0730977919884026,
+    "primary_wall_seconds": 0.07052900000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-2-211",
+    "end_to_end_seconds": 0.09583020803984255,
+    "primary_wall_seconds": 0.093283
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-2-307",
+    "end_to_end_seconds": 0.08715445798588917,
+    "primary_wall_seconds": 0.08457100000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-2-401",
+    "end_to_end_seconds": 0.08877087500877678,
+    "primary_wall_seconds": 0.08612700000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-2-503",
+    "end_to_end_seconds": 0.2824580419692211,
+    "primary_wall_seconds": 0.27978600000000003
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-4-101",
+    "end_to_end_seconds": 0.09294125001179054,
+    "primary_wall_seconds": 0.089907
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-4-211",
+    "end_to_end_seconds": 0.16326508298516273,
+    "primary_wall_seconds": 0.160382
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-4-307",
+    "end_to_end_seconds": 0.09651375003159046,
+    "primary_wall_seconds": 0.09356500000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-4-401",
+    "end_to_end_seconds": 0.1363102089962922,
+    "primary_wall_seconds": 0.13326400000000002
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-10-4-503",
+    "end_to_end_seconds": 0.1523825000040233,
+    "primary_wall_seconds": 0.149374
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-1-101",
+    "end_to_end_seconds": 0.06551279197447002,
+    "primary_wall_seconds": 0.059243000000000004
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-1-211",
+    "end_to_end_seconds": 0.11415037501137704,
+    "primary_wall_seconds": 0.10769500000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-1-307",
+    "end_to_end_seconds": 0.1324460000032559,
+    "primary_wall_seconds": 0.126083
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-1-401",
+    "end_to_end_seconds": 0.2992052499903366,
+    "primary_wall_seconds": 0.29268900000000003
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-1-503",
+    "end_to_end_seconds": 0.5292238750262186,
+    "primary_wall_seconds": 0.522673
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-2-101",
+    "end_to_end_seconds": 0.12190475000534207,
+    "primary_wall_seconds": 0.115138
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-2-211",
+    "end_to_end_seconds": 0.1617329999571666,
+    "primary_wall_seconds": 0.154765
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-2-307",
+    "end_to_end_seconds": 0.193371000001207,
+    "primary_wall_seconds": 0.1864
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-2-401",
+    "end_to_end_seconds": 0.2044884999631904,
+    "primary_wall_seconds": 0.19747
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-2-503",
+    "end_to_end_seconds": 0.14213608298450708,
+    "primary_wall_seconds": 0.13531800000000002
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-4-101",
+    "end_to_end_seconds": 0.2263018749654293,
+    "primary_wall_seconds": 0.218622
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-4-211",
+    "end_to_end_seconds": 0.19386533403303474,
+    "primary_wall_seconds": 0.186067
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-4-307",
+    "end_to_end_seconds": 0.24357304198201746,
+    "primary_wall_seconds": 0.23586300000000002
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-4-401",
+    "end_to_end_seconds": 0.21694633399602026,
+    "primary_wall_seconds": 0.20906100000000002
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-25-4-503",
+    "end_to_end_seconds": 0.27065812499495223,
+    "primary_wall_seconds": 0.262847
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-1-101",
+    "end_to_end_seconds": 0.8367910839733668,
+    "primary_wall_seconds": 0.76698
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-1-211",
+    "end_to_end_seconds": 0.6535342499846593,
+    "primary_wall_seconds": 0.5831970000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-1-307",
+    "end_to_end_seconds": 0.7937367910053581,
+    "primary_wall_seconds": 0.724345
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-1-401",
+    "end_to_end_seconds": 0.8975766659714282,
+    "primary_wall_seconds": 0.823613
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-1-503",
+    "end_to_end_seconds": 0.49487608298659325,
+    "primary_wall_seconds": 0.41902700000000004
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-2-101",
+    "end_to_end_seconds": 0.7445744999567978,
+    "primary_wall_seconds": 0.645811
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-2-211",
+    "end_to_end_seconds": 0.8186847500037402,
+    "primary_wall_seconds": 0.743241
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-2-307",
+    "end_to_end_seconds": 0.9311982080107555,
+    "primary_wall_seconds": 0.8557440000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-2-401",
+    "end_to_end_seconds": 0.8235982499900274,
+    "primary_wall_seconds": 0.7486820000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-2-503",
+    "end_to_end_seconds": 0.7716484169941396,
+    "primary_wall_seconds": 0.697358
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-4-101",
+    "end_to_end_seconds": 0.9252167920349166,
+    "primary_wall_seconds": 0.8473970000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-4-211",
+    "end_to_end_seconds": 0.8718253339757212,
+    "primary_wall_seconds": 0.794072
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-4-307",
+    "end_to_end_seconds": 0.8428131669643335,
+    "primary_wall_seconds": 0.766738
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-4-401",
+    "end_to_end_seconds": 0.7663773749954998,
+    "primary_wall_seconds": 0.6875570000000001
+  },
+  {
+    "case_id": "syn-upstream-bottleneck-100-4-503",
+    "end_to_end_seconds": 0.7925005829893053,
+    "primary_wall_seconds": 0.714248
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-1-101",
+    "end_to_end_seconds": 0.32130000001052395,
+    "primary_wall_seconds": 0.31855
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-1-211",
+    "end_to_end_seconds": 0.38221574999624863,
+    "primary_wall_seconds": 0.379514
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-1-307",
+    "end_to_end_seconds": 0.15378400002373382,
+    "primary_wall_seconds": 0.15099300000000002
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-1-401",
+    "end_to_end_seconds": 0.18110745796002448,
+    "primary_wall_seconds": 0.178261
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-1-503",
+    "end_to_end_seconds": 0.2879976669792086,
+    "primary_wall_seconds": 0.28517000000000003
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-2-101",
+    "end_to_end_seconds": 0.1735087499837391,
+    "primary_wall_seconds": 0.170583
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-2-211",
+    "end_to_end_seconds": 0.1931521669612266,
+    "primary_wall_seconds": 0.190035
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-2-307",
+    "end_to_end_seconds": 0.23949649999849498,
+    "primary_wall_seconds": 0.23652600000000001
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-2-401",
+    "end_to_end_seconds": 0.21477512503042817,
+    "primary_wall_seconds": 0.21175500000000003
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-2-503",
+    "end_to_end_seconds": 0.16927962499903515,
+    "primary_wall_seconds": 0.166309
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-4-101",
+    "end_to_end_seconds": 0.14479258295614272,
+    "primary_wall_seconds": 0.141332
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-4-211",
+    "end_to_end_seconds": 0.14561466599116102,
+    "primary_wall_seconds": 0.142591
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-4-307",
+    "end_to_end_seconds": 0.3968779580318369,
+    "primary_wall_seconds": 0.39371300000000004
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-4-401",
+    "end_to_end_seconds": 0.18403595901327208,
+    "primary_wall_seconds": 0.180422
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-10-4-503",
+    "end_to_end_seconds": 0.2786647080210969,
+    "primary_wall_seconds": 0.275237
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-1-101",
+    "end_to_end_seconds": 0.37577658297959715,
+    "primary_wall_seconds": 0.36818
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-1-211",
+    "end_to_end_seconds": 0.276740666013211,
+    "primary_wall_seconds": 0.269486
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-1-307",
+    "end_to_end_seconds": 0.5658487080363557,
+    "primary_wall_seconds": 0.5585070000000001
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-1-401",
+    "end_to_end_seconds": 0.23664204101078212,
+    "primary_wall_seconds": 0.22712900000000003
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-1-503",
+    "end_to_end_seconds": 0.3715106670279056,
+    "primary_wall_seconds": 0.360383
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-2-101",
+    "end_to_end_seconds": 0.39698862499790266,
+    "primary_wall_seconds": 0.388793
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-2-211",
+    "end_to_end_seconds": 0.20653854199917987,
+    "primary_wall_seconds": 0.195895
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-2-307",
+    "end_to_end_seconds": 0.4723644590121694,
+    "primary_wall_seconds": 0.464428
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-2-401",
+    "end_to_end_seconds": 1.1469589170301333,
+    "primary_wall_seconds": 1.1386850000000002
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-2-503",
+    "end_to_end_seconds": 1.1219831670168787,
+    "primary_wall_seconds": 1.1139050000000001
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-4-101",
+    "end_to_end_seconds": 0.23609754198696464,
+    "primary_wall_seconds": 0.226883
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-4-211",
+    "end_to_end_seconds": 0.7419305419898592,
+    "primary_wall_seconds": 0.734037
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-4-307",
+    "end_to_end_seconds": 0.35494591703172773,
+    "primary_wall_seconds": 0.345947
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-4-401",
+    "end_to_end_seconds": 0.2974546670448035,
+    "primary_wall_seconds": 0.288375
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-25-4-503",
+    "end_to_end_seconds": 0.2723151249811053,
+    "primary_wall_seconds": 0.26349900000000004
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-1-101",
+    "end_to_end_seconds": 0.3173460410325788,
+    "primary_wall_seconds": 0.232794
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-1-211",
+    "end_to_end_seconds": 0.36043058399809524,
+    "primary_wall_seconds": 0.23706500000000003
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-1-307",
+    "end_to_end_seconds": 0.2954295410308987,
+    "primary_wall_seconds": 0.20825700000000003
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-1-401",
+    "end_to_end_seconds": 0.3179014999768697,
+    "primary_wall_seconds": 0.234129
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-1-503",
+    "end_to_end_seconds": 0.31147366703953594,
+    "primary_wall_seconds": 0.22848100000000002
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-2-101",
+    "end_to_end_seconds": 1.501864291029051,
+    "primary_wall_seconds": 1.4159940000000002
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-2-211",
+    "end_to_end_seconds": 1.123793958046008,
+    "primary_wall_seconds": 1.0393700000000001
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-2-307",
+    "end_to_end_seconds": 2.565809666994028,
+    "primary_wall_seconds": 2.4815840000000002
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-2-401",
+    "end_to_end_seconds": 2.196214666008018,
+    "primary_wall_seconds": 2.1111590000000002
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-2-503",
+    "end_to_end_seconds": 2.093032375036273,
+    "primary_wall_seconds": 2.0093550000000002
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-4-101",
+    "end_to_end_seconds": 1.1573862920049578,
+    "primary_wall_seconds": 1.068662
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-4-211",
+    "end_to_end_seconds": 0.8633389580063522,
+    "primary_wall_seconds": 0.774644
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-4-307",
+    "end_to_end_seconds": 0.6954218330211006,
+    "primary_wall_seconds": 0.609785
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-4-401",
+    "end_to_end_seconds": 0.9493426660192199,
+    "primary_wall_seconds": 0.8593120000000001
+  },
+  {
+    "case_id": "syn-overlapping-dependencies-100-4-503",
+    "end_to_end_seconds": 0.781377833976876,
+    "primary_wall_seconds": 0.69432
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-1-101",
+    "end_to_end_seconds": 0.0008242920157499611
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-1-211",
+    "end_to_end_seconds": 0.0007735409890301526
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-1-307",
+    "end_to_end_seconds": 0.0007912080036476254
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-1-401",
+    "end_to_end_seconds": 0.0008469169843010604
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-1-503",
+    "end_to_end_seconds": 0.0009265000117011368
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-2-101",
+    "end_to_end_seconds": 0.000818417000118643
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-2-211",
+    "end_to_end_seconds": 0.0008024999988265336
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-2-307",
+    "end_to_end_seconds": 0.0008165829931385815
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-2-401",
+    "end_to_end_seconds": 0.0008695420110598207
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-2-503",
+    "end_to_end_seconds": 0.0009443340240977705
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-4-101",
+    "end_to_end_seconds": 0.0008454159833490849
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-4-211",
+    "end_to_end_seconds": 0.0008808750426396728
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-4-307",
+    "end_to_end_seconds": 0.0008303339709527791
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-4-401",
+    "end_to_end_seconds": 0.000911374983843416
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-10-4-503",
+    "end_to_end_seconds": 0.0008547919569537044
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-1-101",
+    "end_to_end_seconds": 0.020632999949157238
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-1-211",
+    "end_to_end_seconds": 0.001993499987293035
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-1-307",
+    "end_to_end_seconds": 0.0019771669758483768
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-1-401",
+    "end_to_end_seconds": 0.0017132919747382402
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-1-503",
+    "end_to_end_seconds": 0.0016573750181123614
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-2-101",
+    "end_to_end_seconds": 0.0018915419932454824
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-2-211",
+    "end_to_end_seconds": 0.001888333004899323
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-2-307",
+    "end_to_end_seconds": 0.001722124987281859
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-2-401",
+    "end_to_end_seconds": 0.0019104580278508365
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-2-503",
+    "end_to_end_seconds": 0.0016616249922662973
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-4-101",
+    "end_to_end_seconds": 0.001612125022802502
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-4-211",
+    "end_to_end_seconds": 0.0020353750442154706
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-4-307",
+    "end_to_end_seconds": 0.001701875007711351
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-4-401",
+    "end_to_end_seconds": 0.0017068330198526382
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-25-4-503",
+    "end_to_end_seconds": 0.0016626659780740738
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-1-101",
+    "end_to_end_seconds": 0.006854959006886929
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-1-211",
+    "end_to_end_seconds": 0.0066687920480035245
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-1-307",
+    "end_to_end_seconds": 0.006706958054564893
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-1-401",
+    "end_to_end_seconds": 0.006743332953192294
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-1-503",
+    "end_to_end_seconds": 0.00651529198512435
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-2-101",
+    "end_to_end_seconds": 0.006650333991274238
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-2-211",
+    "end_to_end_seconds": 0.006466874969191849
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-2-307",
+    "end_to_end_seconds": 0.006620166008360684
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-2-401",
+    "end_to_end_seconds": 0.006313416000921279
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-2-503",
+    "end_to_end_seconds": 0.006278499960899353
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-4-101",
+    "end_to_end_seconds": 0.006569374992977828
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-4-211",
+    "end_to_end_seconds": 0.006477584014646709
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-4-307",
+    "end_to_end_seconds": 0.006841708032879978
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-4-401",
+    "end_to_end_seconds": 0.006638958991970867
+  },
+  {
+    "case_id": "syn-blocked-prerequisites-100-4-503",
+    "end_to_end_seconds": 0.0066689999657683074
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-1-101",
+    "end_to_end_seconds": 0.2945039999904111,
+    "primary_wall_seconds": 0.29192500000000005
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-1-211",
+    "end_to_end_seconds": 1.068582417035941,
+    "primary_wall_seconds": 1.0659750000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-1-307",
+    "end_to_end_seconds": 0.2561309160082601,
+    "primary_wall_seconds": 0.25318
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-1-401",
+    "end_to_end_seconds": 0.28692229196894914,
+    "primary_wall_seconds": 0.284157
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-1-503",
+    "end_to_end_seconds": 0.2630656249821186,
+    "primary_wall_seconds": 0.260143
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-2-101",
+    "end_to_end_seconds": 0.1290187090053223,
+    "primary_wall_seconds": 0.12615900000000002
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-2-211",
+    "end_to_end_seconds": 0.11142141598975286,
+    "primary_wall_seconds": 0.10862200000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-2-307",
+    "end_to_end_seconds": 0.17969720799010247,
+    "primary_wall_seconds": 0.176767
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-2-401",
+    "end_to_end_seconds": 0.11231391597539186,
+    "primary_wall_seconds": 0.10758400000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-2-503",
+    "end_to_end_seconds": 0.10717404197202995,
+    "primary_wall_seconds": 0.10419400000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-4-101",
+    "end_to_end_seconds": 0.2822439579758793,
+    "primary_wall_seconds": 0.278279
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-4-211",
+    "end_to_end_seconds": 0.23949687503045425,
+    "primary_wall_seconds": 0.23606000000000002
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-4-307",
+    "end_to_end_seconds": 0.18733629200141877,
+    "primary_wall_seconds": 0.18374800000000002
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-4-401",
+    "end_to_end_seconds": 0.1650376669713296,
+    "primary_wall_seconds": 0.16129600000000002
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-10-4-503",
+    "end_to_end_seconds": 0.24763220798922703,
+    "primary_wall_seconds": 0.24441200000000002
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-1-101",
+    "end_to_end_seconds": 0.19022341701202095,
+    "primary_wall_seconds": 0.1837
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-1-211",
+    "end_to_end_seconds": 0.45989791699685156,
+    "primary_wall_seconds": 0.45311300000000004
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-1-307",
+    "end_to_end_seconds": 0.5931082500028424,
+    "primary_wall_seconds": 0.5843240000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-1-401",
+    "end_to_end_seconds": 0.27336804202059284,
+    "primary_wall_seconds": 0.26477900000000004
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-1-503",
+    "end_to_end_seconds": 0.345071709016338,
+    "primary_wall_seconds": 0.336488
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-2-101",
+    "end_to_end_seconds": 0.40084062499227,
+    "primary_wall_seconds": 0.39229400000000003
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-2-211",
+    "end_to_end_seconds": 0.24103795795235783,
+    "primary_wall_seconds": 0.233191
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-2-307",
+    "end_to_end_seconds": 0.5651509999879636,
+    "primary_wall_seconds": 0.5579700000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-2-401",
+    "end_to_end_seconds": 1.9904550000210293,
+    "primary_wall_seconds": 1.983008
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-2-503",
+    "end_to_end_seconds": 0.2776382919983007,
+    "primary_wall_seconds": 0.26916500000000004
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-4-101",
+    "end_to_end_seconds": 0.33021845802431926,
+    "primary_wall_seconds": 0.322069
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-4-211",
+    "end_to_end_seconds": 0.3230373340193182,
+    "primary_wall_seconds": 0.315427
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-4-307",
+    "end_to_end_seconds": 0.22529574995860457,
+    "primary_wall_seconds": 0.217092
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-4-401",
+    "end_to_end_seconds": 0.6390367500134744,
+    "primary_wall_seconds": 0.631011
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-25-4-503",
+    "end_to_end_seconds": 0.21452658297494054,
+    "primary_wall_seconds": 0.20384300000000002
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-1-101",
+    "end_to_end_seconds": 0.46227987500606105,
+    "primary_wall_seconds": 0.394031
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-1-211",
+    "end_to_end_seconds": 0.5021866669994779,
+    "primary_wall_seconds": 0.43206300000000003
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-1-307",
+    "end_to_end_seconds": 0.5934360409737565,
+    "primary_wall_seconds": 0.525995
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-1-401",
+    "end_to_end_seconds": 0.4763476250227541,
+    "primary_wall_seconds": 0.40350600000000003
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-1-503",
+    "end_to_end_seconds": 0.7135383340064436,
+    "primary_wall_seconds": 0.6036830000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-2-101",
+    "end_to_end_seconds": 1.8591309170005843,
+    "primary_wall_seconds": 1.788207
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-2-211",
+    "end_to_end_seconds": 0.7259317499701865,
+    "primary_wall_seconds": 0.655336
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-2-307",
+    "end_to_end_seconds": 0.8411690409993753,
+    "primary_wall_seconds": 0.7721560000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-2-401",
+    "end_to_end_seconds": 2.378666542004794,
+    "primary_wall_seconds": 2.309013
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-2-503",
+    "end_to_end_seconds": 1.57882445899304,
+    "primary_wall_seconds": 1.5098790000000002
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-4-101",
+    "end_to_end_seconds": 0.6987084579886869,
+    "primary_wall_seconds": 0.625409
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-4-211",
+    "end_to_end_seconds": 0.6269608329748735,
+    "primary_wall_seconds": 0.554357
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-4-307",
+    "end_to_end_seconds": 0.8094737500068732,
+    "primary_wall_seconds": 0.7364780000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-4-401",
+    "end_to_end_seconds": 0.6018543749814853,
+    "primary_wall_seconds": 0.5298010000000001
+  },
+  {
+    "case_id": "syn-critical-tradeoffs-100-4-503",
+    "end_to_end_seconds": 0.7553381250472739,
+    "primary_wall_seconds": 0.6834520000000001
+  },
+  {
+    "case_id": "syn-micro-weighted",
+    "end_to_end_seconds": 0.001475999946705997,
+    "primary_wall_seconds": 0.000284,
+    "secondary_wall_seconds": 0.000135
+  },
+  {
+    "case_id": "syn-micro-overlap",
+    "end_to_end_seconds": 0.0013527499977499247,
+    "primary_wall_seconds": 0.000231,
+    "secondary_wall_seconds": 0.00025
+  },
+  {
+    "case_id": "syn-micro-chain-eight",
+    "end_to_end_seconds": 0.002443542005494237,
+    "primary_wall_seconds": 0.000252,
+    "secondary_wall_seconds": 0.000173
+  },
+  {
+    "case_id": "syn-micro-two-crews",
+    "end_to_end_seconds": 0.002060333965346217,
+    "primary_wall_seconds": 0.000564,
+    "secondary_wall_seconds": 0.000346
+  },
+  {
+    "case_id": "syn-micro-blocked",
+    "end_to_end_seconds": 0.0003255420015193522
+  },
+  {
+    "case_id": "syn-micro-unknown",
+    "end_to_end_seconds": 0.0008502910495735705,
+    "primary_wall_seconds": 9.2e-05,
+    "secondary_wall_seconds": 6.400000000000001e-05
+  },
+  {
+    "case_id": "syn-micro-censored",
+    "end_to_end_seconds": 0.0009880409925244749,
+    "primary_wall_seconds": 0.000106,
+    "secondary_wall_seconds": 9.5e-05
+  },
+  {
+    "case_id": "syn-micro-critical",
+    "end_to_end_seconds": 0.001013208006042987,
+    "primary_wall_seconds": 9.800000000000001e-05,
+    "secondary_wall_seconds": 9e-05
+  }
+]
