@@ -1,5 +1,7 @@
 # GridGuide feature-freeze evidence — October 24, 2026
 
+> Historical checkpoint record. Statements about uncommitted work, screen order, and test totals describe that development pass. See the [documentation guide](README.md) and [November 3 portfolio verification](releases/VERIFICATION.md) for the current release context.
+
 **Local implementation: GREEN. Operational evidence: bounded / YELLOW.** Q2 supports complete reverse dependencies for verified source assets and a qualified historical ARCOS spatial replay. It does not establish direct ARCOS identity or current outages. Q4 supports an explicit four-candidate prototype priority policy, spatial critical-premise context, one/two-crew scheduling and conditional time. It is not AEP dispatch policy. Actual switching, facility electrical attachment, measured efficiency and clearance duration remain unavailable.
 
 Detailed source investigation, coverage denominators, six-class evidence ledger, candidate comparison, ten hostile judge questions and the current 2–3 minute demo: [Q2_Q4_DECISION_SUPPORT.md](Q2_Q4_DECISION_SUPPORT.md). Formulas: [MODEL_SPEC.md](MODEL_SPEC.md). Requirement matrix: [REQUIREMENTS_TRACEABILITY.md](REQUIREMENTS_TRACEABILITY.md).

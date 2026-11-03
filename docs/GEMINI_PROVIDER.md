@@ -2,7 +2,7 @@
 
 GREEN: the Gemini Developer API completed all four required live explanation cases with the existing strict server validator. Deterministic calculations, customer guidance and UI design are unchanged.
 
-Final freeze rehearsal also passed all four live cases, but uncached HTTP latency was 4.1–5.7 seconds; the exact repeated answer took 3.6 ms from cache. Do not assume the earlier subsecond sample below is typical. The provider-disabled browser rehearsal also passed. See [final measurements and remaining risks](DEMO_FREEZE.md#final-evidence-and-severity).
+Final freeze rehearsal also passed all four live cases, but uncached HTTP latency was 4.1–5.7 seconds; the exact repeated answer took 3.6 ms from cache. Do not assume the earlier subsecond sample below is typical. The provider-disabled browser rehearsal also passed. See the [historical freeze record and remaining risks](DEMO_FREEZE.md).
 
 ## Checkpoint and provider choice
 
