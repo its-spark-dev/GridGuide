@@ -1,0 +1,1731 @@
+{
+  "baseline_commit": "9b04fcf",
+  "cases": [
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 7.596,
+        "upper": 15.192
+      },
+      "crews": 1,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 23,
+          "cumulative": 23,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 3,
+          "cumulative": 26,
+          "elapsed_hours": {
+            "lower": 1.728,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 2.592,
+            "upper": 5.184
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 7.596,
+            "upper": 15.192
+          }
+        }
+      ],
+      "people": 2,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.728,
+            "upper": 3.456
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 2.592,
+            "upper": 5.184
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 1.728,
+            "upper": 3.456
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 7.596,
+            "upper": 15.192
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 2.592,
+            "upper": 5.184
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 1,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 23,
+          "cumulative": 23,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 1.728,
+            "upper": 3.456
+          }
+        }
+      ],
+      "people": 2,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.728,
+            "upper": 3.456
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 7.596,
+        "upper": 15.192
+      },
+      "crews": 1,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 1,
+          "cumulative": 1,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 23,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 1.728,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 3,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 2.592,
+            "upper": 5.184
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 7.596,
+            "upper": 15.192
+          }
+        }
+      ],
+      "people": 2,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.728,
+            "upper": 3.456
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 2.592,
+            "upper": 5.184
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 1.728,
+            "upper": 3.456
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 7.596,
+            "upper": 15.192
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 2.592,
+            "upper": 5.184
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 1,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 1,
+          "cumulative": 1,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 23,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 1.728,
+            "upper": 3.456
+          }
+        }
+      ],
+      "people": 2,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.728,
+            "upper": 3.456
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 3.798,
+        "upper": 15.192
+      },
+      "crews": 1,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 23,
+          "cumulative": 23,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 3,
+          "cumulative": 26,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 1.296,
+            "upper": 5.184
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 3.798,
+            "upper": 15.192
+          }
+        }
+      ],
+      "people": 4,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 3.456
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.296,
+            "upper": 5.184
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.864,
+            "upper": 3.456
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 3.798,
+            "upper": 15.192
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 1.296,
+            "upper": 5.184
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 1,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 23,
+          "cumulative": 23,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 3.456
+          }
+        }
+      ],
+      "people": 4,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 3.456
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 3.798,
+        "upper": 15.192
+      },
+      "crews": 1,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 1,
+          "cumulative": 1,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 23,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 3,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 1.296,
+            "upper": 5.184
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 3.798,
+            "upper": 15.192
+          }
+        }
+      ],
+      "people": 4,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 3.456
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.296,
+            "upper": 5.184
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.864,
+            "upper": 3.456
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 3.798,
+            "upper": 15.192
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 1.296,
+            "upper": 5.184
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 1,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 1,
+          "cumulative": 1,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 23,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 3.456
+          }
+        }
+      ],
+      "people": 4,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 3.456
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 1.899,
+        "upper": 15.192
+      },
+      "crews": 1,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 23,
+          "cumulative": 23,
+          "elapsed_hours": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 3,
+          "cumulative": 26,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 0.648,
+            "upper": 5.184
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 1.899,
+            "upper": 15.192
+          }
+        }
+      ],
+      "people": 8,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 3.456
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.648,
+            "upper": 5.184
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.432,
+            "upper": 3.456
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.899,
+            "upper": 15.192
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 0.648,
+            "upper": 5.184
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 1,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 23,
+          "cumulative": 23,
+          "elapsed_hours": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 3.456
+          }
+        }
+      ],
+      "people": 8,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 3.456
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 1.899,
+        "upper": 15.192
+      },
+      "crews": 1,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 1,
+          "cumulative": 1,
+          "elapsed_hours": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 23,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 3,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 0.648,
+            "upper": 5.184
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 1.899,
+            "upper": 15.192
+          }
+        }
+      ],
+      "people": 8,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 3.456
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.648,
+            "upper": 5.184
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.432,
+            "upper": 3.456
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.899,
+            "upper": 15.192
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 0.648,
+            "upper": 5.184
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 1,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 1,
+          "cumulative": 1,
+          "elapsed_hours": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 23,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 3.456
+          }
+        }
+      ],
+      "people": 8,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 3.456
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 5.868,
+        "upper": 11.736
+      },
+      "crews": 2,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 26,
+          "cumulative": 26,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 1.728,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 5.868,
+            "upper": 11.736
+          }
+        }
+      ],
+      "people": 2,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.728,
+            "upper": 3.456
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 5.868,
+            "upper": 11.736
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 2,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 24,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        }
+      ],
+      "people": 2,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 6.732,
+        "upper": 13.464
+      },
+      "crews": 2,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 24,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 3,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 1.728,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 6.732,
+            "upper": 13.464
+          }
+        }
+      ],
+      "people": 2,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 1.728,
+            "upper": 3.456
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 6.732,
+            "upper": 13.464
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 1.728,
+            "upper": 3.456
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 2,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 24,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 1.728
+          }
+        }
+      ],
+      "people": 2,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.864,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 2.934,
+        "upper": 11.736
+      },
+      "crews": 2,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 26,
+          "cumulative": 26,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 2.934,
+            "upper": 11.736
+          }
+        }
+      ],
+      "people": 4,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 3.456
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 2.934,
+            "upper": 11.736
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 2,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 24,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        }
+      ],
+      "people": 4,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 3.366,
+        "upper": 13.464
+      },
+      "crews": 2,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 24,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 3,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 0.864,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 3.366,
+            "upper": 13.464
+          }
+        }
+      ],
+      "people": 4,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.864,
+            "upper": 3.456
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 3.366,
+            "upper": 13.464
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 0.864,
+            "upper": 3.456
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 2,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 24,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 1.728
+          }
+        }
+      ],
+      "people": 4,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.432,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 1.467,
+        "upper": 11.736
+      },
+      "crews": 2,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 26,
+          "cumulative": 26,
+          "elapsed_hours": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 1.467,
+            "upper": 11.736
+          }
+        }
+      ],
+      "people": 8,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 3.456
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 1.467,
+            "upper": 11.736
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 2,
+      "critical_proxy": false,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 24,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        }
+      ],
+      "people": 8,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        }
+      ],
+      "total_person_hours": null
+    },
+    {
+      "blocked_upstream": false,
+      "completion_hours": {
+        "lower": 1.683,
+        "upper": 13.464
+      },
+      "crews": 2,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 24,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "additional": 3,
+          "cumulative": 27,
+          "elapsed_hours": {
+            "lower": 0.432,
+            "upper": 3.456
+          }
+        },
+        {
+          "additional": 1,
+          "cumulative": 28,
+          "elapsed_hours": {
+            "lower": 1.683,
+            "upper": 13.464
+          }
+        }
+      ],
+      "people": 8,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.432,
+            "upper": 3.456
+          },
+          "label": "Golden upstream fuse",
+          "start": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 1.683,
+            "upper": 13.464
+          },
+          "label": "Golden transformer",
+          "start": {
+            "lower": 0.432,
+            "upper": 3.456
+          }
+        }
+      ],
+      "total_person_hours": 15.192
+    },
+    {
+      "blocked_upstream": true,
+      "completion_hours": null,
+      "crews": 2,
+      "critical_proxy": true,
+      "distinct_dependency_customers": 28,
+      "milestones": [
+        {
+          "additional": 24,
+          "cumulative": 24,
+          "elapsed_hours": {
+            "lower": 0.216,
+            "upper": 1.728
+          }
+        }
+      ],
+      "people": 8,
+      "repair_person_hours": 15.192,
+      "tasks": [
+        {
+          "crew": 1,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Critical-context fuse",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        },
+        {
+          "crew": 2,
+          "finish": {
+            "lower": 0.216,
+            "upper": 1.728
+          },
+          "label": "Historical fuse replay",
+          "start": {
+            "lower": 0.0,
+            "upper": 0.0
+          }
+        }
+      ],
+      "total_person_hours": null
+    }
+  ],
+  "evidence": "Challenge-backed modeled envelopes, historical spatial hypotheses and declared damage; not observations of restoration.",
+  "implementation_sha256": "02e9be4b861b07fb4d31b8050a6a714241b9fa34953da000a78b1529fe17203f",
+  "normalized_adapter_equivalence_claim": false,
+  "source_sha256": {
+    "Data1.zip": "08ac47b7dd7f43cde56509644d7292d0b6978dcd62300912b4ecf0a2c3c6eca3",
+    "Data2.zip": "13bea1c84636989a6475f481d67f25b25a17fcac8b77f674a5157e3a1d105f00",
+    "Install_Labor_HackOHIO.xlsx": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b",
+    "matched_upstream.zip": "13f8d9da49843c959059b4074417c47671105131cdc4bfe9daf7b534e5f522c3"
+  },
+  "version": "legacy-regression-v1"
+}

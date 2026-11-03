@@ -79,3 +79,12 @@ Optional OSM tiles have attribution and an offline-vector fallback. Missing map 
 Preserve teammate `pipeline/`, data/raw and data/processed. Call `pipeline/guidance.py` only; do not import `pipeline/build.py` (import side effects, inferred sensitive flags) or substitute its CSV. `pipeline/restore.py` has alternate aggregation assumptions and is not the browser's numerical engine. Existing safety templates remain teammate-owned; new explicit-needs copy is reviewed separately.
 
 Run full Python tests, golden CLI, generated-type consistency and TypeScript/production build. Browser regression covers mobile/keyboard, combined changes, reverse impact, declared guidance, stale answers, four preview states, GIS failure/retry and Standard/live AI. See [release verification](releases/VERIFICATION.md) and [historical live-provider checks](DEMO_FREEZE.md).
+
+## Offline Phase 2 measurement boundary
+
+`benchmarks/` contains offline problem contracts, four baseline adapters, independent
+validation/metric code, bounded exhaustive reference enumeration, frozen generators and
+separate execution/reporting modules. It imports shared schema primitives but no source
+loaders or AI. Only the explicitly invoked `benchmarks.legacy` lane imports the original
+planner. No endpoint, browser behavior or Phase 1 package input changes. See the
+[benchmark specification](benchmarks/PHASE2_SPEC.md) and [G2 record](planning/V1_1_0_PHASE2.md).

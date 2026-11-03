@@ -1,7 +1,6 @@
 # v1.1.0 Phase 1 — G1 review packet
 
-Implemented for owner review on November 3, 2026. **G1 approval is pending. Do not
-merge this PR or begin Phase 2 without approval.** The [complete approved roadmap](V1_1_0_MASTER_ROADMAP.md)
+Implemented for owner review on November 3, 2026. **Subsequently approved by the owner; PR #3 merged into main at `9b04fcf`. G1 is complete.** The original stop-point notes below describe the pre-approval handoff. The [complete approved roadmap](V1_1_0_MASTER_ROADMAP.md)
 contains all nine phases and the five controlling refinements. The public README
 only changes the local launch command to select challenge-local explicitly.
 
@@ -42,8 +41,8 @@ Implementation checks are distinct from owner acceptance:
   real geometry, Git history, research downloads, provider code or credentials.
 - [x] v1.0.0 and main ancestry preserved; raw/processed data, teammate pipeline and
   third-party attribution remain unchanged.
-- [ ] Owner accepts the evidence boundaries and catalog-only synthetic foundation.
-- [ ] Owner authorizes merge. Phase 2 still requires explicit approval.
+- [x] Owner accepts the evidence boundaries and catalog-only synthetic foundation.
+- [x] Owner authorizes merge; the subsequent Phase 2 instruction supplies separate approval.
 
 ## Evidence and decisions
 

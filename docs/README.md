@@ -44,7 +44,7 @@ Start with the [project walkthrough](../README.md#product-walkthrough) or [local
 
 ## v1.1.0 phased work
 
-The [approved master roadmap](planning/V1_1_0_MASTER_ROADMAP.md) preserves the full scope and controlling refinements. Only Phase 1 is implemented for review: see the [G1 checklist](planning/V1_1_0_PHASE1.md), [feasibility findings](research/phase1/FEASIBILITY.md), and [isolated catalog instructions](research/phase1/ARTIFACT_README.md). Later phases require their review gates; this is not a v1.1.0 release announcement.
+The [approved master roadmap](planning/V1_1_0_MASTER_ROADMAP.md) preserves the full scope and controlling refinements. G1 is approved and merged. The original Phase 1 evidence is in the [G1 checklist](planning/V1_1_0_PHASE1.md), [feasibility findings](research/phase1/FEASIBILITY.md), and [isolated catalog instructions](research/phase1/ARTIFACT_README.md). Later phases require their review gates; this is not a v1.1.0 release announcement.
 
 ## Historical development records
 
@@ -71,3 +71,7 @@ The original plans, checkpoints, and release records remain at their existing pa
 </details>
 
 The [v1.0.0 snapshot](https://github.com/its-spark-dev/GridGuide/tree/v1.0.0) preserves the first release. The last known hackathon-period checkpoint is [`bb7c53c`](https://github.com/its-spark-dev/GridGuide/commit/bb7c53ce2e0733c6770c9de631a75df094407727); the exact submitted SHA is unconfirmed.
+
+Phase 2 review: [benchmark specification](benchmarks/PHASE2_SPEC.md),
+[G2 evidence and acceptance checklist](planning/V1_1_0_PHASE2.md), and
+[complete baseline report](benchmarks/phase2/standard/REPORT.md). No improved optimizer is implemented.

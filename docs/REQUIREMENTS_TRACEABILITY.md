@@ -32,3 +32,15 @@ Coverage review: dedicated Q2/Q4 pass, October 24, 2026. Later test/build checks
 | R19 accessibility | Native controls/disclosures, live regions, keyboard/map list, mobile regression | Focused QA; not formal WCAG/assistive-technology certification |
 
 “Which customers depend on it?” is satisfied for **declared damage on verified assets**, because item 2 is implemented; the customer-upstream schematic alone is not counted as evidence. The observed ARCOS→pole/device→topology→impact chain is implemented as a conditional spatial hypothesis for qualified observations; it is not an exact-identity or confirmed-outage claim. Any unsupported identity or incomplete reverse membership suppresses impact rather than publishing a partial count.
+
+## Phase 2 / G2 additions
+
+| Requirement | Evidence | Limit |
+|---|---|---|
+| Identical validated scheduling inputs | Versioned offline contracts and per-case fingerprints | Fictional assumptions only |
+| Four fair baselines | Stable ranks and shared availability/duration semantics | Normalized legacy adapters, no improved optimizer |
+| Independent verification | Corrupted-schedule/metric tests, separate exhaustive enumeration | Eight tasks / 250,000 nodes; interrupted search is not optimal |
+| Frozen reproducible evaluation | 270-case hash manifest, separate development seeds, deterministic result artifact | Structural examples, not utility population samples |
+| Baseline preservation | Separate 24-case source regression lane and existing suites | Missing source tests are unexecuted, not passed |
+
+See [G2 acceptance and results](planning/V1_1_0_PHASE2.md).

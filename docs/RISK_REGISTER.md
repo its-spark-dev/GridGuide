@@ -8,7 +8,7 @@
 | Fiction inherits source claims | Separate strict fictional contracts, consistent origin/classification pairs, null outcomes and no legacy numerical routes |
 | Challenge data enters a public artifact | Exact allowlist, symlink/path/extra-entry rejection, manifest/content checks and extracted startup tests; original history remains exposed |
 | Wrong startup mode | Default synthetic, explicit challenge-local, fail-closed catalog; legacy named entrypoint stays challenge-only |
-| Fixtures mistaken for performance benchmarks | Six Phase 1 cases test contracts/isolation only; Phase 2 evaluation remains unstarted |
+| Fixtures mistaken for performance benchmarks | Six Phase 1 cases test contracts/isolation only; Phase 2 uses a separate hash-frozen evaluation matrix |
 | Research expands indefinitely | Bounded metadata decisions, valid no-go outcomes and recalibrated provisional estimates; partner/paid data are not dependencies |
 
 See [G1](planning/V1_1_0_PHASE1.md). Controls do not establish operational safety,
@@ -37,3 +37,13 @@ The AEP guide resolves explicitly stated labor semantics, crew-size allowance an
 Resolved in this pass: AEP labor unit meaning, erroneous fixed elapsed interpretation/upper multiplier, missing people-per-crew control, missing reverse dependency index and missing explicit declared-needs journey. No additional travel/setup adder was found; single application is preserved. Actual operational validation remains open.
 
 Q2/Q4-specific risks: 25 m damage and 50 m facility radii / 10 m ambiguity gaps are prototype choices, not positional-accuracy guarantees. Historical replay is not a current outage, and observed past outage membership is unconfirmed. Source ancestry supports a conservative scheduling policy, not proved physical repair concurrency. Four candidates do not constitute a system-wide optimum. The crew envelope excludes unknown operational delays; upper endpoints are not guaranteed restoration bounds. See [audit](Q2_Q4_DECISION_SUPPORT.md).
+
+## Phase 2 benchmark limits
+
+Synthetic families establish structural algorithm behavior, not utility benefit. Freeze
+checks reject changed evaluation inputs; no 5% gain is required. Independent validation
+checks every metric; exhaustive optimality is limited to supported problems completed
+within the node budget. Restricted-horizon scoring must never be relabeled completed
+outage duration. Legacy adapters do not claim exact UI equivalence. Runtime/memory
+observations include instrumentation and are separate from deterministic result hashes.
+See [G2](planning/V1_1_0_PHASE2.md) for observed checks and approval status.
