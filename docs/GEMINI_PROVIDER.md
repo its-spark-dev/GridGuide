@@ -1,5 +1,7 @@
 # Gemini provider and live verification — October 24, 2026
 
+> Reusable configuration instructions with historical provider observations. Model discovery, pricing references, billing intent, latency, and live results below were recorded October 24, 2026; they are not current availability or pricing guarantees. [Release verification](releases/VERIFICATION.md) records the later offline checks.
+
 GREEN: the Gemini Developer API completed all four required live explanation cases with the existing strict server validator. Deterministic calculations, customer guidance and UI design are unchanged.
 
 Final freeze rehearsal also passed all four live cases, but uncached HTTP latency was 4.1–5.7 seconds; the exact repeated answer took 3.6 ms from cache. Do not assume the earlier subsecond sample below is typical. The provider-disabled browser rehearsal also passed. See the [historical freeze record and remaining risks](DEMO_FREEZE.md).
@@ -68,4 +70,4 @@ The following browser smoke calls used the current AEP person-hour model, actual
 
 CLEAR rendered 11.736 person-hours separately from 2.5–12 elapsed hours. RESTRICTED rendered 16.236 person-hours, 4–16.5 elapsed hours and exact comparison evidence. Labor rendered 2.608 direct hours and the single 4.5 multiplier. Priority explicitly retained the missing ARCOS join and unavailable actual sectionalization count. BLOCKED had no finite ETA. Risk remained ordinal HIGH/LOW confidence. All six uncached intents succeeded; the repeated identical CLEAR request used the validated cache. No secret or raw provider response was printed or persisted.
 
-Full automated tests include mocked provider faults, strict references, privacy, declaration exclusion, numerical invariants and reverse joins. Standard-mode browser checks separately verified all scenarios, stale response suppression, failure/retry, map isolation and customer previews. See [current freeze evidence](DEMO_FREEZE.md) for counts, commands and boundaries. The provider adapter itself was not changed during this realignment.
+Full automated tests include mocked provider faults, strict references, privacy, declaration exclusion, numerical invariants and reverse joins. Standard-mode browser checks separately verified all scenarios, stale response suppression, failure/retry, map isolation and customer previews. See [historical freeze evidence](DEMO_FREEZE.md) for counts, commands and boundaries. The provider adapter itself was not changed during this realignment.

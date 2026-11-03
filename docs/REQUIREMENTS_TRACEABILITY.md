@@ -1,6 +1,6 @@
 # Requirements traceability
 
-Current review: dedicated Q2/Q4 pass, October 24, 2026. Detailed audit: [Q2/Q4 decision support](Q2_Q4_DECISION_SUPPORT.md). Source authority and original requirement IDs: [CHALLENGE_REQUIREMENTS.md](CHALLENGE_REQUIREMENTS.md). The pre-implementation matrix and evidence classes are in [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md). Operational correctness beyond the supplied evidence is not implied by passing prototype tests.
+Coverage review: dedicated Q2/Q4 pass, October 24, 2026. Later test/build checks are recorded in [release verification](releases/VERIFICATION.md). Detailed audit: [Q2/Q4 decision support](Q2_Q4_DECISION_SUPPORT.md). Source authority and original requirement IDs: [CHALLENGE_REQUIREMENTS.md](CHALLENGE_REQUIREMENTS.md). The pre-implementation matrix and evidence classes are in [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md). Operational correctness beyond the supplied evidence is not implied by passing prototype tests.
 
 | Requirement | Implemented evidence | Coverage / remaining limit |
 |---|---|---|
@@ -14,7 +14,7 @@ Current review: dedicated Q2/Q4 pass, October 24, 2026. Detailed audit: [Q2/Q4 d
 | R09–R11 preparation, safety, declared needs | Reviewed actions; explicit medical/accessibility/critical responsibility, None/clear, session-only adaptation | GREEN bounded journey; no inference, clinical advice, enrollment or persistence |
 | R12–R14 eligibility, timing, escalation, lifecycle | Teammate policy adapter; declared-needs phone/direct-support guidance; four previews; strict >6 raw elapsed hours or availability change | GREEN prototype behavior; official AEP rules, real consent/subscription/sending absent |
 | R15/R18 grounded AI and integrated flow | Server-computed labor/duration/impact/priority clauses; constrained reference selection; Standard fallback | Curated questions; live results recorded in freeze/provider notes; no independent AI decisions |
-| R16/R17 fallback and privacy | Nulls, safe errors, source pins, private reverse sets, generalized map, no needs/credentials in model context | Local services and pinned data required; no public raw data |
+| R16/R17 fallback and privacy | Nulls, safe errors, source pins, private reverse sets, generalized map, no needs/credentials in model context | Local services and pinned data required; no raw records in public API outputs. Tracked-data exposures are documented [separately](releases/PUBLIC_RELEASE_AUDIT.md#findings) |
 | R19 accessibility | Native controls/disclosures, live regions, keyboard/map list, mobile regression | Focused QA; not formal WCAG/assistive-technology certification |
 
 “Which customers depend on it?” is satisfied for **declared damage on verified assets**, because item 2 is implemented; the customer-upstream schematic alone is not counted as evidence. The observed ARCOS→pole/device→topology→impact chain is implemented as a conditional spatial hypothesis for qualified observations; it is not an exact-identity or confirmed-outage claim. Any unsupported identity or incomplete reverse membership suppresses impact rather than publishing a partial count.

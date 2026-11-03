@@ -1,6 +1,6 @@
-# Verified geographic map — October 24, 2026
+# Geographic map contract
 
-GREEN for the golden customer map and existing customer journey. This is source-derived, generalized geography, not a live outage map or an electrical-network reconstruction. Numerical credibility remains conditional on the labor-unit and calibration limitations in [MODEL_SPEC](MODEL_SPEC.md).
+The customer map shows generalized source geography, with explicit missing geometry and optional street context. It is not a live outage map or electrical-network reconstruction. AEP labor units are resolved as person-hours; elapsed-time assumptions and calibration limits remain in [MODEL_SPEC](MODEL_SPEC.md). The implementation and verification observations below were recorded on October 24, 2026; later portfolio captures are documented in [screenshot provenance](media/v1.0.0/README.md).
 
 ## Source audit and joins
 
@@ -51,7 +51,7 @@ Leaflet 1.9.4 and its CSS are bundled locally. Optional standard OpenStreetMap t
 
 The browser sends coarse map tile coordinates and ordinary connection/referrer metadata to OSM, not customer IDs or application DTOs. “Street basemap (online)” can be turned off. Initial tile loading times out after eight seconds; tile errors remove only the basemap and show a retry control. A neutral background, locally served vector areas/lines, asset list, schematic and entire analytical journey remain usable. Map-API errors have their own retry and do not hide analysis. An internet connection is unnecessary after local dependencies are installed; the local backend must still be running.
 
-## Verification and rehearsal
+## Historical verification and rehearsal — October 24, 2026
 
 Before changes, the 57 existing backend tests, production build and browser journey passed. After implementation, **66 backend tests pass**, including nine geography tests covering real source identity/axis order, primary circuit joins, EPSG:3857 conversion, multipart boundaries, collapsed/invalid geometry, missing equipment geometry, ambiguous joins, public-field/coordinate privacy, cached API/schema behavior and map-only startup failure. Source hashes remain unchanged.
 
@@ -74,4 +74,4 @@ The golden CLI, strict TypeScript and production bundle pass. Chrome browser ver
 
 The numerical core, teammate `pipeline/`, tracked raw/processed data and previous tests are unchanged. No additional messages, external model, weather integration or deployment was added.
 
-Remaining highest model risk: the workbook's labor-hour basis and prediction calibration are unresolved. Highest map limit: privacy generalization removes fine geometry and does not support operational routing. Recommended next product task: a constrained explanation adapter grounded exclusively in the existing validated public result, with strict reference validation and the current deterministic explanation as fallback; keep it a separately authorized slice.
+At this map checkpoint, the labor basis was unresolved and the explanation adapter was a proposed next step. The later [AEP realignment](AEP_REALIGNMENT.md) resolved labor as person-hours, and the [constrained explanation adapter](AI_EXPLANATIONS.md) is implemented. Prediction calibration remains unavailable. Map generalization still removes fine geometry and does not support operational routing. See [release verification](releases/VERIFICATION.md) for later test totals.

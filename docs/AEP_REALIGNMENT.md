@@ -1,5 +1,7 @@
 # AEP Data Guide realignment
 
+> Mixed technical and historical record. The evidence ledger remains useful; the pre-implementation matrix, change manifest, and working-tree status describe the October 24 realignment. [MODEL_SPEC.md](MODEL_SPEC.md) owns the released formulas and policies; [release verification](releases/VERIFICATION.md) records later checks.
+
 Authority: the user supplied excerpts of **HackOHI/O 2026 — AEP AI Outage Concierge Data Guide** and explicitly designated them authoritative for this task. No separate original guide file was supplied; do not invent page citations or claim to have verified an original PDF. Only the statements actually supplied close assumptions. This note controls the implementation scope.
 
 ## Requirement matrix — recorded before implementation

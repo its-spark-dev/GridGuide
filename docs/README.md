@@ -1,44 +1,69 @@
 # GridGuide documentation
 
-Start with the [project overview and walkthrough](../README.md). This index separates implementation references from dated development records; it does not replace source code or the model specification.
+Start with the [project walkthrough](../README.md#product-walkthrough) or [local setup](../README.md#getting-started). For a technical review, read the architecture, model specification, and verification record in that order.
 
-## Understand the implementation
+## Architecture & system design
 
-| Document | Read it for |
+| Reference | What it explains |
 | --- | --- |
-| [Architecture](ARCHITECTURE.md) | Service boundaries, modules, privacy, startup preparation, and request flow. |
-| [Model specification](MODEL_SPEC.md) | Authoritative formulas, evidence classes, units, scenario assumptions, golden values, and unavailable operational facts. |
-| [Q2/Q4 decision support](Q2_Q4_DECISION_SUPPORT.md) | Source validation, reverse membership, four-candidate ranking, spatial hypotheses, and crew scheduling. Its checkpoint counts and handoff notes are historical. |
-| [AI explanations](AI_EXPLANATIONS.md) | Approved references, result binding, server-rendered claims, and deterministic fallback. |
-| [Customer integration](CUSTOMER_INTEGRATION.md) | Preparation, optional declarations, communication lifecycle, and preview eligibility. |
-| [Geographic map](GEOGRAPHIC_MAP.md) | Generalized map contract, CRS checks, offline vectors, and tile attribution. |
+| [Architecture](ARCHITECTURE.md) | Service boundaries, API routes, startup preparation, public outputs, and request lifecycle. |
+| [Grounded explanations](AI_EXPLANATIONS.md) | Deterministic calculations, constrained AI reference selection, result binding, and fallback. |
+| [Customer guidance](CUSTOMER_INTEGRATION.md) | Session-only declarations, preparation rules, and preview-only communication. |
+| [Geographic map](GEOGRAPHIC_MAP.md) | Generalized map contracts, coordinate systems, offline vectors, and tile attribution. |
 
-## Inspect the evidence
+## Data & evidence
 
-- [Data audit](DATA_AUDIT.md) and [schema inventory](DATA_SCHEMA.md): pinned source provenance and coverage limits. The audit describes the initial inspection; later complete-path counts are in the model specification.
-- [AEP interpretation ledger](AEP_REALIGNMENT.md): what the supplied guide explicitly establishes and what remains an assumption.
-- [Requirements traceability](REQUIREMENTS_TRACEABILITY.md) and [risk register](RISK_REGISTER.md): implemented scope and unresolved evidence.
-- [November 3 portfolio verification](releases/VERIFICATION.md): current test/build results and claim-to-source references.
+| Reference | What it explains |
+| --- | --- |
+| [Source audit](DATA_AUDIT.md) | Pinned source provenance, joins, missing data, and the progression from initial inspection to validation. |
+| [Schema inventory](DATA_SCHEMA.md) | Exact field names, types, missing counts, and snapshot coverage. |
+| [AEP interpretation ledger](AEP_REALIGNMENT.md#evidence-and-classification-ledger) | Which rules are supplied by AEP, source-derived, assumed, or unavailable. Earlier implementation plans remain historical. |
+| [Data distribution findings](releases/PUBLIC_RELEASE_AUDIT.md#findings) | Recorded identifier, coordinate, inferred-field, metadata, and permission concerns. Retaining the data did not resolve these findings or add a license grant. |
+| [Third-party materials](../THIRD_PARTY_NOTICES.md) | Source, dependency, font, and map notices; project license status. |
 
-## Run, review, and release
+## Models & scenarios
 
-- [Local setup](../README.md#getting-started), [optional Gemini configuration](GEMINI_PROVIDER.md#local-credential-and-launch-setup), and [browser test harness](../frontend/tests/README.md).
-- [Contributing](../CONTRIBUTING.md) and [third-party materials](../THIRD_PARTY_NOTICES.md).
-- [v1.0.0 release draft](releases/v1.0.0.md), [owner checklist](releases/CHECKLIST.md), and [data/history audit](releases/PUBLIC_RELEASE_AUDIT.md).
-- [Authentic screenshots and provenance](media/v1.0.0/README.md).
+| Reference | What it explains |
+| --- | --- |
+| [Model specification](MODEL_SPEC.md) | Authoritative risk interpretation, labor units, elapsed-time assumptions, formulas, and golden values. |
+| [Repair decisions and crew scenarios](Q2_Q4_DECISION_SUPPORT.md) | Reverse dependencies, spatial hypotheses, priority tradeoffs, overlap removal, and scheduling. |
+
+## Verification & limitations
+
+| Reference | What it establishes |
+| --- | --- |
+| [v1.0.0 verification](releases/VERIFICATION.md) | November 3 test/build results, environment, and claim-to-source references. |
+| [Requirements coverage](REQUIREMENTS_TRACEABILITY.md) | Implemented behavior and unresolved evidence for each challenge requirement. |
+| [Risk register](RISK_REGISTER.md) | Limits on prediction, operational validity, source interpretation, and runtime privacy. |
+| [Browser test harness](../frontend/tests/README.md) | Reproducible fixtures, ports, offline checks, and accessibility test scope. |
+| [Screenshot provenance](media/v1.0.0/README.md) | Authentic capture states, OpenStreetMap loading checks, and image hashes. |
+
+## Development
+
+[Install and run](../README.md#getting-started) · [Optional Gemini configuration](GEMINI_PROVIDER.md#local-credential-and-launch-setup) · [Contributing](../CONTRIBUTING.md) · [Published v1.0.0 release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0)
 
 ## Historical development records
 
-These retain the team's original investigation, decisions, and checkpoint evidence. References to uncommitted work, old test totals, screen order, temporary files, or provider latency describe the time of writing, not the current checkout.
+The original plans, checkpoints, and release records remain at their existing paths. Their test totals, working-tree status, demo scripts, and provider observations describe their dates, not pending work or current service guarantees.
+
+<details>
+<summary>Browse development and release history</summary>
 
 | Record | Historical purpose |
 | --- | --- |
-| [Challenge requirements](CHALLENGE_REQUIREMENTS.md) | Original brief interpretation and pre-implementation planning. |
-| [Execution and handoff](EXECUTION_PLAN.md) | Ownership, integration gates, and remaining evidence work. |
-| [Demo freeze](DEMO_FREEZE.md) | Successive implementation checkpoints and dated live-provider results. |
-| [Judge-facing UX checks](JUDGE_UX_HARDENING.md) | Competition demo script, wording checks, and hostile-question exercises. |
-| [Customer product redesign](CUSTOMER_PRODUCT_REDESIGN.md) | Customer journey design and implementation verification. |
-| [Gemini provider notes](GEMINI_PROVIDER.md) | Provider configuration plus October 24 discovery, pricing observations, and live checks; current availability is not guaranteed by those observations. |
-| [Frontend visual reference](../frontend/AEP_UI_REFERENCE.md) | Historical visual research, not endorsement or permission to use AEP branding. |
+| [Challenge requirements](CHALLENGE_REQUIREMENTS.md) | Original brief interpretation and pre-implementation plan. |
+| [Execution and handoff](EXECUTION_PLAN.md) | Implementation ownership and integration gates. |
+| [Demo freeze](DEMO_FREEZE.md) | Successive checkpoints and dated live-provider checks. |
+| [Judge-facing UX](JUDGE_UX_HARDENING.md) | Competition demo script and explanation exercises. |
+| [Customer product redesign](CUSTOMER_PRODUCT_REDESIGN.md) | Journey design, frontend changes, and their verification. |
+| [Gemini provider observations](GEMINI_PROVIDER.md) | October 24 discovery and live checks, alongside reusable setup instructions. |
+| [Frontend visual research](../frontend/AEP_UI_REFERENCE.md) | Original design references and superseded UI/model snapshots. |
+| [Release checklist](releases/CHECKLIST.md) | Completed publication milestones and the original approval record. |
+| [Original PR body](releases/PR_BODY.md) | Preserved description for merged PR #1. |
+| [Publication assessment](releases/PUBLIC_RELEASE_AUDIT.md) | Original findings and the subsequent data-retention decision; findings remain disclosed above. |
+| [Release body source](releases/v1.0.0.md) | Repository copy of release prose; edits here do not update GitHub automatically. |
+| [Editorial review](releases/EDITORIAL_REVIEW.md) | Post-release classification, information-retention map, and local verification. |
 
-The last known hackathon-period checkpoint is `bb7c53ce2e0733c6770c9de631a75df094407727`; the exact submitted SHA is unconfirmed. The v1.0.0 documentation pass does not implement future v1.1.0 work or include a private competitive retrospective.
+</details>
+
+The [v1.0.0 snapshot](https://github.com/its-spark-dev/GridGuide/tree/v1.0.0) preserves the first release. The last known hackathon-period checkpoint is [`bb7c53c`](https://github.com/its-spark-dev/GridGuide/commit/bb7c53ce2e0733c6770c9de631a75df094407727); the exact submitted SHA is unconfirmed.

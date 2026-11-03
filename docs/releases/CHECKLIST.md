@@ -1,4 +1,23 @@
-# v1.0.0 release checklist
+# v1.0.0 publication record
+
+**Published November 3, 2026.** [PR #1](https://github.com/its-spark-dev/GridGuide/pull/1) was merged with a merge commit, and the [GitHub Release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0) is published as a stable release. The steps below are a historical record, not outstanding release instructions.
+
+| Completed milestone | Recorded result |
+| --- | --- |
+| Portfolio branch and PR | Documentation/media branch pushed; PR #1 reviewed and merged. |
+| Main merge commit | `b324c1b355cda60035fb11fa32bcddf10931f649` |
+| Annotated `v1.0.0` tag object | `c2b2d37aaf5e74a03190746c12badacc6bc86369`, targeting the merge commit above. |
+| Release | GridGuide v1.0.0 — HackOHI/O 2026 Portfolio Release; published, not a prerelease. |
+| Presentation | README images, release links, and Mermaid rendering verified during publication. |
+
+The completed release does not resolve the [recorded data/privacy findings](PUBLIC_RELEASE_AUDIT.md#findings), create a license grant, or establish a complete named team credit. The project credits three teammates collectively; preferred names/roles and each teammate's publication consent are not independently established by this record. Any future software license still requires agreement from the relevant rights holders. About/topics suggestions below were not applied remotely.
+
+<details>
+<summary>Original pre-publication checklist and approval sequence</summary>
+
+The following text preserves the state before PR submission. Its READY / NEEDS OWNER APPROVAL labels and future-tense instructions refer to that point in time; the publication milestones above supersede them. The data-retention decision did not remediate the recorded exposures.
+
+## Original v1.0.0 release checklist
 
 Updated November 3, 2026. Branch: `chore/v1.0.0-portfolio-polish`.
 
@@ -41,3 +60,5 @@ Topics: `hackohio`, `hackathon`, `outage-management`, `decision-support`, `expla
 6. After explicit publication authorization, publish [v1.0.0.md](v1.0.0.md) as the release body. Its tagged-file links become valid when the tag is pushed. Review the automatic source archive, which intentionally includes the existing data.
 
 The last known hackathon-period checkpoint remains `bb7c53ce2e0733c6770c9de631a75df094407727`; the exact submitted SHA is unconfirmed. Version labels already used by individual packages/APIs are unchanged: v1.0.0 names this repository release, not a runtime/package migration.
+
+</details>

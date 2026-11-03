@@ -1,6 +1,6 @@
 # v1.0.0 portfolio verification
 
-Date: **November 3, 2026**. Implementation baseline: `bb7c53ce2e0733c6770c9de631a75df094407727`, the last known hackathon-period checkpoint; exact submitted SHA unconfirmed. Scope: documentation and media preparation, with the existing application unchanged.
+Date: **November 3, 2026**. Implementation baseline: `bb7c53ce2e0733c6770c9de631a75df094407727`, the last known hackathon-period checkpoint; exact submitted SHA unconfirmed. Scope: documentation and media preparation, with the existing application unchanged. These are dated release checks, not test results from later prose edits. The [published release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0) preserves that implementation.
 
 ## Executed checks
 
@@ -39,11 +39,11 @@ Live Gemini was not called during this review, and the ignored local credential 
 
 ## Documentation and asset review
 
-Checked **186 local links/anchors across 29 Markdown files**, fenced blocks, image paths, whitespace, and the full diff before the local commit. Fixed one preexisting broken Gemini-to-freeze anchor. A local HTML README preview loaded all five images and was visually reviewed. The Mermaid data flow was compared with `backend/api.py` and the architecture document; no Mermaid renderer was installed for this pass. The diagram is embedded as GitHub-supported Mermaid, with final GitHub rendering reserved for owner review after an authorized push.
+Checked **186 local links/anchors across 29 Markdown files**, fenced blocks, image paths, whitespace, and the full diff before the local commit. Fixed one preexisting broken Gemini-to-freeze anchor. A local HTML README preview loaded all five images and was visually reviewed. The Mermaid data flow was compared with `backend/api.py` and the architecture document; no local Mermaid renderer was installed for that initial pass. GitHub rendering was subsequently checked during PR/release verification: all five README images loaded and the nine-node Mermaid diagram rendered.
 
 Five 1440×1000 application PNGs are visually inspected for readability and privacy. Capture conditions and file hashes are recorded with the [media](../media/v1.0.0/README.md). No image-generation model, UI/DOM text replacement, numerical alteration, or image retouching is used. Screenshots show anonymous aliases, generalized cells, no declared needs, and no raw identifiers or exact customer/facility locations.
 
-This record supplements, rather than overwrites, historical freeze/test notes. Current results do not retroactively change what was verified or submitted during the hackathon. The owner has accepted the existing challenge data; remaining publication approvals are tracked in the [current checklist](CHECKLIST.md).
+This record supplements, rather than overwrites, historical freeze/test notes. Current results do not retroactively change what was verified or submitted during the hackathon. Publication is complete, as recorded in the [publication history](CHECKLIST.md). The separate [data/privacy findings](PUBLIC_RELEASE_AUDIT.md#findings) remain disclosed.
 
 ## Evidence screenshot follow-up — November 3, 2026
 

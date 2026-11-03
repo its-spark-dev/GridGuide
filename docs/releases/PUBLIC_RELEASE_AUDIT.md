@@ -1,10 +1,10 @@
 # Public-release audit — November 3, 2026
 
-**Historical assessment, superseded by the owner’s release decision below.** Existing public visibility is intentional, confirmed by the owner, and is not itself a blocker. No visibility change, remote write, history rewrite, data removal, tag, merge, or GitHub Release was performed.
+**Historical publication assessment; data/privacy and permission findings remain unresolved.** The publication-gate recommendations were superseded by the release decision below, not by remediation or a newly verified permission grant. [v1.0.0 was subsequently published](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0). The scan itself was read-only; its statements about no tag, merge, or release describe that assessment, not the present repository. Existing public visibility was intentional and was not a blocker.
 
 ## Owner release decision — November 3, 2026
 
-The owner accepts the existing challenge data as a v1.0.0 project input and explicitly directs preservation of the data, implementation, and original history. Absence of an upstream license file alone is not a release blocker. No concrete redistribution prohibition was identified in the inspected materials; acceptance is not represented as a newly verified license grant. The concrete customer-coordinate/identifier, inferred-support-field, and workstation-metadata findings below remain disclosed. Sanitization, history rewriting, and a separate repository are declined and are not planned release steps. Earlier BLOCKED labels and remediation alternatives below record the prior assessment, not the current release gate. See [current checklist](CHECKLIST.md).
+The owner accepts the existing challenge data as a v1.0.0 project input and explicitly directs preservation of the data, implementation, and original history. Absence of an upstream license file alone is not a release blocker. No concrete redistribution prohibition was identified in the inspected materials; acceptance is not represented as a newly verified license grant. The concrete customer-coordinate/identifier, inferred-support-field, and workstation-metadata findings below remain disclosed. Sanitization, history rewriting, and a separate repository are declined and are not planned release steps. Earlier BLOCKED labels and remediation alternatives below record the prior assessment, not the current release gate. See the [publication record and original checklist](CHECKLIST.md).
 
 ## Baseline and scope
 
@@ -15,6 +15,8 @@ The owner accepts the existing challenge data as a v1.0.0 project input and expl
 - Reviewed tracked files, all 28 commits reachable from local refs, and objects reachable through local reflogs: **371 objects / 242 unique blobs** before this documentation pass. Readable XML/text inside ZIP/XLSX archives was also inspected. Remote-only refs, forks, platform caches, deleted remote objects, and external submission systems are outside this scan.
 
 ## Findings
+
+The status column preserves the original assessment. BLOCKED and NEEDS OWNER APPROVAL are historical recommendations; publication is complete, while the underlying exposure, permission, and attribution findings have not been reclassified as resolved.
 
 | Finding | Evidence | Status / consequence |
 | --- | --- | --- |
@@ -41,10 +43,10 @@ The locally referenced user-supplied challenge PDF and Data Guide excerpts are n
 
 GitHub explains the distinction between publishing code and granting a software license in its [licensing documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository). No license or permission is inferred from repository visibility.
 
-## Safe paths for owner review
+## Historical remediation alternatives — not adopted
 
 1. **Permission path:** obtain written confirmation from the applicable data owners/organizers covering raw GIS/topology, the workbook, derived tables, embedded metadata, and portfolio screenshots/aggregates. Separately assess whether identifiable customer data should remain downloadable even if redistribution is permitted. Record the approved scope without adding private correspondence or contact details.
 2. **Source-only path if permission is unavailable:** prepare a separately approved distribution containing only cleared code, documentation, and assets. Keep the original implementation/history preserved; do not transfer the data-bearing Git history into the new distribution. Authorized users can privately supply the four exact pinned files, with startup hash checks intact. Full source-dependent tests cannot run without them; no synthetic replacement exists in v1.0.0.
 3. A GitHub Release on the current data-bearing history still points to that history and can expose its source archive. A source-only attachment on that release is not a complete solution. Any separate distribution or treatment of already-public history requires an explicit owner decision and additional authorization. Nothing in this pass deletes teammate work or rewrites history.
 
-The [release checklist](CHECKLIST.md) tracks these decisions. Predictive validation, scheduling benchmarks, and product differentiation are future v1.1.0 topics, not remedies implemented by this documentation pass.
+The [publication record](CHECKLIST.md) preserves the subsequent decision and completed release milestones. These alternatives were not adopted; no data removal, history rewriting, predictive validation, or operational remediation is claimed.

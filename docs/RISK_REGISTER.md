@@ -1,6 +1,6 @@
 # Remaining risks — AEP Q2/Q4 decision support
 
-The AEP guide resolves explicitly stated labor semantics, crew-size allowance and permission for reasonable spatial relationships; it does not establish operational accuracy. Runtime verification and source-defensible conditional reasoning do not prove operational accuracy or complete the observed ARCOS damage chain. See [coverage](REQUIREMENTS_TRACEABILITY.md) and [freeze evidence](DEMO_FREEZE.md).
+The AEP guide resolves explicitly stated labor semantics, crew-size allowance and permission for reasonable spatial relationships; it does not establish operational accuracy. Runtime verification and source-defensible conditional reasoning do not prove operational accuracy or complete the observed ARCOS damage chain. See [coverage](REQUIREMENTS_TRACEABILITY.md) and [release verification](releases/VERIFICATION.md). This register addresses model and runtime risks; the [publication assessment](releases/PUBLIC_RELEASE_AUDIT.md#findings) separately records unresolved exposures in tracked data.
 
 | Risk / unresolved evidence | Severity | Current handling |
 |---|---|---|
