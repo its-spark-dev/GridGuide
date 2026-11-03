@@ -1,0 +1,11 @@
+# Python 3.12; optional offline optimizer, no change to the application install.
+-r requirements-benchmarks.txt
+ortools==9.14.6206
+absl-py==2.5.1
+immutabledict==4.3.1
+numpy==2.5.4
+pandas==3.1.0
+protobuf==6.31.1
+python-dateutil==4.0.0
+tzdata==2026.6
+typing-extensions==4.16.0
