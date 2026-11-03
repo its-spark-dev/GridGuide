@@ -1,6 +1,10 @@
 # Public-release audit — November 3, 2026
 
-**Verdict: documentation can be reviewed locally; the official v1.0.0 release remains BLOCKED on data redistribution and sensitive history disposition.** Existing public visibility is intentional, confirmed by the owner, and is not itself a blocker. No visibility change, remote write, history rewrite, data removal, tag, merge, or GitHub Release was performed.
+**Historical assessment, superseded by the owner’s release decision below.** Existing public visibility is intentional, confirmed by the owner, and is not itself a blocker. No visibility change, remote write, history rewrite, data removal, tag, merge, or GitHub Release was performed.
+
+## Owner release decision — November 3, 2026
+
+The owner accepts the existing challenge data as a v1.0.0 project input and explicitly directs preservation of the data, implementation, and original history. Absence of an upstream license file alone is not a release blocker. No concrete redistribution prohibition was identified in the inspected materials; acceptance is not represented as a newly verified license grant. The concrete customer-coordinate/identifier, inferred-support-field, and workstation-metadata findings below remain disclosed. Sanitization, history rewriting, and a separate repository are declined and are not planned release steps. Earlier BLOCKED labels and remediation alternatives below record the prior assessment, not the current release gate. See [current checklist](CHECKLIST.md).
 
 ## Baseline and scope
 

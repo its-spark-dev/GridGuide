@@ -131,7 +131,7 @@ data/raw/
 └── Install_Labor_HackOHIO.xlsx
 ```
 
-Their hashes are checked at startup against [source pins](backend/config.py); [the data audit](docs/DATA_AUDIT.md) records the pinned upstream revision. The current repository already tracks these files and derived customer data, including in history. **A public upstream repository is not evidence of redistribution permission.** That permission remains unresolved; see the [release audit](docs/releases/PUBLIC_RELEASE_AUDIT.md).
+Their hashes are checked at startup against [source pins](backend/config.py); [the data audit](docs/DATA_AUDIT.md) records the pinned upstream revision. The current repository already tracks these files and derived customer data, including in history. The owner has accepted the existing challenge data as an input to this faithful v1.0.0 release. This decision does not add a data license; concrete exposure findings and the decision are recorded in the [release audit](docs/releases/PUBLIC_RELEASE_AUDIT.md).
 
 Run the data-dependent demo only with files you are authorized to use. If they are absent from an approved source-only distribution, obtain permission and the exact snapshot from the challenge owner before placing them locally. There is no bundled synthetic substitute or automatic download path. The frontend build alone does not provide a working data-backed demo. The browser backend prepares directly from the archives; running `pipeline/build.py` or extracting raw GIS is not required.
 
@@ -192,7 +192,7 @@ GridGuide was built collaboratively by **three teammates** for the AEP AI Outage
 
 [`bb7c53c`](https://github.com/its-spark-dev/GridGuide/commit/bb7c53ce2e0733c6770c9de631a75df094407727) is the **last known hackathon-period checkpoint**, not an independently confirmed submission SHA. The draft **v1.0.0: HackOHI/O 2026 Portfolio Release** adds documentation and presentation polish after the event while preserving the implementation. Future **v1.1.0: Post-Hackathon Improvements** may address predictive validation, scheduling benchmarks, and product differentiation; those improvements are not part of this release.
 
-GridGuide is an independent prototype, with no claim of AEP endorsement or official utility deployment. No project-wide software license has been selected. Contributor consent, AEP data rights, and repository-history review remain release decisions; existing third-party notices retain their own terms.
+GridGuide is an independent prototype, with no claim of AEP endorsement or official utility deployment. No project-wide software license has been selected. Existing Git attribution and third-party notices are preserved. The owner’s data-retention decision is documented in the release checklist.
 
 ## Documentation
 

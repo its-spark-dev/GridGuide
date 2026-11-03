@@ -1,51 +1,43 @@
-# v1.0.0 owner review and release checklist
+# v1.0.0 release checklist
 
-Review date: **November 3, 2026**. Branch: `chore/v1.0.0-portfolio-polish`.
+Updated November 3, 2026. Branch: `chore/v1.0.0-portfolio-polish`.
 
-**Ready for local portfolio review; official release BLOCKED on unresolved data rights and sensitive files/history.** The repository is intentionally already public. Visibility is context, not a release blocker. No push, tag, merge, or GitHub Release is authorized by this checklist.
+**Ready for owner review and authorized PR submission.** The owner accepts the existing challenge data as a release input and directs preservation of the original implementation, files, and history. Missing upstream license text alone is not a blocker. No concrete redistribution prohibition was identified in the inspected materials; no new license grant is claimed.
 
-`READY` means checked for this local preparation. `BLOCKED` means an unresolved issue prevents a responsible release as currently packaged. `NEEDS OWNER APPROVAL` marks a decision or action reserved for the owner. A passing check is not permission to publish.
+The previously identified customer identifiers/coordinates, inferred `life_support` field, and workstation metadata remain disclosed in the [assessment](PUBLIC_RELEASE_AUDIT.md). They are retained under the owner’s decision. No further broad audit, sanitization, history rewrite, or separate repository is planned.
 
-| Item | Status | Evidence / next action |
+| Item | Status | Evidence / decision |
 | --- | --- | --- |
-| Preserve implementation and original commits | READY | Documentation/media-only changes against `bb7c53c`; no runtime, model, API, data, pipeline, dependency, or test edits. Existing history retained. |
-| Permission from all contributors | NEEDS OWNER APPROVAL | Confirm all three teammates agree to publication of their work and the intended license. |
-| Complete team attribution | NEEDS OWNER APPROVAL | Preserve Git attribution; obtain missing preferred public names/handles. Do not infer roles or three people from author strings. |
-| Hackathon provenance | READY | `bb7c53ce2e0733c6770c9de631a75df094407727` is labeled last known hackathon-period checkpoint. Exact submitted SHA is unconfirmed; confirm it only if external submission evidence becomes available. |
-| AEP data redistribution and license verification | BLOCKED | No explicit grant found in inspected upstream materials. Resolve raw data, derived data, metadata, workbook, and screenshot/aggregate permissions. [Audit](PUBLIC_RELEASE_AUDIT.md). |
-| Sensitive data in current files and repository history | BLOCKED | Raw GIS/topology and customer CSV with coordinates/identifiers/inferred support field remain in the tree and history. Approve a disposition or separate cleared distribution; do not silently rewrite history. |
-| Credential scan and local staging safety | READY | No credential-pattern or local-key matches in inspected reachable objects; ignored `.env` excluded. Scope is bounded; remote-only refs and other copies are not certified. |
-| Project software license | NEEDS OWNER APPROVAL | Confirm ownership, select code terms, and distinguish third-party materials. No root license added. |
-| Third-party notices | NEEDS OWNER APPROVAL | Inventory prepared; existing Barlow OFL/source notice retained. Review artifact-specific dependency and map obligations before any compiled/hosted distribution. |
-| README and documentation links | READY | Local targets/anchors and Markdown structure checked; no docs moved. Owner should inspect the final GitHub rendering after an authorized push. |
-| README claims and architecture | READY | Compared with code, tests, and MODEL_SPEC. Diagram separates optional reference selection from deterministic numerical authority. |
-| Test/build results | READY | 194 Python tests, 49 Chrome browser tests, generated-type consistency, CLI scenario checks, and production build pass. [Verification](VERIFICATION.md). |
-| Setup and reproducibility statement | READY | Actual pinned environment exercised; required source files, Chrome, ports, and offline limits disclosed. No clean-clone installation or license-free reproduction claim. |
-| Screenshots | READY | Five authentic 1440×1000 captures, visually reviewed; no synthetic UI, altered values, raw IDs, precise map coordinates, or declared personal needs. Publication rights remain covered by the data-rights gate above. |
-| Optional public demo video | NEEDS OWNER APPROVAL | No verified public video URL found. Supply one if desired; it is not required for this release. |
-| GitHub About description and topics | NEEDS OWNER APPROVAL | Suggested metadata below; nothing changed remotely. |
-| Release notes | READY | [Draft text](v1.0.0.md) distinguishes hackathon implementation from later presentation work and deferred v1.1.0 improvements. |
-| Version tag placement | NEEDS OWNER APPROVAL | After blockers and review, select the final approved commit for a new annotated `v1.0.0` tag. Do not tag the historical checkpoint as though it contains this documentation. No existing tags changed. |
-| Push and merge | NEEDS OWNER APPROVAL | Review the local branch, then explicitly authorize the desired push/review/merge path. No remote changes made. |
-| GitHub Release publication | NEEDS OWNER APPROVAL | Publish only after blockers are resolved and the final tag/commit and source archive are reviewed. No draft or published GitHub Release created. |
-| Repository visibility change | READY | Not required: already intentionally public, confirmed by owner. Visibility left unchanged. Any later change requires a separate instruction. |
-| LinkedIn / portfolio showcase | NEEDS OWNER APPROVAL | After rights review, choose approved images, team credits, and release link. No social post or message prepared for delivery or sent. |
+| README, documentation, screenshots | READY | Five genuine captures; provenance and evidence limits retained; local links checked. |
+| Architecture | READY | Mermaid flow reviewed against code; verify GitHub rendering once a push is authorized. |
+| Implementation and history | READY | Original runtime, data, dependencies, tests, and pipelines unchanged. |
+| Challenge data | READY | Owner accepts existing inputs and retention; no additional permission is inferred. |
+| Concrete exposure findings | READY | Disclosed in the assessment; retained under the owner’s instruction. |
+| Secrets and staging | READY | Earlier bounded scan found no credential matches; no secrets staged. |
+| Tests/build | READY | 194 Python tests, 49 browser tests, build, generated types, CLI and startup passed; see verification record. |
+| Contributor publication consent | NEEDS OWNER APPROVAL | Confirm team agreement for the official release; preserve existing attribution without inventing identities or roles. |
+| Complete team credit | NEEDS OWNER APPROVAL | Optional named credit awaits confirmed preferences; current README accurately credits three teammates collectively. |
+| Software license | READY | No new license is added for v1.0.0. Any later license requires owner/contributor agreement. Existing third-party notices retained. |
+| Demo assets | READY | Screenshots included. Public video is optional and no URL is invented. |
+| PR text and release notes | READY | Local PR body prepared; release notes are the v1.0.0 changelog. |
+| Metadata | NEEDS OWNER APPROVAL | Suggested About/topics below; no remote changes. |
+| Tag | NEEDS OWNER APPROVAL | New annotated `v1.0.0` on the approved main merge commit; never on the earlier checkpoint. |
+| Push, PR creation, merge, release publication | NEEDS OWNER APPROVAL | Execute only after explicit authorization for each requested scope. |
+| Visibility | READY | Intentionally public; unchanged. |
 
-## Suggested GitHub metadata
+## Metadata suggestion
 
-**About:** Explainable storm outage scenarios, dependency-aware repair planning, and customer guidance. Independent HackOHI/O 2026 prototype.
+About: Explainable storm outage scenarios, dependency-aware repair planning, and customer guidance. Independent HackOHI/O 2026 prototype.
 
-This replaces the current description's unqualified “risk prediction” emphasis with the implemented scenario scope.
+Topics: `hackohio`, `hackathon`, `outage-management`, `decision-support`, `explainable-ai`, `geospatial`, `fastapi`, `react`, `typescript`, `python`.
 
-**Topics:** `hackohio`, `hackathon`, `outage-management`, `decision-support`, `explainable-ai`, `geospatial`, `fastapi`, `react`, `typescript`, `python`.
+## Release sequence
 
-**Website:** leave unset unless the owner supplies a verified working public demo. No live deployment or video URL is invented.
+1. Owner reviews the local branch and confirms team agreement for the official release.
+2. After explicit push/PR authorization, push this branch and create a PR against `main` using [PR_BODY.md](PR_BODY.md). Inspect README images and Mermaid on GitHub.
+3. After explicit merge authorization, merge with a merge commit, preserving branch commits; do not squash or rebase the original history.
+4. Fetch the merged main, verify its exact SHA and reviewed tree, and recheck that `v1.0.0` does not exist locally or remotely.
+5. After explicit tag authorization, create and push an annotated `v1.0.0` on that approved merge SHA.
+6. After explicit publication authorization, publish [v1.0.0.md](v1.0.0.md) as the release body. Its tagged-file links become valid when the tag is pushed. Review the automatic source archive, which intentionally includes the existing data.
 
-## Order of remaining work
-
-1. Review the [data/history findings](PUBLIC_RELEASE_AUDIT.md), obtain rights clarification, and approve the distribution path. Resolve sensitive-data disposition before creating a tag or source archive.
-2. Confirm contributor consent, public team credits, and software/third-party license decisions.
-3. Review the README, screenshots, release text, and full local diff. Update resolved gate statements and verification dates before tagging; keep the historical checkpoint reference qualified.
-4. Explicitly authorize any push and merge; inspect GitHub rendering and update approved metadata. If any code/data packaging changes are later approved, rerun the relevant verification.
-5. Approve the final release commit; create and push a new `v1.0.0` tag only on instruction. Check the actual tagged tree and automatic source archive. Before pasting the draft into GitHub Releases, remove the local-review preface and resolve its repository-relative links to the approved tagged file URLs; then publish the approved text.
-6. Use the approved release and assets for any separately authorized portfolio or LinkedIn announcement.
+The last known hackathon-period checkpoint remains `bb7c53ce2e0733c6770c9de631a75df094407727`; the exact submitted SHA is unconfirmed. Version labels already used by individual packages/APIs are unchanged: v1.0.0 names this repository release, not a runtime/package migration.

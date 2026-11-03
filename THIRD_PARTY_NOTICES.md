@@ -4,7 +4,7 @@ This inventory records materials used by the preserved application. It is not a 
 
 | Material | Local evidence and release handling |
 | --- | --- |
-| AEP challenge GIS, upstream topology, and labor workbook | Four tracked raw files, plus derived CSVs. The [pinned upstream repository](https://github.com/hackohio/aep_challenge_hack26/tree/28a5520262b71a9fbf753b3031abf67781ca66ff) has no license file or explicit redistribution grant in the documents inspected. Obtain a scope-specific decision before packaging or promoting these materials. See the [audit](docs/releases/PUBLIC_RELEASE_AUDIT.md). |
+| AEP challenge GIS, upstream topology, and labor workbook | Four tracked raw files, plus derived CSVs. The [pinned upstream repository](https://github.com/hackohio/aep_challenge_hack26/tree/28a5520262b71a9fbf753b3031abf67781ca66ff) has no license file or explicit redistribution grant in the documents inspected. The owner accepts these existing challenge inputs for v1.0.0 and directs their preservation; this is not a new license grant. See the [audit](docs/releases/PUBLIC_RELEASE_AUDIT.md). |
 | Barlow fonts by Jeremy Tribby | Four unmodified WOFF2 files. Preserve [OFL 1.1](frontend/public/fonts/OFL.txt) and the [source/revision notice](frontend/public/fonts/SOURCE.txt) with redistributed fonts. |
 | Leaflet 1.9.4 | BSD-2-Clause in installed package metadata and its license file. Preserve the applicable notice when distributing a compiled application. |
 | React and React DOM | MIT in the pinned packages. Preserve applicable notices in redistributed bundles. |

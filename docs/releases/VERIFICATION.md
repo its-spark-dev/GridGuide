@@ -43,4 +43,4 @@ Checked **186 local links/anchors across 29 Markdown files**, fenced blocks, ima
 
 Five 1440×1000 application PNGs are visually inspected for readability and privacy. Capture conditions and file hashes are recorded with the [media](../media/v1.0.0/README.md). No image-generation model, UI/DOM text replacement, numerical alteration, or image retouching is used. Screenshots show anonymous aliases, generalized cells, no declared needs, and no raw identifiers or exact customer/facility locations.
 
-This record supplements, rather than overwrites, historical freeze/test notes. Current results do not retroactively change what was verified or submitted during the hackathon. Full release readiness still depends on [rights and owner decisions](CHECKLIST.md).
+This record supplements, rather than overwrites, historical freeze/test notes. Current results do not retroactively change what was verified or submitted during the hackathon. The owner has accepted the existing challenge data; remaining publication approvals are tracked in the [current checklist](CHECKLIST.md).
