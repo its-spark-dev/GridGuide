@@ -1,5 +1,7 @@
 # Execution and handoff
 
+> Historical checkpoint record. Statements about uncommitted work, screen order, and test totals describe that development pass. See the [documentation guide](README.md) and [November 3 portfolio verification](releases/VERIFICATION.md) for the current release context.
+
 The original planning/engine/browser milestones are complete and superseded by the AEP Data Guide realignment. Current formulas, values and evidence live in [MODEL_SPEC.md](MODEL_SPEC.md), [AEP_REALIGNMENT.md](AEP_REALIGNMENT.md) and [DEMO_FREEZE.md](DEMO_FREEZE.md). Earlier labor interpretation is no longer an implementation target.
 
 ## Current Q2/Q4 pass

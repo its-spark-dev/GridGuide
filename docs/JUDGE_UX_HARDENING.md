@@ -1,5 +1,7 @@
 # Judge-facing policy and UX hardening — October 24, 2026
 
+> Historical checkpoint record. Statements about uncommitted work, screen order, and test totals describe that development pass. See the [documentation guide](README.md) and [November 3 portfolio verification](releases/VERIFICATION.md) for the current release context.
+
 **Verdict: FREEZE.** The initial recommendation now explains the prototype policy, the one-versus-23 tradeoff and its evidence boundary without a disclosure or presenter narration. This pass started from clean commit `e64edd5` and changes presentation and grounded explanation only. The matching, reverse indexing, criticality association, ranking, effort and scheduling modules remain byte-for-byte unchanged from that baseline.
 
 ## 1. Recommendation and policy
