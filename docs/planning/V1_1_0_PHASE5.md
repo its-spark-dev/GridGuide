@@ -1,7 +1,9 @@
 # v1.1.0 Phase 5 — G5 simulation review packet
 
-**Ready for independent review, not self-approved. Do not merge, begin Phase 6/later
-work, publish a release or deploy without separate approval.** Base main is
+**Owner independently approved G5 at reviewed head
+`aece0448cbee6b3e7d3404843334e4e77c4dd94f`, subject to the handoff constraints below.
+Merge is authorized after documentation and preservation verification. Phase 6/later
+work, release publication and deployment remain unauthorized.** Base main is
 `551313140d70e6e57412d55a239bf9fdaa9336bf`; branch is
 `feat/v1.1-phase5-probabilistic-simulation`.
 
@@ -343,23 +345,50 @@ deployment or live AI provider test was performed or claimed in Phase 5.
 
 ## 11. Future integration and effort
 
-Future Phase 6 customer views should use precomputed allowlisted artifacts, label their
-assumptions and versions, display unresolved mass and convergence flags, and keep the
-original envelope distinct. Unstable results must not be presented as converged; unavailable
-full quantiles stay unavailable. No browser calculation or unrestricted Monte Carlo route.
+The following requirements bind downstream customer and operator interfaces. This is
+handoff guidance only, not authorization to implement those interfaces.
+
+| Output state | Required presentation and behavior |
+|---|---|
+| Stable | Identify the specific fixture, profile, policy, quantiles and trial-count check that passed. Microcase success does not establish convergence for larger cases or other metrics. |
+| Unstable | Preserve the failed numerical checks and diagnostics; visibly flag the affected quantiles. Never present them as converged estimates. |
+| Unresolved | Keep unknown completion times and full-scope quantiles unavailable. Never turn them into finite ETRs, including by substituting the 168-hour scoring horizon. Retain unresolved customer mass separately from known-later censoring. |
+| Unsupported | Explicitly withhold results when no vetted matching artifact exists, its binding/version fails validation, or the requested scope is outside supported presets. Do not fabricate or silently substitute an estimate. |
+
+Numerical convergence and completeness of evidence are distinct dimensions; one badge
+must not erase another limitation. When convergence was not assessed, say so rather than
+infer stability or confuse that absence with a failed check or unresolved completion.
+
+All simulation intervals must be labeled **conditional on synthetic assumptions, not
+empirically calibrated restoration confidence**. Preserve the fixed planned-start-floor
+interpretation as fixed-timetable delay propagation, not adaptive dispatch. Keep the
+original conditional envelope distinct from simulation quantiles. Same-environment
+numerical reproduction is verified; cross-platform bitwise equivalence and empirical
+calibration remain unverified.
+
+Use only vetted, bounded, precomputed fictional artifacts for future public demonstration,
+with exact input/profile/policy/version bindings. The 56 committed fictional presets
+retain their stable, unstable and unavailable diagnostics; they do not authorize arbitrary
+inputs or implied convergence outside checked scope. No browser numerical engine or
+unrestricted Monte Carlo route. Complete regenerable trial caches may remain outside Git;
+committed reports, manifests, numerical checksums and all 15 failed convergence combinations
+and their diagnostics must remain preserved.
 
 Future Phase 7 comparisons should show fixed/default and optional CP-SAT separately,
 paired cost distributions and critical/fairness regressions under identical assumptions,
 bind selection to the artifact fingerprint and require human review. Retain G3's combined
 versus incremental distinction and explicit failed 5% target. Neither stochastic sensitivity
 nor G4 No-Go warrants changing the default or describing a policy as operationally safe.
+Keep `legacy-release-per-person-hour-adapter-v1` as the strongest fixed baseline default
+and CP-SAT optional/experimental. Retain case-level regressions and fairness/critical-service
+tradeoffs in downstream comparisons; aggregate gains must not hide them.
 No Phase 6/7 implementation is included.
 
 This agent-assisted session is not a measured human engineering-day sample. The roadmap's
 6–9-day Phase 5 estimate was provisional. Removing that allowance from the previous
 24–37-day required-work estimate leaves roughly **18–28 provisional engineering days**;
 review/integration and archival effort remain uncertain. No deadline or automatic phase
-transition follows. Stop at this G5 review; do not expand into fitting distributions,
+transition follows. Stop after the authorized G5 merge; do not expand into fitting distributions,
 additional optimizer tuning or new UI features to resolve the disclosed numerical limits.
 
 ## 12. Acceptance checklist and reviewer decisions
@@ -372,12 +401,13 @@ additional optimizer tuning or new UI features to resolve the disclosed numerica
 - [x] Source-free full reproduction, reports, lossless demo trials and checksums delivered.
 - [x] Applicable regressions executed; source data, application defaults and G2–G4 preserved.
 - [x] G3 failed target and G4 evidence-bounded No-Go explicitly carried forward.
-- [ ] Independent reviewer accepts the fixed planned-start-floor replay interpretation.
-- [ ] Reviewer accepts the assumption provenance, descriptive comparisons and 15 flagged
+- [x] Independent reviewer accepts the fixed planned-start-floor replay interpretation.
+- [x] Reviewer accepts the assumption provenance, descriptive comparisons and 15 flagged
       convergence failures as an honest bounded experiment, without empirical calibration.
-- [ ] Reviewer accepts regenerable full caches plus committed reports/demo trial evidence,
+- [x] Reviewer accepts regenerable full caches plus committed reports/demo trial evidence,
       same-host reproducibility limits and separately gated future integration.
-- [ ] Owner approves G5 and separately authorizes merge or later phases.
+- [x] Owner approves G5 and authorizes merge after documentation/preservation checks.
+- [ ] Owner separately authorizes Phase 6 or later work; no such authorization is included.
 
 G5 requests review of numerical correctness, evidence boundaries and reproducibility,
 not certification of utility restoration accuracy, operational safety or a new default.
