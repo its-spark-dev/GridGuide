@@ -1,0 +1,16 @@
+{
+  "application_commit": "b324c1b355cda60035fb11fa32bcddf10931f649",
+  "captured_at": "2026-11-04T06:01:33.919Z",
+  "browser": "156.0.8078.80",
+  "viewport": [
+    1440,
+    1100
+  ],
+  "crew_count": 2,
+  "crew_size": 4,
+  "access": "default clear",
+  "policy": "default critical-proxy-first",
+  "source": "Actual authorized challenge-local v1.0.0 API and UI; UI-selected two crews",
+  "editing": "None; native viewport capture, no DOM or response manipulation",
+  "sha256": "6181860eaa85746a0c6a5031d68bfeae813fec4296ae531be9d256531e7fd3fe"
+}

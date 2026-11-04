@@ -1,71 +1,74 @@
+<div align="center">
+
 # GridGuide
 
-**Understand the outlook. Prepare for an outage. Inspect the decisions.**
+### A little clarity. A better plan.
 
-GridGuide connects customer preparedness with explainable restoration planning in one
-outage concierge: **Overview → Prepare & alerts → Grid insights**. Explore what a repair
-scenario means, follow the dependencies behind it, and see how different priorities
-change a restoration plan.
+Understand an outage scenario. Prepare for what comes next. See the decisions behind repair order.
 
-![GridGuide Overview with fictional scenario selection, conditional repair timing and links to preparedness and grid insights](docs/media/v1.1.0-integrated/01-overview.png)
+[![CI · main](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml)
+[![Version 1.1.0 release candidate](https://img.shields.io/badge/version-1.1.0%20RC-025a95)](docs/releases/v1.1.0.md)
+[![React and TypeScript](https://img.shields.io/badge/React-TypeScript-3178c6)](frontend/package.json)
+[![FastAPI and Python](https://img.shields.io/badge/FastAPI-Python-009688)](docs/ARCHITECTURE.md)
 
-[Watch the 4:44 demo](docs/media/v1.1.0-integrated/README.md) ·
-[Explore the product](#product-walkthrough) · [Run locally](#getting-started) ·
-[Architecture](#architecture) · [Research evidence](docs/benchmarks/v1.1.0.md)
+**[Watch the 4:44 demo](docs/media/v1.1.0-integrated/README.md) · [Explore the product](#product-walkthrough) · [Quick start](#getting-started) · [Architecture](#architecture)**
 
-Built for the **AEP AI Outage Concierge Challenge at HackOHI/O 2026**, then extended into
-a reproducible portfolio project. The current **v1.1.0 release candidate** offers a
-self-contained fictional demonstration without utility data or AI credentials.
-It is not a live outage service or a utility-confirmed restoration forecast.
+</div>
 
-## From uncertainty to a practical next step
+![GridGuide integrated Overview: fictional scenario, conditional timing and connected customer/operator navigation](docs/media/v1.1.0-integrated/01-overview.png)
 
-An outage raises connected questions: *What could happen? What is holding up restoration?
-How should I prepare? Why would one repair come before another?* GridGuide brings those
-questions into a shared experience, with the evidence and assumptions visible alongside
-the answer.
-
-The original challenge-local application explores a vetted anonymous location using
-pinned challenge sources. The public fictional demo makes the dependency, preparedness
-and decision-review workflows accessible without those records. It explicitly leaves
-household risk and geographic context unavailable where the evidence cannot support them.
+**An outage concierge connecting customer preparedness with explainable restoration planning.**
+Built at HackOHI/O 2026 and developed into a reproducible portfolio project. Explore the
+preserved source-backed application or run the standalone fictional demonstration.
+Both make assumptions visible; neither is a live utility service.
 
 ## Product walkthrough
 
+**Overview → Prepare & alerts → Grid insights.** Follow an outlook through its repair
+dependencies, keep practical guidance close, and inspect the tradeoffs behind a plan.
+Select any screenshot for its full-resolution view.
+
 ### Overview — understand the scenario
 
-Start with a fictional service scenario and explore its prepared repair milestones.
-Inspect the power path to see which dependencies are complete, blocked or unresolved.
-**Ask GridGuide** explains the selected result using deterministic, result-bound answers.
-Unknown completion stays unknown rather than becoming a finite restoration estimate.
+The original **challenge-local** outlook brings together an ordinal concern indicator,
+conditional restoration range and crew/access controls. The **fictional public demo**
+adds prepared milestones and inspectable power paths, with deterministic Ask GridGuide
+answers. Blocked or unresolved dependencies never turn into a finite estimate.
 
-![Overview power-path inspection showing a completed fictional transformer, its upstream dependencies and the evidence behind its state](docs/media/v1.1.0-integrated/03-completed.png)
+<table>
+<tr>
+<td width="50%"><a href="docs/media/v1.0.0/overview.png"><img src="docs/media/v1.0.0/overview.png" alt="Original outlook · challenge-local" width="100%"></a><br><strong>Original outlook · challenge-local</strong></td>
+<td width="50%"><a href="docs/media/v1.1.0-integrated/03-completed.png"><img src="docs/media/v1.1.0-integrated/03-completed.png" alt="Inspect a dependency · fictional demo" width="100%"></a><br><strong>Inspect a dependency · fictional demo</strong></td>
+</tr>
+</table>
 
-The timing card shows conditional modeled completion, not a utility ETR or calibrated
-confidence interval. **Prepare now** carries the selected scenario and milestone into
-preparedness, so the customer can continue from the same example.
+*The concern band is not an outage probability; timing is conditional, not a utility ETR
+or calibrated confidence interval. Household risk remains unavailable in the fictional demo.*
 
 ### Prepare & alerts — keep useful guidance close
 
-Read, print or download the generic safety kit. Explicitly enable offline access and
-save a non-sensitive fictional snapshot to revisit later—even after a browser restart
-without network access. Saved snapshots show their timestamp and historical status;
-users can open, delete or reset them.
+Read, print or download the public preparedness kit. Explicitly save a timestamped
+fictional snapshot and enable offline access to revisit it after a browser restart.
+The original challenge-local journey also offers tailored preparation and four
+communication stages: pre-storm, outage confirmed, estimate updated and restored.
 
-![Prepare & alerts page with the generic preparedness kit, print and download actions, and page navigation](docs/media/readme/preparedness-desktop.png)
+<table>
+<tr>
+<td width="50%"><a href="docs/media/readme/preparedness-desktop.png"><img src="docs/media/readme/preparedness-desktop.png" alt="Preparedness kit · fictional demo" width="100%"></a><br><strong>Preparedness kit · fictional demo</strong></td>
+<td width="50%"><a href="docs/media/v1.0.0/communication-preview.png"><img src="docs/media/v1.0.0/communication-preview.png" alt="Hypothetical communication · NOT SENT" width="100%"></a><br><strong>Hypothetical communication · NOT SENT</strong></td>
+</tr>
+</table>
 
-The offline experience is limited to preparedness and saved snapshots; it does not
-recalculate results or show live outage information. Browser storage can be evicted.
-Despite the navigation label, the public demo sends no alerts: tailored guidance and
-communication previews belong to authorized challenge-local mode.
+*Communication previews neither confirm an outage nor send a message. Tailored guidance
+requires authorized challenge-local inputs. Offline snapshots are historical immediately;
+storage can be evicted, and offline access does not recalculate results.*
 
 ### Grid insights — compare, question and review
 
-**Inspect the original geographic repair workspace.** In the preserved, authorized
-challenge-local application, select the **Golden upstream fuse**, **Golden transformer**,
-**Historical fuse replay** or **Critical-context fuse**. Each selection connects its
-map, dependent-customer areas, source evidence and crew assignment. Optional OpenStreetMap
-streets provide geographic context; the selection is separate from the recommended repair.
+**Four repairs. Four geographic perspectives.** Select a candidate in the original
+challenge-local workspace to connect its map, dependent-customer areas, source evidence
+and crew assignment. Inspection is independent of which repair the policy recommends.
+Optional OpenStreetMap streets provide geographic context.
 
 <table>
 <tr>
@@ -87,32 +90,56 @@ counts and repair prerequisites. Cells are not outage boundaries; streets do not
 electrical connections. Critical-service proximity does not establish facility attachment.
 [Capture provenance and publication record](docs/media/readme/MAP_GALLERY_REVIEW.md).
 
-**Compare and review in the public fictional demo.** The v1.1.0 operator workspace uses
-non-geographic fictional inputs in a separate exercise; it does not supply these source
-maps. Compare FIFO, customer-count, release/person-hour and critical-proxy-first policies
-under identical assumptions. See how repair order affects modeled customer waiting,
-critical-service latency and fairness. Completed customer-hours and restricted-horizon
-customer-hours remain distinct, with unresolved and censored outcomes visible.
+### Plan the work — follow priorities and dependencies
 
-Add a supported precedence constraint, inspect the Python-recomputed plan, acknowledge
-its limitations and export JSON plus a readable summary. Changed settings invalidate
-review. The export can be replayed locally; checksums establish consistency, not reviewer
-identity or a tamper-proof audit trail. Nothing dispatches crews or confirms restoration.
+The original comparison puts critical-service context and customer impact side by side.
+Explore one or two crews, separate people-per-crew settings and access constraints.
+Independent repairs can overlap; a downstream transformer still waits for its upstream
+fuse. Blocked work withholds completion rather than inventing clearance.
+
+<table>
+<tr>
+<td width="50%"><a href="docs/media/v1.0.0/grid-insights.png"><img src="docs/media/v1.0.0/grid-insights.png" alt="Compare repair priorities · challenge-local" width="100%"></a><br><strong>Compare repair priorities · challenge-local</strong></td>
+<td width="50%"><a href="docs/media/readme/crew-planning.png"><img src="docs/media/readme/crew-planning.png" alt="Two crews, explicit dependencies · challenge-local" width="100%"></a><br><strong>Two crews, explicit dependencies · challenge-local</strong></td>
+</tr>
+</table>
+
+*Prototype priority policies, not AEP dispatch rules. Repair person-hours differ from
+elapsed time; additional crews do not divide one repair's duration.*
+
+### Review the decision — reproduce the result
+
+The separate **non-geographic fictional operator workspace** compares four policies on
+identical inputs. Inspect customer-hours, critical-service latency and fairness; add a
+supported precedence constraint; then acknowledge the evidence gaps and export the plan.
+Changes invalidate review. Replay the JSON independently in Python.
+
+<table>
+<tr>
+<td width="50%"><a href="docs/media/v1.1.0-integrated/10-policies.png"><img src="docs/media/v1.1.0-integrated/10-policies.png" alt="Four-policy comparison · fictional demo" width="100%"></a><br><strong>Four-policy comparison · fictional demo</strong></td>
+<td width="50%"><a href="docs/media/v1.1.0-integrated/12-reviewed.png"><img src="docs/media/v1.1.0-integrated/12-reviewed.png" alt="Explicit review and export · fictional demo" width="100%"></a><br><strong>Explicit review and export · fictional demo</strong></td>
+</tr>
+</table>
+
+*Completed and restricted-horizon customer-hours remain distinct. Unresolved and censored
+outcomes stay visible. Checksums verify consistency, not reviewer identity or a tamper-proof
+audit history. Nothing dispatches crews.*
 
 <details>
-<summary>View the fictional policy comparison and operator review</summary>
+<summary><strong>On a smaller screen</strong> — responsive customer and operator views</summary>
 
-![Fictional Grid insights comparing four repair policies and their customer-hours, critical-service and fairness tradeoffs](docs/media/v1.1.0-integrated/10-policies.png)
+<p align="center">
+<a href="docs/media/v1.1.0-integrated/mobile-preparedness.png"><img src="docs/media/v1.1.0-integrated/mobile-preparedness.png" alt="Mobile preparedness in the fictional demo" width="230"></a>
+<a href="docs/media/v1.1.0-integrated/mobile-operator.png"><img src="docs/media/v1.1.0-integrated/mobile-operator.png" alt="Mobile operator workspace in the fictional demo" width="230"></a>
+</p>
 
-![Fictional operator review with explicit acknowledgements and a reproducible export summary](docs/media/v1.1.0-integrated/12-reviewed.png)
-
-These are the non-geographic public demonstration, not the challenge-local map workspace.
+Actual Chromium captures; no cross-browser or manual screen-reader certification is implied.
 
 </details>
 
-[Captioned walkthrough and screenshot provenance](docs/media/v1.1.0-integrated/README.md) ·
-[Additional preparedness capture](docs/media/readme/README.md) ·
-[Mobile view](docs/media/v1.1.0-integrated/mobile-preparedness.png)
+[Demo and captions](docs/media/v1.1.0-integrated/README.md) ·
+[Visual inventory and provenance](docs/media/readme/VISUAL_MANIFEST.md) ·
+[Original preparation checklist](docs/media/v1.0.0/preparation.png)
 
 ## From HackOHI/O to v1.1.0
 
