@@ -36,6 +36,9 @@ class DistributionTests(unittest.TestCase):
             with zipfile.ZipFile(a) as z:z.extractall(root)
             with TestClient(create_public_app(root)) as c:
                 self.assertEqual(c.get('/ready').json()['external_ai'],False)
+                product=json.loads((ROOT/'frontend/package.json').read_text())['version']
+                self.assertEqual(c.get('/ready').json()['product_version'],product)
+                self.assertEqual(c.get('/ready').json()['release_status'],'release-candidate')
                 self.assertEqual(c.get('/').status_code,200)
                 for path in ['/docs','/openapi.json','/.env','/data/synthetic/catalog.json','/backend/public_app.py',
                              '/api/locations','/__test__/worker/1','/preparedness/../../deploy/serve.py','/%2e%2e/.env']:

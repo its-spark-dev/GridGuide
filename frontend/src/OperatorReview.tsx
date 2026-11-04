@@ -1,3 +1,4 @@
+import { PRODUCT_VERSION } from './version';
 import { useEffect, useRef, useState } from 'react';
 import type { components } from './api.generated';
 type Catalog=components['schemas']['ReviewCatalog'];
@@ -133,5 +134,5 @@ export function OperatorReview(){
  {reviewed&&<section aria-labelledby="reviewed-title"><h3 id="reviewed-title">Reviewed in demo</h3><pre className="review-summary">{reviewed.summary}</pre><div className="actions"><button onClick={()=>download(JSON.stringify(reviewed.artifact,null,2),'application/json','gridguide-fictional-review.json')}>Download review JSON</button><button onClick={()=>download(reviewed.summary,'text/plain','gridguide-fictional-review.txt')}>Download readable summary</button></div></section>}
  <p>Hashes detect content changes; they are not authenticated signatures, proof of reviewer identity or protection against an actor rewriting the artifact. No identity or free text is collected.</p>
  </section></>}
- </main><footer>GridGuide · Fictional operator decision support · No dispatch or messaging</footer></>;
+ </main><footer>GridGuide {PRODUCT_VERSION} release candidate · Fictional operator decision support · No dispatch or messaging</footer></>;
 }

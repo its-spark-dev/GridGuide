@@ -48,11 +48,14 @@ jobs:
         with:
           node-version: '22.22.0'
       - name: Assert source absence and report unexecuted lanes
+        env:
+          CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           test ! -e data/raw
           test ! -e data/processed
           python scripts/run_test_lane.py --lane challenge --report artifacts/phase8/challenge.json
           python scripts/run_test_lane.py --lane research --inventory-only --report artifacts/phase8/research-unexecuted.json
+          python -c 'import json,os,pathlib; pathlib.Path("artifacts/phase8/candidate.json").write_text(json.dumps({"candidate_head_sha":os.environ["CANDIDATE_SHA"],"tested_checkout_sha":os.environ["GITHUB_SHA"],"run_id":os.environ["GITHUB_RUN_ID"]},indent=2)+"\n")'
       - name: Legacy contract consistency and production builds
         run: |
           python -m venv .venv

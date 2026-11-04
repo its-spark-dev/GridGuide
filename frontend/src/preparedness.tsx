@@ -1,3 +1,4 @@
+import { PRODUCT_VERSION } from './version';
 import { createRoot } from 'react-dom/client';
 import { useEffect, useRef, useState } from 'react';
 import { PowerPath } from './PowerPath';
@@ -153,7 +154,7 @@ function Preparedness() {
           <details><summary>Versions and fictional provenance</summary><p>Independently authored fiction · revision {shown.scenario_revision}. Model: {shown.model_version}. Policy: {shown.policy_id}. One effective worker per crew is an assumption.</p>
             <p className="fingerprint">Input: {shown.input_fingerprint}<br/>Result: {shown.result_fingerprint}</p></details></section><PowerPath frame={shown}/></>}
       </section>
-    </main><footer className="no-print">GridGuide research demonstration · No utility confirmation, dispatch or alert delivery.</footer>
+    </main><footer className="no-print">GridGuide {PRODUCT_VERSION} release candidate · No utility confirmation, dispatch or alert delivery.</footer>
   </>;
 }
 

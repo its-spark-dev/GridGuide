@@ -6,6 +6,21 @@ import { join } from 'node:path';
 
 const origin = 'http://127.0.0.1:18186';
 const key = 'gridguide.preparedness.snapshot.v1';
+test('release version preserves only the explicit historical snapshot compatibility',async({page})=>{
+ await page.goto('/preparedness/');
+ await expect(page.getByRole('button',{name:'Save this demo snapshot'})).toBeEnabled();
+ await page.getByRole('button',{name:'Save this demo snapshot'}).click();
+ await expect(page.getByText('Fictional snapshot saved explicitly',{exact:false})).toBeVisible();
+ const saved=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),key);
+ expect(saved.app_version).toBe('1.1.0');
+ for(const version of ['v1.1-phase6','1.1.0','unreviewed-version',['1.1.0']]){
+  await page.evaluate(({key,saved,version})=>localStorage.setItem(key,JSON.stringify({...saved,app_version:version})),{key,saved,version});
+  await page.reload();
+  const open=page.getByRole('button',{name:'Open saved snapshot'});
+  if(typeof version!=='string'||version==='unreviewed-version')await expect(open).toBeDisabled();
+  else {await expect(open).toBeEnabled();await open.click();await expect(page.getByText('Historical fictional snapshot',{exact:true})).toBeVisible();}
+ }
+});
 async function start(page: Page) {
   await page.goto('/preparedness/');
   await expect(page.getByRole('button', { name: 'Save this demo snapshot' })).toBeEnabled();

@@ -1,8 +1,9 @@
 import type { components } from './api.generated';
 import { pathTrust } from './pathTrust.generated';
+import { PRODUCT_VERSION } from './version';
 
 export type PathFrame = components['schemas']['CustomerPathFrame'];
-export type Snapshot = { schema_version: 'preparedness-snapshot-v1'; app_version: 'v1.1-phase6'; saved_at: string; frame: PathFrame };
+export type Snapshot = { schema_version: 'preparedness-snapshot-v1'; app_version: 'v1.1-phase6' | typeof PRODUCT_VERSION; saved_at: string; frame: PathFrame };
 export const SNAPSHOT_KEY = 'gridguide.preparedness.snapshot.v1';
 export const MAX_RECORD_BYTES = 50_000;
 const approved = new Set<string>(pathTrust.approved_frames);
@@ -56,10 +57,10 @@ export async function parseSnapshot(raw: string): Promise<Snapshot> {
   if (byteLength(raw) > MAX_RECORD_BYTES) throw new Error('Saved snapshot is too large.');
   const value: unknown = JSON.parse(raw);
   if (!exact(value, ['schema_version','app_version','saved_at','frame']) ||
-      value.schema_version !== 'preparedness-snapshot-v1' || value.app_version !== 'v1.1-phase6' ||
+      value.schema_version !== 'preparedness-snapshot-v1' || (value.app_version !== PRODUCT_VERSION && value.app_version !== 'v1.1-phase6') ||
       typeof value.saved_at !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(value.saved_at) ||
       !Number.isFinite(Date.parse(value.saved_at))) throw new Error('Saved snapshot is corrupt or incompatible. Delete it and save a fresh example.');
-  return { schema_version: 'preparedness-snapshot-v1', app_version: 'v1.1-phase6', saved_at: value.saved_at,
+  return { schema_version: 'preparedness-snapshot-v1', app_version: value.app_version as Snapshot['app_version'], saved_at: value.saved_at,
     frame: await validateFrame(value.frame) };
 }
 
@@ -88,7 +89,7 @@ export async function saveSnapshot(frame: PathFrame, signal: AbortSignal): Promi
       value.metadata.provenance !== 'independently_authored_fiction' || value.metadata.scenario_id !== frame.scenario_id ||
       value.metadata.scenario_revision !== frame.scenario_revision || value.metadata.input_fingerprint !== frame.input_fingerprint)
     throw new Error('Scenario provenance changed. Refresh before saving.');
-  const snapshot: Snapshot = { schema_version: 'preparedness-snapshot-v1', app_version: 'v1.1-phase6',
+  const snapshot: Snapshot = { schema_version: 'preparedness-snapshot-v1', app_version: PRODUCT_VERSION,
     saved_at: new Date().toISOString(), frame: await validateFrame(frame) };
   if (signal.aborted) throw new Error('Save cancelled.');
   const raw = JSON.stringify(snapshot);
