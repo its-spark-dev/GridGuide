@@ -1,0 +1,11 @@
+{
+  "champion": "logistic-c0.1",
+  "command": "python -m research.ml_lab evaluate --dataset DATASET --training TRAINING --freeze FREEZE --output FINAL",
+  "dataset_hash": "98ce22461f6b642a66e65076d08687c69b2ee0c06d32c966e6ad173fe80e028b",
+  "freeze_sha256": "196c450a747c625f2414e9aff6fafa9c3b18ab931da3ab8b95318d4246f41dc2",
+  "invocation_revision": "6d4b906e01cb989a4182a5520019adf86b35e279",
+  "profile": "full",
+  "started_utc": "2026-11-04T08:36:25.821437+00:00",
+  "status": "STARTED; do not retry as a new final evaluation",
+  "version": "ml-evaluation-invocation-v1"
+}

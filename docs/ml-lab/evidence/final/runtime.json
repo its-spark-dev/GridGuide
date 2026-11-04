@@ -1,0 +1,32 @@
+{
+  "elapsed_seconds": 4.453811792016495,
+  "environment": {
+    "cpu_count": 12,
+    "machine": "arm64",
+    "packages": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.5",
+      "pydantic": "2.12.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "threadpoolctl": "3.7.0"
+    },
+    "processor": "arm",
+    "python": "3.12.14",
+    "system": "Darwin",
+    "thread_limit": 1
+  },
+  "inference_denominator_cases": 240,
+  "inference_seconds": {
+    "boosting-rate0.03": 0.19502900342922658,
+    "boosting-rate0.1": 0.18016304302727804,
+    "forest-depth4": 0.4347196173039265,
+    "forest-depth8": 0.4398425343679264,
+    "forest-depthall": 0.44116236933041364,
+    "logistic-c0.1": 0.15227524953661487,
+    "logistic-c1": 0.14494832133641466,
+    "logistic-c10": 0.14154375024372712
+  },
+  "peak_process_rss_bytes": 158466048
+}

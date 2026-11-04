@@ -1,0 +1,142 @@
+{
+  "ci_evidence": {
+    "implementation_pr": "https://github.com/its-spark-dev/GridGuide/pull/18",
+    "note": "This ledger records the executed implementation-head runs. The final documentation-only head is additionally verified in PR checks; no frozen numerical source changed.",
+    "runs": [
+      {
+        "conclusion": "success",
+        "name": "ML Lab verification",
+        "url": "https://github.com/its-spark-dev/GridGuide/actions/runs/41802063931"
+      },
+      {
+        "conclusion": "success",
+        "name": "Synthetic verification",
+        "url": "https://github.com/its-spark-dev/GridGuide/actions/runs/41802063840"
+      }
+    ],
+    "verified_head_sha": "69f4a641c6166164e139f86b835b881480518bc8"
+  },
+  "executed_commands": {
+    "challenge": ".venv/bin/python scripts/run_test_lane.py --lane challenge --report artifacts/ml-hardening/challenge.json",
+    "final_audit": ".venv-ml/bin/python -m research.ml_lab audit --dataset docs/ml-lab/evidence/dataset --training docs/ml-lab/evidence/training --freeze docs/ml-lab/evidence/selection-freeze.json --final docs/ml-lab/evidence/final",
+    "ml_tests": ".venv-ml/bin/python -m unittest discover -s research/ml_lab/tests -v",
+    "public": ".venv/bin/python scripts/run_test_lane.py --lane public --report artifacts/ml-hardening/public.json",
+    "research": ".venv/bin/python scripts/run_test_lane.py --lane research --report artifacts/ml-hardening/research.json",
+    "smoke": ".venv-ml/bin/python -m research.ml_lab smoke --output /tmp/gridguide-ml-smoke-repaired"
+  },
+  "phases": [
+    {
+      "artifacts": [
+        "docs/planning/V1_2_0_IMPLEMENTATION.md",
+        "docs/ml-lab/REVIEW.md"
+      ],
+      "checks": [
+        "PR17 architecture/code review",
+        "PR17 GitHub Actions run41795944142 success",
+        "merge commit83d34dd"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
+      "phase": 0
+    },
+    {
+      "artifacts": [
+        "research/ml_lab/generator.py",
+        "docs/ml-lab/DATASET.md",
+        "docs/ml-lab/evidence/dataset"
+      ],
+      "checks": [
+        "8 dataset tests",
+        "full input-only audit:720 cases /240 unique topology groups",
+        "source/network denied subprocess"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
+      "phase": 1
+    },
+    {
+      "artifacts": [
+        "research/ml_lab/features.py",
+        "research/ml_lab/labels.py",
+        "research/ml_lab/baselines.py"
+      ],
+      "checks": [
+        "15 feature/label/baseline tests",
+        "35 total ML tests passed before scientific training"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
+      "phase": 2
+    },
+    {
+      "artifacts": [
+        "docs/ml-lab/evidence/training",
+        "docs/ml-lab/evidence/selection-freeze.json"
+      ],
+      "checks": [
+        "297 eligible training /99 eligible development cases",
+        "8 candidates;3-fold grouped CV;train-only transforms",
+        "all8 repeated fits yielded identical serialized bytes and predictions",
+        "selected logistic-c0.1 by development mean regret373.710 vs fixed413.659",
+        "41 ML tests passed before final freeze"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
+      "phase": 3
+    },
+    {
+      "artifacts": [
+        "docs/ml-lab/evidence/dataset/evaluation-receipt.json",
+        "docs/ml-lab/evidence/final"
+      ],
+      "checks": [
+        "one final evaluation after freeze commit6d4b906",
+        "240-case exact read-only audit replay PASS",
+        "ID90 eligible /120;shift99 eligible /120",
+        "both predeclared promotion gates FAIL;no retuning"
+      ],
+      "gate": "ENGINEERING PASS / SCIENTIFIC PROMOTION FAIL",
+      "open_issues": [],
+      "phase": 4
+    },
+    {
+      "artifacts": [
+        "docs/ml-lab/README.md",
+        "docs/ml-lab/presentation",
+        "README.md"
+      ],
+      "checks": [
+        "four PNG+SVG scientific figures visually inspected",
+        "renderer checks sealed evidence before plotting",
+        "same-environment figure regeneration tests PASS",
+        "complete report retains both failed promotion gates and all candidate results"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
+      "phase": 5
+    },
+    {
+      "artifacts": [
+        ".github/workflows/ml-lab.yml",
+        "research/ml_lab/tests"
+      ],
+      "checks": [
+        "44 ML unittest cases PASS",
+        "102 existing public tests PASS",
+        "196 existing challenge tests PASS with authorized local source files",
+        "51 existing research tests PASS",
+        "npm --prefix frontend run build PASS",
+        "python scripts/check_frozen_artifacts.py PASS:20 G2/G3+66 G5+10 G6+19 G7 files",
+        "independent source-free historical checkout reproduced all8 model bytes and training/dev/CV evidence",
+        "independent final numerical/diff review PASS; no frozen source edits after reveal",
+        "240-case read-only final audit reproduces exact numerical evidence",
+        "GitHub ML Lab verification run41802063931 PASS:Linux unit/smoke/full final replay/figure regeneration",
+        "GitHub Synthetic verification run41802063840 PASS:public/archive/frozen release/browser/container/dependency checks"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
+      "phase": 6
+    }
+  ],
+  "version": "ml-phase-ledger-v1"
+}

@@ -1,0 +1,102 @@
+name: ML Lab verification
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/ml-lab.yml'
+      - 'research/ml_lab/**'
+      - 'benchmarks/**'
+      - 'backend/contracts.py'
+      - 'backend/risk_rules.py'
+      - 'requirements-ml.lock'
+      - 'docs/ml-lab/**'
+      - 'docs/planning/V1_2_0_IMPLEMENTATION.md'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ml-lab.yml'
+      - 'research/ml_lab/**'
+      - 'benchmarks/**'
+      - 'backend/contracts.py'
+      - 'backend/risk_rules.py'
+      - 'requirements-ml.lock'
+      - 'docs/ml-lab/**'
+      - 'docs/planning/V1_2_0_IMPLEMENTATION.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ml-lab-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-free-ml:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            backend
+            benchmarks
+            research
+            docs/ml-lab
+            docs/planning
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+      - name: Verify source absence and install isolated hash-pinned dependencies
+        run: |
+          test ! -e data/raw
+          test ! -e data/processed
+          test ! -e data/external
+          test ! -e data/prepared
+          python -m venv .venv-ml
+          .venv-ml/bin/pip install --require-hashes -r requirements-ml.lock
+          .venv-ml/bin/pip check
+      - name: Contracts, leakage, serialized integrity and boundary tests
+        run: .venv-ml/bin/python -m unittest discover -s research/ml_lab/tests -v
+      - name: Real bounded smoke training, freeze, evaluation and replay
+        run: .venv-ml/bin/python -m research.ml_lab smoke --output /tmp/gridguide-ml-smoke
+      - name: Replay committed final evidence without retraining or selecting
+        run: |
+          .venv-ml/bin/python -m research.ml_lab audit \
+            --dataset docs/ml-lab/evidence/dataset \
+            --training docs/ml-lab/evidence/training \
+            --freeze docs/ml-lab/evidence/selection-freeze.json \
+            --final docs/ml-lab/evidence/final
+      - name: Regenerate research presentation twice
+        run: |
+          mkdir /tmp/gridguide-ml-presentation-a /tmp/gridguide-ml-presentation-b
+          cp -R docs/ml-lab/evidence /tmp/gridguide-ml-presentation-a/evidence
+          cp -R docs/ml-lab/evidence /tmp/gridguide-ml-presentation-b/evidence
+          .venv-ml/bin/python -m research.ml_lab report \
+            --training /tmp/gridguide-ml-presentation-a/evidence/training \
+            --final /tmp/gridguide-ml-presentation-a/evidence/final \
+            --output /tmp/gridguide-ml-presentation-a/presentation
+          .venv-ml/bin/python -m research.ml_lab report \
+            --training /tmp/gridguide-ml-presentation-b/evidence/training \
+            --final /tmp/gridguide-ml-presentation-b/evidence/final \
+            --output /tmp/gridguide-ml-presentation-b/presentation
+          diff -r /tmp/gridguide-ml-presentation-a/presentation /tmp/gridguide-ml-presentation-b/presentation
+          cmp docs/ml-lab/presentation/REPORT.md /tmp/gridguide-ml-presentation-a/presentation/REPORT.md
+      - name: Verify committed presentation integrity
+        run: |
+          .venv-ml/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          from research.ml_lab.artifacts import validate_hashes
+          root = Path('docs/ml-lab/presentation')
+          manifest = json.loads((root/'manifest.json').read_text())
+          validate_hashes(root, manifest['artifacts'])
+          regenerated = json.loads(Path('/tmp/gridguide-ml-presentation-a/presentation/manifest.json').read_text())
+          assert manifest['source_evidence'] == regenerated['source_evidence'], 'Figure source evidence differs'
+          PY

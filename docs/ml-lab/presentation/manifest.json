@@ -1,0 +1,31 @@
+{
+  "artifacts": {
+    "REPORT.md": "11a7156fb89bd118f34033d0854e8a8ff77d4490b71507b6773c863bf74f12ae",
+    "figures/confusion.png": "020860861085419d232dfdddd565bbc9c1c5ec0e298afe1a759586f8db51a0b3",
+    "figures/confusion.svg": "b7a8c7da88ed2425135797a0db14044e8111565e8d9873b6ff1eda1c7e46fe55",
+    "figures/feature-importance.png": "0a9efdf7f9da616a87f246c25ae9d9d2ceb021dcb1786fd761099b41ad8d4d71",
+    "figures/feature-importance.svg": "354e3a3478c8cdec57bc4eec6f71b115648208bbcad663abdf6da3b5de38b94b",
+    "figures/performance.png": "b25011e7e36d271bf1ccf7ff8b36c26ae723f6308e1c3bf699aca70453bb2767",
+    "figures/performance.svg": "d1181113baa48f8d868768ce66907dfa1a1c744d5b032d48e08dceade6dddf84",
+    "figures/regret-distribution.png": "ca5fdbfe87ac59f8a481e924385423c5a8aa9337d763c238289fb120c98a088b",
+    "figures/regret-distribution.svg": "42d6ec9a4c0c6ee29c0c0583eb29d42c79e54c10894c183df86a184f8dda73e6"
+  },
+  "interpretation": "saved synthetic results; renderer performs no fitting, scheduling or policy selection",
+  "render_environment": {
+    "font": "DejaVu Sans",
+    "matplotlib": "3.10.7",
+    "numpy": "2.3.5",
+    "svg_hashsalt": "ml-static-report-v1"
+  },
+  "renderer_sha256": "f96612aaf41d271156443bb90a2221bd8c872384347203c4dfb8c5cb414d6bcb",
+  "source_evidence": {
+    "../evidence/final/cases.jsonl.gz": "02d001c7bc397358a40e1950c328c538a7365f1908c1fa7b25c1916b67db6341",
+    "../evidence/final/completion.json": "0686cac75dd61e8fbc65ac02f8a25f42ae869f7b0d764213c8128c4b401ae619",
+    "../evidence/final/results.json": "5f154f708ab855f01fe9cd61f7acadc3fed73ea2456137db8ee29773c8a08c0a",
+    "../evidence/final/runtime.json": "8fe92d2760629398f2cb0cb15c1f5967da9065ac6adb20e3eeccd117b82b3221",
+    "../evidence/selection-freeze.json": "196c450a747c625f2414e9aff6fafa9c3b18ab931da3ab8b95318d4246f41dc2",
+    "../evidence/training/runtime.json": "be1778595b433dca9e5dda0d91925a14065b2be4f1eb2a01c1e923c0a7ae7e4b",
+    "../evidence/training/training.json": "b042f53226d458e8fe6312dee126c6df772b7a48933d1583be707586b4518820"
+  },
+  "version": "ml-static-report-v1"
+}
