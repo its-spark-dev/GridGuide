@@ -110,7 +110,7 @@ function Preparedness() {
   const scenarios = frames.filter(f => f.step === 0);
   return <>
     <a className="skip-link" href="#preparedness-main">Skip to preparedness</a>
-    <header className="prep-header no-print"><a href="/">GridGuide</a><span>Preparedness & fictional power paths</span></header>
+    <header className="prep-header no-print"><a href="/">GridGuide</a><span>Preparedness & fictional power paths</span><a href="/operator/">Fictional operator review</a></header>
     <main id="preparedness-main">
       <div className="no-print"><span className="eyebrow">Be ready, with clear limits</span><h1>Prepare for an outage</h1>
         <p>Keep general safety guidance close. Explore explicitly fictional dependencies without confusing them with your utility’s network.</p>

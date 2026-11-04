@@ -4,3 +4,7 @@ dist/
 test-results/
 test-results-preparedness/
 playwright-report/
+
+dist-public/
+test-results-distribution/
+test-results-container/

@@ -1,0 +1,142 @@
+name: Synthetic verification
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      research:
+        description: Run the separate bounded research regression lane
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: synthetic-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  public-synthetic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      GRIDGUIDE_AI_PROVIDER: none
+      GRIDGUIDE_MODE: synthetic-demo
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      # Sparse checkout implicitly uses blob:none; no raw/processed source blobs.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            backend
+            benchmarks
+            data/synthetic
+            data/operator
+            deploy
+            docs
+            frontend
+            pipeline
+            research
+            scripts
+            tests
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.22.0'
+      - name: Assert source absence and report unexecuted lanes
+        run: |
+          test ! -e data/raw
+          test ! -e data/processed
+          python scripts/run_test_lane.py --lane challenge --report artifacts/phase8/challenge.json
+          python scripts/run_test_lane.py --lane research --inventory-only --report artifacts/phase8/research-unexecuted.json
+      - name: Legacy contract consistency and production builds
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements-web.txt
+          npm --prefix frontend ci
+          npm --prefix frontend run types:generate
+          git diff --exit-code -- frontend/src/api.generated.ts
+          npm --prefix frontend run build
+          .venv/bin/python scripts/build_public_frontend.py
+      - name: Locked public runtime and test-only dependencies
+        run: |
+          .venv/bin/pip install --require-hashes -r deploy/requirements.lock
+          .venv/bin/pip install numpy==2.5.4
+          .venv/bin/pip check
+          .venv/bin/python scripts/collect_dependency_notices.py > /tmp/public-notices.txt
+          cmp /tmp/public-notices.txt deploy/DEPENDENCY_NOTICES.txt
+      - name: Public tests, preserved hashes and reproducible archive
+        run: |
+          .venv/bin/python scripts/run_test_lane.py --lane public --report artifacts/phase8/public.json
+          .venv/bin/python scripts/check_frozen_artifacts.py > artifacts/phase8/frozen.json
+          .venv/bin/python scripts/package_demo.py --build /tmp/gridguide-public.zip > artifacts/phase8/package.json
+          cp /tmp/gridguide-public.zip artifacts/phase8/gridguide-public.zip
+          python -m zipfile -e /tmp/gridguide-public.zip /tmp/gridguide-public
+          python -m venv /tmp/gridguide-runtime
+          /tmp/gridguide-runtime/bin/pip install --require-hashes -r /tmp/gridguide-public/deploy/requirements.lock
+      - name: Browser production and real source-free journey
+        run: |
+          cd frontend
+          npx playwright install --with-deps chromium
+          npx playwright test -c playwright.preparedness.config.ts
+          GRIDGUIDE_PACKAGE=/tmp/gridguide-public GRIDGUIDE_PUBLIC_PYTHON=/tmp/gridguide-runtime/bin/python npx playwright test -c playwright.distribution.config.ts
+      - name: One-origin nonroot container rehearsal
+        run: |
+          docker build -f /tmp/gridguide-public/deploy/Dockerfile -t gridguide-ci /tmp/gridguide-public
+          python scripts/rehearse_container.py --image gridguide-ci --output artifacts/phase8/container.json
+          cd frontend
+          GRIDGUIDE_CONTAINER=gridguide-ci GRIDGUIDE_PACKAGE=/tmp/gridguide-public GRIDGUIDE_PUBLIC_PYTHON=/tmp/gridguide-runtime/bin/python npx playwright test -c playwright.distribution.config.ts --output test-results-container
+      - name: Dependency assessment
+        run: |
+          python -m venv /tmp/gridguide-audit
+          /tmp/gridguide-audit/bin/pip install pip-audit==2.10.1
+          /tmp/gridguide-audit/bin/pip-audit -r deploy/requirements.lock --disable-pip -f json -o artifacts/phase8/python-audit.json || test -s artifacts/phase8/python-audit.json
+          npm --prefix frontend audit --json > artifacts/phase8/npm-audit.json || test -s artifacts/phase8/npm-audit.json
+          python scripts/check_dependency_findings.py artifacts/phase8/python-audit.json artifacts/phase8/npm-audit.json
+      - name: Sanitized verification artifacts only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-verification
+          retention-days: 14
+          path: |
+            artifacts/phase8/*.json
+            artifacts/phase8/gridguide-public.zip
+            frontend/test-results-distribution/
+            frontend/test-results-container/
+  slow-research:
+    if: github.event_name == 'workflow_dispatch' && inputs.research
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            backend
+            benchmarks
+            data/synthetic
+            data/operator
+            docs
+            research
+            scripts
+            tests
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+      - run: |
+          test ! -e data/raw
+          pip install -r requirements-optimization.txt -r requirements-simulation.txt
+          python scripts/run_test_lane.py --lane research --report artifacts/phase8/research.json
+          python scripts/check_frozen_artifacts.py
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bounded-research-regressions
+          path: artifacts/phase8/research.json
+          retention-days: 14

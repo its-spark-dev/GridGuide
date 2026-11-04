@@ -91,7 +91,7 @@ test('challenge or unknown mode cannot save; no source/declaration persistence',
 
 test('production shell survives actual browser process restart with all network denied', async () => {
   const directory = await mkdtemp(join(tmpdir(),'gridguide-offline-browser-'));
-  let context = await chromium.launchPersistentContext(directory,{channel:'chrome',headless:true});
+  let context = await chromium.launchPersistentContext(directory,{channel:process.env.CI?undefined:'chrome',headless:true});
   try {
     const page = await context.newPage(); await page.goto(origin+'/preparedness/');
     await expect(page.getByRole('button',{name:'Save this demo snapshot'})).toBeEnabled();
@@ -99,7 +99,7 @@ test('production shell survives actual browser process restart with all network 
     await page.getByLabel('Prepared milestone').selectOption('1'); await save(page); await enable(page);
     const saved = await page.evaluate(key=>localStorage.getItem(key),key);
     await context.close();
-    context = await chromium.launchPersistentContext(directory,{channel:'chrome',headless:true});
+    context = await chromium.launchPersistentContext(directory,{channel:process.env.CI?undefined:'chrome',headless:true});
     await context.setOffline(true);
     const offline = await context.newPage(); await offline.goto(origin+'/preparedness/');
     await expect(offline.getByRole('heading',{name:'Your generic preparedness kit'})).toBeVisible();
