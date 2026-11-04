@@ -442,6 +442,114 @@ export interface components {
             /** Update Reason */
             update_reason: string;
         };
+        /** CustomerPathFrame */
+        CustomerPathFrame: {
+            /** Completion Hours */
+            completion_hours: number | null;
+            /** Customers */
+            customers: components["schemas"]["CustomerPathView"][];
+            /**
+             * Duration Assumption
+             * @default one_effective_worker
+             * @constant
+             */
+            duration_assumption: "one_effective_worker";
+            /** Elapsed Hours */
+            elapsed_hours: number;
+            /** Input Fingerprint */
+            input_fingerprint: string;
+            /** Label */
+            label: string;
+            /**
+             * Mode
+             * @default synthetic-demo
+             * @constant
+             */
+            mode: "synthetic-demo";
+            /**
+             * Model Version
+             * @default conditional-dependency-playback-v1
+             * @constant
+             */
+            model_version: "conditional-dependency-playback-v1";
+            /** Nodes */
+            nodes: components["schemas"]["CustomerPathNode"][];
+            /**
+             * Policy Id
+             * @default legacy-release-per-person-hour-adapter-v1
+             * @constant
+             */
+            policy_id: "legacy-release-per-person-hour-adapter-v1";
+            /**
+             * Provenance
+             * @default independently_authored_fiction
+             * @constant
+             */
+            provenance: "independently_authored_fiction";
+            /** Released Customers */
+            released_customers: number;
+            /** Result Fingerprint */
+            result_fingerprint: string;
+            /** Scenario Id */
+            scenario_id: string;
+            /** Scenario Revision */
+            scenario_revision: number;
+            /**
+             * Schema Version
+             * @default customer-path-frame-v1
+             * @constant
+             */
+            schema_version: "customer-path-frame-v1";
+            /** Step */
+            step: number;
+            /** Step Label */
+            step_label: string;
+            /** Unresolved Customers */
+            unresolved_customers: number;
+        };
+        /** CustomerPathNode */
+        CustomerPathNode: {
+            /** Id */
+            id: string;
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "supply_terminal" | "fuse" | "transformer" | "unresolved";
+            /** Label */
+            label: string;
+            /** Prerequisite Ids */
+            prerequisite_ids: string[];
+            /** Reason */
+            reason: string;
+            /** Repair Id */
+            repair_id: string | null;
+            /**
+             * State
+             * @enum {string}
+             */
+            state: "intact_assumption" | "declared_damage" | "blocked" | "dependency_blocked" | "completed_simulated" | "unresolved";
+        };
+        /** CustomerPathView */
+        CustomerPathView: {
+            /** Asset Ids */
+            asset_ids: string[];
+            /** Id */
+            id: string;
+            /** Label */
+            label: string;
+            /** Reason */
+            reason: string;
+            /**
+             * Release State
+             * @enum {string}
+             */
+            release_state: "waiting" | "released_simulated" | "unresolved";
+            /** Required Repair Ids */
+            required_repair_ids: string[];
+            /** Unresolved Link From Ids */
+            unresolved_link_from_ids: string[];
+        };
         /** DeclaredNeeds */
         DeclaredNeeds: {
             /**
