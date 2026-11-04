@@ -264,6 +264,22 @@ negative findings remain available; these are fictional simulator results, not u
 
 <!-- learned-dispatch:end -->
 
+## ML opportunity assessment — what to investigate next
+
+A separate [evidence-first opportunity audit](docs/research/ml-opportunity/REPORT.md) revisits the published ML Lab, adaptive scheduling and learned-dispatch results. It independently replays archived measurements and examines new four-task exact scheduling examples. **Verdict: NO-GO for another immediate training pilot**, not a proof that better learning is impossible. No new scientific model was trained, historical final holdouts remain spent, and neither application defaults nor v1.1.0's stable demonstration changed.
+
+**Future research is recorded as conditional work, not promised v1.2.0 functionality:**
+
+- **Direction B — Decision-focused ranking ([Issue #24](https://github.com/its-spark-dev/GridGuide/issues/24)).** Before training, register a controlled, group-isolated study comparing regret-aware action ranking with cost regression and strong non-ML dispatch baselines. Only proceed if its pre-training evidence, runtime budget and validation plan justify the experiment. Teacher-WAIT rarity and action ties are open questions, not established root causes.
+- **Direction C — Find a better-posed ML problem ([Issue #25](https://github.com/its-spark-dev/GridGuide/issues/25)).** First audit candidate prediction targets, pre-decision inputs, usable ground truth, data rights and meaningful non-ML baselines. A new synthetic task is simulation research only; no utility-calibrated forecast or actual dispatch benefit is claimed.
+
+[Audit summary](docs/research/ml-opportunity/README.md) ·
+[Full report and limits](docs/research/ml-opportunity/REPORT.md) ·
+[Original opportunity study](https://github.com/its-spark-dev/GridGuide/issues/22) ·
+[Research roadmap for v1.2.0](docs/releases/v1.2.0-research-roadmap.md)
+
+The prospective **v1.2.0 ML Research Edition** is intended as a documentation/reproducibility milestone for completed research, separate from the **v1.1.0 stable product** and its unchanged downloads. It does **not** announce a released v1.2.0 package or promise any future model improvement.
+
 ## Research findings and reproducibility
 
 Frozen scenarios, independent validation and reproducible reports make unsuccessful
