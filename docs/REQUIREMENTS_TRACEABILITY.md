@@ -1,5 +1,9 @@
 # Requirements traceability
 
+## v1.1.0 release-candidate coverage
+
+The original challenge matrix below remains intact. Public distribution adds six fictional customer scenarios/18 prepared frames, eight operator cases/four baselines, validated precedence overrides, review/export/replay, and an explicitly cached preparedness kit. These fulfill bounded portfolio workflows, not operational utility requirements. G5 visualization, live crew editing, unrestricted solving, trained outage probabilities, field dispatch and public hosting are deferred or excluded. See the [G1–G9 acceptance matrix](planning/V1_1_0_PHASE9.md) and [final evidence report](benchmarks/v1.1.0.md).
+
 ## v1.1 Phase 1 review scope
 
 | Requirement | Evidence | Remaining limit |

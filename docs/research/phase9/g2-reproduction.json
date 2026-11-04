@@ -1,0 +1,8 @@
+{
+  "cases": 278,
+  "policy_runs": 1112,
+  "failures": 0,
+  "results_uncompressed_sha256": "5384203f7d7ced30c1b7bd1f62f7770d18a542f56a47ddc9284f8f7a620a1dc1",
+  "reference": "docs/benchmarks/phase2/standard/manifest.json",
+  "matched": true
+}

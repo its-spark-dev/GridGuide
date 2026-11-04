@@ -56,6 +56,11 @@ test('clean production customer journey, fixed default and independent exported 
  const replay=execFileSync(python!,[join(root!,'scripts/replay_review.py'),resolve(output)],
   {cwd:root!,env:{PATH:process.env.PATH,PYTHONDONTWRITEBYTECODE:'1'},encoding:'utf8'});
  expect(replay).toContain('verified');await writeFile(info.outputPath('replay.log'),replay);
+ const summaryDownload=page.waitForEvent('download');
+ await page.getByRole('button',{name:'Download readable summary'}).click();
+ const summaryPath=info.outputPath('actual-browser-summary.txt');await(await summaryDownload).saveAs(summaryPath);
+ const summary=await readFile(summaryPath,'utf8');expect(summary.length).toBeGreaterThan(100);
+ expect(replay).toContain(summary);
  await page.screenshot({path:info.outputPath('public-operator.png'),fullPage:true});
  expect(external).toEqual([]);expect(csp).toEqual([]);
 });

@@ -19,7 +19,7 @@ def create_public_app(root: Path = ROOT):
         raise RuntimeError('External AI is disabled in the public distribution')
     app = create_operator_app()
     app.title = 'GridGuide fictional demonstration'
-    app.version = '1.1.0-phase8'
+    app.version = '1.1.0'
     app.add_middleware(TrustedHostMiddleware,
         allowed_hosts=os.environ.get('GRIDGUIDE_ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver').split(','))
     # No interactive Swagger/ReDoc third-party scripts or schema browsing endpoint.
@@ -59,6 +59,7 @@ def create_public_app(root: Path = ROOT):
     @app.get('/ready')
     def ready():
         return {'ready': True, 'mode': 'synthetic-demo', 'version': 'public-package-v1',
+                'product_version': app.version, 'release_status': 'release-candidate',
                 'external_ai': False, 'interactive_solver': False}
 
     @app.get('/')

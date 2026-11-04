@@ -1,0 +1,8 @@
+{
+  "milliseconds": [
+    1907.549417,
+    884.1867920000004
+  ],
+  "host": "darwin",
+  "scope": "fresh Docker containers; local image; no image pull"
+}

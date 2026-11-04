@@ -1,5 +1,7 @@
 # GridGuide model specification — customer v2 / restoration-plan v1
 
+> v1.1.0 product metadata does not rename the numerical rules below. The [final evidence report](benchmarks/v1.1.0.md) separates regression correctness, frozen synthetic scheduling, assumption-based simulation and G4 No-Go. No new numerical model or empirical calibration is introduced by the release candidate.
+
 Phase 1 of v1.1.0 preserves all numerical rules below. Its independent fictional
 catalog uses `synthetic-scenario-v1` definitions, not legacy source DTOs. Synthetic
 repair effort is explicitly authored total person-hours, neither workbook-derived nor

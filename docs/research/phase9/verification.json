@@ -1,0 +1,58 @@
+{
+  "approval": "G9 pending; no merge/tag/release/deployment authorized",
+  "base_sha": "f6165cc32a4a2d4f9b8b7e543782b53c4a14dde2",
+  "candidate_application_commit": "04b44cc64ddaf7f352e7ca18c8be0b158ac9d3ca",
+  "candidate_capture_commit": "a793b5c18f3962461085b495d72198a5e59235b4",
+  "ci": {
+    "final_head_reference": "PR #11 and its CI candidate.json",
+    "research_deferred": 51,
+    "source_unavailable": 196,
+    "status": "success",
+    "verified_head": "04b44cc64ddaf7f352e7ca18c8be0b158ac9d3ca",
+    "verified_run": 41766816694
+  },
+  "counts": {
+    "G2_failures": 0,
+    "G2_policy_runs": 1112,
+    "clean_package_browser_passed": 3,
+    "container_browser_passed": 3,
+    "g6g7_browser_passed": 21,
+    "original_browser_passed": 49,
+    "public_python_passed": 102,
+    "python_full_passed": 349,
+    "source_pins": 4
+  },
+  "failures_disposition": [
+    "Initial recording selector error corrected in capture script only.",
+    "Post-capture duplicate shutdown wait corrected in capture script only; final capture rerun.",
+    "System python3.12 command absent locally; fresh environment created with existing Python 3.12.14 interpreter, not system Python 3.9."
+  ],
+  "host": {
+    "chrome": "156.0.8078.80",
+    "ci_node": "22.22.0",
+    "docker": "29.8.1",
+    "hardware": "Apple M4 Pro, 12 cores, 24 GiB",
+    "node": "26.5.0",
+    "os": "macOS 26.6.2",
+    "playwright": "1.64.1",
+    "python": "3.12.14"
+  },
+  "not_executed": [
+    "full G3 numerical rerun",
+    "full G5 numerical rerun",
+    "real-data ML and split validation",
+    "OS CVE scan: Docker Scout requires login",
+    "manual VoiceOver",
+    "non-Chromium browsers",
+    "public hosting/security assessment"
+  ],
+  "package_sha256": "2b5e55549bf7714af50fb2431fcc5b21cd0e0d8ca22eb875c0614bb2dd1da82d",
+  "product_changes": "Product 1.1.0 only; strict explicit snapshot compatibility; no numerical/model/evidence changes",
+  "recording": {
+    "application_sha": "04b44cc64ddaf7f352e7ca18c8be0b158ac9d3ca",
+    "capture_sha": "a793b5c18f3962461085b495d72198a5e59235b4",
+    "seconds": 247.164,
+    "status": "completed; capture exit 0"
+  },
+  "sparse_build": "Fresh sparse source-free clone and npm install/build reproduced identical ZIP"
+}

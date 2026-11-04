@@ -1,5 +1,18 @@
 # Architecture
 
+## v1.1.0 release-candidate distribution
+
+Use `deploy/serve.py` **from the inspected standalone package** for the complete public
+fictional journey. `backend.public_app` composes the unchanged G1 catalog and G7 operator
+API with an exact static allowlist; `/` opens G6 preparedness and links to operator review.
+This does not expand the older catalog-only `backend.runtime` or challenge entrypoint.
+Python remains numerical authority. External AI, source loading, unrestricted solves,
+uploads and G5 simulation jobs are absent. Product 1.1.0 is distinct from frozen schema,
+policy and model versions. Details: [reproduction](REPRODUCING_V1_1.md),
+[G8 security boundary](planning/V1_1_0_PHASE8.md), [G9 evidence](planning/V1_1_0_PHASE9.md).
+Integration approval does not authorize public hosting; current OS/container and host
+HTTPS/allowed-host/proxy/slow-client/resource reviews are still required.
+
 ## v1.1 Phase 1 mode boundary
 
 The canonical entrypoint is `backend.runtime:app`. `GRIDGUIDE_MODE=challenge-local`

@@ -1,0 +1,28 @@
+
+Running 21 tests using 1 worker
+
+(node:81919) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 preparedness-tests/operator.spec.ts:8:1 › comparison and critical tradeoffs, structured alternative, real download and no persistence (690ms)
+  ✓   2 preparedness-tests/operator.spec.ts:28:1 › precedence recomputes; cyclic override clears result; review invalidates on edits (814ms)
+  ✓   3 preparedness-tests/operator.spec.ts:45:1 › optional frozen optimizer and unsupported overrides never replace fixed default (385ms)
+  ✓   4 preparedness-tests/operator.spec.ts:57:1 › null completion and known-later censoring remain distinct (215ms)
+  ✓   5 preparedness-tests/operator.spec.ts:66:1 › wrong-scenario response rejected and stale export cannot restore review (511ms)
+  ✓   6 preparedness-tests/operator.spec.ts:82:1 › late comparison and changed review rationale cannot restore acknowledgements (489ms)
+  ✓   7 preparedness-tests/operator.spec.ts:102:1 › accessible desktop/mobile reviewed states with authentic screenshots (3.6s)
+  ✓   8 preparedness-tests/preparedness.spec.ts:9:1 › release version preserves only the explicit historical snapshot compatibility (574ms)
+  ✓   9 preparedness-tests/preparedness.spec.ts:37:1 › declared dependencies, selection, repair milestones, blocked and unknown states (281ms)
+  ✓  10 preparedness-tests/preparedness.spec.ts:58:1 › keyboard semantics, reduced motion, mobile and automated accessibility (607ms)
+  ✓  11 preparedness-tests/preparedness.spec.ts:74:1 › explicit save only, narrow fields, historical state, corrupt/extra fields and deletion (451ms)
+  ✓  12 preparedness-tests/preparedness.spec.ts:94:1 › challenge or unknown mode cannot save; no source/declaration persistence (308ms)
+  ✓  13 preparedness-tests/preparedness.spec.ts:107:1 › production shell survives actual browser process restart with all network denied (3.6s)
+  ✓  14 preparedness-tests/preparedness.spec.ts:133:1 › cache exact allowlist, API/tile/POST exclusion and actual reset (410ms)
+  ✓  15 preparedness-tests/preparedness.spec.ts:145:1 › storage denial, quota, unavailable worker and downloadable fallback (1.0s)
+  ✓  16 preparedness-tests/preparedness.spec.ts:169:1 › snapshot versions and arbitrary free text fail closed; deletion works across tabs (739ms)
+  ✓  17 preparedness-tests/preparedness.spec.ts:194:1 › stale save cancellation and provenance changes never persist a result (337ms)
+  ✓  18 preparedness-tests/preparedness.spec.ts:208:1 › corrupted cache is not ready; worker update migrates only its own caches (1.6s)
+  ✓  19 preparedness-tests/preparedness.spec.ts:235:1 › all fictional path states and historical snapshot have no serious or critical axe findings (2.2s)
+  ✓  20 preparedness-tests/preparedness.spec.ts:247:1 › missing service and damaged artifact leave generic guidance; later refresh cannot revive stale data (239ms)
+  ✓  21 preparedness-tests/preparedness.spec.ts:260:1 › browser evidence: selected dependency, narrow screen, and offline historical view (1.2s)
+
+  21 passed (21.8s)
