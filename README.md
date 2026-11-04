@@ -214,6 +214,19 @@ The existing dashboard, historical research, four-map gallery and v1.1.0 default
 unchanged. ML Lab recommends retaining its fixed comparator rather than promoting the
 learned selector.
 
+## ML Research II — verify the observed data first
+
+A separate [observed-outage source audit](docs/outage-ml/README.md) examines PNNL's
+**1,385,389 recorded county episodes**, Purdue's major-outage workbook and the Zenodo
+EAGLE-I/VTEC release. Reproducible checks expose duplicate incident links, chronology
+ambiguities, unknown censoring and limits on onset-time features.
+
+**NO-GO before training:** the reviewed sources do not establish the label, grouping and
+rights requirements for this study. No predictor or holdout score is claimed. Inspect the
+[measured findings and figures](docs/outage-ml/README.md),
+[feasibility decision](docs/outage-ml/FEASIBILITY.md) and
+[source replay commands](docs/outage-ml/REPRODUCE.md).
+
 ## Research findings and reproducibility
 
 Frozen scenarios, independent validation and reproducible reports make unsuccessful

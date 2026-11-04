@@ -1,0 +1,4860 @@
+{
+  "fitted_models": 0,
+  "pnnl": {
+    "censoring": "unavailable, not inferred from blank-cell completeness",
+    "members": [
+      {
+        "bytes": 13828,
+        "name": "Outage_Dataset/Disclaimer.docx",
+        "sha256": "249619dde1bcc1d81986f63105e4b019e0475beb09f23199e3a1e5af3628f227"
+      },
+      {
+        "bytes": 18009,
+        "name": "Outage_Dataset/eaglei_outages_2014_group.csv",
+        "sha256": "f034cb5e6412d62f79163347a1cc9259d6d524f983585666042f04de3458f7e3"
+      },
+      {
+        "bytes": 917296,
+        "name": "Outage_Dataset/eaglei_outages_2014_merged.csv",
+        "sha256": "6e5f109a156ee731ac5946c272244bc67508fca3d472785c3ce91002943f57a7"
+      },
+      {
+        "bytes": 22883,
+        "name": "Outage_Dataset/eaglei_outages_2015_group.csv",
+        "sha256": "9f982323ace426544407653138c3bc37023ca97a7cd76142792af23571ecdb66"
+      },
+      {
+        "bytes": 7866550,
+        "name": "Outage_Dataset/eaglei_outages_2015_merged.csv",
+        "sha256": "05c9340d5b967dddcc547fbb378e3cc4646bd2c729446679fbe09f0e192623f9"
+      },
+      {
+        "bytes": 23144,
+        "name": "Outage_Dataset/eaglei_outages_2016_group.csv",
+        "sha256": "9694dad9cb531de4492ae8341bd3e4d74c0e55ad179e92b8f268ee06f8c488e6"
+      },
+      {
+        "bytes": 7949021,
+        "name": "Outage_Dataset/eaglei_outages_2016_merged.csv",
+        "sha256": "aae5e2c12975e8333dd292e3932ba3d8fe90f198e909423fb8afead62c0e1763"
+      },
+      {
+        "bytes": 24123,
+        "name": "Outage_Dataset/eaglei_outages_2017_group.csv",
+        "sha256": "7be52b1ac93c4e9cb9af8f308d19f83579197c474165f9aaffccb4b8eab74c35"
+      },
+      {
+        "bytes": 8568242,
+        "name": "Outage_Dataset/eaglei_outages_2017_merged.csv",
+        "sha256": "b0e9eb58dd0a3db6882baa6a9077ae28ee6aac3f5792efc4340a6c7c66bc3b31"
+      },
+      {
+        "bytes": 24306,
+        "name": "Outage_Dataset/eaglei_outages_2018_group.csv",
+        "sha256": "a7d2d1f318939ce142cc83e05326f5c18b6019286651c06846905442f45a10a3"
+      },
+      {
+        "bytes": 11033886,
+        "name": "Outage_Dataset/eaglei_outages_2018_merged.csv",
+        "sha256": "7d793e089f67d005f44d88156da67b37aabbd4e60a7e56eec155547424ab1173"
+      },
+      {
+        "bytes": 24814,
+        "name": "Outage_Dataset/eaglei_outages_2019_group.csv",
+        "sha256": "a68cd95bd197fa804b4bb89bc9a611ceee2f884d89d4db0021c646c1c301d036"
+      },
+      {
+        "bytes": 11326566,
+        "name": "Outage_Dataset/eaglei_outages_2019_merged.csv",
+        "sha256": "37afe1dd2fe94d8d64919df2c0414c0a38deeebc843fd25529af5921208b961d"
+      },
+      {
+        "bytes": 25080,
+        "name": "Outage_Dataset/eaglei_outages_2020_group.csv",
+        "sha256": "7cd809f5334ef6ea47fa7c9b56f95774caff9188da2b43badf458cdc158f59f7"
+      },
+      {
+        "bytes": 11949553,
+        "name": "Outage_Dataset/eaglei_outages_2020_merged.csv",
+        "sha256": "0f210b61ccfa806f8e6fbfd69af9c355d33a1e21ddd8a0bf2de3ec8a8531499d"
+      },
+      {
+        "bytes": 25736,
+        "name": "Outage_Dataset/eaglei_outages_2021_group.csv",
+        "sha256": "0481baf5d4e05a1fe1abdffc077ebf3ee73a99f23c1c41a700d6261ed7afe522"
+      },
+      {
+        "bytes": 12584788,
+        "name": "Outage_Dataset/eaglei_outages_2021_merged.csv",
+        "sha256": "b97e0293601469358aeb9b7e24f4ed2c223699f1aef9f4c27659401cddec969d"
+      },
+      {
+        "bytes": 25727,
+        "name": "Outage_Dataset/eaglei_outages_2022_group.csv",
+        "sha256": "ed4c00a95cc9a4c0d2c1fff582b2055d275714dee8b53544d6f42408a7bc8eac"
+      },
+      {
+        "bytes": 12849094,
+        "name": "Outage_Dataset/eaglei_outages_2022_merged.csv",
+        "sha256": "106291104a7382a7bccc0cab5c101987ec8477f5a0c2c4a2ca1e0e03c784d4da"
+      },
+      {
+        "bytes": 25676,
+        "name": "Outage_Dataset/eaglei_outages_2023_group.csv",
+        "sha256": "eb45db0ee64771d34e6f8220165f87fd9289d5c0a5f3eacd8c960d2d0dca8cc1"
+      },
+      {
+        "bytes": 12194155,
+        "name": "Outage_Dataset/eaglei_outages_2023_merged.csv",
+        "sha256": "7311efa5617eabf675ee445527253fd562e72a62354df62f4697bac962dd0c51"
+      },
+      {
+        "bytes": 145148,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2014.csv",
+        "sha256": "92f81ccca4714653d9c433e564fd1ef1b71ddb2b0708ff9cd8a0a8d4f86a9b29"
+      },
+      {
+        "bytes": 65200,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2014_24_hours_lag.csv",
+        "sha256": "6e2d42e0540312a2ccc6162f66affd66ed10b414b12495f6fff3fcc3984befd2"
+      },
+      {
+        "bytes": 52503,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2014_8_hours_lag.csv",
+        "sha256": "0230cae93144b0c10c0d5682c4dd819641776112a3cf92e29bfb562a8126c9bd"
+      },
+      {
+        "bytes": 2095240,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2015.csv",
+        "sha256": "bfbcabf562055e16ba1ede7d697756b6df988b5152554ddb1760cb92ed83798a"
+      },
+      {
+        "bytes": 688913,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2015_24_hours_lag.csv",
+        "sha256": "ad37318f01b7bd5e4de671f256633e31d6f22beb07da6c9ada1a3138e371895e"
+      },
+      {
+        "bytes": 596904,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2015_8_hours_lag.csv",
+        "sha256": "f78211721aaa67f3667a48d042c179a6acd8f992107d59d48ecbbd3f16070a44"
+      },
+      {
+        "bytes": 3633081,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2016.csv",
+        "sha256": "f579c4fa3518c058aec18420eae3beff246397dc6ed21539afa3895a97ae2b9c"
+      },
+      {
+        "bytes": 684161,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2016_24_hours_lag.csv",
+        "sha256": "007f1e74cdabe360efb81136340d564042f83ccd53fb0ff3c92a5f3feed89e45"
+      },
+      {
+        "bytes": 598748,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2016_8_hours_lag.csv",
+        "sha256": "6341cd5a524460c1a13be1cd7f6c08159db33e613f7d7b9310d86e1b8f403398"
+      },
+      {
+        "bytes": 4003692,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2017.csv",
+        "sha256": "eb8254668643bb19a008500a99954e355e4083dceff3137d95b75047d3f08413"
+      },
+      {
+        "bytes": 865397,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2017_24_hours_lag.csv",
+        "sha256": "da39426891f481c1cb59f0f3a4509ba216ea6e234992ada1ea964fcb75e5264a"
+      },
+      {
+        "bytes": 761527,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2017_8_hours_lag.csv",
+        "sha256": "eec96e6e4efc1d579821ac4a97b3c867b2d47abed709c0d9266cb9275e6e1042"
+      },
+      {
+        "bytes": 6295273,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2018.csv",
+        "sha256": "7d232eba1721d751f593d1938bff8731753d662eba1802ee4735a844949bf001"
+      },
+      {
+        "bytes": 1854113,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2018_24_hours_lag.csv",
+        "sha256": "1cb7799e6be262a55486d17c1d79135974d3da3a481340525b5cebd40da6fda5"
+      },
+      {
+        "bytes": 1587267,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2018_8_hours_lag.csv",
+        "sha256": "9ecf70e8bf50cc75bf978dc0a837af14d7d133035a0b0c8ce1f6849861b7944b"
+      },
+      {
+        "bytes": 9085677,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2019.csv",
+        "sha256": "7184a938ca83de8d98b2452a52d99f2f7c201b5313547d998f2dc824e6b48ba6"
+      },
+      {
+        "bytes": 1661268,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2019_24_hours_lag.csv",
+        "sha256": "e402f180206390475eaa038648f665a5ef2e2681788c49c6ee74027de42203c6"
+      },
+      {
+        "bytes": 1319287,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2019_8_hours_lag.csv",
+        "sha256": "b6e63f33df05cb2a1088bcaab030e667ffe4110a7bfdaa40645729ce7330bb00"
+      },
+      {
+        "bytes": 14431070,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2020.csv",
+        "sha256": "d5fb076ad7b7740b8ac90d1609c1aa182f3489dd5e83573f82396661168ce331"
+      },
+      {
+        "bytes": 2824323,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2020_24_hours_lag.csv",
+        "sha256": "9f108509e7dee7814214fa02a1e8c48d4d1bcb81444bdebef42e0215cd9e9b91"
+      },
+      {
+        "bytes": 2281932,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2020_8_hours_lag.csv",
+        "sha256": "16947f8d3ff38ed8b9d4ee40e6ccc4d6a1849bb0479455aa3f88b0373a26dc4d"
+      },
+      {
+        "bytes": 19750272,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2021.csv",
+        "sha256": "ca83337cc30259e44c2ba813e447c840f88306ef9fbdc6db91c1469f031dee7f"
+      },
+      {
+        "bytes": 4674105,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2021_24_hours_lag.csv",
+        "sha256": "c021b15b60e1f30c0c3e7fbc41e170e8403b8ba347187940cdef3179595b3d22"
+      },
+      {
+        "bytes": 3845540,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2021_8_hours_lag.csv",
+        "sha256": "94dca2f259066b457bf878dc09fc0ded165c6a924e89ec3d7ea3aa3c90343831"
+      },
+      {
+        "bytes": 15464271,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2022.csv",
+        "sha256": "5b998d21c1c13c2265cbad44e8098975f480f9341b904fbc02f0ab528f94ecc9"
+      },
+      {
+        "bytes": 2218943,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2022_24_hours_lag.csv",
+        "sha256": "211940733de5cbb46b46e2af8ffbdf67c3d16192afec90c4e25389e7ffb6139d"
+      },
+      {
+        "bytes": 1507713,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2022_8_hours_lag.csv",
+        "sha256": "6cc27ae8bb1c05486fa09321a414f5ecd3c4d35b1ac30f7abf15ef7ba04a80fe"
+      },
+      {
+        "bytes": 12452488,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2023.csv",
+        "sha256": "8ac7d34ec2a4dae750d4de4a07562d70d9f1cdb71162bbba85362337e045ad5d"
+      },
+      {
+        "bytes": 1524591,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2023_24_hours_lag.csv",
+        "sha256": "3ccd7d69dfbdc2b101f302e6a8b43520bde08dd061bfb38d7712f9a97981a2d2"
+      },
+      {
+        "bytes": 1065652,
+        "name": "Outage_Dataset/eaglei_outages_with_events_2023_8_hours_lag.csv",
+        "sha256": "0c21082cdc5e2f082e5728407864a28a6bd7ab943c4faa9e5e6b648f02f26777"
+      }
+    ],
+    "merged_rows": 1385389,
+    "tables": [
+      {
+        "bytes": 18009,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2014_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 598,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "f034cb5e6412d62f79163347a1cc9259d6d524f983585666042f04de3458f7e3",
+        "start_month_counts": {},
+        "state_labels": 46,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 917296,
+        "county_ids": 1501,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 6654,
+          "(1,4]": 5133,
+          "(12,24]": 222,
+          "(24,72]": 133,
+          "(4,12]": 1361,
+          ">72": 13
+        },
+        "duration_hours": {
+          "max": 139.5,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 13516,
+          "p90": 5.0,
+          "p99": 25.0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2014-11-01T04:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 10,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 13516
+        },
+        "last_start": "2014-12-30T23:45:00",
+        "member": "Outage_Dataset/eaglei_outages_2014_merged.csv",
+        "minimum_customers": {
+          "max": 54616.0,
+          "median": 346.0,
+          "min": 200.0,
+          "n": 13516,
+          "p90": 1534.0,
+          "p99": 5674.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 13516,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "6e5f109a156ee731ac5946c272244bc67508fca3d472785c3ce91002943f57a7",
+        "start_month_counts": {
+          "11": 8138,
+          "12": 5378
+        },
+        "state_labels": 46,
+        "unique_county_start_keys": 13516
+      },
+      {
+        "bytes": 22883,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2015_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 637,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "9f982323ace426544407653138c3bc37023ca97a7cd76142792af23571ecdb66",
+        "start_month_counts": {},
+        "state_labels": 49,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 7866550,
+        "county_ids": 2313,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 59973,
+          "(1,4]": 41534,
+          "(12,24]": 1821,
+          "(24,72]": 693,
+          "(4,12]": 11871,
+          ">72": 70
+        },
+        "duration_hours": {
+          "max": 236.5,
+          "median": 1.0,
+          "min": 0.25,
+          "n": 115962,
+          "p90": 4.75,
+          "p99": 19.75
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2015-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 214,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 12,
+          "timezone_unspecified_rows": 115962
+        },
+        "last_start": "2015-12-31T00:00:00",
+        "member": "Outage_Dataset/eaglei_outages_2015_merged.csv",
+        "minimum_customers": {
+          "max": 144538.0,
+          "median": 357.0,
+          "min": 200.0,
+          "n": 115962,
+          "p90": 1518.0,
+          "p99": 5244.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 115962,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "05c9340d5b967dddcc547fbb378e3cc4646bd2c729446679fbe09f0e192623f9",
+        "start_month_counts": {
+          "1": 6111,
+          "10": 9242,
+          "11": 8760,
+          "12": 8006,
+          "2": 6090,
+          "3": 6056,
+          "4": 9291,
+          "5": 10881,
+          "6": 17340,
+          "7": 13728,
+          "8": 10989,
+          "9": 9468
+        },
+        "state_labels": 49,
+        "unique_county_start_keys": 115962
+      },
+      {
+        "bytes": 23144,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2016_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 637,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "9694dad9cb531de4492ae8341bd3e4d74c0e55ad179e92b8f268ee06f8c488e6",
+        "start_month_counts": {},
+        "state_labels": 49,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 7949021,
+        "county_ids": 2231,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 58111,
+          "(1,4]": 42595,
+          "(12,24]": 2000,
+          "(24,72]": 857,
+          "(4,12]": 12740,
+          ">72": 135
+        },
+        "duration_hours": {
+          "max": 286.75,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 116438,
+          "p90": 5.25,
+          "p99": 22.25
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2016-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 174,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 19,
+          "timezone_unspecified_rows": 116438
+        },
+        "last_start": "2016-12-31T00:00:00",
+        "member": "Outage_Dataset/eaglei_outages_2016_merged.csv",
+        "minimum_customers": {
+          "max": 467041.0,
+          "median": 352.0,
+          "min": 200.0,
+          "n": 116438,
+          "p90": 1498.0,
+          "p99": 5704.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 116438,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "aae5e2c12975e8333dd292e3932ba3d8fe90f198e909423fb8afead62c0e1763",
+        "start_month_counts": {
+          "1": 7020,
+          "10": 7961,
+          "11": 7090,
+          "12": 7332,
+          "2": 9084,
+          "3": 7856,
+          "4": 9494,
+          "5": 9341,
+          "6": 13764,
+          "7": 15920,
+          "8": 12196,
+          "9": 9380
+        },
+        "state_labels": 49,
+        "unique_county_start_keys": 116438
+      },
+      {
+        "bytes": 24123,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2017_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 663,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "7be52b1ac93c4e9cb9af8f308d19f83579197c474165f9aaffccb4b8eab74c35",
+        "start_month_counts": {},
+        "state_labels": 51,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 8568242,
+        "county_ids": 2539,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 56839,
+          "(1,4]": 44549,
+          "(12,24]": 2363,
+          "(24,72]": 1231,
+          "(4,12]": 13659,
+          ">72": 288
+        },
+        "duration_hours": {
+          "max": 331.25,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 118929,
+          "p90": 5.5,
+          "p99": 28.5
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2017-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 238,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 17,
+          "timezone_unspecified_rows": 118929
+        },
+        "last_start": "2017-12-31T00:00:00",
+        "member": "Outage_Dataset/eaglei_outages_2017_merged.csv",
+        "minimum_customers": {
+          "max": 808450.0,
+          "median": 340.0,
+          "min": 200.0,
+          "n": 118929,
+          "p90": 1373.0,
+          "p99": 4290.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 118929,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "b0e9eb58dd0a3db6882baa6a9077ae28ee6aac3f5792efc4340a6c7c66bc3b31",
+        "start_month_counts": {
+          "1": 7830,
+          "10": 10672,
+          "11": 7288,
+          "12": 8607,
+          "2": 5730,
+          "3": 9832,
+          "4": 9675,
+          "5": 12702,
+          "6": 12633,
+          "7": 13340,
+          "8": 11491,
+          "9": 9129
+        },
+        "state_labels": 51,
+        "unique_county_start_keys": 118929
+      },
+      {
+        "bytes": 24306,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2018_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 663,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "a7d2d1f318939ce142cc83e05326f5c18b6019286651c06846905442f45a10a3",
+        "start_month_counts": {},
+        "state_labels": 51,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 11033886,
+        "county_ids": 2636,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 73967,
+          "(1,4]": 57892,
+          "(12,24]": 2749,
+          "(24,72]": 1374,
+          "(4,12]": 17129,
+          ">72": 331
+        },
+        "duration_hours": {
+          "max": 532.75,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 153442,
+          "p90": 5.25,
+          "p99": 26.0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2018-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 426,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 24,
+          "timezone_unspecified_rows": 153442
+        },
+        "last_start": "2018-12-31T00:00:00",
+        "member": "Outage_Dataset/eaglei_outages_2018_merged.csv",
+        "minimum_customers": {
+          "max": 284600.0,
+          "median": 335.0,
+          "min": 200.0,
+          "n": 153442,
+          "p90": 1346.0,
+          "p99": 5192.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 153442,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "7d793e089f67d005f44d88156da67b37aabbd4e60a7e56eec155547424ab1173",
+        "start_month_counts": {
+          "1": 11716,
+          "10": 12501,
+          "11": 11142,
+          "12": 9140,
+          "2": 7599,
+          "3": 11616,
+          "4": 11087,
+          "5": 14395,
+          "6": 17544,
+          "7": 18046,
+          "8": 15287,
+          "9": 13369
+        },
+        "state_labels": 51,
+        "unique_county_start_keys": 153442
+      },
+      {
+        "bytes": 24814,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2019_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 676,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "a68cd95bd197fa804b4bb89bc9a611ceee2f884d89d4db0021c646c1c301d036",
+        "start_month_counts": {},
+        "state_labels": 52,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 11326566,
+        "county_ids": 2781,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 74224,
+          "(1,4]": 59811,
+          "(12,24]": 3181,
+          "(24,72]": 1508,
+          "(4,12]": 18617,
+          ">72": 137
+        },
+        "duration_hours": {
+          "max": 723.75,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 157478,
+          "p90": 5.5,
+          "p99": 24.75
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2019-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 664,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 42,
+          "timezone_unspecified_rows": 157478
+        },
+        "last_start": "2019-12-31T00:00:00",
+        "member": "Outage_Dataset/eaglei_outages_2019_merged.csv",
+        "minimum_customers": {
+          "max": 133649.0,
+          "median": 331.0,
+          "min": 200.0,
+          "n": 157478,
+          "p90": 1344.0,
+          "p99": 6031.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 157478,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "37afe1dd2fe94d8d64919df2c0414c0a38deeebc843fd25529af5921208b961d",
+        "start_month_counts": {
+          "1": 10282,
+          "10": 15208,
+          "11": 11202,
+          "12": 9488,
+          "2": 10903,
+          "3": 9953,
+          "4": 12991,
+          "5": 15272,
+          "6": 17990,
+          "7": 17604,
+          "8": 15043,
+          "9": 11542
+        },
+        "state_labels": 52,
+        "unique_county_start_keys": 157478
+      },
+      {
+        "bytes": 25080,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2020_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 676,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "7cd809f5334ef6ea47fa7c9b56f95774caff9188da2b43badf458cdc158f59f7",
+        "start_month_counts": {},
+        "state_labels": 52,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 11949553,
+        "county_ids": 2911,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 79512,
+          "(1,4]": 61816,
+          "(12,24]": 3552,
+          "(24,72]": 1822,
+          "(4,12]": 18956,
+          ">72": 525
+        },
+        "duration_hours": {
+          "max": 845.25,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 166183,
+          "p90": 5.75,
+          "p99": 31.25
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2020-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 272,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 38,
+          "timezone_unspecified_rows": 166183
+        },
+        "last_start": "2020-12-31T00:00:00",
+        "member": "Outage_Dataset/eaglei_outages_2020_merged.csv",
+        "minimum_customers": {
+          "max": 166685.0,
+          "median": 333.0,
+          "min": 200.0,
+          "n": 166183,
+          "p90": 1332.0,
+          "p99": 4738.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 166183,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "0f210b61ccfa806f8e6fbfd69af9c355d33a1e21ddd8a0bf2de3ec8a8531499d",
+        "start_month_counts": {
+          "1": 10833,
+          "10": 14044,
+          "11": 14633,
+          "12": 10827,
+          "2": 9299,
+          "3": 10222,
+          "4": 13889,
+          "5": 14217,
+          "6": 17333,
+          "7": 19248,
+          "8": 17715,
+          "9": 13923
+        },
+        "state_labels": 52,
+        "unique_county_start_keys": 166183
+      },
+      {
+        "bytes": 25736,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2021_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 689,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "0481baf5d4e05a1fe1abdffc077ebf3ee73a99f23c1c41a700d6261ed7afe522",
+        "start_month_counts": {},
+        "state_labels": 53,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 12584788,
+        "county_ids": 2901,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 81960,
+          "(1,4]": 65065,
+          "(12,24]": 4271,
+          "(24,72]": 1956,
+          "(4,12]": 21148,
+          ">72": 536
+        },
+        "duration_hours": {
+          "max": 1035.75,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 174936,
+          "p90": 6.0,
+          "p99": 31.5
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2021-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 640,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 32,
+          "timezone_unspecified_rows": 174936
+        },
+        "last_start": "2021-12-31T00:00:00",
+        "member": "Outage_Dataset/eaglei_outages_2021_merged.csv",
+        "minimum_customers": {
+          "max": 261213.0,
+          "median": 331.0,
+          "min": 200.0,
+          "n": 174936,
+          "p90": 1345.0,
+          "p99": 4633.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 174936,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "b97e0293601469358aeb9b7e24f4ed2c223699f1aef9f4c27659401cddec969d",
+        "start_month_counts": {
+          "1": 9569,
+          "10": 14662,
+          "11": 10591,
+          "12": 13214,
+          "2": 12421,
+          "3": 13710,
+          "4": 12115,
+          "5": 15848,
+          "6": 19382,
+          "7": 19462,
+          "8": 20195,
+          "9": 13767
+        },
+        "state_labels": 53,
+        "unique_county_start_keys": 174936
+      },
+      {
+        "bytes": 25727,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2022_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 689,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "ed4c00a95cc9a4c0d2c1fff582b2055d275714dee8b53544d6f42408a7bc8eac",
+        "start_month_counts": {},
+        "state_labels": 53,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 12849094,
+        "county_ids": 2908,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 89196,
+          "(1,4]": 70357,
+          "(12,24]": 4114,
+          "(24,72]": 1995,
+          "(4,12]": 23222,
+          ">72": 265
+        },
+        "duration_hours": {
+          "max": 609.75,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 189149,
+          "p90": 5.75,
+          "p99": 26.75
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2022-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 56,
+          "implied_end_december_31_or_january_1": 934,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 36,
+          "timezone_unspecified_rows": 189149
+        },
+        "last_start": "2022-12-31T23:45:00",
+        "member": "Outage_Dataset/eaglei_outages_2022_merged.csv",
+        "minimum_customers": {
+          "max": 225347.0,
+          "median": 327.0,
+          "min": 200.0,
+          "n": 189149,
+          "p90": 1326.0,
+          "p99": 4846.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 189149,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "106291104a7382a7bccc0cab5c101987ec8477f5a0c2c4a2ca1e0e03c784d4da",
+        "start_month_counts": {
+          "1": 12973,
+          "10": 13332,
+          "11": 13619,
+          "12": 16726,
+          "2": 11610,
+          "3": 14857,
+          "4": 13483,
+          "5": 17913,
+          "6": 20032,
+          "7": 21396,
+          "8": 18935,
+          "9": 14273
+        },
+        "state_labels": 53,
+        "unique_county_start_keys": 189149
+      },
+      {
+        "bytes": 25676,
+        "county_ids": 0,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 0,
+          "(1,4]": 0,
+          "(12,24]": 0,
+          "(24,72]": 0,
+          "(4,12]": 0,
+          ">72": 0
+        },
+        "duration_hours": {
+          "n": 0
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": null,
+        "flags": {
+          "exact_duplicate_rows": 0
+        },
+        "last_start": null,
+        "member": "Outage_Dataset/eaglei_outages_2023_group.csv",
+        "minimum_customers": {
+          "n": 0
+        },
+        "missing_cells": {
+          "customer_weighted_hours": 0,
+          "max_outage_duration": 0,
+          "month": 0,
+          "outage_count": 0,
+          "state": 0,
+          "year": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 689,
+        "schema": [
+          "state",
+          "year",
+          "month",
+          "outage_count",
+          "max_outage_duration",
+          "customer_weighted_hours"
+        ],
+        "sha256": "eb45db0ee64771d34e6f8220165f87fd9289d5c0a5f3eacd8c960d2d0dca8cc1",
+        "start_month_counts": {},
+        "state_labels": 53,
+        "unique_county_start_keys": 0
+      },
+      {
+        "bytes": 12194155,
+        "county_ids": 2893,
+        "distinct_parent_definitions": 0,
+        "duration_histogram": {
+          "(0,1]": 83602,
+          "(1,4]": 66325,
+          "(12,24]": 4410,
+          "(24,72]": 2149,
+          "(4,12]": 22452,
+          ">72": 418
+        },
+        "duration_hours": {
+          "max": 1177.0,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 179356,
+          "p90": 6.25,
+          "p99": 30.25
+        },
+        "event_id_count": 0,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2023-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 23,
+          "implied_end_december_31_or_january_1": 608,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "starts_january_1_midnight": 54,
+          "timezone_unspecified_rows": 179356
+        },
+        "last_start": "2023-12-31T23:45:00",
+        "member": "Outage_Dataset/eaglei_outages_2023_merged.csv",
+        "minimum_customers": {
+          "max": 75396.0,
+          "median": 324.0,
+          "min": 200.0,
+          "n": 179356,
+          "p90": 1274.0,
+          "p99": 4274.0
+        },
+        "missing_cells": {
+          "county": 0,
+          "duration": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 179356,
+        "schema": [
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "7311efa5617eabf675ee445527253fd562e72a62354df62f4697bac962dd0c51",
+        "start_month_counts": {
+          "1": 11875,
+          "10": 11891,
+          "11": 10386,
+          "12": 11151,
+          "2": 11557,
+          "3": 14265,
+          "4": 15965,
+          "5": 14655,
+          "6": 19822,
+          "7": 22731,
+          "8": 20031,
+          "9": 15027
+        },
+        "state_labels": 53,
+        "unique_county_start_keys": 179356
+      },
+      {
+        "bytes": 145148,
+        "county_ids": 210,
+        "distinct_parent_definitions": 32,
+        "duration_histogram": {
+          "(0,1]": 352,
+          "(1,4]": 259,
+          "(12,24]": 49,
+          "(24,72]": 45,
+          "(4,12]": 98,
+          ">72": 2
+        },
+        "duration_hours": {
+          "max": 97.0,
+          "median": 1.5,
+          "min": 0.25,
+          "n": 805,
+          "p90": 14.5,
+          "p99": 55.5
+        },
+        "event_id_count": 32,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2014-11-02T06:15:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 517,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 1,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 290,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 805
+        },
+        "last_start": "2014-12-30T21:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2014.csv",
+        "minimum_customers": {
+          "max": 54616.0,
+          "median": 308.0,
+          "min": 200.0,
+          "n": 805,
+          "p90": 1861.0,
+          "p99": 32837.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 805,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "92f81ccca4714653d9c433e564fd1ef1b71ddb2b0708ff9cd8a0a8d4f86a9b29",
+        "start_month_counts": {
+          "11": 694,
+          "12": 111
+        },
+        "state_labels": 15,
+        "unique_county_start_keys": 805
+      },
+      {
+        "bytes": 65200,
+        "county_ids": 151,
+        "distinct_parent_definitions": 28,
+        "duration_histogram": {
+          "(0,1]": 152,
+          "(1,4]": 138,
+          "(12,24]": 38,
+          "(24,72]": 30,
+          "(4,12]": 52,
+          ">72": 2
+        },
+        "duration_hours": {
+          "max": 97.0,
+          "median": 1.75,
+          "min": 0.25,
+          "n": 412,
+          "p90": 23.25,
+          "p99": 70.5
+        },
+        "event_id_count": 28,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2014-11-01T14:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 124,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 1,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 101,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 412
+        },
+        "last_start": "2014-12-30T21:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2014_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 54616.0,
+          "median": 307.0,
+          "min": 200.0,
+          "n": 412,
+          "p90": 2245.0,
+          "p99": 35459.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 412,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "6e2d42e0540312a2ccc6162f66affd66ed10b414b12495f6fff3fcc3984befd2",
+        "start_month_counts": {
+          "11": 385,
+          "12": 27
+        },
+        "state_labels": 14,
+        "unique_county_start_keys": 412
+      },
+      {
+        "bytes": 52503,
+        "county_ids": 133,
+        "distinct_parent_definitions": 27,
+        "duration_histogram": {
+          "(0,1]": 115,
+          "(1,4]": 114,
+          "(12,24]": 35,
+          "(24,72]": 30,
+          "(4,12]": 36,
+          ">72": 2
+        },
+        "duration_hours": {
+          "max": 97.0,
+          "median": 2.25,
+          "min": 0.25,
+          "n": 332,
+          "p90": 23.5,
+          "p99": 70.5
+        },
+        "event_id_count": 27,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2014-11-02T07:30:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 44,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 1,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 42,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 332
+        },
+        "last_start": "2014-12-30T21:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2014_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 54616.0,
+          "median": 295.0,
+          "min": 200.0,
+          "n": 332,
+          "p90": 2938.0,
+          "p99": 39326.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 0,
+        "rows": 332,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "0230cae93144b0c10c0d5682c4dd819641776112a3cf92e29bfb562a8126c9bd",
+        "start_month_counts": {
+          "11": 309,
+          "12": 23
+        },
+        "state_labels": 14,
+        "unique_county_start_keys": 332
+      },
+      {
+        "bytes": 2095240,
+        "county_ids": 1132,
+        "distinct_parent_definitions": 152,
+        "duration_histogram": {
+          "(0,1]": 5672,
+          "(1,4]": 3928,
+          "(12,24]": 673,
+          "(24,72]": 502,
+          "(4,12]": 1702,
+          ">72": 204
+        },
+        "duration_hours": {
+          "max": 114.0,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 12681,
+          "p90": 13.75,
+          "p99": 84.75
+        },
+        "event_id_count": 150,
+        "event_ids_with_multiple_definitions": 2,
+        "first_start": "2015-01-07T23:30:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 7867,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 2033,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 27,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 1833,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 12681
+        },
+        "last_start": "2015-12-30T22:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2015.csv",
+        "minimum_customers": {
+          "max": 122231.0,
+          "median": 348.0,
+          "min": 200.0,
+          "n": 12681,
+          "p90": 2357.0,
+          "p99": 14031.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 5184,
+        "rows": 12681,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "bfbcabf562055e16ba1ede7d697756b6df988b5152554ddb1760cb92ed83798a",
+        "start_month_counts": {
+          "1": 268,
+          "10": 278,
+          "11": 1228,
+          "12": 2313,
+          "2": 1742,
+          "3": 178,
+          "4": 1019,
+          "5": 1604,
+          "6": 1242,
+          "7": 1506,
+          "8": 1103,
+          "9": 200
+        },
+        "state_labels": 38,
+        "unique_county_start_keys": 7497
+      },
+      {
+        "bytes": 688913,
+        "county_ids": 846,
+        "distinct_parent_definitions": 140,
+        "duration_histogram": {
+          "(0,1]": 2106,
+          "(1,4]": 1304,
+          "(12,24]": 360,
+          "(24,72]": 214,
+          "(4,12]": 663,
+          ">72": 38
+        },
+        "duration_hours": {
+          "max": 114.0,
+          "median": 1.5,
+          "min": 0.25,
+          "n": 4685,
+          "p90": 16.0,
+          "p99": 68.0
+        },
+        "event_id_count": 138,
+        "event_ids_with_multiple_definitions": 2,
+        "first_start": "2015-01-07T23:30:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 840,
+          "exact_duplicate_rows": 19,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 147,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 4685
+        },
+        "last_start": "2015-12-30T05:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2015_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 57848.0,
+          "median": 361.0,
+          "min": 200.0,
+          "n": 4685,
+          "p90": 2438.0,
+          "p99": 10752.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 899,
+        "rows": 4685,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "ad37318f01b7bd5e4de671f256633e31d6f22beb07da6c9ada1a3138e371895e",
+        "start_month_counts": {
+          "1": 77,
+          "10": 146,
+          "11": 109,
+          "12": 511,
+          "2": 926,
+          "3": 32,
+          "4": 354,
+          "5": 495,
+          "6": 693,
+          "7": 638,
+          "8": 639,
+          "9": 65
+        },
+        "state_labels": 35,
+        "unique_county_start_keys": 3786
+      },
+      {
+        "bytes": 596904,
+        "county_ids": 819,
+        "distinct_parent_definitions": 128,
+        "duration_histogram": {
+          "(0,1]": 1816,
+          "(1,4]": 1073,
+          "(12,24]": 342,
+          "(24,72]": 209,
+          "(4,12]": 581,
+          ">72": 35
+        },
+        "duration_hours": {
+          "max": 114.0,
+          "median": 1.5,
+          "min": 0.25,
+          "n": 4056,
+          "p90": 17.0,
+          "p99": 68.75
+        },
+        "event_id_count": 126,
+        "event_ids_with_multiple_definitions": 2,
+        "first_start": "2015-01-07T23:30:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 211,
+          "exact_duplicate_rows": 19,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 59,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 4056
+        },
+        "last_start": "2015-12-30T05:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2015_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 57848.0,
+          "median": 365.0,
+          "min": 200.0,
+          "n": 4056,
+          "p90": 2569.0,
+          "p99": 12787.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 737,
+        "rows": 4056,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "f78211721aaa67f3667a48d042c179a6acd8f992107d59d48ecbbd3f16070a44",
+        "start_month_counts": {
+          "1": 61,
+          "10": 135,
+          "11": 84,
+          "12": 400,
+          "2": 880,
+          "3": 12,
+          "4": 338,
+          "5": 437,
+          "6": 539,
+          "7": 524,
+          "8": 617,
+          "9": 29
+        },
+        "state_labels": 32,
+        "unique_county_start_keys": 3319
+      },
+      {
+        "bytes": 3633081,
+        "county_ids": 1186,
+        "distinct_parent_definitions": 162,
+        "duration_histogram": {
+          "(0,1]": 9828,
+          "(1,4]": 6726,
+          "(12,24]": 1120,
+          "(24,72]": 1173,
+          "(4,12]": 3150,
+          ">72": 100
+        },
+        "duration_hours": {
+          "max": 185.0,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 22097,
+          "p90": 13.5,
+          "p99": 63.75
+        },
+        "event_id_count": 161,
+        "event_ids_with_multiple_definitions": 1,
+        "first_start": "2016-01-04T05:30:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 14159,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 12852,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 13,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 2590,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 22097
+        },
+        "last_start": "2016-12-30T23:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2016.csv",
+        "minimum_customers": {
+          "max": 467041.0,
+          "median": 276.0,
+          "min": 200.0,
+          "n": 22097,
+          "p90": 1609.0,
+          "p99": 8666.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 14278,
+        "rows": 22097,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "f579c4fa3518c058aec18420eae3beff246397dc6ed21539afa3895a97ae2b9c",
+        "start_month_counts": {
+          "1": 331,
+          "10": 7083,
+          "11": 238,
+          "12": 206,
+          "2": 1855,
+          "3": 901,
+          "4": 699,
+          "5": 508,
+          "6": 669,
+          "7": 3009,
+          "8": 327,
+          "9": 6271
+        },
+        "state_labels": 39,
+        "unique_county_start_keys": 7819
+      },
+      {
+        "bytes": 684161,
+        "county_ids": 909,
+        "distinct_parent_definitions": 149,
+        "duration_histogram": {
+          "(0,1]": 1754,
+          "(1,4]": 1376,
+          "(12,24]": 309,
+          "(24,72]": 315,
+          "(4,12]": 781,
+          ">72": 80
+        },
+        "duration_hours": {
+          "max": 286.75,
+          "median": 1.75,
+          "min": 0.25,
+          "n": 4615,
+          "p90": 21.0,
+          "p99": 94.75
+        },
+        "event_id_count": 149,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2016-01-04T05:30:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 750,
+          "exact_duplicate_rows": 79,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 13,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 220,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 4615
+        },
+        "last_start": "2016-12-30T23:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2016_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 467041.0,
+          "median": 307.0,
+          "min": 200.0,
+          "n": 4615,
+          "p90": 1554.0,
+          "p99": 10126.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 472,
+        "rows": 4615,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "007f1e74cdabe360efb81136340d564042f83ccd53fb0ff3c92a5f3feed89e45",
+        "start_month_counts": {
+          "1": 179,
+          "10": 802,
+          "11": 20,
+          "12": 117,
+          "2": 618,
+          "3": 445,
+          "4": 343,
+          "5": 144,
+          "6": 444,
+          "7": 754,
+          "8": 69,
+          "9": 680
+        },
+        "state_labels": 37,
+        "unique_county_start_keys": 4143
+      },
+      {
+        "bytes": 598748,
+        "county_ids": 851,
+        "distinct_parent_definitions": 130,
+        "duration_histogram": {
+          "(0,1]": 1515,
+          "(1,4]": 1179,
+          "(12,24]": 289,
+          "(24,72]": 294,
+          "(4,12]": 672,
+          ">72": 79
+        },
+        "duration_hours": {
+          "max": 286.75,
+          "median": 2.0,
+          "min": 0.25,
+          "n": 4028,
+          "p90": 22.75,
+          "p99": 97.5
+        },
+        "event_id_count": 130,
+        "event_ids_with_multiple_definitions": 0,
+        "first_start": "2016-01-04T05:30:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 163,
+          "exact_duplicate_rows": 71,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 13,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 81,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 4028
+        },
+        "last_start": "2016-12-30T23:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2016_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 467041.0,
+          "median": 308.0,
+          "min": 200.0,
+          "n": 4028,
+          "p90": 1621.0,
+          "p99": 10242.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 376,
+        "rows": 4028,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "6341cd5a524460c1a13be1cd7f6c08159db33e613f7d7b9310d86e1b8f403398",
+        "start_month_counts": {
+          "1": 129,
+          "10": 718,
+          "11": 9,
+          "12": 90,
+          "2": 547,
+          "3": 433,
+          "4": 321,
+          "5": 115,
+          "6": 419,
+          "7": 621,
+          "8": 28,
+          "9": 598
+        },
+        "state_labels": 34,
+        "unique_county_start_keys": 3652
+      },
+      {
+        "bytes": 4003692,
+        "county_ids": 1412,
+        "distinct_parent_definitions": 186,
+        "duration_histogram": {
+          "(0,1]": 10218,
+          "(1,4]": 6472,
+          "(12,24]": 1330,
+          "(24,72]": 1669,
+          "(4,12]": 3871,
+          ">72": 385
+        },
+        "duration_hours": {
+          "max": 331.25,
+          "median": 1.5,
+          "min": 0.25,
+          "n": 23945,
+          "p90": 21.0,
+          "p99": 82.5
+        },
+        "event_id_count": 184,
+        "event_ids_with_multiple_definitions": 2,
+        "first_start": "2017-01-05T17:45:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 10141,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 12424,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 5,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 2677,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 23945
+        },
+        "last_start": "2017-12-31T00:00:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2017.csv",
+        "minimum_customers": {
+          "max": 808450.0,
+          "median": 325.0,
+          "min": 200.0,
+          "n": 23945,
+          "p90": 21570.0,
+          "p99": 523140.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 15126,
+        "rows": 23945,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "eb8254668643bb19a008500a99954e355e4083dceff3137d95b75047d3f08413",
+        "start_month_counts": {
+          "1": 904,
+          "10": 1145,
+          "11": 855,
+          "12": 1918,
+          "2": 400,
+          "3": 3344,
+          "4": 871,
+          "5": 1358,
+          "6": 712,
+          "7": 1063,
+          "8": 3815,
+          "9": 7560
+        },
+        "state_labels": 37,
+        "unique_county_start_keys": 8819
+      },
+      {
+        "bytes": 865397,
+        "county_ids": 1107,
+        "distinct_parent_definitions": 168,
+        "duration_histogram": {
+          "(0,1]": 2190,
+          "(1,4]": 1521,
+          "(12,24]": 381,
+          "(24,72]": 497,
+          "(4,12]": 1012,
+          ">72": 200
+        },
+        "duration_hours": {
+          "max": 331.25,
+          "median": 2.0,
+          "min": 0.25,
+          "n": 5801,
+          "p90": 29.75,
+          "p99": 112.5
+        },
+        "event_id_count": 166,
+        "event_ids_with_multiple_definitions": 2,
+        "first_start": "2017-01-04T17:30:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 1000,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 371,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 5801
+        },
+        "last_start": "2017-12-29T03:45:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2017_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 808450.0,
+          "median": 277.0,
+          "min": 200.0,
+          "n": 5801,
+          "p90": 1275.0,
+          "p99": 42220.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 1228,
+        "rows": 5801,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "da39426891f481c1cb59f0f3a4509ba216ea6e234992ada1ea964fcb75e5264a",
+        "start_month_counts": {
+          "1": 448,
+          "10": 544,
+          "11": 203,
+          "12": 682,
+          "2": 209,
+          "3": 763,
+          "4": 364,
+          "5": 268,
+          "6": 184,
+          "7": 157,
+          "8": 944,
+          "9": 1035
+        },
+        "state_labels": 35,
+        "unique_county_start_keys": 4573
+      },
+      {
+        "bytes": 761527,
+        "county_ids": 1061,
+        "distinct_parent_definitions": 150,
+        "duration_histogram": {
+          "(0,1]": 1905,
+          "(1,4]": 1275,
+          "(12,24]": 356,
+          "(24,72]": 480,
+          "(4,12]": 902,
+          ">72": 199
+        },
+        "duration_hours": {
+          "max": 331.25,
+          "median": 2.0,
+          "min": 0.25,
+          "n": 5117,
+          "p90": 33.5,
+          "p99": 113.75
+        },
+        "event_id_count": 149,
+        "event_ids_with_multiple_definitions": 1,
+        "first_start": "2017-01-05T15:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 316,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 164,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 5117
+        },
+        "last_start": "2017-12-29T03:45:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2017_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 808450.0,
+          "median": 274.0,
+          "min": 200.0,
+          "n": 5117,
+          "p90": 1267.0,
+          "p99": 62778.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 1154,
+        "rows": 5117,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "eec96e6e4efc1d579821ac4a97b3c867b2d47abed709c0d9266cb9275e6e1042",
+        "start_month_counts": {
+          "1": 374,
+          "10": 486,
+          "11": 200,
+          "12": 604,
+          "2": 186,
+          "3": 699,
+          "4": 283,
+          "5": 204,
+          "6": 127,
+          "7": 117,
+          "8": 902,
+          "9": 935
+        },
+        "state_labels": 35,
+        "unique_county_start_keys": 3963
+      },
+      {
+        "bytes": 6295273,
+        "county_ids": 1799,
+        "distinct_parent_definitions": 292,
+        "duration_histogram": {
+          "(0,1]": 15597,
+          "(1,4]": 11629,
+          "(12,24]": 1771,
+          "(24,72]": 2179,
+          "(4,12]": 5089,
+          ">72": 298
+        },
+        "duration_hours": {
+          "max": 209.75,
+          "median": 1.5,
+          "min": 0.25,
+          "n": 36563,
+          "p90": 14.75,
+          "p99": 66.75
+        },
+        "event_id_count": 288,
+        "event_ids_with_multiple_definitions": 4,
+        "first_start": "2018-01-01T17:45:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 23520,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 13399,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 11,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 8340,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 36563
+        },
+        "last_start": "2018-12-30T23:15:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2018.csv",
+        "minimum_customers": {
+          "max": 165222.0,
+          "median": 315.0,
+          "min": 200.0,
+          "n": 36563,
+          "p90": 1994.0,
+          "p99": 20200.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 17869,
+        "rows": 36563,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "7d232eba1721d751f593d1938bff8731753d662eba1802ee4735a844949bf001",
+        "start_month_counts": {
+          "1": 2511,
+          "10": 2403,
+          "11": 4133,
+          "12": 2530,
+          "2": 499,
+          "3": 8859,
+          "4": 1305,
+          "5": 3466,
+          "6": 1843,
+          "7": 2174,
+          "8": 3655,
+          "9": 3185
+        },
+        "state_labels": 43,
+        "unique_county_start_keys": 18694
+      },
+      {
+        "bytes": 1854113,
+        "county_ids": 1366,
+        "distinct_parent_definitions": 277,
+        "duration_histogram": {
+          "(0,1]": 5894,
+          "(1,4]": 3256,
+          "(12,24]": 604,
+          "(24,72]": 636,
+          "(4,12]": 1514,
+          ">72": 180
+        },
+        "duration_hours": {
+          "max": 252.5,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 12084,
+          "p90": 14.75,
+          "p99": 80.75
+        },
+        "event_id_count": 273,
+        "event_ids_with_multiple_definitions": 4,
+        "first_start": "2018-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 2527,
+          "exact_duplicate_rows": 1027,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 54,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 677,
+          "starts_january_1_midnight": 5,
+          "timezone_unspecified_rows": 12084
+        },
+        "last_start": "2018-12-30T23:15:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2018_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 165222.0,
+          "median": 361.0,
+          "min": 200.0,
+          "n": 12084,
+          "p90": 6302.0,
+          "p99": 33086.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 2384,
+        "rows": 12084,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "1cb7799e6be262a55486d17c1d79135974d3da3a481340525b5cebd40da6fda5",
+        "start_month_counts": {
+          "1": 1374,
+          "10": 1211,
+          "11": 1454,
+          "12": 700,
+          "2": 222,
+          "3": 2633,
+          "4": 742,
+          "5": 409,
+          "6": 1380,
+          "7": 478,
+          "8": 329,
+          "9": 1152
+        },
+        "state_labels": 41,
+        "unique_county_start_keys": 9700
+      },
+      {
+        "bytes": 1587267,
+        "county_ids": 1317,
+        "distinct_parent_definitions": 264,
+        "duration_histogram": {
+          "(0,1]": 5088,
+          "(1,4]": 2628,
+          "(12,24]": 562,
+          "(24,72]": 609,
+          "(4,12]": 1254,
+          ">72": 178
+        },
+        "duration_hours": {
+          "max": 252.5,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 10319,
+          "p90": 17.25,
+          "p99": 83.25
+        },
+        "event_id_count": 260,
+        "event_ids_with_multiple_definitions": 4,
+        "first_start": "2018-01-01T09:45:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 762,
+          "exact_duplicate_rows": 1024,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 24,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 307,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 10319
+        },
+        "last_start": "2018-12-30T23:15:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2018_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 165222.0,
+          "median": 376.0,
+          "min": 200.0,
+          "n": 10319,
+          "p90": 7684.0,
+          "p99": 36054.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 2110,
+        "rows": 10319,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "9ecf70e8bf50cc75bf978dc0a837af14d7d133035a0b0c8ce1f6849861b7944b",
+        "start_month_counts": {
+          "1": 1027,
+          "10": 990,
+          "11": 1393,
+          "12": 513,
+          "2": 173,
+          "3": 2576,
+          "4": 644,
+          "5": 314,
+          "6": 1189,
+          "7": 230,
+          "8": 211,
+          "9": 1059
+        },
+        "state_labels": 39,
+        "unique_county_start_keys": 8209
+      },
+      {
+        "bytes": 9085677,
+        "county_ids": 2041,
+        "distinct_parent_definitions": 321,
+        "duration_histogram": {
+          "(0,1]": 22065,
+          "(1,4]": 18632,
+          "(12,24]": 2840,
+          "(24,72]": 1765,
+          "(4,12]": 8197,
+          ">72": 71
+        },
+        "duration_hours": {
+          "max": 151.5,
+          "median": 1.5,
+          "min": 0.25,
+          "n": 53570,
+          "p90": 10.5,
+          "p99": 49.0
+        },
+        "event_id_count": 318,
+        "event_ids_with_multiple_definitions": 3,
+        "first_start": "2019-01-05T17:15:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 32333,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 29078,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 2731,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 53570
+        },
+        "last_start": "2019-12-27T13:45:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2019.csv",
+        "minimum_customers": {
+          "max": 122875.0,
+          "median": 303.0,
+          "min": 200.0,
+          "n": 53570,
+          "p90": 1494.0,
+          "p99": 33305.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 33578,
+        "rows": 53570,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "7184a938ca83de8d98b2452a52d99f2f7c201b5313547d998f2dc824e6b48ba6",
+        "start_month_counts": {
+          "1": 1044,
+          "10": 10721,
+          "11": 4667,
+          "12": 1392,
+          "2": 2564,
+          "3": 2451,
+          "4": 2127,
+          "5": 8354,
+          "6": 9120,
+          "7": 6695,
+          "8": 1714,
+          "9": 2721
+        },
+        "state_labels": 47,
+        "unique_county_start_keys": 19992
+      },
+      {
+        "bytes": 1661268,
+        "county_ids": 1596,
+        "distinct_parent_definitions": 281,
+        "duration_histogram": {
+          "(0,1]": 3871,
+          "(1,4]": 3569,
+          "(12,24]": 642,
+          "(24,72]": 716,
+          "(4,12]": 1817,
+          ">72": 55
+        },
+        "duration_hours": {
+          "max": 636.75,
+          "median": 1.75,
+          "min": 0.25,
+          "n": 10670,
+          "p90": 17.0,
+          "p99": 65.25
+        },
+        "event_id_count": 279,
+        "event_ids_with_multiple_definitions": 2,
+        "first_start": "2019-01-04T21:15:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 3051,
+          "exact_duplicate_rows": 25,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 545,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 10670
+        },
+        "last_start": "2019-12-24T15:15:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2019_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 122875.0,
+          "median": 307.0,
+          "min": 200.0,
+          "n": 10670,
+          "p90": 2547.0,
+          "p99": 53328.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 1319,
+        "rows": 10670,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "e402f180206390475eaa038648f665a5ef2e2681788c49c6ee74027de42203c6",
+        "start_month_counts": {
+          "1": 480,
+          "10": 2177,
+          "11": 695,
+          "12": 166,
+          "2": 1145,
+          "3": 571,
+          "4": 891,
+          "5": 1007,
+          "6": 1273,
+          "7": 1146,
+          "8": 575,
+          "9": 544
+        },
+        "state_labels": 43,
+        "unique_county_start_keys": 9351
+      },
+      {
+        "bytes": 1319287,
+        "county_ids": 1532,
+        "distinct_parent_definitions": 254,
+        "duration_histogram": {
+          "(0,1]": 2942,
+          "(1,4]": 2818,
+          "(12,24]": 549,
+          "(24,72]": 647,
+          "(4,12]": 1430,
+          ">72": 51
+        },
+        "duration_hours": {
+          "max": 636.75,
+          "median": 2.0,
+          "min": 0.25,
+          "n": 8437,
+          "p90": 19.75,
+          "p99": 66.5
+        },
+        "event_id_count": 252,
+        "event_ids_with_multiple_definitions": 2,
+        "first_start": "2019-01-05T11:15:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 818,
+          "exact_duplicate_rows": 23,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 238,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 8437
+        },
+        "last_start": "2019-12-24T15:15:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2019_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 122875.0,
+          "median": 313.0,
+          "min": 200.0,
+          "n": 8437,
+          "p90": 3855.0,
+          "p99": 56464.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 979,
+        "rows": 8437,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "b6e63f33df05cb2a1088bcaab030e667ffe4110a7bfdaa40645729ce7330bb00",
+        "start_month_counts": {
+          "1": 378,
+          "10": 1933,
+          "11": 537,
+          "12": 86,
+          "2": 984,
+          "3": 413,
+          "4": 708,
+          "5": 884,
+          "6": 880,
+          "7": 932,
+          "8": 300,
+          "9": 402
+        },
+        "state_labels": 43,
+        "unique_county_start_keys": 7458
+      },
+      {
+        "bytes": 14431070,
+        "county_ids": 2253,
+        "distinct_parent_definitions": 509,
+        "duration_histogram": {
+          "(0,1]": 40044,
+          "(1,4]": 25412,
+          "(12,24]": 4331,
+          "(24,72]": 2962,
+          "(4,12]": 11382,
+          ">72": 744
+        },
+        "duration_hours": {
+          "max": 230.0,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 84875,
+          "p90": 11.5,
+          "p99": 68.5
+        },
+        "event_id_count": 503,
+        "event_ids_with_multiple_definitions": 6,
+        "first_start": "2020-01-09T15:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 52202,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 43006,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 7707,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 84875
+        },
+        "last_start": "2020-12-30T14:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2020.csv",
+        "minimum_customers": {
+          "max": 166685.0,
+          "median": 326.0,
+          "min": 200.0,
+          "n": 84875,
+          "p90": 2075.0,
+          "p99": 30362.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 56656,
+        "rows": 84875,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "d5fb076ad7b7740b8ac90d1609c1aa182f3489dd5e83573f82396661168ce331",
+        "start_month_counts": {
+          "1": 2154,
+          "10": 11724,
+          "11": 11166,
+          "12": 7009,
+          "2": 3955,
+          "3": 1143,
+          "4": 5366,
+          "5": 1972,
+          "6": 5183,
+          "7": 5797,
+          "8": 25035,
+          "9": 4371
+        },
+        "state_labels": 48,
+        "unique_county_start_keys": 28219
+      },
+      {
+        "bytes": 2824323,
+        "county_ids": 1891,
+        "distinct_parent_definitions": 460,
+        "duration_histogram": {
+          "(0,1]": 7344,
+          "(1,4]": 5673,
+          "(12,24]": 1321,
+          "(24,72]": 1000,
+          "(4,12]": 2923,
+          ">72": 315
+        },
+        "duration_hours": {
+          "max": 563.0,
+          "median": 1.75,
+          "min": 0.25,
+          "n": 18576,
+          "p90": 19.0,
+          "p99": 101.0
+        },
+        "event_id_count": 454,
+        "event_ids_with_multiple_definitions": 6,
+        "first_start": "2020-01-09T15:15:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 4902,
+          "exact_duplicate_rows": 25,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 1036,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 18576
+        },
+        "last_start": "2020-12-29T01:00:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2020_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 166685.0,
+          "median": 301.0,
+          "min": 200.0,
+          "n": 18576,
+          "p90": 1671.0,
+          "p99": 22708.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 4270,
+        "rows": 18576,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "9f108509e7dee7814214fa02a1e8c48d4d1bcb81444bdebef42e0215cd9e9b91",
+        "start_month_counts": {
+          "1": 854,
+          "10": 3111,
+          "11": 1718,
+          "12": 910,
+          "2": 896,
+          "3": 264,
+          "4": 2741,
+          "5": 720,
+          "6": 696,
+          "7": 846,
+          "8": 4183,
+          "9": 1637
+        },
+        "state_labels": 44,
+        "unique_county_start_keys": 14306
+      },
+      {
+        "bytes": 2281932,
+        "county_ids": 1851,
+        "distinct_parent_definitions": 418,
+        "duration_histogram": {
+          "(0,1]": 5701,
+          "(1,4]": 4495,
+          "(12,24]": 1175,
+          "(24,72]": 930,
+          "(4,12]": 2384,
+          ">72": 309
+        },
+        "duration_hours": {
+          "max": 563.0,
+          "median": 1.75,
+          "min": 0.25,
+          "n": 14994,
+          "p90": 21.25,
+          "p99": 107.0
+        },
+        "event_id_count": 412,
+        "event_ids_with_multiple_definitions": 6,
+        "first_start": "2020-01-09T16:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 1320,
+          "exact_duplicate_rows": 0,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 0,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 424,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 14994
+        },
+        "last_start": "2020-12-29T01:00:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2020_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 166685.0,
+          "median": 302.0,
+          "min": 200.0,
+          "n": 14994,
+          "p90": 1837.0,
+          "p99": 27863.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 3224,
+        "rows": 14994,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "16947f8d3ff38ed8b9d4ee40e6ccc4d6a1849bb0479455aa3f88b0373a26dc4d",
+        "start_month_counts": {
+          "1": 650,
+          "10": 2790,
+          "11": 1552,
+          "12": 603,
+          "2": 701,
+          "3": 139,
+          "4": 2240,
+          "5": 534,
+          "6": 523,
+          "7": 505,
+          "8": 3269,
+          "9": 1488
+        },
+        "state_labels": 42,
+        "unique_county_start_keys": 11770
+      },
+      {
+        "bytes": 19750272,
+        "county_ids": 2323,
+        "distinct_parent_definitions": 459,
+        "duration_histogram": {
+          "(0,1]": 48631,
+          "(1,4]": 32739,
+          "(12,24]": 8805,
+          "(24,72]": 8312,
+          "(4,12]": 18469,
+          ">72": 2479
+        },
+        "duration_hours": {
+          "max": 166.0,
+          "median": 1.75,
+          "min": 0.25,
+          "n": 119435,
+          "p90": 21.75,
+          "p99": 79.25
+        },
+        "event_id_count": 452,
+        "event_ids_with_multiple_definitions": 5,
+        "first_start": "2021-01-01T07:30:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 61676,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 57406,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 49,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 16032,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 119435
+        },
+        "last_start": "2021-12-30T23:15:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2021.csv",
+        "minimum_customers": {
+          "max": 261213.0,
+          "median": 350.0,
+          "min": 200.0,
+          "n": 119435,
+          "p90": 1667.0,
+          "p99": 60089.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 95277,
+        "rows": 119435,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "ca83337cc30259e44c2ba813e447c840f88306ef9fbdc6db91c1469f031dee7f",
+        "start_month_counts": {
+          "1": 5930,
+          "10": 9829,
+          "11": 2177,
+          "12": 7736,
+          "2": 51011,
+          "3": 1530,
+          "4": 1819,
+          "5": 1827,
+          "6": 3375,
+          "7": 3456,
+          "8": 25324,
+          "9": 5421
+        },
+        "state_labels": 48,
+        "unique_county_start_keys": 24158
+      },
+      {
+        "bytes": 4674105,
+        "county_ids": 1881,
+        "distinct_parent_definitions": 424,
+        "duration_histogram": {
+          "(0,1]": 13319,
+          "(1,4]": 8283,
+          "(12,24]": 2230,
+          "(24,72]": 2465,
+          "(4,12]": 4524,
+          ">72": 1622
+        },
+        "duration_hours": {
+          "max": 462.25,
+          "median": 1.75,
+          "min": 0.25,
+          "n": 32443,
+          "p90": 33.75,
+          "p99": 85.25
+        },
+        "event_id_count": 418,
+        "event_ids_with_multiple_definitions": 4,
+        "first_start": "2021-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 7229,
+          "exact_duplicate_rows": 41,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 43,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 2181,
+          "starts_january_1_midnight": 3,
+          "timezone_unspecified_rows": 32443
+        },
+        "last_start": "2021-12-30T23:15:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2021_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 261213.0,
+          "median": 357.0,
+          "min": 200.0,
+          "n": 32443,
+          "p90": 1218.0,
+          "p99": 10539.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 20258,
+        "rows": 32443,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "c021b15b60e1f30c0c3e7fbc41e170e8403b8ba347187940cdef3179595b3d22",
+        "start_month_counts": {
+          "1": 1218,
+          "10": 1364,
+          "11": 331,
+          "12": 1487,
+          "2": 21753,
+          "3": 548,
+          "4": 509,
+          "5": 776,
+          "6": 1217,
+          "7": 477,
+          "8": 1734,
+          "9": 1029
+        },
+        "state_labels": 46,
+        "unique_county_start_keys": 12185
+      },
+      {
+        "bytes": 3845540,
+        "county_ids": 1818,
+        "distinct_parent_definitions": 376,
+        "duration_histogram": {
+          "(0,1]": 10942,
+          "(1,4]": 6727,
+          "(12,24]": 1862,
+          "(24,72]": 2154,
+          "(4,12]": 3677,
+          ">72": 1440
+        },
+        "duration_hours": {
+          "max": 462.25,
+          "median": 1.75,
+          "min": 0.25,
+          "n": 26802,
+          "p90": 36.5,
+          "p99": 86.75
+        },
+        "event_id_count": 370,
+        "event_ids_with_multiple_definitions": 4,
+        "first_start": "2021-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 1588,
+          "exact_duplicate_rows": 41,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 34,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 697,
+          "starts_january_1_midnight": 3,
+          "timezone_unspecified_rows": 26802
+        },
+        "last_start": "2021-12-30T23:15:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2021_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 261213.0,
+          "median": 361.0,
+          "min": 200.0,
+          "n": 26802,
+          "p90": 1232.0,
+          "p99": 12023.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 17109,
+        "rows": 26802,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "94dca2f259066b457bf878dc09fc0ded165c6a924e89ec3d7ea3aa3c90343831",
+        "start_month_counts": {
+          "1": 1101,
+          "10": 1044,
+          "11": 146,
+          "12": 1273,
+          "2": 18783,
+          "3": 458,
+          "4": 263,
+          "5": 575,
+          "6": 856,
+          "7": 258,
+          "8": 1319,
+          "9": 726
+        },
+        "state_labels": 45,
+        "unique_county_start_keys": 9693
+      },
+      {
+        "bytes": 15464271,
+        "county_ids": 2322,
+        "distinct_parent_definitions": 487,
+        "duration_histogram": {
+          "(0,1]": 41283,
+          "(1,4]": 28217,
+          "(12,24]": 5465,
+          "(24,72]": 5453,
+          "(4,12]": 14105,
+          ">72": 330
+        },
+        "duration_hours": {
+          "max": 161.5,
+          "median": 1.5,
+          "min": 0.25,
+          "n": 94853,
+          "p90": 16.25,
+          "p99": 56.75
+        },
+        "event_id_count": 483,
+        "event_ids_with_multiple_definitions": 4,
+        "first_start": "2022-01-01T02:45:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 59015,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 53028,
+          "implied_end_crosses_year": 18,
+          "implied_end_december_31_or_january_1": 164,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 11149,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 94853
+        },
+        "last_start": "2022-12-31T23:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2022.csv",
+        "minimum_customers": {
+          "max": 225347.0,
+          "median": 296.0,
+          "min": 200.0,
+          "n": 94853,
+          "p90": 1347.0,
+          "p99": 18619.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 63899,
+        "rows": 94853,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "5b998d21c1c13c2265cbad44e8098975f480f9341b904fbc02f0ab528f94ecc9",
+        "start_month_counts": {
+          "1": 3176,
+          "10": 7460,
+          "11": 12334,
+          "12": 6642,
+          "2": 1735,
+          "3": 16154,
+          "4": 5183,
+          "5": 7633,
+          "6": 6840,
+          "7": 6681,
+          "8": 8589,
+          "9": 12426
+        },
+        "state_labels": 48,
+        "unique_county_start_keys": 30954
+      },
+      {
+        "bytes": 2218943,
+        "county_ids": 1727,
+        "distinct_parent_definitions": 456,
+        "duration_histogram": {
+          "(0,1]": 6057,
+          "(1,4]": 4666,
+          "(12,24]": 851,
+          "(24,72]": 809,
+          "(4,12]": 2543,
+          ">72": 42
+        },
+        "duration_hours": {
+          "max": 307.5,
+          "median": 1.5,
+          "min": 0.25,
+          "n": 14968,
+          "p90": 14.0,
+          "p99": 51.5
+        },
+        "event_id_count": 452,
+        "event_ids_with_multiple_definitions": 4,
+        "first_start": "2022-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 6839,
+          "exact_duplicate_rows": 273,
+          "implied_end_crosses_year": 6,
+          "implied_end_december_31_or_january_1": 40,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 1287,
+          "starts_january_1_midnight": 2,
+          "timezone_unspecified_rows": 14968
+        },
+        "last_start": "2022-12-31T23:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2022_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 225347.0,
+          "median": 291.0,
+          "min": 200.0,
+          "n": 14968,
+          "p90": 1167.0,
+          "p99": 5673.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 2438,
+        "rows": 14968,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "211940733de5cbb46b46e2af8ffbdf67c3d16192afec90c4e25389e7ffb6139d",
+        "start_month_counts": {
+          "1": 1230,
+          "10": 909,
+          "11": 769,
+          "12": 2869,
+          "2": 614,
+          "3": 998,
+          "4": 572,
+          "5": 883,
+          "6": 2214,
+          "7": 933,
+          "8": 1124,
+          "9": 1853
+        },
+        "state_labels": 46,
+        "unique_county_start_keys": 12530
+      },
+      {
+        "bytes": 1507713,
+        "county_ids": 1646,
+        "distinct_parent_definitions": 421,
+        "duration_histogram": {
+          "(0,1]": 3951,
+          "(1,4]": 2978,
+          "(12,24]": 684,
+          "(24,72]": 688,
+          "(4,12]": 1756,
+          ">72": 39
+        },
+        "duration_hours": {
+          "max": 307.5,
+          "median": 1.75,
+          "min": 0.25,
+          "n": 10096,
+          "p90": 17.75,
+          "p99": 54.75
+        },
+        "event_id_count": 418,
+        "event_ids_with_multiple_definitions": 3,
+        "first_start": "2022-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 1967,
+          "exact_duplicate_rows": 273,
+          "implied_end_crosses_year": 6,
+          "implied_end_december_31_or_january_1": 24,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 490,
+          "starts_january_1_midnight": 1,
+          "timezone_unspecified_rows": 10096
+        },
+        "last_start": "2022-12-31T23:30:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2022_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 225347.0,
+          "median": 292.0,
+          "min": 200.0,
+          "n": 10096,
+          "p90": 1196.0,
+          "p99": 10808.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 1423,
+        "rows": 10096,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "6cc27ae8bb1c05486fa09321a414f5ecd3c4d35b1ac30f7abf15ef7ba04a80fe",
+        "start_month_counts": {
+          "1": 990,
+          "10": 550,
+          "11": 564,
+          "12": 2268,
+          "2": 305,
+          "3": 631,
+          "4": 350,
+          "5": 536,
+          "6": 1595,
+          "7": 514,
+          "8": 639,
+          "9": 1154
+        },
+        "state_labels": 46,
+        "unique_county_start_keys": 8673
+      },
+      {
+        "bytes": 12452488,
+        "county_ids": 2102,
+        "distinct_parent_definitions": 353,
+        "duration_histogram": {
+          "(0,1]": 33941,
+          "(1,4]": 25363,
+          "(12,24]": 2816,
+          "(24,72]": 5102,
+          "(4,12]": 9343,
+          ">72": 776
+        },
+        "duration_hours": {
+          "max": 193.25,
+          "median": 1.5,
+          "min": 0.25,
+          "n": 77341,
+          "p90": 16.5,
+          "p99": 73.75
+        },
+        "event_id_count": 351,
+        "event_ids_with_multiple_definitions": 2,
+        "first_start": "2023-01-01T00:15:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "end_time_disagrees_with_duration_rows": 0,
+          "episode_starts_after_parent_end_rows": 44760,
+          "episode_starts_before_parent_rows": 0,
+          "exact_duplicate_rows": 50065,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 55,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 14133,
+          "starts_january_1_midnight": 0,
+          "timezone_unspecified_rows": 77341
+        },
+        "last_start": "2023-12-02T08:15:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2023.csv",
+        "minimum_customers": {
+          "max": 60581.0,
+          "median": 278.0,
+          "min": 200.0,
+          "n": 77341,
+          "p90": 976.0,
+          "p99": 3552.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "end_time": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 55440,
+        "rows": 77341,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "end_time",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "8ac7d34ec2a4dae750d4de4a07562d70d9f1cdb71162bbba85362337e045ad5d",
+        "start_month_counts": {
+          "1": 5007,
+          "10": 2435,
+          "11": 1768,
+          "12": 58,
+          "2": 19859,
+          "3": 31067,
+          "4": 4098,
+          "5": 1653,
+          "6": 1360,
+          "7": 5398,
+          "8": 102,
+          "9": 4536
+        },
+        "state_labels": 45,
+        "unique_county_start_keys": 21901
+      },
+      {
+        "bytes": 1524591,
+        "county_ids": 1462,
+        "distinct_parent_definitions": 328,
+        "duration_histogram": {
+          "(0,1]": 4831,
+          "(1,4]": 3093,
+          "(12,24]": 429,
+          "(24,72]": 486,
+          "(4,12]": 1458,
+          ">72": 59
+        },
+        "duration_hours": {
+          "max": 370.25,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 10356,
+          "p90": 11.25,
+          "p99": 59.75
+        },
+        "event_id_count": 326,
+        "event_ids_with_multiple_definitions": 2,
+        "first_start": "2023-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 4369,
+          "exact_duplicate_rows": 605,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 51,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 917,
+          "starts_january_1_midnight": 19,
+          "timezone_unspecified_rows": 10356
+        },
+        "last_start": "2023-11-29T08:45:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2023_24_hours_lag.csv",
+        "minimum_customers": {
+          "max": 35844.0,
+          "median": 303.0,
+          "min": 200.0,
+          "n": 10356,
+          "p90": 1407.0,
+          "p99": 6026.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 1631,
+        "rows": 10356,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "3ccd7d69dfbdc2b101f302e6a8b43520bde08dd061bfb38d7712f9a97981a2d2",
+        "start_month_counts": {
+          "1": 1103,
+          "10": 770,
+          "11": 513,
+          "2": 1085,
+          "3": 1622,
+          "4": 1565,
+          "5": 370,
+          "6": 474,
+          "7": 2111,
+          "9": 743
+        },
+        "state_labels": 45,
+        "unique_county_start_keys": 8725
+      },
+      {
+        "bytes": 1065652,
+        "county_ids": 1322,
+        "distinct_parent_definitions": 291,
+        "duration_histogram": {
+          "(0,1]": 3295,
+          "(1,4]": 2108,
+          "(12,24]": 354,
+          "(24,72]": 415,
+          "(4,12]": 990,
+          ">72": 59
+        },
+        "duration_hours": {
+          "max": 370.25,
+          "median": 1.25,
+          "min": 0.25,
+          "n": 7221,
+          "p90": 15.25,
+          "p99": 67.0
+        },
+        "event_id_count": 290,
+        "event_ids_with_multiple_definitions": 1,
+        "first_start": "2023-01-01T00:00:00",
+        "flags": {
+          "customer_order_violation_rows": 0,
+          "episode_starts_after_parent_end_rows": 0,
+          "episode_starts_before_parent_rows": 1234,
+          "exact_duplicate_rows": 524,
+          "implied_end_crosses_year": 0,
+          "implied_end_december_31_or_january_1": 33,
+          "nonpositive_duration_rows": 0,
+          "off_quarter_hour_duration_rows": 0,
+          "parent_end_not_after_start_rows": 316,
+          "starts_january_1_midnight": 9,
+          "timezone_unspecified_rows": 7221
+        },
+        "last_start": "2023-11-29T08:45:00",
+        "member": "Outage_Dataset/eaglei_outages_with_events_2023_8_hours_lag.csv",
+        "minimum_customers": {
+          "max": 35844.0,
+          "median": 305.0,
+          "min": 200.0,
+          "n": 7221,
+          "p90": 1397.0,
+          "p99": 5180.0
+        },
+        "missing_cells": {
+          "Datetime Event Began": 0,
+          "Datetime Restoration": 0,
+          "Event Type": 0,
+          "county": 0,
+          "duration": 0,
+          "event_id": 0,
+          "fips": 0,
+          "max_customers": 0,
+          "mean_customers": 0,
+          "min_customers": 0,
+          "start_time": 0,
+          "state": 0,
+          "state_event": 0
+        },
+        "repeated_county_start_rows": 1044,
+        "rows": 7221,
+        "schema": [
+          "event_id",
+          "state_event",
+          "Datetime Event Began",
+          "Datetime Restoration",
+          "Event Type",
+          "fips",
+          "state",
+          "county",
+          "start_time",
+          "duration",
+          "min_customers",
+          "max_customers",
+          "mean_customers"
+        ],
+        "sha256": "0c21082cdc5e2f082e5728407864a28a6bd7ab943c4faa9e5e6b648f02f26777",
+        "start_month_counts": {
+          "1": 754,
+          "10": 424,
+          "11": 207,
+          "2": 864,
+          "3": 1158,
+          "4": 1173,
+          "5": 192,
+          "6": 329,
+          "7": 1655,
+          "9": 465
+        },
+        "state_labels": 43,
+        "unique_county_start_keys": 6177
+      }
+    ],
+    "timezone": "unspecified; naive source timestamps retained; UTC conversion withheld",
+    "unlagged_ambiguous_year_event_ids": 29,
+    "unlagged_link_rows": 526165,
+    "unlagged_repeated_county_start_rows": 357307,
+    "unlagged_unique_county_start_keys_within_year": 168858
+  },
+  "purdue": {
+    "duplicate_observation_ids": 0,
+    "duration_hours": {
+      "max": 1810.8833333333334,
+      "median": 11.616666666666667,
+      "min": 0.0,
+      "n": 1476,
+      "p90": 115.23333333333333,
+      "p99": 395.0
+    },
+    "flags": {
+      "duration_and_four_timestamps_present": 1476,
+      "duration_timestamp_mismatch_over_one_minute": 31,
+      "nonpositive_duration_rows": 78,
+      "restoration_before_start": 0
+    },
+    "formula_cached_values_by_column": {
+      "AJ": 1534,
+      "AK": 1534,
+      "AL": 1534
+    },
+    "license_keywords_in_workbook": false,
+    "license_status": "article CC-BY-4.0; workbook-specific grant not established",
+    "missing_cells": {
+      "ANOMALY.LEVEL": 9,
+      "AREAPCT_UC": 0,
+      "AREAPCT_URBAN": 0,
+      "CAUSE.CATEGORY": 0,
+      "CAUSE.CATEGORY.DETAIL": 471,
+      "CLIMATE.CATEGORY": 9,
+      "CLIMATE.REGION": 6,
+      "COM.CUST.PCT": 0,
+      "COM.CUSTOMERS": 0,
+      "COM.PERCEN": 22,
+      "COM.PRICE": 22,
+      "COM.SALES": 22,
+      "CUSTOMERS.AFFECTED": 443,
+      "DEMAND.LOSS.MW": 705,
+      "HURRICANE.NAMES": 1462,
+      "IND.CUST.PCT": 0,
+      "IND.CUSTOMERS": 0,
+      "IND.PERCEN": 22,
+      "IND.PRICE": 22,
+      "IND.SALES": 22,
+      "MONTH": 9,
+      "NERC.REGION": 0,
+      "OBS": 0,
+      "OUTAGE.DURATION": 58,
+      "OUTAGE.RESTORATION.DATE": 58,
+      "OUTAGE.RESTORATION.TIME": 58,
+      "OUTAGE.START.DATE": 9,
+      "OUTAGE.START.TIME": 9,
+      "PC.REALGSP.CHANGE": 0,
+      "PC.REALGSP.REL": 0,
+      "PC.REALGSP.STATE": 0,
+      "PC.REALGSP.USA": 0,
+      "PCT_LAND": 0,
+      "PCT_WATER_INLAND": 0,
+      "PCT_WATER_TOT": 0,
+      "PI.UTIL.OFUSA": 0,
+      "POPDEN_RURAL": 10,
+      "POPDEN_UC": 10,
+      "POPDEN_URBAN": 0,
+      "POPPCT_UC": 0,
+      "POPPCT_URBAN": 0,
+      "POPULATION": 0,
+      "POSTAL.CODE": 0,
+      "RES.CUST.PCT": 0,
+      "RES.CUSTOMERS": 0,
+      "RES.PERCEN": 22,
+      "RES.PRICE": 22,
+      "RES.SALES": 22,
+      "TOTAL.CUSTOMERS": 0,
+      "TOTAL.PRICE": 22,
+      "TOTAL.REALGSP": 0,
+      "TOTAL.SALES": 22,
+      "U.S._STATE": 0,
+      "UTIL.CONTRI": 0,
+      "UTIL.REALGSP": 0,
+      "YEAR": 0
+    },
+    "repeated_state_start_rows": 31,
+    "rows": 1534,
+    "schema": [
+      "OBS",
+      "YEAR",
+      "MONTH",
+      "U.S._STATE",
+      "POSTAL.CODE",
+      "NERC.REGION",
+      "CLIMATE.REGION",
+      "ANOMALY.LEVEL",
+      "CLIMATE.CATEGORY",
+      "OUTAGE.START.DATE",
+      "OUTAGE.START.TIME",
+      "OUTAGE.RESTORATION.DATE",
+      "OUTAGE.RESTORATION.TIME",
+      "CAUSE.CATEGORY",
+      "CAUSE.CATEGORY.DETAIL",
+      "HURRICANE.NAMES",
+      "OUTAGE.DURATION",
+      "DEMAND.LOSS.MW",
+      "CUSTOMERS.AFFECTED",
+      "RES.PRICE",
+      "COM.PRICE",
+      "IND.PRICE",
+      "TOTAL.PRICE",
+      "RES.SALES",
+      "COM.SALES",
+      "IND.SALES",
+      "TOTAL.SALES",
+      "RES.PERCEN",
+      "COM.PERCEN",
+      "IND.PERCEN",
+      "RES.CUSTOMERS",
+      "COM.CUSTOMERS",
+      "IND.CUSTOMERS",
+      "TOTAL.CUSTOMERS",
+      "RES.CUST.PCT",
+      "COM.CUST.PCT",
+      "IND.CUST.PCT",
+      "PC.REALGSP.STATE",
+      "PC.REALGSP.USA",
+      "PC.REALGSP.REL",
+      "PC.REALGSP.CHANGE",
+      "UTIL.REALGSP",
+      "TOTAL.REALGSP",
+      "UTIL.CONTRI",
+      "PI.UTIL.OFUSA",
+      "POPULATION",
+      "POPPCT_URBAN",
+      "POPPCT_UC",
+      "POPDEN_URBAN",
+      "POPDEN_UC",
+      "POPDEN_RURAL",
+      "AREAPCT_URBAN",
+      "AREAPCT_UC",
+      "PCT_LAND",
+      "PCT_WATER_TOT",
+      "PCT_WATER_INLAND"
+    ],
+    "state_labels": 50,
+    "timestamp_minus_duration_minutes": {
+      "-60": 17,
+      "60": 14
+    },
+    "timezone": "not specified in workbook or reviewed descriptor",
+    "year_rows": {
+      "2000": 26,
+      "2001": 15,
+      "2002": 17,
+      "2003": 46,
+      "2004": 71,
+      "2005": 55,
+      "2006": 67,
+      "2007": 56,
+      "2008": 111,
+      "2009": 78,
+      "2010": 106,
+      "2011": 269,
+      "2012": 174,
+      "2013": 153,
+      "2014": 112,
+      "2015": 119,
+      "2016": 59
+    }
+  },
+  "sealed_evaluations": 0,
+  "version": "outage-source-audit-v1",
+  "zenodo": {
+    "doi": "10.5281/zenodo.22651795",
+    "files_advertised_not_all_downloaded": [
+      {
+        "checksum": "md5:a592ce3f672a75fb1b939d355b95c019",
+        "key": "w_08mr23.shp",
+        "size": 30187652
+      },
+      {
+        "checksum": "md5:434bcc1e81ca8d0540663f546a9d756e",
+        "key": "cb_2018_us_county_500k.sbx",
+        "size": 2348
+      },
+      {
+        "checksum": "md5:302853a8c2d7bb9c0749e7dbcf061c42",
+        "key": "cb_2018_us_county_500k.shp",
+        "size": 14406924
+      },
+      {
+        "checksum": "md5:b47a454b0c7f2e8047e870d3167a157c",
+        "key": "Eagle_I_US_2024_with_VTEC_Updated.csv",
+        "size": 366933304
+      },
+      {
+        "checksum": "md5:b1405e2de2cf47e5760ee054214ff7ff",
+        "key": "EAGLEI_Source_Record_Availability.csv",
+        "size": 32427674
+      },
+      {
+        "checksum": "md5:647b00e9a4f2d6cf83158dcd79c203b1",
+        "key": "Temporal_Aggregation_Sensitivity_Summary.csv",
+        "size": 911
+      },
+      {
+        "checksum": "md5:ae3b3df9970b49b6523e608759bc957d",
+        "key": "w_08mr23.cpg",
+        "size": 5
+      },
+      {
+        "checksum": "md5:09442085b603433a564841860775c8a3",
+        "key": "cb_2018_us_county_500k.shx",
+        "size": 24964
+      },
+      {
+        "checksum": "md5:595c70312b5ce09cdbb745c27584272c",
+        "key": "w_08mr23.sbn",
+        "size": 1276
+      },
+      {
+        "checksum": "md5:ae3b3df9970b49b6523e608759bc957d",
+        "key": "cb_2018_us_county_500k.cpg",
+        "size": 5
+      },
+      {
+        "checksum": "md5:8e24fe15b2c8c640c459006722fa1e7f",
+        "key": "cb_2018_us_county_500k.prj",
+        "size": 167
+      },
+      {
+        "checksum": "md5:72c2a4ae6622649fa0b2da54c1582db2",
+        "key": "w_08mr23.sbx",
+        "size": 228
+      },
+      {
+        "checksum": "md5:85b67cce1d3c08a6548f151ef3a32d4f",
+        "key": "Recovery_Persistence_Sensitivity_Summary.csv",
+        "size": 558
+      },
+      {
+        "checksum": "md5:4469f073ef90c2af8534eef3efb6d722",
+        "key": "w_08mr23.dbf",
+        "size": 27761
+      },
+      {
+        "checksum": "md5:c5307dbcbebe75a2307b9271dce08f8e",
+        "key": "cb_2018_us_county_500k.sbn",
+        "size": 30948
+      },
+      {
+        "checksum": "md5:93b8a9072441134ab0b13fe8460b2cd8",
+        "key": "cb_2018_us_county_500k.dbf",
+        "size": 600262
+      },
+      {
+        "checksum": "md5:c7ad0104136e742077e20e1c197cd166",
+        "key": "w_08mr23.prj",
+        "size": 339
+      },
+      {
+        "checksum": "md5:523de61d8272fc76202270ea4c06dbd0",
+        "key": "NWS_WARNINGS_COMBINED_data_Updated.csv",
+        "size": 832283249
+      },
+      {
+        "checksum": "md5:09977ea33038cb6912650b4c2483480f",
+        "key": "w_08mr23.shx",
+        "size": 1100
+      },
+      {
+        "checksum": "md5:8f032366bcba0ec50763dcb4d5fa0fc7",
+        "key": "Missing_Data_Sensitivity_Summary.csv",
+        "size": 232
+      }
+    ],
+    "full_observation_data_downloaded": false,
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "record_id": 22651795,
+    "sensitivity_summaries": {
+      "Missing_Data_Sensitivity_Summary.csv": [
+        {
+          "Median_Abs_Difference": "0",
+          "Median_Relative_Difference": "0",
+          "Total_Observations": "27010031",
+          "completeness_tier": "100% Complete"
+        },
+        {
+          "Median_Abs_Difference": "1.133928571",
+          "Median_Relative_Difference": "18.75",
+          "Total_Observations": "11776430",
+          "completeness_tier": "75% - 99% Complete"
+        },
+        {
+          "Median_Abs_Difference": "2",
+          "Median_Relative_Difference": "43.75",
+          "Total_Observations": "14711002",
+          "completeness_tier": "50% - 74% Complete"
+        },
+        {
+          "Median_Abs_Difference": "2.25",
+          "Median_Relative_Difference": "75",
+          "Total_Observations": "38024562",
+          "completeness_tier": "< 50% Complete"
+        }
+      ],
+      "Recovery_Persistence_Sensitivity_Summary.csv": [
+        {
+          "Metric": "Fully observed hourly windows available for temporal evaluation",
+          "Value": "23081325"
+        },
+        {
+          "Metric": "Fully observed active hourly observations",
+          "Value": "22801148"
+        },
+        {
+          "Metric": "Fully observed hours with direct 1-hr outage signal equal to zero",
+          "Value": "331172"
+        },
+        {
+          "Metric": "Zero-signal hours with positive 4-hr trailing metric",
+          "Value": "50995"
+        },
+        {
+          "Metric": "Percent of fully observed zero-signal hours with 4-hr persistence (%)",
+          "Value": "15.3983428550723"
+        },
+        {
+          "Metric": "Fully observed recovery transitions (1-hr mean > 0 to 0)",
+          "Value": "17060"
+        },
+        {
+          "Metric": "Recovery transitions with positive 4-hr trailing metric",
+          "Value": "17060"
+        },
+        {
+          "Metric": "Percent of fully observed recovery transitions with 4-hr persistence (%)",
+          "Value": "100"
+        }
+      ],
+      "Temporal_Aggregation_Sensitivity_Summary.csv": [
+        {
+          "Metric": "Fully observed active hourly observations evaluated",
+          "Value": "22801148"
+        },
+        {
+          "Metric": "Hourly observations with defined relative comparison: 4-hr vs 15-min peak",
+          "Value": "22750153"
+        },
+        {
+          "Metric": "Median absolute difference: 4-hr vs 15-min peak",
+          "Value": "4.4375"
+        },
+        {
+          "Metric": "P90 absolute difference: 4-hr vs 15-min peak",
+          "Value": "192.4375"
+        },
+        {
+          "Metric": "P95 absolute difference: 4-hr vs 15-min peak",
+          "Value": "462.0625"
+        },
+        {
+          "Metric": "Median relative difference: 4-hr vs 15-min peak (%)",
+          "Value": "25"
+        },
+        {
+          "Metric": "P90 relative difference: 4-hr vs 15-min peak (%)",
+          "Value": "328.804347826087"
+        },
+        {
+          "Metric": "P95 relative difference: 4-hr vs 15-min peak (%)",
+          "Value": "882.051304049404"
+        },
+        {
+          "Metric": "Hourly observations with defined relative comparison: 4-hr vs 1-hr mean",
+          "Value": "22750153"
+        },
+        {
+          "Metric": "Median absolute difference: 4-hr vs 1-hr mean",
+          "Value": "4.25"
+        },
+        {
+          "Metric": "P90 absolute difference: 4-hr vs 1-hr mean",
+          "Value": "176.375"
+        },
+        {
+          "Metric": "P95 absolute difference: 4-hr vs 1-hr mean",
+          "Value": "402.25"
+        },
+        {
+          "Metric": "Median relative difference: 4-hr vs 1-hr mean (%)",
+          "Value": "25"
+        },
+        {
+          "Metric": "P90 relative difference: 4-hr vs 1-hr mean (%)",
+          "Value": "406.25"
+        },
+        {
+          "Metric": "P95 relative difference: 4-hr vs 1-hr mean (%)",
+          "Value": "1048.80352140855"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-04",
+  "decision": "NO-GO",
+  "details": "../FEASIBILITY.md",
+  "final_evaluations": 0,
+  "gates": {
+    "pnnl_artifact_license": "established_catalog_CC_BY_4",
+    "pnnl_independent_incident_grouping": "not_validated",
+    "pnnl_source_coverage_and_censoring": "unavailable",
+    "pnnl_verified_restoration_endpoint": "unavailable",
+    "purdue_artifact_license": "unresolved_article_grant_does_not_explicitly_bind_workbook",
+    "zenodo_screening": "metadata_descriptor_and_three_sensitivity_files_only"
+  },
+  "models_fitted": 0,
+  "scope": "bounded source-audit conclusion, not universal impossibility of observed-outage ML",
+  "training_authorized_by_gate": false,
+  "version": "outage-feasibility-v1"
+}

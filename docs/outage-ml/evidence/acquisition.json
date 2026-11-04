@@ -1,0 +1,131 @@
+{
+  "Missing_Data_Sensitivity_Summary.csv": {
+    "bytes": 232,
+    "content_type": "text/plain; charset=utf-8",
+    "http_status": 200,
+    "publisher_checksum": "md5:8f032366bcba0ec50763dcb4d5fa0fc7",
+    "resolved_url": "https://zenodo.org/api/records/22651795/files/Missing_Data_Sensitivity_Summary.csv/content",
+    "retrieved_utc": "2026-11-04T13:27:31.379867+00:00",
+    "sha256": "7370cec624abdcf637a2415d2ef94116aeab831d7d528bdd1816de15f39fd775",
+    "url": "https://zenodo.org/api/records/22651795/files/Missing_Data_Sensitivity_Summary.csv/content"
+  },
+  "Recovery_Persistence_Sensitivity_Summary.csv": {
+    "bytes": 558,
+    "content_type": "text/plain; charset=utf-8",
+    "http_status": 200,
+    "publisher_checksum": "md5:85b67cce1d3c08a6548f151ef3a32d4f",
+    "resolved_url": "https://zenodo.org/api/records/22651795/files/Recovery_Persistence_Sensitivity_Summary.csv/content",
+    "retrieved_utc": "2026-11-04T13:27:30.661263+00:00",
+    "sha256": "79e904b6a74e8da6d2b6a82a525ad17da04bdb887a66deaa7f4da11e76b82deb",
+    "url": "https://zenodo.org/api/records/22651795/files/Recovery_Persistence_Sensitivity_Summary.csv/content"
+  },
+  "Temporal_Aggregation_Sensitivity_Summary.csv": {
+    "bytes": 911,
+    "content_type": "text/plain; charset=utf-8",
+    "http_status": 200,
+    "publisher_checksum": "md5:647b00e9a4f2d6cf83158dcd79c203b1",
+    "resolved_url": "https://zenodo.org/api/records/22651795/files/Temporal_Aggregation_Sensitivity_Summary.csv/content",
+    "retrieved_utc": "2026-11-04T13:27:30.034235+00:00",
+    "sha256": "160a8aeebe8c7fde3b3a56ab9611f93d5f09f7b0b5e6125e937c6dd2fbbcf65d",
+    "url": "https://zenodo.org/api/records/22651795/files/Temporal_Aggregation_Sensitivity_Summary.csv/content"
+  },
+  "eaglei-metadata.json": {
+    "bytes": 12375,
+    "content_type": "application/json",
+    "http_status": 200,
+    "resolved_url": "https://api.figshare.com/v2/articles/24237376",
+    "retrieved_utc": "2026-11-04T13:27:12.685363+00:00",
+    "sha256": "83d46fb6c3e755c0b4ec729f3f741c3d070e589961da9a842b7cc6a5688deb3f",
+    "url": "https://api.figshare.com/v2/articles/24237376"
+  },
+  "pnnl-catalog.html": {
+    "bytes": 89943,
+    "content_type": "text/html; charset=UTF-8",
+    "http_status": 200,
+    "resolved_url": "https://data.openei.org/submissions/6458",
+    "retrieved_utc": "2026-11-04T13:27:11.738728+00:00",
+    "sha256": "4ce05cde1e6ae0a1ee18d03c14ba95ac0d7fbefd0d01b3fdd65d589438c60e39",
+    "url": "https://data.openei.org/submissions/6458"
+  },
+  "pnnl-data-gov.html": {
+    "bytes": 154489,
+    "content_type": "text/html; charset=utf-8",
+    "http_status": 200,
+    "resolved_url": "https://catalog.data.gov/dataset/event-correlated-outage-dataset-in-america",
+    "retrieved_utc": "2026-11-04T13:27:12.031268+00:00",
+    "sha256": "e7ae247fcb57a7c07e45e6ff6c9b9dfc9ff4fe03ac98599af8669fdab8131118",
+    "url": "https://catalog.data.gov/dataset/event-correlated-outage-dataset-in-america"
+  },
+  "pnnl-disclaimer.docx": {
+    "bytes": 13828,
+    "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "http_status": 200,
+    "resolved_url": "https://data.openei.org/files/6458/Disclaimer.docx",
+    "retrieved_utc": "2026-11-04T13:27:06.547359+00:00",
+    "sha256": "249619dde1bcc1d81986f63105e4b019e0475beb09f23199e3a1e5af3628f227",
+    "url": "https://data.openei.org/files/6458/Disclaimer.docx"
+  },
+  "pnnl-guidelines.docx": {
+    "bytes": 19878,
+    "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "http_status": 200,
+    "resolved_url": "https://data.openei.org/files/6458/Guideline_OEDI_Updated.docx",
+    "retrieved_utc": "2026-11-04T13:27:05.773648+00:00",
+    "sha256": "3295c29a75b07c07382ade83b1093efb9aa8e84696d11d73dad7ac0a8c760c6e",
+    "url": "https://data.openei.org/files/6458/Guideline_OEDI_Updated.docx"
+  },
+  "pnnl-v2.zip": {
+    "bytes": 31260449,
+    "content_type": "application/octet-stream",
+    "http_status": 200,
+    "resolved_url": "https://data.openei.org/files/6458/Outage_Dataset_R1.zip",
+    "retrieved_utc": "2026-11-04T13:27:09.498674+00:00",
+    "sha256": "44557bae7a5c8e02c611a14f75fe9e123d81d286f700b9fd88ac538edd910fe7",
+    "url": "https://data.openei.org/files/6458/Outage_Dataset_R1.zip"
+  },
+  "purdue-catalog.html": {
+    "bytes": 24650,
+    "content_type": "text/html; charset=utf-8",
+    "http_status": 200,
+    "resolved_url": "https://engineering.purdue.edu/LASCI/research-data/outages",
+    "retrieved_utc": "2026-11-04T13:27:13.168437+00:00",
+    "sha256": "17b9f31f012e6e0512a7fbb7f1e6b5709aa1d02db98acc01561f70b96aff777c",
+    "url": "https://engineering.purdue.edu/LASCI/research-data/outages"
+  },
+  "purdue-paper.xml": {
+    "bytes": 30097,
+    "content_type": "application/xml",
+    "http_status": 200,
+    "resolved_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6141375/fullTextXML",
+    "retrieved_utc": "2026-11-04T13:27:14.171202+00:00",
+    "sha256": "ac37b388fc76d46ea872879a3d87e599f305329b4a12b627c808acf0a8e433b1",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6141375/fullTextXML"
+  },
+  "purdue.xlsx": {
+    "bytes": 660364,
+    "content_type": "application/vnd.ms-excel",
+    "http_status": 200,
+    "resolved_url": "https://engineering.purdue.edu/LASCI/research-data/outages/outage.xlsx",
+    "retrieved_utc": "2026-11-04T13:27:11.242043+00:00",
+    "sha256": "1d64b446ef131f39c99beea2b1380396f94cfaac1e56c722eba0693e13ee253a",
+    "url": "https://engineering.purdue.edu/LASCI/research-data/outages/outage.xlsx"
+  },
+  "zenodo-metadata.json": {
+    "bytes": 11076,
+    "content_type": "application/json",
+    "http_status": 200,
+    "resolved_url": "https://zenodo.org/api/records/22651795",
+    "retrieved_utc": "2026-11-04T13:27:14.936582+00:00",
+    "sha256": "deb5802a1aecd33382038fc5d778d19d64a34b5b7db2328c59dee336c6b3001c",
+    "url": "https://zenodo.org/api/records/22651795"
+  },
+  "zenodo-paper.xml": {
+    "bytes": 77760,
+    "content_type": "application/xml",
+    "http_status": 200,
+    "resolved_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13642956/fullTextXML",
+    "retrieved_utc": "2026-11-04T13:27:29.498787+00:00",
+    "sha256": "296ae8a3fb1f1b30239dc1a3a32b989f755aebe6e3c6ef9e1cef8471840b0fce",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13642956/fullTextXML"
+  }
+}
