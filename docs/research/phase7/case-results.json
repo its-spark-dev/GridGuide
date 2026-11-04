@@ -1,0 +1,2471 @@
+[
+  {
+    "best_of_four_policy": "customer-count-v1",
+    "input_fingerprint": "dbbbbb15ac7ffe3de43d6106f587e684aa9f8db938569c373d8bf94ceedf4733",
+    "result_fingerprint": "3927a01ebed98eaf6b8fba0b5708d9bd89bdd1cfc85d3d7ab613cb6950e3b30d",
+    "results": [
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 1.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 4.0,
+            "syn-branch-1": 5.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 14400
+            },
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 54.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 5.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 14400,
+            "syn-group-1": 18000
+          },
+          "restricted_horizon_customer_hours": 54.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 4.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 5.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "fifo-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: regression versus fixed baseline",
+          "restricted_horizon_customer_hours: regression versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: improvement versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 4.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 10,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 15.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 1.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 15.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 5.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "customer-count-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 4.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 10,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 15.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 1.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 15.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 5.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "legacy-release-per-person-hour-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 4.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 10,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 15.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 1.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 15.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 5.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "legacy-critical-proxy-first-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 4.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 10,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 15.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 1.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 15.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 5.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "restoration-cpsat-v1",
+        "returned_source": "solver",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      }
+    ],
+    "scenario": "syn-micro-weighted"
+  },
+  {
+    "best_of_four_policy": "customer-count-v1",
+    "input_fingerprint": "7ff4e0af4f5d56f2824e3daebde69cf2956399603aa1dea754257de55604fe68",
+    "result_fingerprint": "c74a21a0eeb3ec41222b93f1af7758bd2d0c046684ad5afb5b459e1e70a06d75",
+    "results": [
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 3.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 2.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 3,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 2,
+              "cumulative_customers": 3,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 12.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 5.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 7200
+          },
+          "restricted_horizon_customer_hours": 12.0,
+          "small_group_customers": 3,
+          "small_group_mean_wait_hours": 4.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 5.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "fifo-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 3.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 2.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 3,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 2,
+              "cumulative_customers": 3,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 12.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 5.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 7200
+          },
+          "restricted_horizon_customer_hours": 12.0,
+          "small_group_customers": 3,
+          "small_group_mean_wait_hours": 4.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 5.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "customer-count-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 3.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 2.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 3,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 2,
+              "cumulative_customers": 3,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 12.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 5.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 7200
+          },
+          "restricted_horizon_customer_hours": 12.0,
+          "small_group_customers": 3,
+          "small_group_mean_wait_hours": 4.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 5.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "legacy-release-per-person-hour-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 3.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 2.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 3,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 2,
+              "cumulative_customers": 3,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 12.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 5.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 7200
+          },
+          "restricted_horizon_customer_hours": 12.0,
+          "small_group_customers": 3,
+          "small_group_mean_wait_hours": 4.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 5.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "legacy-critical-proxy-first-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 3.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 2.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 3,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 2,
+              "cumulative_customers": 3,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 12.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 5.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 7200
+          },
+          "restricted_horizon_customer_hours": 12.0,
+          "small_group_customers": 3,
+          "small_group_mean_wait_hours": 4.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 5.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "restoration-cpsat-v1",
+        "returned_source": "solver",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      }
+    ],
+    "scenario": "syn-micro-overlap"
+  },
+  {
+    "best_of_four_policy": "customer-count-v1",
+    "input_fingerprint": "42dc2da6ad9117ddbe74455e9dcb8c90878329a0ca40d9249dff5ba8c18b71b3",
+    "result_fingerprint": "76cd073b780dda9c53af47d023cf079e5956f3de96755c5d9998dfb5ef0540a9",
+    "results": [
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 7.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 1.0,
+            "syn-branch-1": 2.0,
+            "syn-branch-2": 3.0,
+            "syn-branch-3": 4.0,
+            "syn-branch-4": 5.0,
+            "syn-branch-5": 6.0,
+            "syn-branch-6": 7.0,
+            "syn-branch-7": 8.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 8,
+          "full_customer_release_hours": 8.0,
+          "horizon_hours": 168,
+          "known_release_customers": 8,
+          "makespan_hours": 8.0,
+          "maximum_wait_hours": 8.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 3,
+              "tick": 10800
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 4,
+              "tick": 14400
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 5,
+              "tick": 18000
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 6,
+              "tick": 21600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 7,
+              "tick": 25200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 8,
+              "tick": 28800
+            }
+          ],
+          "modeled_customer_outage_hours": 36.0,
+          "release_100_hours": 8.0,
+          "release_50_hours": 4.0,
+          "release_90_hours": 8.0,
+          "release_ticks": {
+            "syn-group-0": 3600,
+            "syn-group-1": 7200,
+            "syn-group-2": 10800,
+            "syn-group-3": 14400,
+            "syn-group-4": 18000,
+            "syn-group-5": 21600,
+            "syn-group-6": 25200,
+            "syn-group-7": 28800
+          },
+          "restricted_horizon_customer_hours": 36.0,
+          "small_group_customers": 8,
+          "small_group_mean_wait_hours": 4.5,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 4.0,
+          "weighted_p95_hours": 8.0
+        },
+        "policy": "fifo-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 7.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 1.0,
+            "syn-branch-1": 2.0,
+            "syn-branch-2": 3.0,
+            "syn-branch-3": 4.0,
+            "syn-branch-4": 5.0,
+            "syn-branch-5": 6.0,
+            "syn-branch-6": 7.0,
+            "syn-branch-7": 8.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 8,
+          "full_customer_release_hours": 8.0,
+          "horizon_hours": 168,
+          "known_release_customers": 8,
+          "makespan_hours": 8.0,
+          "maximum_wait_hours": 8.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 3,
+              "tick": 10800
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 4,
+              "tick": 14400
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 5,
+              "tick": 18000
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 6,
+              "tick": 21600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 7,
+              "tick": 25200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 8,
+              "tick": 28800
+            }
+          ],
+          "modeled_customer_outage_hours": 36.0,
+          "release_100_hours": 8.0,
+          "release_50_hours": 4.0,
+          "release_90_hours": 8.0,
+          "release_ticks": {
+            "syn-group-0": 3600,
+            "syn-group-1": 7200,
+            "syn-group-2": 10800,
+            "syn-group-3": 14400,
+            "syn-group-4": 18000,
+            "syn-group-5": 21600,
+            "syn-group-6": 25200,
+            "syn-group-7": 28800
+          },
+          "restricted_horizon_customer_hours": 36.0,
+          "small_group_customers": 8,
+          "small_group_mean_wait_hours": 4.5,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 4.0,
+          "weighted_p95_hours": 8.0
+        },
+        "policy": "customer-count-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 7.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 1.0,
+            "syn-branch-1": 2.0,
+            "syn-branch-2": 3.0,
+            "syn-branch-3": 4.0,
+            "syn-branch-4": 5.0,
+            "syn-branch-5": 6.0,
+            "syn-branch-6": 7.0,
+            "syn-branch-7": 8.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 8,
+          "full_customer_release_hours": 8.0,
+          "horizon_hours": 168,
+          "known_release_customers": 8,
+          "makespan_hours": 8.0,
+          "maximum_wait_hours": 8.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 3,
+              "tick": 10800
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 4,
+              "tick": 14400
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 5,
+              "tick": 18000
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 6,
+              "tick": 21600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 7,
+              "tick": 25200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 8,
+              "tick": 28800
+            }
+          ],
+          "modeled_customer_outage_hours": 36.0,
+          "release_100_hours": 8.0,
+          "release_50_hours": 4.0,
+          "release_90_hours": 8.0,
+          "release_ticks": {
+            "syn-group-0": 3600,
+            "syn-group-1": 7200,
+            "syn-group-2": 10800,
+            "syn-group-3": 14400,
+            "syn-group-4": 18000,
+            "syn-group-5": 21600,
+            "syn-group-6": 25200,
+            "syn-group-7": 28800
+          },
+          "restricted_horizon_customer_hours": 36.0,
+          "small_group_customers": 8,
+          "small_group_mean_wait_hours": 4.5,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 4.0,
+          "weighted_p95_hours": 8.0
+        },
+        "policy": "legacy-release-per-person-hour-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 7.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 1.0,
+            "syn-branch-1": 2.0,
+            "syn-branch-2": 3.0,
+            "syn-branch-3": 4.0,
+            "syn-branch-4": 5.0,
+            "syn-branch-5": 6.0,
+            "syn-branch-6": 7.0,
+            "syn-branch-7": 8.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 8,
+          "full_customer_release_hours": 8.0,
+          "horizon_hours": 168,
+          "known_release_customers": 8,
+          "makespan_hours": 8.0,
+          "maximum_wait_hours": 8.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 3,
+              "tick": 10800
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 4,
+              "tick": 14400
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 5,
+              "tick": 18000
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 6,
+              "tick": 21600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 7,
+              "tick": 25200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 8,
+              "tick": 28800
+            }
+          ],
+          "modeled_customer_outage_hours": 36.0,
+          "release_100_hours": 8.0,
+          "release_50_hours": 4.0,
+          "release_90_hours": 8.0,
+          "release_ticks": {
+            "syn-group-0": 3600,
+            "syn-group-1": 7200,
+            "syn-group-2": 10800,
+            "syn-group-3": 14400,
+            "syn-group-4": 18000,
+            "syn-group-5": 21600,
+            "syn-group-6": 25200,
+            "syn-group-7": 28800
+          },
+          "restricted_horizon_customer_hours": 36.0,
+          "small_group_customers": 8,
+          "small_group_mean_wait_hours": 4.5,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 4.0,
+          "weighted_p95_hours": 8.0
+        },
+        "policy": "legacy-critical-proxy-first-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 7.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 1.0,
+            "syn-branch-1": 2.0,
+            "syn-branch-2": 3.0,
+            "syn-branch-3": 4.0,
+            "syn-branch-4": 5.0,
+            "syn-branch-5": 6.0,
+            "syn-branch-6": 7.0,
+            "syn-branch-7": 8.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 8,
+          "full_customer_release_hours": 8.0,
+          "horizon_hours": 168,
+          "known_release_customers": 8,
+          "makespan_hours": 8.0,
+          "maximum_wait_hours": 8.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 3,
+              "tick": 10800
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 4,
+              "tick": 14400
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 5,
+              "tick": 18000
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 6,
+              "tick": 21600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 7,
+              "tick": 25200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 8,
+              "tick": 28800
+            }
+          ],
+          "modeled_customer_outage_hours": 36.0,
+          "release_100_hours": 8.0,
+          "release_50_hours": 4.0,
+          "release_90_hours": 8.0,
+          "release_ticks": {
+            "syn-group-0": 3600,
+            "syn-group-1": 7200,
+            "syn-group-2": 10800,
+            "syn-group-3": 14400,
+            "syn-group-4": 18000,
+            "syn-group-5": 21600,
+            "syn-group-6": 25200,
+            "syn-group-7": 28800
+          },
+          "restricted_horizon_customer_hours": 36.0,
+          "small_group_customers": 8,
+          "small_group_mean_wait_hours": 4.5,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 4.0,
+          "weighted_p95_hours": 8.0
+        },
+        "policy": "restoration-cpsat-v1",
+        "returned_source": "solver",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      }
+    ],
+    "scenario": "syn-micro-chain-eight"
+  },
+  {
+    "best_of_four_policy": "customer-count-v1",
+    "input_fingerprint": "611c66b9b8fa908c18a99e7a9229dfd5e9498087e911ad7bb8bc64a751140e67",
+    "result_fingerprint": "89597eca9fde0f54a8d47d921bd9326ac2ccf8a3e8ae300c60ee7ddc5d7c5457",
+    "results": [
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 1.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 3.0,
+            "syn-branch-1": 3.0,
+            "syn-branch-2": 4.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": 4.0,
+          "horizon_hours": 168,
+          "known_release_customers": 6,
+          "makespan_hours": 4.0,
+          "maximum_wait_hours": 4.0,
+          "milestones": [
+            {
+              "additional_customers": 5,
+              "cumulative_customers": 5,
+              "tick": 10800
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 6,
+              "tick": 14400
+            }
+          ],
+          "modeled_customer_outage_hours": 19.0,
+          "release_100_hours": 4.0,
+          "release_50_hours": 3.0,
+          "release_90_hours": 4.0,
+          "release_ticks": {
+            "syn-group-0": 10800,
+            "syn-group-1": 10800,
+            "syn-group-2": 14400
+          },
+          "restricted_horizon_customer_hours": 19.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": 3.1666666666666665,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 3.0,
+          "weighted_p95_hours": 4.0
+        },
+        "policy": "fifo-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: regression versus fixed baseline",
+          "restricted_horizon_customer_hours: regression versus fixed baseline",
+          "makespan_hours: improvement versus fixed baseline",
+          "weighted_p95_hours: improvement versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: regression versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 2.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 4.0,
+            "syn-branch-1": 2.0,
+            "syn-branch-2": 3.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": 4.0,
+          "horizon_hours": 168,
+          "known_release_customers": 6,
+          "makespan_hours": 4.0,
+          "maximum_wait_hours": 4.0,
+          "milestones": [
+            {
+              "additional_customers": 3,
+              "cumulative_customers": 3,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 4,
+              "tick": 10800
+            },
+            {
+              "additional_customers": 2,
+              "cumulative_customers": 6,
+              "tick": 14400
+            }
+          ],
+          "modeled_customer_outage_hours": 17.0,
+          "release_100_hours": 4.0,
+          "release_50_hours": 2.0,
+          "release_90_hours": 4.0,
+          "release_ticks": {
+            "syn-group-0": 14400,
+            "syn-group-1": 7200,
+            "syn-group-2": 10800
+          },
+          "restricted_horizon_customer_hours": 17.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": 2.8333333333333335,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 2.0,
+          "weighted_p95_hours": 4.0
+        },
+        "policy": "customer-count-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: improvement versus fixed baseline",
+          "restricted_horizon_customer_hours: improvement versus fixed baseline",
+          "makespan_hours: improvement versus fixed baseline",
+          "weighted_p95_hours: improvement versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: improvement versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 3.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 2.0,
+            "syn-branch-2": 2.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 6,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 4,
+              "cumulative_customers": 4,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 2,
+              "cumulative_customers": 6,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 18.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 2.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 7200,
+            "syn-group-2": 7200
+          },
+          "restricted_horizon_customer_hours": 18.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": 3.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 2.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "legacy-release-per-person-hour-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 3.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 2.0,
+            "syn-branch-2": 2.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 6,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 4,
+              "cumulative_customers": 4,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 2,
+              "cumulative_customers": 6,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 18.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 2.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 7200,
+            "syn-group-2": 7200
+          },
+          "restricted_horizon_customer_hours": 18.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": 3.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 2.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "legacy-critical-proxy-first-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 2.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 4.0,
+            "syn-branch-1": 2.0,
+            "syn-branch-2": 3.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": 4.0,
+          "horizon_hours": 168,
+          "known_release_customers": 6,
+          "makespan_hours": 4.0,
+          "maximum_wait_hours": 4.0,
+          "milestones": [
+            {
+              "additional_customers": 3,
+              "cumulative_customers": 3,
+              "tick": 7200
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 4,
+              "tick": 10800
+            },
+            {
+              "additional_customers": 2,
+              "cumulative_customers": 6,
+              "tick": 14400
+            }
+          ],
+          "modeled_customer_outage_hours": 17.0,
+          "release_100_hours": 4.0,
+          "release_50_hours": 2.0,
+          "release_90_hours": 4.0,
+          "release_ticks": {
+            "syn-group-0": 14400,
+            "syn-group-1": 7200,
+            "syn-group-2": 10800
+          },
+          "restricted_horizon_customer_hours": 17.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": 2.8333333333333335,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 2.0,
+          "weighted_p95_hours": 4.0
+        },
+        "policy": "restoration-cpsat-v1",
+        "returned_source": "solver",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: improvement versus fixed baseline",
+          "restricted_horizon_customer_hours: improvement versus fixed baseline",
+          "makespan_hours: improvement versus fixed baseline",
+          "weighted_p95_hours: improvement versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: improvement versus fixed baseline"
+        ]
+      }
+    ],
+    "scenario": "syn-micro-two-crews"
+  },
+  {
+    "best_of_four_policy": "customer-count-v1",
+    "input_fingerprint": "3ecb885f490aa2cbab89455abbb887ca15cc639af2e98c1903ce3e5af8fdbac0",
+    "result_fingerprint": "898f678032d08d39c4ace4cb65aa18e78a155ecbefb9ac236bc5c1b5e538f350",
+    "results": [
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": null
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 0,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": null,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": null
+          },
+          "restricted_horizon_customer_hours": 1008.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 6,
+          "unresolved_customers": 6,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "fifo-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": null
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 0,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": null,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": null
+          },
+          "restricted_horizon_customer_hours": 1008.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 6,
+          "unresolved_customers": 6,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "customer-count-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": null
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 0,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": null,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": null
+          },
+          "restricted_horizon_customer_hours": 1008.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 6,
+          "unresolved_customers": 6,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "legacy-release-per-person-hour-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": null
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 0,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": null,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": null
+          },
+          "restricted_horizon_customer_hours": 1008.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 6,
+          "unresolved_customers": 6,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "legacy-critical-proxy-first-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      },
+      {
+        "fallback_reason": "no_executable_tasks",
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": null
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 6,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 0,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": null,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": null
+          },
+          "restricted_horizon_customer_hours": 1008.0,
+          "small_group_customers": 6,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 6,
+          "unresolved_customers": 6,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "restoration-cpsat-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      }
+    ],
+    "scenario": "syn-micro-blocked"
+  },
+  {
+    "best_of_four_policy": "customer-count-v1",
+    "input_fingerprint": "5957c2cea6a91f330ce2d710146032a214a1f7bddc0d1a59b27680bcc796512d",
+    "result_fingerprint": "09e1dcba3550d765c1dd457b759211ff1b116152d392de4c88fc55baa56c7913",
+    "results": [
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 5,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [
+            {
+              "additional_customers": 3,
+              "cumulative_customers": 3,
+              "tick": 3600
+            }
+          ],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": 1.0,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 339.0,
+          "small_group_customers": 5,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 2,
+          "unresolved_customers": 2,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "fifo-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 5,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [
+            {
+              "additional_customers": 3,
+              "cumulative_customers": 3,
+              "tick": 3600
+            }
+          ],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": 1.0,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 339.0,
+          "small_group_customers": 5,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 2,
+          "unresolved_customers": 2,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "customer-count-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 5,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [
+            {
+              "additional_customers": 3,
+              "cumulative_customers": 3,
+              "tick": 3600
+            }
+          ],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": 1.0,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 339.0,
+          "small_group_customers": 5,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 2,
+          "unresolved_customers": 2,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "legacy-release-per-person-hour-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 5,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [
+            {
+              "additional_customers": 3,
+              "cumulative_customers": 3,
+              "tick": 3600
+            }
+          ],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": 1.0,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 339.0,
+          "small_group_customers": 5,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 2,
+          "unresolved_customers": 2,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "legacy-critical-proxy-first-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": null,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": null,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {},
+          "customers": 5,
+          "full_customer_release_hours": null,
+          "horizon_hours": 168,
+          "known_release_customers": 3,
+          "makespan_hours": null,
+          "maximum_wait_hours": null,
+          "milestones": [
+            {
+              "additional_customers": 3,
+              "cumulative_customers": 3,
+              "tick": 3600
+            }
+          ],
+          "modeled_customer_outage_hours": null,
+          "release_100_hours": null,
+          "release_50_hours": 1.0,
+          "release_90_hours": null,
+          "release_ticks": {
+            "syn-group-0": null,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 339.0,
+          "small_group_customers": 5,
+          "small_group_mean_wait_hours": null,
+          "unreleased_customers_at_horizon": 2,
+          "unresolved_customers": 2,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": null,
+          "weighted_p95_hours": null
+        },
+        "policy": "restoration-cpsat-v1",
+        "returned_source": "solver",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: unavailable comparison",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: unavailable comparison",
+          "weighted_p95_hours: unavailable comparison",
+          "branch_mean_disparity_hours: unavailable comparison",
+          "small_group_mean_wait_hours: unavailable comparison"
+        ]
+      }
+    ],
+    "scenario": "syn-micro-unknown"
+  },
+  {
+    "best_of_four_policy": "legacy-critical-proxy-first-adapter-v1",
+    "input_fingerprint": "57d8955defd3ff285e6152581a5f60874da32551f0f75660220bf8206ee5490c",
+    "result_fingerprint": "ac65a87b9beeae39da0bab1daece5d1453f6c0c0b327c8fdb619f71088fd1a30",
+    "results": [
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 1.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 200.0,
+            "syn-branch-1": 201.0
+          },
+          "censored_customers": 2,
+          "critical_service_latency_hours": {},
+          "customers": 2,
+          "full_customer_release_hours": 201.0,
+          "horizon_hours": 168,
+          "known_release_customers": 2,
+          "makespan_hours": 201.0,
+          "maximum_wait_hours": 201.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 720000
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 723600
+            }
+          ],
+          "modeled_customer_outage_hours": 401.0,
+          "release_100_hours": 201.0,
+          "release_50_hours": 200.0,
+          "release_90_hours": 201.0,
+          "release_ticks": {
+            "syn-group-0": 720000,
+            "syn-group-1": 723600
+          },
+          "restricted_horizon_customer_hours": 336.0,
+          "small_group_customers": 2,
+          "small_group_mean_wait_hours": 200.5,
+          "unreleased_customers_at_horizon": 2,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 200.0,
+          "weighted_p95_hours": 201.0
+        },
+        "policy": "fifo-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: regression versus fixed baseline",
+          "restricted_horizon_customer_hours: regression versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: regression versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 1.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 200.0,
+            "syn-branch-1": 201.0
+          },
+          "censored_customers": 2,
+          "critical_service_latency_hours": {},
+          "customers": 2,
+          "full_customer_release_hours": 201.0,
+          "horizon_hours": 168,
+          "known_release_customers": 2,
+          "makespan_hours": 201.0,
+          "maximum_wait_hours": 201.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 720000
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 723600
+            }
+          ],
+          "modeled_customer_outage_hours": 401.0,
+          "release_100_hours": 201.0,
+          "release_50_hours": 200.0,
+          "release_90_hours": 201.0,
+          "release_ticks": {
+            "syn-group-0": 720000,
+            "syn-group-1": 723600
+          },
+          "restricted_horizon_customer_hours": 336.0,
+          "small_group_customers": 2,
+          "small_group_mean_wait_hours": 200.5,
+          "unreleased_customers_at_horizon": 2,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 200.0,
+          "weighted_p95_hours": 201.0
+        },
+        "policy": "customer-count-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: regression versus fixed baseline",
+          "restricted_horizon_customer_hours: regression versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: regression versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 200.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 201.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 1,
+          "critical_service_latency_hours": {},
+          "customers": 2,
+          "full_customer_release_hours": 201.0,
+          "horizon_hours": 168,
+          "known_release_customers": 2,
+          "makespan_hours": 201.0,
+          "maximum_wait_hours": 201.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 723600
+            }
+          ],
+          "modeled_customer_outage_hours": 202.0,
+          "release_100_hours": 201.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 201.0,
+          "release_ticks": {
+            "syn-group-0": 723600,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 169.0,
+          "small_group_customers": 2,
+          "small_group_mean_wait_hours": 101.0,
+          "unreleased_customers_at_horizon": 1,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 201.0
+        },
+        "policy": "legacy-release-per-person-hour-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 200.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 201.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 1,
+          "critical_service_latency_hours": {},
+          "customers": 2,
+          "full_customer_release_hours": 201.0,
+          "horizon_hours": 168,
+          "known_release_customers": 2,
+          "makespan_hours": 201.0,
+          "maximum_wait_hours": 201.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 723600
+            }
+          ],
+          "modeled_customer_outage_hours": 202.0,
+          "release_100_hours": 201.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 201.0,
+          "release_ticks": {
+            "syn-group-0": 723600,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 169.0,
+          "small_group_customers": 2,
+          "small_group_mean_wait_hours": 101.0,
+          "unreleased_customers_at_horizon": 1,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 201.0
+        },
+        "policy": "legacy-critical-proxy-first-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 200.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 201.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 1,
+          "critical_service_latency_hours": {},
+          "customers": 2,
+          "full_customer_release_hours": 201.0,
+          "horizon_hours": 168,
+          "known_release_customers": 2,
+          "makespan_hours": 201.0,
+          "maximum_wait_hours": 201.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 2,
+              "tick": 723600
+            }
+          ],
+          "modeled_customer_outage_hours": 202.0,
+          "release_100_hours": 201.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 201.0,
+          "release_ticks": {
+            "syn-group-0": 723600,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 169.0,
+          "small_group_customers": 2,
+          "small_group_mean_wait_hours": 101.0,
+          "unreleased_customers_at_horizon": 1,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 201.0
+        },
+        "policy": "restoration-cpsat-v1",
+        "returned_source": "solver",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline"
+        ]
+      }
+    ],
+    "scenario": "syn-micro-censored"
+  },
+  {
+    "best_of_four_policy": "customer-count-v1",
+    "input_fingerprint": "5a2396cb2fe70f47807ed89d64de461e80e34f2644d7c4ff0c2bf8fcaedb19e3",
+    "result_fingerprint": "b276551a622c67185cf12083eba0dd02518f95f470bd638512c1ccf68804e96e",
+    "results": [
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 1.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 4.0,
+            "syn-branch-1": 5.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {
+            "syn-group-0": 4.0
+          },
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 14400
+            },
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 54.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 5.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 14400,
+            "syn-group-1": 18000
+          },
+          "restricted_horizon_customer_hours": 54.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 4.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 5.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "fifo-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: regression versus fixed baseline",
+          "restricted_horizon_customer_hours: regression versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: improvement versus fixed baseline",
+          "Critical syn-group-0: improvement"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 4.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {
+            "syn-group-0": 5.0
+          },
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 10,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 15.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 1.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 15.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 5.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "customer-count-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline",
+          "Critical syn-group-0: tie"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 4.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {
+            "syn-group-0": 5.0
+          },
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 10,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 15.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 1.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 15.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 5.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "legacy-release-per-person-hour-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline",
+          "Critical syn-group-0: tie"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 1.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 4.0,
+            "syn-branch-1": 5.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {
+            "syn-group-0": 4.0
+          },
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 1,
+              "tick": 14400
+            },
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 54.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 5.0,
+          "release_90_hours": 5.0,
+          "release_ticks": {
+            "syn-group-0": 14400,
+            "syn-group-1": 18000
+          },
+          "restricted_horizon_customer_hours": 54.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 4.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 5.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "legacy-critical-proxy-first-adapter-v1",
+        "returned_source": "baseline",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: regression versus fixed baseline",
+          "restricted_horizon_customer_hours: regression versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: improvement versus fixed baseline",
+          "Critical syn-group-0: improvement"
+        ]
+      },
+      {
+        "fallback_reason": null,
+        "metrics": {
+          "branch_mean_disparity_hours": 4.0,
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5.0,
+            "syn-branch-1": 1.0
+          },
+          "censored_customers": 0,
+          "critical_service_latency_hours": {
+            "syn-group-0": 5.0
+          },
+          "customers": 11,
+          "full_customer_release_hours": 5.0,
+          "horizon_hours": 168,
+          "known_release_customers": 11,
+          "makespan_hours": 5.0,
+          "maximum_wait_hours": 5.0,
+          "milestones": [
+            {
+              "additional_customers": 10,
+              "cumulative_customers": 10,
+              "tick": 3600
+            },
+            {
+              "additional_customers": 1,
+              "cumulative_customers": 11,
+              "tick": 18000
+            }
+          ],
+          "modeled_customer_outage_hours": 15.0,
+          "release_100_hours": 5.0,
+          "release_50_hours": 1.0,
+          "release_90_hours": 1.0,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 3600
+          },
+          "restricted_horizon_customer_hours": 15.0,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 5.0,
+          "unreleased_customers_at_horizon": 0,
+          "unresolved_customers": 0,
+          "version": "benchmark-metrics-v1",
+          "weighted_median_hours": 1.0,
+          "weighted_p95_hours": 5.0
+        },
+        "policy": "restoration-cpsat-v1",
+        "returned_source": "solver",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline",
+          "Critical syn-group-0: tie"
+        ]
+      }
+    ],
+    "scenario": "syn-micro-critical"
+  }
+]

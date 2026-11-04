@@ -16,7 +16,7 @@ or AI provider. Missing/corrupt fixtures withhold startup; no source fallback ex
 Every definition has a revision, evidence lineage and canonical input fingerprint.
 Incomplete dependencies and blocked clearance stay unavailable.
 
-The API remains **catalog-only**. Phase 6 adds a separate fictional preparedness frontend described below.
+The mode-selected API remains **catalog-only**. Phase 6 adds a separate fictional preparedness frontend described below; Phase 7 adds an explicitly selected operator composition entrypoint.
 The original dashboard still requires challenge-local mode. Numerical v2 routes and hosting remain separately gated work. One mode is
 selected per process; no second service or database is introduced.
 
@@ -145,3 +145,27 @@ worker: use the production preview commands in [G6](planning/V1_1_0_PHASE6.md).
 
 Checksums are integrity controls, not authentication against same-origin compromise.
 No hosting/deployment or history-exposure remediation is included.
+
+## Phase 7 fictional operator review boundary
+
+`backend.operator_api:app` composes the existing synthetic catalog and three bounded
+operator routes in one FastAPI service. It preserves `backend.runtime`, challenge
+endpoints and the historical G1 catalog-only archive. `/operator/` is a separate Vite
+entry linked from the restoration decision page, with G6 styling and no transferred
+source scenario. No database, provider, solver execution or second service is required.
+
+`backend/review_contracts.py` centralizes operator contracts while reusing the unchanged
+benchmark schemas. This avoids a circular import through their shared primitives in
+`backend/contracts.py`. The type exporter includes these schemas; existing contracts
+remain intact. A hash-pinned eight-case fictional catalog feeds `backend/review.py`.
+Every comparison/export recomputes all four G2 baselines and independently validates
+schedules/metrics. Optional G3 schedules are frozen references, supported only without
+overrides. No CP-SAT default promotion or detailed G5 interval display occurs.
+
+Request/result fingerprints bind the scenario, additional precedence, versions and
+policy. Review requires explicit acknowledgements and structured reasons. Browser
+cancellation/revision checks discard obsolete responses. State stays in memory;
+explicit downloads contain a sanitized JSON record and readable summary. The independent
+`scripts/replay_review.py` entrypoint revalidates/recomputes from the pinned inputs.
+Checksums are not authenticated review signatures. G6's scoped worker excludes the
+operator entry and API. See [G7](planning/V1_1_0_PHASE7.md) for exact schemas and limits.

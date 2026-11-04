@@ -96,3 +96,6 @@ is claimed, and no API/UI integration is included.
 
 [Phase 6 / G6 packet](planning/V1_1_0_PHASE6.md) covers fictional power paths, strict
 snapshot storage, scoped offline caching, reproduction commands and accessibility limits.
+
+- [Phase 7 operator review packet](planning/V1_1_0_PHASE7.md): fictional comparisons,
+  structured overrides, review/export and replay; implementation awaits independent G7 approval.

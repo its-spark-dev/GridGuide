@@ -85,7 +85,20 @@ See the [G5 packet](planning/V1_1_0_PHASE5.md). G5 was accepted and merged at `9
 | Declared customer dependencies | Python-prepared states, ordered interactive paths, shared selection | Six fictional definitions only; no geographic inference |
 | Bounded persistence | Exact schema plus build-approved content digests; fault/cross-tab tests | One historical fictional frame; no authenticated record |
 | Offline preparedness | Scoped integrity-pinned shell; real process restart with network denied | Browser eviction and storage policy remain outside app control |
-| Accessibility | Native semantics, mobile/reduced-motion and axe audits | Manual assistive-technology review pending; no WCAG certification |
+| Accessibility | Native semantics, mobile/reduced-motion, axe audits and human-reported passes accepted by owner | Detailed manual speech/focus/environment unknown; no WCAG certification |
 | Preservation | Full applicable regressions and frozen-artifact checks | No new model or G5 empirical validation |
 
-[G6 packet](planning/V1_1_0_PHASE6.md) records exact results and outstanding review gates.
+[G6 packet](planning/V1_1_0_PHASE6.md) records owner acceptance and limitations; merged at `a5d17ab`.
+
+## Phase 7 / G7 additions
+
+| Requirement | Evidence | Limit |
+|---|---|---|
+| Identical-input comparisons | Four recomputed G2 policies, independent structural/metric validation | Eight unchanged fictional microcases, not a new performance evaluation |
+| Experimental transparency | Pinned G3 result, best-of-four reference, solver/fallback provenance and tradeoffs | Fixed baseline remains default; no fresh optimization or G5 intervals |
+| Structured overrides | Bound scenario/revision, maximum 16 edges, identity/duplicate/cycle/crew checks | No arbitrary graph, effort, clearance or evidence edits |
+| Human review | Five explicit acknowledgements, reason enums, response cancellation/invalidation | Session-local demonstration, no authenticated identity |
+| Export/replay | Exact fictional inputs, canonical hashes, source-free CLI and rehashed-tampering tests | Integrity/internal consistency, not signatures or proof of human attention |
+| UI/privacy | Real service/browser tests, explicit download, zero serious/critical axe findings | Chromium only; optional manual G7 observations unknown |
+
+[G7 packet](planning/V1_1_0_PHASE7.md) records implementation and independent review checklist.

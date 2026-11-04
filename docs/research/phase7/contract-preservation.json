@@ -1,0 +1,10 @@
+{
+  "base": "a5d17abad366e5ca41df35f46a687c0d6fbb8bf8",
+  "original_paths_unchanged": 10,
+  "original_schemas_unchanged": 70,
+  "new_operator_paths": [
+    "/api/v2/operator/compare",
+    "/api/v2/operator/review-export",
+    "/api/v2/operator/scenarios"
+  ]
+}

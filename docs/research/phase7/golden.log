@@ -1,0 +1,16 @@
+Customer: demo-a (Demo location A; approximate location)
+Verified upstream path: customer → Distribution → Fuse → Circuit Breaker
+Risk: HIGH; predictive confidence: LOW; not a probability
+  Selected storm concern level: 2 (+2 points)
+  Serving transformer mounting: Overhead (+1 points)
+  Historical damage evidence on the verified circuit alias: True (+1 points)
+Restoration, NORMAL / clear: 2.5–12 conditional elapsed hours after crew response begins
+  Repair effort: 11.736 person-hours; total with access: 11.736; crew: 4 people
+Restoration, RESTRICTED: 4–16.5 conditional elapsed hours after crew response begins
+  Repair effort: 11.736 person-hours; total with access: 16.236; crew: 4 people
+Restoration, BLOCKED: unavailable (pending_clearance: access_clearance_time)
+  Repair effort: 11.736 person-hours; total with access: None; crew: 4 people
+Why changed: Access changed from clear to restricted across 2 modeled worksites. Total labor effort changes from 11.736 to 16.236 person-hours after one 4.5 multiplier. The conditional outlook is 4–16.5 elapsed hours. Actual crew efficiency is unknown; the single-effective-worker boundary is a scenario, not a guaranteed completion limit. Risk is unchanged.
+Why changed: Access is blocked. Clearance time is unknown, so the finite restoration range is withdrawn. Crew size cannot resolve unknown clearance. Risk is unchanged.
+Scope: simulated replacement of listed components; no live outage or AEP ETR.
+Units: AEP direct labor × 4.5 = total person-hours, not elapsed time. Actual crew efficiency is unknown; the ideal-to-single-effective-worker envelope is a prototype policy.

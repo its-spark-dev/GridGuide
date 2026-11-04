@@ -1,0 +1,76 @@
+{
+  "additional_checks": [
+    "four original source SHA256 pins",
+    "66 G5 and 10 G6 package hashes",
+    "protected-path diff against base",
+    "v1.0.0 tag and peeled commit",
+    "all 10 previous API paths and 70 schemas identical",
+    "operator catalog pinned extraction (test)",
+    "G1 allowlisted/source-free extraction and G6 frame regeneration (full suite)"
+  ],
+  "base_sha": "a5d17abad366e5ca41df35f46a687c0d6fbb8bf8",
+  "browser_coverage": "Chromium/Google Chrome only",
+  "browser_versions": {
+    "axe": "4.14.0",
+    "browser": "Google Chrome 156.0.8078.80",
+    "playwright": "1.64.1"
+  },
+  "demo_artifacts": "Programmatically generated examples and browser automation, not human acceptance records",
+  "executed_commands": [
+    "GRIDGUIDE_AI_PROVIDER=none .venv/bin/python -m unittest discover -s tests -q",
+    "npm --prefix frontend test",
+    "cd frontend && npx playwright test -c playwright.preparedness.config.ts",
+    "npm --prefix frontend run build",
+    "npm --prefix frontend run types:generate (byte comparison)",
+    ".venv/bin/python -m backend.demo",
+    ".venv/bin/python scripts/run_legacy_benchmark.py --output <new-file>",
+    ".venv/bin/python scripts/evaluate_risk_feasibility.py --output <new-file> (byte comparison)",
+    ".venv/bin/python scripts/replay_review.py docs/research/phase7/critical-review.json",
+    ".venv/bin/python scripts/replay_review.py docs/research/phase7/override-review.json",
+    ".venv/bin/python -m pip check"
+  ],
+  "g5_integration": "deferred; no intervals or simulation endpoint",
+  "g5_numerical_rerun": false,
+  "implementation_sha": "f0bf1fa735dff2ae315fe85cce7bd873882ee05f",
+  "limitations": [
+    "same installed environment source-free replay, not fresh dependency provisioning or cross-platform certification",
+    "eight fictional G2 microcases only",
+    "optional G3 result frozen-only; precedence overrides unsupported",
+    "hashes not signatures or authenticated reviewer proof",
+    "no deployment or production security certification",
+    "G6 missing detailed manual observations remain accepted limitations"
+  ],
+  "manual_voiceover": "unknown; not executed or claimed for G7",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "preparedness_cache_manifest": {
+    "allowlist": {
+      "/assets/Icon-B4OgTZhq.js": "ccfb4b570246b83fde42d80794efbb8ed4c6eb209f041c861b94e9caf82d373f",
+      "/assets/index-DQixFbc1.js": "8a34b1605d59c050b8535054eb5953706eeea543a005f261e4412c8f8fee1916",
+      "/assets/preparedness-DnkvoupK.css": "58c413a0e0ac7c5f03d27ffa8b18de3563fbdaaada7621e0f18a23bc7889aa0b",
+      "/assets/preparedness-DsYuGLep.js": "5adb996e5d4a3324ccebab9d123cffd6d1a6c713a77663520e2fea4acc9cf3d4",
+      "/preparedness/": "346318a6750a444b4bc710d7c35006793f99a44dc068ffd7c48cabedc85cc8d3",
+      "/preparedness/index.html": "346318a6750a444b4bc710d7c35006793f99a44dc068ffd7c48cabedc85cc8d3",
+      "/preparedness/kit.txt": "59d2495409da5ef444fad71fd2936b16ae1186a0a96844e0382884b33e97004f"
+    },
+    "version": "5299a8c7be3a1204a81a"
+  },
+  "prior_failed_test": {
+    "cause": "assertion named syn-task-1 rather than unchanged unknown task syn-task-0",
+    "final_result": "20 production browser tests passed",
+    "fix": "test assertion only; no fixture or model changed",
+    "test": "late comparison and changed rationale"
+  },
+  "python": "3.12.14",
+  "recorded_at_utc": "2026-11-04T01:56:21.841321+00:00",
+  "tests": {
+    "axe_serious_critical": 0,
+    "existing_browser": 49,
+    "legacy_cases": 24,
+    "new_operator_browser": 7,
+    "new_operator_python": 15,
+    "production_browser": 20,
+    "python": 342,
+    "retained_g6_browser": 13
+  },
+  "version": "g7-verification-v1"
+}

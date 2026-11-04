@@ -1,0 +1,23 @@
+GridGuide — Reviewed in demo; fictional decision support
+Scenario: syn-micro-weighted / scenario revision 1 / request revision 1
+Input: dbbbbb15ac7ffe3de43d6106f587e684aa9f8db938569c373d8bf94ceedf4733
+Catalog: 15a7c313cb2c91176abdb09232a7848b75ee08d515533808b62ead9c6e532f29
+Versions: operator-comparison-v1 / operator-evidence-v1 / benchmark-metrics-v1
+Recommended: legacy-release-per-person-hour-adapter-v1
+Selected: fifo-v1
+Reason: demonstration-comparison
+Per-instance best-of-four reference: customer-count-v1
+Reviewed at: 2026-11-04T01:50:15.290867Z
+Result: 4ee34db1b208c017dc7a18d158fbb47b3eec44d24ee81cfe62b912667cb07278
+Completed modeled customer-hours: 54.0
+Restricted 168-hour customer-hours: 54.0
+Unresolved customers: 0; censored: 0
+modeled_customer_outage_hours: tie versus fixed baseline
+restricted_horizon_customer_hours: tie versus fixed baseline
+makespan_hours: tie versus fixed baseline
+weighted_p95_hours: tie versus fixed baseline
+branch_mean_disparity_hours: tie versus fixed baseline
+small_group_mean_wait_hours: tie versus fixed baseline
+Null/None means unavailable, not zero. Conditional fiction, not utility confirmation.
+Checksums detect content changes; they do not authenticate reviewer identity or prevent malicious rewriting.
+Artifact SHA256: a01f7abac5aad905e540f3367ea0f50dd8875bbc28e91d55c5c08b010e03deb1
