@@ -1,160 +1,103 @@
 # GridGuide
 
-**Explainable storm outage scenarios, from network evidence to customer preparation.**
+**Inspect dependencies. Compare restoration policies. Prepare for an outage.**
 
-GridGuide helps customers explore storm outage scenarios and prepare for disruption. Built by three teammates for the **AEP AI Outage Concierge Challenge at HackOHI/O 2026**, it connects validated network dependencies, transparent repair calculations, and interactive maps.
+GridGuide is an evidence-driven restoration decision-support portfolio project, originating
+as a three-person **AEP AI Outage Concierge Challenge** entry at **HackOHI/O 2026**.
+The **v1.1.0 release candidate** adds a self-contained fictional demonstration that runs
+without challenge data, provider credentials or an internet connection after installation.
+It is a research demonstration—not a utility service, dispatch tool or live outage feed.
 
-Python owns numerical results. Optional AI selects supporting evidence; the server renders every explanation.
+![Fictional power-path inspection in the actual release candidate](docs/media/v1.1.0/02-path.png)
 
-![GridGuide Customer Overview with an anonymous demo location, storm concern, a conditional restoration range, and preparation actions](docs/media/v1.0.0/overview.png)
-
-*Authentic application capture from November 3, 2026. This is a modeled scenario, not live outage status or a utility-confirmed restoration estimate.*
-
-[Walkthrough](#product-walkthrough) · [Architecture](#architecture) · [Run locally](#getting-started) · [Technical docs](docs/README.md) · [v1.0.0 release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0)
-
-## What you can explore
-
-- **Understand the outlook.** Inspect a storm concern band, its evidence, and how crew size or access changes a conditional restoration range.
-- **Compare repair priorities.** Explore two transparent policies over four repair candidates, with dependency-aware schedules for one or two crews.
-- **Prepare for disruption.** Review guidance, optional session-only support declarations, and four communication previews.
-- **Trace the reasoning.** Follow generalized maps and source dependencies into explanations that remain available without external AI.
+[Demonstration](docs/media/v1.1.0/README.md) · [Quick start](#quick-start) ·
+[Evidence report](docs/benchmarks/v1.1.0.md) · [Reproduce it](docs/REPRODUCING_V1_1.md) ·
+[Release-candidate notes](docs/releases/v1.1.0.md)
 
 ## Product walkthrough
 
-**1. Start with the customer outlook.** Overview shows one vetted anonymous location, uncertainty, and a next action. Changing crew size or access updates the scenario; blocked access withholds a completion time.
+- **Understand a fictional power path.** Inspect declared dependencies and prepared repair
+  milestones. Completed, blocked and unresolved states remain distinct; unknown completion
+  never becomes a finite restoration estimate.
+- **Compare policies fairly.** Eight operator examples compare FIFO, customer-count,
+  release/person-hour and critical-proxy-first under identical assumptions. Python owns
+  calculations; an independent validator checks schedules and customer release.
+- **Review the tradeoff.** Add a bounded precedence constraint, inspect recomputed results,
+  acknowledge limitations and export JSON plus a readable summary. Replay the JSON locally.
+  Changed settings invalidate review. Checksums verify consistency, not reviewer identity.
+- **Prepare offline.** Explicitly install generic safety guidance and save a non-sensitive
+  fictional snapshot. It stays timestamped and historical. Browser restart without network
+  is supported; operator calculation still requires Python. Storage can be evicted.
 
-**2. Prepare and preview updates.** The preparation view adapts guidance to optional declarations. These do not change risk or repair priority. Communication examples are hypothetical; nothing is sent.
+![Policy comparison and its critical-service tradeoff](docs/media/v1.1.0/06-tradeoff.png)
 
-<details>
-<summary>View preparation and communication screens</summary>
+The public demo uses independently authored fictional inputs, not anonymized customer
+records. The original challenge-local map, ordinal concern band, conditional labor model,
+optional grounded explanations and communication previews remain preserved separately.
+That original journey requires authorized pinned challenge sources; see the
+[v1.0.0 release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0).
 
-![Preparation checklist, safety guidance, and optional declarations](docs/media/v1.0.0/preparation.png)
+## Engineering and research
 
-![Hypothetical outage-confirmed message labeled Preview only and Not sent](docs/media/v1.0.0/communication-preview.png)
+One **FastAPI/Python** service owns numerical rules and validation; **React/TypeScript**
+renders version-bound results. No database or browser numerical engine is required.
+The source-free distribution uses an explicit allowlist, pinned dependency hashes,
+nonroot container, production browser tests and public CI. Original data and external
+AI are excluded. [Architecture](docs/ARCHITECTURE.md) · [Model specification](docs/MODEL_SPEC.md).
 
-</details>
+The strongest fixed **release/person-hour baseline remains the default**. Optional CP-SAT
+is a validated frozen experiment: the preregistered **5% median promotion target failed**.
+Combined best-of-four plus CP-SAT achieved 0.351% mean improvement versus fixed, while
+incremental improvement beyond best-of-four was 0.174%; these are not additive. Secondary
+critical-service and fairness regressions remain visible.
 
-**3. Inspect the repair tradeoff.** Grid Insights compares critical-service-aware and customer-impact-focused policies, then connects the recommendation to source evidence and crew assignments.
+Prediction research concluded an evidence-bounded **No-Go**, not universal infeasibility.
+No validated household outage probability was produced. Offline simulation reports
+preserve **195 stable and 15 unstable** convergence combinations under synthetic assumptions;
+no empirically calibrated restoration confidence or detailed simulation UI is claimed.
+[Complete results, denominators and limitations](docs/benchmarks/v1.1.0.md).
 
-![Grid Insights comparing one and 23 potential premise releases under two prototype policies](docs/media/v1.0.0/grid-insights.png)
+## Quick start
 
-For equal modeled repair effort, one policy starts with a repair serving **one premise** near a critical facility; the other starts with a historical replay serving **23 premises**. The facility relationship is a spatial proxy, and the historical damage match is a hypothesis. These are potential dependency releases under GridGuide policies, not confirmed restorations or AEP dispatch rules.
-
-<details>
-<summary>View map evidence and crew assignment</summary>
-
-![Historical fuse evidence and crew assignment with generalized AEP source areas over the OpenStreetMap basemap](docs/media/v1.0.0/evidence.png)
-
-Separate crews can work on independent branches; an upstream fuse still gates its transformer. The map preserves generalized source areas and OpenStreetMap attribution.
-
-</details>
-
-[Screenshot provenance](docs/media/v1.0.0/README.md) · [Detailed decision model](docs/Q2_Q4_DECISION_SUPPORT.md)
-
-## Architecture
-
-```mermaid
-flowchart TB
-    source["Pinned AEP challenge files: GIS, topology, labor, historical damage"]
-    scenario["Scenario inputs: declared damage, storm, access, crews"]
-    subgraph backend ["One Python / FastAPI service"]
-        prepare["Startup validation and in-memory preparation"]
-        network["Verified paths and complete reverse dependencies"]
-        calculate["Deterministic risk, person-hours, time envelope and repair plan"]
-        api["Typed API and minimized public outputs"]
-        explain["Bound result validation and server-rendered explanations"]
-        prepare --> network --> calculate --> api
-        calculate --> explain
-        explain --> api
-    end
-    ui["React / TypeScript + Leaflet: outlook, scenarios, guidance and previews"]
-    ai["Optional Gemini: approved reference selection only"]
-    source --> prepare
-    scenario --> calculate
-    api --> ui
-    ui -->|"Bound explanation request"| explain
-    explain -.->|"Allowlisted clauses"| ai
-    ai -.->|"Constrained reference IDs"| explain
-```
-
-One **FastAPI** service validates pinned sources once at startup and computes versioned results. **React, TypeScript, and Leaflet** render typed API outputs; OpenAPI generates the frontend contracts. There is no database or training pipeline.
-
-The optional Gemini adapter selects approved references; server templates render every claim. Missing evidence withholds results, and stale responses are rejected. External AI and map tiles can fail while local calculations and Standard explanations remain available. APIs omit raw identifiers and precise customer/facility locations; this boundary does not anonymize the repository's source files.
-
-[Service and privacy boundaries](docs/ARCHITECTURE.md) · [AI validation and fallback](docs/AI_EXPLANATIONS.md)
-
-## Verified engineering achievements
-
-- **40,779 complete source-validated premise paths** from 117,599 indexed paths. Unresolved paths remain explicit, and incomplete asset memberships withhold impact counts.
-- **Four repair candidates with 28 unique premise dependencies.** Set unions remove overlap, while schedules preserve upstream dependencies and distinguish crew count from people per crew.
-- **194 Python tests and 49 Chrome browser tests passed** on November 3, 2026, alongside the production build, generated-type consistency, and golden CLI scenarios.
-
-These checks verify prototype behavior, not prediction accuracy or operational performance. [Verification and claim sources](docs/releases/VERIFICATION.md) · [Formulas, units, and coverage definitions](docs/MODEL_SPEC.md)
-
-## Getting started
-
-Use **Python 3.12**, **Node.js 22.12+**, and npm. Run from the repository root.
-
-### Data prerequisite
-
-The application requires four pinned challenge files, already tracked under `data/raw/`: `Data1.zip`, `Data2.zip`, `matched_upstream.zip`, and `Install_Labor_HackOHIO.xlsx`. Startup checks their [source hashes](backend/config.py) and prepares directly from the archives; no extraction or batch pipeline run is needed.
-
-Use only data you are authorized to use. There is no automatic download or synthetic substitute. Repository data contains identifying fields beyond the minimized API outputs; the [recorded data findings](docs/releases/PUBLIC_RELEASE_AUDIT.md#findings) and [third-party notices](THIRD_PARTY_NOTICES.md) describe the remaining privacy and permission boundaries.
-
-### Install and launch
+Download the inspected ZIP from the successful candidate PR's **Synthetic verification**
+CI artifact and verify its hash against the [candidate manifest](docs/research/phase9/package.json).
+This is a release candidate, not a published v1.1.0 Release. See the
+[acquisition and inspection steps](docs/REPRODUCING_V1_1.md) for exact paths and build fallback.
+From the **clean extracted package**, with Python 3.12 available:
 
 ```sh
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements-web.txt
-npm --prefix frontend ci
+python3.12 -m venv /tmp/gridguide-runtime
+/tmp/gridguide-runtime/bin/pip install --require-hashes -r deploy/requirements.lock
+PYTHONDONTWRITEBYTECODE=1 /tmp/gridguide-runtime/bin/python deploy/serve.py
 ```
 
-`requirements-web.txt` includes the pinned engine dependencies. The historical `requirements.txt` belongs to the separate batch pipeline.
+Open **http://127.0.0.1:8000/**. Keep the environment and downloaded exports outside the
+immutable package. Dependencies require network access to install; installed operation
+needs no external service. A Docker path and fully tested reproduction commands are in
+[the guide](docs/REPRODUCING_V1_1.md). Do not build the container from a broad repository copy.
 
-Terminal 1 — backend:
+## Scope and preservation
 
-```sh
-GRIDGUIDE_MODE=challenge-local GRIDGUIDE_AI_PROVIDER=none .venv/bin/python -m uvicorn backend.runtime:app --host 127.0.0.1 --port 8000
-```
+No real alerts, switching, field dispatch, arbitrary addresses, calibrated outage risk,
+new interactive CP-SAT solves, accounts or utility-confirmed ETRs. Testing covers Chromium;
+detailed manual VoiceOver observations and cross-browser behavior remain unverified.
+Known dependency dispositions, unexecuted OS CVE scanning and offline trust limitations
+are documented in the [release notes](docs/releases/v1.1.0.md). Public hosting requires a
+separate current vulnerability assessment and host-security review; no deployment or
+security certification is implied.
 
-Wait for startup preparation. Terminal 2 — frontend:
+GridGuide was built collaboratively by **three teammates** at **HackOHI/O 2026,
+October 24–25**. Original team achievements, guidance and pole-replacement work remain
+attributed and preserved in the pipeline and [contributor history](https://github.com/its-spark-dev/GridGuide/graphs/contributors).
+Individual roles are not inferred from commit counts. The last known hackathon checkpoint
+is [`bb7c53c`](https://github.com/its-spark-dev/GridGuide/commit/bb7c53ce2e0733c6770c9de631a75df094407727);
+the exact submission SHA is unconfirmed. Later v1.1 improvements are documented in their
+phased PRs; they do not reassign original teammate work.
 
-```sh
-npm --prefix frontend run dev
-```
+This is intended as the final major feature release, with reproducible artifacts preserved
+for later review and no service/support SLA. No project-wide software license has been
+selected, and challenge-data permissions remain unresolved. The source-free package does
+not remediate original records in repository history. [Third-party notices](THIRD_PARTY_NOTICES.md).
 
-Open [GridGuide locally](http://127.0.0.1:5173/). Ports 8000 and 5173 must be free. [API health](http://127.0.0.1:8000/api/health) and [interactive API docs](http://127.0.0.1:8000/docs) are available after startup. The demo supports one vetted location, not arbitrary customer addresses.
-
-For optional Gemini, see [server-side configuration](docs/GEMINI_PROVIDER.md#local-credential-and-launch-setup). The app reads process environment variables; `.env` is not loaded automatically. Missing credentials or invalid provider output use Standard explanations.
-
-### Verify
-
-```sh
-.venv/bin/python -m unittest discover -s tests -v
-.venv/bin/python -m backend.demo
-npm --prefix frontend run types:generate
-git diff --exit-code -- frontend/src/api.generated.ts
-npm --prefix frontend run build
-npm --prefix frontend test
-```
-
-Browser tests need installed **Google Chrome** and free ports **15173, 18080, and 18081**. See the [browser harness](frontend/tests/README.md) and [recorded verification environment](docs/releases/VERIFICATION.md). No GitHub Actions workflow is configured.
-
-## Limits of the prototype
-
-- Concern bands are ordinal, not calibrated outage probabilities. There is no live outage feed or utility-confirmed estimate.
-- Repair person-hours and elapsed time are distinct. The time envelope is not a confidence interval or guaranteed bound; unknown productivity and operational delays can exceed it.
-- Historical spatial matches and facility proximity do not establish current damage, facility electrical attachment, or switching feasibility.
-- One customer location and four curated repair candidates demonstrate bounded scenarios, not system-wide optimization. Communications are previews, with no notification delivery or dispatch integration.
-
-[Model assumptions](docs/MODEL_SPEC.md) · [Coverage and missing evidence](docs/REQUIREMENTS_TRACEABILITY.md) · [Remaining risks](docs/RISK_REGISTER.md)
-
-## Project background and team
-
-GridGuide was built collaboratively by **three teammates** at **HackOHI/O 2026, October 24–25**. The achievements here belong to the project as a whole. [Git contributor attribution](https://github.com/its-spark-dev/GridGuide/graphs/contributors) preserves the recorded contributions; individual roles are not inferred from commit counts.
-
-The [v1.0.0 release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0) presents the hackathon implementation with post-event documentation and authentic screenshots. [`bb7c53c`](https://github.com/its-spark-dev/GridGuide/commit/bb7c53ce2e0733c6770c9de631a75df094407727) is the last known hackathon-period checkpoint; the exact submitted SHA is unconfirmed.
-
-GridGuide is an independent prototype, without AEP endorsement or official utility deployment. No project-wide software license has been selected; see [third-party materials and license status](THIRD_PARTY_NOTICES.md).
-
-[Documentation guide](docs/README.md) · [Architecture](docs/ARCHITECTURE.md) · [Model specification](docs/MODEL_SPEC.md) · [Contributing](CONTRIBUTING.md)
+[Documentation](docs/README.md) · [Reproduction](docs/REPRODUCING_V1_1.md) ·
+[Requirements](docs/REQUIREMENTS_TRACEABILITY.md) · [Risk register](docs/RISK_REGISTER.md)

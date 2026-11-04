@@ -1,0 +1,481 @@
+{
+  "version": "operator-review-artifact-v1",
+  "comparison": {
+    "version": "operator-comparison-v1",
+    "catalog_fingerprint": "15a7c313cb2c91176abdb09232a7848b75ee08d515533808b62ead9c6e532f29",
+    "request": {
+      "version": "operator-request-v1",
+      "scenario_id": "syn-micro-critical",
+      "scenario_revision": 1,
+      "scenario_fingerprint": "5a2396cb2fe70f47807ed89d64de461e80e34f2644d7c4ff0c2bf8fcaedb19e3",
+      "revision": 2,
+      "selected_policy": "legacy-release-per-person-hour-adapter-v1",
+      "include_experimental": false,
+      "precedence": []
+    },
+    "problem": {
+      "version": "benchmark-problem-v1",
+      "id": "syn-micro-critical",
+      "revision": 1,
+      "generator_version": "benchmark-generator-v1",
+      "family": "micro",
+      "seed": 0,
+      "split": "micro",
+      "origin": "independently_authored_synthetic",
+      "response_origin": "modeled_response_start",
+      "horizon_ticks": 604800,
+      "duration_assumption": "one_effective_worker",
+      "tasks": [
+        {
+          "id": "syn-task-0",
+          "total_person_hours": "4",
+          "prerequisites": [],
+          "report_order": 0,
+          "access": "clear"
+        },
+        {
+          "id": "syn-task-1",
+          "total_person_hours": "1",
+          "prerequisites": [],
+          "report_order": 1,
+          "access": "clear"
+        }
+      ],
+      "groups": [
+        {
+          "id": "syn-group-0",
+          "customer_ids": [
+            "syn-customer-0-0"
+          ],
+          "required_tasks": [
+            "syn-task-0"
+          ],
+          "unresolved_dependency": false,
+          "branch": "syn-branch-0",
+          "critical_service": true
+        },
+        {
+          "id": "syn-group-1",
+          "customer_ids": [
+            "syn-customer-1-0",
+            "syn-customer-1-1",
+            "syn-customer-1-2",
+            "syn-customer-1-3",
+            "syn-customer-1-4",
+            "syn-customer-1-5",
+            "syn-customer-1-6",
+            "syn-customer-1-7",
+            "syn-customer-1-8",
+            "syn-customer-1-9"
+          ],
+          "required_tasks": [
+            "syn-task-1"
+          ],
+          "unresolved_dependency": false,
+          "branch": "syn-branch-1",
+          "critical_service": false
+        }
+      ],
+      "crews": [
+        {
+          "id": "syn-crew-0",
+          "available_tick": 0,
+          "people": 4
+        }
+      ],
+      "input_classification": "scenario assumption",
+      "duration_rule_classification": "prototype policy",
+      "precedence_classification": "prototype policy",
+      "missing_evidence_classification": "unavailable",
+      "actual_efficiency": null,
+      "observed_outcomes": null
+    },
+    "evidence": {
+      "version": "operator-evidence-v1",
+      "origin": "independently_authored_synthetic",
+      "topology_effort_crews": "scenario assumption",
+      "scheduling_release_rules": "prototype policy",
+      "override_precedence": "user-declared",
+      "observed_outcomes_clearance_efficiency": "unavailable"
+    },
+    "recommended_policy": "legacy-release-per-person-hour-adapter-v1",
+    "best_of_four_policy": "customer-count-v1",
+    "results": [
+      {
+        "policy": "fifo-v1",
+        "schedule": {
+          "version": "benchmark-schedule-v1",
+          "problem_fingerprint": "5a2396cb2fe70f47807ed89d64de461e80e34f2644d7c4ff0c2bf8fcaedb19e3",
+          "policy": "fifo-v1",
+          "assignments": [
+            {
+              "task_id": "syn-task-0",
+              "crew_id": "syn-crew-0",
+              "start_tick": 0,
+              "end_tick": 14400
+            },
+            {
+              "task_id": "syn-task-1",
+              "crew_id": "syn-crew-0",
+              "start_tick": 14400,
+              "end_tick": 18000
+            }
+          ],
+          "unscheduled_tasks": []
+        },
+        "metrics": {
+          "version": "benchmark-metrics-v1",
+          "customers": 11,
+          "release_ticks": {
+            "syn-group-0": 14400,
+            "syn-group-1": 18000
+          },
+          "milestones": [
+            {
+              "tick": 14400,
+              "additional_customers": 1,
+              "cumulative_customers": 1
+            },
+            {
+              "tick": 18000,
+              "additional_customers": 10,
+              "cumulative_customers": 11
+            }
+          ],
+          "modeled_customer_outage_hours": 54,
+          "restricted_horizon_customer_hours": 54,
+          "horizon_hours": 168,
+          "unresolved_customers": 0,
+          "censored_customers": 0,
+          "unreleased_customers_at_horizon": 0,
+          "known_release_customers": 11,
+          "makespan_hours": 5,
+          "full_customer_release_hours": 5,
+          "release_50_hours": 5,
+          "release_90_hours": 5,
+          "release_100_hours": 5,
+          "weighted_median_hours": 5,
+          "weighted_p95_hours": 5,
+          "maximum_wait_hours": 5,
+          "critical_service_latency_hours": {
+            "syn-group-0": 4
+          },
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 4,
+            "syn-branch-1": 5
+          },
+          "branch_mean_disparity_hours": 1,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 4
+        },
+        "feasibility": "independently_validated",
+        "origin": "recomputed_baseline",
+        "returned_source": "baseline",
+        "baseline_policy": "fifo-v1",
+        "solver_status": null,
+        "fallback_reason": null,
+        "primary_optimal": false,
+        "best_bound_ticks": null,
+        "relative_gap": null,
+        "recorded_seconds": null,
+        "timing_scope": "not_recorded",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: regression versus fixed baseline",
+          "restricted_horizon_customer_hours: regression versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: improvement versus fixed baseline",
+          "Critical syn-group-0: improvement"
+        ],
+        "explanation": "Recomputed under identical declared inputs. Customer release waits for all required repairs; unknown evidence remains unresolved. See case-level tradeoffs; no utility approval is implied."
+      },
+      {
+        "policy": "customer-count-v1",
+        "schedule": {
+          "version": "benchmark-schedule-v1",
+          "problem_fingerprint": "5a2396cb2fe70f47807ed89d64de461e80e34f2644d7c4ff0c2bf8fcaedb19e3",
+          "policy": "customer-count-v1",
+          "assignments": [
+            {
+              "task_id": "syn-task-1",
+              "crew_id": "syn-crew-0",
+              "start_tick": 0,
+              "end_tick": 3600
+            },
+            {
+              "task_id": "syn-task-0",
+              "crew_id": "syn-crew-0",
+              "start_tick": 3600,
+              "end_tick": 18000
+            }
+          ],
+          "unscheduled_tasks": []
+        },
+        "metrics": {
+          "version": "benchmark-metrics-v1",
+          "customers": 11,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 3600
+          },
+          "milestones": [
+            {
+              "tick": 3600,
+              "additional_customers": 10,
+              "cumulative_customers": 10
+            },
+            {
+              "tick": 18000,
+              "additional_customers": 1,
+              "cumulative_customers": 11
+            }
+          ],
+          "modeled_customer_outage_hours": 15,
+          "restricted_horizon_customer_hours": 15,
+          "horizon_hours": 168,
+          "unresolved_customers": 0,
+          "censored_customers": 0,
+          "unreleased_customers_at_horizon": 0,
+          "known_release_customers": 11,
+          "makespan_hours": 5,
+          "full_customer_release_hours": 5,
+          "release_50_hours": 1,
+          "release_90_hours": 1,
+          "release_100_hours": 5,
+          "weighted_median_hours": 1,
+          "weighted_p95_hours": 5,
+          "maximum_wait_hours": 5,
+          "critical_service_latency_hours": {
+            "syn-group-0": 5
+          },
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5,
+            "syn-branch-1": 1
+          },
+          "branch_mean_disparity_hours": 4,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 5
+        },
+        "feasibility": "independently_validated",
+        "origin": "recomputed_baseline",
+        "returned_source": "baseline",
+        "baseline_policy": "customer-count-v1",
+        "solver_status": null,
+        "fallback_reason": null,
+        "primary_optimal": false,
+        "best_bound_ticks": null,
+        "relative_gap": null,
+        "recorded_seconds": null,
+        "timing_scope": "not_recorded",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline",
+          "Critical syn-group-0: tie"
+        ],
+        "explanation": "Recomputed under identical declared inputs. Customer release waits for all required repairs; unknown evidence remains unresolved. See case-level tradeoffs; no utility approval is implied."
+      },
+      {
+        "policy": "legacy-release-per-person-hour-adapter-v1",
+        "schedule": {
+          "version": "benchmark-schedule-v1",
+          "problem_fingerprint": "5a2396cb2fe70f47807ed89d64de461e80e34f2644d7c4ff0c2bf8fcaedb19e3",
+          "policy": "legacy-release-per-person-hour-adapter-v1",
+          "assignments": [
+            {
+              "task_id": "syn-task-1",
+              "crew_id": "syn-crew-0",
+              "start_tick": 0,
+              "end_tick": 3600
+            },
+            {
+              "task_id": "syn-task-0",
+              "crew_id": "syn-crew-0",
+              "start_tick": 3600,
+              "end_tick": 18000
+            }
+          ],
+          "unscheduled_tasks": []
+        },
+        "metrics": {
+          "version": "benchmark-metrics-v1",
+          "customers": 11,
+          "release_ticks": {
+            "syn-group-0": 18000,
+            "syn-group-1": 3600
+          },
+          "milestones": [
+            {
+              "tick": 3600,
+              "additional_customers": 10,
+              "cumulative_customers": 10
+            },
+            {
+              "tick": 18000,
+              "additional_customers": 1,
+              "cumulative_customers": 11
+            }
+          ],
+          "modeled_customer_outage_hours": 15,
+          "restricted_horizon_customer_hours": 15,
+          "horizon_hours": 168,
+          "unresolved_customers": 0,
+          "censored_customers": 0,
+          "unreleased_customers_at_horizon": 0,
+          "known_release_customers": 11,
+          "makespan_hours": 5,
+          "full_customer_release_hours": 5,
+          "release_50_hours": 1,
+          "release_90_hours": 1,
+          "release_100_hours": 5,
+          "weighted_median_hours": 1,
+          "weighted_p95_hours": 5,
+          "maximum_wait_hours": 5,
+          "critical_service_latency_hours": {
+            "syn-group-0": 5
+          },
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 5,
+            "syn-branch-1": 1
+          },
+          "branch_mean_disparity_hours": 4,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 5
+        },
+        "feasibility": "independently_validated",
+        "origin": "recomputed_baseline",
+        "returned_source": "baseline",
+        "baseline_policy": "legacy-release-per-person-hour-adapter-v1",
+        "solver_status": null,
+        "fallback_reason": null,
+        "primary_optimal": false,
+        "best_bound_ticks": null,
+        "relative_gap": null,
+        "recorded_seconds": null,
+        "timing_scope": "not_recorded",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: tie versus fixed baseline",
+          "restricted_horizon_customer_hours: tie versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: tie versus fixed baseline",
+          "small_group_mean_wait_hours: tie versus fixed baseline",
+          "Critical syn-group-0: tie"
+        ],
+        "explanation": "Recomputed under identical declared inputs. Customer release waits for all required repairs; unknown evidence remains unresolved. See case-level tradeoffs; no utility approval is implied."
+      },
+      {
+        "policy": "legacy-critical-proxy-first-adapter-v1",
+        "schedule": {
+          "version": "benchmark-schedule-v1",
+          "problem_fingerprint": "5a2396cb2fe70f47807ed89d64de461e80e34f2644d7c4ff0c2bf8fcaedb19e3",
+          "policy": "legacy-critical-proxy-first-adapter-v1",
+          "assignments": [
+            {
+              "task_id": "syn-task-0",
+              "crew_id": "syn-crew-0",
+              "start_tick": 0,
+              "end_tick": 14400
+            },
+            {
+              "task_id": "syn-task-1",
+              "crew_id": "syn-crew-0",
+              "start_tick": 14400,
+              "end_tick": 18000
+            }
+          ],
+          "unscheduled_tasks": []
+        },
+        "metrics": {
+          "version": "benchmark-metrics-v1",
+          "customers": 11,
+          "release_ticks": {
+            "syn-group-0": 14400,
+            "syn-group-1": 18000
+          },
+          "milestones": [
+            {
+              "tick": 14400,
+              "additional_customers": 1,
+              "cumulative_customers": 1
+            },
+            {
+              "tick": 18000,
+              "additional_customers": 10,
+              "cumulative_customers": 11
+            }
+          ],
+          "modeled_customer_outage_hours": 54,
+          "restricted_horizon_customer_hours": 54,
+          "horizon_hours": 168,
+          "unresolved_customers": 0,
+          "censored_customers": 0,
+          "unreleased_customers_at_horizon": 0,
+          "known_release_customers": 11,
+          "makespan_hours": 5,
+          "full_customer_release_hours": 5,
+          "release_50_hours": 5,
+          "release_90_hours": 5,
+          "release_100_hours": 5,
+          "weighted_median_hours": 5,
+          "weighted_p95_hours": 5,
+          "maximum_wait_hours": 5,
+          "critical_service_latency_hours": {
+            "syn-group-0": 4
+          },
+          "branch_mean_wait_hours": {
+            "syn-branch-0": 4,
+            "syn-branch-1": 5
+          },
+          "branch_mean_disparity_hours": 1,
+          "small_group_customers": 1,
+          "small_group_mean_wait_hours": 4
+        },
+        "feasibility": "independently_validated",
+        "origin": "recomputed_baseline",
+        "returned_source": "baseline",
+        "baseline_policy": "legacy-critical-proxy-first-adapter-v1",
+        "solver_status": null,
+        "fallback_reason": null,
+        "primary_optimal": false,
+        "best_bound_ticks": null,
+        "relative_gap": null,
+        "recorded_seconds": null,
+        "timing_scope": "not_recorded",
+        "tradeoffs": [
+          "modeled_customer_outage_hours: regression versus fixed baseline",
+          "restricted_horizon_customer_hours: regression versus fixed baseline",
+          "makespan_hours: tie versus fixed baseline",
+          "weighted_p95_hours: tie versus fixed baseline",
+          "branch_mean_disparity_hours: improvement versus fixed baseline",
+          "small_group_mean_wait_hours: improvement versus fixed baseline",
+          "Critical syn-group-0: improvement"
+        ],
+        "explanation": "Recomputed under identical declared inputs. Customer release waits for all required repairs; unknown evidence remains unresolved. See case-level tradeoffs; no utility approval is implied."
+      }
+    ],
+    "experimental_status": "not_requested",
+    "uncertainty": "not_integrated_no_quantiles",
+    "explanation": "The fixed release-per-person-hour baseline remains the default after the failed G3 5% median promotion target. It prioritizes marginal modeled release per person-hour among ready work; it is not always best for critical latency or fairness. Completed customer-hours require finite full outcomes; restricted customer-hours score all customers through 168 hours, without assigning finite ETRs to unresolved work. No G5 quantiles or calibrated restoration confidence are supplied.",
+    "result_fingerprint": "edf152c2a3b1e39336089bbfb062c20cea20d03298feb1da0c9382ac76e7aa27"
+  },
+  "review": {
+    "status": "reviewed_in_demo",
+    "timestamp": "2026-11-04T03:23:37.621536Z",
+    "reason": "conservative-baseline-preference",
+    "acknowledgements": {
+      "fictional": true,
+      "modeled_not_field_confirmed": true,
+      "gaps_and_unresolved": true,
+      "objective_and_tradeoffs": true,
+      "experimental_and_simulation_limits": true
+    },
+    "selected_policy": "legacy-release-per-person-hour-adapter-v1",
+    "result_fingerprint": "edf152c2a3b1e39336089bbfb062c20cea20d03298feb1da0c9382ac76e7aa27"
+  },
+  "checksum": "000685fc9a404a1feea119dc8ae12e96c535308da9241916cb497575851df225"
+}

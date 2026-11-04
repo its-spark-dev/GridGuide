@@ -1,0 +1,18 @@
+{
+  "base": "f6165cc32a4a2d4f9b8b7e543782b53c4a14dde2",
+  "frozen_counts": {
+    "G2_G3": 20,
+    "G5": 66,
+    "G6": 10,
+    "G7": 19
+  },
+  "protected_path_diff": "empty",
+  "source_sha256": {
+    "Data1.zip": "08ac47b7dd7f43cde56509644d7292d0b6978dcd62300912b4ecf0a2c3c6eca3",
+    "Data2.zip": "13bea1c84636989a6475f481d67f25b25a17fcac8b77f674a5157e3a1d105f00",
+    "Install_Labor_HackOHIO.xlsx": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b",
+    "matched_upstream.zip": "13f8d9da49843c959059b4074417c47671105131cdc4bfe9daf7b534e5f522c3"
+  },
+  "v1_0_0_commit": "b324c1b355cda60035fb11fa32bcddf10931f649",
+  "v1_0_0_tag": "c2b2d37aaf5e74a03190746c12badacc6bc86369"
+}

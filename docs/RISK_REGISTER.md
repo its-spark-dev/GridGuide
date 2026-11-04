@@ -1,5 +1,11 @@
 # Remaining risks — AEP Q2/Q4 decision support
 
+## v1.1.0 preservation disposition
+
+G8 infrastructure integration is approved; it is not production-security certification or hosting authorization. Five retained Starlette advisories have scope-specific dispositions and three moderate npm affected-package findings remain build-only. OS CVE scanning is unexecuted. Before public hosting, complete a current OS/container assessment and review HTTPS, allowed hosts, reverse proxy, slow clients and resource limits.
+
+Project licensing/data permissions and historical source exposure remain unresolved. Chromium-only coverage, missing detailed VoiceOver evidence, storage eviction and same-origin compromise remain limitations. Hashes do not authenticate reviewers. G3 promotion failed; G4 is evidence-bounded No-Go; all 15 unstable G5 findings remain preserved. No ongoing maintenance/SLA is promised. [Candidate evidence and owner decisions](planning/V1_1_0_PHASE9.md).
+
 ## v1.1 Phase 1 additions
 
 | Risk | Control / remaining limit |

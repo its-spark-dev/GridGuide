@@ -1,0 +1,66 @@
+{
+  "version": "1.1.0",
+  "capture": "actual release-candidate browser; silent, unedited",
+  "shots": [
+    {
+      "name": "01-introduction",
+      "caption": "GridGuide 1.1.0 release candidate. Independently authored fictional examples, not live utility observations. No deployment or safety certification.",
+      "start": 0.076,
+      "end": 20.106
+    },
+    {
+      "name": "02-path",
+      "caption": "Declared power paths distinguish repair prerequisites from customer dependencies. Python prepared these milestone results.",
+      "start": 20.292,
+      "end": 45.358
+    },
+    {
+      "name": "03-completed",
+      "caption": "Completed means the fictional dependency repairs are complete at this modeled milestone. It does not mean utility-confirmed restoration.",
+      "start": 45.376,
+      "end": 70.428
+    },
+    {
+      "name": "04-blocked",
+      "caption": "Blocked access has unknown clearance. Full modeled completion stays unavailable; it is never converted to a finite ETR.",
+      "start": 70.449,
+      "end": 95.501
+    },
+    {
+      "name": "05-unresolved",
+      "caption": "Unresolved evidence stays visible. No validated outage probability or empirically calibrated restoration confidence is available.",
+      "start": 95.514,
+      "end": 120.615
+    },
+    {
+      "name": "06-tradeoff",
+      "caption": "Four policies use identical assumptions. Critical-first improves one critical latency but worsens total customer-hours. Release/person-hour remains the default; optional CP-SAT is frozen and experimental.",
+      "start": 120.816,
+      "end": 145.855
+    },
+    {
+      "name": "07-override",
+      "caption": "This supported precedence override is recomputed by Python and independently validated. Changing the scenario or review invalidates earlier acknowledgement.",
+      "start": 145.966,
+      "end": 171.004
+    },
+    {
+      "name": "08-review",
+      "caption": "Explicit acknowledgements produce a reproducible fictional review record. Checksums establish consistency, not authenticated reviewer identity or tamper-proof history.",
+      "start": 171.284,
+      "end": 196.319
+    },
+    {
+      "name": "09-replay",
+      "caption": "Actual CLI output from the downloaded JSON. Replay recomputes baselines and validates metrics; it does not rerun CP-SAT.",
+      "start": 196.516,
+      "end": 216.565
+    },
+    {
+      "name": "10-offline",
+      "caption": "Actual server shutdown and browser networking disabled. Only the reviewed kit and explicitly saved historical fiction remain. No browser numerical engine or live outage awareness.",
+      "start": 217.129,
+      "end": 247.164
+    }
+  ]
+}

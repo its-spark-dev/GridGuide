@@ -1,0 +1,15 @@
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 39 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-public/operator/index.html                 0.55 kB │ gzip:  0.31 kB
+dist-public/preparedness/index.html             0.61 kB │ gzip:  0.36 kB
+dist-public/.vite/manifest.json                 0.80 kB │ gzip:  0.25 kB
+dist-public/assets/operator-D4Hx7Z5-.css        0.96 kB │ gzip:  0.48 kB
+dist-public/assets/preparedness-DnkvoupK.css    3.45 kB │ gzip:  1.35 kB
+dist-public/assets/operator-CFGgYq9g.js        16.44 kB │ gzip:  5.76 kB
+dist-public/assets/preparedness-DTn8dtl6.js    26.66 kB │ gzip:  9.57 kB
+dist-public/assets/preparedness-CKktzdr7.js   222.47 kB │ gzip: 69.22 kB
+✓ built in 346ms
+Preparedness shell: 6 integrity-pinned entries; 4545ab028734d8fd86b8

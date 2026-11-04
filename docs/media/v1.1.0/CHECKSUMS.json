@@ -1,0 +1,20 @@
+{
+  "01-introduction.png": "70ca798897e6c16160f4f1442897428c2c4c5c2b61921eab9342fcceadb32f28",
+  "02-path.png": "bfdaee791d924f0b6b15364af6d9b1e4b41cd0893b20c27ab9e91be604cdee10",
+  "03-completed.png": "d5d51eb03c9a84fb22ee6833027e650ad18b83090fddc1254a583e2768ef2dd8",
+  "04-blocked.png": "a290f9ce63b974f0b84f214d9a71c205aa6d573b525cab492f7cc85966c115e0",
+  "05-unresolved.png": "1775ff6a410ba448eb7ebec1aeaaa5f949f9d69b8eba943dfa6bc36c8f9ee485",
+  "06-tradeoff.png": "ded5c9cb58e191b7e7c64622454fb8bbad2d36092b5c491be01729aafe1b5887",
+  "07-override.png": "3cbf19674a41be1d58abb937c72aa1f441e6a8c4fc5569ffa90299fca590b5de",
+  "08-review.png": "677cf59ea2b01f09aeebd8a1c8aaa0930e2725cb90589b4008e901cc2eedcc8b",
+  "09-replay.png": "46a632aaffa2ff1c25da7f76de30a19f3c794a741c28ebb7d3bb552acc96f445",
+  "10-offline.png": "89d1d42feaaa30a2a6651d48fe310cd69b44a982ef1f5bc19c83264943f171bb",
+  "README.md": "d81d7da02f3c664a684373d4b13636bb8e2c672e0446a86727798b9d15fd9b8b",
+  "captions.vtt": "2ef4eee962a52f690ddd5f36c9b360c838e909eca7ae93c40e53ba7c02216b92",
+  "gridguide-1.1.0-rc.webm": "d0dbdf87f934e93318db48e9076fca7286f380a0afebbd8a1871fb2c2c494c74",
+  "player.html": "4eb8225e590f2e5af55768b1473f0784547946c152830053423a1eb05c48bcaa",
+  "provenance.json": "dfcef30d344cfcd872f36bffd64ad3c09584ddd325019706298d181427d2f213",
+  "replay.txt": "67acf48aa3276abda5fc993563c9d74dc670c790c9c5efdaa3735654c75787cd",
+  "review.json": "c823ac4a68238b2a84ada00ff26d0315a1b5468723d7152c35aa8fbbb7af0ded",
+  "shots.json": "cef25b85ce727437a8bc6978673636044dca909ad93296d94d72b3cdef8424ba"
+}
