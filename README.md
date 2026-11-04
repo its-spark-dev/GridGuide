@@ -9,6 +9,7 @@ Understand an outage scenario. Prepare for what comes next. See the decisions be
 [![CI · main](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml)
 [![MIT licensed code](https://img.shields.io/badge/license-MIT-0b7d56)](LICENSE)
 [![Version 1.1.0 stable](https://img.shields.io/badge/version-1.1.0%20stable-025a95)](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.1.0)
+[![Version 1.2.0 ML Research](https://img.shields.io/badge/version-1.2.0%20ML%20Research-7c3aed)](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.2.0)
 [![React and TypeScript](https://img.shields.io/badge/React-TypeScript-3178c6)](frontend/package.json)
 [![FastAPI and Python](https://img.shields.io/badge/FastAPI-Python-009688)](docs/ARCHITECTURE.md)
 
@@ -260,7 +261,7 @@ rights requirements for this study. No predictor or holdout score is claimed.
 <p align="center"><sub>Observed-source feasibility figure · Open the full-resolution image to inspect labels and individual results.</sub></p>
 
 <details>
-<summary><strong>Outage-ML: supporting source audit figure</strong> (1 additional figures; click any image for full size)</summary>
+<summary><strong>Outage-ML: supporting source audit figure</strong> (1 additional figure; click the image for full size)</summary>
 
 <table>
 <tr>
@@ -272,7 +273,9 @@ rights requirements for this study. No predictor or holdout score is claimed.
 </tr>
 </table>
 
-</details> Inspect the
+</details>
+
+Inspect the
 [measured findings and figures](docs/outage-ml/README.md),
 [feasibility decision](docs/outage-ml/FEASIBILITY.md) and
 [source replay commands](docs/outage-ml/REPRODUCE.md).
