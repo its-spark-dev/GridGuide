@@ -77,15 +77,18 @@ jobs:
           .venv/bin/python scripts/run_test_lane.py --lane public --report artifacts/phase8/public.json
           .venv/bin/python scripts/check_frozen_artifacts.py > artifacts/phase8/frozen.json
           .venv/bin/python scripts/package_demo.py --build /tmp/gridguide-public.zip > artifacts/phase8/package.json
+          .venv/bin/python -c 'import json; assert json.load(open("artifacts/phase8/package.json"))["archive_sha256"] == json.load(open("docs/media/v1.1.0-integrated/package.json"))["archive_sha256"]'
           cp /tmp/gridguide-public.zip artifacts/phase8/gridguide-public.zip
           python -m zipfile -e /tmp/gridguide-public.zip /tmp/gridguide-public
           python -m venv /tmp/gridguide-runtime
           /tmp/gridguide-runtime/bin/pip install --require-hashes -r /tmp/gridguide-public/deploy/requirements.lock
+          PYTHONDONTWRITEBYTECODE=1 /tmp/gridguide-runtime/bin/python /tmp/gridguide-public/scripts/replay_review.py docs/media/v1.1.0-integrated/review.json > artifacts/phase8/media-replay.txt
       - name: Browser production and real source-free journey
         run: |
           cd frontend
           npx playwright install --with-deps chromium
           npx playwright test -c playwright.preparedness.config.ts
+          GG_RECORD_DIR=../docs/media/v1.1.0-integrated GG_VERIFY_REPORT=../artifacts/phase8/media.json node scripts/verify-release-media.mjs
           GRIDGUIDE_PACKAGE=/tmp/gridguide-public GRIDGUIDE_PUBLIC_PYTHON=/tmp/gridguide-runtime/bin/python npx playwright test -c playwright.distribution.config.ts
       - name: One-origin nonroot container rehearsal
         run: |
@@ -109,6 +112,7 @@ jobs:
           path: |
             artifacts/phase8/*.json
             artifacts/phase8/gridguide-public.zip
+            artifacts/phase8/media-replay.txt
             frontend/test-results-distribution/
             frontend/test-results-container/
   slow-research:

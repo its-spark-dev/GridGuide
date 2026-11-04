@@ -1,7 +1,8 @@
 # Reproducing GridGuide 1.1.0 release candidate
 
-Use the [G9 evidence packet](planning/V1_1_0_PHASE9.md) for the tested candidate commit,
-CI link, current manifest and checksums. There is no v1.1.0 tag or published Release yet.
+Use the [integrated demonstration evidence](media/v1.1.0-integrated/README.md) for the
+packaged application commit, current manifest, checksums and recording commands.
+The [G9 packet](planning/V1_1_0_PHASE9.md) preserves the earlier acceptance evidence. There is no v1.1.0 tag or published Release yet.
 Do not substitute the historical G8 ZIP for the version-aligned candidate.
 
 ## 1. Required public candidate verification
@@ -13,7 +14,7 @@ the **synthetic-verification** artifact. These CI artifacts expire after 14 days
 review distribution, not a permanent release asset. Extract the outer verification ZIP
 outside the repository. Its `artifacts/phase8/gridguide-public.zip` is the standalone
 package (the CI directory name is historical). Compare its SHA256 to
-[`research/phase9/package.json`](research/phase9/package.json) from the reviewed commit,
+[current package manifest](media/v1.1.0-integrated/package.json) from the reviewed commit,
 then extract into a new directory. Python 3.12 is required; set `GG_PYTHON` to its actual
 executable. The local verification used the existing `.venv/bin/python` solely to create
 a new environment; CI/container use freshly installed Python 3.12.14.
@@ -40,7 +41,7 @@ Keep the virtual environment, downloads and exports **outside the immutable extr
 tree**. Startup rejects extra files, including caches. Install/build needs registry access;
 installed operation does not. No source records, keys, `.env` or paid service is needed.
 Hashes establish consistency, not authenticated origin: obtain the expected hash through
-the reviewed commit. The complete 38-file manifest is in `package.json` and the package's
+the reviewed commit. The complete 47-file manifest is in `package.json` and the package's
 `PUBLIC_MANIFEST.json`; the latter excludes its own recursively impossible self-hash.
 
 ### Container path
@@ -92,11 +93,13 @@ instead of checking out the repository's original data. These paths match the te
 CI lane. Confirm its head against the approved PR before executing code:
 
 ```sh
-git clone --depth 1 --filter=blob:none --sparse --branch feat/v1.1-phase9-release-candidate \
+git clone --depth 1 --filter=blob:none --sparse --branch main \
   https://github.com/its-spark-dev/GridGuide.git /tmp/gridguide-code
 git -C /tmp/gridguide-code sparse-checkout set .github backend benchmarks data/synthetic \
   data/operator deploy docs frontend pipeline research scripts tests
 cd /tmp/gridguide-code
+git fetch origin 3c53d8e9429318f121c210d148f7d2b35ae52147
+git checkout --detach 3c53d8e9429318f121c210d148f7d2b35ae52147
 git rev-parse HEAD
 test ! -e data/raw
 test ! -e data/processed
@@ -107,7 +110,8 @@ build checkout and must never become the distribution context. Build the allowli
 using the commands below, then inspect/extract it as above. No original-source permission
 or sanitized-history claim follows from sparse checkout.
 
-Use the candidate branch/commit linked in G9. A repository clone contains historical
+The commands above pin the approved integrated application commit. The current media
+refresh PR contains the updated recording harness and captions; it changes no package input. A repository clone contains historical
 source material; the standalone package is the preferred public acquisition path.
 Public CI uses a sparse depth-one checkout of code, fictional data and documentation,
 with `data/raw` and `data/processed` explicitly absent. Its exact setup is in

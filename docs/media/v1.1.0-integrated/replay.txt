@@ -1,0 +1,26 @@
+Python CLI replay of the actual downloaded review.json
+
+Replay verified: all baseline schedules/metrics and release milestones recomputed; optional frozen G3 schedule independently validated against its pinned reference.
+GridGuide — Reviewed in demo; fictional decision support
+Scenario: syn-micro-weighted / scenario revision 1 / request revision 5
+Input: dbbbbb15ac7ffe3de43d6106f587e684aa9f8db938569c373d8bf94ceedf4733
+Catalog: 15a7c313cb2c91176abdb09232a7848b75ee08d515533808b62ead9c6e532f29
+Versions: operator-comparison-v1 / operator-evidence-v1 / benchmark-metrics-v1
+Recommended: legacy-release-per-person-hour-adapter-v1
+Selected: legacy-release-per-person-hour-adapter-v1
+Reason: conservative-baseline-preference
+Per-instance best-of-four reference: customer-count-v1
+Reviewed at: 2026-11-04T04:53:07.110739Z
+Result: 2d0115d35683474ec04c2580affa6246f95a52ef61d68788b5d203d65794e3c2
+Completed modeled customer-hours: 54.0
+Restricted 168-hour customer-hours: 54.0
+Unresolved customers: 0; censored: 0
+modeled_customer_outage_hours: tie versus fixed baseline
+restricted_horizon_customer_hours: tie versus fixed baseline
+makespan_hours: tie versus fixed baseline
+weighted_p95_hours: tie versus fixed baseline
+branch_mean_disparity_hours: tie versus fixed baseline
+small_group_mean_wait_hours: tie versus fixed baseline
+Null/None means unavailable, not zero. Conditional fiction, not utility confirmation.
+Checksums detect content changes; they do not authenticate reviewer identity or prevent malicious rewriting.
+Artifact SHA256: 8365428d4b10c848fae99cde770c7eaeafb70c0023011328efdc150679ba6fa8

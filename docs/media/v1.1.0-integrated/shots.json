@@ -1,0 +1,117 @@
+{
+  "application_commit": "3c53d8e9429318f121c210d148f7d2b35ae52147",
+  "capture": "native unedited Playwright browser footage; silent",
+  "browser": "156.0.8078.80",
+  "viewport": [
+    1280,
+    800
+  ],
+  "capture_script_sha256": "d0d23b21a76174a833fe5c8ad967220299d00149d0f6cb9c5ef8d04c00408213",
+  "package_manifest_sha256": "ec0d366311df909bf1a452fbc34111fd2d747a5d0e40b2a30a0d0673d459ca79",
+  "checks": [
+    "production root is integrated dashboard",
+    "Overview handoff preserves syn-simple milestone 1",
+    "real service stopped; networking disabled; cached kit and historical snapshot recovered",
+    "Preparedness to operator navigation; fixed baseline default",
+    "supported precedence recomputed; prior review and acknowledgements invalidated",
+    "downloaded JSON independently replayed with exit 0"
+  ],
+  "shots": [
+    {
+      "name": "01-overview",
+      "caption": "GridGuide 1.1.0: the integrated Overview, Prepare & alerts and Grid insights journey. Independently authored fiction; no live utility connection.",
+      "start": 0.137,
+      "end": 20.16
+    },
+    {
+      "name": "02-scenario",
+      "caption": "Select an approved fictional scenario and prepared milestone. Timing is a conditional Python-owned schedule, not a measured restoration outcome or confidence interval.",
+      "start": 20.221,
+      "end": 38.25
+    },
+    {
+      "name": "03-completed",
+      "caption": "Completed means declared dependency repairs are complete at this fictional milestone. The schematic has no geographic coordinates and is not utility-confirmed connectivity.",
+      "start": 38.351,
+      "end": 55.378
+    },
+    {
+      "name": "04-blocked",
+      "caption": "Blocked clearance remains unknown. Full completion is unresolved; GridGuide never converts unknown completion into a finite utility ETR.",
+      "start": 55.489,
+      "end": 72.526
+    },
+    {
+      "name": "05-unresolved",
+      "caption": "Missing evidence stays unresolved. Approved fictional definitions support this educational path, not real locations, household predictions or inferred facility attachments.",
+      "start": 72.605,
+      "end": 89.642
+    },
+    {
+      "name": "06-explanation",
+      "caption": "Ask GridGuide renders a deterministic explanation bound to this selected milestone. No external AI or browser calculation is required.",
+      "start": 89.72,
+      "end": 104.756
+    },
+    {
+      "name": "07-risk",
+      "caption": "Household predictive risk is unavailable. G4 remains an evidence-bounded No-Go. Live maps, custom crew edits, alerts and G5 interval visualization are not implemented publicly.",
+      "start": 104.829,
+      "end": 119.875
+    },
+    {
+      "name": "08-handoff",
+      "caption": "Prepare now preserves the exact approved scenario and milestone. Prepare & alerts provides generic safety guidance and snapshots; tailored communications require authorized challenge-local inputs.",
+      "start": 120.086,
+      "end": 138.139
+    },
+    {
+      "name": "09-offline",
+      "caption": "The actual service is stopped and browser networking is disabled. Only cached preparedness and the explicitly saved historical snapshot remain. Storage can be evicted; this is not live outage awareness.",
+      "start": 138.888,
+      "end": 163.943
+    },
+    {
+      "name": "10-policies",
+      "caption": "Four baselines compare identical inputs in a separate fictional operator case. Completed and restricted-horizon customer-hours differ in meaning; unresolved and censored outcomes remain visible.",
+      "start": 164.551,
+      "end": 184.588
+    },
+    {
+      "name": "11-tradeoff",
+      "caption": "Critical-first improves one critical-service latency while worsening customer-hours. Fairness tradeoffs remain visible. The strongest fixed baseline stays default; optional CP-SAT remains experimental after its failed promotion target.",
+      "start": 184.667,
+      "end": 204.706
+    },
+    {
+      "name": "12-reviewed",
+      "caption": "Explicit acknowledgements mark this fictional comparison reviewed. Changing settings or a constraint must invalidate this review; no dispatch or utility approval occurs.",
+      "start": 205.267,
+      "end": 217.318
+    },
+    {
+      "name": "13-override",
+      "caption": "A supported precedence override is recomputed and independently validated in Python. The previous review disappeared; fresh acknowledgements are required. A constraint can worsen modeled outcomes.",
+      "start": 217.45,
+      "end": 234.487
+    },
+    {
+      "name": "14-export",
+      "caption": "The actual downloaded JSON contains this reviewed fictional case. Checksums establish internal consistency, not authenticated reviewer identity or tamper-proof audit history.",
+      "start": 234.795,
+      "end": 249.835
+    },
+    {
+      "name": "15-replay",
+      "caption": "Actual Python CLI output from replaying the downloaded JSON. Replay recomputes and validates the record; it does not train a model or rerun CP-SAT.",
+      "start": 250.028,
+      "end": 268.117
+    },
+    {
+      "name": "16-closing",
+      "caption": "A reproducible fictional portfolio, not operational utility software. Start with docs/REPRODUCING_V1_1.md and run the inspected package via python deploy/serve.py. Hosting needs separate security review and authorization.",
+      "start": 269.374,
+      "end": 284.449
+    }
+  ]
+}

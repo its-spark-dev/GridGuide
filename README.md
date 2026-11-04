@@ -8,9 +8,9 @@ The **v1.1.0 release candidate** adds a self-contained fictional demonstration t
 without challenge data, provider credentials or an internet connection after installation.
 It is a research demonstration—not a utility service, dispatch tool or live outage feed.
 
-![Integrated GridGuide overview using approved fictional inputs](docs/media/continuity/after-desktop.png)
+![Integrated GridGuide overview using approved fictional inputs](docs/media/v1.1.0-integrated/01-overview.png)
 
-[Demonstration](docs/media/v1.1.0/README.md) · [Quick start](#quick-start) ·
+[Demonstration](docs/media/v1.1.0-integrated/README.md) · [Quick start](#quick-start) ·
 [Evidence report](docs/benchmarks/v1.1.0.md) · [Reproduce it](docs/REPRODUCING_V1_1.md) ·
 [Release-candidate notes](docs/releases/v1.1.0.md)
 
@@ -33,7 +33,7 @@ It is a research demonstration—not a utility service, dispatch tool or live ou
   fictional snapshot. It stays timestamped and historical. Browser restart without network
   is supported; operator calculation still requires Python. Storage can be evicted.
 
-![Grid insights in the integrated release candidate](docs/media/continuity/after-operator-desktop.png)
+![Grid insights in the integrated release candidate](docs/media/v1.1.0-integrated/10-policies.png)
 
 The public demo uses independently authored fictional inputs, not anonymized customer
 records. The original challenge-local map, ordinal concern band, conditional labor model,
@@ -64,7 +64,7 @@ no empirically calibrated restoration confidence or detailed simulation UI is cl
 ## Quick start
 
 Download the inspected ZIP from the successful candidate PR's **Synthetic verification**
-CI artifact and verify its hash against the [candidate manifest](docs/research/phase9/package.json).
+CI artifact and verify its hash against the [candidate manifest](docs/media/v1.1.0-integrated/package.json).
 This is a release candidate, not a published v1.1.0 Release. See the
 [acquisition and inspection steps](docs/REPRODUCING_V1_1.md) for exact paths and build fallback.
 From the **clean extracted package**, with Python 3.12 available:
