@@ -1,4 +1,5 @@
-import { PRODUCT_VERSION } from './version';
+import { PublicShell } from './PublicShell';
+import { linkedFrame } from './frameSelection';
 import { createRoot } from 'react-dom/client';
 import { useEffect, useRef, useState } from 'react';
 import { PowerPath } from './PowerPath';
@@ -6,7 +7,7 @@ import { deleteSnapshot, loadFrames, readSnapshot, saveSnapshot, verifyMode, SNA
 import type { PathFrame, Snapshot, VerifiedMode } from './offline';
 import { activateUpdate, cacheReady, installKit, removeKit } from './preparednessCache';
 import kit from '../public/preparedness/kit.txt?raw';
-import './preparedness.css';
+
 
 function Preparedness() {
   const [mode, setMode] = useState<VerifiedMode>('unavailable');
@@ -45,7 +46,7 @@ function Preparedness() {
       const currentMode = await verifyMode(signal);
       const choices = currentMode === 'synthetic-demo' ? await loadFrames(signal) : [];
       if (controller.signal.aborted || !alive.current) return;
-      setMode(currentMode); setFrames(choices); setFrame(choices[0] ?? null);
+      setMode(currentMode); setFrames(choices); setFrame(linkedFrame(choices, window.location.hash) ?? choices[0] ?? null);
       setMessage(currentMode === 'synthetic-demo' ? 'Synthetic demo verified. These are precomputed fictional milestones, not live outage information.' :
         currentMode === 'challenge-local' ? 'Challenge-local mode: only the generic preparedness kit is available here. Challenge snapshots are disabled.' :
           'Mode or provenance could not be verified. Fictional examples and saving are disabled.');
@@ -109,13 +110,13 @@ function Preparedness() {
   }
   const shown = historical?.frame ?? frame;
   const scenarios = frames.filter(f => f.step === 0);
-  return <>
-    <a className="skip-link" href="#preparedness-main">Skip to preparedness</a>
-    <header className="prep-header no-print"><a href="/">GridGuide</a><span>Preparedness & fictional power paths</span><a href="/operator/">Fictional operator review</a></header>
-    <main id="preparedness-main">
-      <div className="no-print"><span className="eyebrow">Be ready, with clear limits</span><h1>Prepare for an outage</h1>
+  return <PublicShell page="prepare" mainId="preparedness-main">
+    <main id="preparedness-main" className="journey-page" tabIndex={-1}>
+      <div className="no-print page-intro"><div><span className="eyebrow">Be ready, with clear limits</span><h1>Prepare for an outage</h1>
         <p>Keep general safety guidance close. Explore explicitly fictional dependencies without confusing them with your utility’s network.</p>
-        <p className="notice" role="status">{message}</p>
+        <p className="fine">Communication previews and tailored declarations require authorized challenge-local inputs. This public kit provides general guidance; no messages are sent.</p></div></div>
+      <nav className="journey-sections no-print" aria-label="Preparedness sections"><a href="#kit-title">Safety kit</a><a href="#offline-title">Offline access</a><a href="#fiction-title">Fictional power path & snapshot</a></nav>
+      <div className="no-print"><p className="notice" role="status">{message}</p>
         <button onClick={() => void refresh()}>Reconnect and refresh</button>
       </div>
       <section className="generic-kit" aria-labelledby="kit-title">
@@ -154,8 +155,7 @@ function Preparedness() {
           <details><summary>Versions and fictional provenance</summary><p>Independently authored fiction · revision {shown.scenario_revision}. Model: {shown.model_version}. Policy: {shown.policy_id}. One effective worker per crew is an assumption.</p>
             <p className="fingerprint">Input: {shown.input_fingerprint}<br/>Result: {shown.result_fingerprint}</p></details></section><PowerPath frame={shown}/></>}
       </section>
-    </main><footer className="no-print">GridGuide {PRODUCT_VERSION} release candidate · No utility confirmation, dispatch or alert delivery.</footer>
-  </>;
+    </main></PublicShell>;
 }
 
 createRoot(document.getElementById('root')!).render(<Preparedness/>);

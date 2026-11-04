@@ -21,8 +21,11 @@ FILES = (
  'data/synthetic/catalog.json','data/operator/catalog.json','scripts/replay_review.py',
  'deploy/serve.py','deploy/Dockerfile','deploy/requirements.in','deploy/requirements.lock','deploy/README.md',
  'THIRD_PARTY_NOTICES.md')
-FIXED_STATIC = ('preparedness/index.html','operator/index.html','preparedness/frames.json',
-                'preparedness/kit.txt','preparedness/service-worker.js','preparedness/cache-manifest.json')
+FIXED_STATIC = ('dashboard/index.html','preparedness/index.html','operator/index.html','preparedness/frames.json',
+                'preparedness/kit.txt','preparedness/service-worker.js','preparedness/cache-manifest.json',
+                'fonts/Barlow-Regular.woff2','fonts/Barlow-SemiBold.woff2',
+                'fonts/BarlowSemiCondensed-SemiBold.woff2','fonts/BarlowSemiCondensed-Bold.woff2',
+                'fonts/OFL.txt','fonts/SOURCE.txt')
 MANIFEST='PUBLIC_MANIFEST.json'
 LIMIT=8_000_000
 
@@ -76,10 +79,13 @@ def approved(root=ROOT):
             selected.add(name)
         if item.get('dynamicImports') or item.get('assets'):raise ValueError('Unexpected build dependency')
         for dependency in item.get('imports',[]):visit(dependency)
-    for key in ('preparedness/index.html','operator/index.html'):visit(key)
+    for key in ('dashboard/index.html','preparedness/index.html','operator/index.html'):visit(key)
     actual={p.relative_to(dist).as_posix() for p in dist.rglob('*') if p.is_file()}
     if actual!=selected|{'.vite/manifest.json'}:raise ValueError('Unexpected file in public build')
     for name in selected:out['static/'+name]=read(dist,name)
+    for name in FIXED_STATIC:
+        if name.startswith('fonts/') and out['static/'+name]!=read(root,'frontend/public/'+name):
+            raise ValueError('Font or license notice drift')
     # The prepared frames must be the same reviewed bytes consumed by G6 trust bindings.
     if out['static/preparedness/frames.json']!=read(root,'frontend/public/preparedness/frames.json'):
         raise ValueError('Prepared artifact drift')

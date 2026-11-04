@@ -106,3 +106,13 @@ See the [G5 packet](planning/V1_1_0_PHASE5.md). G5 was accepted and merged at `9
 | UI/privacy | Real service/browser tests, explicit download, zero serious/critical axe findings | Chromium only; optional manual G7 observations unknown |
 
 [G7 packet](planning/V1_1_0_PHASE7.md) records implementation and independent review checklist.
+
+## Product continuity correction
+
+The [feature matrix](planning/V1_1_0_CONTINUITY.md) distinguishes preserved challenge
+functions from intentionally unavailable public inputs and approved fictional alternatives.
+The public root now provides the original dashboard hierarchy and coherent navigation;
+G6 selection handoff, G7 review/replay and offline boundaries have browser coverage.
+[Matched authentic captures](media/continuity/README.md) compare actual v1.0.0, the
+previous distribution and the integrated candidate. This adds no predictive capability
+or permission to publish/deploy.

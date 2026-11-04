@@ -132,3 +132,16 @@ not constitute a completed production security assessment. No hosting/deployment
 G7 manual VoiceOver observations remain unknown; Chromium automation is the executed UI
 evidence. Detailed G5 intervals are deferred; all prior failed convergence diagnostics,
 G4 No-Go and G6 storage/browser limitations remain. See [G7](planning/V1_1_0_PHASE7.md).
+
+## Product continuity correction
+
+A familiar dashboard could make fictional results appear source-backed. The public
+header, scenario strip, risk/timing cards and dependency view explicitly identify
+fiction and unsupported geography/risk. Approved frames supply all numerical values;
+invalid mode/artifact withdraws results. The separate operator catalog is identified
+before comparison. Original source functionality remains in authorized local mode.
+
+The shared visual shell does not extend offline storage scope. Only preparedness is
+cached; its fonts fall back offline. Root/operator pages require the local service.
+Browser and automated accessibility verification do not fill the accepted manual
+VoiceOver or cross-browser gaps. The correction does not authorize release or hosting.

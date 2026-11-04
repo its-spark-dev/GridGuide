@@ -14,8 +14,11 @@ python3.12 -m venv /tmp/gridguide-runtime
 PYTHONDONTWRITEBYTECODE=1 /tmp/gridguide-runtime/bin/python deploy/serve.py
 ```
 
-Open http://127.0.0.1:8000/ for fictional paths/preparedness; use the operator link to
-compare/review/export. Readiness: `/ready`. Replay an explicitly exported record:
+Open http://127.0.0.1:8000/ for the GridGuide overview. Use Prepare & alerts for
+fictional power paths, safety guidance and saved snapshots, and Grid insights to
+compare/review/export. The operator cases are separate from customer examples.
+Fonts and their OFL/source notices are included under static/fonts/. Only the
+preparedness shell is cached offline; fonts use a local fallback when disconnected. Readiness: `/ready`. Replay an explicitly exported record:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 /tmp/gridguide-runtime/bin/python scripts/replay_review.py /path/outside/package/review.json

@@ -8,7 +8,7 @@ The **v1.1.0 release candidate** adds a self-contained fictional demonstration t
 without challenge data, provider credentials or an internet connection after installation.
 It is a research demonstration—not a utility service, dispatch tool or live outage feed.
 
-![Fictional power-path inspection in the actual release candidate](docs/media/v1.1.0/02-path.png)
+![Integrated GridGuide overview using approved fictional inputs](docs/media/continuity/after-desktop.png)
 
 [Demonstration](docs/media/v1.1.0/README.md) · [Quick start](#quick-start) ·
 [Evidence report](docs/benchmarks/v1.1.0.md) · [Reproduce it](docs/REPRODUCING_V1_1.md) ·
@@ -16,6 +16,10 @@ It is a research demonstration—not a utility service, dispatch tool or live ou
 
 ## Product walkthrough
 
+- **Start with your storm outlook.** The original dashboard layout connects Overview,
+  Prepare & alerts and Grid insights. Select approved fictional scenarios and ask
+  questions about their repair milestones. Household risk and geographic context
+  remain explicitly unavailable in this source-free demonstration.
 - **Understand a fictional power path.** Inspect declared dependencies and prepared repair
   milestones. Completed, blocked and unresolved states remain distinct; unknown completion
   never becomes a finite restoration estimate.
@@ -29,7 +33,7 @@ It is a research demonstration—not a utility service, dispatch tool or live ou
   fictional snapshot. It stays timestamped and historical. Browser restart without network
   is supported; operator calculation still requires Python. Storage can be evicted.
 
-![Policy comparison and its critical-service tradeoff](docs/media/v1.1.0/06-tradeoff.png)
+![Grid insights in the integrated release candidate](docs/media/continuity/after-operator-desktop.png)
 
 The public demo uses independently authored fictional inputs, not anonymized customer
 records. The original challenge-local map, ordinal concern band, conditional labor model,

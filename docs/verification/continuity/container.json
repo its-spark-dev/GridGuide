@@ -1,0 +1,27 @@
+{
+  "actual_outage_unavailable": true,
+  "all_application_layer_files_verified": 47,
+  "application_files": 47,
+  "architecture": "arm64",
+  "body_logging": "",
+  "cold_start_ms": [
+    803.3273330074735
+  ],
+  "image_id": "sha256:81e21f72436cde442dc836e1ca2a895493ad85b352a3e00641d398666e2b7872",
+  "network_none": "ready and comparison verified with no external interface",
+  "restart_ms": 603.1617909902707,
+  "runtime_bounds": {
+    "CapDrop": [
+      "ALL"
+    ],
+    "ReadonlyRootfs": true,
+    "SecurityOpt": [
+      "no-new-privileges"
+    ],
+    "Tmpfs": {
+      "/tmp": "rw,noexec,nosuid,size=16m"
+    }
+  },
+  "runtime_manifest_verified": true,
+  "user": "10001:10001"
+}

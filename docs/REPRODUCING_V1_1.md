@@ -62,8 +62,10 @@ reverse proxy, slow-client and resource-limit controls. There is no deployment p
 
 ### User journey and replay
 
-1. In `/preparedness/`, inspect an ordered fictional path. Select milestones, then blocked
-   and missing-evidence cases. Unavailable full restoration stays unavailable.
+1. Open `/` for the integrated Overview dashboard. Select fictional scenarios and
+   milestones, inspect dependencies and Ask GridGuide. Blocked/missing cases keep
+   completion unavailable. Prepare now carries only the approved frame selection into
+   `/preparedness/`; Grid insights opens a separately labeled operator exercise.
 2. Enable/check the offline kit. Explicitly save a snapshot. It is historical immediately.
    Stop the service, restart the browser with networking disabled and reopen the saved
    snapshot. Numerical controls remain disabled. Generic guidance remains; storage can

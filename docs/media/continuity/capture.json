@@ -1,0 +1,135 @@
+{
+  "captured_at": "2026-11-04T04:16:49.100Z",
+  "browser": "156.0.8078.80",
+  "original_commit": "b324c1b355cda60035fb11fa32bcddf10931f649",
+  "before_commit": "ae6d9c482c4e55d5db483338bad34d1415b99ec5",
+  "after": "Corrective branch; see package manifest and PR head",
+  "records": [
+    {
+      "file": "v1-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:15173/",
+      "sha256": "6a2a2dbc78d708102f39bcc6534c36dc765e6b24574b6b0182ba8cc945fda0d0"
+    },
+    {
+      "file": "v1-preparedness-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:15173/#prepare",
+      "sha256": "49314d8614cb6e0ec9858aa61397fdfa9870b85cee4275e4ec35c15bc4283322"
+    },
+    {
+      "file": "v1-operator-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:15173/#grid",
+      "sha256": "8e655adb9601e66442eb435807195082faae1f16385a35a356e84f21b9ed075d"
+    },
+    {
+      "file": "v1-mobile.png",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:15173/",
+      "sha256": "463d6f72d0449ae2c8062ab65b5331d9137053edfcd2856d94b3866742d917b5"
+    },
+    {
+      "file": "v1-preparedness-mobile.png",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:15173/#prepare",
+      "sha256": "a3d9077efd57b40188dbef081be2c29bf082c1d089bba64545ba333a27b7c11d"
+    },
+    {
+      "file": "v1-operator-mobile.png",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:15173/#grid",
+      "sha256": "2d43ca637faf835a893fa155c5ac32832901b242b5ee56fef083aefe46607c6c"
+    },
+    {
+      "file": "before-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:18190/preparedness/",
+      "sha256": "c3846d8da77faa4cde9fb7591bd9add9022c57f1fd9d369e1ddc67ffd0d881a8"
+    },
+    {
+      "file": "before-preparedness-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:18190/preparedness/",
+      "sha256": "c3846d8da77faa4cde9fb7591bd9add9022c57f1fd9d369e1ddc67ffd0d881a8"
+    },
+    {
+      "file": "before-operator-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:18190/operator/",
+      "sha256": "5147fa0058c58ba17385d6b4441cec44e4be325b9b5950e16ef8c65ae768cd33"
+    },
+    {
+      "file": "before-mobile.png",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:18190/preparedness/",
+      "sha256": "6beb1bfba08415450193ba81a330de201cb95872cdda2b325edddcf96ff706d9"
+    },
+    {
+      "file": "before-preparedness-mobile.png",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:18190/preparedness/",
+      "sha256": "6beb1bfba08415450193ba81a330de201cb95872cdda2b325edddcf96ff706d9"
+    },
+    {
+      "file": "before-operator-mobile.png",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:18190/operator/",
+      "sha256": "ab182b44ef2cbebe1b08bde5d306114e407b496ed004a84a62d0fabf96f45df5"
+    },
+    {
+      "file": "after-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:18191/#syn-simple/0",
+      "sha256": "8488cae1db9dec5ff0cd50d193a05109d0d13bf706d274ba9bd6bec284ef9057"
+    },
+    {
+      "file": "after-preparedness-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:18191/preparedness/",
+      "sha256": "439a18b19974b4c334fed4e76e309293b81e6849108f7c6e87a9992fb32cb392"
+    },
+    {
+      "file": "after-operator-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:18191/operator/",
+      "sha256": "db7aa9a9f0d4e1d379a36096b5e009f189d9b1b0650ba845aca611bd13ba3d32"
+    },
+    {
+      "file": "after-mobile.png",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:18191/#syn-simple/0",
+      "sha256": "9b2e5edd97d00c23e651ae218cfe8430630252a2f58b2233ffbe7f67bbccc552"
+    },
+    {
+      "file": "after-preparedness-mobile.png",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:18191/preparedness/",
+      "sha256": "471e6959fff83249b32e3ce0447a8990ee5ac23009a79dd46d5f13445fdcde68"
+    },
+    {
+      "file": "after-operator-mobile.png",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:18191/operator/",
+      "sha256": "1a1b9eff73ceece409490cddbbcf21001a30af581b346b67857b4d9b0c2a9909"
+    }
+  ]
+}

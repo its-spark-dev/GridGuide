@@ -4,7 +4,13 @@
 
 Use `deploy/serve.py` **from the inspected standalone package** for the complete public
 fictional journey. `backend.public_app` composes the unchanged G1 catalog and G7 operator
-API with an exact static allowlist; `/` opens G6 preparedness and links to operator review.
+API with an exact static allowlist. The continuity correction makes `/` the integrated
+Overview dashboard; Prepare & alerts and Grid insights share the original visual system.
+`PublicDashboard` consumes only verified G6 frames. `PublicShell` reuses the original
+styles/icons without importing `App`, source API clients or Leaflet. Frame links select
+only an exact approved scenario/milestone; operator cases remain a separate exercise.
+Standard public answers render reviewed text and frame fields without calculation or
+a provider. See the [continuity review](planning/V1_1_0_CONTINUITY.md).
 This does not expand the older catalog-only `backend.runtime` or challenge entrypoint.
 Python remains numerical authority. External AI, source loading, unrestricted solves,
 uploads and G5 simulation jobs are absent. Product 1.1.0 is distinct from frozen schema,

@@ -39,7 +39,17 @@ class DistributionTests(unittest.TestCase):
                 product=json.loads((ROOT/'frontend/package.json').read_text())['version']
                 self.assertEqual(c.get('/ready').json()['product_version'],product)
                 self.assertEqual(c.get('/ready').json()['release_status'],'release-candidate')
-                self.assertEqual(c.get('/').status_code,200)
+                home=c.get('/',follow_redirects=False)
+                self.assertEqual(home.status_code,200)
+                self.assertIn('Your storm outlook',home.text)
+                self.assertEqual(home.content,(root/'static/dashboard/index.html').read_bytes())
+                self.assertEqual(c.get('/fonts/Barlow-Regular.woff2').status_code,200)
+                self.assertEqual(c.get('/fonts/OFL.txt').status_code,200)
+                cache=c.get('/preparedness/cache-manifest.json').json()['allowlist']
+                self.assertNotIn('/',cache)
+                self.assertNotIn('/operator/',cache)
+                self.assertNotIn('/dashboard/index.html',cache)
+                self.assertTrue(all('/api/' not in key and 'frames.json' not in key and '/fonts/' not in key for key in cache))
                 for path in ['/docs','/openapi.json','/.env','/data/synthetic/catalog.json','/backend/public_app.py',
                              '/api/locations','/__test__/worker/1','/preparedness/../../deploy/serve.py','/%2e%2e/.env']:
                     self.assertEqual(c.get(path).status_code,404,path)
