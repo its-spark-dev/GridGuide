@@ -1,4 +1,21 @@
 {
+  "ci_evidence": {
+    "implementation_pr": "https://github.com/its-spark-dev/GridGuide/pull/18",
+    "note": "This ledger records the executed implementation-head runs. The final documentation-only head is additionally verified in PR checks; no frozen numerical source changed.",
+    "runs": [
+      {
+        "conclusion": "success",
+        "name": "ML Lab verification",
+        "url": "https://github.com/its-spark-dev/GridGuide/actions/runs/41802063931"
+      },
+      {
+        "conclusion": "success",
+        "name": "Synthetic verification",
+        "url": "https://github.com/its-spark-dev/GridGuide/actions/runs/41802063840"
+      }
+    ],
+    "verified_head_sha": "69f4a641c6166164e139f86b835b881480518bc8"
+  },
   "executed_commands": {
     "challenge": ".venv/bin/python scripts/run_test_lane.py --lane challenge --report artifacts/ml-hardening/challenge.json",
     "final_audit": ".venv-ml/bin/python -m research.ml_lab audit --dataset docs/ml-lab/evidence/dataset --training docs/ml-lab/evidence/training --freeze docs/ml-lab/evidence/selection-freeze.json --final docs/ml-lab/evidence/final",
@@ -112,12 +129,12 @@
         "python scripts/check_frozen_artifacts.py PASS:20 G2/G3+66 G5+10 G6+19 G7 files",
         "independent source-free historical checkout reproduced all8 model bytes and training/dev/CV evidence",
         "independent final numerical/diff review PASS; no frozen source edits after reveal",
-        "240-case read-only final audit reproduces exact numerical evidence"
+        "240-case read-only final audit reproduces exact numerical evidence",
+        "GitHub ML Lab verification run41802063931 PASS:Linux unit/smoke/full final replay/figure regeneration",
+        "GitHub Synthetic verification run41802063840 PASS:public/archive/frozen release/browser/container/dependency checks"
       ],
-      "gate": "LOCAL PASS; final PR CI pending",
-      "open_issues": [
-        "GitHub Actions must pass on final implementation PR head"
-      ],
+      "gate": "PASS",
+      "open_issues": [],
       "phase": 6
     }
   ],
