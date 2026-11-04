@@ -9,3 +9,5 @@ node_modules/
 data/external/
 data/prepared/
 artifacts/
+# Isolated ML Lab environment; committed research evidence has its own directory.
+.venv-ml/
