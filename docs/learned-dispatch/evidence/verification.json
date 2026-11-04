@@ -46,7 +46,7 @@
   "presentation": {
     "files": 12,
     "independent_regeneration_identical": true,
-    "manifest_sha256": "12452a8937a0ad3c5ee139327bb3e8da9ebf0ab0212225c0c1a672047804ad31"
+    "manifest_sha256": "5525560f81f6690dc8a84ce9cb1bed76a937ba5b0ef9801119810d17a334c1fe"
   },
   "preservation": {
     "baseline": "740e7ec03c618b9bcb73f0c11a7ccc63a5eb5de9",

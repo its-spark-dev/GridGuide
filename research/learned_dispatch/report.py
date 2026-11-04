@@ -60,6 +60,8 @@ def render(evidence: Path, output: Path):
     def save(fig, name):
         fig.savefig(figures/f"{name}.png", dpi=170, bbox_inches="tight", metadata={"Software": "GridGuide evidence renderer"})
         fig.savefig(figures/f"{name}.svg", bbox_inches="tight", metadata={"Date": None, "Creator": "GridGuide evidence renderer"})
+        svg = figures/f"{name}.svg"
+        svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines())+"\n")
         plt.close(fig)
     def title(fig, headline, subtitle):
         fig.suptitle(headline, x=.06, ha="left", fontsize=20, fontweight="bold", y=.99)
