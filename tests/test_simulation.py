@@ -97,6 +97,9 @@ class ReplayTests(unittest.TestCase):
         r=request();ds,h=draws(r);ds[next(iter(ds))][0]=0
         with self.assertRaises(ValueError):replay(r,ds,h)
         with self.assertRaises(ValueError):simulate(request(microcase('huge',[10**14],[2])))
+        # Valid individual ticks can still exceed exact weighted customer-seconds.
+        p=microcase('weighted-range',[1],[5000],availability={0:2**40-3600})
+        with self.assertRaisesRegex(ValueError,'Customer-weighted'):simulate(request(p))
 
 
 class SamplingTests(unittest.TestCase):
@@ -129,6 +132,10 @@ class SamplingTests(unittest.TestCase):
         self.assertLess(abs(np.corrcoef(list(ds.values()))[0,1]),.04)
         ds,_=draws(request(p,'uniform-sensitivity-v1',10000))
         self.assertTrue(all(np.all((v>=1800)&(v<=5400)) for v in ds.values()))
+        for values in ds.values():
+            summary=summarize(values/3600)
+            for key,expected in [('p10',.6),('p50',1.),('p90',1.4)]:
+                self.assertLess(abs(summary[key]-expected),.02)
         _,hold=draws(request(p,'storm-hold-v1',10000));self.assertTrue(np.all((hold>=0)&(hold<=14400)))
         self.assertLess(abs(hold.mean()-7200),150)
     def test_numerical_repeat(self):

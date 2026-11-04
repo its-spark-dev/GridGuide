@@ -143,6 +143,13 @@ def simulate(value):
     request=SimulationInput.model_validate(value.model_dump() if isinstance(value,SimulationInput) else value)
     if any(a.end_tick>2**40 for a in request.schedule.assignments) or any(c.available_tick>2**40 for c in request.problem.crews):
         raise ValueError('Schedule outside numerical range')
+    population=sum(len(g.customer_ids) for g in request.problem.groups)
+    origin=max([c.available_tick for c in request.problem.crews]+[a.start_tick for a in request.schedule.assignments])
+    # Reserve half the exact float64 integer range for start/hold offsets. The
+    # replay duration bound reserves the other half for at most 100 task lengths.
+    # Individual start and duration bounds alone do not bound customer weighting.
+    if max(origin+14400,request.problem.horizon_ticks)*population>2**52-1:
+        raise ValueError('Customer-weighted schedule outside numerical range')
     durations,hold=draws(request)
     starts,ends=replay(request,durations,hold)
     arrays=metrics(request.problem,ends,request.trials)
