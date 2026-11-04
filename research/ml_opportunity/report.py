@@ -484,6 +484,8 @@ def figure(audit, output):
     fig.suptitle('Strong baselines remain: faster students do not retain teacher quality',fontsize=14,fontweight='bold')
     fig.savefig(output/'quality-cost.png',dpi=170,metadata={"Software":"GridGuide opportunity audit"})
     fig.savefig(output/'quality-cost.svg',metadata={"Date":None})
+    svg = output/'quality-cost.svg'
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines())+"\n")
     plt.close(fig)
 
 
