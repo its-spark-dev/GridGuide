@@ -13,7 +13,7 @@ async function boot(){
  server=spawn(python,[join(root,'deploy/serve.py')],{cwd:root,env:{PATH:process.env.PATH,PORT:'18190',PYTHONDONTWRITEBYTECODE:'1'},stdio:'ignore'});
  await expect.poll(async()=>{try{return(await fetch(origin+'/ready')).status;}catch{return 0;}},{timeout:20000}).toBe(200);
 }
-async function stop(){if(server&&server.exitCode===null){const done=new Promise(r=>server.once('exit',r));server.kill('SIGTERM');await done;}}
+async function stop(){if(server&&server.exitCode===null&&server.signalCode===null){const done=new Promise(r=>server.once('exit',r));server.kill('SIGTERM');await done;}}
 function timestamp(t){return new Date(Math.round(t)*1000).toISOString().slice(11,23);}
 try{
  await boot();const browser=await chromium.launch({channel:process.env.CI?undefined:'chrome',headless:true});
