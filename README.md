@@ -195,12 +195,17 @@ two. There is no database or browser copy of the numerical engine.
 
 ## ML Lab — learning which policy to choose
 
+<sub>Research figure gallery: every study below links its full-resolution plots. Primary charts appear at full README width; supporting charts open at original size.</sub>
+
 A separate, source-free supervised ML study compares logistic regression, random forests
 and gradient boosting on **720 newly generated fictional scheduling problems**. Inspect
 41 pre-decision features, grouped data splits, exact policy labels, frozen models and a
 one-time holdout evaluation.
 
-![ML Lab: mean selection regret on in-distribution and shifted fictional problems](docs/ml-lab/presentation/figures/performance.png)
+<p align="center">
+  <a href="docs/ml-lab/presentation/figures/performance.svg"><img src="docs/ml-lab/presentation/figures/performance.png" alt="ML Lab mean regret across in-distribution and structural-shift cohorts; outcome units are modeled customer-hours" width="100%"></a>
+</p>
+<p align="center"><sub>Sealed ML Lab I evaluation · Open the full-resolution SVG chart to inspect labels and individual results.</sub></p>
 
 **An instructive negative result:** the selected logistic model lowered in-distribution
 mean regret by 33.44% on 90 eligible cases, but failed the uncertainty and critical-service
@@ -209,6 +214,31 @@ fixed policy. All failures and per-case evidence remain inspectable; no model wa
 after reveal. These are simulator outcomes, not measured utility performance.
 
 **[Explore ML Lab](docs/ml-lab/README.md) · [Full research report](docs/ml-lab/presentation/REPORT.md) · [Reproduce the experiment](docs/ml-lab/REPRODUCE.md)**
+
+<details>
+<summary><strong>ML Lab I: additional research plots</strong> (3 additional figures; click any image for full size)</summary>
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+  <a href="docs/ml-lab/presentation/figures/regret-distribution.png"><img src="docs/ml-lab/presentation/figures/regret-distribution.png" alt="Distribution of model selection regret including shifted tails" width="100%"></a>
+  <br><sub><strong>Regret distributions</strong> · Click to enlarge</sub>
+</td>
+<td width="50%" align="center" valign="top">
+  <a href="docs/ml-lab/presentation/figures/confusion.png"><img src="docs/ml-lab/presentation/figures/confusion.png" alt="Confusion matrices of predicted policy versus labels on distinct held-out cohorts" width="100%"></a>
+  <br><sub><strong>Policy selection confusion</strong> · Click to enlarge</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top">
+  <a href="docs/ml-lab/presentation/figures/feature-importance.png"><img src="docs/ml-lab/presentation/figures/feature-importance.png" alt="Fitted model feature coefficients and importance diagnostics" width="100%"></a>
+  <br><sub><strong>Feature importance</strong> · Click to enlarge</sub>
+</td>
+<td width="50%"></td>
+</tr>
+</table>
+
+</details>
 
 The existing dashboard, historical research, four-map gallery and v1.1.0 defaults remain
 unchanged. ML Lab recommends retaining its fixed comparator rather than promoting the
@@ -222,7 +252,27 @@ EAGLE-I/VTEC release. Reproducible checks expose duplicate incident links, chron
 ambiguities, unknown censoring and limits on onset-time features.
 
 **NO-GO before training:** the reviewed sources do not establish the label, grouping and
-rights requirements for this study. No predictor or holdout score is claimed. Inspect the
+rights requirements for this study. No predictor or holdout score is claimed.
+
+<p align="center">
+  <a href="docs/outage-ml/presentation/figures/source-landscape.png"><img src="docs/outage-ml/presentation/figures/source-landscape.png" alt="Outage ML evidence audit comparing available datasets and their research limitations" width="100%"></a>
+</p>
+<p align="center"><sub>Observed-source feasibility figure · Open the full-resolution image to inspect labels and individual results.</sub></p>
+
+<details>
+<summary><strong>Outage-ML: supporting source audit figure</strong> (1 additional figures; click any image for full size)</summary>
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+  <a href="docs/outage-ml/presentation/figures/recorded-duration.png"><img src="docs/outage-ml/presentation/figures/recorded-duration.png" alt="Observed outage recording duration and ascertainment limitations in audited data" width="100%"></a>
+  <br><sub><strong>Recorded durations</strong> · Click to enlarge</sub>
+</td>
+<td width="50%"></td>
+</tr>
+</table>
+
+</details> Inspect the
 [measured findings and figures](docs/outage-ml/README.md),
 [feasibility decision](docs/outage-ml/FEASIBILITY.md) and
 [source replay commands](docs/outage-ml/REPRODUCE.md).
@@ -239,6 +289,29 @@ teacher adds only **0.113%** over cheaper online search, with an interval crossi
 and about **8×** the decision cost. The preregistered learning gate fails, so no learned
 dispatch model or RL benefit is claimed. Prior ML studies and the dashboard remain separate.
 
+<p align="center">
+  <a href="docs/adaptive-dispatch/presentation/figures/comparators.svg"><img src="docs/adaptive-dispatch/presentation/figures/comparators.png" alt="Adaptive dispatch method comparison on independent confirmation configurations" width="100%"></a>
+</p>
+<p align="center"><sub>Reactive and search policy quality · Open the full-resolution SVG chart to inspect labels and individual results.</sub></p>
+
+<details>
+<summary><strong>Adaptive Dispatch: supporting comparisons</strong> (2 additional figures; click any image for full size)</summary>
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+  <a href="docs/adaptive-dispatch/presentation/figures/paired-configurations.png"><img src="docs/adaptive-dispatch/presentation/figures/paired-configurations.png" alt="Paired configuration differences in modeled waiting time" width="100%"></a>
+  <br><sub><strong>Configuration effects</strong> · Click to enlarge</sub>
+</td>
+<td width="50%" align="center" valign="top">
+  <a href="docs/adaptive-dispatch/presentation/figures/quality-runtime.png"><img src="docs/adaptive-dispatch/presentation/figures/quality-runtime.png" alt="Waiting quality versus complete decision callback runtime" width="100%"></a>
+  <br><sub><strong>Quality versus runtime</strong> · Click to enlarge</sub>
+</td>
+</tr>
+</table>
+
+</details>
+
 [Comparisons and figures](docs/adaptive-dispatch/presentation/REPORT.md) ·
 [Protocol and limitations](docs/adaptive-dispatch/PROTOCOL.md) ·
 [Reproduction](docs/adaptive-dispatch/REPRODUCE.md)
@@ -251,7 +324,10 @@ GridGuide-specific state/action rankers from **24,240 teacher-labeled action row
 48 independent training configurations**. Inspect 46 public-state features, fitted Ridge
 and random-forest parameters, SHA-verified JSON models and complete learned-policy rollouts.
 
-![Learned dispatch quality and complete callback latency](docs/learned-dispatch/presentation/figures/quality-latency.png)
+<p align="center">
+  <a href="docs/learned-dispatch/presentation/figures/quality-latency.svg"><img src="docs/learned-dispatch/presentation/figures/quality-latency.png" alt="Learned dispatch quality and full callback latency for ID and shifted evaluations" width="100%"></a>
+</p>
+<p align="center"><sub>Trained model versus search and reactive policies · Open the full-resolution SVG chart to inspect labels and individual results.</sub></p>
 
 The development-selected forest is **3.85× faster in-distribution and 7.82× faster under
 shift** than its median-search teacher, but modeled waiting is **3.22% and 4.66% higher**.
@@ -261,6 +337,31 @@ negative findings remain available; these are fictional simulator results, not u
 [Run trained inference](docs/learned-dispatch/REPRODUCE.md) ·
 [Model card](docs/learned-dispatch/MODEL_CARD.md) ·
 [Full results and uncertainty](docs/learned-dispatch/presentation/REPORT.md)
+
+<details>
+<summary><strong>Learned Dispatch: all additional research plots</strong> (3 additional figures; click any image for full size)</summary>
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+  <a href="docs/learned-dispatch/presentation/figures/quality.png"><img src="docs/learned-dispatch/presentation/figures/quality.png" alt="Full comparison of learned policies and reference method quality across evaluation cohorts" width="100%"></a>
+  <br><sub><strong>Held-out quality</strong> · Click to enlarge</sub>
+</td>
+<td width="50%" align="center" valign="top">
+  <a href="docs/learned-dispatch/presentation/figures/configuration-errors.png"><img src="docs/learned-dispatch/presentation/figures/configuration-errors.png" alt="Per-configuration errors and difficult cases for learned dispatch" width="100%"></a>
+  <br><sub><strong>Configuration errors</strong> · Click to enlarge</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top">
+  <a href="docs/learned-dispatch/presentation/figures/learned-parameters.png"><img src="docs/learned-dispatch/presentation/figures/learned-parameters.png" alt="Frozen forest and Ridge fitted-parameter analysis" width="100%"></a>
+  <br><sub><strong>Fitted parameters</strong> · Click to enlarge</sub>
+</td>
+<td width="50%"></td>
+</tr>
+</table>
+
+</details>
 
 <!-- learned-dispatch:end -->
 
@@ -272,6 +373,11 @@ A separate [evidence-first opportunity audit](docs/research/ml-opportunity/REPOR
 
 - **Direction B — Decision-focused ranking ([Issue #24](https://github.com/its-spark-dev/GridGuide/issues/24)).** Before training, register a controlled, group-isolated study comparing regret-aware action ranking with cost regression and strong non-ML dispatch baselines. Only proceed if its pre-training evidence, runtime budget and validation plan justify the experiment. Teacher-WAIT rarity and action ties are open questions, not established root causes.
 - **Direction C — Find a better-posed ML problem ([Issue #25](https://github.com/its-spark-dev/GridGuide/issues/25)).** First audit candidate prediction targets, pre-decision inputs, usable ground truth, data rights and meaningful non-ML baselines. A new synthetic task is simulation research only; no utility-calibrated forecast or actual dispatch benefit is claimed.
+
+<p align="center">
+  <a href="docs/research/ml-opportunity/quality-cost.svg"><img src="docs/research/ml-opportunity/quality-cost.png" alt="ML opportunity retrospective comparison of waiting cost and decision time for learned and heuristic policies" width="100%"></a>
+</p>
+<p align="center"><sub>Independent opportunity audit · Open the full-resolution SVG chart to inspect labels and individual results.</sub></p>
 
 [Audit summary](docs/research/ml-opportunity/README.md) ·
 [Full report and limits](docs/research/ml-opportunity/REPORT.md) ·
