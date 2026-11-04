@@ -77,7 +77,9 @@ jobs:
           .venv/bin/python scripts/run_test_lane.py --lane public --report artifacts/phase8/public.json
           .venv/bin/python scripts/check_frozen_artifacts.py > artifacts/phase8/frozen.json
           .venv/bin/python scripts/package_demo.py --build /tmp/gridguide-public.zip > artifacts/phase8/package.json
-          .venv/bin/python -c 'import json; assert json.load(open("artifacts/phase8/package.json"))["archive_sha256"] == json.load(open("docs/releases/v1.1.0/package.json"))["archive_sha256"]'
+          .venv/bin/python -c 'import json; assert json.load(open("artifacts/phase8/package.json"))["archive_sha256"] == json.load(open("docs/distribution/current-package.json"))["archive_sha256"]'
+          curl --fail --location --retry 3 https://github.com/its-spark-dev/GridGuide/releases/download/v1.1.0/gridguide-v1.1.0-public.zip -o /tmp/gridguide-frozen-v1.1.0.zip
+          .venv/bin/python scripts/verify_frozen_release.py /tmp/gridguide-frozen-v1.1.0.zip
           cp /tmp/gridguide-public.zip artifacts/phase8/gridguide-public.zip
           python -m zipfile -e /tmp/gridguide-public.zip /tmp/gridguide-public
           python -m venv /tmp/gridguide-runtime

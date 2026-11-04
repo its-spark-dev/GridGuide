@@ -20,7 +20,7 @@ FILES = (
  'benchmarks/__init__.py','benchmarks/contracts.py','benchmarks/policies.py','benchmarks/metrics.py','benchmarks/validation.py',
  'data/synthetic/catalog.json','data/operator/catalog.json','scripts/replay_review.py',
  'deploy/serve.py','deploy/Dockerfile','deploy/requirements.in','deploy/requirements.lock','deploy/README.md',
- 'THIRD_PARTY_NOTICES.md')
+ 'THIRD_PARTY_NOTICES.md','LICENSE')
 FIXED_STATIC = ('dashboard/index.html','preparedness/index.html','operator/index.html','preparedness/frames.json',
                 'preparedness/kit.txt','preparedness/service-worker.js','preparedness/cache-manifest.json',
                 'fonts/Barlow-Regular.woff2','fonts/Barlow-SemiBold.woff2',

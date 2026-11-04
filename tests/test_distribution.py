@@ -25,10 +25,13 @@ class DistributionTests(unittest.TestCase):
             self.assertEqual(a.read_bytes(),b.read_bytes())
             with zipfile.ZipFile(a) as z:z.extractall(d/'extracted')
             verify_tree(d/'extracted')
+            self.assertEqual((d/'extracted'/'LICENSE').read_bytes(), (ROOT/'LICENSE').read_bytes())
             (d/'extracted'/'.env').write_text('canary')
             with self.assertRaises(ValueError):verify_tree(d/'extracted')
             with zipfile.ZipFile(a,'a') as z:z.writestr('unexpected.txt','canary')
             with self.assertRaises(ValueError):inspect(a)
+            from scripts.verify_frozen_release import verify
+            with self.assertRaises(ValueError):verify(a)
 
     def test_public_routes_security_headers_and_safe_static_scope(self):
         with tempfile.TemporaryDirectory() as d:
