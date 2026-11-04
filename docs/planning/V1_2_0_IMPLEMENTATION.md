@@ -143,3 +143,13 @@ Primary entry point: `python -m research.ml_lab` (prepare/train/freeze/evaluate/
 New tests: `python -m unittest discover -s research/ml_lab/tests -v`.
 Existing checks: public/challenge/research lanes where dependencies/sources available,
 frozen artifact verification, frontend build and established GitHub Actions unchanged.
+
+## Pre-fit environment repair amendment
+
+The first smoke-only workflow completed, but NumPy 2.2.6's macOS Accelerate path
+emitted floating-point matmul warnings on bounded, finite logistic inputs. Independent
+scalar dot products agreed within 1.8e-15. Before any full-data model fitting or final
+labels, pin NumPy **2.3.5**, which includes the upstream Accelerate floating-status
+repair; retain SciPy 1.15.3 and all model/search rules. Do not suppress warnings to
+claim numerical success. Rerun smoke, finite-output checks and deterministic replay.
+[Upstream NumPy issue](https://github.com/numpy/numpy/issues/29820).
