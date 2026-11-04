@@ -40,6 +40,8 @@ and another 48 deterministic episodes per method reported separately.
 These are modeled customer-hours divided by customer count, averaged within configuration
 before averaging across configurations. Lower is better. Callback times exclude independent
 post-episode verification; forced one-action decisions are reported separately in the full report.
+Timing uses all 1,584 confirmation episodes per method, including 48 deterministic episodes;
+the cost column uses the 1,536 stochastic episodes. Methods visit different decision states.
 
 - **Reactive vs fixed:** 0.998882-hour mean reduction; grouped 95% interval
   **[0.564832, 1.456983]**. The ≥2% adaptive-value gate passes.

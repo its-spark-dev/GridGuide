@@ -185,6 +185,9 @@ def render(dataset: Path, discovery: Path, confirmation: Path, output: Path):
         "Forced waits are separately retained; they can dominate an all-callback median. Fixed planning",
         "is a one-time measurement and is not comparable to a per-event callback; its complete timings",
         "remain in `runtime.json`. Verification time is excluded from policy callback time.", "",
+        "Timing includes all 1,584 confirmation episodes per method (1,536 stochastic and 48",
+        "deterministic); the quality axis and primary cost comparison use only the 1,536 stochastic",
+        "episodes. Each runtime distribution reflects that method's own visited decision states.", "",
         f"Discovery command: {discovery_runtime['wall_seconds']:.3f}s; peak RSS {discovery_runtime['peak_rss_mib']:.3f} MiB. "
         f"Confirmation: {runtime['wall_seconds']:.3f}s; peak RSS {runtime['peak_rss_mib']:.3f} MiB.",
         f"Recorded environment: {runtime['environment']['system']} {runtime['environment']['machine']}, "

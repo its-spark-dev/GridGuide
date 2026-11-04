@@ -93,6 +93,10 @@ Forced waits are separately retained; they can dominate an all-callback median. 
 is a one-time measurement and is not comparable to a per-event callback; its complete timings
 remain in `runtime.json`. Verification time is excluded from policy callback time.
 
+Timing includes all 1,584 confirmation episodes per method (1,536 stochastic and 48
+deterministic); the quality axis and primary cost comparison use only the 1,536 stochastic
+episodes. Each runtime distribution reflects that method's own visited decision states.
+
 Discovery command: 182.982s; peak RSS 142.203 MiB. Confirmation: 901.750s; peak RSS 430.375 MiB.
 Recorded environment: Darwin arm64, Python 3.12.14. Timing is local measurement, not a portable latency promise.
 

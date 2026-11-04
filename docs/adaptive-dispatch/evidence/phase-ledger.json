@@ -1,5 +1,22 @@
 {
   "base_commit": "619797ea360b8b05bc49a1ec19cf758a3d76c4b0",
+  "ci_evidence": {
+    "implementation_pr": "https://github.com/its-spark-dev/GridGuide/pull/20",
+    "note": "Final presentation/ledger-only head must additionally pass PR checks before handoff; frozen numerical source and outcomes are unchanged.",
+    "runs": [
+      {
+        "conclusion": "success",
+        "name": "Adaptive dispatch verification",
+        "url": "https://github.com/its-spark-dev/GridGuide/actions/runs/41871356203"
+      },
+      {
+        "conclusion": "success",
+        "name": "Synthetic verification",
+        "url": "https://github.com/its-spark-dev/GridGuide/actions/runs/41871356053"
+      }
+    ],
+    "verified_head_sha": "eb89e35b646989660950efc79a6742959485f2eb"
+  },
   "commands": {
     "adaptive": ".venv-ml/bin/python -m unittest discover -s research/adaptive_dispatch/tests -q",
     "existing_lanes": ".venv/bin/python scripts/run_test_lane.py --lane {public,challenge,research} --report /tmp/gridguide-adaptive-{lane}.json",
@@ -19,9 +36,7 @@
   "full_72_input_regeneration": "EXACT",
   "full_independent_schedule_metric_audit": "PASS",
   "inputs_commit": "ed89a1b",
-  "issues": [
-    "Final PR and GitHub Actions verification outstanding."
-  ],
+  "issues": [],
   "numerical_identities": {
     "confirmation": "4368cd594c4465c0e528dc0001fa5e5420bece9a89fd7b4d84fbbfa2f16d7a56",
     "discovery": "e8964bd6664f89343fd54b531f66f77975c007365b28a5099e4a1a30022f9df9"
@@ -29,7 +44,7 @@
   "phases": {
     "environment": "PASS",
     "foundations": "PASS",
-    "github_final_head": "PENDING",
+    "github_final_head": "Final PR checks are authoritative; verified implementation-head evidence recorded below",
     "learning_pilot": "NOT_INVOKED_BY_PREREGISTERED_STOPPING_RULE",
     "local_delivery_verification": "PASS",
     "opportunity_engineering": "PASS",
