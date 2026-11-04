@@ -1,4 +1,4 @@
-import { PRODUCT_VERSION } from './version';
+import { PublicShell } from './PublicShell';
 import { useEffect, useRef, useState } from 'react';
 import type { components } from './api.generated';
 type Catalog=components['schemas']['ReviewCatalog'];
@@ -86,17 +86,22 @@ export function OperatorReview(){
   finally{if(exporting.current===controller)setReviewBusy(false);}
  }
  const selected=comparison?.results.find(r=>r.policy===policy);
- return <><a className="skip-link" href="#operator-main">Skip to operator review</a>
- <header className="prep-header"><a href="/">GridGuide</a><span>Fictional operator review</span><a href="/preparedness/">Preparedness kit</a></header>
- <main id="operator-main"><span className="eyebrow">Inspect · compare · review</span><h1>Review fictional repair plans</h1>
+ return <PublicShell page="grid" mainId="operator-main">
+ <main id="operator-main" className="journey-page" tabIndex={-1}><div className="page-intro"><div><span className="eyebrow">Evidence behind the decisions</span><h1>Grid insights</h1><p>Review fictional repair plans in eight independent operator cases. These cases are separate from the Overview customer scenarios; no customer selection is transferred.</p></div></div>
  <p>No dispatch, notifications, utility confirmation or authenticated operational approval. Review state stays in this session; only explicit downloads persist it.</p>
  <p role="status" className="notice">{message}</p>
+ {selected&&<section className="operator-summary" aria-label="Selected policy overview">
+   <div className="metric-card"><span className="eyebrow">Customer waiting</span><h2>Completed customer-hours</h2><strong>{number(selected.metrics.modeled_customer_outage_hours)}</strong><p>Restricted 168h customer-hours: {number(selected.metrics.restricted_horizon_customer_hours)}</p></div>
+   <div className="metric-card"><span className="eyebrow">Critical-service tradeoff</span><h2>Conditional latency</h2>{Object.entries(selected.metrics.critical_service_latency_hours).map(([id,value])=><p key={id}><strong>{number(value)}</strong> h · {id}</p>)}{!Object.keys(selected.metrics.critical_service_latency_hours).length&&<p className="metric-unavailable">Unavailable<br/>None designated in this case</p>}</div>
+   <div className="metric-card"><span className="eyebrow">Keep gaps visible</span><h2>Unresolved / censored</h2><strong>{selected.metrics.unresolved_customers} / {selected.metrics.censored_customers}</strong><p>Fictional customers · unknown and known-later outcomes stay separate.</p></div>
+   <p className="metric-policy">{names[selected.policy]} · <a href="#compare-title">Compare all policies and fairness measures</a></p>
+ </section>}
  <section className="operator-panel" aria-labelledby="scenario-title"><h2 id="scenario-title">1. Set the declared scope</h2>
  <label>Fictional scenario<select value={scenario?.scenario_id??''} onChange={e=>changeScenario(e.target.value)} disabled={!catalog}>
  <option value="" disabled>Select a scenario</option>{catalog?.scenarios.map(s=><option key={s.scenario_id} value={s.scenario_id}>{s.label}</option>)}</select></label>
  <label className="check"><input type="checkbox" checked={experimental} disabled={!scenario} onChange={e=>scenario&&void compare(scenario,FIXED,e.target.checked,edges)}/>Include optional frozen CP-SAT comparison</label>
  <p>The fixed release/person-hour baseline remains the recommendation. G3’s 5% median promotion target failed. CP-SAT is experimental; its protected result includes a best-of-four baseline safeguard.</p>
- <p>In the published G3 experiment, mean improvement was 0.351% for the combined best-of-four incumbent plus CP-SAT versus the strongest fixed baseline, and 0.174% incrementally beyond per-instance best-of-four. These are historical synthetic findings, not gains established by this view or a blind holdout.</p>
+ <details><summary>Experimental performance and its limits</summary><p>In the published G3 experiment, mean improvement was 0.351% for the combined best-of-four incumbent plus CP-SAT versus the strongest fixed baseline, and 0.174% incrementally beyond per-instance best-of-four. These are historical synthetic findings, not gains established by this view or a blind holdout.</p></details>
  {scenario&&<details><summary>Tasks, customer dependencies and evidence</summary><p>Independent fiction. Effort/topology/crews: scenario assumptions. Scheduling: prototype policy. Overrides: user-declared. Observed outcomes, actual efficiency and unknown clearance: unavailable.</p>
  <p>{scenario.problem.crews.length} declared crews; one effective worker per crew is the elapsed-time assumption. Additional crews do not split a task. No extra AEP labor multiplier.</p>
  <ul>{scenario.problem.tasks.map(t=><li key={t.id}>{t.id}: {t.total_person_hours??'Unavailable'} total person-hours; access {t.access}; original prerequisites {t.prerequisites?.join(', ')||'none'}.</li>)}</ul>
@@ -134,5 +139,5 @@ export function OperatorReview(){
  {reviewed&&<section aria-labelledby="reviewed-title"><h3 id="reviewed-title">Reviewed in demo</h3><pre className="review-summary">{reviewed.summary}</pre><div className="actions"><button onClick={()=>download(JSON.stringify(reviewed.artifact,null,2),'application/json','gridguide-fictional-review.json')}>Download review JSON</button><button onClick={()=>download(reviewed.summary,'text/plain','gridguide-fictional-review.txt')}>Download readable summary</button></div></section>}
  <p>Hashes detect content changes; they are not authenticated signatures, proof of reviewer identity or protection against an actor rewriting the artifact. No identity or free text is collected.</p>
  </section></>}
- </main><footer>GridGuide {PRODUCT_VERSION} release candidate · Fictional operator decision support · No dispatch or messaging</footer></>;
+ </main></PublicShell>;
 }

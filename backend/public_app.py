@@ -3,13 +3,13 @@ import json
 import os
 from pathlib import Path
 from fastapi import HTTPException
-from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
+from fastapi.responses import FileResponse, JSONResponse
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 from .operator_api import create_operator_app
 from . import review
 
 ROOT = Path(__file__).resolve().parents[1]
-CSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; object-src 'none'"
+CSP = "default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'; object-src 'none'"
 
 
 def create_public_app(root: Path = ROOT):
@@ -64,7 +64,7 @@ def create_public_app(root: Path = ROOT):
 
     @app.get('/')
     def home():
-        return RedirectResponse('/preparedness/', status_code=307)
+        return FileResponse(static['dashboard/index.html'])
 
     @app.get('/{path:path}', include_in_schema=False)
     def asset(path: str):
