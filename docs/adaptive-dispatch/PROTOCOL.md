@@ -42,7 +42,7 @@ hours remain separate; the G2 elapsed-time convention is applied once before sam
 
 Independent per-task finite distributions permit transparent residual-life conditioning
 and exact small-instance checks. Primary profiles: deterministic multiplier 1; equal-mass
-low variability {.5, 1.5}; equal-mass high variability {.25, 1, 2.75}. Both stochastic
+low variability {.5, 1.5}; equal-mass high variability {.25, .5, 2.25}. Both stochastic
 profiles have mean multiplier 1. Integer durations use `ceil(nominal * multiplier)`;
 coincident support points retain their probability mass. These distributions are scenario
 assumptions, not fitted repair-time models. Independent durations do not model shared
@@ -67,7 +67,10 @@ idle crews are interchangeable here) plus valid wait. For each root action, eval
 reactive continuation rules on eight independently sampled conditional hypothetical futures.
 Choose by expected completed customer-hours, deterministic ties. Select continuation rules
 by their average across draws, never their per-draw hindsight minimum. Replan at each actual
-decision. A nominal-duration rollout is an additional low-cost search comparator.
+decision. A conditional-support-median rollout is an additional low-cost search comparator
+(upper median when two support values remain). This prospective implementation clarification
+replaces the ambiguous nominal-duration wording before any benchmark outcomes: the low
+profile has no nominal-duration support point. It uses one legal hypothetical future.
 Neither teacher can inspect the actual future. Exhaustive non-clairvoyant finite-support
 dynamic programming is limited to tiny fixtures; a privileged offline optimum, if shown,
 is a clearly labeled lower bound, never a teacher or deployment baseline.
@@ -83,19 +86,26 @@ between groups. Incomplete deterministic fixtures are verification/stress cases,
 finite-outcome primary learning denominators.
 
 Stage O discovery: 12 configurations (3/mechanism), 8 episodes/stochastic profile. Select
-the strongest fixed comparator and strongest cheap reactive comparator by mean normalized
+the strongest fixed comparator and strongest cheap dynamic comparator by mean normalized
 completed customer-hours (cost divided by customer count). Stage O confirmation: 24 new
 configurations (6/mechanism), 16 episodes/profile. Deterministic profile reported separately.
 Average paired differences across episodes/profiles within configuration before uncertainty;
 95% bootstrap intervals resample whole configurations, 2,000 draws, seed 20261104.
 
-Opportunity passes only if (1) best reactive improves on selected best fixed by >=2% with
+Opportunity passes only if (1) discovery-selected best reactive improves on selected best fixed by >=2% with
 positive paired-improvement interval; (2) stochastic teacher improves on selected strongest
-reactive by >=1% with positive paired-improvement interval; (3) teacher mean maximum critical
+cheap dynamic method by >=1% with positive paired-improvement interval; (3) teacher mean maximum critical
 group wait and mean per-episode p95 customer wait do not worsen by more than max(.25 hour,
 5% of comparator value), on common supported cases. Report every comparator, tail failures,
 support and runtime even on failure. These are prototype research thresholds, not AEP policy.
 Failure stops before learning; do not redesign the suite or move the threshold after reveal.
+
+Pre-benchmark comparator clarification: select the best reactive from the five reactive
+rules, and the strongest cheap dynamic method from those five **plus** support-median
+rollout. Thus the teacher must also beat the cheaper search if that wins discovery;
+the quality claim cannot rely on ignoring a stronger implemented comparator. Retain
+both crew variants per configuration, one deterministic episode per variant, and the
+specified stochastic episode counts per variant. Average crews within configurations.
 
 ## Conditional learning pilot
 
@@ -132,3 +142,12 @@ verification, split/configuration isolation, deterministic replay and report reg
 Run existing applicable tests/frozen checks. New bounded source-free CI, one final PR,
 no merge/tag/release. Deliver architecture audit, literature review, independent environment,
 opportunity results, conditional pilot if justified, honest recommendation for/against full RL.
+
+## Pre-benchmark arithmetic correction
+
+The first exact two-task test exposed that the draft high support {.25, 1, 2.75}
+averaged 4/3, contradicting the stated mean-one assumption. Before any scientific
+configuration generation or benchmark outcomes, correct it to {.25, .5, 2.25},
+whose mean is exactly one and variability exceeds the low profile. Tests now
+check every declared profile mean and exact expected scheduling cost. This repair
+changes no historical G5 distribution, result or calibration claim.
