@@ -1,6 +1,6 @@
 # v1.1.0 Phase 6 — G6 customer and offline review packet
 
-**Ready for independent review; G6 is not self-approved. Do not merge, start Phase 7,
+**Owner conditionally approves the implemented Phase 6 scope; manual accessibility acceptance remains pending. Do not merge, start Phase 7,
 publish a release or deploy without separate approval.** Base main is
 `98756a9e33da0ef6c9ed38bda177b7cb910c7855` (G5 merge); branch is
 `feat/v1.1-phase6-customer-offline`.
@@ -186,7 +186,10 @@ were visually inspected for clipping, wrapping and state clarity.
 **Manual keyboard and screen-reader smoke review is pending.** The executed keyboard
 checks are Playwright automation, not manual assistive-technology verification. No
 VoiceOver/NVDA, full WCAG certification or cross-browser accessibility claim is made.
-G6 should include a human keyboard/screen-reader walkthrough before acceptance.
+Use the [macOS VoiceOver walkthrough and observation record](G6_VOICEOVER_WALKTHROUGH.md).
+A human tester has volunteered; no actual observations have been received. The walkthrough
+must be executed, material issues resolved/retested, and results reviewed before final G6
+approval or merge. Automated checks are not a substitute.
 
 ## 9. Mobile and reduced motion
 
@@ -280,13 +283,13 @@ after G6 review; no calendar deadline or automatic next-phase authorization foll
 - [x] Real browser restart with complete network denial; storage/cache/update/delete tests.
 - [x] Applicable regressions and source/history/G2–G5 preservation checks.
 - [x] Screenshots, reproduction commands, limitations and future integration guidance.
-- [ ] Independent customer review accepts the dedicated preparedness entry and fixed milestone interaction.
+- [x] Owner conditionally accepts the architecture and fictional power-path semantics, subject to manual accessibility verification.
 - [ ] Human keyboard/screen-reader smoke review completed and any issues resolved.
-- [ ] Privacy reviewer accepts persistence, challenge-mode removal and migration/eviction limitations.
+- [x] Owner conditionally accepts synthetic-only persistence, scoped caching and documented storage limitations; existing limitations remain explicit.
 - [ ] Owner approves G6 and separately authorizes merge; later phases remain gated.
 
-Open questions are acceptance decisions, not implied permission to broaden scope:
-Is one explicitly saved fictional frame sufficient for the intended learning journey?
-Does the human screen-reader walkthrough communicate dependency selection and unknowns
-clearly? Are documented Chromium-only coverage and explicit re-save after schema upgrades
-acceptable for this bounded portfolio phase?
+Remaining acceptance question: does the actual human keyboard/VoiceOver walkthrough
+communicate controls, dependency states, updated inspection and snapshot lifecycle clearly?
+Record actual observations and resolve/retest material issues; the owner must review the
+results before final acceptance or merging. Conditional approval does not broaden browser
+coverage or remove eviction, same-origin compromise or non-authenticating-hash limitations.
