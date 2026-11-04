@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 const root = fileURLToPath(new URL('../', import.meta.url));
-const dist = resolve(root, 'dist');
+const dist = resolve(root, process.env.GRIDGUIDE_BUILD_DIR ?? 'dist');
 const manifest = JSON.parse(await readFile(resolve(dist, '.vite/manifest.json'), 'utf8'));
 const files = new Set(['preparedness/index.html', 'preparedness/kit.txt']);
 function visit(key) {
