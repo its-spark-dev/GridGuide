@@ -16,9 +16,8 @@ or AI provider. Missing/corrupt fixtures withhold startup; no source fallback ex
 Every definition has a revision, evidence lineage and canonical input fingerprint.
 Incomplete dependencies and blocked clearance stay unavailable.
 
-This is **catalog-only Phase 1**, not the future synthetic customer frontend.
-The existing frontend still requires challenge-local mode. Numerical v2 routes,
-benchmarks, browser workflows and hosting remain later gated work. One mode is
+The API remains **catalog-only**. Phase 6 adds a separate fictional preparedness frontend described below.
+The original dashboard still requires challenge-local mode. Numerical v2 routes and hosting remain separately gated work. One mode is
 selected per process; no second service or database is introduced.
 
 Public contracts stay centralized in `backend/contracts.py`. The export script merges
@@ -120,3 +119,29 @@ band, null outage probabilities and deterministic envelopes remain intact. G4 is
 accepted evidence-bounded No-Go; reopening needs a new versioned evidence review and
 data-quality gate. See the [simulation protocol](research/phase5/SIMULATION_PROTOCOL.md),
 [artifact instructions](research/phase5/ARTIFACTS.md) and [G5 packet](planning/V1_1_0_PHASE5.md).
+
+## Phase 6 customer preparedness boundary
+
+`/preparedness/` is a separate React/Vite entry linked from the original preparation
+page. The legacy dashboard retains its numerical behavior and session-only declarations.
+The generic kit works without API access. Python's `prepare_customer_paths.py` prepares
+18 immutable milestones from the six unchanged Phase 1 definitions, using the unchanged
+G2 fixed release/person-hour baseline and independent validator. The browser displays
+selected prepared frames, not a JavaScript numerical engine. This creates no API route,
+risk probability, optimizer integration, Monte Carlo run or simulation interval.
+
+`offline.ts` verifies mode, catalog/scenario provenance and approved frame content
+hashes. A saved record is opened explicitly as historical fiction. Mode/selection
+changes cancel saves, and cross-tab storage changes invalidate the saved view.
+Challenge mode disables snapshots and removes a prior fictional record on this origin.
+
+The production build emits a worker scoped to `/preparedness/`, with an exact hashed
+shell allowlist. Cache versions bind both resources and worker implementation. APIs,
+POSTs, prepared frame downloads, tiles, third-party fonts and the legacy dashboard are
+not cached. An explicit action installs/verifies the kit; readiness is never inferred
+from service-worker registration alone. Print/download are storage-free fallbacks.
+Only localhost/HTTPS supports this workflow. Vite development mode has no generated
+worker: use the production preview commands in [G6](planning/V1_1_0_PHASE6.md).
+
+Checksums are integrity controls, not authentication against same-origin compromise.
+No hosting/deployment or history-exposure remediation is included.

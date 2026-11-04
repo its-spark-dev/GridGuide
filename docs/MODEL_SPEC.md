@@ -3,7 +3,7 @@
 Phase 1 of v1.1.0 preserves all numerical rules below. Its independent fictional
 catalog uses `synthetic-scenario-v1` definitions, not legacy source DTOs. Synthetic
 repair effort is explicitly authored total person-hours, neither workbook-derived nor
-multiplied by 4.5. No synthetic elapsed-time, risk or release calculation is implemented.
+multiplied by 4.5. Phase 1 itself implements no elapsed-time, risk or release calculation; Phase 6 adds the bounded prepared playback below.
 Numerical model version and observed outcomes remain null. Crew availability, supply,
 topology and effort bind explicit evidence; repair precedence is separate from customer
 supply dependencies. See the [fixture specification](../data/synthetic/README.md) and
@@ -164,3 +164,28 @@ was 0.174%, and its 5% median target failed. CP-SAT remains an optional validate
 experimental comparison; synthetic uncertainty cannot promote it. Full definitions,
 sampling conventions, proof and limitations are in the [protocol](research/phase5/SIMULATION_PROTOCOL.md)
 and [G5 evidence](planning/V1_1_0_PHASE5.md). No rules or application defaults above change.
+
+## 11. Phase 6 deterministic fictional playback
+
+`conditional-dependency-playback-v1` prepares 18 milestone frames from the unchanged
+six independently authored Phase 1 definitions. `legacy-release-per-person-hour-adapter-v1`
+remains the strongest fixed baseline. G2 owns ceil(person-hours × 3600) durations under
+one effective worker, crew availability, prerequisites, release calculations and
+independent schedule validation. Authored effort is total person-hours; **do not apply
+AEP's 4.5 multiplier** to it. Milestones are response origin and each scheduled finish.
+No empirical productivity, travel delay, risk probability or distribution is inferred.
+
+Supply/topology/damage/effort/crew inputs are **scenario assumptions**; fixed scheduling,
+quantization and release rules are **prototype policy**; actual productivity, unknown
+connections/clearance and observed outcomes are **unavailable**. Their existing G1
+lineage is pinned by each input fingerprint. Fictional provenance is separate from these
+six evidence classes. Static labels do not turn fictional assets into source observations.
+
+Intact is an assumption; repair completion is relative to a selected prepared milestone.
+Customer release requires every damaged dependency; unresolved paths keep full completion
+null. Elapsed milestone and full-scope completion are distinct fields. No partial count
+is called confirmed utility restoration. Prepared frames are content-hashed and allowlisted
+at build time. UI selection and hash verification perform no scheduling arithmetic.
+
+G3's failed 5% promotion target, G4 No-Go and G5's 195 stable/15 unstable bounded
+convergence finding remain unchanged. No G5 intervals are displayed in this phase.

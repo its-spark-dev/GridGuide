@@ -1,0 +1,6 @@
+
+> gridguide-dashboard@0.1.0 types:generate
+> ../.venv/bin/python ../scripts/export_api_schema.py > .api-schema.json && openapi-typescript .api-schema.json -o src/api.generated.ts
+
+✨ openapi-typescript 7.13.0
+🚀 .api-schema.json → src/api.generated.ts [48.2ms]
