@@ -1,6 +1,6 @@
 # G6 manual VoiceOver walkthrough — macOS + Chrome
 
-**Status: human reports all steps passed; final acceptance review pending.** The owner has conditionally accepted
+**Status: prior reported passes preserved; targeted manual retesting required before final acceptance.** The owner has conditionally accepted
 Phase 6's architecture, fictional semantics, persistence, caching and storage limitations.
 The owner/tester returned Pass for K and steps 1–8. Detailed speech/focus notes and
 environment metadata were not supplied; do not infer them from expected behavior.
@@ -139,3 +139,47 @@ The empty template above remains available for supplemental details.
 
 Owner review of this report, final G6 acceptance and merge authorization remain pending.
 All coverage, storage and integrity limitations above remain unchanged.
+
+
+## Supplemental report and required targeted retest
+
+The user subsequently confirmed the following observations as **unknown**. This
+supplements, rather than replaces, the original K and 1–8 Pass reports above. No
+failures were reported, but the available record does not independently substantiate
+these interactions. No actual announcement or focus behavior is inferred from code,
+automated tests, expected behavior or the earlier Pass labels.
+
+| Step | Supplemental observation supplied by the tester |
+|---|---|
+| 2 — Dependency activation | Actual VoiceOver announcement: unknown. Focus behavior: unknown. |
+| 3 — Updated inspection | Automatic announcement: unknown. Manual access to updated inspection: unknown. Focus loss, silence, duplication, or stale content: unknown. |
+| 7 — Save/open | Actual save confirmation and historical-snapshot announcements: unknown. Focus behavior: unknown. |
+| 8 — Delete | Actual deletion announcement: unknown. Focus behavior: unknown. Post-deletion accessibility observation: unknown. |
+
+Environment: macOS version **unknown**; Chrome version **unknown**; VoiceOver settings
+changed **unknown**; exact tested commit **unknown**. These are explicit unknowns, not
+assumptions about the development machine or previously issued walkthrough revision.
+
+**Required next evidence:** a human performs only the following targeted interactions
+using the setup above; a full walkthrough repeat is not required. Record the current
+tested SHA and environment if known, plus actual speech and focus observations at each step.
+
+1. Set **Fictional simple path / Before repairs**. Activate **Transformer 2** and
+   record the spoken name/state/selection and where focus remains or moves (step 2).
+2. Listen for the inspection update, then manually navigate to and read its heading
+   and content. Select **Fuse 1** and check that inspection content changes. Record
+   automatic versus manually accessed speech separately, focus behavior, and any
+   silence, duplication or stale content (step 3).
+3. **Save this demo snapshot**, then **Open saved snapshot**. Record accessible save
+   confirmation, historical/fictional notice, timestamp/provenance and focus behavior
+   after both actions (step 7).
+4. **Delete saved snapshot**, then reload. Record accessible deletion status, focus
+   behavior and whether the saved snapshot is unavailable before and after reload
+   (step 8). This deletes the single test snapshot; use a separate test profile if needed.
+
+For each step return: `ID | Pass/Fail/Blocked | actual speech or silence | focus behavior`.
+Retesting is **not yet performed or claimed**. If a material issue is found, resolve it
+and manually retest the affected interaction before final review. Automated checks cannot
+supply these missing observations. G6 architecture/privacy approval remains conditional;
+PR #8 stays unmerged pending targeted evidence and final owner review. No Phase 7,
+release or deployment is authorized. All documented coverage/storage/hash limits remain.
