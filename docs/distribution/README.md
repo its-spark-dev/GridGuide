@@ -26,3 +26,7 @@ derived data, external references, fonts, tiles and dependencies retain separate
 and terms. Historical permission/privacy findings remain unresolved. The dependency
 notice generator's statement that it grants no project/data license refers to that
 inventory itself; the separately included LICENSE supplies the original-software grant.
+
+The first maintenance CI attempt passed Python, archive and browser checks but failed
+container startup: the explicit Docker COPY list also needed LICENSE. That list now
+includes the same approved file; startup integrity checks remain unchanged.
