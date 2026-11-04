@@ -17,6 +17,6 @@ export function PublicShell({ page, mainId, children }: { page: 'overview' | 'pr
       <span className="prototype-identity">Portfolio demo<br/>Fictional scenarios</span>
     </div></header>
     {children}
-    <footer className="site-footer no-print"><p>GridGuide {PRODUCT_VERSION} release candidate<br/><strong>Fictional demonstration · no live utility connection</strong></p><p>Python-owned results. Standard explanations.<br/>No dispatch, subscriptions or alert delivery.</p></footer>
+    <footer className="site-footer no-print"><p>GridGuide {PRODUCT_VERSION} portfolio release<br/><strong>Fictional demonstration · no live utility connection</strong></p><p>Python-owned results. Standard explanations.<br/>No dispatch, subscriptions or alert delivery.</p></footer>
   </div>;
 }

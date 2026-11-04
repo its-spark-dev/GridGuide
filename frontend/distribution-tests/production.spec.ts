@@ -39,6 +39,7 @@ test('clean production customer journey, fixed default and independent exported 
  const csp:string[]=[];page.on('console',m=>{if(m.text().includes('Content Security Policy'))csp.push(m.text());});
  await page.goto('/');await expect(page).toHaveURL(origin+'/');
  await expect(page.getByRole('heading',{name:'Your storm outlook',exact:true})).toBeVisible();
+ await expect(page.getByRole('contentinfo')).toContainText('GridGuide 1.1.0 portfolio release');
  await page.getByRole('link',{name:'Prepare now',exact:true}).click();
  await expect(page.getByRole('button',{name:'Save this demo snapshot'})).toBeEnabled();
  const path=page.getByRole('list',{name:'Fictional customer 1 ordered upstream dependencies'});
@@ -100,6 +101,7 @@ test('browser restart with network disabled, real service outage and cold restar
 
 test('bounded actual HTTP comparison latency and unavailable route boundaries',async({request},info)=>{
  const ready=await (await request.get(origin+'/ready')).json();expect(ready.interactive_solver).toBe(false);
+ expect(ready.product_version).toBe('1.1.0');expect(ready.release_status).toBe('stable');
  const catalog=await (await request.get(origin+'/api/v2/operator/scenarios')).json();
  const samples:{scenario:string;milliseconds:number}[]=[];
  for(let i=0;i<5;i++)for(const scenario of catalog.scenarios){

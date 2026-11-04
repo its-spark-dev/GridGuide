@@ -38,7 +38,7 @@ class DistributionTests(unittest.TestCase):
                 self.assertEqual(c.get('/ready').json()['external_ai'],False)
                 product=json.loads((ROOT/'frontend/package.json').read_text())['version']
                 self.assertEqual(c.get('/ready').json()['product_version'],product)
-                self.assertEqual(c.get('/ready').json()['release_status'],'release-candidate')
+                self.assertEqual(c.get('/ready').json()['release_status'],'stable')
                 home=c.get('/',follow_redirects=False)
                 self.assertEqual(home.status_code,200)
                 self.assertIn('Your storm outlook',home.text)

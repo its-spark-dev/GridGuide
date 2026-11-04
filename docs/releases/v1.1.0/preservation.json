@@ -1,0 +1,42 @@
+{
+  "base_main": "c4611d628e42f1f04c9bd7015f7553033d4abd2d",
+  "result": "PASS",
+  "historical_continuity_pins": 316,
+  "integrated_media_checksums": 31,
+  "readme_image_checksums": 15,
+  "original_map_checksums": 4,
+  "raw_source_checksums": 4,
+  "readme_tables_and_attribution": "unchanged",
+  "v1_0_0_tag_object": "c2b2d37aaf5e74a03190746c12badacc6bc86369",
+  "v1_0_0_commit": "b324c1b355cda60035fb11fa32bcddf10931f649",
+  "old_package_sha256": "dbf1c3251fd5e297f223b424898f35f18ac27cbb182b24dd1656486cffc32ebf",
+  "stable_package_sha256": "62bb4afec34e50ab15da511d4c360ecec0c99e4deb29e8721316b18e151cebb2",
+  "stable_package_files": 47,
+  "changed_package_paths": [
+    "backend/public_app.py",
+    "deploy/README.md",
+    "static/dashboard/index.html",
+    "static/operator/index.html",
+    "static/preparedness/cache-manifest.json",
+    "static/preparedness/index.html",
+    "static/preparedness/service-worker.js"
+  ],
+  "replaced_hashed_asset_paths": {
+    "before": [
+      "static/assets/PublicShell-BIKvC9ym.js",
+      "static/assets/dashboard-CxqnKNXN.js",
+      "static/assets/frameSelection-BxIOkR7m.js",
+      "static/assets/operator-B4C6BKol.js",
+      "static/assets/preparedness-ZsglF2gg.js"
+    ],
+    "after": [
+      "static/assets/PublicShell-BCinOKHE.js",
+      "static/assets/dashboard-CHrKIZZF.js",
+      "static/assets/frameSelection-BVJ3CG41.js",
+      "static/assets/operator-B0laQwGr.js",
+      "static/assets/preparedness-OsxKng0X.js"
+    ]
+  },
+  "historical_exclusion": "docs/media/v1.1.0/README.md changed during PR #13; unchanged from finalization base",
+  "research_rerun": false
+}

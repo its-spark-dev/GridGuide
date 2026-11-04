@@ -1,4 +1,4 @@
-# GridGuide 1.1.0 release candidate — local fictional distribution
+# GridGuide 1.1.0 — stable local portfolio distribution
 
 This package is independently authored fiction, not a utility system or authenticated
 review service. Original challenge data and external AI are absent. Project licensing
@@ -32,8 +32,8 @@ An explicit safety-source link opens an external website only on user navigation
 Container build context must be this extracted directory, never the repository:
 
 ```sh
-docker build -f deploy/Dockerfile -t gridguide-rc .
-docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,noexec,nosuid,size=16m -p 127.0.0.1:8000:8000 gridguide-rc
+docker build -f deploy/Dockerfile -t gridguide:1.1.0 .
+docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,noexec,nosuid,size=16m -p 127.0.0.1:8000:8000 gridguide:1.1.0
 ```
 
 The process runs as UID/GID 10001. SIGTERM allows ten seconds for graceful shutdown.
@@ -48,7 +48,12 @@ fictional snapshots persist; they remain historical immediately. Recalculation r
 the Python service. Storage eviction, same-origin compromise and unsupported browsers
 remain limits. Hashes prove consistency, not authenticated review history. G3's failed
 promotion target leaves the fixed baseline default; CP-SAT is optional/frozen. G5
-intervals remain deferred and G4 remains No-Go. This is a rehearsal package, not a release
-or authorization to deploy publicly.
+intervals remain deferred and G4 remains No-Go. `/ready` reports product_version `1.1.0`
+and release_status `stable`. Stable describes this final portfolio release, not utility
+validation, production certification or authorization to deploy publicly.
+
+Use the release's `gridguide-v1.1.0-public.zip` and verify it against `SHA256SUMS`.
+GitHub's automatic source archives are different: they contain the repository's original
+challenge material and are not source-free. No new project/data license is granted.
 
 Before public hosting, complete a current OS/container vulnerability assessment and review HTTPS, allowed-host, reverse-proxy, slow-client and resource-limit controls. G8 preparation approval is not production security certification or deployment authorization.

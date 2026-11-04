@@ -1,31 +1,33 @@
-# Reproducing GridGuide 1.1.0 release candidate
+# Reproducing GridGuide 1.1.0
 
-Use the [integrated demonstration evidence](media/v1.1.0-integrated/README.md) for the
-packaged application commit, current manifest, checksums and recording commands.
-The [G9 packet](planning/V1_1_0_PHASE9.md) preserves the earlier acceptance evidence. There is no v1.1.0 tag or published Release yet.
-Do not substitute the historical G8 ZIP for the version-aligned candidate.
+Start with the [stable GitHub Release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.1.0)
+and [stable package manifest](releases/v1.1.0/package.json). The
+[finalization record](releases/v1.1.0/FINALIZATION.md) explains the minimal stable-status
+changes and new checksum. The [integrated demonstration](media/v1.1.0-integrated/README.md)
+retains the authentic, approved PR #13 recording and its older package hash; its candidate
+footer and review-pending text are historical snapshots, not current release status.
+The [G9 packet](planning/V1_1_0_PHASE9.md) remains the original acceptance evidence.
 
-## 1. Required public candidate verification
+## 1. Required public package verification
 
 ### Acquire and inspect the standalone package
 
-Open the candidate PR's successful **Synthetic verification** Actions run and download
-the **synthetic-verification** artifact. These CI artifacts expire after 14 days; this is
-review distribution, not a permanent release asset. Extract the outer verification ZIP
-outside the repository. Its `artifacts/phase8/gridguide-public.zip` is the standalone
-package (the CI directory name is historical). Compare its SHA256 to
-[current package manifest](media/v1.1.0-integrated/package.json) from the reviewed commit,
-then extract into a new directory. Python 3.12 is required; set `GG_PYTHON` to its actual
-executable. The local verification used the existing `.venv/bin/python` solely to create
-a new environment; CI/container use freshly installed Python 3.12.14.
+Download **gridguide-v1.1.0-public.zip** and **SHA256SUMS** from the stable Release into
+a new directory outside the repository. Verify the ZIP before extracting, and compare
+the digest with `archive_sha256` in the tagged stable manifest above. GitHub's automatic
+**Source code (zip/tar.gz)** downloads include original challenge material; they are not
+the source-free package and do not acquire a new redistribution license.
+
+Python 3.12 is required; set `GG_PYTHON` to its actual executable. CI/container use
+Python 3.12.14. Use fresh destination directories for these commands:
 
 ```sh
 export GG_PYTHON=python3.12  # or absolute path to your Python 3.12 executable
 "$GG_PYTHON" -c 'import sys; assert sys.version_info[:2] == (3,12)'
-"$GG_PYTHON" -m zipfile -e /path/to/synthetic-verification.zip /tmp/gridguide-verification
-"$GG_PYTHON" -c 'import hashlib; from pathlib import Path; print(hashlib.sha256(Path("/tmp/gridguide-verification/artifacts/phase8/gridguide-public.zip").read_bytes()).hexdigest())'
-# Continue only if that hash matches the reviewed package.json archive_sha256.
-"$GG_PYTHON" -m zipfile -e /tmp/gridguide-verification/artifacts/phase8/gridguide-public.zip /tmp/gridguide-public
+cd /path/to/downloads
+shasum -a 256 -c SHA256SUMS  # Linux: sha256sum -c SHA256SUMS
+# Continue only if this passes and the digest matches package.json archive_sha256.
+"$GG_PYTHON" -m zipfile -e gridguide-v1.1.0-public.zip /tmp/gridguide-public
 cd /tmp/gridguide-public
 export PYTHONDONTWRITEBYTECODE=1
 "$GG_PYTHON" -c 'from pathlib import Path; from backend.public_integrity import verify_tree; verify_tree(Path.cwd()); print("exact tree verified")'
@@ -36,7 +38,7 @@ export PYTHONDONTWRITEBYTECODE=1
 ```
 
 Open http://127.0.0.1:8000/; `/ready` must report product_version `1.1.0`,
-release_status `release-candidate`, synthetic mode, no external AI and no interactive solver.
+release_status `stable`, synthetic mode, no external AI and no interactive solver.
 Keep the virtual environment, downloads and exports **outside the immutable extracted
 tree**. Startup rejects extra files, including caches. Install/build needs registry access;
 installed operation does not. No source records, keys, `.env` or paid service is needed.
@@ -49,9 +51,9 @@ the reviewed commit. The complete 47-file manifest is in `package.json` and the 
 From that same extraction, after stopping the Python server if it owns port 8000:
 
 ```sh
-docker build -f deploy/Dockerfile -t gridguide-rc .
+docker build -f deploy/Dockerfile -t gridguide:1.1.0 .
 docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges \
-  --tmpfs /tmp:rw,noexec,nosuid,size=16m -p 127.0.0.1:8000:8000 gridguide-rc
+  --tmpfs /tmp:rw,noexec,nosuid,size=16m -p 127.0.0.1:8000:8000 gridguide:1.1.0
 ```
 
 The context must be the inspected extraction, never a broad repository checkout.
@@ -88,18 +90,16 @@ a reviewer or certify operational decisions. The operator page is not cached off
 
 ### Build and test from an authorized code checkout
 
-If the temporary CI artifact has expired, acquire a sparse source-free build checkout
-instead of checking out the repository's original data. These paths match the tested
-CI lane. Confirm its head against the approved PR before executing code:
+To rebuild the release, acquire a sparse checkout of the immutable `v1.1.0` tag.
+These paths match the tested CI lane; they do not materialize the original data.
+Confirm the tag target against the published Release before executing code:
 
 ```sh
-git clone --depth 1 --filter=blob:none --sparse --branch main \
+git clone --depth 1 --filter=blob:none --sparse --branch v1.1.0 \
   https://github.com/its-spark-dev/GridGuide.git /tmp/gridguide-code
 git -C /tmp/gridguide-code sparse-checkout set .github backend benchmarks data/synthetic \
   data/operator deploy docs frontend pipeline research scripts tests
 cd /tmp/gridguide-code
-git fetch origin 3c53d8e9429318f121c210d148f7d2b35ae52147
-git checkout --detach 3c53d8e9429318f121c210d148f7d2b35ae52147
 git rev-parse HEAD
 test ! -e data/raw
 test ! -e data/processed
@@ -110,9 +110,10 @@ build checkout and must never become the distribution context. Build the allowli
 using the commands below, then inspect/extract it as above. No original-source permission
 or sanitized-history claim follows from sparse checkout.
 
-The commands above pin the approved integrated application commit. The current media
-refresh PR contains the updated recording harness and captions; it changes no package input. A repository clone contains historical
-source material; the standalone package is the preferred public acquisition path.
+The commands above pin the final stable release. The recorded demonstration remains
+bound to its earlier application commit and manifest; do not substitute the stable hash
+into that historical record. A repository clone can access historical source material;
+the standalone package is the preferred public acquisition path.
 Public CI uses a sparse depth-one checkout of code, fictional data and documentation,
 with `data/raw` and `data/processed` explicitly absent. Its exact setup is in
 [`ci.yml`](../.github/workflows/ci.yml); no source access or private CI runner is required.
@@ -143,7 +144,7 @@ installed Google Chrome. Then, from `frontend/`:
 npx playwright test -c playwright.preparedness.config.ts
 GRIDGUIDE_PACKAGE=/tmp/gridguide-public GRIDGUIDE_PUBLIC_PYTHON=/tmp/gridguide-runtime/bin/python \
   npx playwright test -c playwright.distribution.config.ts
-GRIDGUIDE_CONTAINER=gridguide-rc GRIDGUIDE_PACKAGE=/tmp/gridguide-public \
+GRIDGUIDE_CONTAINER=gridguide:1.1.0 GRIDGUIDE_PACKAGE=/tmp/gridguide-public \
   GRIDGUIDE_PUBLIC_PYTHON=/tmp/gridguide-runtime/bin/python \
   npx playwright test -c playwright.distribution.config.ts --output test-results-container
 ```
@@ -154,7 +155,7 @@ instead of Chrome. The container rehearsal command, from repository root, additi
 checks every application layer and starts a network-none container on an isolated path:
 
 ```sh
-.venv/bin/python scripts/rehearse_container.py --image gridguide-rc --output /tmp/container-check.json
+.venv/bin/python scripts/rehearse_container.py --image gridguide:1.1.0 --output /tmp/container-check.json
 ```
 
 Port 18189 must be free. The production browser tests verify real downloaded replay,

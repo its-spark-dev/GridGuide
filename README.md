@@ -7,7 +7,7 @@
 Understand an outage scenario. Prepare for what comes next. See the decisions behind repair order.
 
 [![CI · main](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml)
-[![Version 1.1.0 release candidate](https://img.shields.io/badge/version-1.1.0%20RC-025a95)](docs/releases/v1.1.0.md)
+[![Version 1.1.0 stable](https://img.shields.io/badge/version-1.1.0%20stable-025a95)](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.1.0)
 [![React and TypeScript](https://img.shields.io/badge/React-TypeScript-3178c6)](frontend/package.json)
 [![FastAPI and Python](https://img.shields.io/badge/FastAPI-Python-009688)](docs/ARCHITECTURE.md)
 
@@ -215,11 +215,12 @@ denominators, regressions, timeouts and limitations. The
 
 ## Getting started
 
-**Try the fictional package first.** Follow the [acquisition and inspection guide](docs/REPRODUCING_V1_1.md#acquire-and-inspect-the-standalone-package)
-to download the standalone ZIP from a successful **Synthetic verification** CI artifact
-and verify it against the [reviewed package manifest](docs/media/v1.1.0-integrated/package.json).
-CI artifacts expire; the guide includes a source-free build fallback. There is no
-published v1.1.0 GitHub Release or hosted service yet.
+**Try the fictional package first.** Download the [v1.1.0 standalone ZIP](https://github.com/its-spark-dev/GridGuide/releases/download/v1.1.0/gridguide-v1.1.0-public.zip)
+and [SHA256SUMS](https://github.com/its-spark-dev/GridGuide/releases/download/v1.1.0/SHA256SUMS).
+Follow the [acquisition and inspection guide](docs/REPRODUCING_V1_1.md#acquire-and-inspect-the-standalone-package)
+and [stable package manifest](docs/releases/v1.1.0/package.json) before running it.
+GitHub's automatic source archives include original challenge material; they are **not**
+the source-free demonstration. GridGuide is a local portfolio release with no hosted service.
 
 From the **clean extracted package**, with Python 3.12:
 
@@ -241,7 +242,7 @@ with authorized pinned challenge sources. That mode is separate from the fiction
 <a id="verify"></a>
 
 **Explore further:** [verification and replay commands](docs/REPRODUCING_V1_1.md) ·
-[documentation guide](docs/README.md) · [release-candidate notes](docs/releases/v1.1.0.md) ·
+[documentation guide](docs/README.md) · [release notes](docs/releases/v1.1.0.md) ·
 [contributing](CONTRIBUTING.md).
 
 ## Contributors, attribution and scope
