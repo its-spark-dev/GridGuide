@@ -140,6 +140,57 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v2/operator/compare": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Compare */
+        post: operations["compare_api_v2_operator_compare_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/operator/review-export": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Export */
+        post: operations["export_api_v2_operator_review_export_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/operator/scenarios": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Scenarios */
+        get: operations["scenarios_api_v2_operator_scenarios_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v2/scenarios": {
         parameters: {
             query?: never;
@@ -178,6 +229,34 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** Acknowledgements */
+        Acknowledgements: {
+            /**
+             * Experimental And Simulation Limits
+             * @constant
+             */
+            experimental_and_simulation_limits: true;
+            /**
+             * Fictional
+             * @constant
+             */
+            fictional: true;
+            /**
+             * Gaps And Unresolved
+             * @constant
+             */
+            gaps_and_unresolved: true;
+            /**
+             * Modeled Not Field Confirmed
+             * @constant
+             */
+            modeled_not_field_confirmed: true;
+            /**
+             * Objective And Tradeoffs
+             * @constant
+             */
+            objective_and_tradeoffs: true;
+        };
         /** AlertEligibility */
         AlertEligibility: {
             /**
@@ -289,6 +368,17 @@ export interface components {
             /** Unresolved Path Count */
             unresolved_path_count: number;
         };
+        /** Assignment */
+        Assignment: {
+            /** Crew Id */
+            crew_id: string;
+            /** End Tick */
+            end_tick: number;
+            /** Start Tick */
+            start_tick: number;
+            /** Task Id */
+            task_id: string;
+        };
         /** Assumption */
         Assumption: {
             /**
@@ -302,6 +392,241 @@ export interface components {
             id: string;
             /** Value */
             value: string | number | null;
+        };
+        /** BenchmarkCrew */
+        BenchmarkCrew: {
+            /**
+             * Available Tick
+             * @default 0
+             */
+            available_tick: number;
+            /** Id */
+            id: string;
+            /**
+             * People
+             * @default 4
+             */
+            people: number;
+        };
+        /** BenchmarkProblem */
+        "BenchmarkProblem-Input": {
+            /** Actual Efficiency */
+            actual_efficiency?: null;
+            /** Crews */
+            crews: components["schemas"]["BenchmarkCrew"][];
+            /**
+             * Duration Assumption
+             * @default one_effective_worker
+             * @enum {string}
+             */
+            duration_assumption: "one_effective_worker" | "ideal_all_people";
+            /**
+             * Duration Rule Classification
+             * @default prototype policy
+             * @constant
+             */
+            duration_rule_classification: "prototype policy";
+            /** Family */
+            family: string;
+            /**
+             * Generator Version
+             * @default benchmark-generator-v1
+             * @constant
+             */
+            generator_version: "benchmark-generator-v1";
+            /** Groups */
+            groups: components["schemas"]["CustomerGroup"][];
+            /**
+             * Horizon Ticks
+             * @default 604800
+             * @constant
+             */
+            horizon_ticks: 604800;
+            /** Id */
+            id: string;
+            /**
+             * Input Classification
+             * @default scenario assumption
+             * @constant
+             */
+            input_classification: "scenario assumption";
+            /**
+             * Missing Evidence Classification
+             * @default unavailable
+             * @constant
+             */
+            missing_evidence_classification: "unavailable";
+            /** Observed Outcomes */
+            observed_outcomes?: null;
+            /**
+             * Origin
+             * @default independently_authored_synthetic
+             * @constant
+             */
+            origin: "independently_authored_synthetic";
+            /**
+             * Precedence Classification
+             * @default prototype policy
+             * @constant
+             */
+            precedence_classification: "prototype policy";
+            /**
+             * Response Origin
+             * @default modeled_response_start
+             * @constant
+             */
+            response_origin: "modeled_response_start";
+            /**
+             * Revision
+             * @default 1
+             * @constant
+             */
+            revision: 1;
+            /** Seed */
+            seed: number;
+            /**
+             * Split
+             * @enum {string}
+             */
+            split: "development" | "evaluation" | "micro";
+            /** Tasks */
+            tasks: components["schemas"]["BenchmarkTask-Input"][];
+            /**
+             * Version
+             * @default benchmark-problem-v1
+             * @constant
+             */
+            version: "benchmark-problem-v1";
+        };
+        /** BenchmarkProblem */
+        "BenchmarkProblem-Output": {
+            /** Actual Efficiency */
+            actual_efficiency?: null;
+            /** Crews */
+            crews: components["schemas"]["BenchmarkCrew"][];
+            /**
+             * Duration Assumption
+             * @default one_effective_worker
+             * @enum {string}
+             */
+            duration_assumption: "one_effective_worker" | "ideal_all_people";
+            /**
+             * Duration Rule Classification
+             * @default prototype policy
+             * @constant
+             */
+            duration_rule_classification: "prototype policy";
+            /** Family */
+            family: string;
+            /**
+             * Generator Version
+             * @default benchmark-generator-v1
+             * @constant
+             */
+            generator_version: "benchmark-generator-v1";
+            /** Groups */
+            groups: components["schemas"]["CustomerGroup"][];
+            /**
+             * Horizon Ticks
+             * @default 604800
+             * @constant
+             */
+            horizon_ticks: 604800;
+            /** Id */
+            id: string;
+            /**
+             * Input Classification
+             * @default scenario assumption
+             * @constant
+             */
+            input_classification: "scenario assumption";
+            /**
+             * Missing Evidence Classification
+             * @default unavailable
+             * @constant
+             */
+            missing_evidence_classification: "unavailable";
+            /** Observed Outcomes */
+            observed_outcomes?: null;
+            /**
+             * Origin
+             * @default independently_authored_synthetic
+             * @constant
+             */
+            origin: "independently_authored_synthetic";
+            /**
+             * Precedence Classification
+             * @default prototype policy
+             * @constant
+             */
+            precedence_classification: "prototype policy";
+            /**
+             * Response Origin
+             * @default modeled_response_start
+             * @constant
+             */
+            response_origin: "modeled_response_start";
+            /**
+             * Revision
+             * @default 1
+             * @constant
+             */
+            revision: 1;
+            /** Seed */
+            seed: number;
+            /**
+             * Split
+             * @enum {string}
+             */
+            split: "development" | "evaluation" | "micro";
+            /** Tasks */
+            tasks: components["schemas"]["BenchmarkTask-Output"][];
+            /**
+             * Version
+             * @default benchmark-problem-v1
+             * @constant
+             */
+            version: "benchmark-problem-v1";
+        };
+        /** BenchmarkTask */
+        "BenchmarkTask-Input": {
+            /**
+             * Access
+             * @default clear
+             * @enum {string}
+             */
+            access: "clear" | "blocked" | "unresolved";
+            /** Id */
+            id: string;
+            /**
+             * Prerequisites
+             * @default []
+             */
+            prerequisites: string[];
+            /** Report Order */
+            report_order: number;
+            /** Total Person Hours */
+            total_person_hours: number | string | null;
+        };
+        /** BenchmarkTask */
+        "BenchmarkTask-Output": {
+            /**
+             * Access
+             * @default clear
+             * @enum {string}
+             */
+            access: "clear" | "blocked" | "unresolved";
+            /** Id */
+            id: string;
+            /**
+             * Prerequisites
+             * @default []
+             */
+            prerequisites: string[];
+            /** Report Order */
+            report_order: number;
+            /** Total Person Hours */
+            total_person_hours: string | null;
         };
         /** Bounds */
         Bounds: {
@@ -354,6 +679,46 @@ export interface components {
             /** Title */
             title: string;
         };
+        /** CompareRequest */
+        CompareRequest: {
+            /**
+             * Include Experimental
+             * @default false
+             */
+            include_experimental: boolean;
+            /**
+             * Precedence
+             * @default []
+             */
+            precedence: components["schemas"]["Precedence"][];
+            /**
+             * Revision
+             * @default 1
+             */
+            revision: number;
+            /** Scenario Fingerprint */
+            scenario_fingerprint: string;
+            /** Scenario Id */
+            scenario_id: string;
+            /**
+             * Scenario Revision
+             * @default 1
+             * @constant
+             */
+            scenario_revision: 1;
+            /**
+             * Selected Policy
+             * @default legacy-release-per-person-hour-adapter-v1
+             * @enum {string}
+             */
+            selected_policy: "fifo-v1" | "customer-count-v1" | "legacy-release-per-person-hour-adapter-v1" | "legacy-critical-proxy-first-adapter-v1" | "restoration-cpsat-v1";
+            /**
+             * Version
+             * @default operator-request-v1
+             * @constant
+             */
+            version: "operator-request-v1";
+        };
         /** Comparison */
         Comparison: {
             /** After Result Id */
@@ -405,6 +770,27 @@ export interface components {
             runner_up_distance_m: number;
             /** Verified Electrical Attachment */
             verified_electrical_attachment?: null;
+        };
+        /** CustomerGroup */
+        CustomerGroup: {
+            /** Branch */
+            branch: string;
+            /**
+             * Critical Service
+             * @default false
+             */
+            critical_service: boolean;
+            /** Customer Ids */
+            customer_ids: string[];
+            /** Id */
+            id: string;
+            /** Required Tasks */
+            required_tasks: string[];
+            /**
+             * Unresolved Dependency
+             * @default false
+             */
+            unresolved_dependency: boolean;
         };
         /** CustomerJourney */
         CustomerJourney: {
@@ -634,6 +1020,45 @@ export interface components {
             schema_version: "2.0";
             simulated_inputs: components["schemas"]["Scenario"];
             source_facts: components["schemas"]["SourceFacts"];
+        };
+        /** Evidence */
+        Evidence: {
+            /**
+             * Observed Outcomes Clearance Efficiency
+             * @default unavailable
+             * @constant
+             */
+            observed_outcomes_clearance_efficiency: "unavailable";
+            /**
+             * Origin
+             * @default independently_authored_synthetic
+             * @constant
+             */
+            origin: "independently_authored_synthetic";
+            /**
+             * Override Precedence
+             * @default user-declared
+             * @constant
+             */
+            override_precedence: "user-declared";
+            /**
+             * Scheduling Release Rules
+             * @default prototype policy
+             * @constant
+             */
+            scheduling_release_rules: "prototype policy";
+            /**
+             * Topology Effort Crews
+             * @default scenario assumption
+             * @constant
+             */
+            topology_effort_crews: "scenario assumption";
+            /**
+             * Version
+             * @default operator-evidence-v1
+             * @constant
+             */
+            version: "operator-evidence-v1";
         };
         /** ExplanationClause */
         ExplanationClause: {
@@ -956,6 +1381,15 @@ export interface components {
              */
             precision_degrees: 0.01;
         };
+        /** Milestone */
+        Milestone: {
+            /** Additional Customers */
+            additional_customers: number;
+            /** Cumulative Customers */
+            cumulative_customers: number;
+            /** Tick */
+            tick: number;
+        };
         /** ModelVersions */
         ModelVersions: {
             /** Assumptions */
@@ -964,6 +1398,110 @@ export interface components {
             restoration: string;
             /** Risk */
             risk: string;
+        };
+        /** OperatorComparison */
+        "OperatorComparison-Input": {
+            /**
+             * Best Of Four Policy
+             * @enum {string}
+             */
+            best_of_four_policy: "fifo-v1" | "customer-count-v1" | "legacy-release-per-person-hour-adapter-v1" | "legacy-critical-proxy-first-adapter-v1" | "restoration-cpsat-v1";
+            /** Catalog Fingerprint */
+            catalog_fingerprint: string;
+            /**
+             * @default {
+             *       "observed_outcomes_clearance_efficiency": "unavailable",
+             *       "origin": "independently_authored_synthetic",
+             *       "override_precedence": "user-declared",
+             *       "scheduling_release_rules": "prototype policy",
+             *       "topology_effort_crews": "scenario assumption",
+             *       "version": "operator-evidence-v1"
+             *     }
+             */
+            evidence: components["schemas"]["Evidence"];
+            /**
+             * Experimental Status
+             * @enum {string}
+             */
+            experimental_status: "not_requested" | "supported_frozen" | "unsupported_override";
+            /** Explanation */
+            explanation: string;
+            problem: components["schemas"]["BenchmarkProblem-Input"];
+            /**
+             * Recommended Policy
+             * @default legacy-release-per-person-hour-adapter-v1
+             * @constant
+             */
+            recommended_policy: "legacy-release-per-person-hour-adapter-v1";
+            request: components["schemas"]["CompareRequest"];
+            /** Result Fingerprint */
+            result_fingerprint: string;
+            /** Results */
+            results: components["schemas"]["PolicyResult-Input"][];
+            /**
+             * Uncertainty
+             * @default not_integrated_no_quantiles
+             * @constant
+             */
+            uncertainty: "not_integrated_no_quantiles";
+            /**
+             * Version
+             * @default operator-comparison-v1
+             * @constant
+             */
+            version: "operator-comparison-v1";
+        };
+        /** OperatorComparison */
+        "OperatorComparison-Output": {
+            /**
+             * Best Of Four Policy
+             * @enum {string}
+             */
+            best_of_four_policy: "fifo-v1" | "customer-count-v1" | "legacy-release-per-person-hour-adapter-v1" | "legacy-critical-proxy-first-adapter-v1" | "restoration-cpsat-v1";
+            /** Catalog Fingerprint */
+            catalog_fingerprint: string;
+            /**
+             * @default {
+             *       "observed_outcomes_clearance_efficiency": "unavailable",
+             *       "origin": "independently_authored_synthetic",
+             *       "override_precedence": "user-declared",
+             *       "scheduling_release_rules": "prototype policy",
+             *       "topology_effort_crews": "scenario assumption",
+             *       "version": "operator-evidence-v1"
+             *     }
+             */
+            evidence: components["schemas"]["Evidence"];
+            /**
+             * Experimental Status
+             * @enum {string}
+             */
+            experimental_status: "not_requested" | "supported_frozen" | "unsupported_override";
+            /** Explanation */
+            explanation: string;
+            problem: components["schemas"]["BenchmarkProblem-Output"];
+            /**
+             * Recommended Policy
+             * @default legacy-release-per-person-hour-adapter-v1
+             * @constant
+             */
+            recommended_policy: "legacy-release-per-person-hour-adapter-v1";
+            request: components["schemas"]["CompareRequest"];
+            /** Result Fingerprint */
+            result_fingerprint: string;
+            /** Results */
+            results: components["schemas"]["PolicyResult-Output"][];
+            /**
+             * Uncertainty
+             * @default not_integrated_no_quantiles
+             * @constant
+             */
+            uncertainty: "not_integrated_no_quantiles";
+            /**
+             * Version
+             * @default operator-comparison-v1
+             * @constant
+             */
+            version: "operator-comparison-v1";
         };
         /** PlanCandidate */
         "PlanCandidate-Input": {
@@ -1215,6 +1753,125 @@ export interface components {
             display_finish_hours: components["schemas"]["Bounds"];
             finish_hours: components["schemas"]["Bounds"];
             start_hours: components["schemas"]["Bounds"];
+        };
+        /** PolicyResult */
+        "PolicyResult-Input": {
+            /**
+             * Baseline Policy
+             * @enum {string}
+             */
+            baseline_policy: "fifo-v1" | "customer-count-v1" | "legacy-release-per-person-hour-adapter-v1" | "legacy-critical-proxy-first-adapter-v1" | "restoration-cpsat-v1";
+            /** Best Bound Ticks */
+            best_bound_ticks?: number | null;
+            /** Explanation */
+            explanation: string;
+            /** Fallback Reason */
+            fallback_reason?: string | null;
+            /**
+             * Feasibility
+             * @default independently_validated
+             * @constant
+             */
+            feasibility: "independently_validated";
+            metrics: components["schemas"]["ReviewMetrics"];
+            /**
+             * Origin
+             * @enum {string}
+             */
+            origin: "recomputed_baseline" | "frozen_g3_protected_result";
+            /**
+             * Policy
+             * @enum {string}
+             */
+            policy: "fifo-v1" | "customer-count-v1" | "legacy-release-per-person-hour-adapter-v1" | "legacy-critical-proxy-first-adapter-v1" | "restoration-cpsat-v1";
+            /**
+             * Primary Optimal
+             * @default false
+             */
+            primary_optimal: boolean;
+            /** Recorded Seconds */
+            recorded_seconds?: number | null;
+            /** Relative Gap */
+            relative_gap?: number | null;
+            /**
+             * Returned Source
+             * @enum {string}
+             */
+            returned_source: "baseline" | "solver";
+            schedule: components["schemas"]["Schedule"];
+            /** Solver Status */
+            solver_status?: string | null;
+            /**
+             * Timing Scope
+             * @default not_recorded
+             * @enum {string}
+             */
+            timing_scope: "not_recorded" | "historical_g3_wrapper";
+            /** Tradeoffs */
+            tradeoffs: string[];
+        };
+        /** PolicyResult */
+        "PolicyResult-Output": {
+            /**
+             * Baseline Policy
+             * @enum {string}
+             */
+            baseline_policy: "fifo-v1" | "customer-count-v1" | "legacy-release-per-person-hour-adapter-v1" | "legacy-critical-proxy-first-adapter-v1" | "restoration-cpsat-v1";
+            /** Best Bound Ticks */
+            best_bound_ticks?: number | null;
+            /** Explanation */
+            explanation: string;
+            /** Fallback Reason */
+            fallback_reason?: string | null;
+            /**
+             * Feasibility
+             * @default independently_validated
+             * @constant
+             */
+            feasibility: "independently_validated";
+            metrics: components["schemas"]["ReviewMetrics"];
+            /**
+             * Origin
+             * @enum {string}
+             */
+            origin: "recomputed_baseline" | "frozen_g3_protected_result";
+            /**
+             * Policy
+             * @enum {string}
+             */
+            policy: "fifo-v1" | "customer-count-v1" | "legacy-release-per-person-hour-adapter-v1" | "legacy-critical-proxy-first-adapter-v1" | "restoration-cpsat-v1";
+            /**
+             * Primary Optimal
+             * @default false
+             */
+            primary_optimal: boolean;
+            /** Recorded Seconds */
+            recorded_seconds?: number | null;
+            /** Relative Gap */
+            relative_gap?: number | null;
+            /**
+             * Returned Source
+             * @enum {string}
+             */
+            returned_source: "baseline" | "solver";
+            schedule: components["schemas"]["Schedule"];
+            /** Solver Status */
+            solver_status?: string | null;
+            /**
+             * Timing Scope
+             * @default not_recorded
+             * @enum {string}
+             */
+            timing_scope: "not_recorded" | "historical_g3_wrapper";
+            /** Tradeoffs */
+            tradeoffs: string[];
+        };
+        /** Precedence */
+        Precedence: {
+            /** After */
+            after: string;
+            /** Before */
+            before: string;
         };
         /** Preparation */
         Preparation: {
@@ -1609,6 +2266,182 @@ export interface components {
             /** Worksite Count */
             worksite_count: number;
         };
+        /** ReviewArtifact */
+        "ReviewArtifact-Input": {
+            /** Checksum */
+            checksum: string;
+            comparison: components["schemas"]["OperatorComparison-Input"];
+            review: components["schemas"]["ReviewRecord"];
+            /**
+             * Version
+             * @default operator-review-artifact-v1
+             * @constant
+             */
+            version: "operator-review-artifact-v1";
+        };
+        /** ReviewArtifact */
+        "ReviewArtifact-Output": {
+            /** Checksum */
+            checksum: string;
+            comparison: components["schemas"]["OperatorComparison-Output"];
+            review: components["schemas"]["ReviewRecord"];
+            /**
+             * Version
+             * @default operator-review-artifact-v1
+             * @constant
+             */
+            version: "operator-review-artifact-v1";
+        };
+        /** ReviewCatalog */
+        ReviewCatalog: {
+            /** Catalog Fingerprint */
+            catalog_fingerprint: string;
+            /** Scenarios */
+            scenarios: components["schemas"]["ReviewScenario-Output"][];
+            /**
+             * Version
+             * @default operator-catalog-v1
+             * @constant
+             */
+            version: "operator-catalog-v1";
+        };
+        /** ReviewExport */
+        ReviewExport: {
+            artifact: components["schemas"]["ReviewArtifact-Output"];
+            /** Summary */
+            summary: string;
+        };
+        /** ReviewMetrics */
+        ReviewMetrics: {
+            /** Branch Mean Disparity Hours */
+            branch_mean_disparity_hours: number | null;
+            /** Branch Mean Wait Hours */
+            branch_mean_wait_hours: {
+                [key: string]: number | null;
+            };
+            /** Censored Customers */
+            censored_customers: number;
+            /** Critical Service Latency Hours */
+            critical_service_latency_hours: {
+                [key: string]: number | null;
+            };
+            /** Customers */
+            customers: number;
+            /** Full Customer Release Hours */
+            full_customer_release_hours: number | null;
+            /**
+             * Horizon Hours
+             * @constant
+             */
+            horizon_hours: 168;
+            /** Known Release Customers */
+            known_release_customers: number;
+            /** Makespan Hours */
+            makespan_hours: number | null;
+            /** Maximum Wait Hours */
+            maximum_wait_hours: number | null;
+            /** Milestones */
+            milestones: components["schemas"]["Milestone"][];
+            /** Modeled Customer Outage Hours */
+            modeled_customer_outage_hours: number | null;
+            /** Release 100 Hours */
+            release_100_hours: number | null;
+            /** Release 50 Hours */
+            release_50_hours: number | null;
+            /** Release 90 Hours */
+            release_90_hours: number | null;
+            /** Release Ticks */
+            release_ticks: {
+                [key: string]: number | null;
+            };
+            /** Restricted Horizon Customer Hours */
+            restricted_horizon_customer_hours: number;
+            /** Small Group Customers */
+            small_group_customers: number;
+            /** Small Group Mean Wait Hours */
+            small_group_mean_wait_hours: number | null;
+            /** Unreleased Customers At Horizon */
+            unreleased_customers_at_horizon: number;
+            /** Unresolved Customers */
+            unresolved_customers: number;
+            /**
+             * Version
+             * @constant
+             */
+            version: "benchmark-metrics-v1";
+            /** Weighted Median Hours */
+            weighted_median_hours: number | null;
+            /** Weighted P95 Hours */
+            weighted_p95_hours: number | null;
+        };
+        /** ReviewRecord */
+        ReviewRecord: {
+            acknowledgements: components["schemas"]["Acknowledgements"];
+            /**
+             * Reason
+             * @enum {string}
+             */
+            reason: "lowest-modeled-customer-hours" | "critical-service-tradeoff" | "fairness-consideration" | "conservative-baseline-preference" | "demonstration-comparison";
+            /** Result Fingerprint */
+            result_fingerprint: string;
+            /**
+             * Selected Policy
+             * @enum {string}
+             */
+            selected_policy: "fifo-v1" | "customer-count-v1" | "legacy-release-per-person-hour-adapter-v1" | "legacy-critical-proxy-first-adapter-v1" | "restoration-cpsat-v1";
+            /**
+             * Status
+             * @default reviewed_in_demo
+             * @constant
+             */
+            status: "reviewed_in_demo";
+            /** Timestamp */
+            timestamp: string;
+        };
+        /** ReviewRequest */
+        ReviewRequest: {
+            acknowledgements: components["schemas"]["Acknowledgements"];
+            /**
+             * Reason
+             * @enum {string}
+             */
+            reason: "lowest-modeled-customer-hours" | "critical-service-tradeoff" | "fairness-consideration" | "conservative-baseline-preference" | "demonstration-comparison";
+            request: components["schemas"]["CompareRequest"];
+            /** Result Fingerprint */
+            result_fingerprint: string;
+        };
+        /** ReviewScenario */
+        "ReviewScenario-Input": {
+            /** Label */
+            label: string;
+            problem: components["schemas"]["BenchmarkProblem-Input"];
+            /** Scenario Fingerprint */
+            scenario_fingerprint: string;
+            /** Scenario Id */
+            scenario_id: string;
+            /**
+             * Scenario Revision
+             * @default 1
+             * @constant
+             */
+            scenario_revision: 1;
+        };
+        /** ReviewScenario */
+        "ReviewScenario-Output": {
+            /** Label */
+            label: string;
+            problem: components["schemas"]["BenchmarkProblem-Output"];
+            /** Scenario Fingerprint */
+            scenario_fingerprint: string;
+            /** Scenario Id */
+            scenario_id: string;
+            /**
+             * Scenario Revision
+             * @default 1
+             * @constant
+             */
+            scenario_revision: 1;
+        };
         /** RiskResult */
         RiskResult: {
             /** Band */
@@ -1812,6 +2645,23 @@ export interface components {
              * @enum {string}
              */
             topology_status: "valid_by_construction" | "partial_by_construction";
+        };
+        /** Schedule */
+        Schedule: {
+            /** Assignments */
+            assignments: components["schemas"]["Assignment"][];
+            /** Policy */
+            policy: string;
+            /** Problem Fingerprint */
+            problem_fingerprint: string;
+            /** Unscheduled Tasks */
+            unscheduled_tasks: string[];
+            /**
+             * Version
+             * @default benchmark-schedule-v1
+             * @constant
+             */
+            version: "benchmark-schedule-v1";
         };
         /** SourceFacts */
         SourceFacts: {
@@ -2312,6 +3162,92 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["SyntheticHealth"];
+                };
+            };
+        };
+    };
+    compare_api_v2_operator_compare_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CompareRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["OperatorComparison-Output"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    export_api_v2_operator_review_export_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ReviewRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ReviewExport"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    scenarios_api_v2_operator_scenarios_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ReviewCatalog"];
                 };
             };
         };

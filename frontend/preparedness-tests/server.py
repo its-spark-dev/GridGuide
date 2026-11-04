@@ -6,8 +6,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import Response
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT))
-from backend.synthetic_api import create_synthetic_app
-app=create_synthetic_app()
+from backend.operator_api import create_operator_app
+app=create_operator_app()
 worker_revision = 0
 
 @app.post('/__test__/worker/{revision}')
