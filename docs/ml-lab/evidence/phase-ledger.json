@@ -1,0 +1,80 @@
+{
+  "phases": [
+    {
+      "artifacts": [
+        "docs/planning/V1_2_0_IMPLEMENTATION.md",
+        "docs/ml-lab/REVIEW.md"
+      ],
+      "checks": [
+        "PR17 architecture/code review",
+        "PR17 GitHub Actions run41795944142 success",
+        "merge commit83d34dd"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
+      "phase": 0
+    },
+    {
+      "artifacts": [
+        "research/ml_lab/generator.py",
+        "docs/ml-lab/DATASET.md",
+        "docs/ml-lab/evidence/dataset"
+      ],
+      "checks": [
+        "8 dataset tests",
+        "full input-only audit:720 cases /240 unique topology groups",
+        "source/network denied subprocess"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
+      "phase": 1
+    },
+    {
+      "artifacts": [
+        "research/ml_lab/features.py",
+        "research/ml_lab/labels.py",
+        "research/ml_lab/baselines.py"
+      ],
+      "checks": [
+        "15 feature/label/baseline tests",
+        "35 total ML tests passed before scientific training"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
+      "phase": 2
+    },
+    {
+      "checks": [
+        "smoke96 inputs,36 final cases;8 trained candidates, deterministic artifact byte replay and numerical audit PASS",
+        "NumPy2.3.5 repair: smoke has no runtime warnings and unchanged numerical outputs"
+      ],
+      "gate": "PENDING",
+      "open_issues": [
+        "full training and committed selection freeze pending"
+      ],
+      "phase": 3
+    },
+    {
+      "gate": "PENDING",
+      "open_issues": [
+        "scientific final labels not generated"
+      ],
+      "phase": 4
+    },
+    {
+      "gate": "PENDING",
+      "open_issues": [
+        "portfolio report/figures pending"
+      ],
+      "phase": 5
+    },
+    {
+      "gate": "PENDING",
+      "open_issues": [
+        "final review, existing test lanes and GitHub Actions pending"
+      ],
+      "phase": 6
+    }
+  ],
+  "version": "ml-phase-ledger-v1"
+}
