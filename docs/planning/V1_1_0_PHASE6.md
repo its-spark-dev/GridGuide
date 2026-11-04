@@ -1,7 +1,9 @@
 # v1.1.0 Phase 6 — G6 customer and offline review packet
 
-**Owner conditionally approves the implemented Phase 6 scope; prior reported passes are preserved and targeted manual accessibility retesting is required. Do not merge, start Phase 7,
-publish a release or deploy without separate approval.** Base main is
+**Owner approved G6 and authorized merge after verification. Existing automated,
+browser/privacy checks and human-reported passes are accepted as sufficient for this
+portfolio scope. Detailed VoiceOver observations/environment remain unknown; further
+manual retesting is not required for G6. No Phase 7, release or deployment is authorized.** Base main is
 `98756a9e33da0ef6c9ed38bda177b7cb910c7855` (G5 merge); branch is
 `feat/v1.1-phase6-customer-offline`.
 
@@ -176,6 +178,11 @@ CacheStorage, worker installation/update and cross-tab events use actual browser
 
 ## 8. Accessibility evidence and manual status
 
+**Final owner disposition:** the historical pending/retest requirements below are
+superseded by G6 approval. Missing detailed observations remain limitations; no further
+manual retesting is required for acceptance and none is claimed performed.
+
+
 Automated axe-core 4.14.0 audits report **zero serious or critical findings** across all
 six scenario states, saved historical view, mobile/reduced-motion view and offline view.
 Native headings, fieldsets, ordered lists, buttons, accessible state labels and live
@@ -290,12 +297,12 @@ after G6 review; no calendar deadline or automatic next-phase authorization foll
 - [x] Screenshots, reproduction commands, limitations and future integration guidance.
 - [x] Owner conditionally accepts the architecture and fictional power-path semantics, subject to manual accessibility verification.
 - [x] Human tester reports K and steps 1–8 passed; no issues reported. Detailed notes/environment not supplied.
-- [ ] Human performs targeted steps 2, 3, 7 and 8 and records actual speech/focus observations; environment recorded if known.
-- [ ] Material accessibility issues, if found, are resolved/retested and the owner reviews the resulting manual evidence.
+- [x] Owner accepts missing detailed observations/environment as limitations; targeted retest is waived for G6, not claimed performed.
+- [x] Owner reviewed the available evidence and approved G6; no new issue resolution or manual retest is claimed.
 - [x] Owner conditionally accepts synthetic-only persistence, scoped caching and documented storage limitations; existing limitations remain explicit.
-- [ ] Owner approves G6 and separately authorizes merge; later phases remain gated.
+- [x] Owner approves G6 and authorizes merge after verification; later phases remain gated.
 
-Remaining acceptance question: does the actual human keyboard/VoiceOver walkthrough
+Historical acceptance question (superseded by the final disposition above): does the actual human keyboard/VoiceOver walkthrough
 communicate controls, dependency states, updated inspection and snapshot lifecycle clearly?
 Record actual observations and resolve/retest material issues; the owner must review the
 results before final acceptance or merging. Conditional approval does not broaden browser

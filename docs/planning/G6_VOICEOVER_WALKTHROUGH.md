@@ -1,10 +1,12 @@
 # G6 manual VoiceOver walkthrough — macOS + Chrome
 
-**Status: prior reported passes preserved; targeted manual retesting required before final acceptance.** The owner has conditionally accepted
-Phase 6's architecture, fictional semantics, persistence, caching and storage limitations.
-The owner/tester returned Pass for K and steps 1–8. Detailed speech/focus notes and
-environment metadata were not supplied; do not infer them from expected behavior.
-PR #8 must remain unmerged until this condition is satisfied and reviewed.
+**Status: G6 approved by the owner; merge authorized after verification.** The owner
+accepted the automated/browser/privacy evidence and human-reported K and 1–8 passes
+as sufficient for this portfolio project. No further manual retest is required for G6.
+Detailed VoiceOver speech/focus observations and test-environment metadata remain unknown.
+No new observations, retest, WCAG certification or broader browser coverage are claimed.
+The earlier pending/retest requirements below are preserved as historical review context;
+this final owner disposition supersedes them. Phase 7, release and deployment remain gated.
 
 Allow approximately 10–15 minutes. Use fictional data only. Automated axe/Playwright
 results do **not** substitute for this walkthrough or establish WCAG compliance.
