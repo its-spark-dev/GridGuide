@@ -1,8 +1,9 @@
 # G6 manual VoiceOver walkthrough — macOS + Chrome
 
-**Status: pending human execution and review.** The owner has conditionally accepted
+**Status: human reports all steps passed; final acceptance review pending.** The owner has conditionally accepted
 Phase 6's architecture, fictional semantics, persistence, caching and storage limitations.
-A human tester has volunteered; no manual observations or pass result have been supplied.
+The owner/tester returned Pass for K and steps 1–8. Detailed speech/focus notes and
+environment metadata were not supplied; do not infer them from expected behavior.
 PR #8 must remain unmerged until this condition is satisfied and reviewed.
 
 Allow approximately 10–15 minutes. Use fictional data only. Automated axe/Playwright
@@ -109,3 +110,32 @@ Browser coverage remains Chromium-only. Storage eviction/denial and same-origin 
 remain limitations; hashes check content integrity but do not authenticate records, users
 or timestamps. This walkthrough changes no models, source data, artifacts, defaults or
 historical findings. No merge, Phase 7, release or deployment is authorized by this document.
+
+
+## Received human report
+
+Recorded November 3, 2026 (America/New_York), from the user's response in this chat.
+These are human-reported outcomes, not automated results or agent-observed speech.
+The response supplied the following rows with empty observation cells:
+
+```text
+K | Pass |
+1 | Pass |
+2 | Pass |
+3 | Pass |
+4 | Pass |
+5 | Pass |
+6 | Pass |
+7 | Pass |
+8 | Pass |
+```
+
+No issues were reported; this does not establish that every possible issue is absent.
+Tester identity beyond the responding user, execution time, tested Git SHA, macOS/Chrome
+versions, VoiceOver settings, exact speech and focus details were not supplied. The
+walkthrough was issued at `57a423c55032d8a19eae8fd33569965c3cb3bf2d`; that is context,
+not confirmation of the tested checkout. No remedial code change or retest is claimed.
+The empty template above remains available for supplemental details.
+
+Owner review of this report, final G6 acceptance and merge authorization remain pending.
+All coverage, storage and integrity limitations above remain unchanged.

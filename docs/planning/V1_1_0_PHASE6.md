@@ -1,6 +1,6 @@
 # v1.1.0 Phase 6 — G6 customer and offline review packet
 
-**Owner conditionally approves the implemented Phase 6 scope; manual accessibility acceptance remains pending. Do not merge, start Phase 7,
+**Owner conditionally approves the implemented Phase 6 scope; manual results are reported passed and final acceptance review remains pending. Do not merge, start Phase 7,
 publish a release or deploy without separate approval.** Base main is
 `98756a9e33da0ef6c9ed38bda177b7cb910c7855` (G5 merge); branch is
 `feat/v1.1-phase6-customer-offline`.
@@ -183,13 +183,14 @@ inspection/status regions expose the same content without a pointer. Keyboard te
 verify Enter selection, Tab exit and visible outline. The desktop/mobile screenshots
 were visually inspected for clipping, wrapping and state clarity.
 
-**Manual keyboard and screen-reader smoke review is pending.** The executed keyboard
+**Human-reported manual result: K and steps 1–8 passed; final acceptance review is pending.** The executed keyboard
 checks are Playwright automation, not manual assistive-technology verification. No
 VoiceOver/NVDA, full WCAG certification or cross-browser accessibility claim is made.
 Use the [macOS VoiceOver walkthrough and observation record](G6_VOICEOVER_WALKTHROUGH.md).
-A human tester has volunteered; no actual observations have been received. The walkthrough
-must be executed, material issues resolved/retested, and results reviewed before final G6
-approval or merge. Automated checks are not a substitute.
+The owner/tester supplied Pass for every row, with no detailed speech/focus observations
+or environment metadata. The walkthrough document preserves that exact report and its
+limits. No material issue was reported and no remedial change/retest is claimed. Owner
+review and final G6/merge approval remain pending. Automated checks are not a substitute.
 
 ## 9. Mobile and reduced motion
 
@@ -284,7 +285,8 @@ after G6 review; no calendar deadline or automatic next-phase authorization foll
 - [x] Applicable regressions and source/history/G2–G5 preservation checks.
 - [x] Screenshots, reproduction commands, limitations and future integration guidance.
 - [x] Owner conditionally accepts the architecture and fictional power-path semantics, subject to manual accessibility verification.
-- [ ] Human keyboard/screen-reader smoke review completed and any issues resolved.
+- [x] Human tester reports K and steps 1–8 passed; no issues reported. Detailed notes/environment not supplied.
+- [ ] Owner reviews the reported manual outcomes and accepts their documented evidence limits.
 - [x] Owner conditionally accepts synthetic-only persistence, scoped caching and documented storage limitations; existing limitations remain explicit.
 - [ ] Owner approves G6 and separately authorizes merge; later phases remain gated.
 
