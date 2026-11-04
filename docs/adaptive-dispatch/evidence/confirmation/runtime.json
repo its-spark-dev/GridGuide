@@ -1,0 +1,209 @@
+{
+  "environment": {
+    "cpu_count": 12,
+    "machine": "arm64",
+    "packages": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.5",
+      "pydantic": "2.12.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "threadpoolctl": "3.7.0"
+    },
+    "processor": "arm",
+    "python": "3.12.14",
+    "system": "Darwin",
+    "thread_limit": 1
+  },
+  "methods": {
+    "fixed-floor:customer-count-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 1584,
+        "mean_ms": 0.1134253327020202,
+        "median_ms": 0.1133955,
+        "p95_ms": 0.14244554999999998
+      }
+    },
+    "fixed-floor:fifo-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 1584,
+        "mean_ms": 0.10597516477272728,
+        "median_ms": 0.10225,
+        "p95_ms": 0.1234044
+      }
+    },
+    "fixed-floor:legacy-critical-proxy-first-adapter-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 1584,
+        "mean_ms": 0.19394028977272726,
+        "median_ms": 0.19,
+        "p95_ms": 0.28895184999999995
+      }
+    },
+    "fixed-floor:legacy-release-per-person-hour-adapter-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 1584,
+        "mean_ms": 0.19268868813131312,
+        "median_ms": 0.183833,
+        "p95_ms": 0.28970884999999996
+      }
+    },
+    "fixed-order:customer-count-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 1584,
+        "mean_ms": 0.10987698484848485,
+        "median_ms": 0.10975,
+        "p95_ms": 0.13824385
+      }
+    },
+    "fixed-order:fifo-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 1584,
+        "mean_ms": 0.0912525928030303,
+        "median_ms": 0.0910415,
+        "p95_ms": 0.11049384999999999
+      }
+    },
+    "fixed-order:legacy-critical-proxy-first-adapter-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 1584,
+        "mean_ms": 0.19252599558080807,
+        "median_ms": 0.188708,
+        "p95_ms": 0.2866901
+      }
+    },
+    "fixed-order:legacy-release-per-person-hour-adapter-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 1584,
+        "mean_ms": 0.18908217803030303,
+        "median_ms": 0.1800625,
+        "p95_ms": 0.28542064999999994
+      }
+    },
+    "reactive:critical": {
+      "all_decisions": {
+        "count": 41976,
+        "mean_ms": 0.011492157042119306,
+        "median_ms": 0.003041,
+        "p95_ms": 0.031125
+      },
+      "discretionary_decisions": {
+        "count": 18320,
+        "mean_ms": 0.022766988100436678,
+        "median_ms": 0.02125,
+        "p95_ms": 0.035417
+      },
+      "initial_fixed_planning": null
+    },
+    "reactive:customer": {
+      "all_decisions": {
+        "count": 41975,
+        "mean_ms": 0.008774578511018464,
+        "median_ms": 0.003083,
+        "p95_ms": 0.01975
+      },
+      "discretionary_decisions": {
+        "count": 18311,
+        "mean_ms": 0.016639366009502485,
+        "median_ms": 0.016083,
+        "p95_ms": 0.0217705
+      },
+      "initial_fixed_planning": null
+    },
+    "reactive:downstream": {
+      "all_decisions": {
+        "count": 41975,
+        "mean_ms": 0.022854743561643836,
+        "median_ms": 0.003084,
+        "p95_ms": 0.079791
+      },
+      "discretionary_decisions": {
+        "count": 18434,
+        "mean_ms": 0.04837911147878919,
+        "median_ms": 0.042541,
+        "p95_ms": 0.094584
+      },
+      "initial_fixed_planning": null
+    },
+    "reactive:fifo": {
+      "all_decisions": {
+        "count": 41975,
+        "mean_ms": 0.008055621893984516,
+        "median_ms": 0.003208,
+        "p95_ms": 0.017167
+      },
+      "discretionary_decisions": {
+        "count": 18302,
+        "mean_ms": 0.014855211179106109,
+        "median_ms": 0.01475,
+        "p95_ms": 0.019417
+      },
+      "initial_fixed_planning": null
+    },
+    "reactive:release": {
+      "all_decisions": {
+        "count": 41976,
+        "mean_ms": 0.01156482004002287,
+        "median_ms": 0.003041,
+        "p95_ms": 0.03125
+      },
+      "discretionary_decisions": {
+        "count": 18301,
+        "mean_ms": 0.022931315392601497,
+        "median_ms": 0.021208,
+        "p95_ms": 0.035959
+      },
+      "initial_fixed_planning": null
+    },
+    "search:stochastic-8": {
+      "all_decisions": {
+        "count": 41976,
+        "mean_ms": 18.263917315108635,
+        "median_ms": 0.003291,
+        "p95_ms": 88.19641675
+      },
+      "discretionary_decisions": {
+        "count": 18648,
+        "mean_ms": 41.108102699914205,
+        "median_ms": 28.1199795,
+        "p95_ms": 121.18939999999996
+      },
+      "initial_fixed_planning": null
+    },
+    "search:support-median": {
+      "all_decisions": {
+        "count": 41974,
+        "mean_ms": 2.280773117620432,
+        "median_ms": 0.003417,
+        "p95_ms": 10.869616549999986
+      },
+      "discretionary_decisions": {
+        "count": 18550,
+        "mean_ms": 5.157393916981132,
+        "median_ms": 3.490396,
+        "p95_ms": 15.27701495
+      },
+      "initial_fixed_planning": null
+    }
+  },
+  "note": "Fixed planning is one-time; online figures time callbacks, separately retaining forced event waits",
+  "peak_rss_mib": 430.375,
+  "wall_seconds": 901.7503360420233
+}
