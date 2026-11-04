@@ -71,6 +71,9 @@ def _save(fig, output: Path, name: str) -> None:
                 metadata={'Software': 'GridGuide ML Lab'})
     fig.savefig(output/'figures'/f'{name}.svg', facecolor=fig.get_facecolor(),
                 metadata={'Date': None, 'Creator': 'GridGuide ML Lab'})
+    # Matplotlib emits harmless trailing spaces in path data; normalize for clean diffs.
+    svg = output/'figures'/f'{name}.svg'
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     plt.close(fig)
 
 
