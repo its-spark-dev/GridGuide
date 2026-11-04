@@ -1,7 +1,9 @@
 import copy
+from dataclasses import replace
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 
@@ -99,11 +101,29 @@ class ModelTests(unittest.TestCase):
             np.testing.assert_array_equal(model.predict(self.X), parse_model(self.exports["ridge-alpha1"]).predict(self.X))
             with self.assertRaises(ValueError):
                 load_model(path, "0"*64)
+            text = path.read_text()
+            path.write_text('{"version":"learned-dispatch-v1",'+text[1:])
+            with self.assertRaisesRegex(ValueError, "Duplicate JSON key"):
+                load_model(path, file_hash(path))
         for name in self.exports:
             bad = copy.deepcopy(self.exports[name])
             bad["feature_names"][0] = "actual_future"
             with self.assertRaises(ValueError):
                 parse_model(bad)
+
+    def test_prediction_failure_fallback_and_malformed_rejection(self):
+        model = parse_model(self.exports["forest-depth4"])
+        policy = LearnedPolicy(model)
+        s = state()
+        with patch.object(type(model), "predict", return_value=np.full(len(s.actions()), np.nan)):
+            self.assertIn(policy(s), s.actions())
+        self.assertEqual(policy.fallbacks[-1]["reason"], "inference-failure")
+        count = len(policy.fallbacks)
+        with self.assertRaises(ValueError):
+            policy(replace(s, now=True))
+        self.assertEqual(len(policy.fallbacks), count)
+
+    def test_tree_structure_corruption_rejected(self):
         for corruption in ("cycle", "nan", "feature", "unreachable"):
             bad = copy.deepcopy(self.exports["forest-depth4"])
             tree = bad["parameters"]["trees"][0]

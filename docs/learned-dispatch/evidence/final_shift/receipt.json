@@ -1,0 +1,79 @@
+{
+  "champion": "forest-depth4",
+  "dataset_manifest_sha256": "ff2985f65fc518ceee8f22393f3c220e4eda4e3725102b6de8ad25262119da48",
+  "environment": {
+    "cpu_count": 12,
+    "machine": "arm64",
+    "packages": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.5",
+      "pydantic": "2.12.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "threadpoolctl": "3.7.0"
+    },
+    "processor": "arm",
+    "python": "3.12.14",
+    "system": "Darwin",
+    "thread_limit": 1
+  },
+  "freeze_sha256": "b646608d7c6c1a9ea13633a67e8c9ba5b7e241bfaeb76daf2cfdb8e16c338333",
+  "input_identity": "6b8cac24a1d8c2910b5bdb9ddded365d5d904df7163ff737becae0373cadaf7b",
+  "methods": [
+    "fixed-order:legacy-release-per-person-hour-adapter-v1",
+    "reactive:downstream",
+    "search:support-median",
+    "search:stochastic-8",
+    "ridge-alpha10",
+    "forest-depth4"
+  ],
+  "model_load_nanoseconds": {
+    "forest-depth4": 2262375,
+    "ridge-alpha10": 720875
+  },
+  "partition": "final_shift",
+  "revision": "7161a865e21a968a01e2852f4c0fd8ae42255245",
+  "source_hashes": {
+    "backend/contracts.py": "337c10e700fd76d2e970e09dd5eba5625284ba75eb2d4f5384fd474063aaa601",
+    "backend/risk_rules.py": "c61ba299ec445d85002d6dc389682d95a5d13248efb04b058cc00ce23f9de7d9",
+    "benchmarks/contracts.py": "14f20cdd325ae43acf39e437ff027831dedfd34606474311a45acfaae7c08436",
+    "benchmarks/metrics.py": "b2163c0ed44d444eebe07a5abd059c66aa1b11bcfea494e226889cffee99b621",
+    "benchmarks/policies.py": "66acc974af47f4f289ebd6279ff3ed7035a2e92795df077e66c138d54d8dca14",
+    "benchmarks/validation.py": "01dd990121e6b6e3a3dac9663697379355813a239ec95000115e7caae64e79c9",
+    "docs/adaptive-dispatch/PROTOCOL.md": "d85d736eeb5c6d7436099f2c5a61214e100e86473addbf4b928d7db7f627eebe",
+    "docs/learned-dispatch/PROTOCOL.md": "57be72080be59e684e7c700a5aec84f79481490a6f47c072fcc94224cd2ace09",
+    "requirements-ml.lock": "f5f0bae24f653c08b89f4576a3e6c36363044492c417ee4642961ed57273d9cf",
+    "research/adaptive_dispatch/__init__.py": "5196d251eeab5dc5e9dfba8021c478680e7a64b8bc5d6c4e2eea53d18d545005",
+    "research/adaptive_dispatch/dataset.py": "e1b31913825becd9cc5a041ebd1ee6003c9ee7adeec20eec01d36c775828ea5b",
+    "research/adaptive_dispatch/environment.py": "711321142eb0d68fbc110667b1d494af15d7535129b76b8048bad7e27973f925",
+    "research/adaptive_dispatch/exact.py": "94e420d668ecd03db95d49ed7f8fe181cecf0a9d3b81d74a434d1febe4bd2494",
+    "research/adaptive_dispatch/experiment.py": "71995f42d8a345865643226535f93cc6a467fa0c1af05fd70f0756428e6eb9dd",
+    "research/adaptive_dispatch/policies.py": "adc3add104f8700d112ba83181ebf4131ec2161899391f85ea48f2ea9b3268a6",
+    "research/adaptive_dispatch/validation.py": "21a9f851706619fd5b56fccc35116d65147073edc862bb24e1ea0f2c999a12c6",
+    "research/learned_dispatch/__init__.py": "adbe42a3994377feed8d52ed4b38a3273783731a94fb14885fd1102c44f38aed",
+    "research/learned_dispatch/analysis.py": "d6a182209cccb2f237b3924eb9b2e3234e8df060bdcbe0e926c3d5acedb143c0",
+    "research/learned_dispatch/dataset.py": "8d13a5ad30c5ca7118d41cdabd3adc103f6f9b61c1d383dc57155d25149cf988",
+    "research/learned_dispatch/experiment.py": "2d03b70cea1159f2b5c627ff2e4fb03c910cae7f223b938560028b5fd4b95705",
+    "research/learned_dispatch/features.py": "5a2f012474278402d4707d584af92ae15502e858ea502534dc3c6399a5f5069f",
+    "research/learned_dispatch/models.py": "a3255eea41a33a595243aadecc50e9fb43e2009c9ec8329cf0e98afcf0e195c3",
+    "research/learned_dispatch/public.py": "803f875ba4da87af98f2ac59401223d6dac46e936a0dcf03661b66b30e6614db",
+    "research/learned_dispatch/rollout.py": "e8b66034a98fad4532bc7c3484c06edd66e905a0a8ddce5bd84277517a786a3a",
+    "research/learned_dispatch/teacher.py": "46d5a643754da30d68eb2bced15aa86632da582e827b091909ea29962ff8cbd5",
+    "research/learned_dispatch/training.py": "a528f39e264ffc92bdcc800e7a66f3aeb4ea3a3fcf4341ccbcf04fe84a6ec619",
+    "research/ml_lab/access.py": "97449e7f49e2b7d6ec7e96a609146ed6d14692ddfe85c33478919a4b307191a1",
+    "research/ml_lab/artifacts.py": "5c492ab2eaa73cc0fcacf0356ec92c57a5a63fd2da31330a20ab8e0bc66dda03",
+    "research/ml_lab/contracts.py": "5e114dc993d8611ef1bdda7d5baf7c9177b42fb2a5e389d8d11eee376733e960",
+    "research/ml_lab/generator.py": "c53c3813463c40018f7d760d270bb917829f6e515258311ff0aab0fe7be16674"
+  },
+  "started_at": "2026-11-04T18:35:03.139563+00:00",
+  "training_files": {
+    "models/forest-depth4.json": "8280d3929a316c61bd5f93ef15610d891e0bf2e6cc80b8d9fb262f66cc097e52",
+    "models/forest-depth8.json": "0a45f489de2f38e8125dbb89b034c5ab8f152a02815a068e8ecce125a72735e2",
+    "models/ridge-alpha0.1.json": "4f321dfc89ef9126465bcaad8b53b7b7c2e7452d829fd36aed3ff9ab74d5c69d",
+    "models/ridge-alpha1.json": "e456724efe49075d6161ac7e488d0c0a8b04c896ee637e6dbb0348c73df19856",
+    "models/ridge-alpha10.json": "046911f68c01541474f8b6606b3ceac67ebcae2a51e87f82c4ad3f13e257ef01",
+    "training.json": "9ddfeebb111c5ca31332e7d4946bdeb1053cbba2042ef3e9908d4d7b4ef7505e"
+  },
+  "version": "learned-dispatch-v1"
+}

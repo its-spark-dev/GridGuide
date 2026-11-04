@@ -243,6 +243,27 @@ dispatch model or RL benefit is claimed. Prior ML studies and the dashboard rema
 [Protocol and limitations](docs/adaptive-dispatch/PROTOCOL.md) ·
 [Reproduction](docs/adaptive-dispatch/REPRODUCE.md)
 
+<!-- learned-dispatch:start -->
+## Learned Adaptive Dispatch — a trained policy you can run
+
+A separate [policy-distillation experiment](docs/learned-dispatch/README.md) now trains
+GridGuide-specific state/action rankers from **24,240 teacher-labeled action rows across
+48 independent training configurations**. Inspect 46 public-state features, fitted Ridge
+and random-forest parameters, SHA-verified JSON models and complete learned-policy rollouts.
+
+![Learned dispatch quality and complete callback latency](docs/learned-dispatch/presentation/figures/quality-latency.png)
+
+The development-selected forest is **3.85× faster in-distribution and 7.82× faster under
+shift** than its median-search teacher, but modeled waiting is **3.22% and 4.66% higher**.
+It fails the preregistered quality gate and is **not promoted**. The real trained model and
+negative findings remain available; these are fictional simulator results, not utility outcomes.
+
+[Run trained inference](docs/learned-dispatch/REPRODUCE.md) ·
+[Model card](docs/learned-dispatch/MODEL_CARD.md) ·
+[Full results and uncertainty](docs/learned-dispatch/presentation/REPORT.md)
+
+<!-- learned-dispatch:end -->
+
 ## Research findings and reproducibility
 
 Frozen scenarios, independent validation and reproducible reports make unsuccessful

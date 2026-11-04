@@ -56,6 +56,9 @@ def main():
             p.add_argument("--development", required=True, type=Path)
     p = sub.add_parser("smoke")
     p.add_argument("--output", required=True, type=Path)
+    p = sub.add_parser("report")
+    p.add_argument("--evidence", required=True, type=Path)
+    p.add_argument("--output", required=True, type=Path)
     for command in ("infer", "episode"):
         p = sub.add_parser(command)
         p.add_argument("--model", type=Path, required=True)
@@ -84,6 +87,9 @@ def main():
             result = experiment.freeze(args.dataset, args.training, args.development, args.output)["selection"]
         elif args.command == "smoke":
             result = smoke(args.output)
+        elif args.command == "report":
+            from .report import render
+            result = render(args.evidence, args.output)
         else:
             model, load_ns = load_model(args.model, args.sha256)
             if args.command == "infer":

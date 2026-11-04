@@ -1,0 +1,108 @@
+name: Learned dispatch verification
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/learned-dispatch.yml'
+      - 'research/learned_dispatch/**'
+      - 'research/adaptive_dispatch/**'
+      - 'research/ml_lab/**'
+      - 'benchmarks/**'
+      - 'backend/contracts.py'
+      - 'backend/risk_rules.py'
+      - 'requirements-ml.lock'
+      - 'docs/learned-dispatch/**'
+      - 'scripts/check_learned_preservation.py'
+  push:
+    branches: [main]
+    paths:
+      - 'research/learned_dispatch/**'
+      - 'docs/learned-dispatch/**'
+      - '.github/workflows/learned-dispatch.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: learned-dispatch-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-free-learned:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            backend
+            benchmarks
+            research
+            scripts
+            docs
+            frontend
+            pipeline
+            deploy
+            tests
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+      - name: Source absence and hash-pinned isolated environment
+        run: |
+          test ! -e data/raw
+          test ! -e data/processed
+          test ! -e data/external
+          test ! -e data/prepared
+          python -m venv .venv-ml
+          .venv-ml/bin/pip install --require-hashes -r requirements-ml.lock
+          .venv-ml/bin/pip check
+      - name: Real fitting, features, leakage, inference and spent-cohort tests
+        run: .venv-ml/bin/python -m unittest discover -s research/learned_dispatch/tests -t . -v
+      - name: Unchanged event-environment tests
+        run: .venv-ml/bin/python -m unittest discover -s research/adaptive_dispatch/tests -v
+      - name: Separate genuine smoke training and both held-out paths
+        run: .venv-ml/bin/python -m research.learned_dispatch smoke --output /tmp/learned-dispatch-smoke
+      - name: Audit every recorded scientific episode without retraining
+        run: |
+          for stage in dev final_id final_shift; do
+            .venv-ml/bin/python -m research.learned_dispatch audit \
+              --dataset docs/learned-dispatch/evidence/dataset \
+              --training docs/learned-dispatch/evidence/training \
+              --output "docs/learned-dispatch/evidence/$stage"
+          done
+      - name: Load actual trained champion and infer a new authored state
+        run: |
+          .venv-ml/bin/python -m research.learned_dispatch infer \
+            --model docs/learned-dispatch/evidence/training/models/forest-depth4.json \
+            --sha256 8280d3929a316c61bd5f93ef15610d891e0bf2e6cc80b8d9fb262f66cc097e52 \
+            --state docs/learned-dispatch/example-state.json
+          .venv-ml/bin/python -m research.learned_dispatch episode \
+            --model docs/learned-dispatch/evidence/training/models/forest-depth4.json \
+            --sha256 8280d3929a316c61bd5f93ef15610d891e0bf2e6cc80b8d9fb262f66cc097e52 \
+            --problem docs/learned-dispatch/example-problem.json
+      - name: Preserve previous research, releases, maps and application source
+        run: |
+          .venv-ml/bin/python scripts/check_learned_preservation.py
+          .venv-ml/bin/python scripts/check_frozen_artifacts.py
+      - name: Regenerate source-bound figures and report twice
+        run: |
+          .venv-ml/bin/python -m research.learned_dispatch report --evidence docs/learned-dispatch/evidence --output /tmp/learned-report-a
+          .venv-ml/bin/python -m research.learned_dispatch report --evidence docs/learned-dispatch/evidence --output /tmp/learned-report-b
+          diff -r /tmp/learned-report-a /tmp/learned-report-b
+          cmp docs/learned-dispatch/presentation/REPORT.md /tmp/learned-report-a/REPORT.md
+          .venv-ml/bin/python - <<'PY'
+          from pathlib import Path
+          from research.ml_lab.artifacts import read_json, validate_hashes
+          committed = Path('docs/learned-dispatch/presentation')
+          record = read_json(committed/'manifest.json')
+          validate_hashes(committed, record['artifacts'])
+          regenerated = read_json(Path('/tmp/learned-report-a/manifest.json'))
+          assert record['source_evidence'] == regenerated['source_evidence']
+          PY

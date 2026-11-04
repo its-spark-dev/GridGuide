@@ -62,7 +62,7 @@ utility ETR, calibrated cost or safety certificate.
 ## Portable learned parameters
 
 The JSON regressor format stores actual fitted scaler moments and Ridge coefficients or all
-64 forests' split/threshold/leaf arrays. The approved inventory binds SHA-256, feature order,
+64 trees' split/threshold/leaf arrays. The approved inventory binds SHA-256, feature order,
 feature schema, input/teacher identities, code hashes and candidate specification. Loading
 requires the expected SHA-256, a 16-MiB limit, exact fields, finite values, matching dimensions,
 valid feature indices and reachable acyclic trees of the registered depth. Duplicate JSON
