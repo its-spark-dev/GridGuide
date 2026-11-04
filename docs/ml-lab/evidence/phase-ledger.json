@@ -60,10 +60,18 @@
       "phase": 3
     },
     {
-      "gate": "PENDING",
-      "open_issues": [
-        "scientific final labels not generated"
+      "artifacts": [
+        "docs/ml-lab/evidence/dataset/evaluation-receipt.json",
+        "docs/ml-lab/evidence/final"
       ],
+      "checks": [
+        "one final evaluation after freeze commit6d4b906",
+        "240-case exact read-only audit replay PASS",
+        "ID90 eligible /120;shift99 eligible /120",
+        "both predeclared promotion gates FAIL;no retuning"
+      ],
+      "gate": "ENGINEERING PASS / SCIENTIFIC PROMOTION FAIL",
+      "open_issues": [],
       "phase": 4
     },
     {

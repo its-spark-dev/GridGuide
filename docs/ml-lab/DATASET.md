@@ -35,7 +35,7 @@ same prefix of the four sampled crew availability times.
 | Random ordered DAG | Independent edges from an earlier to a later topological index | Train / dev / final ID |
 | Layered | Random level sizes; dense adjacent-level links and sparse skip links | Train / dev / final ID |
 | Bottleneck | Sampled hub positions with denser outgoing and incoming dependencies | Train / dev / final ID |
-| Modular | Dense connections within randomly sized index-modulo modules, sparse bridges | Train / dev / final ID |
+| Modular | Dense connections within index-modulo modules with a sampled module count, sparse bridges | Train / dev / final ID |
 | Preferential | Earlier nodes gain outgoing-link probability as their degree grows | Final structural shift |
 | Deep sparse | High consecutive-edge probability with sparse longer-range links | Final structural shift |
 

@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "cases.jsonl.gz": "02d001c7bc397358a40e1950c328c538a7365f1908c1fa7b25c1916b67db6341",
+    "results.json": "5f154f708ab855f01fe9cd61f7acadc3fed73ea2456137db8ee29773c8a08c0a",
+    "runtime.json": "8fe92d2760629398f2cb0cb15c1f5967da9065ac6adb20e3eeccd117b82b3221"
+  },
+  "dataset_hash": "98ce22461f6b642a66e65076d08687c69b2ee0c06d32c966e6ad173fe80e028b",
+  "freeze_sha256": "196c450a747c625f2414e9aff6fafa9c3b18ab931da3ab8b95318d4246f41dc2",
+  "invocation_sha256": "a9c40ac9ce2b2e2cd429581beb5f192cffa36329637be3f2e962d6daf609e651",
+  "numerical_rows_sha256": "d88d69a20ee66afdbd993464d6a9451b5a71c7740d651cccfeb9d6e7a2be7a13",
+  "results_sha256": "da081d50026366e2b44adf9c5e310176137e985a9b36d2b371e661cad5ab2fdd",
+  "status": "COMPLETE"
+}
