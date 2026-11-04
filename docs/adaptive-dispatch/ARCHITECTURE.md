@@ -29,6 +29,9 @@ assignments take zero simulation time. Waiting advances to the next completion o
 arrival; every tied completion is processed before the next decision. Completion reveals
 actual duration. There is no time-step approximation, preemption or crew-size division
 beyond the original problem's explicit duration convention.
+The stochastic multipliers have mean one; ceiling to integer seconds can raise
+expected sampled duration above nominal by less than one second. Collapsed support
+points retain their original probability mass, which is tested explicitly.
 
 The public support for an active task is conditioned on total duration being greater
 than elapsed time. Independently sampled hypothetical futures use a separate hash

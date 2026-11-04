@@ -11,10 +11,10 @@
 | G5 `backend/simulation.py` | Keyed per-task common random numbers; fixed crew/order replay; no double labor factor | Planned-start lower bounds prevent pulling future work forward; no adaptive action/state interface |
 | ML I generator/contracts | Audited DAG mechanisms, configuration grouping, ID-invariant topology rejection | New configurations and fresh outcome/seed namespaces; do not reuse its revealed final cohort |
 | ML I evaluation discipline | Train-only transforms, freeze/reveal separation, grouped uncertainty and guardrails | Its classifier chooses among four complete policies; this project selects tasks sequentially |
-| ML II source audit | Evidence/availability and nonclaiming discipline | No observed-duration data is suitable or used to calibrate this fictional environment |
+| ML II source audit | Evidence/availability and nonclaiming discipline | ML II approved no modeling dataset; this environment uses no observed-duration calibration |
 
 G3 failed its historical promotion target. G5's uncertainty profiles are authored assumptions
-and retain numerical instability limitations. ML I's logistic selector failed promotion and
+and retain finite Monte Carlo convergence limitations. ML I's logistic selector failed promotion and
 generalization. ML II stopped before fitting after its source review. Nothing here revises
 those findings. The new use of finite independent duration supports is an explicit modeling
 choice for exact verification, not a correction to or hidden reuse of G5's empirical claims
@@ -33,7 +33,7 @@ choice for exact verification, not a correction to or hidden reuse of G5's empir
   combines lookahead and learning for uncertain repair-crew navigation. Its unknown damage
   locations, travel and grid physics are **not** transplanted into GridGuide. It motivates
   establishing an expensive non-clairvoyant teacher before proposing a learned surrogate.
-- [Uncertainty in Stochastic Scheduling](https://cris.maastrichtuniversity.nl/en/publications/uncertainty-in-stochastic-scheduling/)
+- Vredeveld (2014), [Uncertainty in Stochastic Scheduling](https://cris.maastrichtuniversity.nl/en/publications/uncertainty-in-stochastic-scheduling/),
   distinguishes scheduling policies from fixed schedules and requires nonanticipation.
   Our observation contract reveals completion/elapsed time but hides realized remaining work.
 - Ross, Gordon and Bagnell (2011), [A Reduction of Imitation Learning and Structured

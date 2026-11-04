@@ -1,0 +1,97 @@
+name: Adaptive dispatch verification
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/adaptive-dispatch.yml'
+      - 'research/adaptive_dispatch/**'
+      - 'research/ml_lab/generator.py'
+      - 'research/ml_lab/contracts.py'
+      - 'research/ml_lab/artifacts.py'
+      - 'research/ml_lab/access.py'
+      - 'benchmarks/**'
+      - 'backend/contracts.py'
+      - 'backend/risk_rules.py'
+      - 'requirements-ml.lock'
+      - 'docs/adaptive-dispatch/**'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/adaptive-dispatch.yml'
+      - 'research/adaptive_dispatch/**'
+      - 'research/ml_lab/generator.py'
+      - 'research/ml_lab/contracts.py'
+      - 'research/ml_lab/artifacts.py'
+      - 'research/ml_lab/access.py'
+      - 'benchmarks/**'
+      - 'backend/contracts.py'
+      - 'backend/risk_rules.py'
+      - 'requirements-ml.lock'
+      - 'docs/adaptive-dispatch/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: adaptive-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-free-adaptive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            backend
+            benchmarks
+            research
+            docs/adaptive-dispatch
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+      - name: Source absence and isolated pinned dependencies
+        run: |
+          test ! -e data/raw
+          test ! -e data/processed
+          test ! -e data/external
+          test ! -e data/prepared
+          python -m venv .venv-ml
+          .venv-ml/bin/pip install --require-hashes -r requirements-ml.lock
+          .venv-ml/bin/pip check
+      - name: Dynamics, independent validation, exact expectations and experiment boundaries
+        run: .venv-ml/bin/python -m unittest discover -s research/adaptive_dispatch/tests -v
+      - name: Real source-free discovery and confirmation smoke
+        run: |
+          .venv-ml/bin/python -m research.adaptive_dispatch prepare --profile smoke --output /tmp/adaptive-inputs
+          .venv-ml/bin/python -m research.adaptive_dispatch run --dataset /tmp/adaptive-inputs --output /tmp/adaptive-discovery --partition discovery
+          .venv-ml/bin/python -m research.adaptive_dispatch run --dataset /tmp/adaptive-inputs --output /tmp/adaptive-confirmation --partition confirmation --discovery /tmp/adaptive-discovery
+          .venv-ml/bin/python -m research.adaptive_dispatch audit --dataset /tmp/adaptive-inputs --results /tmp/adaptive-discovery --replay
+          .venv-ml/bin/python -m research.adaptive_dispatch audit --dataset /tmp/adaptive-inputs --results /tmp/adaptive-confirmation --discovery /tmp/adaptive-discovery --replay
+      - name: Independently validate every committed episode and regenerate grouped conclusions
+        run: |
+          .venv-ml/bin/python -m research.adaptive_dispatch audit --dataset docs/adaptive-dispatch/evidence/dataset --results docs/adaptive-dispatch/evidence/discovery
+          .venv-ml/bin/python -m research.adaptive_dispatch audit --dataset docs/adaptive-dispatch/evidence/dataset --results docs/adaptive-dispatch/evidence/confirmation --discovery docs/adaptive-dispatch/evidence/discovery
+      - name: Regenerate evidence-bound research figures twice
+        run: |
+          .venv-ml/bin/python -m research.adaptive_dispatch report --dataset docs/adaptive-dispatch/evidence/dataset --discovery docs/adaptive-dispatch/evidence/discovery --confirmation docs/adaptive-dispatch/evidence/confirmation --output /tmp/adaptive-presentation-a
+          .venv-ml/bin/python -m research.adaptive_dispatch report --dataset docs/adaptive-dispatch/evidence/dataset --discovery docs/adaptive-dispatch/evidence/discovery --confirmation docs/adaptive-dispatch/evidence/confirmation --output /tmp/adaptive-presentation-b
+          diff -r /tmp/adaptive-presentation-a /tmp/adaptive-presentation-b
+          cmp docs/adaptive-dispatch/presentation/REPORT.md /tmp/adaptive-presentation-a/REPORT.md
+          .venv-ml/bin/python - <<'PY'
+          from pathlib import Path
+          from research.ml_lab.artifacts import read_json, validate_hashes
+          path = Path('docs/adaptive-dispatch/presentation')
+          manifest = read_json(path/'manifest.json')
+          validate_hashes(path, manifest['artifacts'])
+          regenerated = read_json(Path('/tmp/adaptive-presentation-a/manifest.json'))
+          assert manifest['source_evidence'] == regenerated['source_evidence']
+          PY
