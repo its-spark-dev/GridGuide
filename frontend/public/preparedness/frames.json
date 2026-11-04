@@ -1,0 +1,1798 @@
+{
+  "catalog_sha256": "907aa9493c9650a875eafeb7fedd67267d320d9f0ba563407ca17851a6c5dee9",
+  "frames": [
+    {
+      "completion_hours": 7,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-simple-asset-t1",
+            "syn-simple-asset-f1",
+            "syn-simple-asset-supply"
+          ],
+          "id": "syn-simple-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-simple-repair-t1",
+            "syn-simple-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-simple-asset-f1",
+            "syn-simple-asset-supply"
+          ],
+          "id": "syn-simple-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-simple-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 0,
+      "input_fingerprint": "600a49230d7464e2feedd27c2a1af5d65c566ff9d141da57cbe28a09c80e761e",
+      "label": "Fictional simple path",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-simple-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-simple-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-simple-repair-f1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-simple-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-simple-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-simple-repair-t1",
+          "state": "declared_damage"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 0,
+      "result_fingerprint": "e69111be87b79304877fe567237b127f2134d4eab4c69ca0891ad508e7f127d9",
+      "scenario_id": "syn-simple",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 0,
+      "step_label": "Before repairs",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 7,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-simple-asset-t1",
+            "syn-simple-asset-f1",
+            "syn-simple-asset-supply"
+          ],
+          "id": "syn-simple-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-simple-repair-t1",
+            "syn-simple-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-simple-asset-f1",
+            "syn-simple-asset-supply"
+          ],
+          "id": "syn-simple-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-simple-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 2,
+      "input_fingerprint": "600a49230d7464e2feedd27c2a1af5d65c566ff9d141da57cbe28a09c80e761e",
+      "label": "Fictional simple path",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-simple-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-simple-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-simple-repair-f1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-simple-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-simple-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-simple-repair-t1",
+          "state": "declared_damage"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 1,
+      "result_fingerprint": "885493a82bdbc2e19b49f4650a45595597086299882086acf943e0745a8bcc3b",
+      "scenario_id": "syn-simple",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 1,
+      "step_label": "Modeled milestone 1",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 7,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-simple-asset-t1",
+            "syn-simple-asset-f1",
+            "syn-simple-asset-supply"
+          ],
+          "id": "syn-simple-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-simple-repair-t1",
+            "syn-simple-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-simple-asset-f1",
+            "syn-simple-asset-supply"
+          ],
+          "id": "syn-simple-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-simple-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 7,
+      "input_fingerprint": "600a49230d7464e2feedd27c2a1af5d65c566ff9d141da57cbe28a09c80e761e",
+      "label": "Fictional simple path",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-simple-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-simple-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-simple-repair-f1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-simple-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-simple-repair-f1"
+          ],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-simple-repair-t1",
+          "state": "completed_simulated"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 2,
+      "result_fingerprint": "463ef2fd29da529b8150d34e1407113c17abef5816d5d70c105ab4b940def5bc",
+      "scenario_id": "syn-simple",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 2,
+      "step_label": "Modeled milestone 2",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 15,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-branching-asset-t1",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-branching-repair-t1",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-t2",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-branching-repair-t2",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-f2",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-branching-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 0,
+      "input_fingerprint": "099f046e322e698447e45f3ef0f26e5257faba727addeaa763780b592f35fc01",
+      "label": "Fictional branching repairs",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-branching-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-branching-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-f1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-branching-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-t1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-branching-asset-t2",
+          "kind": "transformer",
+          "label": "Transformer 3",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-t2",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-branching-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 4",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-f2",
+          "state": "declared_damage"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 0,
+      "result_fingerprint": "96f2b579105f9f7b2a4ccf5806982cb4afab154888ee383618995edb0ea8ec10",
+      "scenario_id": "syn-branching",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 0,
+      "step_label": "Before repairs",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 15,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-branching-asset-t1",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-branching-repair-t1",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-t2",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-branching-repair-t2",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-f2",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-branching-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 2,
+      "input_fingerprint": "099f046e322e698447e45f3ef0f26e5257faba727addeaa763780b592f35fc01",
+      "label": "Fictional branching repairs",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-branching-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-branching-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-f1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-branching-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-t1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-branching-asset-t2",
+          "kind": "transformer",
+          "label": "Transformer 3",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-t2",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-branching-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 4",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-f2",
+          "state": "completed_simulated"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 1,
+      "result_fingerprint": "441ed9831a3b6a9d5df7b863d35891b44ee74ca66fbf74fd5ff5cd35dea8bfde",
+      "scenario_id": "syn-branching",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 1,
+      "step_label": "Modeled milestone 1",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 15,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-branching-asset-t1",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-branching-repair-t1",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-t2",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-branching-repair-t2",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-f2",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-branching-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 5,
+      "input_fingerprint": "099f046e322e698447e45f3ef0f26e5257faba727addeaa763780b592f35fc01",
+      "label": "Fictional branching repairs",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-branching-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-branching-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-f1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-branching-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-t1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-branching-asset-t2",
+          "kind": "transformer",
+          "label": "Transformer 3",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-t2",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-branching-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 4",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-f2",
+          "state": "completed_simulated"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 1,
+      "result_fingerprint": "ffe6088e59fbdadf93fc57704386e52096fb80d16cb2d6b20206012c1fb6790e",
+      "scenario_id": "syn-branching",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 2,
+      "step_label": "Modeled milestone 2",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 15,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-branching-asset-t1",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-branching-repair-t1",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-t2",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-branching-repair-t2",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-f2",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-branching-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 9,
+      "input_fingerprint": "099f046e322e698447e45f3ef0f26e5257faba727addeaa763780b592f35fc01",
+      "label": "Fictional branching repairs",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-branching-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-branching-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-f1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-branching-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-t1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-branching-asset-t2",
+          "kind": "transformer",
+          "label": "Transformer 3",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-branching-repair-t2",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-branching-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 4",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-f2",
+          "state": "completed_simulated"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 2,
+      "result_fingerprint": "6a1fcdee863c5e3f5a9f913b5ec8434bc15c9c14d96cbbafaae71a1605a382d4",
+      "scenario_id": "syn-branching",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 3,
+      "step_label": "Modeled milestone 3",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 15,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-branching-asset-t1",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-branching-repair-t1",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-t2",
+            "syn-branching-asset-f1",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-branching-repair-t2",
+            "syn-branching-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-branching-asset-f2",
+            "syn-branching-asset-supply"
+          ],
+          "id": "syn-branching-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-branching-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 15,
+      "input_fingerprint": "099f046e322e698447e45f3ef0f26e5257faba727addeaa763780b592f35fc01",
+      "label": "Fictional branching repairs",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-branching-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-branching-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-f1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-branching-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-t1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-branching-asset-t2",
+          "kind": "transformer",
+          "label": "Transformer 3",
+          "prerequisite_ids": [
+            "syn-branching-repair-f1"
+          ],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-t2",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-branching-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 4",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-branching-repair-f2",
+          "state": "completed_simulated"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 3,
+      "result_fingerprint": "6a0c3ba546ddabd9c2f24e36b8fff3b04731351fa146610b06770dbc6b7fee2e",
+      "scenario_id": "syn-branching",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 4,
+      "step_label": "Modeled milestone 4",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 10.5,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-overlap-asset-t1",
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "id": "syn-overlap-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-overlap-repair-t1",
+            "syn-overlap-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-overlap-asset-t1",
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "id": "syn-overlap-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-overlap-repair-t1",
+            "syn-overlap-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "id": "syn-overlap-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-overlap-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 0,
+      "input_fingerprint": "d94305222c302d84d265337232f8d39d50e5cbbeceef62a2334e28faea87ede7",
+      "label": "Fictional overlapping dependencies",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-overlap-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-overlap-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-overlap-repair-f1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-overlap-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-overlap-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-overlap-repair-t1",
+          "state": "declared_damage"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 0,
+      "result_fingerprint": "de83bb2c376a9f8cb74537d0da7ca817263fc359a86686ff76d210b8af637450",
+      "scenario_id": "syn-overlap",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 0,
+      "step_label": "Before repairs",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 10.5,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-overlap-asset-t1",
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "id": "syn-overlap-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-overlap-repair-t1",
+            "syn-overlap-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-overlap-asset-t1",
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "id": "syn-overlap-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-overlap-repair-t1",
+            "syn-overlap-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "id": "syn-overlap-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-overlap-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 3.5,
+      "input_fingerprint": "d94305222c302d84d265337232f8d39d50e5cbbeceef62a2334e28faea87ede7",
+      "label": "Fictional overlapping dependencies",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-overlap-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-overlap-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-overlap-repair-f1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-overlap-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-overlap-repair-f1"
+          ],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-overlap-repair-t1",
+          "state": "declared_damage"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 1,
+      "result_fingerprint": "d21c655169bb1c60a573fd6114d5e72fac97c549e256ef113f829251b61bea0f",
+      "scenario_id": "syn-overlap",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 1,
+      "step_label": "Modeled milestone 1",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 10.5,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-overlap-asset-t1",
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "id": "syn-overlap-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-overlap-repair-t1",
+            "syn-overlap-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-overlap-asset-t1",
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "id": "syn-overlap-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-overlap-repair-t1",
+            "syn-overlap-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-overlap-asset-f1",
+            "syn-overlap-asset-supply"
+          ],
+          "id": "syn-overlap-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-overlap-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 10.5,
+      "input_fingerprint": "d94305222c302d84d265337232f8d39d50e5cbbeceef62a2334e28faea87ede7",
+      "label": "Fictional overlapping dependencies",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-overlap-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-overlap-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-overlap-repair-f1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-overlap-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-overlap-repair-f1"
+          ],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-overlap-repair-t1",
+          "state": "completed_simulated"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 3,
+      "result_fingerprint": "a00a4865155ddd565bf7b21712d66b6fa557ffc645feed65f4a210757ad54561",
+      "scenario_id": "syn-overlap",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 2,
+      "step_label": "Modeled milestone 2",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": null,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-blocked-asset-t1",
+            "syn-blocked-asset-f1",
+            "syn-blocked-asset-supply"
+          ],
+          "id": "syn-blocked-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Release cannot be determined: a connection, required repair effort or clearance is unresolved.",
+          "release_state": "unresolved",
+          "required_repair_ids": [
+            "syn-blocked-repair-t1",
+            "syn-blocked-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-blocked-asset-f2",
+            "syn-blocked-asset-supply"
+          ],
+          "id": "syn-blocked-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-blocked-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 0,
+      "input_fingerprint": "9b7f034b391299fca7f398e75d80016e70dda11e2a76c8d0745036c6888b3952",
+      "label": "Fictional blocked access",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-blocked-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-blocked-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "Declared access is blocked. Clearance time is unknown.",
+          "repair_id": "syn-blocked-repair-f1",
+          "state": "blocked"
+        },
+        {
+          "id": "syn-blocked-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-blocked-repair-f1"
+          ],
+          "reason": "A repair prerequisite is unavailable. This work cannot yet be scheduled.",
+          "repair_id": "syn-blocked-repair-t1",
+          "state": "dependency_blocked"
+        },
+        {
+          "id": "syn-blocked-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 3",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-blocked-repair-f2",
+          "state": "declared_damage"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 0,
+      "result_fingerprint": "8841ac13fd35c61c6fdbed4fe256fb28a9aa4a0103f0074b4798190ad7e1da66",
+      "scenario_id": "syn-blocked",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 0,
+      "step_label": "Before repairs",
+      "unresolved_customers": 1
+    },
+    {
+      "completion_hours": null,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-blocked-asset-t1",
+            "syn-blocked-asset-f1",
+            "syn-blocked-asset-supply"
+          ],
+          "id": "syn-blocked-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Release cannot be determined: a connection, required repair effort or clearance is unresolved.",
+          "release_state": "unresolved",
+          "required_repair_ids": [
+            "syn-blocked-repair-t1",
+            "syn-blocked-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-blocked-asset-f2",
+            "syn-blocked-asset-supply"
+          ],
+          "id": "syn-blocked-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-blocked-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 3,
+      "input_fingerprint": "9b7f034b391299fca7f398e75d80016e70dda11e2a76c8d0745036c6888b3952",
+      "label": "Fictional blocked access",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-blocked-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-blocked-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "Declared access is blocked. Clearance time is unknown.",
+          "repair_id": "syn-blocked-repair-f1",
+          "state": "blocked"
+        },
+        {
+          "id": "syn-blocked-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 2",
+          "prerequisite_ids": [
+            "syn-blocked-repair-f1"
+          ],
+          "reason": "A repair prerequisite is unavailable. This work cannot yet be scheduled.",
+          "repair_id": "syn-blocked-repair-t1",
+          "state": "dependency_blocked"
+        },
+        {
+          "id": "syn-blocked-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 3",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-blocked-repair-f2",
+          "state": "completed_simulated"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 1,
+      "result_fingerprint": "88643a563a599244ec974cc0329f707f9a794922a0abe1aa145efd83e9ae866d",
+      "scenario_id": "syn-blocked",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 1,
+      "step_label": "Modeled milestone 1",
+      "unresolved_customers": 1
+    },
+    {
+      "completion_hours": null,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-missing-asset-t1",
+            "syn-missing-asset-f1",
+            "syn-missing-asset-unknown",
+            "syn-missing-asset-supply"
+          ],
+          "id": "syn-missing-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Release cannot be determined: a connection, required repair effort or clearance is unresolved.",
+          "release_state": "unresolved",
+          "required_repair_ids": [
+            "syn-missing-repair-t1",
+            "syn-missing-repair-f1"
+          ],
+          "unresolved_link_from_ids": [
+            "syn-missing-asset-unknown",
+            "syn-missing-asset-f1"
+          ]
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 0,
+      "input_fingerprint": "ad3c8ccc71566bfd52c1bad85c0a4a2647dbc2ef1f5a7507ffcdd39ceb22539e",
+      "label": "Fictional unresolved evidence",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-missing-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-missing-asset-unknown",
+          "kind": "unresolved",
+          "label": "Unresolved 1",
+          "prerequisite_ids": [],
+          "reason": "Evidence is missing; this component cannot be treated as intact or completed.",
+          "repair_id": null,
+          "state": "unresolved"
+        },
+        {
+          "id": "syn-missing-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 2",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-missing-repair-f1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-missing-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 3",
+          "prerequisite_ids": [
+            "syn-missing-repair-f1"
+          ],
+          "reason": "Evidence is missing; this component cannot be treated as intact or completed.",
+          "repair_id": "syn-missing-repair-t1",
+          "state": "unresolved"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 0,
+      "result_fingerprint": "52ac41fd1bd695a8fd897f50f9894fa0ef9ad63e751833800fb61df052688f1d",
+      "scenario_id": "syn-missing",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 0,
+      "step_label": "Before repairs",
+      "unresolved_customers": 1
+    },
+    {
+      "completion_hours": null,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-missing-asset-t1",
+            "syn-missing-asset-f1",
+            "syn-missing-asset-unknown",
+            "syn-missing-asset-supply"
+          ],
+          "id": "syn-missing-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Release cannot be determined: a connection, required repair effort or clearance is unresolved.",
+          "release_state": "unresolved",
+          "required_repair_ids": [
+            "syn-missing-repair-t1",
+            "syn-missing-repair-f1"
+          ],
+          "unresolved_link_from_ids": [
+            "syn-missing-asset-unknown",
+            "syn-missing-asset-f1"
+          ]
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 2,
+      "input_fingerprint": "ad3c8ccc71566bfd52c1bad85c0a4a2647dbc2ef1f5a7507ffcdd39ceb22539e",
+      "label": "Fictional unresolved evidence",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-missing-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-missing-asset-unknown",
+          "kind": "unresolved",
+          "label": "Unresolved 1",
+          "prerequisite_ids": [],
+          "reason": "Evidence is missing; this component cannot be treated as intact or completed.",
+          "repair_id": null,
+          "state": "unresolved"
+        },
+        {
+          "id": "syn-missing-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 2",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-missing-repair-f1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-missing-asset-t1",
+          "kind": "transformer",
+          "label": "Transformer 3",
+          "prerequisite_ids": [
+            "syn-missing-repair-f1"
+          ],
+          "reason": "Evidence is missing; this component cannot be treated as intact or completed.",
+          "repair_id": "syn-missing-repair-t1",
+          "state": "unresolved"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 0,
+      "result_fingerprint": "0ae7a051d9c6180a91788b2cccc13cc03d1df9a06885416627fd1dfc4a3a82aa",
+      "scenario_id": "syn-missing",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 1,
+      "step_label": "Modeled milestone 1",
+      "unresolved_customers": 1
+    },
+    {
+      "completion_hours": 8,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-critical-asset-f1",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-critical-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-critical-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-critical-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-4",
+          "label": "Fictional customer 4",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-critical-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 0,
+      "input_fingerprint": "97bf91318950255afff14750563027ace4634e4e790ad7c5beb0c236e2fd30bf",
+      "label": "Fictional critical-service tradeoff",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-critical-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-critical-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-critical-repair-f1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-critical-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 2",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-critical-repair-f2",
+          "state": "declared_damage"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 0,
+      "result_fingerprint": "c75523c1ef36ddf9621f261818a8784f5d0b296fd9fd5deee93a78f2e60a02d5",
+      "scenario_id": "syn-critical",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 0,
+      "step_label": "Before repairs",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 8,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-critical-asset-f1",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "Every listed damaged dependency must be repaired before this fictional path can be released.",
+          "release_state": "waiting",
+          "required_repair_ids": [
+            "syn-critical-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-critical-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-critical-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-4",
+          "label": "Fictional customer 4",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-critical-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 2,
+      "input_fingerprint": "97bf91318950255afff14750563027ace4634e4e790ad7c5beb0c236e2fd30bf",
+      "label": "Fictional critical-service tradeoff",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-critical-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-critical-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "Damage and repair scope are assumptions. This repair is not yet complete in this milestone.",
+          "repair_id": "syn-critical-repair-f1",
+          "state": "declared_damage"
+        },
+        {
+          "id": "syn-critical-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 2",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-critical-repair-f2",
+          "state": "completed_simulated"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 3,
+      "result_fingerprint": "c926a5f07d449b76108636930f6132306eb5b4a18177a4838ccade35e672fd73",
+      "scenario_id": "syn-critical",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 1,
+      "step_label": "Modeled milestone 1",
+      "unresolved_customers": 0
+    },
+    {
+      "completion_hours": 8,
+      "customers": [
+        {
+          "asset_ids": [
+            "syn-critical-asset-f1",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-1",
+          "label": "Fictional customer 1",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-critical-repair-f1"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-2",
+          "label": "Fictional customer 2",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-critical-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-3",
+          "label": "Fictional customer 3",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-critical-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        },
+        {
+          "asset_ids": [
+            "syn-critical-asset-f2",
+            "syn-critical-asset-supply"
+          ],
+          "id": "syn-critical-customer-4",
+          "label": "Fictional customer 4",
+          "reason": "All declared damaged dependencies are complete in this milestone. This is not confirmed utility restoration.",
+          "release_state": "released_simulated",
+          "required_repair_ids": [
+            "syn-critical-repair-f2"
+          ],
+          "unresolved_link_from_ids": []
+        }
+      ],
+      "duration_assumption": "one_effective_worker",
+      "elapsed_hours": 8,
+      "input_fingerprint": "97bf91318950255afff14750563027ace4634e4e790ad7c5beb0c236e2fd30bf",
+      "label": "Fictional critical-service tradeoff",
+      "mode": "synthetic-demo",
+      "model_version": "conditional-dependency-playback-v1",
+      "nodes": [
+        {
+          "id": "syn-critical-asset-supply",
+          "kind": "supply_terminal",
+          "label": "Abstract supply terminal",
+          "prerequisite_ids": [],
+          "reason": "Supply or equipment is assumed intact in this fictional definition, not observed.",
+          "repair_id": null,
+          "state": "intact_assumption"
+        },
+        {
+          "id": "syn-critical-asset-f1",
+          "kind": "fuse",
+          "label": "Fuse 1",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-critical-repair-f1",
+          "state": "completed_simulated"
+        },
+        {
+          "id": "syn-critical-asset-f2",
+          "kind": "fuse",
+          "label": "Fuse 2",
+          "prerequisite_ids": [],
+          "reason": "This repair is complete only in the selected precomputed fictional milestone.",
+          "repair_id": "syn-critical-repair-f2",
+          "state": "completed_simulated"
+        }
+      ],
+      "policy_id": "legacy-release-per-person-hour-adapter-v1",
+      "provenance": "independently_authored_fiction",
+      "released_customers": 4,
+      "result_fingerprint": "2dfcd9ae9e20b3804d257f4e97e9db055241b9214a030d07240048d81933014e",
+      "scenario_id": "syn-critical",
+      "scenario_revision": 1,
+      "schema_version": "customer-path-frame-v1",
+      "step": 2,
+      "step_label": "Modeled milestone 2",
+      "unresolved_customers": 0
+    }
+  ],
+  "version": "customer-path-catalog-v1"
+}

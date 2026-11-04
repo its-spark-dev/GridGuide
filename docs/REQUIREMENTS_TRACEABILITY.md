@@ -76,5 +76,16 @@ See [G2 acceptance and results](planning/V1_1_0_PHASE2.md).
 | Honest numerical limits | Every paired outcome and null retained; 15 convergence combinations marked unstable | No empirical coverage, promotion or guarantee |
 | Reproducibility and preservation | Full source-free repeats, hashes, regression suites, retained reports and demo trials | Same pinned environment; large trial caches regenerated outside Git |
 
-See the [G5 packet](planning/V1_1_0_PHASE5.md). Independent acceptance and future API/UI
-integration are pending. G3 negative results and G4 No-Go remain unchanged.
+See the [G5 packet](planning/V1_1_0_PHASE5.md). G5 was accepted and merged at `98756a9`; further simulation API/UI integration remains gated. G3 negative results and G4 No-Go remain unchanged.
+
+## Phase 6 / G6 additions
+
+| Requirement | Evidence | Limit |
+|---|---|---|
+| Declared customer dependencies | Python-prepared states, ordered interactive paths, shared selection | Six fictional definitions only; no geographic inference |
+| Bounded persistence | Exact schema plus build-approved content digests; fault/cross-tab tests | One historical fictional frame; no authenticated record |
+| Offline preparedness | Scoped integrity-pinned shell; real process restart with network denied | Browser eviction and storage policy remain outside app control |
+| Accessibility | Native semantics, mobile/reduced-motion and axe audits | Manual assistive-technology review pending; no WCAG certification |
+| Preservation | Full applicable regressions and frozen-artifact checks | No new model or G5 empirical validation |
+
+[G6 packet](planning/V1_1_0_PHASE6.md) records exact results and outstanding review gates.

@@ -1,0 +1,78 @@
+{
+  "actual_browser": "Google Chrome 156.0.8078.48 on macOS arm64; Playwright 1.64.1; axe-core 4.14.0",
+  "base_sha": "98756a9e33da0ef6c9ed38bda177b7cb910c7855",
+  "cache_entry_bytes": {
+    "/assets/Icon-BQZZ60yW.js": 226001,
+    "/assets/preparedness-DnkvoupK.css": 3451,
+    "/assets/preparedness-eIuCR-pI.js": 23051,
+    "/preparedness/": 600,
+    "/preparedness/index.html": 600,
+    "/preparedness/kit.txt": 1218
+  },
+  "cache_manifest": {
+    "allowlist": {
+      "/assets/Icon-BQZZ60yW.js": "e0d0f0599350ed6dc9a41c47ef949e5a764ba5678952f49f3083beb47fb816e3",
+      "/assets/preparedness-DnkvoupK.css": "58c413a0e0ac7c5f03d27ffa8b18de3563fbdaaada7621e0f18a23bc7889aa0b",
+      "/assets/preparedness-eIuCR-pI.js": "9a2a0f71e85c324080e54e4f601dbc56481e9f9915321a6ebccf501037197d6b",
+      "/preparedness/": "45b38a792c0d9783eb0ddc5b1c964d85a8f5b6e20cc5c42b180c616b8382d079",
+      "/preparedness/index.html": "45b38a792c0d9783eb0ddc5b1c964d85a8f5b6e20cc5c42b180c616b8382d079",
+      "/preparedness/kit.txt": "59d2495409da5ef444fad71fd2936b16ae1186a0a96844e0382884b33e97004f"
+    },
+    "version": "fcbe85da61bff75502bd"
+  },
+  "executed_checks": [
+    "production_build",
+    "generated_types_byte_identical",
+    "golden_cli",
+    "source_pins",
+    "legacy_regression",
+    "G2_G3_full_suite_and_unchanged_artifacts",
+    "G4_byte_identical_replay",
+    "G5_66_checksums",
+    "G1_artifact_check",
+    "18_frame_byte_reproduction",
+    "browser_process_restart_network_denied",
+    "cache_update_and_storage_faults"
+  ],
+  "frame_artifact_sha256": "0d549f0f65ea09104870c6299dccb4b52be4a16fd5d06bf94dd0741fd995cef4",
+  "frames": 18,
+  "g5_checksums_verified": 66,
+  "implementation_sha": "33c187186af277794896ef198dcf14e3bd41ecc7",
+  "limitations": [
+    "Chromium only; no full WCAG claim",
+    "No field outcomes or empirical calibration",
+    "No deployment; service worker requires localhost/HTTPS",
+    "Storage eviction, same-origin compromise and unauthenticated clock remain outside guarantees"
+  ],
+  "logs_sha256": {
+    "browser": "323eda1a8d2e3fcf724beca6f7d317b1e0e5607bf99b0fba13627fa79c4985b9",
+    "build": "06b3d0b1abeccea5900f03d944fc13436c95e79bb93f9ac80693b7a15345ed32",
+    "golden": "a00a6d767276269773319f46981b2fa598c5e9c098eff00c4ca48afa455d8ec9",
+    "preparedness": "4d534a29427b2d4ab8d926a6bb8d4314ee2bb0be2e88dfcd4fde1772274a63e2",
+    "python": "e1b1e03346fded415154335417efbf657a4258a881b6ce0b489544d39ff1bc16",
+    "types": "693dc4f20c04b5a3edcd0889bb67522c9d939c9e8e4bddab5680ee59c5360a87"
+  },
+  "manual_keyboard": "pending",
+  "manual_screen_reader": "pending",
+  "maximum_snapshot_bytes": 3323,
+  "reused_evidence": [
+    "G5 full Monte Carlo numerical reproduction; not rerun"
+  ],
+  "scenarios": 6,
+  "source_sha256": {
+    "Data1.zip": "08ac47b7dd7f43cde56509644d7292d0b6978dcd62300912b4ecf0a2c3c6eca3",
+    "Data2.zip": "13bea1c84636989a6475f481d67f25b25a17fcac8b77f674a5157e3a1d105f00",
+    "Install_Labor_HackOHIO.xlsx": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b",
+    "matched_upstream.zip": "13f8d9da49843c959059b4074417c47671105131cdc4bfe9daf7b534e5f522c3"
+  },
+  "tests": {
+    "axe_serious_critical": 0,
+    "existing_browser": 49,
+    "legacy": 24,
+    "preparedness_browser": 13,
+    "python": 327
+  },
+  "v1_0_0_commit": "b324c1b355cda60035fb11fa32bcddf10931f649",
+  "v1_0_0_tag": "c2b2d37aaf5e74a03190746c12badacc6bc86369",
+  "version": "g6-verification-v1"
+}

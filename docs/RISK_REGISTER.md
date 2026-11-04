@@ -88,3 +88,18 @@ are retained in Git, but their integration and display wording require later app
 Cross-platform float-transform bit equivalence is unverified. G4 research reopening
 requires a new versioned evidence review and data-quality gate, never editing the current
 No-Go into a Go. See [G5](planning/V1_1_0_PHASE5.md).
+
+## Phase 6 customer and offline risks
+
+A historical fictional snapshot can be mistaken for live status: explicit open,
+timestamps, provenance and disabled offline selection counter this; no current utility
+state is inferred. Worker readiness requires verified resources, but eviction, user
+clearing, denied storage, insecure origins and unsupported browsers can still prevent
+offline startup. Print/download are independent fallbacks after the page has loaded.
+
+Same-origin scripts/extensions can access storage; content hashes are not signatures
+or an XSS defense. Exact allowlists exclude personal/source data; no authentication or
+encryption is implied. Unknown snapshot schemas fail closed and require explicit
+replacement; cache updates activate only through the offered update action while a
+page is open. Manual screen-reader and non-Chromium coverage remain pending. G6 must
+review these usability/privacy tradeoffs before merge. See the [packet](planning/V1_1_0_PHASE6.md).

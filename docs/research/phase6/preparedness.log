@@ -1,0 +1,20 @@
+
+Running 13 tests using 1 worker
+
+(node:50676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 preparedness-tests/preparedness.spec.ts:22:1 › declared dependencies, selection, repair milestones, blocked and unknown states (371ms)
+  ✓   2 preparedness-tests/preparedness.spec.ts:43:1 › keyboard semantics, reduced motion, mobile and automated accessibility (540ms)
+  ✓   3 preparedness-tests/preparedness.spec.ts:59:1 › explicit save only, narrow fields, historical state, corrupt/extra fields and deletion (367ms)
+  ✓   4 preparedness-tests/preparedness.spec.ts:79:1 › challenge or unknown mode cannot save; no source/declaration persistence (243ms)
+  ✓   5 preparedness-tests/preparedness.spec.ts:92:1 › production shell survives actual browser process restart with all network denied (3.4s)
+  ✓   6 preparedness-tests/preparedness.spec.ts:118:1 › cache exact allowlist, API/tile/POST exclusion and actual reset (2.2s)
+  ✓   7 preparedness-tests/preparedness.spec.ts:130:1 › storage denial, quota, unavailable worker and downloadable fallback (942ms)
+  ✓   8 preparedness-tests/preparedness.spec.ts:154:1 › snapshot versions and arbitrary free text fail closed; deletion works across tabs (680ms)
+  ✓   9 preparedness-tests/preparedness.spec.ts:179:1 › stale save cancellation and provenance changes never persist a result (285ms)
+  ✓  10 preparedness-tests/preparedness.spec.ts:193:1 › corrupted cache is not ready; worker update migrates only its own caches (1.5s)
+  ✓  11 preparedness-tests/preparedness.spec.ts:220:1 › all fictional path states and historical snapshot have no serious or critical axe findings (2.0s)
+  ✓  12 preparedness-tests/preparedness.spec.ts:232:1 › missing service and damaged artifact leave generic guidance; later refresh cannot revive stale data (204ms)
+  ✓  13 preparedness-tests/preparedness.spec.ts:245:1 › browser evidence: selected dependency, narrow screen, and offline historical view (1.0s)
+
+  13 passed (15.2s)

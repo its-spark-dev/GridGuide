@@ -848,3 +848,47 @@ class SyntheticHealth(Contract):
     capabilities: tuple[Literal["scenario_catalog", "scenario_definition"], ...] = ("scenario_catalog", "scenario_definition")
     external_ai_enabled: Literal[False] = False
     numerical_evaluation_available: Literal[False] = False
+
+
+# Offline, Python-prepared customer frames. These do not add a numerical API route.
+class CustomerPathNode(Contract):
+    id: SyntheticID
+    kind: Literal['supply_terminal', 'fuse', 'transformer', 'unresolved']
+    label: str
+    state: Literal['intact_assumption', 'declared_damage', 'blocked',
+                   'dependency_blocked', 'completed_simulated', 'unresolved']
+    repair_id: SyntheticID | None
+    prerequisite_ids: tuple[SyntheticID, ...]
+    reason: str
+
+
+class CustomerPathView(Contract):
+    id: SyntheticID
+    label: str
+    asset_ids: tuple[SyntheticID, ...]
+    unresolved_link_from_ids: tuple[SyntheticID, ...]
+    required_repair_ids: tuple[SyntheticID, ...]
+    release_state: Literal['waiting', 'released_simulated', 'unresolved']
+    reason: str
+
+
+class CustomerPathFrame(Contract):
+    schema_version: Literal['customer-path-frame-v1'] = 'customer-path-frame-v1'
+    mode: Literal['synthetic-demo'] = 'synthetic-demo'
+    provenance: Literal['independently_authored_fiction'] = 'independently_authored_fiction'
+    scenario_id: SyntheticID
+    scenario_revision: int
+    label: str
+    input_fingerprint: str
+    model_version: Literal['conditional-dependency-playback-v1'] = 'conditional-dependency-playback-v1'
+    policy_id: Literal['legacy-release-per-person-hour-adapter-v1'] = 'legacy-release-per-person-hour-adapter-v1'
+    duration_assumption: Literal['one_effective_worker'] = 'one_effective_worker'
+    step: int
+    step_label: str
+    elapsed_hours: float
+    nodes: tuple[CustomerPathNode, ...]
+    customers: tuple[CustomerPathView, ...]
+    released_customers: int
+    unresolved_customers: int
+    completion_hours: float | None
+    result_fingerprint: str
