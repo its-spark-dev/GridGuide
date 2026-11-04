@@ -1,0 +1,64 @@
+{
+  "decision": "NO-GO",
+  "phases": [
+    {
+      "artifacts": [
+        "SOURCE_AUDIT.md",
+        "SOURCES.md",
+        "evidence/acquisition.json",
+        "evidence/source-audit.json"
+      ],
+      "phase": 0,
+      "result": "Primary and bounded alternative audited; Zenodo metadata and compact diagnostics reviewed",
+      "status": "COMPLETE"
+    },
+    {
+      "artifacts": [
+        "FEASIBILITY.md",
+        "evidence/decision.json"
+      ],
+      "phase": 1,
+      "result": "No training authorized by evidence gate",
+      "status": "NO-GO"
+    },
+    {
+      "phase": 2,
+      "result": "Bounded acquisition, schema/quality/provenance tooling; no model-ready dataset claimed",
+      "status": "AUDIT INGESTION ONLY"
+    },
+    {
+      "phase": 3,
+      "result": "No training/development/final partition; gate prerequisite failed",
+      "status": "NOT ENTERED"
+    },
+    {
+      "phase": 4,
+      "result": "No baseline fitting, models or model selection",
+      "status": "NOT ENTERED"
+    },
+    {
+      "phase": 5,
+      "result": "No held-out evaluation, uncertainty or predictive result",
+      "status": "NOT ENTERED"
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "presentation/",
+        "REPRODUCE.md"
+      ],
+      "phase": 6,
+      "result": "Measured source figures, research narrative and root README entry",
+      "status": "COMPLETE"
+    },
+    {
+      "artifacts": [
+        "VERIFICATION.md"
+      ],
+      "phase": 7,
+      "result": "17 audit +102 public +196 challenge +51 research +44 ML I tests pass; full source replay, build and frozen hashes pass",
+      "status": "LOCAL CHECKS PASS; PR CHECKS AUTHORITATIVE"
+    }
+  ],
+  "version": "outage-phase-ledger-v1"
+}
