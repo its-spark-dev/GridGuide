@@ -1,0 +1,55 @@
+{
+  "elapsed_seconds": 6.2859915000153705,
+  "environment": {
+    "cpu_count": 12,
+    "machine": "arm64",
+    "packages": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.5",
+      "pydantic": "2.12.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "threadpoolctl": "3.7.0"
+    },
+    "processor": "arm",
+    "python": "3.12.14",
+    "system": "Darwin",
+    "thread_limit": 1
+  },
+  "models": {
+    "boosting-rate0.03": {
+      "batch_inference_seconds_per_case": 5.244970206415864e-06,
+      "training_cv_replay_seconds": 1.1608132499968633
+    },
+    "boosting-rate0.1": {
+      "batch_inference_seconds_per_case": 5.2268727096926534e-06,
+      "training_cv_replay_seconds": 1.0290168339852244
+    },
+    "forest-depth4": {
+      "batch_inference_seconds_per_case": 1.910183081318709e-05,
+      "training_cv_replay_seconds": 0.41945666598621756
+    },
+    "forest-depth8": {
+      "batch_inference_seconds_per_case": 2.2354881829497488e-05,
+      "training_cv_replay_seconds": 0.477450417005457
+    },
+    "forest-depthall": {
+      "batch_inference_seconds_per_case": 2.24306398939172e-05,
+      "training_cv_replay_seconds": 0.4925503749982454
+    },
+    "logistic-c0.1": {
+      "batch_inference_seconds_per_case": 2.505850003364336e-06,
+      "training_cv_replay_seconds": 0.029036708001513034
+    },
+    "logistic-c1": {
+      "batch_inference_seconds_per_case": 2.4919192050348477e-06,
+      "training_cv_replay_seconds": 0.03213183302432299
+    },
+    "logistic-c10": {
+      "batch_inference_seconds_per_case": 2.5991792849387334e-06,
+      "training_cv_replay_seconds": 0.05127758299931884
+    }
+  },
+  "peak_process_rss_bytes": 203096064
+}

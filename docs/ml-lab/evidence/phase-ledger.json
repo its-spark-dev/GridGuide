@@ -44,14 +44,19 @@
       "phase": 2
     },
     {
+      "artifacts": [
+        "docs/ml-lab/evidence/training",
+        "docs/ml-lab/evidence/selection-freeze.json"
+      ],
       "checks": [
-        "smoke96 inputs,36 final cases;8 trained candidates, deterministic artifact byte replay and numerical audit PASS",
-        "NumPy2.3.5 repair: smoke has no runtime warnings and unchanged numerical outputs"
+        "297 eligible training /99 eligible development cases",
+        "8 candidates;3-fold grouped CV;train-only transforms",
+        "all8 repeated fits yielded identical serialized bytes and predictions",
+        "selected logistic-c0.1 by development mean regret373.710 vs fixed413.659",
+        "41 ML tests passed before final freeze"
       ],
-      "gate": "PENDING",
-      "open_issues": [
-        "full training and committed selection freeze pending"
-      ],
+      "gate": "PASS",
+      "open_issues": [],
       "phase": 3
     },
     {
