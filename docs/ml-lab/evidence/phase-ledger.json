@@ -1,4 +1,12 @@
 {
+  "executed_commands": {
+    "challenge": ".venv/bin/python scripts/run_test_lane.py --lane challenge --report artifacts/ml-hardening/challenge.json",
+    "final_audit": ".venv-ml/bin/python -m research.ml_lab audit --dataset docs/ml-lab/evidence/dataset --training docs/ml-lab/evidence/training --freeze docs/ml-lab/evidence/selection-freeze.json --final docs/ml-lab/evidence/final",
+    "ml_tests": ".venv-ml/bin/python -m unittest discover -s research/ml_lab/tests -v",
+    "public": ".venv/bin/python scripts/run_test_lane.py --lane public --report artifacts/ml-hardening/public.json",
+    "research": ".venv/bin/python scripts/run_test_lane.py --lane research --report artifacts/ml-hardening/research.json",
+    "smoke": ".venv-ml/bin/python -m research.ml_lab smoke --output /tmp/gridguide-ml-smoke-repaired"
+  },
   "phases": [
     {
       "artifacts": [
@@ -75,16 +83,40 @@
       "phase": 4
     },
     {
-      "gate": "PENDING",
-      "open_issues": [
-        "portfolio report/figures pending"
+      "artifacts": [
+        "docs/ml-lab/README.md",
+        "docs/ml-lab/presentation",
+        "README.md"
       ],
+      "checks": [
+        "four PNG+SVG scientific figures visually inspected",
+        "renderer checks sealed evidence before plotting",
+        "same-environment figure regeneration tests PASS",
+        "complete report retains both failed promotion gates and all candidate results"
+      ],
+      "gate": "PASS",
+      "open_issues": [],
       "phase": 5
     },
     {
-      "gate": "PENDING",
+      "artifacts": [
+        ".github/workflows/ml-lab.yml",
+        "research/ml_lab/tests"
+      ],
+      "checks": [
+        "44 ML unittest cases PASS",
+        "102 existing public tests PASS",
+        "196 existing challenge tests PASS with authorized local source files",
+        "51 existing research tests PASS",
+        "npm --prefix frontend run build PASS",
+        "python scripts/check_frozen_artifacts.py PASS:20 G2/G3+66 G5+10 G6+19 G7 files",
+        "independent source-free historical checkout reproduced all8 model bytes and training/dev/CV evidence",
+        "independent final numerical/diff review PASS; no frozen source edits after reveal",
+        "240-case read-only final audit reproduces exact numerical evidence"
+      ],
+      "gate": "LOCAL PASS; final PR CI pending",
       "open_issues": [
-        "final review, existing test lanes and GitHub Actions pending"
+        "GitHub Actions must pass on final implementation PR head"
       ],
       "phase": 6
     }
