@@ -1,0 +1,28 @@
+{
+  "diagnostics": {
+    "action_rows": 470,
+    "actions_per_state": {
+      "1": 154,
+      "2": 37,
+      "3": 40,
+      "4": 27,
+      "5": 17,
+      "6": 12,
+      "7": 1,
+      "8": 1,
+      "9": 1
+    },
+    "behavior": {
+      "critical": 9,
+      "downstream": 36,
+      "teacher": 260
+    },
+    "discretionary_states": 131,
+    "episodes": 10,
+    "teacher_wait_visits": 165,
+    "unique_states": 290,
+    "visits": 305
+  },
+  "elapsed_seconds": 0.545771082979627,
+  "sha256": "22e6904ef30a3b215c7c4efd541f027fb7571d61368583dbf69dce4c4eb42a6d"
+}

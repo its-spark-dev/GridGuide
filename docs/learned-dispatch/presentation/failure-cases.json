@@ -1,0 +1,756 @@
+{
+  "final_id": {
+    "case_id": "syn-learned-full-final-id-007-c2",
+    "disagreements": [
+      {
+        "decision": 1,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-010"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-001"
+        },
+        "teacher_regret": 1.2659357625446623,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-001"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 5,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-007"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-001"
+        },
+        "teacher_regret": 0.6021465617063514,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-001"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 7,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-005"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-001"
+        },
+        "teacher_regret": 0.8177748616986132,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-001"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 9,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-1",
+          "task_id": "syn-t-000"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-1",
+          "task_id": "syn-t-001"
+        },
+        "teacher_regret": 0.2421065459335756,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-1",
+            "task_id": "syn-t-001"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 11,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-003"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-001"
+        },
+        "teacher_regret": 1.2599241294275785,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-001"
+          }
+        ],
+        "tie_aware": false
+      }
+    ],
+    "episode_seed": 1060179568440131809,
+    "mechanism": "modular",
+    "profile": "low",
+    "ratio": 1.4314246824781354,
+    "student_schedule": {
+      "assignments": [
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 4376,
+          "start_tick": 725,
+          "task_id": "syn-t-010"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 14135,
+          "start_tick": 4376,
+          "task_id": "syn-t-007"
+        },
+        {
+          "crew_id": "syn-crew-1",
+          "end_tick": 33795,
+          "start_tick": 775,
+          "task_id": "syn-t-002"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 36452,
+          "start_tick": 14135,
+          "task_id": "syn-t-005"
+        },
+        {
+          "crew_id": "syn-crew-1",
+          "end_tick": 64776,
+          "start_tick": 33795,
+          "task_id": "syn-t-000"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 65887,
+          "start_tick": 36452,
+          "task_id": "syn-t-003"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 80905,
+          "start_tick": 65887,
+          "task_id": "syn-t-011"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 83138,
+          "start_tick": 80905,
+          "task_id": "syn-t-008"
+        },
+        {
+          "crew_id": "syn-crew-1",
+          "end_tick": 100557,
+          "start_tick": 64776,
+          "task_id": "syn-t-001"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 119936,
+          "start_tick": 83138,
+          "task_id": "syn-t-009"
+        },
+        {
+          "crew_id": "syn-crew-1",
+          "end_tick": 126050,
+          "start_tick": 100557,
+          "task_id": "syn-t-004"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 158590,
+          "start_tick": 126050,
+          "task_id": "syn-t-006"
+        }
+      ],
+      "policy": "forest-depth4",
+      "problem_fingerprint": "e22664e4d859a683b55150f7ddc8fd1227200631fcfe6a6b4f42dea0fc566b53",
+      "unscheduled_tasks": [],
+      "version": "benchmark-schedule-v1"
+    },
+    "student_wait": 36.10267636684303,
+    "teacher_schedule": {
+      "assignments": [
+        {
+          "crew_id": "syn-crew-1",
+          "end_tick": 33795,
+          "start_tick": 775,
+          "task_id": "syn-t-002"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 36506,
+          "start_tick": 725,
+          "task_id": "syn-t-001"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 61999,
+          "start_tick": 36506,
+          "task_id": "syn-t-004"
+        },
+        {
+          "crew_id": "syn-crew-1",
+          "end_tick": 64776,
+          "start_tick": 33795,
+          "task_id": "syn-t-000"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 65650,
+          "start_tick": 61999,
+          "task_id": "syn-t-010"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 75409,
+          "start_tick": 65650,
+          "task_id": "syn-t-007"
+        },
+        {
+          "crew_id": "syn-crew-1",
+          "end_tick": 97316,
+          "start_tick": 64776,
+          "task_id": "syn-t-006"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 97726,
+          "start_tick": 75409,
+          "task_id": "syn-t-005"
+        },
+        {
+          "crew_id": "syn-crew-1",
+          "end_tick": 99549,
+          "start_tick": 97316,
+          "task_id": "syn-t-008"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 127161,
+          "start_tick": 97726,
+          "task_id": "syn-t-003"
+        },
+        {
+          "crew_id": "syn-crew-1",
+          "end_tick": 136347,
+          "start_tick": 99549,
+          "task_id": "syn-t-009"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 142179,
+          "start_tick": 127161,
+          "task_id": "syn-t-011"
+        }
+      ],
+      "policy": "search:support-median",
+      "problem_fingerprint": "e22664e4d859a683b55150f7ddc8fd1227200631fcfe6a6b4f42dea0fc566b53",
+      "unscheduled_tasks": [],
+      "version": "benchmark-schedule-v1"
+    },
+    "teacher_wait": 25.221499118165784
+  },
+  "final_shift": {
+    "case_id": "syn-learned-full-final-shift-023-c1",
+    "disagreements": [
+      {
+        "decision": 1,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-016"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.124062911443666,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 3,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-006"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.17525883647072626,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 5,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-013"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.3309331894929103,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 7,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-011"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.22415909730725053,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 9,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-012"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.24066705654523785,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 11,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-007"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.19985860494769384,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 13,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-001"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.12779240172857093,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 15,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-008"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.0681068465963657,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 17,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-010"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.340713327351302,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 19,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-009"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.06125755810254431,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 21,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-002"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-015"
+        },
+        "teacher_regret": 0.11242177742782981,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-015"
+          }
+        ],
+        "tie_aware": false
+      },
+      {
+        "decision": 29,
+        "exact": false,
+        "predicted": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-004"
+        },
+        "teacher": {
+          "crew_id": "syn-crew-0",
+          "task_id": "syn-t-014"
+        },
+        "teacher_regret": 0.006804514901453024,
+        "teacher_ties": [
+          {
+            "crew_id": "syn-crew-0",
+            "task_id": "syn-t-014"
+          }
+        ],
+        "tie_aware": false
+      }
+    ],
+    "episode_seed": 570736316124921269,
+    "mechanism": "deep_sparse",
+    "profile": "high",
+    "ratio": 1.4043486720403247,
+    "student_schedule": {
+      "assignments": [
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 57859,
+          "start_tick": 15669,
+          "task_id": "syn-t-016"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 58847,
+          "start_tick": 57859,
+          "task_id": "syn-t-006"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 63710,
+          "start_tick": 58847,
+          "task_id": "syn-t-013"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 66616,
+          "start_tick": 63710,
+          "task_id": "syn-t-011"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 115898,
+          "start_tick": 66616,
+          "task_id": "syn-t-012"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 135019,
+          "start_tick": 115898,
+          "task_id": "syn-t-007"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 140207,
+          "start_tick": 135019,
+          "task_id": "syn-t-001"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 173177,
+          "start_tick": 140207,
+          "task_id": "syn-t-008"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 222385,
+          "start_tick": 173177,
+          "task_id": "syn-t-010"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 226086,
+          "start_tick": 222385,
+          "task_id": "syn-t-009"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 234772,
+          "start_tick": 226086,
+          "task_id": "syn-t-002"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 242481,
+          "start_tick": 234772,
+          "task_id": "syn-t-015"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 244790,
+          "start_tick": 242481,
+          "task_id": "syn-t-005"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 247858,
+          "start_tick": 244790,
+          "task_id": "syn-t-017"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 258860,
+          "start_tick": 247858,
+          "task_id": "syn-t-004"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 261984,
+          "start_tick": 258860,
+          "task_id": "syn-t-000"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 267186,
+          "start_tick": 261984,
+          "task_id": "syn-t-014"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 278573,
+          "start_tick": 267186,
+          "task_id": "syn-t-003"
+        }
+      ],
+      "policy": "forest-depth4",
+      "problem_fingerprint": "15cf0b26f31a68129a545f83e01c977caf877d4175d30cb15fc2bb49198aedef",
+      "unscheduled_tasks": [],
+      "version": "benchmark-schedule-v1"
+    },
+    "student_wait": 47.693321376011774,
+    "teacher_schedule": {
+      "assignments": [
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 23378,
+          "start_tick": 15669,
+          "task_id": "syn-t-015"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 65568,
+          "start_tick": 23378,
+          "task_id": "syn-t-016"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 66556,
+          "start_tick": 65568,
+          "task_id": "syn-t-006"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 68865,
+          "start_tick": 66556,
+          "task_id": "syn-t-005"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 71933,
+          "start_tick": 68865,
+          "task_id": "syn-t-017"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 82935,
+          "start_tick": 71933,
+          "task_id": "syn-t-004"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 86059,
+          "start_tick": 82935,
+          "task_id": "syn-t-000"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 90922,
+          "start_tick": 86059,
+          "task_id": "syn-t-013"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 93828,
+          "start_tick": 90922,
+          "task_id": "syn-t-011"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 143110,
+          "start_tick": 93828,
+          "task_id": "syn-t-012"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 162231,
+          "start_tick": 143110,
+          "task_id": "syn-t-007"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 167419,
+          "start_tick": 162231,
+          "task_id": "syn-t-001"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 200389,
+          "start_tick": 167419,
+          "task_id": "syn-t-008"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 205591,
+          "start_tick": 200389,
+          "task_id": "syn-t-014"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 254799,
+          "start_tick": 205591,
+          "task_id": "syn-t-010"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 258500,
+          "start_tick": 254799,
+          "task_id": "syn-t-009"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 267186,
+          "start_tick": 258500,
+          "task_id": "syn-t-002"
+        },
+        {
+          "crew_id": "syn-crew-0",
+          "end_tick": 278573,
+          "start_tick": 267186,
+          "task_id": "syn-t-003"
+        }
+      ],
+      "policy": "search:support-median",
+      "problem_fingerprint": "15cf0b26f31a68129a545f83e01c977caf877d4175d30cb15fc2bb49198aedef",
+      "unscheduled_tasks": [],
+      "version": "benchmark-schedule-v1"
+    },
+    "teacher_wait": 33.961168138337015
+  }
+}

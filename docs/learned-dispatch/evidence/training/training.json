@@ -1,0 +1,1314 @@
+{
+  "binding": {
+    "input_identity": "6b8cac24a1d8c2910b5bdb9ddded365d5d904df7163ff737becae0373cadaf7b",
+    "source_hashes": {
+      "backend/contracts.py": "337c10e700fd76d2e970e09dd5eba5625284ba75eb2d4f5384fd474063aaa601",
+      "backend/risk_rules.py": "c61ba299ec445d85002d6dc389682d95a5d13248efb04b058cc00ce23f9de7d9",
+      "benchmarks/contracts.py": "14f20cdd325ae43acf39e437ff027831dedfd34606474311a45acfaae7c08436",
+      "benchmarks/metrics.py": "b2163c0ed44d444eebe07a5abd059c66aa1b11bcfea494e226889cffee99b621",
+      "benchmarks/policies.py": "66acc974af47f4f289ebd6279ff3ed7035a2e92795df077e66c138d54d8dca14",
+      "benchmarks/validation.py": "01dd990121e6b6e3a3dac9663697379355813a239ec95000115e7caae64e79c9",
+      "docs/adaptive-dispatch/PROTOCOL.md": "d85d736eeb5c6d7436099f2c5a61214e100e86473addbf4b928d7db7f627eebe",
+      "docs/learned-dispatch/PROTOCOL.md": "57be72080be59e684e7c700a5aec84f79481490a6f47c072fcc94224cd2ace09",
+      "requirements-ml.lock": "f5f0bae24f653c08b89f4576a3e6c36363044492c417ee4642961ed57273d9cf",
+      "research/adaptive_dispatch/__init__.py": "5196d251eeab5dc5e9dfba8021c478680e7a64b8bc5d6c4e2eea53d18d545005",
+      "research/adaptive_dispatch/dataset.py": "e1b31913825becd9cc5a041ebd1ee6003c9ee7adeec20eec01d36c775828ea5b",
+      "research/adaptive_dispatch/environment.py": "711321142eb0d68fbc110667b1d494af15d7535129b76b8048bad7e27973f925",
+      "research/adaptive_dispatch/exact.py": "94e420d668ecd03db95d49ed7f8fe181cecf0a9d3b81d74a434d1febe4bd2494",
+      "research/adaptive_dispatch/experiment.py": "71995f42d8a345865643226535f93cc6a467fa0c1af05fd70f0756428e6eb9dd",
+      "research/adaptive_dispatch/policies.py": "adc3add104f8700d112ba83181ebf4131ec2161899391f85ea48f2ea9b3268a6",
+      "research/adaptive_dispatch/validation.py": "21a9f851706619fd5b56fccc35116d65147073edc862bb24e1ea0f2c999a12c6",
+      "research/learned_dispatch/__init__.py": "adbe42a3994377feed8d52ed4b38a3273783731a94fb14885fd1102c44f38aed",
+      "research/learned_dispatch/analysis.py": "d6a182209cccb2f237b3924eb9b2e3234e8df060bdcbe0e926c3d5acedb143c0",
+      "research/learned_dispatch/dataset.py": "8d13a5ad30c5ca7118d41cdabd3adc103f6f9b61c1d383dc57155d25149cf988",
+      "research/learned_dispatch/experiment.py": "2d03b70cea1159f2b5c627ff2e4fb03c910cae7f223b938560028b5fd4b95705",
+      "research/learned_dispatch/features.py": "5a2f012474278402d4707d584af92ae15502e858ea502534dc3c6399a5f5069f",
+      "research/learned_dispatch/models.py": "a3255eea41a33a595243aadecc50e9fb43e2009c9ec8329cf0e98afcf0e195c3",
+      "research/learned_dispatch/public.py": "803f875ba4da87af98f2ac59401223d6dac46e936a0dcf03661b66b30e6614db",
+      "research/learned_dispatch/rollout.py": "e8b66034a98fad4532bc7c3484c06edd66e905a0a8ddce5bd84277517a786a3a",
+      "research/learned_dispatch/teacher.py": "46d5a643754da30d68eb2bced15aa86632da582e827b091909ea29962ff8cbd5",
+      "research/learned_dispatch/training.py": "a528f39e264ffc92bdcc800e7a66f3aeb4ea3a3fcf4341ccbcf04fe84a6ec619",
+      "research/ml_lab/access.py": "97449e7f49e2b7d6ec7e96a609146ed6d14692ddfe85c33478919a4b307191a1",
+      "research/ml_lab/artifacts.py": "5c492ab2eaa73cc0fcacf0356ec92c57a5a63fd2da31330a20ab8e0bc66dda03",
+      "research/ml_lab/contracts.py": "5e114dc993d8611ef1bdda7d5baf7c9177b42fb2a5e389d8d11eee376733e960",
+      "research/ml_lab/generator.py": "c53c3813463c40018f7d760d270bb917829f6e515258311ff0aab0fe7be16674"
+    },
+    "teacher_shards": {
+      "learned-full-train-000.jsonl.gz": "d13ec07e522847c502f333210c8f6a366b7b1d622b9e00dfac97e47191930356",
+      "learned-full-train-001.jsonl.gz": "e54fb756b54cbd8cb4133bdd8f5df5dfe290e0ffba8f1b228173e5bece235c35",
+      "learned-full-train-002.jsonl.gz": "29affb875cc8459f87506ce28d53ba4d5785323e5da375b5f5b6ab0fc4b5a2c1",
+      "learned-full-train-003.jsonl.gz": "16f2180f9da2746423f5842de914f291ac30a98277b93b72d15bc07c5f0ea791",
+      "learned-full-train-004.jsonl.gz": "521e5120399ed3e5569da493940c0225c117c3ffb1cfe6901d8750fe8efdb4f6",
+      "learned-full-train-005.jsonl.gz": "739a462f2cf271128597db528fc2ff7f9bb1da6adbc796b10a3839d24876629e",
+      "learned-full-train-006.jsonl.gz": "c138177766acaa03780b04841e889615c8ffe578fe1d4fcd3b5f73f80351c1a1",
+      "learned-full-train-007.jsonl.gz": "573cf9cf27059b333c3d322cf0a8f79ade44d59d872bd7c24161be52b12a228e",
+      "learned-full-train-008.jsonl.gz": "c2def2fe8ed899a0b5dafbb7f8d08d0172da1328943697c6ca3df9377ff8af2b",
+      "learned-full-train-009.jsonl.gz": "6c45aa7bfb7a0bdf40551881977d3af72601a5c606f43b69e9cce7d5e2ebb220",
+      "learned-full-train-010.jsonl.gz": "42a07bc0b30a52b984d8f0231781fd73af414eccb357bcce75bf4349a66929f8",
+      "learned-full-train-011.jsonl.gz": "bb500f82b8e6fab7fef0118265cd1e50d6a19f2778c4fe9c816f66912f198bbf",
+      "learned-full-train-012.jsonl.gz": "21fcbb1c26d8673337e12d5cacae0ee10c1bbe237dddff5c5cb186af576ce16a",
+      "learned-full-train-013.jsonl.gz": "2b427a589175e99a6aa8429cb655d4f3eea04b23d763bda88cf18182be17e16d",
+      "learned-full-train-014.jsonl.gz": "c547e72d40217ca111dcd6e1b5c79c5b00c82fcd222106df3888a911ec5e0dde",
+      "learned-full-train-015.jsonl.gz": "ba2fcad93090b7102c5ba2a09e8a2b784bd910d78389af519ab8ded3ad83b1d7",
+      "learned-full-train-016.jsonl.gz": "0ee8b0ba07c02b6b307a47867674ab416aba1d5d578704b61f44a6261531b7b8",
+      "learned-full-train-017.jsonl.gz": "93169828e8ca0c72b679dbaba6c70355f722260012b672da3566d2ca6c42f1d4",
+      "learned-full-train-018.jsonl.gz": "f7ee611bfe0fff5895c8135a5cf795cebca73e658fdff6650c90ab8c0e64f9d5",
+      "learned-full-train-019.jsonl.gz": "da163f8dd5861b13db86e9b8f11c22cc72b82ce3d363ec13f08cb22536058c36",
+      "learned-full-train-020.jsonl.gz": "cf6b8361e9d39a984d3be06e36dcbdca9c61984973f4217a1083ea365fa46edf",
+      "learned-full-train-021.jsonl.gz": "0c4eb108eb8d3b3bf95d9bce5a62e979807c15aa2054605a024bd0235b16feb3",
+      "learned-full-train-022.jsonl.gz": "daec979829d58de2c68e016a23b1a9e5deaa82291fd8f8ea54593908cfe201a8",
+      "learned-full-train-023.jsonl.gz": "ce85de373ed4063596fcb3dc3ad7e197297814044a1f975d6cc2edbe03fd25ce",
+      "learned-full-train-024.jsonl.gz": "2ccb9b6feaa75b9bb5049025de94b9ca39f37a769813e71661f665783a435381",
+      "learned-full-train-025.jsonl.gz": "0d01d5479620a4e241493bb92095981f11c3291ffad2e801c55d2072c0827cc2",
+      "learned-full-train-026.jsonl.gz": "f1fb4aef538356ec02f579ef191876ccb769f9f9e814eed7c2bfcf432732b87e",
+      "learned-full-train-027.jsonl.gz": "42f04d01af2c968efa38836209db0a5b967781ae2edf9072313a13738bea4e82",
+      "learned-full-train-028.jsonl.gz": "612789f516c5670774ebee358a35ec08a9d99f2d126cab4f7ebdff5bb4a70e49",
+      "learned-full-train-029.jsonl.gz": "8bc1c6fcaf110e00371cc824f2c7b38d39b954ee30e0fef984496f179d2c682c",
+      "learned-full-train-030.jsonl.gz": "d6cb97a709bb974640bca627c284b02c31eac4d9745edd52c17d4ce59fba3ff0",
+      "learned-full-train-031.jsonl.gz": "2cf2aa6e7237ffa9a3354c6b33461f40329ea92921068df317a56ec313ba81af",
+      "learned-full-train-032.jsonl.gz": "06ef526d8732acf2120d342e2c2fbbd001e039c65772fa0d67cb99eddab61426",
+      "learned-full-train-033.jsonl.gz": "a6691ceefe780273bb674b5a928f6415958f152821ce56c83a1bdf2aa8e682da",
+      "learned-full-train-034.jsonl.gz": "6c126163eaedb6fb2b542ecfa5385370f89edf5a5dc7c658ba8d7f9805297eb4",
+      "learned-full-train-035.jsonl.gz": "2d6cda710f911b4959e71fcd288cbde56b3f6bfd3d9deb99669dd6b5169b7586",
+      "learned-full-train-036.jsonl.gz": "6d1019da5d8db61eaf8e05b1d5351ff53da33e90f8f3aa4d34f11ede67c8901d",
+      "learned-full-train-037.jsonl.gz": "55d1f0196e640e5b0206dfde49be361fd78a552d7f1539f1625ad9afee59bc0d",
+      "learned-full-train-038.jsonl.gz": "8111701115fc0d7bd01f4e2c15f79923aad2cd58cfed0bf58732b0a74005f2ad",
+      "learned-full-train-039.jsonl.gz": "b18ca21971c643c411a7d0d233933a44c6f0d9904c5202d766c155d8a5f41ad7",
+      "learned-full-train-040.jsonl.gz": "1e87aa057bf67b2cf05b0352593051a9b467c3def35845505aa99d3ee260ca75",
+      "learned-full-train-041.jsonl.gz": "b963dc77539469e5ba7716669d13379c653d6a5d578011ff4410f0317dafab92",
+      "learned-full-train-042.jsonl.gz": "ff55a81d72b4f31087141a36e3d1d495b8b0c8ceeb2039487b2e98040b1c77b2",
+      "learned-full-train-043.jsonl.gz": "da6d7984e4dc9ca051cfb38d464eb54310455606ab81e24545d6b0b99cfef3a8",
+      "learned-full-train-044.jsonl.gz": "22e6904ef30a3b215c7c4efd541f027fb7571d61368583dbf69dce4c4eb42a6d",
+      "learned-full-train-045.jsonl.gz": "ae218d5e4b24afabc251d9edff4b3ea34321395137dac947fb7e1e5c1758a1cd",
+      "learned-full-train-046.jsonl.gz": "7d8a43014753428adb4b15851ca0e921eeccc57e0203e334361dc7891b217f1d",
+      "learned-full-train-047.jsonl.gz": "82f6bd82e7f718d7cd5db180629d89c5e2c04a85bef397011455f9613ed6350d"
+    },
+    "training_matrix_identity": "13321c6191f9941f20bc97f084c438c27efda2fc6dd278000a113d787d6a8ac9"
+  },
+  "configurations": 48,
+  "dev_export_probe_rows": 2134,
+  "diagnostics": {
+    "learned-full-train-000": {
+      "action_rows": 479,
+      "actions_per_state": {
+        "1": 155,
+        "2": 21,
+        "3": 51,
+        "4": 23,
+        "5": 17,
+        "6": 13,
+        "7": 6
+      },
+      "behavior": {
+        "critical": 7,
+        "downstream": 34,
+        "teacher": 264
+      },
+      "discretionary_states": 126,
+      "episodes": 10,
+      "teacher_wait_visits": 167,
+      "unique_states": 286,
+      "visits": 305
+    },
+    "learned-full-train-001": {
+      "action_rows": 406,
+      "actions_per_state": {
+        "1": 122,
+        "2": 35,
+        "3": 32,
+        "4": 12,
+        "5": 15,
+        "6": 12,
+        "9": 5
+      },
+      "behavior": {
+        "critical": 15,
+        "downstream": 29,
+        "teacher": 201
+      },
+      "discretionary_states": 111,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 233,
+      "visits": 245
+    },
+    "learned-full-train-002": {
+      "action_rows": 590,
+      "actions_per_state": {
+        "1": 158,
+        "11": 1,
+        "12": 2,
+        "15": 1,
+        "2": 23,
+        "3": 33,
+        "4": 32,
+        "5": 17,
+        "6": 9,
+        "7": 11,
+        "8": 6,
+        "9": 1
+      },
+      "behavior": {
+        "critical": 5,
+        "downstream": 38,
+        "teacher": 262
+      },
+      "discretionary_states": 134,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 294,
+      "visits": 305
+    },
+    "learned-full-train-003": {
+      "action_rows": 630,
+      "actions_per_state": {
+        "1": 133,
+        "10": 6,
+        "2": 10,
+        "3": 14,
+        "4": 11,
+        "5": 12,
+        "6": 15,
+        "7": 14,
+        "8": 15,
+        "9": 12
+      },
+      "behavior": {
+        "critical": 15,
+        "downstream": 22,
+        "teacher": 228
+      },
+      "discretionary_states": 105,
+      "episodes": 10,
+      "teacher_wait_visits": 145,
+      "unique_states": 242,
+      "visits": 265
+    },
+    "learned-full-train-004": {
+      "action_rows": 536,
+      "actions_per_state": {
+        "1": 127,
+        "2": 10,
+        "3": 12,
+        "4": 15,
+        "5": 19,
+        "6": 26,
+        "7": 16,
+        "8": 6,
+        "9": 1
+      },
+      "behavior": {
+        "critical": 9,
+        "downstream": 33,
+        "teacher": 203
+      },
+      "discretionary_states": 105,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 232,
+      "visits": 245
+    },
+    "learned-full-train-005": {
+      "action_rows": 576,
+      "actions_per_state": {
+        "1": 120,
+        "16": 1,
+        "2": 10,
+        "3": 10,
+        "4": 10,
+        "5": 13,
+        "6": 13,
+        "7": 18,
+        "8": 15,
+        "9": 9
+      },
+      "behavior": {
+        "critical": 10,
+        "downstream": 31,
+        "teacher": 204
+      },
+      "discretionary_states": 99,
+      "episodes": 10,
+      "teacher_wait_visits": 136,
+      "unique_states": 219,
+      "visits": 245
+    },
+    "learned-full-train-006": {
+      "action_rows": 561,
+      "actions_per_state": {
+        "1": 158,
+        "11": 4,
+        "12": 3,
+        "18": 4,
+        "2": 38,
+        "3": 34,
+        "4": 18,
+        "5": 18,
+        "6": 9,
+        "9": 6
+      },
+      "behavior": {
+        "critical": 13,
+        "downstream": 34,
+        "teacher": 258
+      },
+      "discretionary_states": 119,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 292,
+      "visits": 305
+    },
+    "learned-full-train-007": {
+      "action_rows": 778,
+      "actions_per_state": {
+        "1": 136,
+        "10": 12,
+        "11": 8,
+        "12": 6,
+        "2": 10,
+        "3": 10,
+        "4": 10,
+        "5": 10,
+        "6": 11,
+        "7": 10,
+        "8": 12,
+        "9": 14
+      },
+      "behavior": {
+        "critical": 19,
+        "downstream": 34,
+        "teacher": 212
+      },
+      "discretionary_states": 113,
+      "episodes": 10,
+      "teacher_wait_visits": 145,
+      "unique_states": 249,
+      "visits": 265
+    },
+    "learned-full-train-008": {
+      "action_rows": 581,
+      "actions_per_state": {
+        "1": 144,
+        "2": 12,
+        "3": 15,
+        "4": 20,
+        "5": 32,
+        "6": 25,
+        "7": 13,
+        "8": 3,
+        "9": 1
+      },
+      "behavior": {
+        "critical": 8,
+        "downstream": 37,
+        "teacher": 240
+      },
+      "discretionary_states": 120,
+      "episodes": 10,
+      "teacher_wait_visits": 156,
+      "unique_states": 265,
+      "visits": 285
+    },
+    "learned-full-train-009": {
+      "action_rows": 501,
+      "actions_per_state": {
+        "1": 145,
+        "2": 19,
+        "3": 27,
+        "4": 24,
+        "5": 28,
+        "6": 15,
+        "7": 8
+      },
+      "behavior": {
+        "critical": 5,
+        "downstream": 37,
+        "teacher": 243
+      },
+      "discretionary_states": 121,
+      "episodes": 10,
+      "teacher_wait_visits": 155,
+      "unique_states": 266,
+      "visits": 285
+    },
+    "learned-full-train-010": {
+      "action_rows": 360,
+      "actions_per_state": {
+        "1": 128,
+        "2": 32,
+        "3": 35,
+        "4": 13,
+        "5": 10,
+        "6": 6,
+        "7": 3,
+        "9": 6
+      },
+      "behavior": {
+        "critical": 12,
+        "downstream": 26,
+        "teacher": 207
+      },
+      "discretionary_states": 97,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 233,
+      "visits": 245
+    },
+    "learned-full-train-011": {
+      "action_rows": 342,
+      "actions_per_state": {
+        "1": 153,
+        "2": 62,
+        "3": 54,
+        "4": 5,
+        "5": 5,
+        "6": 3,
+        "9": 3
+      },
+      "behavior": {
+        "critical": 10,
+        "downstream": 41,
+        "teacher": 254
+      },
+      "discretionary_states": 119,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 285,
+      "visits": 305
+    },
+    "learned-full-train-012": {
+      "action_rows": 385,
+      "actions_per_state": {
+        "1": 110,
+        "2": 18,
+        "3": 18,
+        "4": 12,
+        "5": 13,
+        "6": 13,
+        "7": 9,
+        "8": 6
+      },
+      "behavior": {
+        "critical": 12,
+        "downstream": 28,
+        "teacher": 185
+      },
+      "discretionary_states": 86,
+      "episodes": 10,
+      "teacher_wait_visits": 125,
+      "unique_states": 199,
+      "visits": 225
+    },
+    "learned-full-train-013": {
+      "action_rows": 585,
+      "actions_per_state": {
+        "1": 146,
+        "11": 5,
+        "12": 4,
+        "18": 5,
+        "2": 23,
+        "3": 34,
+        "4": 19,
+        "5": 20,
+        "6": 11,
+        "7": 1,
+        "8": 1
+      },
+      "behavior": {
+        "critical": 8,
+        "downstream": 33,
+        "teacher": 244
+      },
+      "discretionary_states": 118,
+      "episodes": 10,
+      "teacher_wait_visits": 155,
+      "unique_states": 269,
+      "visits": 285
+    },
+    "learned-full-train-014": {
+      "action_rows": 301,
+      "actions_per_state": {
+        "1": 109,
+        "2": 31,
+        "3": 27,
+        "4": 13,
+        "5": 4,
+        "6": 8,
+        "7": 1,
+        "9": 4
+      },
+      "behavior": {
+        "critical": 8,
+        "downstream": 29,
+        "teacher": 188
+      },
+      "discretionary_states": 86,
+      "episodes": 10,
+      "teacher_wait_visits": 125,
+      "unique_states": 197,
+      "visits": 225
+    },
+    "learned-full-train-015": {
+      "action_rows": 414,
+      "actions_per_state": {
+        "1": 151,
+        "2": 39,
+        "3": 59,
+        "4": 21,
+        "5": 8,
+        "6": 5,
+        "8": 1
+      },
+      "behavior": {
+        "critical": 19,
+        "downstream": 33,
+        "teacher": 253
+      },
+      "discretionary_states": 132,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 284,
+      "visits": 305
+    },
+    "learned-full-train-016": {
+      "action_rows": 407,
+      "actions_per_state": {
+        "1": 155,
+        "2": 46,
+        "3": 40,
+        "4": 24,
+        "5": 16,
+        "6": 6,
+        "8": 1
+      },
+      "behavior": {
+        "critical": 12,
+        "downstream": 36,
+        "teacher": 257
+      },
+      "discretionary_states": 123,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 288,
+      "visits": 305
+    },
+    "learned-full-train-017": {
+      "action_rows": 485,
+      "actions_per_state": {
+        "1": 143,
+        "12": 4,
+        "2": 25,
+        "3": 35,
+        "4": 21,
+        "5": 14,
+        "6": 13,
+        "7": 4,
+        "8": 3
+      },
+      "behavior": {
+        "critical": 9,
+        "downstream": 36,
+        "teacher": 240
+      },
+      "discretionary_states": 118,
+      "episodes": 10,
+      "teacher_wait_visits": 155,
+      "unique_states": 262,
+      "visits": 285
+    },
+    "learned-full-train-018": {
+      "action_rows": 368,
+      "actions_per_state": {
+        "1": 133,
+        "11": 1,
+        "2": 25,
+        "3": 31,
+        "4": 21,
+        "5": 18,
+        "6": 10,
+        "7": 3
+      },
+      "behavior": {
+        "critical": 5,
+        "downstream": 30,
+        "teacher": 230
+      },
+      "discretionary_states": 92,
+      "episodes": 10,
+      "teacher_wait_visits": 145,
+      "unique_states": 242,
+      "visits": 265
+    },
+    "learned-full-train-019": {
+      "action_rows": 509,
+      "actions_per_state": {
+        "1": 141,
+        "2": 16,
+        "3": 27,
+        "4": 16,
+        "5": 24,
+        "6": 30,
+        "7": 6
+      },
+      "behavior": {
+        "critical": 7,
+        "downstream": 36,
+        "teacher": 242
+      },
+      "discretionary_states": 115,
+      "episodes": 10,
+      "teacher_wait_visits": 155,
+      "unique_states": 260,
+      "visits": 285
+    },
+    "learned-full-train-020": {
+      "action_rows": 458,
+      "actions_per_state": {
+        "1": 143,
+        "2": 24,
+        "3": 54,
+        "4": 19,
+        "5": 11,
+        "6": 20
+      },
+      "behavior": {
+        "critical": 13,
+        "downstream": 25,
+        "teacher": 247
+      },
+      "discretionary_states": 127,
+      "episodes": 10,
+      "teacher_wait_visits": 156,
+      "unique_states": 271,
+      "visits": 285
+    },
+    "learned-full-train-021": {
+      "action_rows": 568,
+      "actions_per_state": {
+        "1": 146,
+        "2": 19,
+        "3": 25,
+        "4": 26,
+        "5": 17,
+        "6": 13,
+        "7": 9,
+        "8": 10,
+        "9": 6
+      },
+      "behavior": {
+        "critical": 7,
+        "downstream": 35,
+        "teacher": 243
+      },
+      "discretionary_states": 122,
+      "episodes": 10,
+      "teacher_wait_visits": 155,
+      "unique_states": 271,
+      "visits": 285
+    },
+    "learned-full-train-022": {
+      "action_rows": 564,
+      "actions_per_state": {
+        "1": 152,
+        "11": 1,
+        "13": 3,
+        "18": 1,
+        "2": 30,
+        "3": 35,
+        "4": 12,
+        "5": 20,
+        "6": 17,
+        "7": 6,
+        "8": 1,
+        "9": 5
+      },
+      "behavior": {
+        "critical": 10,
+        "downstream": 43,
+        "teacher": 252
+      },
+      "discretionary_states": 126,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 283,
+      "visits": 305
+    },
+    "learned-full-train-023": {
+      "action_rows": 840,
+      "actions_per_state": {
+        "1": 144,
+        "10": 13,
+        "11": 9,
+        "12": 6,
+        "2": 10,
+        "3": 12,
+        "4": 12,
+        "5": 10,
+        "6": 10,
+        "7": 11,
+        "8": 13,
+        "9": 16
+      },
+      "behavior": {
+        "critical": 13,
+        "downstream": 28,
+        "teacher": 244
+      },
+      "discretionary_states": 122,
+      "episodes": 10,
+      "teacher_wait_visits": 155,
+      "unique_states": 266,
+      "visits": 285
+    },
+    "learned-full-train-024": {
+      "action_rows": 305,
+      "actions_per_state": {
+        "1": 119,
+        "2": 25,
+        "3": 37,
+        "4": 26,
+        "5": 9
+      },
+      "behavior": {
+        "critical": 14,
+        "downstream": 29,
+        "teacher": 202
+      },
+      "discretionary_states": 95,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 216,
+      "visits": 245
+    },
+    "learned-full-train-025": {
+      "action_rows": 341,
+      "actions_per_state": {
+        "1": 119,
+        "2": 20,
+        "3": 25,
+        "4": 13,
+        "5": 20,
+        "6": 13,
+        "7": 6
+      },
+      "behavior": {
+        "critical": 8,
+        "downstream": 25,
+        "teacher": 212
+      },
+      "discretionary_states": 79,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 216,
+      "visits": 245
+    },
+    "learned-full-train-026": {
+      "action_rows": 440,
+      "actions_per_state": {
+        "1": 133,
+        "10": 1,
+        "2": 24,
+        "3": 30,
+        "4": 23,
+        "5": 19,
+        "6": 8,
+        "7": 3,
+        "9": 4
+      },
+      "behavior": {
+        "critical": 9,
+        "downstream": 25,
+        "teacher": 231
+      },
+      "discretionary_states": 112,
+      "episodes": 10,
+      "teacher_wait_visits": 146,
+      "unique_states": 245,
+      "visits": 265
+    },
+    "learned-full-train-027": {
+      "action_rows": 493,
+      "actions_per_state": {
+        "1": 126,
+        "2": 13,
+        "3": 14,
+        "4": 18,
+        "5": 22,
+        "6": 22,
+        "7": 11,
+        "8": 2,
+        "9": 2
+      },
+      "behavior": {
+        "critical": 6,
+        "downstream": 31,
+        "teacher": 208
+      },
+      "discretionary_states": 104,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 230,
+      "visits": 245
+    },
+    "learned-full-train-028": {
+      "action_rows": 332,
+      "actions_per_state": {
+        "1": 117,
+        "2": 15,
+        "3": 33,
+        "4": 24,
+        "5": 22
+      },
+      "behavior": {
+        "critical": 9,
+        "downstream": 25,
+        "teacher": 191
+      },
+      "discretionary_states": 93,
+      "episodes": 10,
+      "teacher_wait_visits": 125,
+      "unique_states": 211,
+      "visits": 225
+    },
+    "learned-full-train-029": {
+      "action_rows": 489,
+      "actions_per_state": {
+        "1": 145,
+        "12": 7,
+        "2": 39,
+        "3": 47,
+        "4": 17,
+        "5": 3,
+        "6": 1,
+        "7": 8,
+        "8": 4,
+        "9": 1
+      },
+      "behavior": {
+        "critical": 12,
+        "downstream": 38,
+        "teacher": 255
+      },
+      "discretionary_states": 127,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 272,
+      "visits": 305
+    },
+    "learned-full-train-030": {
+      "action_rows": 389,
+      "actions_per_state": {
+        "1": 122,
+        "2": 28,
+        "3": 32,
+        "4": 18,
+        "5": 16,
+        "6": 3,
+        "7": 1,
+        "8": 3,
+        "9": 4
+      },
+      "behavior": {
+        "critical": 8,
+        "downstream": 25,
+        "teacher": 212
+      },
+      "discretionary_states": 105,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 227,
+      "visits": 245
+    },
+    "learned-full-train-031": {
+      "action_rows": 707,
+      "actions_per_state": {
+        "1": 144,
+        "10": 7,
+        "2": 12,
+        "3": 18,
+        "4": 13,
+        "5": 13,
+        "6": 13,
+        "7": 16,
+        "8": 12,
+        "9": 18
+      },
+      "behavior": {
+        "critical": 11,
+        "downstream": 39,
+        "teacher": 235
+      },
+      "discretionary_states": 120,
+      "episodes": 10,
+      "teacher_wait_visits": 155,
+      "unique_states": 266,
+      "visits": 285
+    },
+    "learned-full-train-032": {
+      "action_rows": 605,
+      "actions_per_state": {
+        "1": 120,
+        "10": 7,
+        "11": 6,
+        "2": 10,
+        "3": 12,
+        "4": 10,
+        "5": 10,
+        "6": 10,
+        "7": 10,
+        "8": 14,
+        "9": 9
+      },
+      "behavior": {
+        "critical": 8,
+        "downstream": 34,
+        "teacher": 203
+      },
+      "discretionary_states": 98,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 218,
+      "visits": 245
+    },
+    "learned-full-train-033": {
+      "action_rows": 325,
+      "actions_per_state": {
+        "1": 124,
+        "2": 25,
+        "3": 39,
+        "4": 20,
+        "5": 10,
+        "6": 7
+      },
+      "behavior": {
+        "critical": 9,
+        "downstream": 40,
+        "teacher": 196
+      },
+      "discretionary_states": 96,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 225,
+      "visits": 245
+    },
+    "learned-full-train-034": {
+      "action_rows": 343,
+      "actions_per_state": {
+        "1": 114,
+        "12": 4,
+        "2": 25,
+        "3": 31,
+        "4": 15,
+        "5": 6,
+        "7": 4,
+        "8": 5,
+        "9": 1
+      },
+      "behavior": {
+        "critical": 7,
+        "downstream": 29,
+        "teacher": 189
+      },
+      "discretionary_states": 85,
+      "episodes": 10,
+      "teacher_wait_visits": 125,
+      "unique_states": 205,
+      "visits": 225
+    },
+    "learned-full-train-035": {
+      "action_rows": 552,
+      "actions_per_state": {
+        "1": 125,
+        "10": 6,
+        "2": 12,
+        "3": 15,
+        "4": 12,
+        "5": 18,
+        "6": 13,
+        "7": 9,
+        "8": 9,
+        "9": 8
+      },
+      "behavior": {
+        "critical": 10,
+        "downstream": 31,
+        "teacher": 204
+      },
+      "discretionary_states": 102,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 227,
+      "visits": 245
+    },
+    "learned-full-train-036": {
+      "action_rows": 669,
+      "actions_per_state": {
+        "1": 157,
+        "2": 12,
+        "3": 16,
+        "4": 22,
+        "5": 26,
+        "6": 30,
+        "7": 12,
+        "8": 8,
+        "9": 6
+      },
+      "behavior": {
+        "critical": 13,
+        "downstream": 36,
+        "teacher": 256
+      },
+      "discretionary_states": 131,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 289,
+      "visits": 305
+    },
+    "learned-full-train-037": {
+      "action_rows": 430,
+      "actions_per_state": {
+        "1": 138,
+        "2": 15,
+        "3": 30,
+        "4": 26,
+        "5": 32,
+        "6": 10,
+        "7": 1
+      },
+      "behavior": {
+        "critical": 11,
+        "downstream": 24,
+        "teacher": 230
+      },
+      "discretionary_states": 106,
+      "episodes": 10,
+      "teacher_wait_visits": 145,
+      "unique_states": 252,
+      "visits": 265
+    },
+    "learned-full-train-038": {
+      "action_rows": 387,
+      "actions_per_state": {
+        "1": 116,
+        "11": 1,
+        "2": 15,
+        "3": 26,
+        "4": 18,
+        "5": 11,
+        "6": 13,
+        "7": 9
+      },
+      "behavior": {
+        "critical": 5,
+        "downstream": 24,
+        "teacher": 196
+      },
+      "discretionary_states": 93,
+      "episodes": 10,
+      "teacher_wait_visits": 125,
+      "unique_states": 209,
+      "visits": 225
+    },
+    "learned-full-train-039": {
+      "action_rows": 697,
+      "actions_per_state": {
+        "1": 145,
+        "10": 8,
+        "11": 6,
+        "2": 15,
+        "3": 16,
+        "4": 11,
+        "5": 16,
+        "6": 12,
+        "7": 12,
+        "8": 14,
+        "9": 11
+      },
+      "behavior": {
+        "critical": 12,
+        "downstream": 39,
+        "teacher": 234
+      },
+      "discretionary_states": 114,
+      "episodes": 10,
+      "teacher_wait_visits": 155,
+      "unique_states": 266,
+      "visits": 285
+    },
+    "learned-full-train-040": {
+      "action_rows": 489,
+      "actions_per_state": {
+        "1": 123,
+        "2": 13,
+        "3": 14,
+        "4": 15,
+        "5": 11,
+        "6": 21,
+        "7": 18,
+        "8": 8
+      },
+      "behavior": {
+        "critical": 7,
+        "downstream": 22,
+        "teacher": 216
+      },
+      "discretionary_states": 96,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 223,
+      "visits": 245
+    },
+    "learned-full-train-041": {
+      "action_rows": 435,
+      "actions_per_state": {
+        "1": 143,
+        "2": 43,
+        "3": 36,
+        "4": 17,
+        "5": 16,
+        "6": 14,
+        "9": 1
+      },
+      "behavior": {
+        "critical": 8,
+        "downstream": 40,
+        "teacher": 237
+      },
+      "discretionary_states": 127,
+      "episodes": 10,
+      "teacher_wait_visits": 156,
+      "unique_states": 270,
+      "visits": 285
+    },
+    "learned-full-train-042": {
+      "action_rows": 476,
+      "actions_per_state": {
+        "1": 139,
+        "10": 2,
+        "11": 2,
+        "12": 1,
+        "15": 2,
+        "2": 30,
+        "3": 38,
+        "4": 26,
+        "5": 10,
+        "6": 4,
+        "7": 2,
+        "8": 1,
+        "9": 3
+      },
+      "behavior": {
+        "critical": 11,
+        "downstream": 30,
+        "teacher": 244
+      },
+      "discretionary_states": 118,
+      "episodes": 10,
+      "teacher_wait_visits": 155,
+      "unique_states": 260,
+      "visits": 285
+    },
+    "learned-full-train-043": {
+      "action_rows": 653,
+      "actions_per_state": {
+        "1": 126,
+        "10": 8,
+        "11": 6,
+        "2": 10,
+        "3": 10,
+        "4": 10,
+        "5": 10,
+        "6": 11,
+        "7": 14,
+        "8": 13,
+        "9": 11
+      },
+      "behavior": {
+        "critical": 6,
+        "downstream": 30,
+        "teacher": 209
+      },
+      "discretionary_states": 103,
+      "episodes": 10,
+      "teacher_wait_visits": 135,
+      "unique_states": 229,
+      "visits": 245
+    },
+    "learned-full-train-044": {
+      "action_rows": 470,
+      "actions_per_state": {
+        "1": 154,
+        "2": 37,
+        "3": 40,
+        "4": 27,
+        "5": 17,
+        "6": 12,
+        "7": 1,
+        "8": 1,
+        "9": 1
+      },
+      "behavior": {
+        "critical": 9,
+        "downstream": 36,
+        "teacher": 260
+      },
+      "discretionary_states": 131,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 290,
+      "visits": 305
+    },
+    "learned-full-train-045": {
+      "action_rows": 456,
+      "actions_per_state": {
+        "1": 133,
+        "2": 17,
+        "3": 30,
+        "4": 22,
+        "5": 20,
+        "6": 17,
+        "7": 6
+      },
+      "behavior": {
+        "critical": 8,
+        "downstream": 28,
+        "teacher": 229
+      },
+      "discretionary_states": 112,
+      "episodes": 10,
+      "teacher_wait_visits": 146,
+      "unique_states": 245,
+      "visits": 265
+    },
+    "learned-full-train-046": {
+      "action_rows": 655,
+      "actions_per_state": {
+        "1": 152,
+        "11": 1,
+        "13": 3,
+        "14": 1,
+        "18": 1,
+        "2": 29,
+        "21": 1,
+        "3": 37,
+        "4": 19,
+        "5": 16,
+        "6": 19,
+        "7": 9,
+        "8": 7
+      },
+      "behavior": {
+        "critical": 16,
+        "downstream": 36,
+        "teacher": 253
+      },
+      "discretionary_states": 141,
+      "episodes": 10,
+      "teacher_wait_visits": 166,
+      "unique_states": 295,
+      "visits": 305
+    },
+    "learned-full-train-047": {
+      "action_rows": 878,
+      "actions_per_state": {
+        "1": 152,
+        "10": 20,
+        "11": 6,
+        "2": 10,
+        "3": 11,
+        "4": 11,
+        "5": 10,
+        "6": 11,
+        "7": 15,
+        "8": 18,
+        "9": 17
+      },
+      "behavior": {
+        "critical": 12,
+        "downstream": 31,
+        "teacher": 262
+      },
+      "discretionary_states": 128,
+      "episodes": 10,
+      "teacher_wait_visits": 165,
+      "unique_states": 281,
+      "visits": 305
+    }
+  },
+  "environment": {
+    "cpu_count": 12,
+    "machine": "arm64",
+    "packages": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.5",
+      "pydantic": "2.12.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "threadpoolctl": "3.7.0"
+    },
+    "processor": "arm",
+    "python": "3.12.14",
+    "system": "Darwin",
+    "thread_limit": 1
+  },
+  "features": 46,
+  "models": {
+    "forest-depth4": {
+      "bytes": 211281,
+      "exact_repeat_export": true,
+      "file": "models/forest-depth4.json",
+      "sha256": "8280d3929a316c61bd5f93ef15610d891e0bf2e6cc80b8d9fb262f66cc097e52"
+    },
+    "forest-depth8": {
+      "bytes": 2214781,
+      "exact_repeat_export": true,
+      "file": "models/forest-depth8.json",
+      "sha256": "0a45f489de2f38e8125dbb89b034c5ab8f152a02815a068e8ecce125a72735e2"
+    },
+    "ridge-alpha0.1": {
+      "bytes": 16860,
+      "exact_repeat_export": true,
+      "file": "models/ridge-alpha0.1.json",
+      "sha256": "4f321dfc89ef9126465bcaad8b53b7b7c2e7452d829fd36aed3ff9ab74d5c69d"
+    },
+    "ridge-alpha1": {
+      "bytes": 16872,
+      "exact_repeat_export": true,
+      "file": "models/ridge-alpha1.json",
+      "sha256": "e456724efe49075d6161ac7e488d0c0a8b04c896ee637e6dbb0348c73df19856"
+    },
+    "ridge-alpha10": {
+      "bytes": 16869,
+      "exact_repeat_export": true,
+      "file": "models/ridge-alpha10.json",
+      "sha256": "046911f68c01541474f8b6606b3ceac67ebcae2a51e87f82c4ad3f13e257ef01"
+    }
+  },
+  "revision": "4825e5d22fa0a520360851e3293f89cb60f9128f",
+  "rows": 24240,
+  "scores": {
+    "forest-depth4": {
+      "dev_parity_max_absolute_error": 0.0,
+      "weighted_train_mse": 0.04073672824484303
+    },
+    "forest-depth8": {
+      "dev_parity_max_absolute_error": 0.0,
+      "weighted_train_mse": 0.01901580722963709
+    },
+    "ridge-alpha0.1": {
+      "dev_parity_max_absolute_error": 0.0,
+      "weighted_train_mse": 0.04784464688407123
+    },
+    "ridge-alpha1": {
+      "dev_parity_max_absolute_error": 0.0,
+      "weighted_train_mse": 0.047844780806281954
+    },
+    "ridge-alpha10": {
+      "dev_parity_max_absolute_error": 0.0,
+      "weighted_train_mse": 0.047847617040277034
+    }
+  },
+  "unique_discretionary_states": 5352,
+  "version": "learned-dispatch-v1"
+}

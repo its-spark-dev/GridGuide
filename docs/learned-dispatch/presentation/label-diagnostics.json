@@ -1,0 +1,13 @@
+{
+  "action_rows": 24240,
+  "discretionary_states": 5352,
+  "discretionary_wait_states": 47,
+  "legal_action_count_quantiles": [
+    2.0,
+    4.0,
+    9.0,
+    21.0
+  ],
+  "multiple_best_task_states": 1347,
+  "zero_regret_rows": 8801
+}

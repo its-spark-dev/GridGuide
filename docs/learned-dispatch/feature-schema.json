@@ -1,0 +1,249 @@
+{
+  "features": [
+    {
+      "definition": "Known repair tasks",
+      "name": "task_count",
+      "unit": "count"
+    },
+    {
+      "definition": "Known identical-composition crews",
+      "name": "crew_count",
+      "unit": "count"
+    },
+    {
+      "definition": "Current ticks / mean nominal task ticks",
+      "name": "elapsed_scaled",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Completed tasks / task count",
+      "name": "completed_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Active tasks / task count",
+      "name": "active_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Ready unstarted tasks / task count",
+      "name": "ready_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Idle available crews / all crews",
+      "name": "idle_crew_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Expected uncompleted work / initial nominal work",
+      "name": "remaining_work_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Customers with uncompleted dependencies / all customers",
+      "name": "unreleased_customer_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Unreleased declared-critical customers / all customers",
+      "name": "unreleased_critical_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Nominal ready work / initial nominal work",
+      "name": "ready_work_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Mean observed active elapsed / mean nominal task ticks; zero if none",
+      "name": "active_elapsed_scaled",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Mean conditional expected active residual / mean nominal; zero if none",
+      "name": "active_remaining_mean_scaled",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Minimum conditional expected active residual / mean nominal; zero if none",
+      "name": "active_remaining_min_scaled",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Delay to next known future crew arrival / mean nominal; zero if none",
+      "name": "next_crew_delay_scaled",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Customer-weighted unfinished direct requirements / tasks, over unreleased customers",
+      "name": "remaining_dependency_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Coefficient of variation of declared duration multiplier support",
+      "name": "uncertainty_cv",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Customers whose remaining requirements are all active / all customers",
+      "name": "active_only_release_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Candidate is WAIT",
+      "name": "action_wait",
+      "unit": "indicator"
+    },
+    {
+      "definition": "Candidate nominal ticks / mean nominal; zero for WAIT",
+      "name": "action_nominal_scaled",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Candidate support-mean ticks / mean nominal; zero for WAIT",
+      "name": "action_expected_scaled",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Candidate nominal ticks / expected remaining work; zero for WAIT",
+      "name": "action_work_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Customers directly requiring candidate task / all customers",
+      "name": "direct_customer_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Unreleased customers with candidate in remaining prerequisite ancestry / all customers",
+      "name": "downstream_customer_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Customers requiring only candidate among unfinished direct requirements / all customers",
+      "name": "marginal_release_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Declared-critical subset of downstream impact / all customers",
+      "name": "critical_downstream_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Declared-critical subset of marginal release / all customers",
+      "name": "critical_marginal_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Unreleased groups in candidate downstream impact / all groups",
+      "name": "dependent_group_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Weighted remaining requirements among impacted customers / task count",
+      "name": "impacted_remaining_dependency_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Candidate prerequisite depth / maximum graph depth; roots depth one",
+      "name": "depth_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Strict candidate ancestors / task count",
+      "name": "ancestor_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Strict candidate descendants / task count",
+      "name": "descendant_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Candidate descendants not completed / task count",
+      "name": "unfinished_descendant_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Candidate direct prerequisites / task count",
+      "name": "parent_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Candidate direct children / task count",
+      "name": "child_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Unstarted children whose last incomplete prerequisite is candidate / task count",
+      "name": "unlock_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Customers directly requiring any newly unlockable child / all customers",
+      "name": "unlock_customer_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Candidate report_order / (maximum report_order+1)",
+      "name": "report_rank_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Downstream customer fraction / scaled expected candidate duration",
+      "name": "downstream_per_duration",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Marginal release fraction / scaled expected candidate duration",
+      "name": "marginal_per_duration",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Critical downstream fraction / scaled expected candidate duration",
+      "name": "critical_per_duration",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Impacted customers also having an active task in remaining ancestry / all customers",
+      "name": "active_overlap_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "WAIT indicator times active-only release fraction",
+      "name": "wait_active_release_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Other ready tasks / task count; all ready tasks for WAIT",
+      "name": "ready_competitor_fraction",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Completed fraction times downstream customer fraction",
+      "name": "progress_downstream",
+      "unit": "ratio"
+    },
+    {
+      "definition": "Minimum expected active residual / candidate nominal; zero if no active or WAIT",
+      "name": "active_remaining_to_duration",
+      "unit": "ratio"
+    }
+  ],
+  "forbidden": [
+    "case_id",
+    "task_id",
+    "crew_id",
+    "seed",
+    "partition",
+    "family",
+    "teacher_action",
+    "teacher_cost",
+    "actual_remaining_duration",
+    "future_event_queue",
+    "episode_outcome"
+  ],
+  "missingness": "No target/input imputation; unsupported scope uses explicit deterministic fallback",
+  "version": "dispatch-state-action-v1"
+}

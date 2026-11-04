@@ -1,0 +1,12 @@
+{
+  "batch": 4,
+  "cpu_seconds": 166.887157,
+  "result": {
+    "complete": false,
+    "completed_groups": 20,
+    "partition": "final_shift",
+    "processed": 4,
+    "total_groups": 24
+  },
+  "wall_seconds": 168.27137366699753
+}
