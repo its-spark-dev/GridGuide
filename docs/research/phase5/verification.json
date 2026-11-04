@@ -1,0 +1,92 @@
+{
+  "base_sha": "551313140d70e6e57412d55a239bf9fdaa9336bf",
+  "browser_seconds": 58.1,
+  "browser_tests": 49,
+  "checks": {
+    "api_generated_types": "byte_unchanged",
+    "browser": "passed",
+    "controlled_sampling_replay": "exact_match",
+    "convergence_sourcefree": "210_runs_hash_match",
+    "demo_lossless_reconstruction": "56_presets_digest_match",
+    "dependency_consistency": "passed",
+    "documentation_links": "passed",
+    "final_weighted_range_guard": "passed; full standard/convergence numerical results unchanged",
+    "frozen_g2_g3_g4": "unchanged",
+    "g4_decision_and_cached_source_replay": "byte_identical",
+    "golden_cli": "passed",
+    "legacy_regression": "24_passed",
+    "package_checksums": "all_match",
+    "prior_history_and_attribution": "preserved",
+    "production_build": "passed",
+    "python": "passed",
+    "source_hashes": "four_pins_match",
+    "standard_sourcefree": "9730_runs_hash_match"
+  },
+  "convergence": {
+    "combinations": 210,
+    "failed_quantile_checks": 15,
+    "quantile_checks": 630,
+    "stable": 195,
+    "unstable_at_cap": 15
+  },
+  "development_failure": "One censoring test initially assumed FIFO while using default policy; corrected the test to explicitly request FIFO. No numerical code or historical fixture changed.",
+  "environment": {
+    "cpu_cores": 12,
+    "machine": "arm64",
+    "memory_bytes": 25769803776,
+    "numpy": "2.5.4",
+    "processor": "Apple M4 Pro",
+    "python": "3.12.14",
+    "system": "Darwin"
+  },
+  "final_code_reproduction": {
+    "convergence": {
+      "only_changed_implementation": [
+        "backend/simulation.py"
+      ],
+      "runs": 210,
+      "sha256": "bcf22abb0918ab656bd1c4a27bc9637363ab3dd470188ffa3c64cfb3ed62b343",
+      "trials_per_run": 10000
+    },
+    "standard": {
+      "only_changed_implementation": [
+        "backend/simulation.py"
+      ],
+      "runs": 9730,
+      "sha256": "889f0dd54d5234d0f6ff280e261ba9f160e8c194d4912f6f26f5266becaabe1f",
+      "trials_per_run": 2000
+    }
+  },
+  "final_range_guard_commit": "aaf7258c6da892d83db74a1e74da9166ae5518f8",
+  "limits": [
+    "Assumed synthetic distributions; no empirical calibration or predictive performance.",
+    "Full trial caches retained locally; compressed full reports and lossless demo trials retained in Git.",
+    "Source-free repeats use the same pinned installed environment, not a newly provisioned OS.",
+    "Large-case and every-metric convergence not established by six finite microfixtures.",
+    "No real-data split, model training, empirical interval evaluation, live provider check, release or deployment."
+  ],
+  "logs_sha256": {
+    "api_types": "5d61dcdcd47f0a0f10a8bb97416d8d039d5b1b17d0fa733da23cc49ce6f811e1",
+    "browser": "0e306ce4f5ca7dcb16139eaa584d3d9717cf1f810d72208996fe4274027e3d90",
+    "build": "c44dfc9c67f7f164159dd4dcb8a42bf1f1c10faa71372128cc16f3d0d5d0f990",
+    "final_simulation_tests": "a0f1cbf31fc7a05b55fb4542ffa5d4c26230ff155946d52096f001358adde1d0",
+    "golden_cli": "a00a6d767276269773319f46981b2fa598c5e9c098eff00c4ca48afa455d8ec9",
+    "python": "7a5da3ef939e5c64efa34204815ff4a49ff44d1a9d8302cd8acd949d76828ae3"
+  },
+  "numerical_implementation_commit": "22fdd76",
+  "prior_tests": 301,
+  "protocol_commit": "24a8c68",
+  "python_seconds": 105.869,
+  "python_tests": 322,
+  "range_guard": "Reject customer-weighted planned-start/availability/hold offsets above 2^52-1 before sampling; existing duration bounds reserve the other half of exact float64 integer range.",
+  "simulation_tests": 21,
+  "source_sha256": {
+    "Data1.zip": "08ac47b7dd7f43cde56509644d7292d0b6978dcd62300912b4ecf0a2c3c6eca3",
+    "Data2.zip": "13bea1c84636989a6475f481d67f25b25a17fcac8b77f674a5157e3a1d105f00",
+    "Install_Labor_HackOHIO.xlsx": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b",
+    "matched_upstream.zip": "13f8d9da49843c959059b4074417c47671105131cdc4bfe9daf7b534e5f522c3"
+  },
+  "v1_0_0_commit": "b324c1b355cda60035fb11fa32bcddf10931f649",
+  "v1_0_0_tag": "c2b2d37aaf5e74a03190746c12badacc6bc86369",
+  "version": "g5-verification-v1"
+}

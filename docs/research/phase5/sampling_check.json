@@ -1,0 +1,137 @@
+{
+  "interpretation": "Controlled generating-process verification only; no observed restoration calibration.",
+  "records": [
+    {
+      "hold_mean_hours": 0.0,
+      "log_correlation_after_tick_rounding": -0.004272502014340071,
+      "log_variances": [
+        0.25190185741195426,
+        0.25100902020834864
+      ],
+      "mean_multipliers": [
+        1.1295875555555557,
+        1.1345821944444443
+      ],
+      "multiplier_correlation_after_tick_rounding": 0.0009305262506963427,
+      "profile": "independent-050-v1",
+      "trials": 10000
+    },
+    {
+      "hold_mean_hours": 0.0,
+      "log_correlation_after_tick_rounding": 0.49825082796116765,
+      "log_variances": [
+        0.24573665669674832,
+        0.2534919946641745
+      ],
+      "mean_multipliers": [
+        1.1286983055555557,
+        1.1284728888888889
+      ],
+      "multiplier_correlation_after_tick_rounding": 0.46886116537463607,
+      "profile": "shared-050-v1",
+      "trials": 10000
+    },
+    {
+      "hold_mean_hours": 0.0,
+      "log_correlation_after_tick_rounding": 0.008465185498342787,
+      "log_variances": [
+        0.09510290328057124,
+        0.09415268580426828
+      ],
+      "mean_multipliers": [
+        0.9990386388888888,
+        0.9967701111111111
+      ],
+      "multiplier_correlation_after_tick_rounding": 0.010196418662088312,
+      "profile": "uniform-sensitivity-v1",
+      "trials": 10000
+    },
+    {
+      "hold_mean_hours": 2.0029615,
+      "log_correlation_after_tick_rounding": 0.49546082969407207,
+      "log_variances": [
+        0.25253911909548815,
+        0.24711818343028025
+      ],
+      "mean_multipliers": [
+        1.12207225,
+        1.1128680555555555
+      ],
+      "multiplier_correlation_after_tick_rounding": 0.4560248334205913,
+      "profile": "storm-hold-v1",
+      "trials": 10000
+    }
+  ],
+  "scenario": {
+    "actual_efficiency": null,
+    "crews": [
+      {
+        "available_tick": 0,
+        "id": "syn-crew-0",
+        "people": 4
+      }
+    ],
+    "duration_assumption": "one_effective_worker",
+    "duration_rule_classification": "prototype policy",
+    "family": "micro",
+    "generator_version": "benchmark-generator-v1",
+    "groups": [
+      {
+        "branch": "syn-branch-0",
+        "critical_service": false,
+        "customer_ids": [
+          "syn-customer-0-0"
+        ],
+        "id": "syn-group-0",
+        "required_tasks": [
+          "syn-task-0"
+        ],
+        "unresolved_dependency": false
+      },
+      {
+        "branch": "syn-branch-1",
+        "critical_service": false,
+        "customer_ids": [
+          "syn-customer-1-0"
+        ],
+        "id": "syn-group-1",
+        "required_tasks": [
+          "syn-task-1"
+        ],
+        "unresolved_dependency": false
+      }
+    ],
+    "horizon_ticks": 604800,
+    "id": "syn-micro-corr",
+    "input_classification": "scenario assumption",
+    "missing_evidence_classification": "unavailable",
+    "observed_outcomes": null,
+    "origin": "independently_authored_synthetic",
+    "precedence_classification": "prototype policy",
+    "response_origin": "modeled_response_start",
+    "revision": 1,
+    "seed": 0,
+    "split": "micro",
+    "tasks": [
+      {
+        "access": "clear",
+        "id": "syn-task-0",
+        "prerequisites": [],
+        "report_order": 0,
+        "total_person_hours": "1"
+      },
+      {
+        "access": "clear",
+        "id": "syn-task-1",
+        "prerequisites": [],
+        "report_order": 1,
+        "total_person_hours": "1"
+      }
+    ],
+    "version": "benchmark-problem-v1"
+  },
+  "seed": 20261103,
+  "shared_050_expected_log_correlation": 0.5,
+  "shared_050_expected_multiplier_correlation": 0.46879062662624393,
+  "version": "synthetic-sampling-check-v1"
+}

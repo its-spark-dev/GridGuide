@@ -132,3 +132,35 @@ fixed. All accepted candidates pass the unchanged independent G2 validator and c
 worsen their validated incumbent objective. This changes no source labor arithmetic,
 legacy policies or application defaults. [Mathematical model](research/phase3/MODEL.md)
 and [G3 results](planning/V1_1_0_PHASE3.md) disclose assumptions and the missed 5% target.
+
+## 10. Phase 5 assumption-based fixed-timetable simulation
+
+`fixed-timetable-simulation-v1` replays a precomputed feasible synthetic schedule.
+Let `d_i` be its G2 duration in rounded seconds. Sample `D_i=ceil(d_i*M_i)` and one
+event-wide hold `H`. With original planned start `s_i`, crew availability `a_c`,
+explicit repair predecessors and the previous task on the fixed crew, replay
+`S_i=max(s_i+H,a_c+H,all predecessor E_j)` and `E_i=S_i+D_i`.
+Planned idle/slack is retained. Deterministic `M_i=1,H=0` reproduces original starts,
+finishes and G2 metrics exactly. This is delay propagation through a fixed timetable,
+not an adaptive dispatcher or per-trial optimization.
+
+Declared profiles use median-one lognormal multipliers with log SD 0.25/0.5, either
+independent or with equal shared-event/task log variance. The latter has log correlation
+0.5; marginal log variance remains sigma squared. Storm stress adds a single synthetic
+uniform 0–4-hour response hold; it never supplies unknown clearance. An independent
+uniform 0.5–1.5 multiplier is a different-family sensitivity, not variance matched.
+All distributions are scenario assumptions; no observed productivity is fitted.
+
+Customer release is the last required repair, with unknown scope retained. Completed
+customer-hours stay null if any required release is unresolved. Restricted 168-hour
+cost credits only known releases and reports known-later censoring separately from
+unresolved customers. p10/p50/p90 are nearest-rank Monte Carlo quantiles under the chosen
+assumptions, not calibrated restoration confidence or the legacy envelope. Failed
+convergence checks remain explicit at the 10,000-trial cap.
+
+The strongest fixed G2 baseline remains the recommended default. G3's combined mean
+gain versus that baseline was 0.351%, incremental gain beyond per-instance best-of-four
+was 0.174%, and its 5% median target failed. CP-SAT remains an optional validated
+experimental comparison; synthetic uncertainty cannot promote it. Full definitions,
+sampling conventions, proof and limitations are in the [protocol](research/phase5/SIMULATION_PROTOCOL.md)
+and [G5 evidence](planning/V1_1_0_PHASE5.md). No rules or application defaults above change.

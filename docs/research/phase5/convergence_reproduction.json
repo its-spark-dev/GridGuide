@@ -1,0 +1,8 @@
+{
+  "numerical_sha256": "bcf22abb0918ab656bd1c4a27bc9637363ab3dd470188ffa3c64cfb3ed62b343",
+  "runs": 210,
+  "scope": "full suite, isolated extraction, no source data/network/optimizer imports",
+  "status": "passed",
+  "suite": "convergence",
+  "trials_per_run": 10000
+}

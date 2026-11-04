@@ -1,0 +1,3 @@
+# Offline assumption-based simulation only. No application dependency changes.
+-r requirements-benchmarks.txt
+numpy==2.5.4

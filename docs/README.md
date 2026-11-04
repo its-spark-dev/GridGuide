@@ -84,3 +84,10 @@ synthetic suite; its 5% median promotion target was not met. Application default
 Phase 4 review: [risk protocol](research/RISK_PROTOCOL.md), [No-Go findings](research/RISK_FINDINGS.md),
 [recorded feasibility](research/phase4/feasibility.json), and [G4 review packet](planning/V1_1_0_PHASE4.md).
 No predictive model was fitted or promoted; application behavior remains unchanged.
+
+Phase 5 review: [simulation protocol](research/phase5/SIMULATION_PROTOCOL.md),
+[complete artifact/reproduction instructions](research/phase5/ARTIFACTS.md), and
+[G5 evidence and acceptance questions](planning/V1_1_0_PHASE5.md). Fixed schedules are
+replayed under declared synthetic duration profiles; failed convergence checks and
+paired policy regressions remain visible. No empirical calibration or default promotion
+is claimed, and no API/UI integration is included.
