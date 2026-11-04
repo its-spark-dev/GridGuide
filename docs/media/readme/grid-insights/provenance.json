@@ -1,0 +1,63 @@
+{
+  "application_commit": "b324c1b355cda60035fb11fa32bcddf10931f649",
+  "captured_at": "2026-11-04T05:36:03.943Z",
+  "browser": "156.0.8078.80",
+  "viewport": {
+    "width": 1440,
+    "height": 1200
+  },
+  "editing": "None; native viewport screenshots, UI selection only, no response/DOM/data/geometry manipulation",
+  "source_sha256": {
+    "Data1.zip": "08ac47b7dd7f43cde56509644d7292d0b6978dcd62300912b4ecf0a2c3c6eca3",
+    "Data2.zip": "13bea1c84636989a6475f481d67f25b25a17fcac8b77f674a5157e3a1d105f00",
+    "Install_Labor_HackOHIO.xlsx": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b",
+    "matched_upstream.zip": "13f8d9da49843c959059b4074417c47671105131cdc4bfe9daf7b534e5f522c3"
+  },
+  "implementation_sha256": {
+    "frontend/src/RestorationDecision.tsx": "7fd509f27be20659ab1a0dbd95382987ded8ba75baef29a654727831b56ac2d6",
+    "frontend/src/CandidateImpactMap.tsx": "9b9aa10dc40a446406a82714c3a35ca70d62573a6b2c72b7553c9b3c1a6f0c0c",
+    "frontend/src/useRestorationPlan.ts": "2978b800541d5ccb242564d95c35fa00e44639654ce78c3779dd6f493acd6344",
+    "backend/planning.py": "02e9be4b861b07fb4d31b8050a6a714241b9fa34953da000a78b1529fe17203f",
+    "backend/config.py": "49883f665f64a525af83c153941793f3e000c2d084afbd43ed677283325231f9"
+  },
+  "publication": "Owner explicitly approved public portfolio presentation on November 4, 2026.",
+  "records": [
+    {
+      "candidate_id": "asset-1e0e3d979b0f64d6c949",
+      "label": "Golden upstream fuse",
+      "file": "01-asset-1e0e3d979b0f64d6c949.png",
+      "sha256": "78c37ae175efff4fa4b1b60ec92aafb793ef6032123f05a83dbe1791918e3a52",
+      "tile_count": 12,
+      "selected_label": "Golden upstream fuse",
+      "pressed_count": 1
+    },
+    {
+      "candidate_id": "asset-973c492bfd0e358f7d68",
+      "label": "Golden transformer",
+      "file": "02-asset-973c492bfd0e358f7d68.png",
+      "sha256": "e8f1cd0a1105ab752f4f5811424480111a5d62684a7018077d5ef193bb33fced",
+      "tile_count": 12,
+      "selected_label": "Golden transformer",
+      "pressed_count": 1
+    },
+    {
+      "candidate_id": "asset-4271bb66fe1b6174f491",
+      "label": "Historical fuse replay",
+      "file": "03-asset-4271bb66fe1b6174f491.png",
+      "sha256": "179349ce0d6f3a51f68861c2655ff6c143a07092218c2d8c84d546e849cc74a7",
+      "tile_count": 12,
+      "selected_label": "Historical fuse replay",
+      "pressed_count": 1
+    },
+    {
+      "candidate_id": "asset-dd55cf26c71b6d415bc7",
+      "label": "Critical-context fuse",
+      "file": "04-asset-dd55cf26c71b6d415bc7.png",
+      "sha256": "3746274dfc4eb1a28be04dbabe227a3a974321137570bb2f35f7453f412fb0b4",
+      "tile_count": 12,
+      "selected_label": "Critical-context fuse",
+      "pressed_count": 1
+    }
+  ],
+  "shared_cell_note": "Golden upstream fuse and Golden transformer share the same generalized footprint. Their source identities, counts, labor and prerequisite relationships differ; no point was moved to exaggerate separation."
+}

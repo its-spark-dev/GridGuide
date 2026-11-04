@@ -1,0 +1,96 @@
+{
+  "baseline": "23dbae35f1949d49429324703bcd2746adeef32f",
+  "images": [
+    {
+      "path": "docs/media/readme/crew-planning.png",
+      "sha256": "6181860eaa85746a0c6a5031d68bfeae813fec4296ae531be9d256531e7fd3fe",
+      "bytes": 130252,
+      "change": "new authentic capture"
+    },
+    {
+      "path": "docs/media/readme/grid-insights/01-asset-1e0e3d979b0f64d6c949.png",
+      "sha256": "78c37ae175efff4fa4b1b60ec92aafb793ef6032123f05a83dbe1791918e3a52",
+      "bytes": 370621,
+      "change": "approved gallery unchanged"
+    },
+    {
+      "path": "docs/media/readme/grid-insights/02-asset-973c492bfd0e358f7d68.png",
+      "sha256": "e8f1cd0a1105ab752f4f5811424480111a5d62684a7018077d5ef193bb33fced",
+      "bytes": 372804,
+      "change": "approved gallery unchanged"
+    },
+    {
+      "path": "docs/media/readme/grid-insights/03-asset-4271bb66fe1b6174f491.png",
+      "sha256": "179349ce0d6f3a51f68861c2655ff6c143a07092218c2d8c84d546e849cc74a7",
+      "bytes": 391113,
+      "change": "approved gallery unchanged"
+    },
+    {
+      "path": "docs/media/readme/grid-insights/04-asset-dd55cf26c71b6d415bc7.png",
+      "sha256": "3746274dfc4eb1a28be04dbabe227a3a974321137570bb2f35f7453f412fb0b4",
+      "bytes": 651954,
+      "change": "approved gallery unchanged"
+    },
+    {
+      "path": "docs/media/readme/preparedness-desktop.png",
+      "sha256": "9f682f8b5cb772060a19a9ead0d61c4d11a7348b4ed1ef95661f3ee35b8cf0fc",
+      "bytes": 202713,
+      "change": "existing bytes retained; presentation repositioned"
+    },
+    {
+      "path": "docs/media/v1.0.0/communication-preview.png",
+      "sha256": "8d04f745b40c216a5d67e9763547bf1124c96e0d8c26e1f95bd88a373caf43f6",
+      "bytes": 136655,
+      "change": "existing bytes retained; presentation repositioned"
+    },
+    {
+      "path": "docs/media/v1.0.0/grid-insights.png",
+      "sha256": "8e655adb9601e66442eb435807195082faae1f16385a35a356e84f21b9ed075d",
+      "bytes": 154328,
+      "change": "existing bytes retained; presentation repositioned"
+    },
+    {
+      "path": "docs/media/v1.0.0/overview.png",
+      "sha256": "6a2a2dbc78d708102f39bcc6534c36dc765e6b24574b6b0182ba8cc945fda0d0",
+      "bytes": 139963,
+      "change": "existing bytes retained; presentation repositioned"
+    },
+    {
+      "path": "docs/media/v1.1.0-integrated/01-overview.png",
+      "sha256": "c784111d36007b0b05a737e967e38c5a04434e7654df1e537ea40175c6a11639",
+      "bytes": 124966,
+      "change": "existing bytes retained; presentation repositioned"
+    },
+    {
+      "path": "docs/media/v1.1.0-integrated/03-completed.png",
+      "sha256": "86e95ea75b72155b4df77d10755cdf80077d676613cf32c05bfe51f7fa1e9c23",
+      "bytes": 141528,
+      "change": "existing bytes retained; presentation repositioned"
+    },
+    {
+      "path": "docs/media/v1.1.0-integrated/10-policies.png",
+      "sha256": "e7499a4a0d523794b8fba21b7192b46faad837c98f7757df2c416fc2b898418f",
+      "bytes": 113580,
+      "change": "existing bytes retained; presentation repositioned"
+    },
+    {
+      "path": "docs/media/v1.1.0-integrated/12-reviewed.png",
+      "sha256": "6be2c97be91ef4fd431817f630afd954d023644a9253a54f8bd6468caf164426",
+      "bytes": 118365,
+      "change": "existing bytes retained; presentation repositioned"
+    },
+    {
+      "path": "docs/media/v1.1.0-integrated/mobile-operator.png",
+      "sha256": "1a1b9eff73ceece409490cddbbcf21001a30af581b346b67857b4d9b0c2a9909",
+      "bytes": 65012,
+      "change": "existing bytes retained; presentation repositioned"
+    },
+    {
+      "path": "docs/media/v1.1.0-integrated/mobile-preparedness.png",
+      "sha256": "471e6959fff83249b32e3ce0447a8990ee5ac23009a79dd46d5f13445fdcde68",
+      "bytes": 67585,
+      "change": "existing bytes retained; presentation repositioned"
+    }
+  ],
+  "total_local_image_bytes": 3181439
+}

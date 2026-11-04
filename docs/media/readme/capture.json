@@ -1,0 +1,19 @@
+{
+  "application_commit": "3c53d8e9429318f121c210d148f7d2b35ae52147",
+  "documentation_base": "6e50896c455f1d74663be2d7c5ed606be77d7834",
+  "package_sha256": "dbf1c3251fd5e297f223b424898f35f18ac27cbb182b24dd1656486cffc32ebf",
+  "captured_at": "2026-11-04T05:23:40.443Z",
+  "browser": "156.0.8078.80",
+  "viewport": {
+    "width": 1440,
+    "height": 1420
+  },
+  "device_scale_factor": 1,
+  "reduced_motion": "reduce",
+  "route": "/preparedness/",
+  "state": "Fresh online page, default fictional scenario; no snapshot saved and offline kit not installed",
+  "runtime": "Pinned deploy/requirements.lock; uvicorn factory on loopback",
+  "external_requests": "blocked; same-origin real responses only",
+  "editing": "None: native viewport screenshot; no DOM, response or data modifications",
+  "sha256": "9f682f8b5cb772060a19a9ead0d61c4d11a7348b4ed1ef95661f3ee35b8cf0fc"
+}

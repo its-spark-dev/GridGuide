@@ -1,73 +1,227 @@
+<div align="center">
+
 # GridGuide
 
-**Inspect dependencies. Compare restoration policies. Prepare for an outage.**
+### A little clarity. A better plan.
 
-GridGuide is an evidence-driven restoration decision-support portfolio project, originating
-as a three-person **AEP AI Outage Concierge Challenge** entry at **HackOHI/O 2026**.
-The **v1.1.0 release candidate** adds a self-contained fictional demonstration that runs
-without challenge data, provider credentials or an internet connection after installation.
-It is a research demonstration—not a utility service, dispatch tool or live outage feed.
+Understand an outage scenario. Prepare for what comes next. See the decisions behind repair order.
 
-![Integrated GridGuide overview using approved fictional inputs](docs/media/v1.1.0-integrated/01-overview.png)
+[![CI · main](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml)
+[![Version 1.1.0 release candidate](https://img.shields.io/badge/version-1.1.0%20RC-025a95)](docs/releases/v1.1.0.md)
+[![React and TypeScript](https://img.shields.io/badge/React-TypeScript-3178c6)](frontend/package.json)
+[![FastAPI and Python](https://img.shields.io/badge/FastAPI-Python-009688)](docs/ARCHITECTURE.md)
 
-[Demonstration](docs/media/v1.1.0-integrated/README.md) · [Quick start](#quick-start) ·
-[Evidence report](docs/benchmarks/v1.1.0.md) · [Reproduce it](docs/REPRODUCING_V1_1.md) ·
-[Release-candidate notes](docs/releases/v1.1.0.md)
+**[Watch the 4:44 demo](docs/media/v1.1.0-integrated/README.md) · [Explore the product](#product-walkthrough) · [Quick start](#getting-started) · [Architecture](#architecture)**
+
+</div>
+
+![GridGuide integrated Overview: fictional scenario, conditional timing and connected customer/operator navigation](docs/media/v1.1.0-integrated/01-overview.png)
+
+**An outage concierge connecting customer preparedness with explainable restoration planning.**
+Built at HackOHI/O 2026 and developed into a reproducible portfolio project. Explore the
+preserved source-backed application or run the standalone fictional demonstration.
+Both make assumptions visible; neither is a live utility service.
 
 ## Product walkthrough
 
-- **Start with your storm outlook.** The original dashboard layout connects Overview,
-  Prepare & alerts and Grid insights. Select approved fictional scenarios and ask
-  questions about their repair milestones. Household risk and geographic context
-  remain explicitly unavailable in this source-free demonstration.
-- **Understand a fictional power path.** Inspect declared dependencies and prepared repair
-  milestones. Completed, blocked and unresolved states remain distinct; unknown completion
-  never becomes a finite restoration estimate.
-- **Compare policies fairly.** Eight operator examples compare FIFO, customer-count,
-  release/person-hour and critical-proxy-first under identical assumptions. Python owns
-  calculations; an independent validator checks schedules and customer release.
-- **Review the tradeoff.** Add a bounded precedence constraint, inspect recomputed results,
-  acknowledge limitations and export JSON plus a readable summary. Replay the JSON locally.
-  Changed settings invalidate review. Checksums verify consistency, not reviewer identity.
-- **Prepare offline.** Explicitly install generic safety guidance and save a non-sensitive
-  fictional snapshot. It stays timestamped and historical. Browser restart without network
-  is supported; operator calculation still requires Python. Storage can be evicted.
+**Overview → Prepare & alerts → Grid insights.** Follow an outlook through its repair
+dependencies, keep practical guidance close, and inspect the tradeoffs behind a plan.
+Select any screenshot for its full-resolution view.
 
-![Grid insights in the integrated release candidate](docs/media/v1.1.0-integrated/10-policies.png)
+### Overview — understand the scenario
 
-The public demo uses independently authored fictional inputs, not anonymized customer
-records. The original challenge-local map, ordinal concern band, conditional labor model,
-optional grounded explanations and communication previews remain preserved separately.
-That original journey requires authorized pinned challenge sources; see the
-[v1.0.0 release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0).
+The original **challenge-local** outlook brings together an ordinal concern indicator,
+conditional restoration range and crew/access controls. The **fictional public demo**
+adds prepared milestones and inspectable power paths, with deterministic Ask GridGuide
+answers. Blocked or unresolved dependencies never turn into a finite estimate.
 
-## Engineering and research
+<table>
+<tr>
+<td width="50%"><a href="docs/media/v1.0.0/overview.png"><img src="docs/media/v1.0.0/overview.png" alt="Original outlook · challenge-local" width="100%"></a><br><strong>Original outlook · challenge-local</strong></td>
+<td width="50%"><a href="docs/media/v1.1.0-integrated/03-completed.png"><img src="docs/media/v1.1.0-integrated/03-completed.png" alt="Inspect a dependency · fictional demo" width="100%"></a><br><strong>Inspect a dependency · fictional demo</strong></td>
+</tr>
+</table>
 
-One **FastAPI/Python** service owns numerical rules and validation; **React/TypeScript**
-renders version-bound results. No database or browser numerical engine is required.
-The source-free distribution uses an explicit allowlist, pinned dependency hashes,
-nonroot container, production browser tests and public CI. Original data and external
-AI are excluded. [Architecture](docs/ARCHITECTURE.md) · [Model specification](docs/MODEL_SPEC.md).
+*The concern band is not an outage probability; timing is conditional, not a utility ETR
+or calibrated confidence interval. Household risk remains unavailable in the fictional demo.*
 
-The strongest fixed **release/person-hour baseline remains the default**. Optional CP-SAT
-is a validated frozen experiment: the preregistered **5% median promotion target failed**.
-Combined best-of-four plus CP-SAT achieved 0.351% mean improvement versus fixed, while
-incremental improvement beyond best-of-four was 0.174%; these are not additive. Secondary
-critical-service and fairness regressions remain visible.
+### Prepare & alerts — keep useful guidance close
 
-Prediction research concluded an evidence-bounded **No-Go**, not universal infeasibility.
-No validated household outage probability was produced. Offline simulation reports
-preserve **195 stable and 15 unstable** convergence combinations under synthetic assumptions;
-no empirically calibrated restoration confidence or detailed simulation UI is claimed.
-[Complete results, denominators and limitations](docs/benchmarks/v1.1.0.md).
+Read, print or download the public preparedness kit. Explicitly save a timestamped
+fictional snapshot and enable offline access to revisit it after a browser restart.
+The original challenge-local journey also offers tailored preparation and four
+communication stages: pre-storm, outage confirmed, estimate updated and restored.
 
-## Quick start
+<table>
+<tr>
+<td width="50%"><a href="docs/media/readme/preparedness-desktop.png"><img src="docs/media/readme/preparedness-desktop.png" alt="Preparedness kit · fictional demo" width="100%"></a><br><strong>Preparedness kit · fictional demo</strong></td>
+<td width="50%"><a href="docs/media/v1.0.0/communication-preview.png"><img src="docs/media/v1.0.0/communication-preview.png" alt="Hypothetical communication · NOT SENT" width="100%"></a><br><strong>Hypothetical communication · NOT SENT</strong></td>
+</tr>
+</table>
 
-Download the inspected ZIP from the successful candidate PR's **Synthetic verification**
-CI artifact and verify its hash against the [candidate manifest](docs/media/v1.1.0-integrated/package.json).
-This is a release candidate, not a published v1.1.0 Release. See the
-[acquisition and inspection steps](docs/REPRODUCING_V1_1.md) for exact paths and build fallback.
-From the **clean extracted package**, with Python 3.12 available:
+*Communication previews neither confirm an outage nor send a message. Tailored guidance
+requires authorized challenge-local inputs. Offline snapshots are historical immediately;
+storage can be evicted, and offline access does not recalculate results.*
+
+### Grid insights — compare, question and review
+
+**Four repairs. Four geographic perspectives.** Select a candidate in the original
+challenge-local workspace to connect its map, dependent-customer areas, source evidence
+and crew assignment. Inspection is independent of which repair the policy recommends.
+Optional OpenStreetMap streets provide geographic context.
+
+<table>
+<tr>
+<td width="50%"><a href="docs/media/readme/grid-insights/01-asset-1e0e3d979b0f64d6c949.png"><img src="docs/media/readme/grid-insights/01-asset-1e0e3d979b0f64d6c949.png" alt="Golden upstream fuse selected in the original Grid insights map workspace" width="100%"></a><br><strong>Golden upstream fuse</strong></td>
+<td width="50%"><a href="docs/media/readme/grid-insights/02-asset-973c492bfd0e358f7d68.png"><img src="docs/media/readme/grid-insights/02-asset-973c492bfd0e358f7d68.png" alt="Golden transformer selected in the original Grid insights map workspace" width="100%"></a><br><strong>Golden transformer</strong></td>
+</tr>
+<tr>
+<td width="50%"><a href="docs/media/readme/grid-insights/03-asset-4271bb66fe1b6174f491.png"><img src="docs/media/readme/grid-insights/03-asset-4271bb66fe1b6174f491.png" alt="Historical fuse replay selected in the original Grid insights map workspace" width="100%"></a><br><strong>Historical fuse replay</strong></td>
+<td width="50%"><a href="docs/media/readme/grid-insights/04-asset-dd55cf26c71b6d415bc7.png"><img src="docs/media/readme/grid-insights/04-asset-dd55cf26c71b6d415bc7.png" alt="Critical-context fuse selected in the original Grid insights map workspace" width="100%"></a><br><strong>Critical-context fuse</strong></td>
+</tr>
+</table>
+
+*Four authentic v1.0.0 captures, unchanged from the reviewed originals. Select an image
+for full resolution. Source overlays: generalized AEP challenge GIS. Basemap ©
+[OpenStreetMap contributors](https://www.openstreetmap.org/copyright).*
+
+The upstream fuse and transformer share a generalized cell but have different dependency
+counts and repair prerequisites. Cells are not outage boundaries; streets do not verify
+electrical connections. Critical-service proximity does not establish facility attachment.
+[Capture provenance and publication record](docs/media/readme/MAP_GALLERY_REVIEW.md).
+
+### Plan the work — follow priorities and dependencies
+
+The original comparison puts critical-service context and customer impact side by side.
+Explore one or two crews, separate people-per-crew settings and access constraints.
+Independent repairs can overlap; a downstream transformer still waits for its upstream
+fuse. Blocked work withholds completion rather than inventing clearance.
+
+<table>
+<tr>
+<td width="50%"><a href="docs/media/v1.0.0/grid-insights.png"><img src="docs/media/v1.0.0/grid-insights.png" alt="Compare repair priorities · challenge-local" width="100%"></a><br><strong>Compare repair priorities · challenge-local</strong></td>
+<td width="50%"><a href="docs/media/readme/crew-planning.png"><img src="docs/media/readme/crew-planning.png" alt="Two crews, explicit dependencies · challenge-local" width="100%"></a><br><strong>Two crews, explicit dependencies · challenge-local</strong></td>
+</tr>
+</table>
+
+*Prototype priority policies, not AEP dispatch rules. Repair person-hours differ from
+elapsed time; additional crews do not divide one repair's duration.*
+
+### Review the decision — reproduce the result
+
+The separate **non-geographic fictional operator workspace** compares four policies on
+identical inputs. Inspect customer-hours, critical-service latency and fairness; add a
+supported precedence constraint; then acknowledge the evidence gaps and export the plan.
+Changes invalidate review. Replay the JSON independently in Python.
+
+<table>
+<tr>
+<td width="50%"><a href="docs/media/v1.1.0-integrated/10-policies.png"><img src="docs/media/v1.1.0-integrated/10-policies.png" alt="Four-policy comparison · fictional demo" width="100%"></a><br><strong>Four-policy comparison · fictional demo</strong></td>
+<td width="50%"><a href="docs/media/v1.1.0-integrated/12-reviewed.png"><img src="docs/media/v1.1.0-integrated/12-reviewed.png" alt="Explicit review and export · fictional demo" width="100%"></a><br><strong>Explicit review and export · fictional demo</strong></td>
+</tr>
+</table>
+
+*Completed and restricted-horizon customer-hours remain distinct. Unresolved and censored
+outcomes stay visible. Checksums verify consistency, not reviewer identity or a tamper-proof
+audit history. Nothing dispatches crews.*
+
+<details>
+<summary><strong>On a smaller screen</strong> — responsive customer and operator views</summary>
+
+<p align="center">
+<a href="docs/media/v1.1.0-integrated/mobile-preparedness.png"><img src="docs/media/v1.1.0-integrated/mobile-preparedness.png" alt="Mobile preparedness in the fictional demo" width="230"></a>
+<a href="docs/media/v1.1.0-integrated/mobile-operator.png"><img src="docs/media/v1.1.0-integrated/mobile-operator.png" alt="Mobile operator workspace in the fictional demo" width="230"></a>
+</p>
+
+Actual Chromium captures; no cross-browser or manual screen-reader certification is implied.
+
+</details>
+
+[Demo and captions](docs/media/v1.1.0-integrated/README.md) ·
+[Visual inventory and provenance](docs/media/readme/VISUAL_MANIFEST.md) ·
+[Original preparation checklist](docs/media/v1.0.0/preparation.png)
+
+## From HackOHI/O to v1.1.0
+
+The three-person HackOHI/O project established the connected customer and operator
+journey: geographic context, an explainable ordinal concern band, conditional restoration
+ranges, crew/access scenarios, preparation and communication previews. Those features
+remain in the original application; v1.1.0 preserves its visual identity and navigation
+while adding independently authored fictional examples, offline preparedness, validated
+policy comparisons and reproducible review exports.
+
+**The two modes have different evidence and capabilities:**
+
+| Product area | Public fictional demonstration | Authorized challenge-local application |
+| --- | --- | --- |
+| Overview | Prepared milestones, declared power paths and deterministic explanations | Generalized geographic context, source-validated dependencies, ordinal concern band and conditional labor-based range |
+| Scenario controls | Approved examples, including blocked and missing-evidence cases | Crew-size and access changes; separate crew-count controls in repair planning |
+| Prepare & alerts | Generic kit, offline access and explicitly saved fictional snapshots | Scenario-tailored preparation, optional session-only declarations and four communication previews; nothing is sent |
+| Grid insights | Eight fictional cases, four baselines, bounded precedence overrides and review/export | Four curated repair candidates, two prototype priority policies, source evidence and conditional crew scheduling |
+
+Challenge-local mode requires permission to use the pinned source files. Its concern
+band is not an outage probability, and its restoration envelope is not a guaranteed
+completion time. The fictional demo does not reproduce source-backed maps, risk scores,
+arbitrary crew/access recalculation or tailored communications with invented inputs.
+
+[Original v1.0.0 release](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.0.0) ·
+[Original product screenshots](docs/media/v1.0.0/README.md) ·
+[Detailed feature comparison](docs/planning/V1_1_0_CONTINUITY.md#feature-level-comparison)
+
+## Architecture
+
+**React/TypeScript presents the experience; one FastAPI/Python service owns numerical
+rules and validation.** Prepared immutable inputs and versioned contracts connect the
+two. There is no database or browser copy of the numerical engine.
+
+- **Explain validated results.** Public Standard explanations use approved frame values
+  and reviewed text. The preserved challenge-local AI adapter can select approved
+  references; it cannot calculate risk or restoration times. Standard answers work
+  without an external model.
+- **Validate schedules independently.** Check prerequisites, crew conflicts and customer
+  release before presenting a comparison. Keep assumptions, nulls and tradeoffs visible.
+- **Bind review to the result.** Scenario revisions and fingerprints reject stale or
+  mismatched responses and make exported fictional cases reproducible.
+- **Distribute only approved inputs.** An explicit allowlist packages fictional data,
+  compiled UI and the Python runtime code without challenge records, credentials or
+  Git history. Scoped offline caching excludes API responses and sensitive declarations.
+- **Verify the real application.** Public CI exercises the extracted package and container,
+  browser journeys, export replay and preserved evidence hashes. Source-dependent tests
+  are reported unavailable when their data is absent, never counted as passed.
+
+[Architecture and API boundaries](docs/ARCHITECTURE.md) ·
+[Model specification](docs/MODEL_SPEC.md) · [Explanation design](docs/AI_EXPLANATIONS.md)
+
+## Research findings and reproducibility
+
+Frozen scenarios, independent validation and reproducible reports make unsuccessful
+experiments as inspectable as successful ones:
+
+- **Optimization:** the preregistered 5% median promotion target failed. The strongest
+  fixed release/person-hour baseline remains the default; CP-SAT is optional and
+  experimental, with only frozen validated results exposed in the public comparison.
+- **Outage prediction:** the acquired evidence led to a No-Go for supervised modeling.
+  No trained predictor or validated outage probability is claimed. This is an evidence
+  limit, not a conclusion that all public-data research is infeasible.
+- **Restoration uncertainty:** assumption-based fixed-timetable simulation retains all
+  15 unstable convergence findings. It is not empirically calibrated restoration
+  confidence, and detailed uncertainty visualization is not integrated into the product.
+
+The [complete evidence report](docs/benchmarks/v1.1.0.md) retains numerical results,
+denominators, regressions, timeouts and limitations. The
+[reproduction guide](docs/REPRODUCING_V1_1.md) connects each result to its inputs and commands.
+
+<a id="quick-start"></a>
+
+## Getting started
+
+**Try the fictional package first.** Follow the [acquisition and inspection guide](docs/REPRODUCING_V1_1.md#acquire-and-inspect-the-standalone-package)
+to download the standalone ZIP from a successful **Synthetic verification** CI artifact
+and verify it against the [reviewed package manifest](docs/media/v1.1.0-integrated/package.json).
+CI artifacts expire; the guide includes a source-free build fallback. There is no
+published v1.1.0 GitHub Release or hosted service yet.
+
+From the **clean extracted package**, with Python 3.12:
 
 ```sh
 python3.12 -m venv /tmp/gridguide-runtime
@@ -76,32 +230,44 @@ PYTHONDONTWRITEBYTECODE=1 /tmp/gridguide-runtime/bin/python deploy/serve.py
 ```
 
 Open **http://127.0.0.1:8000/**. Keep the environment and downloaded exports outside the
-immutable package. Dependencies require network access to install; installed operation
-needs no external service. A Docker path and fully tested reproduction commands are in
-[the guide](docs/REPRODUCING_V1_1.md). Do not build the container from a broad repository copy.
+immutable package. Installation needs network access; installed local operation needs
+no external service. [Docker instructions](docs/REPRODUCING_V1_1.md#container-path) use the
+same inspected extraction, never a broad repository copy.
 
-## Scope and preservation
+For the preserved original application, use the
+[v1.0.0 setup instructions](https://github.com/its-spark-dev/GridGuide/blob/v1.0.0/README.md#getting-started)
+with authorized pinned challenge sources. That mode is separate from the fictional package.
 
-No real alerts, switching, field dispatch, arbitrary addresses, calibrated outage risk,
-new interactive CP-SAT solves, accounts or utility-confirmed ETRs. Testing covers Chromium;
-detailed manual VoiceOver observations and cross-browser behavior remain unverified.
-Known dependency dispositions, unexecuted OS CVE scanning and offline trust limitations
-are documented in the [release notes](docs/releases/v1.1.0.md). Public hosting requires a
-separate current vulnerability assessment and host-security review; no deployment or
-security certification is implied.
+<a id="verify"></a>
+
+**Explore further:** [verification and replay commands](docs/REPRODUCING_V1_1.md) ·
+[documentation guide](docs/README.md) · [release-candidate notes](docs/releases/v1.1.0.md) ·
+[contributing](CONTRIBUTING.md).
+
+## Contributors, attribution and scope
 
 GridGuide was built collaboratively by **three teammates** at **HackOHI/O 2026,
-October 24–25**. Original team achievements, guidance and pole-replacement work remain
-attributed and preserved in the pipeline and [contributor history](https://github.com/its-spark-dev/GridGuide/graphs/contributors).
-Individual roles are not inferred from commit counts. The last known hackathon checkpoint
-is [`bb7c53c`](https://github.com/its-spark-dev/GridGuide/commit/bb7c53ce2e0733c6770c9de631a75df094407727);
-the exact submission SHA is unconfirmed. Later v1.1 improvements are documented in their
-phased PRs; they do not reassign original teammate work.
+October 24–25**. Original team achievements, pipeline guidance and pole-replacement work
+remain preserved. [Contributor history](https://github.com/its-spark-dev/GridGuide/graphs/contributors)
+records the work; individual roles are not inferred from commit counts. The last known
+hackathon checkpoint is [`bb7c53c`](https://github.com/its-spark-dev/GridGuide/commit/bb7c53ce2e0733c6770c9de631a75df094407727);
+the exact submission SHA is unconfirmed. Later independent v1.1.0 improvements are
+traceable through [reviewed pull requests](https://github.com/its-spark-dev/GridGuide/pulls?q=is%3Apr+is%3Amerged)
+and do not reassign original teammate contributions.
 
-This is intended as the final major feature release, with reproducible artifacts preserved
-for later review and no service/support SLA. No project-wide software license has been
-selected, and challenge-data permissions remain unresolved. The source-free package does
-not remediate original records in repository history. [Third-party notices](THIRD_PARTY_NOTICES.md).
+This is an independent portfolio project with no AEP endorsement or utility deployment
+claim. It provides no real alerts, arbitrary-address lookup, field dispatch, switching
+advice or operational safety certification. Testing covers Chromium; detailed manual
+VoiceOver observations and cross-browser behavior remain unverified. Offline storage
+and same-origin trust limitations, retained dependency advisories and unexecuted OS CVE
+scanning are documented in the [release limitations](docs/releases/v1.1.0.md#security-privacy-and-scope).
+Future public hosting requires a current vulnerability assessment and host-security review.
 
-[Documentation](docs/README.md) · [Reproduction](docs/REPRODUCING_V1_1.md) ·
-[Requirements](docs/REQUIREMENTS_TRACEABILITY.md) · [Risk register](docs/RISK_REGISTER.md)
+No project-wide software license has been selected, and challenge-data permissions remain
+unresolved. The source-free package does not remove historical repository exposure or
+grant redistribution rights. See the [publication audit](docs/releases/PUBLIC_RELEASE_AUDIT.md#findings)
+and [third-party notices](THIRD_PARTY_NOTICES.md).
+
+v1.1.0 is intended as the final major feature release, with reproducible artifacts
+preserved for later review. No service/support SLA or ongoing maintenance is promised.
+[Requirements coverage](docs/REQUIREMENTS_TRACEABILITY.md) · [Risk register](docs/RISK_REGISTER.md).
