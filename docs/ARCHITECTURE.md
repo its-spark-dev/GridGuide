@@ -97,3 +97,26 @@ no application endpoint, provider or source loader is added. The original planne
 Phase 1 package remain unchanged. Execution/reporting tools live in separate new modules.
 See [model](research/phase3/MODEL.md), [protocol](research/phase3/EVALUATION_PROTOCOL.md) and
 [G3 evidence](planning/V1_1_0_PHASE3.md).
+
+## Offline Phase 5 uncertainty boundary
+
+`backend/simulation_contracts.py` embeds the unchanged offline benchmark problem and
+exact validated schedule. `backend/simulation.py` draws keyed fictional duration/hold
+realizations and propagates delays through fixed crew orders and repair prerequisites.
+Planned starts remain lower bounds, so faster work cannot advance the original timetable.
+Customer release dependencies remain separate. No solver, source loader, provider, API
+route or browser engine is invoked. Public contracts and both application modes are unchanged.
+
+`benchmarks/simulation_experiment.py` executes bounded suites; `research/uncertainty.py`
+summarizes numerical uncertainty; `benchmarks/simulation_reporting.py` reconstructs and
+checks lossless trial statistics before rendering. Complete standard/convergence reports
+and bounded fictional demo trials are preserved by `scripts/package_simulation_review.py`.
+Full standard trial caches stay outside Git and reproduce from pinned inputs without
+challenge data. The source-free checker repeats the complete suite with source reads and
+network connections forbidden. Numerical hashes and wall/RSS measurements are separate.
+
+These are assumed distributions, not learned restoration outcomes. The original concern
+band, null outage probabilities and deterministic envelopes remain intact. G4 is an
+accepted evidence-bounded No-Go; reopening needs a new versioned evidence review and
+data-quality gate. See the [simulation protocol](research/phase5/SIMULATION_PROTOCOL.md),
+[artifact instructions](research/phase5/ARTIFACTS.md) and [G5 packet](planning/V1_1_0_PHASE5.md).

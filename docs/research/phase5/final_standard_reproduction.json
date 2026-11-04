@@ -1,0 +1,28 @@
+{
+  "numerical_sha256": "889f0dd54d5234d0f6ff280e261ba9f160e8c194d4912f6f26f5266becaabe1f",
+  "reference_implementation_sha256": {
+    "backend/simulation.py": "0c6d9e8ff9c73accf63dea3861af79d38c9a7105bd1fa6c17cfbadebc9070d60",
+    "backend/simulation_contracts.py": "ed23c0aaf209d48456e1d5cde2473876c88151c16c614e161f0844b766549e93",
+    "benchmarks/simulation_experiment.py": "447dee21d8d9127551d7de3bebb96427adf79bcbaf5fbc1c50311dc016d55078",
+    "benchmarks/simulation_profiles.json": "2031c35bae1c2504b8921abc801787aae4d7ddc9461bee86594f8828e18a6a24",
+    "benchmarks/simulation_reporting.py": "bacf93bd84fa5903f36c9c5ed1daf1ffd80e56cc912bc68295c7bd06b5956116",
+    "docs/research/phase5/SIMULATION_PROTOCOL.md": "afc523abf2c47a4f21f161e38047a61e7715332abdd452eda887733539904973",
+    "requirements-simulation.txt": "c914d8271ecc71c1e2a66336eb80184d9dfe07115e8db5796e8fa0c568feae10",
+    "research/uncertainty.py": "2e24b2d84a7e6e7f60696f86ba34dc06491f03cdc2678af68f762870bfb8b8ac"
+  },
+  "replay_implementation_sha256": {
+    "backend/simulation.py": "b745a53423c295968f1965033428cbe6f0b7f0c6cb8d98a84973e99f1a36f983",
+    "backend/simulation_contracts.py": "ed23c0aaf209d48456e1d5cde2473876c88151c16c614e161f0844b766549e93",
+    "benchmarks/simulation_experiment.py": "447dee21d8d9127551d7de3bebb96427adf79bcbaf5fbc1c50311dc016d55078",
+    "benchmarks/simulation_profiles.json": "2031c35bae1c2504b8921abc801787aae4d7ddc9461bee86594f8828e18a6a24",
+    "benchmarks/simulation_reporting.py": "bacf93bd84fa5903f36c9c5ed1daf1ffd80e56cc912bc68295c7bd06b5956116",
+    "docs/research/phase5/SIMULATION_PROTOCOL.md": "afc523abf2c47a4f21f161e38047a61e7715332abdd452eda887733539904973",
+    "requirements-simulation.txt": "c914d8271ecc71c1e2a66336eb80184d9dfe07115e8db5796e8fa0c568feae10",
+    "research/uncertainty.py": "2e24b2d84a7e6e7f60696f86ba34dc06491f03cdc2678af68f762870bfb8b8ac"
+  },
+  "runs": 9730,
+  "scope": "full suite, isolated extraction, no source data/network/optimizer imports",
+  "status": "passed",
+  "suite": "standard",
+  "trials_per_run": 2000
+}

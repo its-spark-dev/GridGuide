@@ -66,3 +66,25 @@ evaluation clusters. No-Go with null predictive metrics prevents unsupported pro
 The executable checks test software behavior; they cannot certify source rights or real
 event reconstruction. Public URLs and revisions may change, so cached response hashes
 separate exact replay from new acquisition. See [G4](planning/V1_1_0_PHASE4.md).
+
+## Phase 5 findings
+
+Assumed duration distributions and storm holds do not establish empirical restoration
+coverage or calibrated confidence. Fixed planned-start floors retain deliberate idle time
+and limit gains from faster work. Optional CP-SAT schedules can regress under stochastic
+durations despite deterministic incumbent protection; paired regressions remain visible.
+The default baseline and G3 failed-target interpretation are unchanged.
+
+Fifteen of 210 designated convergence combinations fail at the 10,000-trial cap and
+must remain flagged. Passing six finite microcases does not establish convergence for
+every large scenario or every reported metric. Batch quantile standard errors describe
+Monte Carlo sensitivity only. Unknown clearance remains unresolved; restricted-horizon
+cost is not a finite restoration-time assignment. No statistical inference treats
+correlated scenario variants as independent observations.
+
+Full lossless trial caches are retained locally outside Git; complete committed summaries,
+input manifests and checksums permit source-free regeneration. Bounded demo trial files
+are retained in Git, but their integration and display wording require later approval.
+Cross-platform float-transform bit equivalence is unverified. G4 research reopening
+requires a new versioned evidence review and data-quality gate, never editing the current
+No-Go into a Go. See [G5](planning/V1_1_0_PHASE5.md).

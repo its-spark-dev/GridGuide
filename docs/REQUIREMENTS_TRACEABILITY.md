@@ -64,4 +64,17 @@ See [G2 acceptance and results](planning/V1_1_0_PHASE2.md).
 | Preregistered county risk task | Risk protocol committed before modeling | No model authorized by current evidence |
 | Actual access and rights review | Pinned HTTP audit, two NOAA payload audits, evidence ledger | No outage payload/permission or county-time validity mask established |
 | Leakage and label safeguards | 20 research tests and deterministic decision replay | Artificial tests do not establish real-data validity |
-| Research disposition | [G4 No-Go packet](planning/V1_1_0_PHASE4.md) | Independent G4 approval pending; no customer-risk integration |
+| Research disposition | [G4 No-Go packet](planning/V1_1_0_PHASE4.md); owner approved and merged at `5513131` | No customer-risk integration; reopening requires a new versioned evidence review and data-quality gate |
+
+## Phase 5 / G5 additions
+
+| Requirement | Evidence | Limit |
+|---|---|---|
+| Fixed-policy uncertainty replay | Versioned contracts, exact deterministic comparison, independent scalar tests | Fixed planned-start floors, no adaptive dispatch or field validation |
+| Declared stochastic assumptions | Seven profile IDs, keyed common draws, controlled correlation/quantile tests | Distributions are not fitted or empirically calibrated |
+| Full bounded experiment | 9,730 standard runs at 2,000 trials, 210 convergence runs at 10,000 trials | Public synthetic scenarios; variants are correlated, not independent population samples |
+| Honest numerical limits | Every paired outcome and null retained; 15 convergence combinations marked unstable | No empirical coverage, promotion or guarantee |
+| Reproducibility and preservation | Full source-free repeats, hashes, regression suites, retained reports and demo trials | Same pinned environment; large trial caches regenerated outside Git |
+
+See the [G5 packet](planning/V1_1_0_PHASE5.md). Independent acceptance and future API/UI
+integration are pending. G3 negative results and G4 No-Go remain unchanged.

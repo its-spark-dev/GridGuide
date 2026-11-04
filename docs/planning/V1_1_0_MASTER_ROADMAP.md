@@ -1,6 +1,6 @@
 # GridGuide v1.1.0 — Evidence-driven final feature release
 
-Approved November 3, 2026. This document preserves the complete approved roadmap; repository links are made relative for portability. Approval authorizes phased execution, not automatic passage through review gates. **Execution update: G1 was approved and PR #3 merged at `9b04fcf`. G2 was approved and merged at `8f1b064`; G3 was approved and merged at `976a67f`. Phase 4 is authorized through a G4 research review PR only. Do not merge or start later phases without approval.** The public README remains product-focused.
+Approved November 3, 2026. This document preserves the complete approved roadmap; repository links are made relative for portability. Approval authorizes phased execution, not automatic passage through review gates. **Execution update: G1 was approved and PR #3 merged at `9b04fcf`. G2 was approved and merged at `8f1b064`; G3 was approved and merged at `976a67f`. G4 was approved with an evidence-bounded No-Go and merged at `5513131`. Phase 5 is authorized through a G5 simulation review PR only. G3's failed 5% median target and fixed-baseline default remain unchanged; G4 reopening requires a new versioned evidence review and data-quality gate. Do not merge Phase 5 or start later phases without approval.** The public README remains product-focused.
 
 ## Approval refinements (controlling interpretation)
 
