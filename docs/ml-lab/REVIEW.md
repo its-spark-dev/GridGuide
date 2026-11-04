@@ -3,7 +3,7 @@
 Independent coding subagents reviewed design/contracts and the feature, label,
 model, metric and holdout implementation before full-data training. This is code
 review by collaborating agents, **not externally independent scientific evaluation**.
-Reviewers did not access scientific final policy outcomes.
+Pre-freeze reviewers did not access scientific final policy outcomes.
 
 Material findings addressed before the scientific input/model freeze:
 
@@ -24,3 +24,13 @@ Tests exercise each guard, source/network denial, malicious artifact paths,
 metric corruption, metadata leakage and missingness. Serialized model files are
 trusted repository-owned artifacts. Hash verification establishes consistency;
 it cannot make arbitrary third-party joblib files safe to load.
+
+## Review after the one-time final reveal
+
+An independent coding subagent then inspected the spent final evidence. It recomputed
+training fixed-policy totals, CV membership, final denominators and exact-cost regret;
+verified source/model/input hashes and seal chronology; and confirmed the correct
+interpretation of both failed promotion gates. It executed 41 ML tests and the complete
+240-case read-only numerical replay successfully. No frozen numerical source change was
+requested. The static renderer was additionally hardened to verify completed evidence
+before presenting it. Code review is not independent utility outcome validation.

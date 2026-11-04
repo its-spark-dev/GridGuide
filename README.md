@@ -193,6 +193,27 @@ two. There is no database or browser copy of the numerical engine.
 [Architecture and API boundaries](docs/ARCHITECTURE.md) ·
 [Model specification](docs/MODEL_SPEC.md) · [Explanation design](docs/AI_EXPLANATIONS.md)
 
+## ML Lab — learning which policy to choose
+
+A separate, source-free supervised ML study compares logistic regression, random forests
+and gradient boosting on **720 newly generated fictional scheduling problems**. Inspect
+41 pre-decision features, grouped data splits, exact policy labels, frozen models and a
+one-time holdout evaluation.
+
+![ML Lab: mean selection regret on in-distribution and shifted fictional problems](docs/ml-lab/presentation/figures/performance.png)
+
+**An instructive negative result:** the selected logistic model lowered in-distribution
+mean regret by 33.44% on 90 eligible cases, but failed the uncertainty and critical-service
+promotion gates. On 99 shifted cases, regret was 714.45% higher than the training-selected
+fixed policy. All failures and per-case evidence remain inspectable; no model was retuned
+after reveal. These are simulator outcomes, not measured utility performance.
+
+**[Explore ML Lab](docs/ml-lab/README.md) · [Full research report](docs/ml-lab/presentation/REPORT.md) · [Reproduce the experiment](docs/ml-lab/REPRODUCE.md)**
+
+The existing dashboard, historical research, four-map gallery and v1.1.0 defaults remain
+unchanged. ML Lab recommends retaining its fixed comparator rather than promoting the
+learned selector.
+
 ## Research findings and reproducibility
 
 Frozen scenarios, independent validation and reproducible reports make unsuccessful
