@@ -1,0 +1,42 @@
+{
+  "base": "a5d17abad366e5ca41df35f46a687c0d6fbb8bf8",
+  "protected_paths": [
+    "data/raw",
+    "data/processed",
+    "data/synthetic",
+    "pipeline",
+    "benchmarks",
+    "research",
+    "backend/optimization.py",
+    "backend/simulation.py",
+    "backend/simulation_contracts.py",
+    "backend/planning.py",
+    "backend/engine.py",
+    "backend/config.py",
+    "backend/risk_rules.py",
+    "backend/runtime.py",
+    "backend/synthetic_api.py",
+    "docs/benchmarks",
+    "docs/research/phase1",
+    "docs/research/phase3",
+    "docs/research/phase4",
+    "docs/research/phase5",
+    "docs/research/phase6",
+    "frontend/public/preparedness",
+    "frontend/src/PowerPath.tsx",
+    "frontend/src/offline.ts"
+  ],
+  "all_protected_unchanged": true,
+  "checksum_counts": {
+    "phase5": 66,
+    "phase6": 10
+  },
+  "source_sha256": {
+    "Data1.zip": "08ac47b7dd7f43cde56509644d7292d0b6978dcd62300912b4ecf0a2c3c6eca3",
+    "Data2.zip": "13bea1c84636989a6475f481d67f25b25a17fcac8b77f674a5157e3a1d105f00",
+    "Install_Labor_HackOHIO.xlsx": "e11fb199592bf26ef7f6e0bd11fab3de00265cde7649fc9b9a0cd54fc2e96e3b",
+    "matched_upstream.zip": "13f8d9da49843c959059b4074417c47671105131cdc4bfe9daf7b534e5f522c3"
+  },
+  "v1_0_0_tag": "c2b2d37aaf5e74a03190746c12badacc6bc86369",
+  "v1_0_0_commit": "b324c1b355cda60035fb11fa32bcddf10931f649"
+}

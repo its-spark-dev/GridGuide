@@ -8,11 +8,11 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from backend.api import create_app
-from backend.synthetic_api import create_synthetic_app
+from backend.operator_api import create_operator_app
 from backend.contracts import CustomerPathFrame
 
 schema = create_app().openapi()
-synthetic = create_synthetic_app().openapi()
+synthetic = create_operator_app().openapi()
 for section, additions in ((schema["paths"], synthetic["paths"]),
                            (schema["components"]["schemas"], synthetic["components"]["schemas"])):
     for key, value in additions.items():

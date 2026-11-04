@@ -1,0 +1,98 @@
+{
+  "blocking_gates": [
+    "county_time_coverage",
+    "event_reconstruction",
+    "final_event_count",
+    "labels_both_classes",
+    "outcome_payload",
+    "predictor_availability",
+    "research_permission",
+    "split_integrity",
+    "zero_missing_semantics"
+  ],
+  "decision": "no_go",
+  "evidence_class": "prototype policy",
+  "final_outage_event_clusters": null,
+  "gates": {
+    "county_time_coverage": {
+      "evidence": [
+        "source_audit.json:county_time_outage_coverage"
+      ],
+      "reason": "No measured eligible daily windows for fixed Ohio/Pennsylvania populations.",
+      "status": "unverified"
+    },
+    "event_reconstruction": {
+      "evidence": [
+        "source_audit.json:noaa"
+      ],
+      "reason": "Two storm snapshots audited; no outage join, full five-year county/time crosswalk or connected event clustering validated.",
+      "status": "unverified"
+    },
+    "final_event_count": {
+      "evidence": [
+        "source_audit.json:noaa"
+      ],
+      "reason": "Storm episode counts cannot establish 30 independent final outage clusters and both classes.",
+      "status": "unverified"
+    },
+    "labels_both_classes": {
+      "evidence": [
+        "source_audit.json:eligible_outage_labels"
+      ],
+      "reason": "No positive/negative outage label panel constructed.",
+      "status": "unverified"
+    },
+    "outcome_payload": {
+      "evidence": [
+        "source_audit.json:responses"
+      ],
+      "reason": "No EAGLE-I observation payload acquired through the bounded anonymous probes.",
+      "status": "fail"
+    },
+    "predictor_availability": {
+      "evidence": [
+        "RISK_PROTOCOL.md#features-and-temporal-availability"
+      ],
+      "reason": "No timestamped historical predictor panel or publication latency evidence acquired.",
+      "status": "unverified"
+    },
+    "research_permission": {
+      "evidence": [
+        "source_audit.json:ornl_datacite_rights",
+        "RISK_FINDINGS.md#rights-and-access"
+      ],
+      "reason": "Outcome-payload research permission not established.",
+      "status": "unverified"
+    },
+    "split_integrity": {
+      "evidence": [
+        "RISK_PROTOCOL.md#split-and-event-controls"
+      ],
+      "reason": "Rules and executable guards exist; real-data event-separated partitions do not.",
+      "status": "unverified"
+    },
+    "zero_missing_semantics": {
+      "evidence": [
+        "https://www.nature.com/articles/s41597-024-03095-5#Sec3"
+      ],
+      "reason": "Omitted records conflate zeros and gaps; no county-time collection-success mask acquired. Full observed low-count windows remain unmeasured.",
+      "status": "fail"
+    }
+  },
+  "input_sha256": {
+    "docs/research/RISK_PROTOCOL.md": "586ebf3d30329d68cc872ac7ee07416be5008c2774ea0b84f641936b6f170ff3",
+    "docs/research/phase4/evidence_review.json": "dd4d1ab42a20f3b5a1f225b643494409ec9e8b021ac88f881a032648c9144742",
+    "docs/research/phase4/source_audit.json": "f29d558ae9d85add4550d2a191cfb9115dfa9bbbe5a69141e6597e744d5e0e52",
+    "research/risk/audit.py": "8f13943ce67e35e70d2d476f1e3f71124912292dc06d6a4b129a510b66bb9cbc",
+    "research/risk/validation.py": "7a890b42c538ce7e92dc51c0099e4a7ad07a2154b34e8d810da120ddf889b693",
+    "scripts/audit_risk_sources.py": "d7caee2549cc81c28fd08eb08dd1d3e3f93aafe787fbcd3ae8e7d29144ae17e2",
+    "scripts/evaluate_risk_feasibility.py": "61726abb77042f6777c1ad495f75b9b1e8d61f4d216c4af2b0b7b92a1e7f1be4",
+    "scripts/probe_risk_sources.py": "9a8cc36b4974d27b1b9fb645443434ddc9702c7cad27b7dae54a371c7964d3c1"
+  },
+  "integration_authorized": false,
+  "modeling_authorized": false,
+  "models_fitted": 0,
+  "predictive_metrics": null,
+  "real_data_split_validation": null,
+  "version": "risk-feasibility-v1"
+}

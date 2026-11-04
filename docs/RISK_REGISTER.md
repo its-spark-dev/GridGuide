@@ -101,5 +101,28 @@ Same-origin scripts/extensions can access storage; content hashes are not signat
 or an XSS defense. Exact allowlists exclude personal/source data; no authentication or
 encryption is implied. Unknown snapshot schemas fail closed and require explicit
 replacement; cache updates activate only through the offered update action while a
-page is open. Manual screen-reader and non-Chromium coverage remain pending. G6 must
-review these usability/privacy tradeoffs before merge. See the [packet](planning/V1_1_0_PHASE6.md).
+page is open. G6 was approved with human-reported passes and unknown detailed speech/focus
+observations; non-Chromium coverage remains unverified. The owner accepted these limits
+without further retest. See the [packet](planning/V1_1_0_PHASE6.md).
+
+## Phase 7 operator review risks
+
+The eight-case fictional workflow is not dispatch, utility approval or a new performance
+benchmark. G3 remains optional/frozen, with a failed promotion target and case tradeoffs
+visible. Added precedence can worsen cost or block additional work; validation prevents
+infeasible schedules but does not establish operational wisdom. Unknown clearance cannot
+be overridden and unresolved times never become finite ETRs.
+
+Review checkboxes/reasons are declarations, not evidence of identity, attention or authority.
+An artifact controller can rewrite a valid record and checksum; replay establishes only
+schema, input, version, schedule, metric and review-binding consistency. No authenticated
+audit claim, persistent operator account or identity is offered. Session state disappears
+on reload; downloads require the user to manage their own copies. Same-origin compromise
+remains outside the integrity boundary.
+
+The catalog pin and strict request/export schemas exclude challenge-source inputs and
+arbitrary free text. Recomputed errors are sanitized. Request size/concurrency bounds do
+not constitute a completed production security assessment. No hosting/deployment was done.
+G7 manual VoiceOver observations remain unknown; Chromium automation is the executed UI
+evidence. Detailed G5 intervals are deferred; all prior failed convergence diagnostics,
+G4 No-Go and G6 storage/browser limitations remain. See [G7](planning/V1_1_0_PHASE7.md).

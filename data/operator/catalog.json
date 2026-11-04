@@ -1,0 +1,1010 @@
+{
+  "cases": [
+    {
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-crew-0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "micro",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-branch-0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-0-0"
+            ],
+            "id": "syn-group-0",
+            "required_tasks": [
+              "syn-task-0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-1-0",
+              "syn-customer-1-1",
+              "syn-customer-1-2",
+              "syn-customer-1-3",
+              "syn-customer-1-4",
+              "syn-customer-1-5",
+              "syn-customer-1-6",
+              "syn-customer-1-7",
+              "syn-customer-1-8",
+              "syn-customer-1-9"
+            ],
+            "id": "syn-group-1",
+            "required_tasks": [
+              "syn-task-1"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-micro-weighted",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 0,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-task-0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "4"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      },
+      "protected": {
+        "baseline_policy": "customer-count-v1",
+        "best_bound_ticks": 54000.0,
+        "fallback_reason": null,
+        "primary_optimal": true,
+        "recorded_seconds": 0.001475999946705997,
+        "returned_source": "solver",
+        "schedule": {
+          "assignments": [
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 18000,
+              "start_tick": 3600,
+              "task_id": "syn-task-0"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 3600,
+              "start_tick": 0,
+              "task_id": "syn-task-1"
+            }
+          ],
+          "policy": "restoration-cpsat-v1",
+          "problem_fingerprint": "dbbbbb15ac7ffe3de43d6106f587e684aa9f8db938569c373d8bf94ceedf4733",
+          "unscheduled_tasks": [],
+          "version": "benchmark-schedule-v1"
+        },
+        "solver_status": "OPTIMAL"
+      }
+    },
+    {
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-crew-0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "micro",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-branch-0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-0-0",
+              "syn-customer-0-1"
+            ],
+            "id": "syn-group-0",
+            "required_tasks": [
+              "syn-task-0",
+              "syn-task-1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-1-0"
+            ],
+            "id": "syn-group-1",
+            "required_tasks": [
+              "syn-task-0"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-micro-overlap",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 0,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-task-0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "2"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "3"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      },
+      "protected": {
+        "baseline_policy": "customer-count-v1",
+        "best_bound_ticks": 43200.0,
+        "fallback_reason": null,
+        "primary_optimal": true,
+        "recorded_seconds": 0.0013527499977499247,
+        "returned_source": "solver",
+        "schedule": {
+          "assignments": [
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 7200,
+              "start_tick": 0,
+              "task_id": "syn-task-0"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 18000,
+              "start_tick": 7200,
+              "task_id": "syn-task-1"
+            }
+          ],
+          "policy": "restoration-cpsat-v1",
+          "problem_fingerprint": "7ff4e0af4f5d56f2824e3daebde69cf2956399603aa1dea754257de55604fe68",
+          "unscheduled_tasks": [],
+          "version": "benchmark-schedule-v1"
+        },
+        "solver_status": "OPTIMAL"
+      }
+    },
+    {
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-crew-0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "micro",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-branch-0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-0-0"
+            ],
+            "id": "syn-group-0",
+            "required_tasks": [
+              "syn-task-0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-1-0"
+            ],
+            "id": "syn-group-1",
+            "required_tasks": [
+              "syn-task-1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-2",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-2-0"
+            ],
+            "id": "syn-group-2",
+            "required_tasks": [
+              "syn-task-2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-3",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-3-0"
+            ],
+            "id": "syn-group-3",
+            "required_tasks": [
+              "syn-task-3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-4",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-4-0"
+            ],
+            "id": "syn-group-4",
+            "required_tasks": [
+              "syn-task-4"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-5",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-5-0"
+            ],
+            "id": "syn-group-5",
+            "required_tasks": [
+              "syn-task-5"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-6",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-6-0"
+            ],
+            "id": "syn-group-6",
+            "required_tasks": [
+              "syn-task-6"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-7",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-7-0"
+            ],
+            "id": "syn-group-7",
+            "required_tasks": [
+              "syn-task-7"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-micro-chain-eight",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 0,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-task-0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-1",
+            "prerequisites": [
+              "syn-task-0"
+            ],
+            "report_order": 1,
+            "total_person_hours": "1"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-2",
+            "prerequisites": [
+              "syn-task-1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "1"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-3",
+            "prerequisites": [
+              "syn-task-2"
+            ],
+            "report_order": 3,
+            "total_person_hours": "1"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-4",
+            "prerequisites": [
+              "syn-task-3"
+            ],
+            "report_order": 4,
+            "total_person_hours": "1"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-5",
+            "prerequisites": [
+              "syn-task-4"
+            ],
+            "report_order": 5,
+            "total_person_hours": "1"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-6",
+            "prerequisites": [
+              "syn-task-5"
+            ],
+            "report_order": 6,
+            "total_person_hours": "1"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-7",
+            "prerequisites": [
+              "syn-task-6"
+            ],
+            "report_order": 7,
+            "total_person_hours": "1"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      },
+      "protected": {
+        "baseline_policy": "customer-count-v1",
+        "best_bound_ticks": 129600.0,
+        "fallback_reason": null,
+        "primary_optimal": true,
+        "recorded_seconds": 0.002443542005494237,
+        "returned_source": "solver",
+        "schedule": {
+          "assignments": [
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 3600,
+              "start_tick": 0,
+              "task_id": "syn-task-0"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 7200,
+              "start_tick": 3600,
+              "task_id": "syn-task-1"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 10800,
+              "start_tick": 7200,
+              "task_id": "syn-task-2"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 14400,
+              "start_tick": 10800,
+              "task_id": "syn-task-3"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 18000,
+              "start_tick": 14400,
+              "task_id": "syn-task-4"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 21600,
+              "start_tick": 18000,
+              "task_id": "syn-task-5"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 25200,
+              "start_tick": 21600,
+              "task_id": "syn-task-6"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 28800,
+              "start_tick": 25200,
+              "task_id": "syn-task-7"
+            }
+          ],
+          "policy": "restoration-cpsat-v1",
+          "problem_fingerprint": "42dc2da6ad9117ddbe74455e9dcb8c90878329a0ca40d9249dff5ba8c18b71b3",
+          "unscheduled_tasks": [],
+          "version": "benchmark-schedule-v1"
+        },
+        "solver_status": "OPTIMAL"
+      }
+    },
+    {
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-crew-0",
+            "people": 4
+          },
+          {
+            "available_tick": 3600,
+            "id": "syn-crew-1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "micro",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-branch-0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-0-0",
+              "syn-customer-0-1"
+            ],
+            "id": "syn-group-0",
+            "required_tasks": [
+              "syn-task-0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-1-0",
+              "syn-customer-1-1",
+              "syn-customer-1-2"
+            ],
+            "id": "syn-group-1",
+            "required_tasks": [
+              "syn-task-1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-2",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-2-0"
+            ],
+            "id": "syn-group-2",
+            "required_tasks": [
+              "syn-task-2"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-micro-two-crews",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 0,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-task-0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "3"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "2"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-2",
+            "prerequisites": [],
+            "report_order": 2,
+            "total_person_hours": "1"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      },
+      "protected": {
+        "baseline_policy": "customer-count-v1",
+        "best_bound_ticks": 61200.0,
+        "fallback_reason": null,
+        "primary_optimal": true,
+        "recorded_seconds": 0.002060333965346217,
+        "returned_source": "solver",
+        "schedule": {
+          "assignments": [
+            {
+              "crew_id": "syn-crew-1",
+              "end_tick": 14400,
+              "start_tick": 3600,
+              "task_id": "syn-task-0"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 7200,
+              "start_tick": 0,
+              "task_id": "syn-task-1"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 10800,
+              "start_tick": 7200,
+              "task_id": "syn-task-2"
+            }
+          ],
+          "policy": "restoration-cpsat-v1",
+          "problem_fingerprint": "611c66b9b8fa908c18a99e7a9229dfd5e9498087e911ad7bb8bc64a751140e67",
+          "unscheduled_tasks": [],
+          "version": "benchmark-schedule-v1"
+        },
+        "solver_status": "OPTIMAL"
+      }
+    },
+    {
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-crew-0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "micro",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-branch-0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-0-0",
+              "syn-customer-0-1",
+              "syn-customer-0-2",
+              "syn-customer-0-3"
+            ],
+            "id": "syn-group-0",
+            "required_tasks": [
+              "syn-task-0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-1-0",
+              "syn-customer-1-1"
+            ],
+            "id": "syn-group-1",
+            "required_tasks": [
+              "syn-task-1"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-micro-blocked",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 0,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "blocked",
+            "id": "syn-task-0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "2"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-1",
+            "prerequisites": [
+              "syn-task-0"
+            ],
+            "report_order": 1,
+            "total_person_hours": "1"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      },
+      "protected": {
+        "baseline_policy": "customer-count-v1",
+        "best_bound_ticks": null,
+        "fallback_reason": "no_executable_tasks",
+        "primary_optimal": false,
+        "recorded_seconds": 0.0003255420015193522,
+        "returned_source": "baseline",
+        "schedule": {
+          "assignments": [],
+          "policy": "customer-count-v1",
+          "problem_fingerprint": "3ecb885f490aa2cbab89455abbb887ca15cc639af2e98c1903ce3e5af8fdbac0",
+          "unscheduled_tasks": [
+            "syn-task-0",
+            "syn-task-1"
+          ],
+          "version": "benchmark-schedule-v1"
+        },
+        "solver_status": "not_run"
+      }
+    },
+    {
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-crew-0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "micro",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-branch-0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-0-0",
+              "syn-customer-0-1"
+            ],
+            "id": "syn-group-0",
+            "required_tasks": [
+              "syn-task-0"
+            ],
+            "unresolved_dependency": true
+          },
+          {
+            "branch": "syn-branch-1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-1-0",
+              "syn-customer-1-1",
+              "syn-customer-1-2"
+            ],
+            "id": "syn-group-1",
+            "required_tasks": [
+              "syn-task-1"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-micro-unknown",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 0,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-task-0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": null
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      },
+      "protected": {
+        "baseline_policy": "customer-count-v1",
+        "best_bound_ticks": 1220400.0,
+        "fallback_reason": null,
+        "primary_optimal": true,
+        "recorded_seconds": 0.0008502910495735705,
+        "returned_source": "solver",
+        "schedule": {
+          "assignments": [
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 3600,
+              "start_tick": 0,
+              "task_id": "syn-task-1"
+            }
+          ],
+          "policy": "restoration-cpsat-v1",
+          "problem_fingerprint": "5957c2cea6a91f330ce2d710146032a214a1f7bddc0d1a59b27680bcc796512d",
+          "unscheduled_tasks": [
+            "syn-task-0"
+          ],
+          "version": "benchmark-schedule-v1"
+        },
+        "solver_status": "OPTIMAL"
+      }
+    },
+    {
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-crew-0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "micro",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-branch-0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-0-0"
+            ],
+            "id": "syn-group-0",
+            "required_tasks": [
+              "syn-task-0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-1-0"
+            ],
+            "id": "syn-group-1",
+            "required_tasks": [
+              "syn-task-1"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-micro-censored",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 0,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-task-0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "200"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      },
+      "protected": {
+        "baseline_policy": "legacy-critical-proxy-first-adapter-v1",
+        "best_bound_ticks": 727200.0,
+        "fallback_reason": null,
+        "primary_optimal": true,
+        "recorded_seconds": 0.0009880409925244749,
+        "returned_source": "solver",
+        "schedule": {
+          "assignments": [
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 723600,
+              "start_tick": 3600,
+              "task_id": "syn-task-0"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 3600,
+              "start_tick": 0,
+              "task_id": "syn-task-1"
+            }
+          ],
+          "policy": "restoration-cpsat-v1",
+          "problem_fingerprint": "57d8955defd3ff285e6152581a5f60874da32551f0f75660220bf8206ee5490c",
+          "unscheduled_tasks": [],
+          "version": "benchmark-schedule-v1"
+        },
+        "solver_status": "OPTIMAL"
+      }
+    },
+    {
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-crew-0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "micro",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-branch-0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-customer-0-0"
+            ],
+            "id": "syn-group-0",
+            "required_tasks": [
+              "syn-task-0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-branch-1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-customer-1-0",
+              "syn-customer-1-1",
+              "syn-customer-1-2",
+              "syn-customer-1-3",
+              "syn-customer-1-4",
+              "syn-customer-1-5",
+              "syn-customer-1-6",
+              "syn-customer-1-7",
+              "syn-customer-1-8",
+              "syn-customer-1-9"
+            ],
+            "id": "syn-group-1",
+            "required_tasks": [
+              "syn-task-1"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-micro-critical",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 0,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-task-0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "4"
+          },
+          {
+            "access": "clear",
+            "id": "syn-task-1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      },
+      "protected": {
+        "baseline_policy": "customer-count-v1",
+        "best_bound_ticks": 54000.0,
+        "fallback_reason": null,
+        "primary_optimal": true,
+        "recorded_seconds": 0.001013208006042987,
+        "returned_source": "solver",
+        "schedule": {
+          "assignments": [
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 18000,
+              "start_tick": 3600,
+              "task_id": "syn-task-0"
+            },
+            {
+              "crew_id": "syn-crew-0",
+              "end_tick": 3600,
+              "start_tick": 0,
+              "task_id": "syn-task-1"
+            }
+          ],
+          "policy": "restoration-cpsat-v1",
+          "problem_fingerprint": "5a2396cb2fe70f47807ed89d64de461e80e34f2644d7c4ff0c2bf8fcaedb19e3",
+          "unscheduled_tasks": [],
+          "version": "benchmark-schedule-v1"
+        },
+        "solver_status": "OPTIMAL"
+      }
+    }
+  ],
+  "source_artifact_sha256": "e38b432667428df464555c8dffa5c8bc7b9e2530336626d5273ec5c44964c0f5",
+  "version": "operator-catalog-v1"
+}

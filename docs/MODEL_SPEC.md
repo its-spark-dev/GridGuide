@@ -189,3 +189,28 @@ at build time. UI selection and hash verification perform no scheduling arithmet
 
 G3's failed 5% promotion target, G4 No-Go and G5's 195 stable/15 unstable bounded
 convergence finding remain unchanged. No G5 intervals are displayed in this phase.
+
+## Phase 7 review adapter (no numerical model change)
+
+`operator-comparison-v1` composes the unchanged G2 input/schedule/metric versions and
+G3 protected reference results. Eight pinned microcases use their existing independently
+authored efforts, membership and one-effective-worker assumption. Four policies are
+recomputed and independently validated on identical inputs; no new duration/risk rule,
+AEP multiplier, simulation distribution or calibrated outcome is introduced.
+
+Additional repair precedence is explicitly user-declared; original ranking/duration
+conventions remain prototype policy. Input origin stays synthetic and observed outcomes,
+unknown clearance and actual efficiency remain unavailable. Completed customer-hours,
+restricted 168-hour scoring and unresolved/known-later censored outcomes retain G2 definitions.
+
+The fixed release/person-hour recommendation remains unchanged. Per-instance best-of-four
+uses G3's integer objective, executable makespan, then policy ID; it is a separate reference.
+Optional frozen CP-SAT retains status, fallback, proof and bound provenance. The displayed
+relative gap uses `max(0, objective_ticks-bound)/max(1, abs(objective_ticks))`, or null for
+an unavailable bound. No fresh solve or wall-time claim is made. Changed precedence
+invalidates the matching frozen CP-SAT artifact; it cannot silently reuse the old result.
+
+Five explicit acknowledgements bind a reviewed demonstration to canonical input/result
+fingerprints and versions. Replay recomputes all four baselines and independently checks
+the frozen experimental schedule and every release milestone. Hashes do not authenticate
+reviewers. The [G7 packet](planning/V1_1_0_PHASE7.md) defines contracts and exact boundaries.

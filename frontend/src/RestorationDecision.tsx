@@ -83,6 +83,7 @@ export function RestorationDecision({ active = true }: { active?: boolean }) {
   return <section className="restoration-decision" aria-labelledby="decision-title" data-testid="restoration-decision">
     <h2 id="decision-title" className="sr-only">Restoration decision support</h2>
 
+    <p><a href="/operator/">Open the separate fictional operator review workspace</a> · No challenge data is transferred.</p>
     <section className="decision-policy-section" aria-labelledby="tradeoff-title" data-testid="policy-tradeoff">
       <div className="decision-section-heading"><div><p className="decision-step">01 · Compare priorities</p><h3 id="tradeoff-title">Same repairs. Different priorities.</h3><p className="decision-data-lens"><Icon name="network" />Source-derived inputs → two prototype decision lenses</p></div><p className="decision-policy-boundary">GridGuide prototype policy · not an AEP dispatch rule</p></div>
       <fieldset className="decision-policy"><legend className="sr-only">Choose a scenario policy</legend>{[true, false].map(critical => {
