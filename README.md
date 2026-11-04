@@ -67,19 +67,25 @@ challenge-local application, select the **Golden upstream fuse**, **Golden trans
 map, dependent-customer areas, source evidence and crew assignment. Optional OpenStreetMap
 streets provide geographic context; the selection is separate from the recommended repair.
 
-![Previously published v1.0.0 Grid insights map with Historical fuse replay selected, two generalized customer areas, equipment marker, source evidence and visible attribution](docs/media/v1.0.0/evidence.png)
+<table>
+<tr>
+<td width="50%"><a href="docs/media/readme/grid-insights/01-asset-1e0e3d979b0f64d6c949.png"><img src="docs/media/readme/grid-insights/01-asset-1e0e3d979b0f64d6c949.png" alt="Golden upstream fuse selected in the original Grid insights map workspace" width="100%"></a><br><strong>Golden upstream fuse</strong></td>
+<td width="50%"><a href="docs/media/readme/grid-insights/02-asset-973c492bfd0e358f7d68.png"><img src="docs/media/readme/grid-insights/02-asset-973c492bfd0e358f7d68.png" alt="Golden transformer selected in the original Grid insights map workspace" width="100%"></a><br><strong>Golden transformer</strong></td>
+</tr>
+<tr>
+<td width="50%"><a href="docs/media/readme/grid-insights/03-asset-4271bb66fe1b6174f491.png"><img src="docs/media/readme/grid-insights/03-asset-4271bb66fe1b6174f491.png" alt="Historical fuse replay selected in the original Grid insights map workspace" width="100%"></a><br><strong>Historical fuse replay</strong></td>
+<td width="50%"><a href="docs/media/readme/grid-insights/04-asset-dd55cf26c71b6d415bc7.png"><img src="docs/media/readme/grid-insights/04-asset-dd55cf26c71b6d415bc7.png" alt="Critical-context fuse selected in the original Grid insights map workspace" width="100%"></a><br><strong>Critical-context fuse</strong></td>
+</tr>
+</table>
 
-*Existing v1.0.0 capture, retained unchanged. Source overlays: generalized AEP challenge
-GIS. Basemap © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright).*
-The cells show validated dependencies at reduced geographic precision, not outage
-boundaries or verified street-level electrical connections. Nearby critical-service
-context does not establish a facility's electrical attachment.
+*Four authentic v1.0.0 captures, unchanged from the reviewed originals. Select an image
+for full resolution. Source overlays: generalized AEP challenge GIS. Basemap ©
+[OpenStreetMap contributors](https://www.openstreetmap.org/copyright).*
 
-**Four-candidate gallery:** four new, individually selected map screenshots and a 2×2
-private review gallery have been prepared. Publication permissions for new source-derived
-maps remain unresolved, so those images are withheld from this public README.
-[Candidate list, capture checks and permission disposition](docs/media/readme/MAP_GALLERY_REVIEW.md).
-The single historical image above is not a substitute claim that all four new maps are published.
+The upstream fuse and transformer share a generalized cell but have different dependency
+counts and repair prerequisites. Cells are not outage boundaries; streets do not verify
+electrical connections. Critical-service proximity does not establish facility attachment.
+[Capture provenance and publication record](docs/media/readme/MAP_GALLERY_REVIEW.md).
 
 **Compare and review in the public fictional demo.** The v1.1.0 operator workspace uses
 non-geographic fictional inputs in a separate exercise; it does not supply these source
