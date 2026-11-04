@@ -61,18 +61,48 @@ communication previews belong to authorized challenge-local mode.
 
 ### Grid insights — compare, question and review
 
-Move from the customer journey into a **separate fictional operator exercise**. Compare
-FIFO, customer-count, release/person-hour and critical-proxy-first policies under the
-same assumptions. See how repair order affects modeled customer waiting, critical-service
-latency and fairness. Completed customer-hours and restricted-horizon customer-hours
-remain distinct, with unresolved and censored outcomes visible.
+**Inspect the original geographic repair workspace.** In the preserved, authorized
+challenge-local application, select the **Golden upstream fuse**, **Golden transformer**,
+**Historical fuse replay** or **Critical-context fuse**. Each selection connects its
+map, dependent-customer areas, source evidence and crew assignment. Optional OpenStreetMap
+streets provide geographic context; the selection is separate from the recommended repair.
 
-![Grid insights comparing four repair policies, including customer-hours, critical-service latency, fairness and unresolved outcomes](docs/media/v1.1.0-integrated/10-policies.png)
+![Previously published v1.0.0 Grid insights map with Historical fuse replay selected, two generalized customer areas, equipment marker, source evidence and visible attribution](docs/media/v1.0.0/evidence.png)
+
+*Existing v1.0.0 capture, retained unchanged. Source overlays: generalized AEP challenge
+GIS. Basemap © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright).*
+The cells show validated dependencies at reduced geographic precision, not outage
+boundaries or verified street-level electrical connections. Nearby critical-service
+context does not establish a facility's electrical attachment.
+
+**Four-candidate gallery:** four new, individually selected map screenshots and a 2×2
+private review gallery have been prepared. Publication permissions for new source-derived
+maps remain unresolved, so those images are withheld from this public README.
+[Candidate list, capture checks and permission disposition](docs/media/readme/MAP_GALLERY_REVIEW.md).
+The single historical image above is not a substitute claim that all four new maps are published.
+
+**Compare and review in the public fictional demo.** The v1.1.0 operator workspace uses
+non-geographic fictional inputs in a separate exercise; it does not supply these source
+maps. Compare FIFO, customer-count, release/person-hour and critical-proxy-first policies
+under identical assumptions. See how repair order affects modeled customer waiting,
+critical-service latency and fairness. Completed customer-hours and restricted-horizon
+customer-hours remain distinct, with unresolved and censored outcomes visible.
 
 Add a supported precedence constraint, inspect the Python-recomputed plan, acknowledge
 its limitations and export JSON plus a readable summary. Changed settings invalidate
 review. The export can be replayed locally; checksums establish consistency, not reviewer
 identity or a tamper-proof audit trail. Nothing dispatches crews or confirms restoration.
+
+<details>
+<summary>View the fictional policy comparison and operator review</summary>
+
+![Fictional Grid insights comparing four repair policies and their customer-hours, critical-service and fairness tradeoffs](docs/media/v1.1.0-integrated/10-policies.png)
+
+![Fictional operator review with explicit acknowledgements and a reproducible export summary](docs/media/v1.1.0-integrated/12-reviewed.png)
+
+These are the non-geographic public demonstration, not the challenge-local map workspace.
+
+</details>
 
 [Captioned walkthrough and screenshot provenance](docs/media/v1.1.0-integrated/README.md) ·
 [Additional preparedness capture](docs/media/readme/README.md) ·
