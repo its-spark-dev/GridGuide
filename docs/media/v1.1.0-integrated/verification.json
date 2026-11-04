@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "duration": 284.32,
+  "width": 1280,
+  "height": 800,
+  "scene_count": 16,
+  "actual_playback": true,
+  "caption_checks": [
+    {
+      "scene": "01-overview",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "02-scenario",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "03-completed",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "04-blocked",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "05-unresolved",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "06-explanation",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "07-risk",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "08-handoff",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "09-offline",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "10-policies",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "11-tradeoff",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "12-reviewed",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "13-override",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "14-export",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "15-replay",
+      "caption_matches": true,
+      "seek_decodes": true
+    },
+    {
+      "scene": "16-closing",
+      "caption_matches": true,
+      "seek_decodes": true
+    }
+  ],
+  "browser": "156.0.8078.80",
+  "scope": "Chromium decode, playback, seek and cue alignment; no manual accessibility claim"
+}

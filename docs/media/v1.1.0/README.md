@@ -1,3 +1,11 @@
+# Historical pre-continuity G9 demonstration
+
+This recording depicts the superseded minimal public interface. It is retained
+unchanged as G9 evidence, not the current release-facing demonstration. Use the
+[new integrated demonstration](../v1.1.0-integrated/README.md) for the corrected UI.
+The capture instructions below describe the historical harness at the recorded commit;
+the current harness targets the integrated application.
+
 # Authentic v1.1.0 release-candidate demonstration
 
 **Recorded:** approximately 4 minutes 7 seconds of silent, unedited browser footage from

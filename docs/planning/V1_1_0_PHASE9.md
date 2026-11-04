@@ -1,5 +1,11 @@
 # Phase 9 — v1.1.0 release-candidate preservation (G9 review)
 
+> Historical G9 packet: PR #11 was owner-approved and merged, followed by the approved
+> continuity correction in PR #12. The original evidence, hashes and review-time
+> checklist below are retained. Current release-facing media and package identity:
+> [integrated demonstration](../media/v1.1.0-integrated/README.md). No publication or
+> deployment authorization follows from those merges.
+
 **Recommendation: Go for independent G9 review of the local fictional portfolio
 candidate; no approval is self-issued. No-Go for public hosting under current evidence.**
 Merge, v1.1.0 tagging, GitHub Release publication and deployment remain unauthorized.

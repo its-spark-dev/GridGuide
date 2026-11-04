@@ -2,7 +2,7 @@
 
 For the v1.1.0 release candidate: [release notes](releases/v1.1.0.md),
 [reproduction guide](REPRODUCING_V1_1.md), [final research report](benchmarks/v1.1.0.md),
-[authentic demonstration](media/v1.1.0/README.md), and [G9 review packet](planning/V1_1_0_PHASE9.md).
+[authentic demonstration](media/v1.1.0-integrated/README.md), and [G9 review packet](planning/V1_1_0_PHASE9.md).
 The older challenge documents below remain historical/technical references.
 
 Start with the [project walkthrough](../README.md#product-walkthrough) or [local setup](../README.md#getting-started). For a technical review, read the architecture, model specification, and verification record in that order.
