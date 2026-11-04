@@ -1,0 +1,79 @@
+name: ML opportunity audit
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/ml-opportunity.yml'
+      - 'research/ml_opportunity/**'
+      - 'docs/research/ml-opportunity/**'
+      - 'scripts/check_opportunity_preservation.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ml-opportunity-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-free-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            backend
+            benchmarks
+            docs
+            research
+            scripts
+            tests
+            frontend
+            pipeline
+            deploy
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+      - name: Source absence and existing locked dependencies
+        run: |
+          test ! -e data/raw
+          test ! -e data/processed
+          test ! -e data/external
+          test ! -e data/prepared
+          python -m venv .venv-ml
+          .venv-ml/bin/pip install --require-hashes -r requirements-ml.lock
+          .venv-ml/bin/pip check
+      - name: Analytic estimands, exact scheduling, boundary and archived-result checks
+        run: .venv-ml/bin/python -m unittest discover -s research/ml_opportunity/tests -t . -v
+      - name: Recompute every historical cohort and all fresh exact expectations twice
+        run: |
+          .venv-ml/bin/python -m research.ml_opportunity --exact --output /tmp/opportunity-a
+          .venv-ml/bin/python -m research.ml_opportunity --exact --output /tmp/opportunity-b
+          diff -r /tmp/opportunity-a /tmp/opportunity-b
+          diff -r docs/research/ml-opportunity/evidence /tmp/opportunity-a
+      - name: Regenerate source-bound report and plot twice
+        run: |
+          .venv-ml/bin/python -m research.ml_opportunity.report --evidence /tmp/opportunity-a --output /tmp/opportunity-page-a
+          .venv-ml/bin/python -m research.ml_opportunity.report --evidence /tmp/opportunity-b --output /tmp/opportunity-page-b
+          diff -r /tmp/opportunity-page-a /tmp/opportunity-page-b
+          cmp docs/research/ml-opportunity/README.md /tmp/opportunity-page-a/README.md
+          cmp docs/research/ml-opportunity/REPORT.md /tmp/opportunity-page-a/REPORT.md
+      - name: Historical learned and event-environment regression suites
+        run: |
+          .venv-ml/bin/python -m unittest discover -s research/learned_dispatch/tests -t . -v
+          .venv-ml/bin/python -m unittest discover -s research/adaptive_dispatch/tests -v
+          .venv-ml/bin/python -m unittest discover -s research/ml_lab/tests -v
+          .venv-ml/bin/python -m unittest discover -s research/outage_ml/tests -v
+      - name: Full baseline and historical freeze preservation
+        run: |
+          .venv-ml/bin/python scripts/check_opportunity_preservation.py
+          .venv-ml/bin/python scripts/check_learned_preservation.py
+          .venv-ml/bin/python scripts/check_frozen_artifacts.py

@@ -1,0 +1,4398 @@
+{
+  "comparisons": {
+    "downstream": {
+      "candidate": 1.5925544064228323,
+      "delta": -0.010322512492651398,
+      "delta_ci95": [
+        -0.022197420634920695,
+        0.0
+      ],
+      "groups": 12,
+      "ratio": 0.9935600092740523,
+      "ratio_ci95": [
+        0.985898752612403,
+        1.0
+      ],
+      "reference": 1.6028769189154837,
+      "sd_delta": 0.020464231498814767
+    },
+    "fifo": {
+      "candidate": 1.5925544064228323,
+      "delta": -0.31220954273899376,
+      "delta_ci95": [
+        -0.6042029039514509,
+        -0.09726640719762329
+      ],
+      "groups": 12,
+      "ratio": 0.8360901659880855,
+      "ratio_ci95": [
+        0.7298543774175154,
+        0.9408084569483873
+      ],
+      "reference": 1.904763949161826,
+      "sd_delta": 0.4783475610015438
+    },
+    "median": {
+      "candidate": 1.5925544064228323,
+      "delta": -0.00020208700764256146,
+      "delta_ci95": [
+        -0.0006062610229278231,
+        0.0
+      ],
+      "groups": 12,
+      "ratio": 0.999873121215656,
+      "ratio_ci95": [
+        0.9995388873284266,
+        1.0
+      ],
+      "reference": 1.5927564934304748,
+      "sd_delta": 0.0007000499295729529
+    }
+  },
+  "group_means": {
+    "downstream": {
+      "opportunity-000": 1.5833333333333333,
+      "opportunity-001": 0.5840657552083334,
+      "opportunity-002": 1.8862847222222223,
+      "opportunity-003": 1.0482253086419753,
+      "opportunity-004": 2.0678185626102294,
+      "opportunity-005": 1.5271739130434783,
+      "opportunity-006": 2.09375,
+      "opportunity-007": 2.2641989087301586,
+      "opportunity-008": 2.0572916666666665,
+      "opportunity-009": 0.9125881834215167,
+      "opportunity-010": 1.4678945249597424,
+      "opportunity-011": 1.7418981481481481
+    },
+    "fifo": {
+      "opportunity-000": 1.5833333333333333,
+      "opportunity-001": 0.6934407552083334,
+      "opportunity-002": 3.4640335648148146,
+      "opportunity-003": 1.2518647119341564,
+      "opportunity-004": 2.8178185626102294,
+      "opportunity-005": 2.2427536231884058,
+      "opportunity-006": 2.162878787878788,
+      "opportunity-007": 2.2641989087301586,
+      "opportunity-008": 2.1354166666666665,
+      "opportunity-009": 0.9125881834215167,
+      "opportunity-010": 1.4678945249597424,
+      "opportunity-011": 1.8609457671957674
+    },
+    "median": {
+      "opportunity-000": 1.5833333333333333,
+      "opportunity-001": 0.5840657552083334,
+      "opportunity-002": 1.8862847222222223,
+      "opportunity-003": 1.0482253086419753,
+      "opportunity-004": 2.0476190476190474,
+      "opportunity-005": 1.5271739130434783,
+      "opportunity-006": 2.0347222222222223,
+      "opportunity-007": 2.2641989087301586,
+      "opportunity-008": 2.0572916666666665,
+      "opportunity-009": 0.8703703703703703,
+      "opportunity-010": 1.4678945249597424,
+      "opportunity-011": 1.7418981481481481
+    },
+    "optimal": {
+      "opportunity-000": 1.5833333333333333,
+      "opportunity-001": 0.5840657552083334,
+      "opportunity-002": 1.8862847222222223,
+      "opportunity-003": 1.0482253086419753,
+      "opportunity-004": 2.0476190476190474,
+      "opportunity-005": 1.5271739130434783,
+      "opportunity-006": 2.0347222222222223,
+      "opportunity-007": 2.2641989087301586,
+      "opportunity-008": 2.0572916666666665,
+      "opportunity-009": 0.8679453262786596,
+      "opportunity-010": 1.4678945249597424,
+      "opportunity-011": 1.7418981481481481
+    }
+  },
+  "inputs": [
+    {
+      "fingerprint": "0d192f75ff47564d99215dc6090280187dc9b35d7cac29e0cc379ab2bfdc84c2",
+      "group": "opportunity-000",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-000-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110422,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 1,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.4999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "3c79a7b6029ea974451fef53dd78bf643a36334c79a839c82fafabe960faa89e",
+      "group": "opportunity-000",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-000-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110422,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 1,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.4999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "7f1bbc48c41351129d2f6ac72f15158e3d831600ebfefe2542fc37b90c72dd3e",
+      "group": "opportunity-001",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5",
+              "syn-op-c2-6",
+              "syn-op-c2-7"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-001-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110423,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [],
+            "report_order": 3,
+            "total_person_hours": "0.4999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "efce7ef8f8ce8395499fbb138076927ae3cf0799b55af8c03781a5b3b6a22521",
+      "group": "opportunity-001",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5",
+              "syn-op-c2-6",
+              "syn-op-c2-7"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-001-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110423,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [],
+            "report_order": 3,
+            "total_person_hours": "0.4999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "a12f2b29a4315ab79a3c9a7b0271d5654888d43e5691873feae0aa85b8081e37",
+      "group": "opportunity-002",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t1",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-002-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110424,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [],
+            "report_order": 2,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t2"
+            ],
+            "report_order": 3,
+            "total_person_hours": "1.499972222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "28f7f967d14cb1707f212817039a151e1eed274bca53325664106c4141bf8555",
+      "group": "opportunity-002",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t1",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-002-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110424,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [],
+            "report_order": 2,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t2"
+            ],
+            "report_order": 3,
+            "total_person_hours": "1.499972222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "92870370048e4ed4f263e1c370742243c6656375e52415ace333409d8cb7398f",
+      "group": "opportunity-003",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t1",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4",
+              "syn-op-c1-5",
+              "syn-op-c1-6",
+              "syn-op-c1-7"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t1",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5",
+              "syn-op-c2-6",
+              "syn-op-c2-7"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6",
+              "syn-op-c3-7",
+              "syn-op-c3-8"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-003-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110425,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [],
+            "report_order": 2,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.2499722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "5f099e9b83cfba16a04259f48cee17c7d3d704f4c00d5c869be9e455f4a2b030",
+      "group": "opportunity-003",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t1",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4",
+              "syn-op-c1-5",
+              "syn-op-c1-6",
+              "syn-op-c1-7"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t1",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5",
+              "syn-op-c2-6",
+              "syn-op-c2-7"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6",
+              "syn-op-c3-7",
+              "syn-op-c3-8"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-003-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110425,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [],
+            "report_order": 2,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.2499722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "fa3cca611b149e6bd74f685b962d59e2d53c5c99880a59297ca4f05f4e8543ab",
+      "group": "opportunity-004",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6",
+              "syn-op-c0-7",
+              "syn-op-c0-8"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-004-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110426,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 2,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.9999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "bc09dfeb7eec994778ac861749b40eb2d0bc66b6272d171417a2b6bcf5e96964",
+      "group": "opportunity-004",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6",
+              "syn-op-c0-7",
+              "syn-op-c0-8"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-004-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110426,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 2,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.9999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "d72b9c9d933ab7534b8476b129439634c848a6292cee322b7b6723a2bed1425d",
+      "group": "opportunity-005",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-005-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110427,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [],
+            "report_order": 3,
+            "total_person_hours": "0.7499722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "466c2a1aeae9c139015a049b02b1383bb010fb3c3b7f691cee39a76d2115fc54",
+      "group": "opportunity-005",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-005-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110427,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [],
+            "report_order": 3,
+            "total_person_hours": "0.7499722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "c5f3be4a90ab43bb57e063aae8ef5df4e036eb859ab2e6fa0cbd327a667f990b",
+      "group": "opportunity-006",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-006-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110428,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 2,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [],
+            "report_order": 3,
+            "total_person_hours": "0.2499722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "a58dffc9ac1ee42767f49b7d007a2ee5c14238a645bcc8eda98748690faac4c8",
+      "group": "opportunity-006",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-006-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110428,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 2,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [],
+            "report_order": 3,
+            "total_person_hours": "0.2499722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "63266cbfbe3415fddc7da1995909ce1c95bf2d41f1b3d2f5cc6e4b16bca4b78b",
+      "group": "opportunity-007",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4",
+              "syn-op-c1-5"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t1",
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-007-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110429,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 1,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 2,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "report_order": 3,
+            "total_person_hours": "1.249972222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "48976f126b64e666ff18257088a230a1162f69af316533e55ad47d713fec0cb9",
+      "group": "opportunity-007",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4",
+              "syn-op-c1-5"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t1",
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-007-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110429,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 1,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 2,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "report_order": 3,
+            "total_person_hours": "1.249972222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "37877fd1e3225d2600afb3f3fcbcc203b5a509a40beb703c089f88b17b81b0fc",
+      "group": "opportunity-008",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6",
+              "syn-op-c0-7",
+              "syn-op-c0-8"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4",
+              "syn-op-c1-5"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5",
+              "syn-op-c2-6",
+              "syn-op-c2-7"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6",
+              "syn-op-c3-7",
+              "syn-op-c3-8"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-008-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110430,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 1,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [],
+            "report_order": 2,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.4999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "3eb1a2875210d14fc7acce434476f51a4b8b6409b73587ea3694378b6304ff9e",
+      "group": "opportunity-008",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6",
+              "syn-op-c0-7",
+              "syn-op-c0-8"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4",
+              "syn-op-c1-5"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5",
+              "syn-op-c2-6",
+              "syn-op-c2-7"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6",
+              "syn-op-c3-7",
+              "syn-op-c3-8"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-008-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110430,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 1,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [],
+            "report_order": 2,
+            "total_person_hours": "1.499972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.4999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "6bffa4e924d39005b2d00a778720fb7129572397a6f5dbf2c7ba3e1b96cb64e1",
+      "group": "opportunity-009",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6",
+              "syn-op-c0-7"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4",
+              "syn-op-c1-5",
+              "syn-op-c1-6",
+              "syn-op-c1-7",
+              "syn-op-c1-8"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-009-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110431,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [],
+            "report_order": 2,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 3,
+            "total_person_hours": "1.499972222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "760f32dcf19ad5702db686f6a4aef207bc4d7c2606b0cb79f5e7f48ce6b102cc",
+      "group": "opportunity-009",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6",
+              "syn-op-c0-7"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3",
+              "syn-op-c1-4",
+              "syn-op-c1-5",
+              "syn-op-c1-6",
+              "syn-op-c1-7",
+              "syn-op-c1-8"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-009-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110431,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.2499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [],
+            "report_order": 2,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 3,
+            "total_person_hours": "1.499972222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "825cd7bec5d23161bc979d127d1254e4125c98f9398a825bcc872b72446db68b",
+      "group": "opportunity-010",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5",
+              "syn-op-c2-6"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6",
+              "syn-op-c3-7"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-010-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110432,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 3,
+            "total_person_hours": "1.249972222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "0ce9673a8306f225a2aff2013453c72469919c103b1afa36a4bb702ed97a282c",
+      "group": "opportunity-010",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0",
+              "syn-op-c1-1",
+              "syn-op-c1-2",
+              "syn-op-c1-3"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4",
+              "syn-op-c2-5",
+              "syn-op-c2-6"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6",
+              "syn-op-c3-7"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t2"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-010-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110432,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.4999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 3,
+            "total_person_hours": "1.249972222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "6f6d08b5d6460feb7f3f02b81650a0d09c5f2f82c524c35616ffd43383ef61c6",
+      "group": "opportunity-011",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6",
+              "syn-op-c0-7"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-011-c1",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110433,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.9999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    },
+    {
+      "fingerprint": "ea585a43d2825dd00e1c0c455115f9c6f1f2d935598e07df30b3bea00423f0fa",
+      "group": "opportunity-011",
+      "problem": {
+        "actual_efficiency": null,
+        "crews": [
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew0",
+            "people": 4
+          },
+          {
+            "available_tick": 0,
+            "id": "syn-op-crew1",
+            "people": 4
+          }
+        ],
+        "duration_assumption": "one_effective_worker",
+        "duration_rule_classification": "prototype policy",
+        "family": "opportunity-four-task-exploratory",
+        "generator_version": "benchmark-generator-v1",
+        "groups": [
+          {
+            "branch": "syn-op-b0",
+            "critical_service": true,
+            "customer_ids": [
+              "syn-op-c0-0",
+              "syn-op-c0-1",
+              "syn-op-c0-2",
+              "syn-op-c0-3",
+              "syn-op-c0-4",
+              "syn-op-c0-5",
+              "syn-op-c0-6",
+              "syn-op-c0-7"
+            ],
+            "id": "syn-op-g0",
+            "required_tasks": [
+              "syn-op-t0"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c1-0"
+            ],
+            "id": "syn-op-g1",
+            "required_tasks": [
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b0",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c2-0",
+              "syn-op-c2-1",
+              "syn-op-c2-2",
+              "syn-op-c2-3",
+              "syn-op-c2-4"
+            ],
+            "id": "syn-op-g2",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t3"
+            ],
+            "unresolved_dependency": false
+          },
+          {
+            "branch": "syn-op-b1",
+            "critical_service": false,
+            "customer_ids": [
+              "syn-op-c3-0",
+              "syn-op-c3-1",
+              "syn-op-c3-2",
+              "syn-op-c3-3",
+              "syn-op-c3-4",
+              "syn-op-c3-5",
+              "syn-op-c3-6"
+            ],
+            "id": "syn-op-g3",
+            "required_tasks": [
+              "syn-op-t0",
+              "syn-op-t1"
+            ],
+            "unresolved_dependency": false
+          }
+        ],
+        "horizon_ticks": 604800,
+        "id": "syn-opportunity-011-c2",
+        "input_classification": "scenario assumption",
+        "missing_evidence_classification": "unavailable",
+        "observed_outcomes": null,
+        "origin": "independently_authored_synthetic",
+        "precedence_classification": "prototype policy",
+        "response_origin": "modeled_response_start",
+        "revision": 1,
+        "seed": 2026110433,
+        "split": "micro",
+        "tasks": [
+          {
+            "access": "clear",
+            "id": "syn-op-t0",
+            "prerequisites": [],
+            "report_order": 0,
+            "total_person_hours": "1.249972222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t1",
+            "prerequisites": [],
+            "report_order": 1,
+            "total_person_hours": "0.7499722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t2",
+            "prerequisites": [
+              "syn-op-t1"
+            ],
+            "report_order": 2,
+            "total_person_hours": "0.9999722222222222222222222222"
+          },
+          {
+            "access": "clear",
+            "id": "syn-op-t3",
+            "prerequisites": [
+              "syn-op-t0"
+            ],
+            "report_order": 3,
+            "total_person_hours": "0.9999722222222222222222222222"
+          }
+        ],
+        "version": "benchmark-problem-v1"
+      }
+    }
+  ],
+  "limits": "Four tasks cannot bound 10\u201324-task opportunity; exact optimum knows supports, never sampled futures",
+  "results": [
+    {
+      "bellman_states": 46,
+      "case": "syn-opportunity-000-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-000",
+      "independent_solver_states": 46,
+      "mean_wait_hours": {
+        "downstream": 1.5833333333333333,
+        "fifo": 1.5833333333333333,
+        "median": 1.5833333333333333,
+        "optimal": 1.5833333333333333
+      },
+      "optimal_customer_seconds": "119700",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 161,
+      "case": "syn-opportunity-000-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-000",
+      "independent_solver_states": 161,
+      "mean_wait_hours": {
+        "downstream": 1.5833333333333333,
+        "fifo": 1.5833333333333333,
+        "median": 1.5833333333333333,
+        "optimal": 1.5833333333333333
+      },
+      "optimal_customer_seconds": "119700",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 46,
+      "case": "syn-opportunity-000-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-000",
+      "independent_solver_states": 46,
+      "mean_wait_hours": {
+        "downstream": 1.5833333333333333,
+        "fifo": 1.5833333333333333,
+        "median": 1.5833333333333333,
+        "optimal": 1.5833333333333333
+      },
+      "optimal_customer_seconds": "119700",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 161,
+      "case": "syn-opportunity-000-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-000",
+      "independent_solver_states": 161,
+      "mean_wait_hours": {
+        "downstream": 1.5833333333333333,
+        "fifo": 1.5833333333333333,
+        "median": 1.5833333333333333,
+        "optimal": 1.5833333333333333
+      },
+      "optimal_customer_seconds": "119700",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 484,
+      "case": "syn-opportunity-001-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-001",
+      "independent_solver_states": 484,
+      "mean_wait_hours": {
+        "downstream": 0.65625,
+        "fifo": 0.875,
+        "median": 0.65625,
+        "optimal": 0.65625
+      },
+      "optimal_customer_seconds": "37800",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 1825,
+      "case": "syn-opportunity-001-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-001",
+      "independent_solver_states": 1825,
+      "mean_wait_hours": {
+        "downstream": 0.65625,
+        "fifo": 0.875,
+        "median": 0.65625,
+        "optimal": 0.65625
+      },
+      "optimal_customer_seconds": "37800",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 2698,
+      "case": "syn-opportunity-001-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-001",
+      "independent_solver_states": 2698,
+      "mean_wait_hours": {
+        "downstream": 0.5029296875,
+        "fifo": 0.5029296875,
+        "median": 0.5029296875,
+        "optimal": 0.5029296875
+      },
+      "optimal_customer_seconds": "115875/4",
+      "policy_states": {
+        "downstream": 47,
+        "fifo": 47,
+        "median": 47
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 10709,
+      "case": "syn-opportunity-001-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-001",
+      "independent_solver_states": 10709,
+      "mean_wait_hours": {
+        "downstream": 0.5208333333333334,
+        "fifo": 0.5208333333333334,
+        "median": 0.5208333333333334,
+        "optimal": 0.5208333333333334
+      },
+      "optimal_customer_seconds": "30000",
+      "policy_states": {
+        "downstream": 188,
+        "fifo": 188,
+        "median": 188
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 484,
+      "case": "syn-opportunity-002-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-002",
+      "independent_solver_states": 484,
+      "mean_wait_hours": {
+        "downstream": 1.9375,
+        "fifo": 4.3,
+        "median": 1.9375,
+        "optimal": 1.9375
+      },
+      "optimal_customer_seconds": "139500",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 1825,
+      "case": "syn-opportunity-002-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-002",
+      "independent_solver_states": 1825,
+      "mean_wait_hours": {
+        "downstream": 1.9375,
+        "fifo": 4.3,
+        "median": 1.9375,
+        "optimal": 1.9375
+      },
+      "optimal_customer_seconds": "139500",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 2718,
+      "case": "syn-opportunity-002-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-002",
+      "independent_solver_states": 2718,
+      "mean_wait_hours": {
+        "downstream": 1.83125,
+        "fifo": 2.74375,
+        "median": 1.83125,
+        "optimal": 1.83125
+      },
+      "optimal_customer_seconds": "131850",
+      "policy_states": {
+        "downstream": 49,
+        "fifo": 49,
+        "median": 49
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 10909,
+      "case": "syn-opportunity-002-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-002",
+      "independent_solver_states": 10909,
+      "mean_wait_hours": {
+        "downstream": 1.8388888888888888,
+        "fifo": 2.5123842592592593,
+        "median": 1.8388888888888888,
+        "optimal": 1.8388888888888888
+      },
+      "optimal_customer_seconds": "132400",
+      "policy_states": {
+        "downstream": 188,
+        "fifo": 186,
+        "median": 188
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 334,
+      "case": "syn-opportunity-003-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-003",
+      "independent_solver_states": 334,
+      "mean_wait_hours": {
+        "downstream": 1.25,
+        "fifo": 1.5277777777777777,
+        "median": 1.25,
+        "optimal": 1.25
+      },
+      "optimal_customer_seconds": "121500",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 1237,
+      "case": "syn-opportunity-003-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-003",
+      "independent_solver_states": 1237,
+      "mean_wait_hours": {
+        "downstream": 1.25,
+        "fifo": 1.5277777777777777,
+        "median": 1.25,
+        "optimal": 1.25
+      },
+      "optimal_customer_seconds": "121500",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 1424,
+      "case": "syn-opportunity-003-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-003",
+      "independent_solver_states": 1424,
+      "mean_wait_hours": {
+        "downstream": 0.8194444444444444,
+        "fifo": 0.9722222222222222,
+        "median": 0.8194444444444444,
+        "optimal": 0.8194444444444444
+      },
+      "optimal_customer_seconds": "79650",
+      "policy_states": {
+        "downstream": 48,
+        "fifo": 45,
+        "median": 48
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 6013,
+      "case": "syn-opportunity-003-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-003",
+      "independent_solver_states": 6013,
+      "mean_wait_hours": {
+        "downstream": 0.8734567901234568,
+        "fifo": 0.9796810699588477,
+        "median": 0.8734567901234568,
+        "optimal": 0.8734567901234568
+      },
+      "optimal_customer_seconds": "84900",
+      "policy_states": {
+        "downstream": 176,
+        "fifo": 171,
+        "median": 176
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 319,
+      "case": "syn-opportunity-004-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-004",
+      "independent_solver_states": 319,
+      "mean_wait_hours": {
+        "downstream": 2.0952380952380953,
+        "fifo": 3.5952380952380953,
+        "median": 2.0952380952380953,
+        "optimal": 2.0952380952380953
+      },
+      "optimal_customer_seconds": "158400",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 1209,
+      "case": "syn-opportunity-004-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-004",
+      "independent_solver_states": 1209,
+      "mean_wait_hours": {
+        "downstream": 2.0952380952380953,
+        "fifo": 3.5952380952380953,
+        "median": 2.0952380952380953,
+        "optimal": 2.0952380952380953
+      },
+      "optimal_customer_seconds": "158400",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 1479,
+      "case": "syn-opportunity-004-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-004",
+      "independent_solver_states": 1479,
+      "mean_wait_hours": {
+        "downstream": 2.044642857142857,
+        "fifo": 2.044642857142857,
+        "median": 2.0,
+        "optimal": 2.0
+      },
+      "optimal_customer_seconds": "151200",
+      "policy_states": {
+        "downstream": 48,
+        "fifo": 48,
+        "median": 48
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 5923,
+      "case": "syn-opportunity-004-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-004",
+      "independent_solver_states": 5923,
+      "mean_wait_hours": {
+        "downstream": 2.0361552028218695,
+        "fifo": 2.0361552028218695,
+        "median": 2.0,
+        "optimal": 2.0
+      },
+      "optimal_customer_seconds": "151200",
+      "policy_states": {
+        "downstream": 181,
+        "fifo": 181,
+        "median": 176
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 484,
+      "case": "syn-opportunity-005-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-005",
+      "independent_solver_states": 484,
+      "mean_wait_hours": {
+        "downstream": 1.7065217391304348,
+        "fifo": 2.891304347826087,
+        "median": 1.7065217391304348,
+        "optimal": 1.7065217391304348
+      },
+      "optimal_customer_seconds": "141300",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 1825,
+      "case": "syn-opportunity-005-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-005",
+      "independent_solver_states": 1825,
+      "mean_wait_hours": {
+        "downstream": 1.7065217391304348,
+        "fifo": 2.891304347826087,
+        "median": 1.7065217391304348,
+        "optimal": 1.7065217391304348
+      },
+      "optimal_customer_seconds": "141300",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 2430,
+      "case": "syn-opportunity-005-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-005",
+      "independent_solver_states": 2430,
+      "mean_wait_hours": {
+        "downstream": 1.3478260869565217,
+        "fifo": 1.608695652173913,
+        "median": 1.3478260869565217,
+        "optimal": 1.3478260869565217
+      },
+      "optimal_customer_seconds": "111600",
+      "policy_states": {
+        "downstream": 47,
+        "fifo": 47,
+        "median": 47
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 10203,
+      "case": "syn-opportunity-005-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-005",
+      "independent_solver_states": 10203,
+      "mean_wait_hours": {
+        "downstream": 1.3478260869565217,
+        "fifo": 1.5797101449275361,
+        "median": 1.3478260869565217,
+        "optimal": 1.3478260869565217
+      },
+      "optimal_customer_seconds": "111600",
+      "policy_states": {
+        "downstream": 179,
+        "fifo": 179,
+        "median": 179
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 484,
+      "case": "syn-opportunity-006-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-006",
+      "independent_solver_states": 484,
+      "mean_wait_hours": {
+        "downstream": 2.409090909090909,
+        "fifo": 2.5681818181818183,
+        "median": 2.3181818181818183,
+        "optimal": 2.3181818181818183
+      },
+      "optimal_customer_seconds": "91800",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 1825,
+      "case": "syn-opportunity-006-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-006",
+      "independent_solver_states": 1825,
+      "mean_wait_hours": {
+        "downstream": 2.409090909090909,
+        "fifo": 2.5681818181818183,
+        "median": 2.3181818181818183,
+        "optimal": 2.3181818181818183
+      },
+      "optimal_customer_seconds": "91800",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 2266,
+      "case": "syn-opportunity-006-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-006",
+      "independent_solver_states": 2266,
+      "mean_wait_hours": {
+        "downstream": 1.7272727272727273,
+        "fifo": 1.7045454545454546,
+        "median": 1.6988636363636365,
+        "optimal": 1.6988636363636365
+      },
+      "optimal_customer_seconds": "67275",
+      "policy_states": {
+        "downstream": 44,
+        "fifo": 47,
+        "median": 47
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 9555,
+      "case": "syn-opportunity-006-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-006",
+      "independent_solver_states": 9555,
+      "mean_wait_hours": {
+        "downstream": 1.8295454545454546,
+        "fifo": 1.8106060606060606,
+        "median": 1.8036616161616161,
+        "optimal": 1.8036616161616161
+      },
+      "optimal_customer_seconds": "71425",
+      "policy_states": {
+        "downstream": 166,
+        "fifo": 177,
+        "median": 177
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 124,
+      "case": "syn-opportunity-007-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-007",
+      "independent_solver_states": 124,
+      "mean_wait_hours": {
+        "downstream": 2.5357142857142856,
+        "fifo": 2.5357142857142856,
+        "median": 2.5357142857142856,
+        "optimal": 2.5357142857142856
+      },
+      "optimal_customer_seconds": "127800",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 461,
+      "case": "syn-opportunity-007-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-007",
+      "independent_solver_states": 461,
+      "mean_wait_hours": {
+        "downstream": 2.5357142857142856,
+        "fifo": 2.5357142857142856,
+        "median": 2.5357142857142856,
+        "optimal": 2.5357142857142856
+      },
+      "optimal_customer_seconds": "127800",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 284,
+      "case": "syn-opportunity-007-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-007",
+      "independent_solver_states": 284,
+      "mean_wait_hours": {
+        "downstream": 1.9397321428571428,
+        "fifo": 1.9397321428571428,
+        "median": 1.9397321428571428,
+        "optimal": 1.9397321428571428
+      },
+      "optimal_customer_seconds": "195525/2",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 1139,
+      "case": "syn-opportunity-007-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-007",
+      "independent_solver_states": 1139,
+      "mean_wait_hours": {
+        "downstream": 2.0456349206349205,
+        "fifo": 2.0456349206349205,
+        "median": 2.0456349206349205,
+        "optimal": 2.0456349206349205
+      },
+      "optimal_customer_seconds": "103100",
+      "policy_states": {
+        "downstream": 167,
+        "fifo": 167,
+        "median": 167
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 169,
+      "case": "syn-opportunity-008-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-008",
+      "independent_solver_states": 169,
+      "mean_wait_hours": {
+        "downstream": 2.2734375,
+        "fifo": 2.4296875,
+        "median": 2.2734375,
+        "optimal": 2.2734375
+      },
+      "optimal_customer_seconds": "261900",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 621,
+      "case": "syn-opportunity-008-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-008",
+      "independent_solver_states": 621,
+      "mean_wait_hours": {
+        "downstream": 2.2734375,
+        "fifo": 2.4296875,
+        "median": 2.2734375,
+        "optimal": 2.2734375
+      },
+      "optimal_customer_seconds": "261900",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 493,
+      "case": "syn-opportunity-008-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-008",
+      "independent_solver_states": 493,
+      "mean_wait_hours": {
+        "downstream": 1.8046875,
+        "fifo": 1.8046875,
+        "median": 1.8046875,
+        "optimal": 1.8046875
+      },
+      "optimal_customer_seconds": "207900",
+      "policy_states": {
+        "downstream": 48,
+        "fifo": 48,
+        "median": 48
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 1961,
+      "case": "syn-opportunity-008-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-008",
+      "independent_solver_states": 1961,
+      "mean_wait_hours": {
+        "downstream": 1.8776041666666667,
+        "fifo": 1.8776041666666667,
+        "median": 1.8776041666666667,
+        "optimal": 1.8776041666666667
+      },
+      "optimal_customer_seconds": "216300",
+      "policy_states": {
+        "downstream": 173,
+        "fifo": 173,
+        "median": 173
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 484,
+      "case": "syn-opportunity-009-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-009",
+      "independent_solver_states": 484,
+      "mean_wait_hours": {
+        "downstream": 1.0833333333333333,
+        "fifo": 1.0833333333333333,
+        "median": 1.0,
+        "optimal": 1.0
+      },
+      "optimal_customer_seconds": "75600",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 1825,
+      "case": "syn-opportunity-009-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-009",
+      "independent_solver_states": 1825,
+      "mean_wait_hours": {
+        "downstream": 1.0833333333333333,
+        "fifo": 1.0833333333333333,
+        "median": 1.0,
+        "optimal": 1.0
+      },
+      "optimal_customer_seconds": "75600",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 2792,
+      "case": "syn-opportunity-009-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-009",
+      "independent_solver_states": 2792,
+      "mean_wait_hours": {
+        "downstream": 0.75,
+        "fifo": 0.75,
+        "median": 0.7380952380952381,
+        "optimal": 0.7380952380952381
+      },
+      "optimal_customer_seconds": "55800",
+      "policy_states": {
+        "downstream": 47,
+        "fifo": 47,
+        "median": 49
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 11125,
+      "case": "syn-opportunity-009-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-009",
+      "independent_solver_states": 11125,
+      "mean_wait_hours": {
+        "downstream": 0.7336860670194003,
+        "fifo": 0.7336860670194003,
+        "median": 0.7433862433862434,
+        "optimal": 0.7336860670194003
+      },
+      "optimal_customer_seconds": "166400/3",
+      "policy_states": {
+        "downstream": 179,
+        "fifo": 179,
+        "median": 185
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 247,
+      "case": "syn-opportunity-010-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-010",
+      "independent_solver_states": 247,
+      "mean_wait_hours": {
+        "downstream": 1.608695652173913,
+        "fifo": 1.608695652173913,
+        "median": 1.608695652173913,
+        "optimal": 1.608695652173913
+      },
+      "optimal_customer_seconds": "133200",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 921,
+      "case": "syn-opportunity-010-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-010",
+      "independent_solver_states": 921,
+      "mean_wait_hours": {
+        "downstream": 1.608695652173913,
+        "fifo": 1.608695652173913,
+        "median": 1.608695652173913,
+        "optimal": 1.608695652173913
+      },
+      "optimal_customer_seconds": "133200",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 1023,
+      "case": "syn-opportunity-010-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-010",
+      "independent_solver_states": 1023,
+      "mean_wait_hours": {
+        "downstream": 1.2934782608695652,
+        "fifo": 1.2934782608695652,
+        "median": 1.2934782608695652,
+        "optimal": 1.2934782608695652
+      },
+      "optimal_customer_seconds": "107100",
+      "policy_states": {
+        "downstream": 48,
+        "fifo": 48,
+        "median": 48
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 3997,
+      "case": "syn-opportunity-010-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-010",
+      "independent_solver_states": 3997,
+      "mean_wait_hours": {
+        "downstream": 1.3607085346215781,
+        "fifo": 1.3607085346215781,
+        "median": 1.3607085346215781,
+        "optimal": 1.3607085346215781
+      },
+      "optimal_customer_seconds": "338000/3",
+      "policy_states": {
+        "downstream": 177,
+        "fifo": 177,
+        "median": 177
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 247,
+      "case": "syn-opportunity-011-c1",
+      "crews": 1,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-011",
+      "independent_solver_states": 247,
+      "mean_wait_hours": {
+        "downstream": 1.9523809523809523,
+        "fifo": 2.1904761904761907,
+        "median": 1.9523809523809523,
+        "optimal": 1.9523809523809523
+      },
+      "optimal_customer_seconds": "147600",
+      "policy_states": {
+        "downstream": 46,
+        "fifo": 46,
+        "median": 46
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 921,
+      "case": "syn-opportunity-011-c1",
+      "crews": 1,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-011",
+      "independent_solver_states": 921,
+      "mean_wait_hours": {
+        "downstream": 1.9523809523809523,
+        "fifo": 2.1904761904761907,
+        "median": 1.9523809523809523,
+        "optimal": 1.9523809523809523
+      },
+      "optimal_customer_seconds": "147600",
+      "policy_states": {
+        "downstream": 161,
+        "fifo": 161,
+        "median": 161
+      },
+      "profile": "high"
+    },
+    {
+      "bellman_states": 975,
+      "case": "syn-opportunity-011-c2",
+      "crews": 2,
+      "duration_worlds": 16,
+      "exact_checks_pass": true,
+      "group": "opportunity-011",
+      "independent_solver_states": 975,
+      "mean_wait_hours": {
+        "downstream": 1.505952380952381,
+        "fifo": 1.505952380952381,
+        "median": 1.505952380952381,
+        "optimal": 1.505952380952381
+      },
+      "optimal_customer_seconds": "113850",
+      "policy_states": {
+        "downstream": 48,
+        "fifo": 48,
+        "median": 48
+      },
+      "profile": "low"
+    },
+    {
+      "bellman_states": 3917,
+      "case": "syn-opportunity-011-c2",
+      "crews": 2,
+      "duration_worlds": 81,
+      "exact_checks_pass": true,
+      "group": "opportunity-011",
+      "independent_solver_states": 3917,
+      "mean_wait_hours": {
+        "downstream": 1.556878306878307,
+        "fifo": 1.556878306878307,
+        "median": 1.556878306878307,
+        "optimal": 1.556878306878307
+      },
+      "optimal_customer_seconds": "117700",
+      "policy_states": {
+        "downstream": 175,
+        "fifo": 175,
+        "median": 175
+      },
+      "profile": "high"
+    }
+  ],
+  "scope": "12 fresh configurations, 24 crew variants, 48 stochastic expectations; no fitted model or holdout"
+}
