@@ -7,11 +7,11 @@ learned inference mandatory, independently of scientific promotion.
 | Phase | Evidence / next verification | Status |
 |---|---|---|
 | 0: baseline and protocol | PR #20 merge verified; prior adaptive/ML I/ML II findings reviewed; new protocol | Registered before new data/fitting |
-| 1: inputs and seal | 112 fresh groups / 224 variants; 48/16/24/24 split; 276 historical topology signatures excluded | Generated and input-validated before scientific fitting |
-| 2: teacher data | Genuine median-root action costs; pure/mixed training trajectories | Smoke verified; scientific collection next |
-| 3: fitted models | Three Ridge + two random-forest candidates; actual learned JSON exports | All five genuinely fitted in smoke; scientific fitting next |
-| 4: inference | Validated public state, action masks, hash-verified loader, safe fallback | Complete stochastic smoke rollouts pass |
-| 5: development/freeze | Complete rollouts, family winners/champion, committed identities | Pending |
+| 1: inputs and seal | 112 fresh groups / 224 variants; 48/16/24/24 split; 276 historical topology signatures excluded | Sealed at `4825e5d` before scientific fitting |
+| 2: teacher data | 480 validated trajectories, 12,980 visits, 5,352 unique discretionary states, 24,240 action rows | Complete; exact state/visit lineage retained |
+| 3: fitted models | Three Ridge + two random-forest candidates; actual learned JSON exports | Complete; all five exact repeat-fit exports; zero dev export-parity error |
+| 4: inference | Validated public state, action masks, hash-verified loader, safe fallback | Scientific development: no invalid actions or fallback |
+| 5: development/freeze | 1,440 method-episodes; forest-depth4 champion, ridge-alpha10 linear winner | Selection complete; commit and freeze before reveal |
 | 6: final ID/shift | One spent-cohort receipt, paired same-draw evaluation, no retuning | Pending |
 | 7: showcase | Trained artifacts, coefficients/importances, runnable example, verified figures | Pending |
 | 8: delivery | Local/source-free CI, previous-artifact preservation, one unmerged PR | Pending |
@@ -33,3 +33,16 @@ conclusion stays intact; this study intentionally asks a separate distillation q
 - Tiny constant-column weighted-scaler smoke fits emitted scikit-learn's roundoff variance
   warning; its constant-feature handling returned finite scales and all export/fit checks
   passed. No warning was hidden and no model result was substituted.
+
+## Scientific training and development
+
+Scientific collection took 23.373 s summed over configuration shards. The fitting pipeline,
+including repeat fits and development export-parity probes, took 24.444 s with 278.0 MiB
+peak RSS. Development evaluation took 136.674 s across four measured commands.
+
+Development stochastic configuration-mean waiting: forest-depth4 14.363986 h,
+forest-depth8 14.494520 h, ridge-alpha10 14.553853 h, ridge-alpha1 14.614378 h,
+ridge-alpha0.1 14.666755 h. Median teacher: 13.871175 h; reactive downstream:
+14.414876 h. The champion is therefore forest-depth4 under the preregistered full-rollout
+selection rule, despite its lower training fit than the deeper forest. These development
+findings do not establish held-out promotion; no feature/model/threshold was changed.

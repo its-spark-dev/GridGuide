@@ -1,0 +1,31 @@
+{
+  "candidates": {
+    "forest-depth4": {
+      "fit_seconds": 3.5499048749916255,
+      "load_nanoseconds": 2111666,
+      "repeat_fit_seconds": 3.491745916020591
+    },
+    "forest-depth8": {
+      "fit_seconds": 6.511885749991052,
+      "load_nanoseconds": 20166084,
+      "repeat_fit_seconds": 6.5554600420291536
+    },
+    "ridge-alpha0.1": {
+      "fit_seconds": 0.01511862501502037,
+      "load_nanoseconds": 261459,
+      "repeat_fit_seconds": 0.006973624986130744
+    },
+    "ridge-alpha1": {
+      "fit_seconds": 0.006780375028029084,
+      "load_nanoseconds": 268917,
+      "repeat_fit_seconds": 0.0069998750113882124
+    },
+    "ridge-alpha10": {
+      "fit_seconds": 0.0069289589882828295,
+      "load_nanoseconds": 278500,
+      "repeat_fit_seconds": 0.006960875005461276
+    }
+  },
+  "elapsed_seconds": 24.444398208055645,
+  "peak_rss_mib": 278.0
+}
