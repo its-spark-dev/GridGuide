@@ -1,0 +1,22 @@
+{
+  "docs/benchmarks/phase2/legacy_check.json": "9109e95259f1da95298a40d742a6d51a11beecc3b4555688f0b92ee4ab1d2228",
+  "docs/benchmarks/phase2/standard/REPORT.md": "d91068c91ca4762f60b55c64808ba85333a377437bc16043fdec34d99094b6ad",
+  "docs/benchmarks/phase2/standard/aggregates.json": "08afd02e86e4954e958078e50217dffa7bdb0d749b3a068f6b7ddbf1bea1ef8b",
+  "docs/benchmarks/phase2/standard/manifest.json": "60182d59b2f33b755038f52e599f771363065d8ffbf76ebb714e1af63b04b909",
+  "docs/benchmarks/phase2/standard/results.jsonl.gz": "d783434308587468dd4704d650daa79e2ce9e7534af9c0a22179af157f68d51d",
+  "docs/benchmarks/phase2/standard/runtime_observations.json": "facf51f3e21d3896e974628785019b1e264f0385497efb2d35c5e250e4b50581",
+  "docs/benchmarks/phase3/development/REPORT.md": "bb2807fd0ccd506fbcd8f219692c9a6d32a82f6a66b30aa98870cdffcc53f5e7",
+  "docs/benchmarks/phase3/development/manifest.json": "da592f46acc6a5f5a342f6634752c57c2282252d13b7a5dda4303bde0ab95936",
+  "docs/benchmarks/phase3/development/report.json": "8c26e7434524e39692d7a667029fb93329ca6cd4adb4c64ffc49d4a2358ce0e4",
+  "docs/benchmarks/phase3/development/results.jsonl.gz": "381358ef81f777f650b5df758eb569c86be0d1ab365120c90bf1edc8d34d1907",
+  "docs/benchmarks/phase3/development/timings.json": "761a3cb7b4b77ae5b2320c23fe5d1c90568ca61fbf909135c2a9e195639f0167",
+  "docs/benchmarks/phase3/interactive_check.json": "82c3caa103474432781e50eaf4c6087e8b084a24e196597cb398fd39dbb86d0b",
+  "docs/benchmarks/phase3/legacy_check.json": "9109e95259f1da95298a40d742a6d51a11beecc3b4555688f0b92ee4ab1d2228",
+  "docs/benchmarks/phase3/published/REPORT.md": "828c81392a5a9ea1c91dac9f13c815838e8c5b9b4f30c852a5f3be48430ae183",
+  "docs/benchmarks/phase3/published/manifest.json": "e475f503e3dc40b6b2666a7ad9104e2d25924cf473916a8d41176f286b2c6320",
+  "docs/benchmarks/phase3/published/report.json": "1f50096b44c8e1d9552c9b289971b742ab868a99a172aaaabe1b37771807b8d9",
+  "docs/benchmarks/phase3/published/results.jsonl.gz": "e38b432667428df464555c8dffa5c8bc7b9e2530336626d5273ec5c44964c0f5",
+  "docs/benchmarks/phase3/published/timings.json": "b6cf606533ba7ef239f316db04273e76d41ac1af75d96bfc5b14aa55418e3270",
+  "docs/benchmarks/phase3/script_reproduction_check.json": "4b29bf6299204c3c51a061525f85424bd01feceb9e2c28cb182603064e21fb0f",
+  "docs/benchmarks/phase3/sourcefree_check.json": "2eb5537d4a581366df535877b5202f87d9ad23648badd5a59d91b5bf50999602"
+}
