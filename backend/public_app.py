@@ -59,7 +59,7 @@ def create_public_app(root: Path = ROOT):
     @app.get('/ready')
     def ready():
         return {'ready': True, 'mode': 'synthetic-demo', 'version': 'public-package-v1',
-                'product_version': app.version, 'release_status': 'release-candidate',
+                'product_version': app.version, 'release_status': 'stable',
                 'external_ai': False, 'interactive_solver': False}
 
     @app.get('/')

@@ -1,6 +1,6 @@
 # Architecture
 
-## v1.1.0 release-candidate distribution
+## v1.1.0 stable portfolio distribution
 
 Use `deploy/serve.py` **from the inspected standalone package** for the complete public
 fictional journey. `backend.public_app` composes the unchanged G1 catalog and G7 operator

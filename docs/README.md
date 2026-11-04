@@ -1,9 +1,11 @@
 # GridGuide documentation
 
-For the v1.1.0 release candidate: [release notes](releases/v1.1.0.md),
+For the stable v1.1.0 portfolio release: [GitHub downloads](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.1.0), [release notes](releases/v1.1.0.md),
 [reproduction guide](REPRODUCING_V1_1.md), [final research report](benchmarks/v1.1.0.md),
 [authentic demonstration](media/v1.1.0-integrated/README.md), and [G9 review packet](planning/V1_1_0_PHASE9.md).
-The older challenge documents below remain historical/technical references.
+The older challenge documents below remain historical/technical references. The
+[stable finalization record](releases/v1.1.0/FINALIZATION.md) distinguishes current
+package status from preserved candidate-era media, models and acceptance records.
 
 Start with the [project walkthrough](../README.md#product-walkthrough) or [local setup](../README.md#getting-started). For a technical review, read the architecture, model specification, and verification record in that order.
 
@@ -49,7 +51,7 @@ Start with the [project walkthrough](../README.md#product-walkthrough) or [local
 
 ## v1.1.0 phased work
 
-The [approved master roadmap](planning/V1_1_0_MASTER_ROADMAP.md) preserves the full scope and controlling refinements. G1 is approved and merged. The original Phase 1 evidence is in the [G1 checklist](planning/V1_1_0_PHASE1.md), [feasibility findings](research/phase1/FEASIBILITY.md), and [isolated catalog instructions](research/phase1/ARTIFACT_README.md). Later phases require their review gates; this is not a v1.1.0 release announcement.
+The [approved master roadmap](planning/V1_1_0_MASTER_ROADMAP.md) preserves the full scope and controlling refinements. G1–G9 and the product/media/README corrections are approved and merged. The original Phase 1 evidence is in the [G1 checklist](planning/V1_1_0_PHASE1.md), [feasibility findings](research/phase1/FEASIBILITY.md), and [isolated catalog instructions](research/phase1/ARTIFACT_README.md). Dated phase packets retain their original review status; the stable release adds no new research.
 
 ## Historical development records
 
@@ -103,4 +105,6 @@ is claimed, and no API/UI integration is included.
 snapshot storage, scoped offline caching, reproduction commands and accessibility limits.
 
 - [Phase 7 operator review packet](planning/V1_1_0_PHASE7.md): fictional comparisons,
-  structured overrides, review/export and replay; implementation awaits independent G7 approval.
+  structured overrides, review/export and replay; approved G7 implementation.
+- [Phase 8 / G8 packet](planning/V1_1_0_PHASE8.md): source-free distribution and bounded security dispositions.
+- [Phase 9 / G9 packet](planning/V1_1_0_PHASE9.md): accepted preservation and reproduction evidence.

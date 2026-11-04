@@ -1,0 +1,59 @@
+{
+  "public_python": {
+    "collected": 102,
+    "errors": 0,
+    "executed": 102,
+    "failed": 0,
+    "lane": "public",
+    "not_executed": 0,
+    "passed": 102,
+    "skipped": 0,
+    "status": "PASS",
+    "unavailable": 0
+  },
+  "production_browser": {
+    "direct": {
+      "passed": 6,
+      "failed": 0
+    },
+    "container": {
+      "passed": 6,
+      "failed": 0
+    },
+    "coverage": "Chromium only"
+  },
+  "container_rehearsal": {
+    "actual_outage_unavailable": true,
+    "all_application_layer_files_verified": 47,
+    "application_files": 47,
+    "architecture": "arm64",
+    "body_logging": "",
+    "cold_start_ms": [
+      688.9269999810494
+    ],
+    "image_id": "sha256:a4e4f8050767981ad9fc8a6cc047a6c9c31e2382b671763462b5de569ef6be57",
+    "network_none": "ready and comparison verified with no external interface",
+    "restart_ms": 604.0096250362694,
+    "runtime_bounds": {
+      "CapDrop": [
+        "ALL"
+      ],
+      "ReadonlyRootfs": true,
+      "SecurityOpt": [
+        "no-new-privileges"
+      ],
+      "Tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=16m"
+      }
+    },
+    "runtime_manifest_verified": true,
+    "user": "10001:10001"
+  },
+  "build_and_generated_types": "PASS",
+  "byte_identical_zip_builds": 2,
+  "historical_review_replay": "PASS",
+  "dependency_notices": "identical",
+  "test_environment_preparation": "Initial missing HTTPX/legacy import dependencies resolved using existing pins; no source or lock change",
+  "new_source_dependent_tests_executed": 0,
+  "new_research_tests_executed": 0
+}
