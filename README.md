@@ -7,6 +7,7 @@
 Understand an outage scenario. Prepare for what comes next. See the decisions behind repair order.
 
 [![CI · main](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/its-spark-dev/GridGuide/actions/workflows/ci.yml)
+[![MIT licensed code](https://img.shields.io/badge/license-MIT-0b7d56)](LICENSE)
 [![Version 1.1.0 stable](https://img.shields.io/badge/version-1.1.0%20stable-025a95)](https://github.com/its-spark-dev/GridGuide/releases/tag/v1.1.0)
 [![React and TypeScript](https://img.shields.io/badge/React-TypeScript-3178c6)](frontend/package.json)
 [![FastAPI and Python](https://img.shields.io/badge/FastAPI-Python-009688)](docs/ARCHITECTURE.md)
@@ -264,9 +265,12 @@ and same-origin trust limitations, retained dependency advisories and unexecuted
 scanning are documented in the [release limitations](docs/releases/v1.1.0.md#security-privacy-and-scope).
 Future public hosting requires a current vulnerability assessment and host-security review.
 
-No project-wide software license has been selected, and challenge-data permissions remain
-unresolved. The source-free package does not remove historical repository exposure or
-grant redistribution rights. See the [publication audit](docs/releases/PUBLIC_RELEASE_AUDIT.md#findings)
+The contributors have approved the [MIT License](LICENSE) for GridGuide's original
+software code and documentation. **This does not license the AEP challenge datasets,
+derived source records, third-party fonts, map tiles, or other externally owned material.**
+Their separate terms and unresolved redistribution/privacy questions remain documented.
+The source-free package does not remove historical repository exposure or grant rights
+in excluded materials. See the [publication audit](docs/releases/PUBLIC_RELEASE_AUDIT.md#findings)
 and [third-party notices](THIRD_PARTY_NOTICES.md).
 
 v1.1.0 is intended as the final major feature release, with reproducible artifacts

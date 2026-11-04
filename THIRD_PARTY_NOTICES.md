@@ -1,6 +1,6 @@
 # Third-party materials and license status
 
-This inventory records materials used by the preserved application. It is not a project license or a grant of rights to AEP data. No project-wide software license has been selected. The released snapshot retains its existing third-party notices.
+This inventory records materials used by the preserved application. It is not a project license or a grant of rights to AEP data. GridGuide contributors have approved the MIT License for original project software and documentation. The MIT grant does not apply to independently owned third-party materials or the AEP challenge datasets. Historical v1.0.0/v1.1.0 release snapshots retain their original license-status statements.
 
 | Material | Local evidence and release handling |
 | --- | --- |
@@ -15,6 +15,6 @@ The historical pipeline has a separate, unpinned [requirements file](requirement
 
 ## Project license status
 
-A future software license requires agreement from the relevant contributors and rights holders. No license choice is implied by this release. A project code license would not extend to AEP datasets, external reference materials, fonts, or dependencies beyond their own terms.
+The contributors have agreed to license their original GridGuide software code and documentation under the repository [MIT License](LICENSE). This grant applies only to material the contributors have the right to license. It **does not** grant rights to AEP challenge raw GIS/topology/workbook data, derived challenge records, third-party reference materials, fonts, OpenStreetMap tiles, or dependencies; those remain subject to their respective rights and terms. Historical publication/privacy findings remain unresolved and are not cured by adding MIT. Previously tagged v1.0.0 and v1.1.0 remain unchanged.
 
 For any later binary, hosted, or downloadable application distribution, review the complete transitive dependency notices, font notices, and map-provider requirements for that artifact. The repository does not include tracked `node_modules`, virtual environments, or compiled frontend output.

@@ -1,8 +1,8 @@
 # GridGuide 1.1.0 — stable local portfolio distribution
 
 This package is independently authored fiction, not a utility system or authenticated
-review service. Original challenge data and external AI are absent. Project licensing
-remains undecided; THIRD_PARTY_NOTICES.md preserves historical attribution/context and
+review service. Original challenge data and external AI are absent. Original contributor-owned software is MIT licensed; see LICENSE.
+AEP data and third-party materials are excluded from that grant. THIRD_PARTY_NOTICES.md preserves attribution/context and
 DEPENDENCY_NOTICES.txt contains the licenses for bundled/runtime dependencies. References
 in the historical notice may point to files intentionally excluded from this package.
 
