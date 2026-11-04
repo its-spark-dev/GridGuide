@@ -1,0 +1,8 @@
+{
+  "episodes_sha256": "767f3e32009299fd62877a0a6bfc4b8ccb545b34eab544ed4dc7958008be47e7",
+  "numerical_identity": "e8964bd6664f89343fd54b531f66f77975c007365b28a5099e4a1a30022f9df9",
+  "receipt_sha256": "6e3f85aa7d0ec712bd39b078ba92ab57207f639ecbd6118578e172cddb377083",
+  "rows": 6120,
+  "summary_sha256": "5c72d84dd1d1601b38acb51d143cc86df3a3a7b5c11f064d0b19aab42f4df5b0",
+  "version": "adaptive-dispatch-v1"
+}

@@ -1,0 +1,29 @@
+{
+  "artifacts": {
+    "REPORT.md": "23f83847912c415772443a03c5d994c66102c56defe3601fdd0baa4cfed95510",
+    "figures/comparators.png": "fbdce6fd158522301289a56f18246e59d9fa11a42acb241fd20ef7d0ec13efc1",
+    "figures/comparators.svg": "9f2d66a1dba0c752ad28b305ecbd0f2c259edf17445b8de8ae46fd4f81ad20b9",
+    "figures/paired-configurations.png": "6c97400bcbca8f651ed4dc6992ee055742300bd768a677e2983344653436a25e",
+    "figures/paired-configurations.svg": "047ea6853b02cc92aefdd962e4827ec25ee1779aa307a6b64a2e388585dbeae8",
+    "figures/quality-runtime.png": "ef255a9a2b2f9d3f68ef8fa273ac723b6918c0b7fb2543091f28d2fa40d5b97d",
+    "figures/quality-runtime.svg": "2577aff3f40fbe85a7c8a495f33cb40e625f470b56f30296359bbe7a662eebb7"
+  },
+  "scope": "Verified opportunity evidence; no unmeasured model claims",
+  "source_evidence": {
+    "docs/adaptive-dispatch/evidence/confirmation/completion.json": "540eb1e7ba8d5af80de7314ce02b4ebc7d3578dc99191d664a3c55ac08d6e9ca",
+    "docs/adaptive-dispatch/evidence/confirmation/episodes.jsonl.gz": "e9d70c713f10fd435751565cff6682d4c0dc83eaa7b2cebff690f56d40287db9",
+    "docs/adaptive-dispatch/evidence/confirmation/receipt.json": "632651dbb041a566ba75ba8b1fa9ac866e1b8b22bf1e48f8a1a459d8b9979b08",
+    "docs/adaptive-dispatch/evidence/confirmation/runtime.json": "08e159a5b71b11ff1e879a7f62d5acf32a08eb57b05c455911d7a51e4f1507f5",
+    "docs/adaptive-dispatch/evidence/confirmation/summary.json": "7d909d8e056ea16b59c175609695709a69f405a59ef2cf07ae47fabbf911efcc",
+    "docs/adaptive-dispatch/evidence/confirmation/timings.jsonl.gz": "dcf2a9bef45f7d12312f6870a935bd8886659fb5730915842bfa3aec14415579",
+    "docs/adaptive-dispatch/evidence/dataset/cases.jsonl.gz": "741d3740f14af13631d29cb5e2dcb243c2e157c2548af2a8a929d108c2ae0d1f",
+    "docs/adaptive-dispatch/evidence/dataset/manifest.json": "bbcf96593bbc15147aaf0929a5b51131db1529e0518948b8f16b7f92a63e2982",
+    "docs/adaptive-dispatch/evidence/discovery/completion.json": "7976c9c69456e735da73de7048070ab17909744a4e9ae56fc2253204e380e42e",
+    "docs/adaptive-dispatch/evidence/discovery/episodes.jsonl.gz": "767f3e32009299fd62877a0a6bfc4b8ccb545b34eab544ed4dc7958008be47e7",
+    "docs/adaptive-dispatch/evidence/discovery/receipt.json": "6e3f85aa7d0ec712bd39b078ba92ab57207f639ecbd6118578e172cddb377083",
+    "docs/adaptive-dispatch/evidence/discovery/runtime.json": "1f42ed820a7a5c8202c92aa202804373fbd6cc09b3d85c3c65677d244bc49fce",
+    "docs/adaptive-dispatch/evidence/discovery/summary.json": "5c72d84dd1d1601b38acb51d143cc86df3a3a7b5c11f064d0b19aab42f4df5b0",
+    "docs/adaptive-dispatch/evidence/discovery/timings.jsonl.gz": "4b9052ff592cbb212e90a48158439aa13c57e134219d456cefe4878d384d39bc"
+  },
+  "version": "adaptive-presentation-v1"
+}

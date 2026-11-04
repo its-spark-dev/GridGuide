@@ -227,6 +227,22 @@ rights requirements for this study. No predictor or holdout score is claimed. In
 [feasibility decision](docs/outage-ml/FEASIBILITY.md) and
 [source replay commands](docs/outage-ml/REPRODUCE.md).
 
+## Adaptive Dispatch — decisions as repairs finish
+
+A new [event-driven scheduling study](docs/adaptive-dispatch/README.md) compares **15
+non-clairvoyant methods across 29,880 validated fictional method-episodes**. Policies
+assign ready tasks or wait using observed completions; future durations stay hidden.
+
+On 24 independent confirmation configurations, the selected reactive method reduces
+mean waiting by **7.88%** against the selected fixed-order control. The stochastic
+teacher adds only **0.113%** over cheaper online search, with an interval crossing zero
+and about **8×** the decision cost. The preregistered learning gate fails, so no learned
+dispatch model or RL benefit is claimed. Prior ML studies and the dashboard remain separate.
+
+[Comparisons and figures](docs/adaptive-dispatch/presentation/REPORT.md) ·
+[Protocol and limitations](docs/adaptive-dispatch/PROTOCOL.md) ·
+[Reproduction](docs/adaptive-dispatch/REPRODUCE.md)
+
 ## Research findings and reproducibility
 
 Frozen scenarios, independent validation and reproducible reports make unsuccessful
