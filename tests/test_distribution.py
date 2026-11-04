@@ -6,6 +6,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 import zipfile
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from fastapi.testclient import TestClient
 from backend.public_app import create_public_app
 from backend.public_integrity import verify_tree
@@ -52,3 +54,27 @@ class DistributionTests(unittest.TestCase):
     def test_mode_and_provider_cannot_be_enabled_by_environment(self):
         for key,value in [('GRIDGUIDE_MODE','challenge-local'),('GRIDGUIDE_AI_PROVIDER','gemini')]:
             with patch.dict(os.environ,{key:value}),self.assertRaises(RuntimeError):create_public_app()
+
+    def test_two_calculation_slots_reject_saturation_and_recover_after_failure(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)/'pkg';archive=Path(d)/'pkg.zip';build(archive)
+            with zipfile.ZipFile(archive) as z:z.extractall(root)
+            with TestClient(create_public_app(root)) as client:
+                scenario=client.get('/api/v2/operator/scenarios').json()['scenarios'][0]
+                body={k:scenario[k] for k in ('scenario_id','scenario_fingerprint')}
+                entered=threading.Barrier(3);release=threading.Event()
+                def delayed(_):
+                    entered.wait(timeout=5)
+                    if not release.wait(timeout=5):raise RuntimeError('Test did not release calculations')
+                    raise ValueError('INTERNAL-DETAIL-MUST-NOT-LEAK')
+                with ThreadPoolExecutor(max_workers=2) as pool,patch('backend.review.compare',side_effect=delayed):
+                    futures=[pool.submit(client.post,'/api/v2/operator/compare',json=body) for _ in range(2)]
+                    try:
+                        entered.wait(timeout=5)
+                        self.assertEqual(client.post('/api/v2/operator/compare',json=body).status_code,503)
+                    finally:release.set()
+                    for future in futures:
+                        result=future.result(timeout=5)
+                        self.assertEqual(result.status_code,422)
+                        self.assertNotIn('INTERNAL-DETAIL',result.text)
+                self.assertEqual(client.post('/api/v2/operator/compare',json=body).status_code,200)

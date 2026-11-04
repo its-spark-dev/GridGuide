@@ -1,0 +1,76 @@
+{
+  "approval": "G8 pending independent review; no merge/release/deployment/Phase9",
+  "base_sha": "ddaccc9fc97fedc01666f38fcebd1f2f3c5c40f3",
+  "checks": {
+    "G2_G3_artifact_hashes": 20,
+    "G4_replay": "byte-identical No-Go",
+    "G5_artifact_hashes": 66,
+    "G6_artifact_hashes": 10,
+    "G7_artifact_hashes": 19,
+    "fresh_container": "passed",
+    "fresh_runtime_install": "hash-locked",
+    "image_application_layers": "all 38 files verified",
+    "network_none_container": "ready and comparison passed",
+    "source_pins": 4
+  },
+  "ci_first_run": {
+    "challenge_unavailable": 196,
+    "head": "a3051bf54dc5cb194aea98e82d49424e9111ea09",
+    "public": "passed",
+    "research_deferred": 51,
+    "run_id": 41761494199
+  },
+  "local_host": {
+    "browser": "Google Chrome 156.0.8078.80",
+    "container_arch": "linux/arm64",
+    "docker_engine": "29.8.1",
+    "hardware": "Apple M4 Pro, 12 cores, 24GB",
+    "os": "macOS 26.6.2",
+    "playwright": "1.64.1"
+  },
+  "local_tests": {
+    "container_browser": 3,
+    "count_note": "Full suite plus one added saturation test, executed within final public lane; repeated tests not double counted.",
+    "distinct_python_methods": 349,
+    "final_public_lane": {
+      "errors": 0,
+      "executed": 102,
+      "failed": 0,
+      "passed": 102,
+      "skipped": 0
+    },
+    "full_suite": {
+      "errors": 0,
+      "executed": 348,
+      "failed": 0,
+      "passed": 348,
+      "skipped": 0
+    },
+    "g6g7_browser": 20,
+    "golden_cli": "passed",
+    "legacy_browser": 49,
+    "legacy_plan_cases": 24,
+    "package_browser": 3,
+    "types_and_build": "passed; generated types unchanged"
+  },
+  "not_executed": [
+    "full G3 experiment rerun (historical evidence preserved)",
+    "full G5 Monte Carlo rerun (historical evidence preserved)",
+    "manual VoiceOver or non-Chromium browsers",
+    "OS CVE scan: Docker Scout requires login",
+    "public hosting, external load or availability tests"
+  ],
+  "runtime_commit": "7cf3118",
+  "test_and_workflow_inputs_sha256": {
+    ".github/workflows/ci.yml": "af614ba1fe6a2124ffe0d45ab0a7d9d700a359cc2184bf5e50f7472180947f18",
+    "frontend/distribution-tests/production.spec.ts": "3686c4165c360d96f6804f07d24c0f88b06a88aed0c5a43f5de782927fb4ffba",
+    "frontend/playwright.distribution.config.ts": "39a2073a3ffd9a6b62664dabddd41f81dfddd4d9c965006d967fc747c4842756",
+    "scripts/check_dependency_findings.py": "4d51d96224c6de6dde839a79980a115d16674d4a86d69d42346e2445b8c18974",
+    "scripts/check_frozen_artifacts.py": "881d66ccc58cb9845e0b1afd45a255b17aa92e23289314dcc4119fd996197afd",
+    "scripts/rehearse_container.py": "c544db052e4f4c315bd83c0009fb037f9dc1d9c5b8ca7fd5696014574b635c97",
+    "scripts/run_test_lane.py": "c1521985704558edcdd33027b20d2badf306dd9a23d07f259e20de0675a217ad",
+    "tests/test_claim_safety.py": "d432495c2a53073a49689fe2265099b4213f64f697e2af671921d7effce6e69e",
+    "tests/test_distribution.py": "0a3af17b8447e8c084a4081f4c1befeb6110e30c17bbe3b190fb7a0c3c34ea02",
+    "tests/test_public_properties.py": "4fb98880fea29375948a0c4a0fed5058dc0fd7d302605888af8cd5b0830523ac"
+  }
+}

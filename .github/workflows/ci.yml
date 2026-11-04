@@ -74,6 +74,7 @@ jobs:
           .venv/bin/python scripts/run_test_lane.py --lane public --report artifacts/phase8/public.json
           .venv/bin/python scripts/check_frozen_artifacts.py > artifacts/phase8/frozen.json
           .venv/bin/python scripts/package_demo.py --build /tmp/gridguide-public.zip > artifacts/phase8/package.json
+          cp /tmp/gridguide-public.zip artifacts/phase8/gridguide-public.zip
           python -m zipfile -e /tmp/gridguide-public.zip /tmp/gridguide-public
           python -m venv /tmp/gridguide-runtime
           /tmp/gridguide-runtime/bin/pip install --require-hashes -r /tmp/gridguide-public/deploy/requirements.lock
@@ -104,6 +105,7 @@ jobs:
           retention-days: 14
           path: |
             artifacts/phase8/*.json
+            artifacts/phase8/gridguide-public.zip
             frontend/test-results-distribution/
             frontend/test-results-container/
   slow-research:

@@ -1,0 +1,10 @@
+
+Running 3 tests using 1 worker
+
+(node:36783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 distribution-tests/production.spec.ts:33:1 › clean production customer journey, fixed default and independent exported replay (1.0s)
+  ✓  2 distribution-tests/production.spec.ts:60:1 › browser restart with network disabled, real service outage and cold restart (4.2s)
+  ✓  3 distribution-tests/production.spec.ts:91:1 › bounded actual HTTP comparison latency and unavailable route boundaries (248ms)
+
+  3 passed (7.5s)
