@@ -1,0 +1,209 @@
+{
+  "environment": {
+    "cpu_count": 12,
+    "machine": "arm64",
+    "packages": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.5",
+      "pydantic": "2.12.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "threadpoolctl": "3.7.0"
+    },
+    "processor": "arm",
+    "python": "3.12.14",
+    "system": "Darwin",
+    "thread_limit": 1
+  },
+  "methods": {
+    "fixed-floor:customer-count-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 408,
+        "mean_ms": 0.11276800490196079,
+        "median_ms": 0.1131465,
+        "p95_ms": 0.1407182
+      }
+    },
+    "fixed-floor:fifo-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 408,
+        "mean_ms": 0.10306380147058823,
+        "median_ms": 0.1035205,
+        "p95_ms": 0.12729769999999999
+      }
+    },
+    "fixed-floor:legacy-critical-proxy-first-adapter-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 408,
+        "mean_ms": 0.188169306372549,
+        "median_ms": 0.1860415,
+        "p95_ms": 0.23967895
+      }
+    },
+    "fixed-floor:legacy-release-per-person-hour-adapter-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 408,
+        "mean_ms": 0.18156473529411765,
+        "median_ms": 0.182542,
+        "p95_ms": 0.23470625
+      }
+    },
+    "fixed-order:customer-count-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 408,
+        "mean_ms": 0.10943186274509804,
+        "median_ms": 0.1089375,
+        "p95_ms": 0.1367479
+      }
+    },
+    "fixed-order:fifo-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 408,
+        "mean_ms": 0.09185056862745097,
+        "median_ms": 0.092021,
+        "p95_ms": 0.11519395
+      }
+    },
+    "fixed-order:legacy-critical-proxy-first-adapter-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 408,
+        "mean_ms": 0.18569055147058822,
+        "median_ms": 0.186792,
+        "p95_ms": 0.23616075
+      }
+    },
+    "fixed-order:legacy-release-per-person-hour-adapter-v1": {
+      "all_decisions": null,
+      "discretionary_decisions": null,
+      "initial_fixed_planning": {
+        "count": 408,
+        "mean_ms": 0.17842670343137257,
+        "median_ms": 0.1777085,
+        "p95_ms": 0.229867
+      }
+    },
+    "reactive:critical": {
+      "all_decisions": {
+        "count": 10472,
+        "mean_ms": 0.011241840049656227,
+        "median_ms": 0.002833,
+        "p95_ms": 0.028916449999999996
+      },
+      "discretionary_decisions": {
+        "count": 4480,
+        "mean_ms": 0.022454623214285714,
+        "median_ms": 0.021458,
+        "p95_ms": 0.03346105000000001
+      },
+      "initial_fixed_planning": null
+    },
+    "reactive:customer": {
+      "all_decisions": {
+        "count": 10472,
+        "mean_ms": 0.008768115928189458,
+        "median_ms": 0.002875,
+        "p95_ms": 0.019477449999999952
+      },
+      "discretionary_decisions": {
+        "count": 4464,
+        "mean_ms": 0.016750590949820787,
+        "median_ms": 0.016458,
+        "p95_ms": 0.021875
+      },
+      "initial_fixed_planning": null
+    },
+    "reactive:downstream": {
+      "all_decisions": {
+        "count": 10471,
+        "mean_ms": 0.021307988921783972,
+        "median_ms": 0.002917,
+        "p95_ms": 0.073021
+      },
+      "discretionary_decisions": {
+        "count": 4458,
+        "mean_ms": 0.045588218483624945,
+        "median_ms": 0.041708,
+        "p95_ms": 0.083375
+      },
+      "initial_fixed_planning": null
+    },
+    "reactive:fifo": {
+      "all_decisions": {
+        "count": 10472,
+        "mean_ms": 0.007752574579831933,
+        "median_ms": 0.003041,
+        "p95_ms": 0.017458
+      },
+      "discretionary_decisions": {
+        "count": 4482,
+        "mean_ms": 0.014323751227130746,
+        "median_ms": 0.014917,
+        "p95_ms": 0.02
+      },
+      "initial_fixed_planning": null
+    },
+    "reactive:release": {
+      "all_decisions": {
+        "count": 10472,
+        "mean_ms": 0.011182897727272727,
+        "median_ms": 0.002875,
+        "p95_ms": 0.029333449999999997
+      },
+      "discretionary_decisions": {
+        "count": 4445,
+        "mean_ms": 0.022320661417322835,
+        "median_ms": 0.021125,
+        "p95_ms": 0.0345
+      },
+      "initial_fixed_planning": null
+    },
+    "search:stochastic-8": {
+      "all_decisions": {
+        "count": 10472,
+        "mean_ms": 14.70096000343774,
+        "median_ms": 0.003,
+        "p95_ms": 73.14989579999998
+      },
+      "discretionary_decisions": {
+        "count": 4495,
+        "mean_ms": 34.24542406585094,
+        "median_ms": 25.811542,
+        "p95_ms": 89.0503204
+      },
+      "initial_fixed_planning": null
+    },
+    "search:support-median": {
+      "all_decisions": {
+        "count": 10472,
+        "mean_ms": 1.8165564263750955,
+        "median_ms": 0.003042,
+        "p95_ms": 9.073524999999993
+      },
+      "discretionary_decisions": {
+        "count": 4487,
+        "mean_ms": 4.236112609761533,
+        "median_ms": 3.183584,
+        "p95_ms": 11.174408199999998
+      },
+      "initial_fixed_planning": null
+    }
+  },
+  "note": "Fixed planning is one-time; online figures time callbacks, separately retaining forced event waits",
+  "peak_rss_mib": 142.203125,
+  "wall_seconds": 182.98222441697726
+}

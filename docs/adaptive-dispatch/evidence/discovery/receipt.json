@@ -1,0 +1,63 @@
+{
+  "discovery_identity": null,
+  "environment": {
+    "cpu_count": 12,
+    "machine": "arm64",
+    "packages": {
+      "joblib": "1.6.0",
+      "matplotlib": "3.10.7",
+      "numpy": "2.3.5",
+      "pydantic": "2.12.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "threadpoolctl": "3.7.0"
+    },
+    "processor": "arm",
+    "python": "3.12.14",
+    "system": "Darwin",
+    "thread_limit": 1
+  },
+  "input_identity": "746f652063fd4befea08aded2e97747f654c12f194fa5c3cdaa1f58d7d121075",
+  "methods": [
+    "fixed-floor:fifo-v1",
+    "fixed-floor:customer-count-v1",
+    "fixed-floor:legacy-release-per-person-hour-adapter-v1",
+    "fixed-floor:legacy-critical-proxy-first-adapter-v1",
+    "fixed-order:fifo-v1",
+    "fixed-order:customer-count-v1",
+    "fixed-order:legacy-release-per-person-hour-adapter-v1",
+    "fixed-order:legacy-critical-proxy-first-adapter-v1",
+    "reactive:fifo",
+    "reactive:customer",
+    "reactive:release",
+    "reactive:critical",
+    "reactive:downstream",
+    "search:support-median",
+    "search:stochastic-8"
+  ],
+  "partition": "discovery",
+  "revision": "ed89a1b27fccf115d76c8569c5ae6116be1de2e7",
+  "source_hashes": {
+    "backend/contracts.py": "337c10e700fd76d2e970e09dd5eba5625284ba75eb2d4f5384fd474063aaa601",
+    "backend/risk_rules.py": "c61ba299ec445d85002d6dc389682d95a5d13248efb04b058cc00ce23f9de7d9",
+    "benchmarks/contracts.py": "14f20cdd325ae43acf39e437ff027831dedfd34606474311a45acfaae7c08436",
+    "benchmarks/metrics.py": "b2163c0ed44d444eebe07a5abd059c66aa1b11bcfea494e226889cffee99b621",
+    "benchmarks/policies.py": "66acc974af47f4f289ebd6279ff3ed7035a2e92795df077e66c138d54d8dca14",
+    "benchmarks/validation.py": "01dd990121e6b6e3a3dac9663697379355813a239ec95000115e7caae64e79c9",
+    "docs/adaptive-dispatch/PROTOCOL.md": "d85d736eeb5c6d7436099f2c5a61214e100e86473addbf4b928d7db7f627eebe",
+    "requirements-ml.lock": "f5f0bae24f653c08b89f4576a3e6c36363044492c417ee4642961ed57273d9cf",
+    "research/adaptive_dispatch/__init__.py": "5196d251eeab5dc5e9dfba8021c478680e7a64b8bc5d6c4e2eea53d18d545005",
+    "research/adaptive_dispatch/dataset.py": "e1b31913825becd9cc5a041ebd1ee6003c9ee7adeec20eec01d36c775828ea5b",
+    "research/adaptive_dispatch/environment.py": "711321142eb0d68fbc110667b1d494af15d7535129b76b8048bad7e27973f925",
+    "research/adaptive_dispatch/exact.py": "94e420d668ecd03db95d49ed7f8fe181cecf0a9d3b81d74a434d1febe4bd2494",
+    "research/adaptive_dispatch/experiment.py": "71995f42d8a345865643226535f93cc6a467fa0c1af05fd70f0756428e6eb9dd",
+    "research/adaptive_dispatch/policies.py": "adc3add104f8700d112ba83181ebf4131ec2161899391f85ea48f2ea9b3268a6",
+    "research/adaptive_dispatch/validation.py": "21a9f851706619fd5b56fccc35116d65147073edc862bb24e1ea0f2c999a12c6",
+    "research/ml_lab/access.py": "97449e7f49e2b7d6ec7e96a609146ed6d14692ddfe85c33478919a4b307191a1",
+    "research/ml_lab/artifacts.py": "5c492ab2eaa73cc0fcacf0356ec92c57a5a63fd2da31330a20ab8e0bc66dda03",
+    "research/ml_lab/contracts.py": "5e114dc993d8611ef1bdda7d5baf7c9177b42fb2a5e389d8d11eee376733e960",
+    "research/ml_lab/generator.py": "c53c3813463c40018f7d760d270bb917829f6e515258311ff0aab0fe7be16674"
+  },
+  "started_at": "2026-11-04T16:02:22.997715+00:00",
+  "version": "adaptive-dispatch-v1"
+}

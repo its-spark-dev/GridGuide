@@ -1,0 +1,2185 @@
+{
+  "aggregates": {
+    "deterministic": {
+      "fixed-floor:customer-count-v1": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.08932803069513,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.08932803069513,
+          "improvement": -2.467018076010385,
+          "improvement_ci95": [
+            -4.38002107041815,
+            -1.0577017028020963
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.5403106725146198,
+            "adaptive-full-discovery-bottleneck-001": -2.69338930348259,
+            "adaptive-full-discovery-bottleneck-002": -0.9603092105263158,
+            "adaptive-full-discovery-layered-000": -2.96572302240512,
+            "adaptive-full-discovery-layered-001": -2.973757716049384,
+            "adaptive-full-discovery-layered-002": -0.15395054200542013,
+            "adaptive-full-discovery-modular-000": -0.469697447447448,
+            "adaptive-full-discovery-modular-001": -11.961834815855179,
+            "adaptive-full-discovery-modular-002": -1.4428257978723402,
+            "adaptive-full-discovery-random-ordered-000": -4.5396842355175675,
+            "adaptive-full-discovery-random-ordered-001": -0.3289123093681918,
+            "adaptive-full-discovery-random-ordered-002": -0.5738218390804599
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.16871602938631414,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-floor:fifo-v1": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.479842942962623,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.479842942962623,
+          "improvement": -2.85753298827788,
+          "improvement_ci95": [
+            -4.659459747471033,
+            -1.3740324034477251
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.5403106725146198,
+            "adaptive-full-discovery-bottleneck-001": -2.69338930348259,
+            "adaptive-full-discovery-bottleneck-002": -1.0577865497076027,
+            "adaptive-full-discovery-layered-000": -4.911494055784179,
+            "adaptive-full-discovery-layered-001": -3.691445707070706,
+            "adaptive-full-discovery-layered-002": -0.28094444444444466,
+            "adaptive-full-discovery-modular-000": -2.7961786786786784,
+            "adaptive-full-discovery-modular-001": -11.961834815855179,
+            "adaptive-full-discovery-modular-002": -1.3495471335697395,
+            "adaptive-full-discovery-random-ordered-000": -3.8532739791073087,
+            "adaptive-full-discovery-random-ordered-001": -0.7848801742919389,
+            "adaptive-full-discovery-random-ordered-002": -0.36931034482758607
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.1954228160347794,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-floor:legacy-critical-proxy-first-adapter-v1": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.834052017004197,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.8340520170042,
+          "improvement": -2.2117420623194572,
+          "improvement_ci95": [
+            -3.2619578737696595,
+            -1.2282634052472192
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.5643323586744637,
+            "adaptive-full-discovery-bottleneck-001": -5.087600193477066,
+            "adaptive-full-discovery-bottleneck-002": -0.8151710526315792,
+            "adaptive-full-discovery-layered-000": -1.5631601508916324,
+            "adaptive-full-discovery-layered-001": -2.6013334736251394,
+            "adaptive-full-discovery-layered-002": -0.119128048780488,
+            "adaptive-full-discovery-modular-000": -1.7574714714714728,
+            "adaptive-full-discovery-modular-001": -4.688078963795254,
+            "adaptive-full-discovery-modular-002": -0.7962625591016543,
+            "adaptive-full-discovery-random-ordered-000": -5.100373931623933,
+            "adaptive-full-discovery-random-ordered-001": -3.3886247276688457,
+            "adaptive-full-discovery-random-ordered-002": -0.05936781609195396
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.1512580480904696,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-floor:legacy-release-per-person-hour-adapter-v1": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.213461366210222,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.213461366210225,
+          "improvement": -1.5911514115254821,
+          "improvement_ci95": [
+            -2.577291076662858,
+            -0.7458542465399575
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.4293615984405461,
+            "adaptive-full-discovery-bottleneck-001": -0.543691956882256,
+            "adaptive-full-discovery-bottleneck-002": -1.1224243421052638,
+            "adaptive-full-discovery-layered-000": -3.130471536351166,
+            "adaptive-full-discovery-layered-001": -1.3147453703703729,
+            "adaptive-full-discovery-layered-002": -0.10623577235772363,
+            "adaptive-full-discovery-modular-000": -1.2790743243243248,
+            "adaptive-full-discovery-modular-001": -4.688078963795254,
+            "adaptive-full-discovery-modular-002": -0.4424276004728127,
+            "adaptive-full-discovery-random-ordered-000": -5.100373931623933,
+            "adaptive-full-discovery-random-ordered-001": -0.8775637254901958,
+            "adaptive-full-discovery-random-ordered-002": -0.05936781609195396
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.1088166928793425,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-order:customer-count-v1": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.08932803069513,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.08932803069513,
+          "improvement": -2.467018076010385,
+          "improvement_ci95": [
+            -4.38002107041815,
+            -1.0577017028020963
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.5403106725146198,
+            "adaptive-full-discovery-bottleneck-001": -2.69338930348259,
+            "adaptive-full-discovery-bottleneck-002": -0.9603092105263158,
+            "adaptive-full-discovery-layered-000": -2.96572302240512,
+            "adaptive-full-discovery-layered-001": -2.973757716049384,
+            "adaptive-full-discovery-layered-002": -0.15395054200542013,
+            "adaptive-full-discovery-modular-000": -0.469697447447448,
+            "adaptive-full-discovery-modular-001": -11.961834815855179,
+            "adaptive-full-discovery-modular-002": -1.4428257978723402,
+            "adaptive-full-discovery-random-ordered-000": -4.5396842355175675,
+            "adaptive-full-discovery-random-ordered-001": -0.3289123093681918,
+            "adaptive-full-discovery-random-ordered-002": -0.5738218390804599
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.16871602938631414,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-order:fifo-v1": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.479842942962623,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.479842942962623,
+          "improvement": -2.85753298827788,
+          "improvement_ci95": [
+            -4.659459747471033,
+            -1.3740324034477251
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.5403106725146198,
+            "adaptive-full-discovery-bottleneck-001": -2.69338930348259,
+            "adaptive-full-discovery-bottleneck-002": -1.0577865497076027,
+            "adaptive-full-discovery-layered-000": -4.911494055784179,
+            "adaptive-full-discovery-layered-001": -3.691445707070706,
+            "adaptive-full-discovery-layered-002": -0.28094444444444466,
+            "adaptive-full-discovery-modular-000": -2.7961786786786784,
+            "adaptive-full-discovery-modular-001": -11.961834815855179,
+            "adaptive-full-discovery-modular-002": -1.3495471335697395,
+            "adaptive-full-discovery-random-ordered-000": -3.8532739791073087,
+            "adaptive-full-discovery-random-ordered-001": -0.7848801742919389,
+            "adaptive-full-discovery-random-ordered-002": -0.36931034482758607
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.1954228160347794,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-order:legacy-critical-proxy-first-adapter-v1": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.834052017004197,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.8340520170042,
+          "improvement": -2.2117420623194572,
+          "improvement_ci95": [
+            -3.2619578737696595,
+            -1.2282634052472192
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.5643323586744637,
+            "adaptive-full-discovery-bottleneck-001": -5.087600193477066,
+            "adaptive-full-discovery-bottleneck-002": -0.8151710526315792,
+            "adaptive-full-discovery-layered-000": -1.5631601508916324,
+            "adaptive-full-discovery-layered-001": -2.6013334736251394,
+            "adaptive-full-discovery-layered-002": -0.119128048780488,
+            "adaptive-full-discovery-modular-000": -1.7574714714714728,
+            "adaptive-full-discovery-modular-001": -4.688078963795254,
+            "adaptive-full-discovery-modular-002": -0.7962625591016543,
+            "adaptive-full-discovery-random-ordered-000": -5.100373931623933,
+            "adaptive-full-discovery-random-ordered-001": -3.3886247276688457,
+            "adaptive-full-discovery-random-ordered-002": -0.05936781609195396
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.1512580480904696,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-order:legacy-release-per-person-hour-adapter-v1": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.213461366210222,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.213461366210225,
+          "improvement": -1.5911514115254821,
+          "improvement_ci95": [
+            -2.577291076662858,
+            -0.7458542465399575
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.4293615984405461,
+            "adaptive-full-discovery-bottleneck-001": -0.543691956882256,
+            "adaptive-full-discovery-bottleneck-002": -1.1224243421052638,
+            "adaptive-full-discovery-layered-000": -3.130471536351166,
+            "adaptive-full-discovery-layered-001": -1.3147453703703729,
+            "adaptive-full-discovery-layered-002": -0.10623577235772363,
+            "adaptive-full-discovery-modular-000": -1.2790743243243248,
+            "adaptive-full-discovery-modular-001": -4.688078963795254,
+            "adaptive-full-discovery-modular-002": -0.4424276004728127,
+            "adaptive-full-discovery-random-ordered-000": -5.100373931623933,
+            "adaptive-full-discovery-random-ordered-001": -0.8775637254901958,
+            "adaptive-full-discovery-random-ordered-002": -0.05936781609195396
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.1088166928793425,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "reactive:critical": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 15.751793121209175,
+        "versus_selected_dynamic": {
+          "candidate_mean": 15.751793121209174,
+          "improvement": -1.1294831665244303,
+          "improvement_ci95": [
+            -1.940849510280549,
+            -0.4908071518530402
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.29809210526315777,
+            "adaptive-full-discovery-bottleneck-001": -0.5988619402985051,
+            "adaptive-full-discovery-bottleneck-002": -0.09936988304093597,
+            "adaptive-full-discovery-layered-000": -0.541570644718794,
+            "adaptive-full-discovery-layered-001": -2.0218623737373758,
+            "adaptive-full-discovery-layered-002": -0.05815243902439038,
+            "adaptive-full-discovery-modular-000": -1.48341966966967,
+            "adaptive-full-discovery-modular-001": -4.968149188514355,
+            "adaptive-full-discovery-modular-002": -0.43196956264775377,
+            "adaptive-full-discovery-random-ordered-000": -1.1233772554605874,
+            "adaptive-full-discovery-random-ordered-001": -1.869605119825708,
+            "adaptive-full-discovery-random-ordered-002": -0.05936781609195396
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.07724382604559431,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "reactive:customer": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 15.784036807300515,
+        "versus_selected_dynamic": {
+          "candidate_mean": 15.784036807300515,
+          "improvement": -1.1617268526157716,
+          "improvement_ci95": [
+            -1.7603559057448597,
+            -0.5858268108562471
+          ],
+          "losses": 23,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.42846491228070205,
+            "adaptive-full-discovery-bottleneck-001": -2.69338930348259,
+            "adaptive-full-discovery-bottleneck-002": -0.3595087719298249,
+            "adaptive-full-discovery-layered-000": -2.96572302240512,
+            "adaptive-full-discovery-layered-001": -1.8123723344556666,
+            "adaptive-full-discovery-layered-002": -0.15395054200542013,
+            "adaptive-full-discovery-modular-000": -0.41153978978979033,
+            "adaptive-full-discovery-modular-001": -2.7248205368289646,
+            "adaptive-full-discovery-modular-002": -0.9657432033096929,
+            "adaptive-full-discovery-random-ordered-000": -1.0806908831908828,
+            "adaptive-full-discovery-random-ordered-001": -0.3262494553376909,
+            "adaptive-full-discovery-random-ordered-002": -0.01826947637292431
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.07944892812531126,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 1,
+          "wins": 0
+        }
+      },
+      "reactive:downstream": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 15.237931036378392,
+        "versus_selected_dynamic": {
+          "candidate_mean": 15.237931036378392,
+          "improvement": -0.6156210816936483,
+          "improvement_ci95": [
+            -1.0042073803454108,
+            -0.2731663359422169
+          ],
+          "losses": 22,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.11556530214424954,
+            "adaptive-full-discovery-bottleneck-001": -2.0511781370923146,
+            "adaptive-full-discovery-bottleneck-002": -0.313218567251462,
+            "adaptive-full-discovery-layered-000": -0.24887688614540604,
+            "adaptive-full-discovery-layered-001": -0.9679741863075204,
+            "adaptive-full-discovery-layered-002": 0.025963414634146087,
+            "adaptive-full-discovery-modular-000": -0.6330945945945952,
+            "adaptive-full-discovery-modular-001": -1.7438416822721603,
+            "adaptive-full-discovery-modular-002": -0.05466312056737577,
+            "adaptive-full-discovery-random-ordered-000": -0.9522317188983838,
+            "adaptive-full-discovery-random-ordered-001": -0.2129286492374729,
+            "adaptive-full-discovery-random-ordered-002": -0.11984355044699857
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.042101493102080875,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 2
+        }
+      },
+      "reactive:fifo": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.34726337248851,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.34726337248851,
+          "improvement": -1.724953417803766,
+          "improvement_ci95": [
+            -2.5294316750726438,
+            -0.9791713569739722
+          ],
+          "losses": 23,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.42846491228070205,
+            "adaptive-full-discovery-bottleneck-001": -2.69338930348259,
+            "adaptive-full-discovery-bottleneck-002": -0.8573044590643275,
+            "adaptive-full-discovery-layered-000": -4.911494055784179,
+            "adaptive-full-discovery-layered-001": -2.822546296296297,
+            "adaptive-full-discovery-layered-002": -0.21996883468834727,
+            "adaptive-full-discovery-modular-000": -2.7675360360360357,
+            "adaptive-full-discovery-modular-001": -2.7248205368289646,
+            "adaptive-full-discovery-modular-002": -1.1145656028368793,
+            "adaptive-full-discovery-random-ordered-000": -1.0806908831908828,
+            "adaptive-full-discovery-random-ordered-001": -0.9504640522875811,
+            "adaptive-full-discovery-random-ordered-002": -0.12819604086845482
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.11796723111119115,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 1,
+          "wins": 0
+        }
+      },
+      "reactive:release": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 15.760047221053926,
+        "versus_selected_dynamic": {
+          "candidate_mean": 15.760047221053926,
+          "improvement": -1.1377372663691823,
+          "improvement_ci95": [
+            -1.9391814290708442,
+            -0.45252237331294837
+          ],
+          "losses": 24,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.4293615984405461,
+            "adaptive-full-discovery-bottleneck-001": -0.543691956882256,
+            "adaptive-full-discovery-bottleneck-002": -0.18399999999999994,
+            "adaptive-full-discovery-layered-000": -2.909921124828532,
+            "adaptive-full-discovery-layered-001": -1.4320784231200907,
+            "adaptive-full-discovery-layered-002": -0.04526016260162624,
+            "adaptive-full-discovery-modular-000": -1.400215465465466,
+            "adaptive-full-discovery-modular-001": -4.968149188514355,
+            "adaptive-full-discovery-modular-002": -0.42418291962174903,
+            "adaptive-full-discovery-random-ordered-000": -1.1233772554605874,
+            "adaptive-full-discovery-random-ordered-001": -0.13324128540305002,
+            "adaptive-full-discovery-random-ordered-002": -0.05936781609195396
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": -0.07780831276967086,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "search:stochastic-8": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 14.622309954684743,
+        "versus_selected_dynamic": {
+          "candidate_mean": 14.622309954684743,
+          "improvement": 0.0,
+          "improvement_ci95": [
+            0.0,
+            0.0
+          ],
+          "losses": 0,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": 0.0,
+            "adaptive-full-discovery-bottleneck-001": 0.0,
+            "adaptive-full-discovery-bottleneck-002": 0.0,
+            "adaptive-full-discovery-layered-000": 0.0,
+            "adaptive-full-discovery-layered-001": 0.0,
+            "adaptive-full-discovery-layered-002": 0.0,
+            "adaptive-full-discovery-modular-000": 0.0,
+            "adaptive-full-discovery-modular-001": 0.0,
+            "adaptive-full-discovery-modular-002": 0.0,
+            "adaptive-full-discovery-random-ordered-000": 0.0,
+            "adaptive-full-discovery-random-ordered-001": 0.0,
+            "adaptive-full-discovery-random-ordered-002": 0.0
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": 0.0,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 24,
+          "wins": 0
+        }
+      },
+      "search:support-median": {
+        "episodes": 24,
+        "groups": 12,
+        "mean_customer_wait_hours": 14.622309954684743,
+        "versus_selected_dynamic": {
+          "candidate_mean": 14.622309954684743,
+          "improvement": 0.0,
+          "improvement_ci95": [
+            0.0,
+            0.0
+          ],
+          "losses": 0,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": 0.0,
+            "adaptive-full-discovery-bottleneck-001": 0.0,
+            "adaptive-full-discovery-bottleneck-002": 0.0,
+            "adaptive-full-discovery-layered-000": 0.0,
+            "adaptive-full-discovery-layered-001": 0.0,
+            "adaptive-full-discovery-layered-002": 0.0,
+            "adaptive-full-discovery-modular-000": 0.0,
+            "adaptive-full-discovery-modular-001": 0.0,
+            "adaptive-full-discovery-modular-002": 0.0,
+            "adaptive-full-discovery-random-ordered-000": 0.0,
+            "adaptive-full-discovery-random-ordered-001": 0.0,
+            "adaptive-full-discovery-random-ordered-002": 0.0
+          },
+          "reference_mean": 14.622309954684743,
+          "relative_improvement": 0.0,
+          "supported_episodes": 24,
+          "supported_groups": 12,
+          "ties": 24,
+          "wins": 0
+        }
+      }
+    },
+    "high": {
+      "fixed-floor:customer-count-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 22.51069252024671,
+        "versus_selected_dynamic": {
+          "candidate_mean": 22.51069252024671,
+          "improvement": -6.182402611075041,
+          "improvement_ci95": [
+            -10.490993212971853,
+            -2.435928250505964
+          ],
+          "losses": 192,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.896770681042885,
+            "adaptive-full-discovery-bottleneck-001": -18.839245957711444,
+            "adaptive-full-discovery-bottleneck-002": -1.5700031980994151,
+            "adaptive-full-discovery-layered-000": -5.5121009802240515,
+            "adaptive-full-discovery-layered-001": -6.471648078002245,
+            "adaptive-full-discovery-layered-002": -0.5517970867208672,
+            "adaptive-full-discovery-modular-000": -1.4287949512012013,
+            "adaptive-full-discovery-modular-001": -24.676523047362675,
+            "adaptive-full-discovery-modular-002": -2.968836251477541,
+            "adaptive-full-discovery-random-ordered-000": -7.916253412867997,
+            "adaptive-full-discovery-random-ordered-001": -2.2834656862745097,
+            "adaptive-full-discovery-random-ordered-002": -1.0733920019157088
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.37863135977285406,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-floor:fifo-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 23.241245504591763,
+        "versus_selected_dynamic": {
+          "candidate_mean": 23.241245504591763,
+          "improvement": -6.912955595420094,
+          "improvement_ci95": [
+            -10.985009943034544,
+            -3.2177104883670724
+          ],
+          "losses": 192,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.896770681042885,
+            "adaptive-full-discovery-bottleneck-001": -18.839245957711444,
+            "adaptive-full-discovery-bottleneck-002": -1.8590318439327485,
+            "adaptive-full-discovery-layered-000": -8.314270476108826,
+            "adaptive-full-discovery-layered-001": -7.064903900112234,
+            "adaptive-full-discovery-layered-002": -0.7378333333333333,
+            "adaptive-full-discovery-modular-000": -5.84772682057057,
+            "adaptive-full-discovery-modular-001": -24.676523047362675,
+            "adaptive-full-discovery-modular-002": -3.031201148788416,
+            "adaptive-full-discovery-random-ordered-000": -7.798434383903134,
+            "adaptive-full-discovery-random-ordered-001": -2.7972492510893243,
+            "adaptive-full-discovery-random-ordered-002": -1.0922763010855683
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.4233729088517137,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-floor:legacy-critical-proxy-first-adapter-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 21.895194267097256,
+        "versus_selected_dynamic": {
+          "candidate_mean": 21.895194267097256,
+          "improvement": -5.566904357925587,
+          "improvement_ci95": [
+            -9.369576569676331,
+            -2.796932987946584
+          ],
+          "losses": 192,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.9839996040448342,
+            "adaptive-full-discovery-bottleneck-001": -22.703422039110006,
+            "adaptive-full-discovery-bottleneck-002": -1.2895889985380116,
+            "adaptive-full-discovery-layered-000": -4.171483267604024,
+            "adaptive-full-discovery-layered-001": -6.817266501823793,
+            "adaptive-full-discovery-layered-002": -0.5588146172086721,
+            "adaptive-full-discovery-modular-000": -3.220042042042042,
+            "adaptive-full-discovery-modular-001": -9.559298386782148,
+            "adaptive-full-discovery-modular-002": -2.3616666666666664,
+            "adaptive-full-discovery-random-ordered-000": -8.10052662037037,
+            "adaptive-full-discovery-random-ordered-001": -6.431836941721133,
+            "adaptive-full-discovery-random-ordered-002": -0.6049066091954023
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.3409361536873885,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-floor:legacy-release-per-person-hour-adapter-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 21.038951550079926,
+        "versus_selected_dynamic": {
+          "candidate_mean": 21.038951550079926,
+          "improvement": -4.710661640908256,
+          "improvement_ci95": [
+            -7.550058519681818,
+            -2.3840528434685604
+          ],
+          "losses": 192,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.8801292945906434,
+            "adaptive-full-discovery-bottleneck-001": -16.79540595632946,
+            "adaptive-full-discovery-bottleneck-002": -1.7559650493421053,
+            "adaptive-full-discovery-layered-000": -6.420472679469593,
+            "adaptive-full-discovery-layered-001": -4.757931309624018,
+            "adaptive-full-discovery-layered-002": -0.5503276592140922,
+            "adaptive-full-discovery-modular-000": -2.090681681681682,
+            "adaptive-full-discovery-modular-001": -9.559298386782148,
+            "adaptive-full-discovery-modular-002": -2.18509400856974,
+            "adaptive-full-discovery-random-ordered-000": -8.10052662037037,
+            "adaptive-full-discovery-random-ordered-001": -2.8272004357298477,
+            "adaptive-full-discovery-random-ordered-002": -0.6049066091954023
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.2884969379593302,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 0
+        }
+      },
+      "fixed-order:customer-count-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 19.142505798686418,
+        "versus_selected_dynamic": {
+          "candidate_mean": 19.142505798686418,
+          "improvement": -2.814215889514749,
+          "improvement_ci95": [
+            -5.466493741931313,
+            -1.0498065318891139
+          ],
+          "losses": 185,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.589457084551657,
+            "adaptive-full-discovery-bottleneck-001": -2.4247800925925933,
+            "adaptive-full-discovery-bottleneck-002": -1.2120442708333332,
+            "adaptive-full-discovery-layered-000": -2.0524313414494744,
+            "adaptive-full-discovery-layered-001": -3.213844170875421,
+            "adaptive-full-discovery-layered-002": -0.20199153116531166,
+            "adaptive-full-discovery-modular-000": -0.3950966591591592,
+            "adaptive-full-discovery-modular-001": -16.67852796309301,
+            "adaptive-full-discovery-modular-002": -1.7716329602541372,
+            "adaptive-full-discovery-random-ordered-000": -3.940920880816715,
+            "adaptive-full-discovery-random-ordered-001": -0.993895288671024,
+            "adaptive-full-discovery-random-ordered-002": -0.29596843071519796
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.17235215109293178,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 7
+        }
+      },
+      "fixed-order:fifo-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 19.949363841632437,
+        "versus_selected_dynamic": {
+          "candidate_mean": 19.949363841632437,
+          "improvement": -3.6210739324607673,
+          "improvement_ci95": [
+            -6.127556679973617,
+            -1.7349327678961506
+          ],
+          "losses": 191,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.589457084551657,
+            "adaptive-full-discovery-bottleneck-001": -2.4247800925925933,
+            "adaptive-full-discovery-bottleneck-002": -1.4789396472953216,
+            "adaptive-full-discovery-layered-000": -4.790989083219022,
+            "adaptive-full-discovery-layered-001": -4.208492301487093,
+            "adaptive-full-discovery-layered-002": -0.3299271680216803,
+            "adaptive-full-discovery-modular-000": -4.559167792792793,
+            "adaptive-full-discovery-modular-001": -16.67852796309301,
+            "adaptive-full-discovery-modular-002": -2.064390698877068,
+            "adaptive-full-discovery-random-ordered-000": -4.04962962962963,
+            "adaptive-full-discovery-random-ordered-001": -1.7920497685185182,
+            "adaptive-full-discovery-random-ordered-002": -0.48653595945083017
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.2217668814434018,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 1
+        }
+      },
+      "fixed-order:legacy-critical-proxy-first-adapter-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 18.669293253064204,
+        "versus_selected_dynamic": {
+          "candidate_mean": 18.669293253064208,
+          "improvement": -2.341003343892538,
+          "improvement_ci95": [
+            -3.3455600994249757,
+            -1.3965940052777912
+          ],
+          "losses": 175,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.7055998720760235,
+            "adaptive-full-discovery-bottleneck-001": -4.691031388197898,
+            "adaptive-full-discovery-bottleneck-002": -0.8538154239766081,
+            "adaptive-full-discovery-layered-000": -1.9131210705304067,
+            "adaptive-full-discovery-layered-001": -3.7421974081088667,
+            "adaptive-full-discovery-layered-002": -0.22319766260162602,
+            "adaptive-full-discovery-modular-000": -1.7578438438438442,
+            "adaptive-full-discovery-modular-001": -4.169157303370788,
+            "adaptive-full-discovery-modular-002": -1.3438716201241132,
+            "adaptive-full-discovery-random-ordered-000": -4.051389334045584,
+            "adaptive-full-discovery-random-ordered-001": -4.624500544662309,
+            "adaptive-full-discovery-random-ordered-002": -0.0163146551724139
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.14337100559303437,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 17
+        }
+      },
+      "fixed-order:legacy-release-per-person-hour-adapter-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 18.011500272725595,
+        "versus_selected_dynamic": {
+          "candidate_mean": 18.011500272725595,
+          "improvement": -1.6832103635539255,
+          "improvement_ci95": [
+            -2.478200079240758,
+            -0.9428945691786582
+          ],
+          "losses": 170,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.5858382066276804,
+            "adaptive-full-discovery-bottleneck-001": -0.4624417841348816,
+            "adaptive-full-discovery-bottleneck-002": -1.2035887701023393,
+            "adaptive-full-discovery-layered-000": -3.665352794924554,
+            "adaptive-full-discovery-layered-001": -2.1075931186868684,
+            "adaptive-full-discovery-layered-002": -0.2236814024390244,
+            "adaptive-full-discovery-modular-000": -0.8485579954954955,
+            "adaptive-full-discovery-modular-001": -4.169157303370788,
+            "adaptive-full-discovery-modular-002": -1.3970711436170213,
+            "adaptive-full-discovery-random-ordered-000": -4.051389334045584,
+            "adaptive-full-discovery-random-ordered-001": -1.4675378540305009,
+            "adaptive-full-discovery-random-ordered-002": -0.0163146551724139
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.10308552658710812,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 22
+        }
+      },
+      "reactive:critical": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.940967310496738,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.94096731049674,
+          "improvement": -0.6126774013250724,
+          "improvement_ci95": [
+            -1.0756917348563586,
+            -0.24660884904398472
+          ],
+          "losses": 123,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.012882096734892712,
+            "adaptive-full-discovery-bottleneck-001": -0.31045458471531506,
+            "adaptive-full-discovery-bottleneck-002": 0.017377604166666866,
+            "adaptive-full-discovery-layered-000": -0.4206505058299037,
+            "adaptive-full-discovery-layered-001": -1.19279505120651,
+            "adaptive-full-discovery-layered-002": -0.018569698509485158,
+            "adaptive-full-discovery-modular-000": -0.6988247935435438,
+            "adaptive-full-discovery-modular-001": -2.7559034117509373,
+            "adaptive-full-discovery-modular-002": -0.17348690528959793,
+            "adaptive-full-discovery-random-ordered-000": -0.7285587310066479,
+            "adaptive-full-discovery-random-ordered-001": -1.0574959831154682,
+            "adaptive-full-discovery-random-ordered-002": 0.00011534163473801706
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.037522447527155244,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 69
+        }
+      },
+      "reactive:customer": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.05397519869958,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.05397519869958,
+          "improvement": -0.7256852895279096,
+          "improvement_ci95": [
+            -1.1417003846120386,
+            -0.32213035106623644
+          ],
+          "losses": 149,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.054335861354775666,
+            "adaptive-full-discovery-bottleneck-001": -1.4349071482863474,
+            "adaptive-full-discovery-bottleneck-002": -0.15063500548245612,
+            "adaptive-full-discovery-layered-000": -1.84265032007316,
+            "adaptive-full-discovery-layered-001": -1.029751420454545,
+            "adaptive-full-discovery-layered-002": -0.11727193428184288,
+            "adaptive-full-discovery-modular-000": -0.03632591966966961,
+            "adaptive-full-discovery-modular-001": -2.2315716194600506,
+            "adaptive-full-discovery-modular-002": -0.7788081781914893,
+            "adaptive-full-discovery-random-ordered-000": -1.0084087132003803,
+            "adaptive-full-discovery-random-ordered-001": -0.01073447712418285,
+            "adaptive-full-discovery-random-ordered-002": -0.012822876756066415
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.04444343489518085,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 6,
+          "wins": 37
+        }
+      },
+      "reactive:downstream": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.59148690891554,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.59148690891554,
+          "improvement": -0.26319699974387234,
+          "improvement_ci95": [
+            -0.5363022674827376,
+            -0.042667414025547065
+          ],
+          "losses": 131,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.12225922880116957,
+            "adaptive-full-discovery-bottleneck-001": -1.3767919085129883,
+            "adaptive-full-discovery-bottleneck-002": -0.14357090643274842,
+            "adaptive-full-discovery-layered-000": -0.11195616140832179,
+            "adaptive-full-discovery-layered-001": -0.09607042648709285,
+            "adaptive-full-discovery-layered-002": 0.040764651084010825,
+            "adaptive-full-discovery-modular-000": -0.043345533033033096,
+            "adaptive-full-discovery-modular-001": -1.1137394662921352,
+            "adaptive-full-discovery-modular-002": 0.0316884604018913,
+            "adaptive-full-discovery-random-ordered-000": 0.137558315527065,
+            "adaptive-full-discovery-random-ordered-001": -0.25943709150326766,
+            "adaptive-full-discovery-random-ordered-002": -0.10120470146871016
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.01611907929170424,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 61
+        }
+      },
+      "reactive:fifo": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.53979952876102,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.53979952876102,
+          "improvement": -1.21150961958935,
+          "improvement_ci95": [
+            -1.9039191168070313,
+            -0.6388820694556641
+          ],
+          "losses": 173,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.054335861354775666,
+            "adaptive-full-discovery-bottleneck-001": -1.4349071482863474,
+            "adaptive-full-discovery-bottleneck-002": -0.585835480628655,
+            "adaptive-full-discovery-layered-000": -4.302772990969364,
+            "adaptive-full-discovery-layered-001": -1.1866575476992143,
+            "adaptive-full-discovery-layered-002": -0.08864684959349606,
+            "adaptive-full-discovery-modular-000": -1.8983705893393394,
+            "adaptive-full-discovery-modular-001": -2.2315716194600506,
+            "adaptive-full-discovery-modular-002": -1.0048422724586288,
+            "adaptive-full-discovery-random-ordered-000": -0.7111535493827164,
+            "adaptive-full-discovery-random-ordered-001": -0.9321614923747277,
+            "adaptive-full-discovery-random-ordered-002": -0.10686003352490411
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.07419696896175514,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 6,
+          "wins": 13
+        }
+      },
+      "reactive:release": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.93319360688253,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.93319360688253,
+          "improvement": -0.6049036977108599,
+          "improvement_ci95": [
+            -1.0874183755393094,
+            -0.1899890406734312
+          ],
+          "losses": 126,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.05596232334307985,
+            "adaptive-full-discovery-bottleneck-001": -0.16943580707573536,
+            "adaptive-full-discovery-bottleneck-002": 0.0009018183479533176,
+            "adaptive-full-discovery-layered-000": -1.817595664723365,
+            "adaptive-full-discovery-layered-001": -0.8412840207631873,
+            "adaptive-full-discovery-layered-002": -0.01791090785907863,
+            "adaptive-full-discovery-modular-000": -0.7283994932432435,
+            "adaptive-full-discovery-modular-001": -2.7559034117509373,
+            "adaptive-full-discovery-modular-002": -0.22626671468676118,
+            "adaptive-full-discovery-random-ordered-000": -0.7285587310066479,
+            "adaptive-full-discovery-random-ordered-001": 0.08145554193899807,
+            "adaptive-full-discovery-random-ordered-002": 0.00011534163473801706
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": -0.037046359482574044,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 3,
+          "wins": 63
+        }
+      },
+      "search:stochastic-8": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.30514673727163,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.30514673727163,
+          "improvement": 0.02314317190003834,
+          "improvement_ci95": [
+            -0.05181621483003506,
+            0.09365146496544227
+          ],
+          "losses": 80,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": 0.1258152107699805,
+            "adaptive-full-discovery-bottleneck-001": -0.16009077874516398,
+            "adaptive-full-discovery-bottleneck-002": 0.04843238304093589,
+            "adaptive-full-discovery-layered-000": -0.015529978280749868,
+            "adaptive-full-discovery-layered-001": 0.011824933361391454,
+            "adaptive-full-discovery-layered-002": -0.0439909383468836,
+            "adaptive-full-discovery-modular-000": 0.1577085210210209,
+            "adaptive-full-discovery-modular-001": 0.021064587234706833,
+            "adaptive-full-discovery-modular-002": -0.2321995050236405,
+            "adaptive-full-discovery-random-ordered-000": 0.07141826923076905,
+            "adaptive-full-discovery-random-ordered-001": 0.2826507352941178,
+            "adaptive-full-discovery-random-ordered-002": 0.010614623243933557
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": 0.0014173665477998846,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 17,
+          "wins": 95
+        }
+      },
+      "search:support-median": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.328289909171666,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.32828990917167,
+          "improvement": 0.0,
+          "improvement_ci95": [
+            0.0,
+            0.0
+          ],
+          "losses": 0,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": 0.0,
+            "adaptive-full-discovery-bottleneck-001": 0.0,
+            "adaptive-full-discovery-bottleneck-002": 0.0,
+            "adaptive-full-discovery-layered-000": 0.0,
+            "adaptive-full-discovery-layered-001": 0.0,
+            "adaptive-full-discovery-layered-002": 0.0,
+            "adaptive-full-discovery-modular-000": 0.0,
+            "adaptive-full-discovery-modular-001": 0.0,
+            "adaptive-full-discovery-modular-002": 0.0,
+            "adaptive-full-discovery-random-ordered-000": 0.0,
+            "adaptive-full-discovery-random-ordered-001": 0.0,
+            "adaptive-full-discovery-random-ordered-002": 0.0
+          },
+          "reference_mean": 16.32828990917167,
+          "relative_improvement": 0.0,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 192,
+          "wins": 0
+        }
+      }
+    },
+    "low": {
+      "fixed-floor:customer-count-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 19.84970253693615,
+        "versus_selected_dynamic": {
+          "candidate_mean": 19.849702536936146,
+          "improvement": -4.653836900340247,
+          "improvement_ci95": [
+            -7.824902421419869,
+            -1.8598889963108205
+          ],
+          "losses": 191,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.8540099597953217,
+            "adaptive-full-discovery-bottleneck-001": -13.53782148286346,
+            "adaptive-full-discovery-bottleneck-002": -1.2360449561403508,
+            "adaptive-full-discovery-layered-000": -4.236359096364883,
+            "adaptive-full-discovery-layered-001": -4.991562324635241,
+            "adaptive-full-discovery-layered-002": -0.254468072493225,
+            "adaptive-full-discovery-modular-000": -0.9855737612612614,
+            "adaptive-full-discovery-modular-001": -18.536746303448815,
+            "adaptive-full-discovery-modular-002": -1.9740814309988177,
+            "adaptive-full-discovery-random-ordered-000": -6.913172186609686,
+            "adaptive-full-discovery-random-ordered-001": -1.3743312227668845,
+            "adaptive-full-discovery-random-ordered-002": -0.9518720067049808
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.30625678139272994,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 1
+        }
+      },
+      "fixed-floor:fifo-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 20.39544442184987,
+        "versus_selected_dynamic": {
+          "candidate_mean": 20.39544442184987,
+          "improvement": -5.199578785253971,
+          "improvement_ci95": [
+            -8.187617956080647,
+            -2.475225475104947
+          ],
+          "losses": 191,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.8540099597953217,
+            "adaptive-full-discovery-bottleneck-001": -13.53782148286346,
+            "adaptive-full-discovery-bottleneck-002": -1.5241838450292398,
+            "adaptive-full-discovery-layered-000": -6.888888174439872,
+            "adaptive-full-discovery-layered-001": -5.403102728675645,
+            "adaptive-full-discovery-layered-002": -0.43963092818428184,
+            "adaptive-full-discovery-modular-000": -4.308049643393393,
+            "adaptive-full-discovery-modular-001": -18.536746303448815,
+            "adaptive-full-discovery-modular-002": -1.9812108451536639,
+            "adaptive-full-discovery-random-ordered-000": -6.36966049382716,
+            "adaptive-full-discovery-random-ordered-001": -1.7394195942265795,
+            "adaptive-full-discovery-random-ordered-002": -0.8122214240102172
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.342170621246606,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 1
+        }
+      },
+      "fixed-floor:legacy-critical-proxy-first-adapter-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 19.526499732466082,
+        "versus_selected_dynamic": {
+          "candidate_mean": 19.526499732466082,
+          "improvement": -4.330634095870183,
+          "improvement_ci95": [
+            -7.230781791118469,
+            -2.07062951136776
+          ],
+          "losses": 191,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.9246681591130603,
+            "adaptive-full-discovery-bottleneck-001": -16.268029211580984,
+            "adaptive-full-discovery-bottleneck-002": -1.0777084247076023,
+            "adaptive-full-discovery-layered-000": -2.755839906264289,
+            "adaptive-full-discovery-layered-001": -4.516838436447811,
+            "adaptive-full-discovery-layered-002": -0.26667047764227636,
+            "adaptive-full-discovery-modular-000": -2.470027308558559,
+            "adaptive-full-discovery-modular-001": -8.907240509909485,
+            "adaptive-full-discovery-modular-002": -1.4070404846335696,
+            "adaptive-full-discovery-random-ordered-000": -7.972929279439696,
+            "adaptive-full-discovery-random-ordered-001": -5.006918436819172,
+            "adaptive-full-discovery-random-ordered-002": -0.3936985153256705
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.28498765384189784,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 1
+        }
+      },
+      "fixed-floor:legacy-release-per-person-hour-adapter-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 18.78522494876734,
+        "versus_selected_dynamic": {
+          "candidate_mean": 18.785224948767336,
+          "improvement": -3.589359312171437,
+          "improvement_ci95": [
+            -5.637997192778901,
+            -1.814999518135443
+          ],
+          "losses": 191,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.7582830774853802,
+            "adaptive-full-discovery-bottleneck-001": -10.789226782752905,
+            "adaptive-full-discovery-bottleneck-002": -1.4255117415935674,
+            "adaptive-full-discovery-layered-000": -4.471260359510746,
+            "adaptive-full-discovery-layered-001": -3.276280864197531,
+            "adaptive-full-discovery-layered-002": -0.25170096544715453,
+            "adaptive-full-discovery-modular-000": -1.7790628753753754,
+            "adaptive-full-discovery-modular-001": -8.907240509909485,
+            "adaptive-full-discovery-modular-002": -1.2006364509456262,
+            "adaptive-full-discovery-random-ordered-000": -7.972929279439696,
+            "adaptive-full-discovery-random-ordered-001": -1.8464803240740741,
+            "adaptive-full-discovery-random-ordered-002": -0.3936985153256705
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.2362063075582384,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 1
+        }
+      },
+      "fixed-order:customer-count-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.614468761540866,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.614468761540866,
+          "improvement": -2.4186031249449673,
+          "improvement_ci95": [
+            -4.308943771081099,
+            -1.0010371199633985
+          ],
+          "losses": 181,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.6192718993664719,
+            "adaptive-full-discovery-bottleneck-001": -3.1843022733554442,
+            "adaptive-full-discovery-bottleneck-002": -0.8295610380116959,
+            "adaptive-full-discovery-layered-000": -2.8357592449702786,
+            "adaptive-full-discovery-layered-001": -2.9169408494668914,
+            "adaptive-full-discovery-layered-002": -0.08068792344173437,
+            "adaptive-full-discovery-modular-000": -0.3423720908408407,
+            "adaptive-full-discovery-modular-001": -11.884360955056177,
+            "adaptive-full-discovery-modular-002": -1.4432244570035462,
+            "adaptive-full-discovery-random-ordered-000": -4.044854433760684,
+            "adaptive-full-discovery-random-ordered-001": -0.36310743464052286,
+            "adaptive-full-discovery-random-ordered-002": -0.47879489942528736
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.1591619182996916,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 11
+        }
+      },
+      "fixed-order:fifo-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 18.11967916572429,
+        "versus_selected_dynamic": {
+          "candidate_mean": 18.11967916572429,
+          "improvement": -2.92381352912839,
+          "improvement_ci95": [
+            -4.707578923381179,
+            -1.4380995340513518
+          ],
+          "losses": 189,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.6192718993664719,
+            "adaptive-full-discovery-bottleneck-001": -3.1843022733554442,
+            "adaptive-full-discovery-bottleneck-002": -1.1909760599415204,
+            "adaptive-full-discovery-layered-000": -5.487249299839963,
+            "adaptive-full-discovery-layered-001": -3.1765738987093153,
+            "adaptive-full-discovery-layered-002": -0.2996859756097562,
+            "adaptive-full-discovery-modular-000": -3.014647334834835,
+            "adaptive-full-discovery-modular-001": -11.884360955056177,
+            "adaptive-full-discovery-modular-002": -1.5452212618203307,
+            "adaptive-full-discovery-random-ordered-000": -3.6035082799145313,
+            "adaptive-full-discovery-random-ordered-001": -0.7182768927015251,
+            "adaptive-full-discovery-random-ordered-002": -0.36168821839080467
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.19240848787758616,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 3
+        }
+      },
+      "fixed-order:legacy-critical-proxy-first-adapter-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.20925135421832,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.20925135421832,
+          "improvement": -2.0133857176224215,
+          "improvement_ci95": [
+            -2.893090783431764,
+            -1.1707611468452916
+          ],
+          "losses": 178,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.7680642361111111,
+            "adaptive-full-discovery-bottleneck-001": -4.594808423161971,
+            "adaptive-full-discovery-bottleneck-002": -0.5321204312865497,
+            "adaptive-full-discovery-layered-000": -1.891817272519433,
+            "adaptive-full-discovery-layered-001": -2.5451306467452306,
+            "adaptive-full-discovery-layered-002": -0.1453988821138211,
+            "adaptive-full-discovery-modular-000": -1.5117888513513513,
+            "adaptive-full-discovery-modular-001": -4.118037511704119,
+            "adaptive-full-discovery-modular-002": -1.158587008717494,
+            "adaptive-full-discovery-random-ordered-000": -3.5068902837132003,
+            "adaptive-full-discovery-random-ordered-001": -3.381291258169935,
+            "adaptive-full-discovery-random-ordered-002": -0.006693805874840308
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.1324956251767339,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 14
+        }
+      },
+      "fixed-order:legacy-release-per-person-hour-adapter-v1": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.630825487834347,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.63082548783435,
+          "improvement": -1.4349598512384514,
+          "improvement_ci95": [
+            -2.20573140123172,
+            -0.7283329811126379
+          ],
+          "losses": 172,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.5289496527777777,
+            "adaptive-full-discovery-bottleneck-001": -0.17229762645107805,
+            "adaptive-full-discovery-bottleneck-002": -0.926461485745614,
+            "adaptive-full-discovery-layered-000": -3.3253825874485594,
+            "adaptive-full-discovery-layered-001": -1.855096713664422,
+            "adaptive-full-discovery-layered-002": -0.1363710196476966,
+            "adaptive-full-discovery-modular-000": -1.0764371246246245,
+            "adaptive-full-discovery-modular-001": -4.118037511704119,
+            "adaptive-full-discovery-modular-002": -0.9328757572399525,
+            "adaptive-full-discovery-random-ordered-000": -3.5068902837132003,
+            "adaptive-full-discovery-random-ordered-001": -0.6340246459694991,
+            "adaptive-full-discovery-random-ordered-002": -0.006693805874840308
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.09443093835883007,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 20
+        }
+      },
+      "reactive:critical": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.000285679897896,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.000285679897893,
+          "improvement": -0.8044200433019935,
+          "improvement_ci95": [
+            -1.3562474012371528,
+            -0.3558899248856652
+          ],
+          "losses": 146,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.2024043615984405,
+            "adaptive-full-discovery-bottleneck-001": -0.012121596876728091,
+            "adaptive-full-discovery-bottleneck-002": 0.004459886695906468,
+            "adaptive-full-discovery-layered-000": -0.49261616941015074,
+            "adaptive-full-discovery-layered-001": -1.202249053030303,
+            "adaptive-full-discovery-layered-002": 0.006423102981029771,
+            "adaptive-full-discovery-modular-000": -1.1477200638138139,
+            "adaptive-full-discovery-modular-001": -3.2474996586298364,
+            "adaptive-full-discovery-modular-002": -0.5325786790780139,
+            "adaptive-full-discovery-random-ordered-000": -1.5096185007122505,
+            "adaptive-full-discovery-random-ordered-001": -1.312275667211329,
+            "adaptive-full-discovery-random-ordered-002": -0.004839758939974292
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.052936769943840827,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 46
+        }
+      },
+      "reactive:customer": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.123304357254614,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.123304357254614,
+          "improvement": -0.9274387206587154,
+          "improvement_ci95": [
+            -1.5449346041960692,
+            -0.37237665906843453
+          ],
+          "losses": 159,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.3538876705653021,
+            "adaptive-full-discovery-bottleneck-001": -1.8899036069651776,
+            "adaptive-full-discovery-bottleneck-002": -0.1675526772660819,
+            "adaptive-full-discovery-layered-000": -3.293793295610425,
+            "adaptive-full-discovery-layered-001": -1.1176330141694728,
+            "adaptive-full-discovery-layered-002": -0.06575287940379401,
+            "adaptive-full-discovery-modular-000": -0.18216159909909913,
+            "adaptive-full-discovery-modular-001": -2.5521218593945068,
+            "adaptive-full-discovery-modular-002": -0.9866911384456265,
+            "adaptive-full-discovery-random-ordered-000": -0.4391077575973412,
+            "adaptive-full-discovery-random-ordered-001": -0.07004452614379086,
+            "adaptive-full-discovery-random-ordered-002": -0.010614623243933696
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.06103230594676905,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 6,
+          "wins": 27
+        }
+      },
+      "reactive:downstream": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 15.555634360724989,
+        "versus_selected_dynamic": {
+          "candidate_mean": 15.555634360724989,
+          "improvement": -0.3597687241290899,
+          "improvement_ci95": [
+            -0.6419286827918298,
+            -0.11828202486699185
+          ],
+          "losses": 135,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.10368558114035067,
+            "adaptive-full-discovery-bottleneck-001": -1.3138564123825298,
+            "adaptive-full-discovery-bottleneck-002": -0.15127243238304103,
+            "adaptive-full-discovery-layered-000": -0.22650470107453102,
+            "adaptive-full-discovery-layered-001": -0.4047125771604936,
+            "adaptive-full-discovery-layered-002": 0.06221976626016265,
+            "adaptive-full-discovery-modular-000": -0.24590775150150174,
+            "adaptive-full-discovery-modular-001": -1.4938557759831457,
+            "adaptive-full-discovery-modular-002": -0.057360095301418335,
+            "adaptive-full-discovery-random-ordered-000": -0.2575933345204182,
+            "adaptive-full-discovery-random-ordered-001": -0.0025454112200435364,
+            "adaptive-full-discovery-random-ordered-002": -0.1221503831417626
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.023675434669721353,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 57
+        }
+      },
+      "reactive:fifo": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.58378514978329,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.58378514978329,
+          "improvement": -1.3879195131873896,
+          "improvement_ci95": [
+            -2.241612824602319,
+            -0.6610793115138238
+          ],
+          "losses": 176,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.3538876705653021,
+            "adaptive-full-discovery-bottleneck-001": -1.8899036069651776,
+            "adaptive-full-discovery-bottleneck-002": -0.539572414108187,
+            "adaptive-full-discovery-layered-000": -5.187560513831733,
+            "adaptive-full-discovery-layered-001": -2.1679210507856346,
+            "adaptive-full-discovery-layered-002": -0.11550169376693767,
+            "adaptive-full-discovery-modular-000": -2.040878566066066,
+            "adaptive-full-discovery-modular-001": -2.5521218593945068,
+            "adaptive-full-discovery-modular-002": -0.8993899601063827,
+            "adaptive-full-discovery-random-ordered-000": -0.3272455187559359,
+            "adaptive-full-discovery-random-ordered-001": -0.45925891884531606,
+            "adaptive-full-discovery-random-ordered-002": -0.12179238505747123
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.09133533728048311,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 6,
+          "wins": 10
+        }
+      },
+      "reactive:release": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.12968798093426,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.129687980934253,
+          "improvement": -0.9338223443383544,
+          "improvement_ci95": [
+            -1.577329438554224,
+            -0.35520527345361347
+          ],
+          "losses": 146,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.35571317616959064,
+            "adaptive-full-discovery-bottleneck-001": -0.17028002349364302,
+            "adaptive-full-discovery-bottleneck-002": -0.03797459795321628,
+            "adaptive-full-discovery-layered-000": -3.155832618884316,
+            "adaptive-full-discovery-layered-001": -1.05337691147587,
+            "adaptive-full-discovery-layered-002": 0.012079861111111034,
+            "adaptive-full-discovery-modular-000": -1.136125563063063,
+            "adaptive-full-discovery-modular-001": -3.2474996586298364,
+            "adaptive-full-discovery-modular-002": -0.4673785645685578,
+            "adaptive-full-discovery-random-ordered-000": -1.5096185007122505,
+            "adaptive-full-discovery-random-ordered-001": -0.07930861928104549,
+            "adaptive-full-discovery-random-ordered-002": -0.004839758939974292
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": -0.06145239545218462,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 46
+        }
+      },
+      "search:stochastic-8": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 15.118076055466439,
+        "versus_selected_dynamic": {
+          "candidate_mean": 15.118076055466439,
+          "improvement": 0.07778958112946022,
+          "improvement_ci95": [
+            0.0043046057506794235,
+            0.15614549454473142
+          ],
+          "losses": 66,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": 0.11463343689083824,
+            "adaptive-full-discovery-bottleneck-001": 0.2874463619402978,
+            "adaptive-full-discovery-bottleneck-002": 0.0792557108918128,
+            "adaptive-full-discovery-layered-000": -0.09446151977594869,
+            "adaptive-full-discovery-layered-001": 0.15186982673961835,
+            "adaptive-full-discovery-layered-002": -0.019236280487804902,
+            "adaptive-full-discovery-modular-000": 0.03757451201201206,
+            "adaptive-full-discovery-modular-001": 0.031119694132335063,
+            "adaptive-full-discovery-modular-002": -0.09384770242316773,
+            "adaptive-full-discovery-random-ordered-000": 0.38660657051281966,
+            "adaptive-full-discovery-random-ordered-001": 0.04111669389978251,
+            "adaptive-full-discovery-random-ordered-002": 0.01139766922094504
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": 0.005119127991111025,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 27,
+          "wins": 99
+        }
+      },
+      "search:support-median": {
+        "episodes": 192,
+        "groups": 12,
+        "mean_customer_wait_hours": 15.195865636595899,
+        "versus_selected_dynamic": {
+          "candidate_mean": 15.195865636595899,
+          "improvement": 0.0,
+          "improvement_ci95": [
+            0.0,
+            0.0
+          ],
+          "losses": 0,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": 0.0,
+            "adaptive-full-discovery-bottleneck-001": 0.0,
+            "adaptive-full-discovery-bottleneck-002": 0.0,
+            "adaptive-full-discovery-layered-000": 0.0,
+            "adaptive-full-discovery-layered-001": 0.0,
+            "adaptive-full-discovery-layered-002": 0.0,
+            "adaptive-full-discovery-modular-000": 0.0,
+            "adaptive-full-discovery-modular-001": 0.0,
+            "adaptive-full-discovery-modular-002": 0.0,
+            "adaptive-full-discovery-random-ordered-000": 0.0,
+            "adaptive-full-discovery-random-ordered-001": 0.0,
+            "adaptive-full-discovery-random-ordered-002": 0.0
+          },
+          "reference_mean": 15.195865636595899,
+          "relative_improvement": 0.0,
+          "supported_episodes": 192,
+          "supported_groups": 12,
+          "ties": 192,
+          "wins": 0
+        }
+      }
+    },
+    "stochastic_pooled": {
+      "fixed-floor:customer-count-v1": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 21.180197528591428,
+        "versus_selected_dynamic": {
+          "candidate_mean": 21.180197528591428,
+          "improvement": -5.418119755707645,
+          "improvement_ci95": [
+            -9.119435881470906,
+            -2.1463745638174982
+          ],
+          "losses": 383,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.8753903204191034,
+            "adaptive-full-discovery-bottleneck-001": -16.188533720287452,
+            "adaptive-full-discovery-bottleneck-002": -1.403024077119883,
+            "adaptive-full-discovery-layered-000": -4.874230038294467,
+            "adaptive-full-discovery-layered-001": -5.731605201318743,
+            "adaptive-full-discovery-layered-002": -0.4031325796070461,
+            "adaptive-full-discovery-modular-000": -1.2071843562312312,
+            "adaptive-full-discovery-modular-001": -21.606634675405743,
+            "adaptive-full-discovery-modular-002": -2.4714588412381793,
+            "adaptive-full-discovery-random-ordered-000": -7.414712799738841,
+            "adaptive-full-discovery-random-ordered-001": -1.828898454520697,
+            "adaptive-full-discovery-random-ordered-002": -1.012632004310345
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.34374400594753324,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 1
+        }
+      },
+      "fixed-floor:fifo-v1": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 21.818344963220813,
+        "versus_selected_dynamic": {
+          "candidate_mean": 21.81834496322082,
+          "improvement": -6.056267190337037,
+          "improvement_ci95": [
+            -9.593698056499072,
+            -2.8561190223252364
+          ],
+          "losses": 383,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.8753903204191034,
+            "adaptive-full-discovery-bottleneck-001": -16.188533720287452,
+            "adaptive-full-discovery-bottleneck-002": -1.691607844480994,
+            "adaptive-full-discovery-layered-000": -7.601579325274349,
+            "adaptive-full-discovery-layered-001": -6.234003314393939,
+            "adaptive-full-discovery-layered-002": -0.5887321307588076,
+            "adaptive-full-discovery-modular-000": -5.077888231981982,
+            "adaptive-full-discovery-modular-001": -21.606634675405743,
+            "adaptive-full-discovery-modular-002": -2.50620599697104,
+            "adaptive-full-discovery-random-ordered-000": -7.084047438865147,
+            "adaptive-full-discovery-random-ordered-001": -2.268334422657952,
+            "adaptive-full-discovery-random-ordered-002": -0.9522488625478928
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.3842302567974831,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 1
+        }
+      },
+      "fixed-floor:legacy-critical-proxy-first-adapter-v1": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 20.71084699978167,
+        "versus_selected_dynamic": {
+          "candidate_mean": 20.71084699978167,
+          "improvement": -4.948769226897886,
+          "improvement_ci95": [
+            -8.280110927891249,
+            -2.4428770198022476
+          ],
+          "losses": 383,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.9543338815789473,
+            "adaptive-full-discovery-bottleneck-001": -19.485725625345495,
+            "adaptive-full-discovery-bottleneck-002": -1.183648711622807,
+            "adaptive-full-discovery-layered-000": -3.4636615869341565,
+            "adaptive-full-discovery-layered-001": -5.667052469135802,
+            "adaptive-full-discovery-layered-002": -0.4127425474254742,
+            "adaptive-full-discovery-modular-000": -2.8450346753003006,
+            "adaptive-full-discovery-modular-001": -9.233269448345817,
+            "adaptive-full-discovery-modular-002": -1.884353575650118,
+            "adaptive-full-discovery-random-ordered-000": -8.036727949905034,
+            "adaptive-full-discovery-random-ordered-001": -5.719377689270153,
+            "adaptive-full-discovery-random-ordered-002": -0.49930256226053643
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.31396680680078093,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 1
+        }
+      },
+      "fixed-floor:legacy-release-per-person-hour-adapter-v1": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 19.912088249423633,
+        "versus_selected_dynamic": {
+          "candidate_mean": 19.91208824942363,
+          "improvement": -4.150010476539846,
+          "improvement_ci95": [
+            -6.539270778305219,
+            -2.1045740769571677
+          ],
+          "losses": 383,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.8192061860380118,
+            "adaptive-full-discovery-bottleneck-001": -13.792316369541183,
+            "adaptive-full-discovery-bottleneck-002": -1.5907383954678362,
+            "adaptive-full-discovery-layered-000": -5.445866519490169,
+            "adaptive-full-discovery-layered-001": -4.017106086910775,
+            "adaptive-full-discovery-layered-002": -0.40101431233062335,
+            "adaptive-full-discovery-modular-000": -1.9348722785285284,
+            "adaptive-full-discovery-modular-001": -9.233269448345817,
+            "adaptive-full-discovery-modular-002": -1.6928652297576832,
+            "adaptive-full-discovery-random-ordered-000": -8.036727949905034,
+            "adaptive-full-discovery-random-ordered-001": -2.336840379901961,
+            "adaptive-full-discovery-random-ordered-002": -0.49930256226053643
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.263290826015292,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 1
+        }
+      },
+      "fixed-order:customer-count-v1": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 18.378487280113642,
+        "versus_selected_dynamic": {
+          "candidate_mean": 18.378487280113642,
+          "improvement": -2.616409507229859,
+          "improvement_ci95": [
+            -4.873591937364328,
+            -1.0247089829098408
+          ],
+          "losses": 366,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.6043644919590644,
+            "adaptive-full-discovery-bottleneck-001": -2.8045411829740186,
+            "adaptive-full-discovery-bottleneck-002": -1.0208026544225146,
+            "adaptive-full-discovery-layered-000": -2.4440952932098767,
+            "adaptive-full-discovery-layered-001": -3.065392510171156,
+            "adaptive-full-discovery-layered-002": -0.141339727303523,
+            "adaptive-full-discovery-modular-000": -0.36873437499999995,
+            "adaptive-full-discovery-modular-001": -14.281444459074594,
+            "adaptive-full-discovery-modular-002": -1.6074287086288417,
+            "adaptive-full-discovery-random-ordered-000": -3.9928876572886995,
+            "adaptive-full-discovery-random-ordered-001": -0.6785013616557735,
+            "adaptive-full-discovery-random-ordered-002": -0.38738166507024263
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.16599394730376135,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 18
+        }
+      },
+      "fixed-order:fifo-v1": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 19.034521503678363,
+        "versus_selected_dynamic": {
+          "candidate_mean": 19.034521503678363,
+          "improvement": -3.2724437307945795,
+          "improvement_ci95": [
+            -5.404975221398487,
+            -1.5964927427952396
+          ],
+          "losses": 380,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.6043644919590644,
+            "adaptive-full-discovery-bottleneck-001": -2.8045411829740186,
+            "adaptive-full-discovery-bottleneck-002": -1.334957853618421,
+            "adaptive-full-discovery-layered-000": -5.139119191529492,
+            "adaptive-full-discovery-layered-001": -3.692533100098204,
+            "adaptive-full-discovery-layered-002": -0.31480657181571825,
+            "adaptive-full-discovery-modular-000": -3.786907563813814,
+            "adaptive-full-discovery-modular-001": -14.281444459074594,
+            "adaptive-full-discovery-modular-002": -1.8048059803486995,
+            "adaptive-full-discovery-random-ordered-000": -3.8265689547720805,
+            "adaptive-full-discovery-random-ordered-001": -1.2551633306100216,
+            "adaptive-full-discovery-random-ordered-002": -0.4241120889208174
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.20761499708016368,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 4
+        }
+      },
+      "fixed-order:legacy-critical-proxy-first-adapter-v1": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.939272303641268,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.939272303641264,
+          "improvement": -2.1771945307574807,
+          "improvement_ci95": [
+            -3.1080369839867807,
+            -1.285033048696694
+          ],
+          "losses": 353,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.7368320540935672,
+            "adaptive-full-discovery-bottleneck-001": -4.642919905679935,
+            "adaptive-full-discovery-bottleneck-002": -0.6929679276315789,
+            "adaptive-full-discovery-layered-000": -1.90246917152492,
+            "adaptive-full-discovery-layered-001": -3.1436640274270484,
+            "adaptive-full-discovery-layered-002": -0.18429827235772356,
+            "adaptive-full-discovery-modular-000": -1.6348163475975976,
+            "adaptive-full-discovery-modular-001": -4.143597407537453,
+            "adaptive-full-discovery-modular-002": -1.2512293144208035,
+            "adaptive-full-discovery-random-ordered-000": -3.7791398088793926,
+            "adaptive-full-discovery-random-ordered-001": -4.002895901416122,
+            "adaptive-full-discovery-random-ordered-002": -0.011504230523627104
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.1381286504310369,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 31
+        }
+      },
+      "fixed-order:legacy-release-per-person-hour-adapter-v1": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.321162880279974,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.321162880279974,
+          "improvement": -1.559085107396191,
+          "improvement_ci95": [
+            -2.34325377436715,
+            -0.8343830997544227
+          ],
+          "losses": 342,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.557393929702729,
+            "adaptive-full-discovery-bottleneck-001": -0.3173697052929798,
+            "adaptive-full-discovery-bottleneck-002": -1.0650251279239766,
+            "adaptive-full-discovery-layered-000": -3.4953676911865568,
+            "adaptive-full-discovery-layered-001": -1.9813449161756451,
+            "adaptive-full-discovery-layered-002": -0.1800262110433605,
+            "adaptive-full-discovery-modular-000": -0.96249756006006,
+            "adaptive-full-discovery-modular-001": -4.143597407537453,
+            "adaptive-full-discovery-modular-002": -1.164973450428487,
+            "adaptive-full-discovery-random-ordered-000": -3.7791398088793926,
+            "adaptive-full-discovery-random-ordered-001": -1.05078125,
+            "adaptive-full-discovery-random-ordered-002": -0.011504230523627104
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.09891367939310361,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 42
+        }
+      },
+      "reactive:critical": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.470626495197312,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.470626495197315,
+          "improvement": -0.708548722313532,
+          "improvement_ci95": [
+            -1.2169021584632378,
+            -0.30352543021748063
+          ],
+          "losses": 269,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.1076432291666666,
+            "adaptive-full-discovery-bottleneck-001": -0.16128809079602158,
+            "adaptive-full-discovery-bottleneck-002": 0.010918745431286667,
+            "adaptive-full-discovery-layered-000": -0.4566333376200272,
+            "adaptive-full-discovery-layered-001": -1.1975220521184065,
+            "adaptive-full-discovery-layered-002": -0.006073297764227693,
+            "adaptive-full-discovery-modular-000": -0.9232724286786789,
+            "adaptive-full-discovery-modular-001": -3.001701535190387,
+            "adaptive-full-discovery-modular-002": -0.35303279218380595,
+            "adaptive-full-discovery-random-ordered-000": -1.1190886158594493,
+            "adaptive-full-discovery-random-ordered-001": -1.1848858251633987,
+            "adaptive-full-discovery-random-ordered-002": -0.0023622086526181377
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.04495274877608335,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 115
+        }
+      },
+      "reactive:customer": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.588639777977097,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.588639777977097,
+          "improvement": -0.8265620050933133,
+          "improvement_ci95": [
+            -1.341710134634637,
+            -0.3543297600986115
+          ],
+          "losses": 308,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.2041117659600389,
+            "adaptive-full-discovery-bottleneck-001": -1.6624053776257623,
+            "adaptive-full-discovery-bottleneck-002": -0.15909384137426902,
+            "adaptive-full-discovery-layered-000": -2.5682218078417924,
+            "adaptive-full-discovery-layered-001": -1.073692217312009,
+            "adaptive-full-discovery-layered-002": -0.09151240684281844,
+            "adaptive-full-discovery-modular-000": -0.10924375938438437,
+            "adaptive-full-discovery-modular-001": -2.3918467394272787,
+            "adaptive-full-discovery-modular-002": -0.8827496583185579,
+            "adaptive-full-discovery-random-ordered-000": -0.7237582353988607,
+            "adaptive-full-discovery-random-ordered-001": -0.04038950163398686,
+            "adaptive-full-discovery-random-ordered-002": -0.011718750000000056
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.052439914140969754,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 12,
+          "wins": 64
+        }
+      },
+      "reactive:downstream": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.073560634820268,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.073560634820264,
+          "improvement": -0.3114828619364811,
+          "improvement_ci95": [
+            -0.6014890408430406,
+            -0.08726301099833718
+          ],
+          "losses": 266,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.11297240497076012,
+            "adaptive-full-discovery-bottleneck-001": -1.345324160447759,
+            "adaptive-full-discovery-bottleneck-002": -0.14742166940789472,
+            "adaptive-full-discovery-layered-000": -0.1692304312414264,
+            "adaptive-full-discovery-layered-001": -0.2503915018237932,
+            "adaptive-full-discovery-layered-002": 0.05149220867208674,
+            "adaptive-full-discovery-modular-000": -0.1446266422672674,
+            "adaptive-full-discovery-modular-001": -1.3037976211376403,
+            "adaptive-full-discovery-modular-002": -0.012835817449763517,
+            "adaptive-full-discovery-random-ordered-000": -0.06001750949667661,
+            "adaptive-full-discovery-random-ordered-001": -0.1309912513616556,
+            "adaptive-full-discovery-random-ordered-002": -0.11167754230523638
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.019761535656951216,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 0,
+          "wins": 118
+        }
+      },
+      "reactive:fifo": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 17.061792339272156,
+        "versus_selected_dynamic": {
+          "candidate_mean": 17.061792339272156,
+          "improvement": -1.2997145663883725,
+          "improvement_ci95": [
+            -2.0704785753163146,
+            -0.6627540407341143
+          ],
+          "losses": 349,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.2041117659600389,
+            "adaptive-full-discovery-bottleneck-001": -1.6624053776257623,
+            "adaptive-full-discovery-bottleneck-002": -0.562703947368421,
+            "adaptive-full-discovery-layered-000": -4.745166752400548,
+            "adaptive-full-discovery-layered-001": -1.6772892992424244,
+            "adaptive-full-discovery-layered-002": -0.10207427168021686,
+            "adaptive-full-discovery-modular-000": -1.9696245777027028,
+            "adaptive-full-discovery-modular-001": -2.3918467394272787,
+            "adaptive-full-discovery-modular-002": -0.9521161162825058,
+            "adaptive-full-discovery-random-ordered-000": -0.5191995340693261,
+            "adaptive-full-discovery-random-ordered-001": -0.6957102056100218,
+            "adaptive-full-discovery-random-ordered-002": -0.11432620929118767
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.08245832720254244,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 12,
+          "wins": 23
+        }
+      },
+      "reactive:release": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 16.53144079390839,
+        "versus_selected_dynamic": {
+          "candidate_mean": 16.53144079390839,
+          "improvement": -0.7693630210246081,
+          "improvement_ci95": [
+            -1.3389734054921802,
+            -0.2751716157008682
+          ],
+          "losses": 272,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": -0.20583774975633523,
+            "adaptive-full-discovery-bottleneck-001": -0.1698579152846892,
+            "adaptive-full-discovery-bottleneck-002": -0.018536389802631482,
+            "adaptive-full-discovery-layered-000": -2.4867141418038408,
+            "adaptive-full-discovery-layered-001": -0.9473304661195286,
+            "adaptive-full-discovery-layered-002": -0.0029155233739837985,
+            "adaptive-full-discovery-modular-000": -0.9322625281531531,
+            "adaptive-full-discovery-modular-001": -3.001701535190387,
+            "adaptive-full-discovery-modular-002": -0.34682263962765947,
+            "adaptive-full-discovery-random-ordered-000": -1.1190886158594493,
+            "adaptive-full-discovery-random-ordered-001": 0.0010734613289762884,
+            "adaptive-full-discovery-random-ordered-002": -0.0023622086526181377
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": -0.04881101540738354,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 3,
+          "wins": 109
+        }
+      },
+      "search:stochastic-8": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 15.711611396369038,
+        "versus_selected_dynamic": {
+          "candidate_mean": 15.711611396369037,
+          "improvement": 0.050466376514746614,
+          "improvement_ci95": [
+            -0.009872390027176166,
+            0.10453915568552231
+          ],
+          "losses": 146,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": 0.12022432383040937,
+            "adaptive-full-discovery-bottleneck-001": 0.06367779159756692,
+            "adaptive-full-discovery-bottleneck-002": 0.06384404696637434,
+            "adaptive-full-discovery-layered-000": -0.05499574902834928,
+            "adaptive-full-discovery-layered-001": 0.0818473800505049,
+            "adaptive-full-discovery-layered-002": -0.03161360941734425,
+            "adaptive-full-discovery-modular-000": 0.09764151651651648,
+            "adaptive-full-discovery-modular-001": 0.026092140683520948,
+            "adaptive-full-discovery-modular-002": -0.16302360372340413,
+            "adaptive-full-discovery-random-ordered-000": 0.22901241987179435,
+            "adaptive-full-discovery-random-ordered-001": 0.16188371459695017,
+            "adaptive-full-discovery-random-ordered-002": 0.011006146232439298
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": 0.0032017591361949886,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 44,
+          "wins": 194
+        }
+      },
+      "search:support-median": {
+        "episodes": 384,
+        "groups": 12,
+        "mean_customer_wait_hours": 15.762077772883783,
+        "versus_selected_dynamic": {
+          "candidate_mean": 15.762077772883783,
+          "improvement": 0.0,
+          "improvement_ci95": [
+            0.0,
+            0.0
+          ],
+          "losses": 0,
+          "per_group_improvement": {
+            "adaptive-full-discovery-bottleneck-000": 0.0,
+            "adaptive-full-discovery-bottleneck-001": 0.0,
+            "adaptive-full-discovery-bottleneck-002": 0.0,
+            "adaptive-full-discovery-layered-000": 0.0,
+            "adaptive-full-discovery-layered-001": 0.0,
+            "adaptive-full-discovery-layered-002": 0.0,
+            "adaptive-full-discovery-modular-000": 0.0,
+            "adaptive-full-discovery-modular-001": 0.0,
+            "adaptive-full-discovery-modular-002": 0.0,
+            "adaptive-full-discovery-random-ordered-000": 0.0,
+            "adaptive-full-discovery-random-ordered-001": 0.0,
+            "adaptive-full-discovery-random-ordered-002": 0.0
+          },
+          "reference_mean": 15.762077772883783,
+          "relative_improvement": 0.0,
+          "supported_episodes": 384,
+          "supported_groups": 12,
+          "ties": 384,
+          "wins": 0
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "adaptive_value": {
+      "candidate_mean": 16.073560634820264,
+      "improvement": 1.24760224545971,
+      "improvement_ci95": [
+        0.5381463989364728,
+        2.0204662021564657
+      ],
+      "losses": 86,
+      "per_group_improvement": {
+        "adaptive-full-discovery-bottleneck-000": 0.44442152473196894,
+        "adaptive-full-discovery-bottleneck-001": -1.0279544551547792,
+        "adaptive-full-discovery-bottleneck-002": 0.9176034585160819,
+        "adaptive-full-discovery-layered-000": 3.3261372599451304,
+        "adaptive-full-discovery-layered-001": 1.730953414351852,
+        "adaptive-full-discovery-layered-002": 0.23151841971544723,
+        "adaptive-full-discovery-modular-000": 0.8178709177927925,
+        "adaptive-full-discovery-modular-001": 2.839799786399813,
+        "adaptive-full-discovery-modular-002": 1.1521376329787234,
+        "adaptive-full-discovery-random-ordered-000": 3.719122299382716,
+        "adaptive-full-discovery-random-ordered-001": 0.9197899986383444,
+        "adaptive-full-discovery-random-ordered-002": -0.10017331178160928
+      },
+      "reference_mean": 17.321162880279974,
+      "relative_improvement": 0.07202762620979083,
+      "supported_episodes": 384,
+      "supported_groups": 12,
+      "ties": 0,
+      "wins": 298
+    },
+    "teacher_critical": {
+      "candidate_mean": 22.547315104166664,
+      "improvement": 0.07259722222222464,
+      "improvement_ci95": [
+        -0.10292819010416673,
+        0.23257213541666655
+      ],
+      "losses": 109,
+      "per_group_improvement": {
+        "adaptive-full-discovery-bottleneck-000": 0.30552083333333335,
+        "adaptive-full-discovery-bottleneck-001": 0.1900694444444444,
+        "adaptive-full-discovery-bottleneck-002": 0.06492187500000005,
+        "adaptive-full-discovery-layered-000": 0.11849826388888883,
+        "adaptive-full-discovery-layered-001": -0.42630208333333347,
+        "adaptive-full-discovery-layered-002": 0.04274305555555559,
+        "adaptive-full-discovery-modular-000": -0.19421875000000022,
+        "adaptive-full-discovery-modular-002": -0.0022656250000000627,
+        "adaptive-full-discovery-random-ordered-001": 0.6241666666666665,
+        "adaptive-full-discovery-random-ordered-002": 0.002838541666666611
+      },
+      "reference_mean": 22.61991232638889,
+      "relative_improvement": 0.003209438709341553,
+      "supported_episodes": 320,
+      "supported_groups": 10,
+      "ties": 55,
+      "wins": 156
+    },
+    "teacher_headroom": {
+      "candidate_mean": 15.711611396369037,
+      "improvement": 0.050466376514746614,
+      "improvement_ci95": [
+        -0.009872390027176166,
+        0.10453915568552231
+      ],
+      "losses": 146,
+      "per_group_improvement": {
+        "adaptive-full-discovery-bottleneck-000": 0.12022432383040937,
+        "adaptive-full-discovery-bottleneck-001": 0.06367779159756692,
+        "adaptive-full-discovery-bottleneck-002": 0.06384404696637434,
+        "adaptive-full-discovery-layered-000": -0.05499574902834928,
+        "adaptive-full-discovery-layered-001": 0.0818473800505049,
+        "adaptive-full-discovery-layered-002": -0.03161360941734425,
+        "adaptive-full-discovery-modular-000": 0.09764151651651648,
+        "adaptive-full-discovery-modular-001": 0.026092140683520948,
+        "adaptive-full-discovery-modular-002": -0.16302360372340413,
+        "adaptive-full-discovery-random-ordered-000": 0.22901241987179435,
+        "adaptive-full-discovery-random-ordered-001": 0.16188371459695017,
+        "adaptive-full-discovery-random-ordered-002": 0.011006146232439298
+      },
+      "reference_mean": 15.762077772883783,
+      "relative_improvement": 0.0032017591361949886,
+      "supported_episodes": 384,
+      "supported_groups": 12,
+      "ties": 44,
+      "wins": 194
+    },
+    "teacher_p95": {
+      "candidate_mean": 28.31886863425926,
+      "improvement": 0.11198423032407234,
+      "improvement_ci95": [
+        0.010122558593749924,
+        0.2171371346932869
+      ],
+      "losses": 124,
+      "per_group_improvement": {
+        "adaptive-full-discovery-bottleneck-000": 0.3062326388888888,
+        "adaptive-full-discovery-bottleneck-001": 0.20894965277777722,
+        "adaptive-full-discovery-bottleneck-002": 0.033524305555555495,
+        "adaptive-full-discovery-layered-000": 0.12816840277777738,
+        "adaptive-full-discovery-layered-001": -0.024800347222222352,
+        "adaptive-full-discovery-layered-002": 0.04274305555555559,
+        "adaptive-full-discovery-modular-000": 0.09495659722222202,
+        "adaptive-full-discovery-modular-001": 0.4539583333333336,
+        "adaptive-full-discovery-modular-002": -0.1680381944444445,
+        "adaptive-full-discovery-random-ordered-000": -0.11356770833333324,
+        "adaptive-full-discovery-random-ordered-001": 0.37884548611111146,
+        "adaptive-full-discovery-random-ordered-002": 0.0028385416666665414
+      },
+      "reference_mean": 28.430852864583333,
+      "relative_improvement": 0.003938827683342996,
+      "supported_episodes": 384,
+      "supported_groups": 12,
+      "ties": 93,
+      "wins": 167
+    }
+  },
+  "denominator": "Whole configurations equally weighted; average both crews and paired stochastic episodes within configuration",
+  "gate": {
+    "adaptive_value": true,
+    "pass": false,
+    "teacher_critical": true,
+    "teacher_headroom": false,
+    "teacher_p95": true
+  },
+  "gate_authority": "confirmation only",
+  "selected": {
+    "dynamic": "search:support-median",
+    "fixed": "fixed-order:legacy-release-per-person-hour-adapter-v1",
+    "reactive": "reactive:downstream"
+  },
+  "stage": "discovery",
+  "uncertainty": "2000 bootstrap resamples of configuration means; authored scenario population only",
+  "version": "adaptive-dispatch-v1"
+}
